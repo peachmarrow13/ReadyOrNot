@@ -5,10 +5,11 @@
 #include "Cheats.h"
 #include "Utils.h"
 #include "SDK/Engine_classes.hpp"
-#include "d3d11.h"
-#include "dxgi.h"
+#include <d3d11.h>
+#include <dxgi.h>
 #include <chrono>
 #include "SDK/ReadyOrNot_classes.hpp"
+
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
@@ -17,6 +18,7 @@ void SetVariablesRepeat(Variables& vars);
 void HookSwapChain();
 void Cleanup(std::thread& AutoVarsThread, Variables* Vars, HMODULE hModule);
 bool Cleaning = false;
+Variables* Vars = new Variables();
 
 typedef HRESULT(__stdcall* tPresent)(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 tPresent oPresent = nullptr;
@@ -33,20 +35,22 @@ std::chrono::high_resolution_clock::time_point CurrentFrameTime;
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
-	// Run per-frame logic here
-	FrameCount++;
-	if (FrameCount >= 4)
-	{
-		auto CurrentFrameTime = std::chrono::high_resolution_clock::now();
-		float delta = std::chrono::duration<float>(CurrentFrameTime - LastFrameTime).count();
-		float avgDelta = delta / FrameCount;      // average time per frame
-		float fps = 1.0f / avgDelta;
+	//// Run per-frame logic here
+	//FrameCount++;
+	//if (FrameCount >= 4)
+	//{
+	//	auto CurrentFrameTime = std::chrono::high_resolution_clock::now();
+	//	float delta = std::chrono::duration<float>(CurrentFrameTime - LastFrameTime).count();
+	//	float avgDelta = delta / FrameCount;      // average time per frame
+	//	float fps = 1.0f / avgDelta;
 
-		printf("FPS: %.2f\r", fps);
+	//	printf("FPS: %.2f\r", fps);
 
-		LastFrameTime = CurrentFrameTime;
-		FrameCount = 0;  // reset for next batch
-	}
+	//	LastFrameTime = CurrentFrameTime;
+	//	FrameCount = 0;  // reset for next batch
+	//}
+
+	Cheats::Aimbot(Vars);
 
 	if (Cleaning)
 	{
@@ -70,6 +74,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 void HookPresent()
 {
 	while (!pSwapChain) {
+		std::cerr << "SwapChain is null...\n";
 		Cleaning = true;
 		Sleep(30);
 		return;
@@ -92,8 +97,6 @@ DWORD MainThread(HMODULE hModule)
 	freopen_s(&Dummy, "CONOUT$", "w", stdout);
 	freopen_s(&Dummy, "CONIN$", "r", stdin);
 
-
-	Variables* Vars = new Variables();
 	std::thread AutoVarsThread(SetVariablesRepeat, std::ref(*Vars));
 
 	while (!Vars->World) {

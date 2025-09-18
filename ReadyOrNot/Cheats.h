@@ -9,4 +9,5 @@ public:
 	static void RefillAmmo();
 	static void ToggleAimbot();
 	static void Aimbot(Variables* Vars);
+	static void ToggleRecoil();
 };

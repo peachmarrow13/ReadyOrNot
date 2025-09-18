@@ -13,7 +13,9 @@
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
-bool InfAmmo = false;
+static bool InfAmmo = false;
+static bool AimbotEnabled = false;
+static bool AntiRecoilEnabled = false;
 void SetVariablesRepeat(Variables& vars);
 void HookSwapChain();
 void Cleanup(std::thread& AutoVarsThread, Variables* Vars, HMODULE hModule);
@@ -74,7 +76,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 void HookPresent()
 {
 	while (!pSwapChain) {
-		std::cerr << "SwapChain is null...\n";
+		std::cout << "[ERROR] SwapChain is null...\n";
 		Cleaning = true;
 		Sleep(30);
 		return;
@@ -141,7 +143,15 @@ DWORD MainThread(HMODULE hModule)
 		if (GetAsyncKeyState(VK_F3) & 1) // Toggle Aimbot with F3
 		{
 			Cheats::ToggleAimbot();
-		} 
+			AimbotEnabled = !AimbotEnabled;
+			std::cout << "Aimbot: " << (AimbotEnabled ? "ON" : "OFF") << "\n";
+		}
+		if (GetAsyncKeyState(VK_F4) & 1) // Toggle Recoil with F4
+		{
+			Cheats::ToggleRecoil();
+			AntiRecoilEnabled = !AntiRecoilEnabled;
+			std::cout << "Anti Recoil: " << (AntiRecoilEnabled ? "ON" : "OFF") << "\n";
+		}
 		Sleep(100);
 	}
 

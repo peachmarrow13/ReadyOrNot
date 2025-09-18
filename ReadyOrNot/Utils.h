@@ -87,3 +87,53 @@ public:
 		}
 	}
 };
+
+static inline float Dot3(const FVector& A, const FVector& B)
+{
+	return A.X * B.X + A.Y * B.Y + A.Z * B.Z;
+}
+
+static inline float Length3(const FVector& V)
+{
+	return sqrtf(V.X * V.X + V.Y * V.Y + V.Z * V.Z);
+}
+
+static inline FVector Normalize(const FVector& V)
+{
+	float L = Length3(V);
+	if (L <= 0.0001f) return FVector{ 0,0,0 };
+	return FVector{ V.X / L, V.Y / L, V.Z / L };
+}
+
+static inline float ClampFloat(float v, float a, float b)
+{
+	return v < a ? a : (v > b ? b : v);
+}
+
+static inline float AngleDegFromDot(float Dot)
+{
+	Dot = ClampFloat(Dot, -1.0f, 1.0f);
+	return acosf(Dot) * (180.0f / 3.1415926535f);
+}
+
+static inline void ClampRotator(FRotator& R)
+{
+	// Unreal style clamping (optional)
+	while (R.Yaw > 180.f)  R.Yaw -= 360.f;
+	while (R.Yaw < -180.f) R.Yaw += 360.f;
+	if (R.Pitch > 89.f)  R.Pitch = 89.f;
+	if (R.Pitch < -89.f) R.Pitch = -89.f;
+	R.Roll = 0.f;
+}
+
+static inline FVector ForwardFromRot(const FRotator& Rot)
+{
+	float PitchRad = Rot.Pitch * (3.1415926535f / 180.0f);
+	float YawRad = Rot.Yaw * (3.1415926535f / 180.0f);
+	float CP = cosf(PitchRad);
+	return FVector{
+		cosf(YawRad) * CP,
+		sinf(YawRad) * CP,
+		sinf(PitchRad)
+	};
+}

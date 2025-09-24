@@ -6,8 +6,8 @@ class Cheats
 {
 public:
 	static void ToggleGodMode();
-	static void RefillAmmo();
+	static void ToggleInfAmmo(bool IsEnabled);
 	static void ToggleAimbot();
 	static void Aimbot(Variables* Vars);
-	static void ToggleRecoil();
+	static void UpgradeWeaponStats();
 };

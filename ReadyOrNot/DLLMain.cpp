@@ -2,20 +2,21 @@
 #include <iostream>
 #include <thread>
 #include <Windows.h>
-#include "Cheats.h"
-#include "Utils.h"
-#include "SDK/Engine_classes.hpp"
 #include <d3d11.h>
 #include <dxgi.h>
 #include <chrono>
+
+#include "Cheats.h"
+#include "Utils.h"
+
 #include "SDK/ReadyOrNot_classes.hpp"
+#include "SDK/Engine_classes.hpp"
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
 static bool InfAmmo = false;
 static bool AimbotEnabled = false;
-static bool AntiRecoilEnabled = false;
 void SetVariablesRepeat(Variables& vars);
 void HookSwapChain();
 void Cleanup(std::thread& AutoVarsThread, Variables* Vars, HMODULE hModule);
@@ -29,31 +30,8 @@ ID3D11Device* pDevice = nullptr;
 ID3D11DeviceContext* pContext = nullptr;
 DXGI_SWAP_CHAIN_DESC sd = {};
 
-static float FrameTime = 0.0f;
-static int FrameCount = 0;
-static float fps = 0;
-std::chrono::high_resolution_clock::time_point LastFrameTime;
-std::chrono::high_resolution_clock::time_point CurrentFrameTime;
-
 HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
-	//// Run per-frame logic here
-	//FrameCount++;
-	//if (FrameCount >= 4)
-	//{
-	//	auto CurrentFrameTime = std::chrono::high_resolution_clock::now();
-	//	float delta = std::chrono::duration<float>(CurrentFrameTime - LastFrameTime).count();
-	//	float avgDelta = delta / FrameCount;      // average time per frame
-	//	float fps = 1.0f / avgDelta;
-
-	//	printf("FPS: %.2f\r", fps);
-
-	//	LastFrameTime = CurrentFrameTime;
-	//	FrameCount = 0;  // reset for next batch
-	//}
-
-	Cheats::Aimbot(Vars);
-
 	if (Cleaning)
 	{
 		if (pSwapChain) {
@@ -68,6 +46,8 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 		}
 	}
 
+	Cheats::Aimbot(Vars);
+
 	return oPresent ? oPresent(pSwapChain, SyncInterval, Flags)
 		: S_OK;
 }
@@ -75,7 +55,7 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 // Attach hook
 void HookPresent()
 {
-	while (!pSwapChain) {
+	if (!pSwapChain) {
 		std::cout << "[ERROR] SwapChain is null...\n";
 		Cleaning = true;
 		Sleep(30);
@@ -99,15 +79,21 @@ DWORD MainThread(HMODULE hModule)
 	freopen_s(&Dummy, "CONOUT$", "w", stdout);
 	freopen_s(&Dummy, "CONIN$", "r", stdin);
 
+	std::cout << "Cheat Injecting...\n";
+
 	std::thread AutoVarsThread(SetVariablesRepeat, std::ref(*Vars));
 
-	while (!Vars->World) {
+	int FailAmount = 0;
+
+	while (!Vars->World and FailAmount < 8) {
 		Vars->World = Utils::GetWorldSafe();
+		FailAmount++;
 		Sleep(100);
 	}
-
-	while (!Vars->PlayerController) {
+	FailAmount = 0;
+	while (!Vars->PlayerController and FailAmount < 8) {
 		Vars->PlayerController = Utils::GetPlayerController();
+		FailAmount++;
 		Sleep(100);
 	}
 
@@ -116,42 +102,45 @@ DWORD MainThread(HMODULE hModule)
 	HookSwapChain(); // Create a dummy device and swapchain to get the vtable
 	HookPresent(); // Hook the Present function
 
+	AReadyOrNotPlayerController* PC = (AReadyOrNotPlayerController*)Vars->PlayerController;
+
 	std::cout << "Cheat Injected\n";
 
 	while (!Cleaning)
 	{
-		if (GetAsyncKeyState(VK_F1) & 1) // Toggle God Mode with F1
-		{
-			Cheats::ToggleGodMode();
-			std::cout << "God Mode: " << (Vars->ReadyOrNotChar->bGodMode ? "ON" : "OFF") << "\n";
-		}
 		if (GetAsyncKeyState(VK_END) & 1) // Exit with END key
 		{
 			std::cout << "Exiting...\n";
 			Cleaning = true;
 			break;
 		}
+
+		if (GetAsyncKeyState(VK_F1) & 1) // Toggle God Mode with F1
+		{
+			Cheats::ToggleGodMode();
+			std::cout << "God Mode: " << (Vars->ReadyOrNotChar->bGodMode ? "ON" : "OFF") << "\n";
+		}
+
 		if (GetAsyncKeyState(VK_F2) & 1)
 		{
 			InfAmmo = !InfAmmo;
 			std::cout << "Infinite Ammo: " << (InfAmmo ? "ON" : "OFF") << "\n";
+			Cheats::ToggleInfAmmo(InfAmmo);
 		}
-		if (InfAmmo && Vars->ReadyOrNotChar)
-		{
-			Cheats::RefillAmmo();
-		}
+
 		if (GetAsyncKeyState(VK_F3) & 1) // Toggle Aimbot with F3
 		{
 			Cheats::ToggleAimbot();
 			AimbotEnabled = !AimbotEnabled;
 			std::cout << "Aimbot: " << (AimbotEnabled ? "ON" : "OFF") << "\n";
 		}
-		if (GetAsyncKeyState(VK_F4) & 1) // Toggle Recoil with F4
+
+		if (GetAsyncKeyState(VK_F4) & 1) // Sets weapon stats with F4 : no recoil, no spread, instant reload, etc.
 		{
-			Cheats::ToggleRecoil();
-			AntiRecoilEnabled = !AntiRecoilEnabled;
-			std::cout << "Anti Recoil: " << (AntiRecoilEnabled ? "ON" : "OFF") << "\n";
+			Cheats::UpgradeWeaponStats();
+			std::cout << "Weapon Upgraded\n";
 		}
+
 		Sleep(100);
 	}
 

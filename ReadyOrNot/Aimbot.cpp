@@ -64,6 +64,10 @@ void Cheats::Aimbot(Variables* Vars)
         }
         else continue;
 
+		AReadyOrNotPlayerController* PC = (AReadyOrNotPlayerController*)Vars->PlayerController;
+
+        if (!PC->LineOfSightTo(TargetActor, PlayerPos, false)) continue;
+
         if (!TargetActor || TargetActor == Vars->Character) continue;
         
         FVector TargetPos = TargetActor->K2_GetActorLocation();

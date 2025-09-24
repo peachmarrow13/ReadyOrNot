@@ -147,4 +147,5 @@ TArray<AActor*> GetActors(Variables* Vars)
     
 
     Actors = Level->Actors; // TArray<AActor*>
+	return Actors;
 }

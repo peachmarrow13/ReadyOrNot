@@ -14,13 +14,13 @@ void Cheats::ToggleGodMode() {
 	RONC->bGodMode = !RONC->bGodMode;
 }
 
-void Cheats::ToggleInfAmmo(bool IsEnabled) {
+void Cheats::ToggleInfAmmo() {
 	auto Vars = Utils::GetVariables();
 	if (!Vars || !Vars->PlayerController) return;
 	if (!Vars || !Vars->ReadyOrNotChar) return;
 	auto RONC = Vars->ReadyOrNotChar;
 	auto Character = (APlayerCharacter*)RONC;
-	Character->GetEquippedWeapon()->bInfiniteAmmo = IsEnabled;
+	Character->GetEquippedWeapon()->bInfiniteAmmo = !Character->GetEquippedWeapon()->bInfiniteAmmo;
 }
 
 void Cheats::UpgradeWeaponStats()

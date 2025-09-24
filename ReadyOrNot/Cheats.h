@@ -6,7 +6,7 @@ class Cheats
 {
 public:
 	static void ToggleGodMode();
-	static void ToggleInfAmmo(bool IsEnabled);
+	static void ToggleInfAmmo();
 	static void ToggleAimbot();
 	static void Aimbot(Variables* Vars);
 	static void UpgradeWeaponStats();

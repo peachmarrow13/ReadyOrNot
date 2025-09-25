@@ -40,7 +40,7 @@ This project is written in C++ and uses ImGui and DirectX11. It is intended for 
 - DirectX 11 libraries (usually included with the Windows SDK)
 
 ## Building
-1. Open `RONCheat.sln` in Visual Studio 2022.
+1. Open `ReadyOrNot.sln` in Visual Studio 2022.
 2. Select `Release` build configuration.
 3. Build the project.
 4. The output DLL will be in the `x64/Release` folder.

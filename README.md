@@ -4,5 +4,6 @@ Injection:
 1. Open the game
 2. Wait for the menu screen
 3. Inject
-
+4. Press insert to open or close the menu
+   
 Also, don't enable/disable cheats while loading, as it will most likely crash your game.

@@ -63,15 +63,15 @@ extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam
 WNDPROC oWndProc = nullptr;
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-	// Handle ImGui input first
-	if (ShowMenu && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
-		return true;
+
+	if (ImGui::GetCurrentContext())
+		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
+
 	if (AllowGameInput)
-	{
 		return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
-	}
-	else
-		return true; // Block input to the game when AllowGameInput is false
+
+	// block input by returning 0
+	return 0;
 }
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
@@ -296,33 +296,6 @@ DWORD MainThread(HMODULE hModule)
 		{
 			ShowMenu = !ShowMenu;
 			std::cout << "Menu: " << (ShowMenu ? "ON" : "OFF") << "\n";
-		}
-		
-		if (GetAsyncKeyState(VK_F1) & 1) // Toggle God Mode with F1
-		{
-			GodMode = !GodMode;
-			std::cout << "God Mode: " << (GodMode ? "ON" : "OFF") << "\n";
-			Cheats::ToggleGodMode();
-		}
-
-		if (GetAsyncKeyState(VK_F2) & 1)
-		{
-			InfAmmo = !InfAmmo;
-			std::cout << "Infinite Ammo: " << (InfAmmo ? "ON" : "OFF") << "\n";
-			Cheats::ToggleInfAmmo();
-		}
-
-		if (GetAsyncKeyState(VK_F3) & 1) // Toggle Aimbot with F3
-		{
-			AimbotEnabled = !AimbotEnabled;
-			std::cout << "Aimbot: " << (AimbotEnabled ? "ON" : "OFF") << "\n";
-			Cheats::ToggleAimbot();
-		}
-
-		if (GetAsyncKeyState(VK_F4) & 1) // Sets weapon stats with F4 : no recoil, no spread, etc.
-		{
-			Cheats::UpgradeWeaponStats();
-			std::cout << "Weapon Upgraded\n";
 		}
 
 		Sleep(100);

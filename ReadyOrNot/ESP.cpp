@@ -16,6 +16,8 @@ const float ActorUpdateInterval = 1.f; // update every 1 second
 static float CurrentTime = 0.0f;
 static std::chrono::high_resolution_clock::time_point LastFrameTime = std::chrono::high_resolution_clock::now();
 bool IsSuspect = false;
+int32 ViewportX = 0.0f;
+int32 ViewportY = 0.0f;
 
 auto SuspectColor = IM_COL32(255, 0, 0, 255);
 auto DeadColor = IM_COL32(0, 0, 0, 255);
@@ -195,6 +197,8 @@ void Cheats::RenderESP(Variables* Vars)
             if (Vars->PlayerController->ProjectWorldLocationToScreen(ParentPos, &ParentScreen, false) &&
                 Vars->PlayerController->ProjectWorldLocationToScreen(ChildPos, &ChildScreen, false))
             {
+                Vars->PlayerController->GetViewportSize(&ViewportX, &ViewportY);
+				if (ParentScreen.X == 0.f && ParentScreen.Y == 0.f or ParentScreen.X > ViewportX or ParentScreen.Y > ViewportY) continue;
                 ImGui::GetBackgroundDrawList()->AddLine(
                     ImVec2(ParentScreen.X, ParentScreen.Y),
                     ImVec2(ChildScreen.X, ChildScreen.Y),

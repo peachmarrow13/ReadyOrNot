@@ -2,7 +2,7 @@
 
 A simple RON cheat I made. Most injectors should work. I personally use Xenos, but other injectors may also work.  
 
-**Important:** Make sure you're running in DX11. You can do this by going to the game's properties and setting your selected launch option to DirectX 11.
+**Important:** Make sure you're running in DX11 and not in fullscreen. You can do this by going to the game's properties and setting your selected launch option to DirectX 11.
 
 ---
 

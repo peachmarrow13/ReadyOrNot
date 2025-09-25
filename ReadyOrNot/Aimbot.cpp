@@ -15,13 +15,20 @@ static std::chrono::high_resolution_clock::time_point LastFrameTime = std::chron
 TArray<AActor*> GetActors(Variables* Vars);
 
 // Parameters you can tweak
-const float MaxFOVDegrees = 15.0f;        // Only pick targets inside this cone
-const bool  UseSmoothing = false;
-const float SmoothAlpha = 0.18f;        // 0..1 each tick (lower = slower)
-const float MinDistance = 50.0f;        // Ignore absurdly close (optional)
+float MaxFOVDegrees = 15.0f;        // Only pick targets inside this cone
+float MinDistance = 50.0f;        // Ignore absurdly close (optional)
+bool LOSRequired = true;
 
 void Cheats::ToggleAimbot() {
 	AimbotEnabled = !AimbotEnabled;
+}
+
+void Cheats::ChangeAimbotSettings(float MaxFOV, bool LOS)
+{
+	if (MaxFOV >= 0.01f)
+        MaxFOVDegrees = MaxFOV;
+
+	LOSRequired = LOS;
 }
 
 void Cheats::Aimbot(Variables* Vars)
@@ -60,13 +67,13 @@ void Cheats::Aimbot(Variables* Vars)
         {
             ASuspectController* ActorController = (ASuspectController*)Actor;
             APawn* Pawn = ActorController->Pawn;
-            TargetActor = (ASuspectCharacter*)Pawn;
+			TargetActor = (ASuspectCharacter*)Pawn;
         }
         else continue;
 
 		AReadyOrNotPlayerController* PC = (AReadyOrNotPlayerController*)Vars->PlayerController;
 
-        if (!PC->LineOfSightTo(TargetActor, PlayerPos, false)) continue;
+        if (LOSRequired and !PC->LineOfSightTo(TargetActor, PlayerPos, false)) continue;
 
         if (!TargetActor || TargetActor == Vars->Character) continue;
         
@@ -116,25 +123,7 @@ void Cheats::Aimbot(Variables* Vars)
     TargetRot.Roll = 0.f;
     ClampRotator(TargetRot);
 
-    FRotator FinalRot = TargetRot;
-
-    if (UseSmoothing)
-    {
-        // Simple linear smoothing per frame
-        // Normalize deltas so we rotate shortest way
-        float YawDelta = TargetRot.Yaw - CurrentRot.Yaw;
-        while (YawDelta > 180.f)  YawDelta -= 360.f;
-        while (YawDelta < -180.f) YawDelta += 360.f;
-
-        float PitchDelta = TargetRot.Pitch - CurrentRot.Pitch;
-
-        FinalRot.Yaw = CurrentRot.Yaw + YawDelta * SmoothAlpha;
-        FinalRot.Pitch = CurrentRot.Pitch + PitchDelta * SmoothAlpha;
-        FinalRot.Roll = 0.f;
-        ClampRotator(FinalRot);
-    }
-
-    Vars->PlayerController->ControlRotation = FinalRot;
+    Vars->PlayerController->ControlRotation = TargetRot;
 }
 
 TArray<AActor*> GetActors(Variables* Vars)

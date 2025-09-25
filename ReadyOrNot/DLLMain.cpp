@@ -22,7 +22,10 @@
 
 static bool InfAmmo = false;
 static bool GodMode = false;
+static bool ESPEnabled = false;
 static bool AimbotEnabled = false;
+static bool AimbotLOS = true;
+static float AimbotFOV = 15.0f;
 static bool ShowMenu = true;
 bool Cleaning = false;
 bool AllowGameInput = true;
@@ -41,6 +44,19 @@ ID3D11DeviceContext* pContext = nullptr;
 ID3D11RenderTargetView* pRenderTargetView = nullptr;
 DXGI_SWAP_CHAIN_DESC sd = {};
 static bool init = false;
+
+static void AddDefaultTooltip(const char* Text)
+{
+	ImGui::SameLine();
+	ImGui::TextDisabled("(?)");
+
+	if (ImGui::IsItemHovered())
+	{
+		ImGui::BeginTooltip();
+		ImGui::Text(Text);
+		ImGui::EndTooltip();
+	}
+}
 
 // Add WndProc hook for input handling
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -116,11 +132,29 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT F
 
 	if (ShowMenu) {
 		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
-		ImGui::Text("Hello, Have Fun Cheating!");
+
+		ShowCursor(true);
+		ImGui::GetIO().MouseDrawCursor = true;
+
+		ImGui::SeparatorText("Hello, Have Fun Cheating!");
 
 		if (ImGui::TreeNode("Configuration"))
 		{
 			ImGui::Checkbox("Allow Game Input", &AllowGameInput);
+
+
+			if (ImGui::TreeNode("Aimbot Settings"))
+			{
+				if (ImGui::SliderFloat("Aimbot FOV", &AimbotFOV, 0.01f, 180.0f))
+					Cheats::ChangeAimbotSettings(AimbotFOV, AimbotLOS);
+
+				if (ImGui::Checkbox("Should Aimbot require LOS", &AimbotLOS))
+					Cheats::ChangeAimbotSettings(0.f, AimbotLOS);
+
+				AddDefaultTooltip("Targets must be visible; line - of - sight required.");
+
+				ImGui::TreePop();
+			}
 
 			ImGui::TreePop();
 		}
@@ -135,14 +169,22 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT F
 			Cheats::ToggleAimbot();
 		}
 
+		if (ImGui::Checkbox("ESP", &ESPEnabled))
+		{
+			Cheats::ToggleESP();
+		}
+
 		if (ImGui::Checkbox("Infinite Ammo", &InfAmmo))
 		{
 			Cheats::ToggleInfAmmo();
 		}
 
-		if (ImGui::Button("Hide Window")) {
-			ShowMenu = false;
+		if (ImGui::Button("Upgrade Weapon"))
+		{
+			Cheats::UpgradeWeaponStats();
 		}
+		AddDefaultTooltip("Removes recoil & spread, adds auto-fire, and boosts fire rate.");
+
 		ImGui::End();
 	}
 	else
@@ -150,6 +192,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT F
 		ShowCursor(false);
 		ImGui::GetIO().MouseDrawCursor = false;
 	}
+
+	if (ESPEnabled)
+		Cheats::RenderESP(Vars);
 
 	if (pRenderTargetView) {
 		pContext->OMSetRenderTargets(1, &pRenderTargetView, nullptr);

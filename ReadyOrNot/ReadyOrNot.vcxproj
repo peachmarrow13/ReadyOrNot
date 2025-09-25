@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="Aimbot.cpp" />
     <ClCompile Include="DLLMain.cpp" />
+    <ClCompile Include="ESP.cpp" />
     <ClCompile Include="ImGui\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="ImGui\backends\imgui_impl_win32.cpp" />
     <ClCompile Include="ImGui\imgui.cpp" />

@@ -9,24 +9,6 @@
 #include <Windows.h>
 #include <chrono>
 
-static bool ESPEnabled = false;
-TArray<AActor*> ActorstoDraw;
-static float LastActorUpdateTime = 0.f;
-const float ActorUpdateInterval = 1.f; // update every 1 second
-static float CurrentTime = 0.0f;
-static std::chrono::high_resolution_clock::time_point LastFrameTime = std::chrono::high_resolution_clock::now();
-bool IsSuspect = false;
-int32 ViewportX = 0.0f;
-int32 ViewportY = 0.0f;
-
-auto SuspectColor = IM_COL32(255, 0, 0, 255);
-auto DeadColor = IM_COL32(0, 0, 0, 255);
-auto CivilianColor = IM_COL32(0, 0, 255, 255);
-auto TeamColor = IM_COL32(0, 255, 0, 255);
-auto ArrestColor = IM_COL32(255, 255, 0, 255);
-
-auto RenderColor = IM_COL32(255, 255, 255, 255);
-
 struct BonePair { int Parent; int Child; };
 BonePair SuspectSkeletonBones_1[] = {
     {50, 51}, // neck_1 -> Head
@@ -46,7 +28,7 @@ BonePair SuspectSkeletonBones_1[] = {
 };
 
 BonePair SuspectSkeletonBones_2[] = {
-	{44, 45}, // Neck -> Head
+    {44, 45}, // Neck -> Head
     {5, 44},  // Spine3 -> Neck
     {3, 5},   // Spine2 -> Spine3
     {2, 3},   // Spine1 -> Spine2
@@ -114,7 +96,7 @@ BonePair CivilianSkeletonBones_2[] = {
 };
 
 BonePair CivilianSkeletonBones[] = {
-	{44, 45}, // neck_1 -> Head
+    {44, 45}, // neck_1 -> Head
     {5, 44}, // spine_3 -> neck_1
     {4, 5}, // spine_2 -> spine_3
     {3, 4}, // spine_1 -> spine_2
@@ -129,6 +111,14 @@ BonePair CivilianSkeletonBones[] = {
     {99, 100}, // thigh_RI -> calf_RI
     {100, 103}, // calf_RI -> foot_RI
 };
+
+static bool ESPEnabled = false;
+bool IsSuspect = false;
+bool IsSwat = false;
+int32 ViewportX = 0.0f;
+int32 ViewportY = 0.0f;
+
+auto RenderColor = IM_COL32(255, 255, 255, 255);
 
 void Cheats::ToggleESP() {
 	ESPEnabled = !ESPEnabled;
@@ -151,22 +141,31 @@ void Cheats::RenderESP(Variables* Vars)
         if (Actor->IsA(ASuspectCharacter::StaticClass()) or Actor->IsA(ACivilianCharacter::StaticClass()))
         {
 			TargetActor = (AReadyOrNotCharacter*)Actor;
+			IsSwat = false;
         }
-        else
-            continue;
+		else if (ESPSettings.ShowTeam && (Actor->IsA(ASWATCharacter::StaticClass())))
+		{
+			TargetActor = (AReadyOrNotCharacter*)Actor;
+            IsSuspect = false;
+			IsSwat = true;
+		}
+    	else
+			continue;
 
         if (!TargetActor || TargetActor == Vars->Character) continue;
 
-        if (TargetActor->IsSuspect())
+        if (!IsSwat && TargetActor->IsSuspect())
             IsSuspect = true;
         else
 			IsSuspect = false;
 
-        if (IsSuspect) RenderColor = SuspectColor;
-		else RenderColor = CivilianColor;
+        if (IsSuspect) RenderColor = Utils::ConvertImVec4toU32(ESPSettings.SuspectColor);
+		else RenderColor = Utils::ConvertImVec4toU32(ESPSettings.CivilianColor);
 
-        if (TargetActor->IsDeadOrUnconscious()) RenderColor = DeadColor;
-        if (TargetActor->IsArrested()) RenderColor = ArrestColor;
+		if (IsSwat) RenderColor = Utils::ConvertImVec4toU32(ESPSettings.TeamColor);
+
+        if (TargetActor->IsDeadOrUnconscious()) RenderColor = Utils::ConvertImVec4toU32(ESPSettings.DeadColor);
+        if (!IsSwat && TargetActor->IsArrested()) RenderColor = Utils::ConvertImVec4toU32(ESPSettings.ArrestColor);
 
         USkeletalMeshComponent* Mesh = TargetActor->Mesh;
         if (!Mesh) continue;
@@ -193,7 +192,7 @@ void Cheats::RenderESP(Variables* Vars)
             FVector ParentPos = Mesh->GetBoneTransform(ParentName, ERelativeTransformSpace::RTS_World).Translation;
             FVector ChildPos = Mesh->GetBoneTransform(ChildName, ERelativeTransformSpace::RTS_World).Translation;
 
-            FVector2D ParentScreen, ChildScreen;
+            FVector2D ParentScreen, ChildScreen, ActorScreen;
             if (Vars->PlayerController->ProjectWorldLocationToScreen(ParentPos, &ParentScreen, false) &&
                 Vars->PlayerController->ProjectWorldLocationToScreen(ChildPos, &ChildScreen, false))
             {
@@ -206,6 +205,21 @@ void Cheats::RenderESP(Variables* Vars)
                     1.5f
                 );
            }
+            if (ESPSettings.ShowBox && Vars->PlayerController->ProjectWorldLocationToScreen(Actor->K2_GetActorLocation(), &ActorScreen, false))
+            {
+            	float distance = Vars->ReadyOrNotChar->GetDistanceTo(Actor);
+                float boxHeight = 20000.0f / distance;     // tweak scaling factor
+                float boxWidth = boxHeight / 2.0f;
+
+                ImGui::GetBackgroundDrawList()->AddRect(
+                    ImVec2(ActorScreen.X - boxWidth / 2, ActorScreen.Y - boxHeight / 2),
+                    ImVec2(ActorScreen.X + boxWidth / 2, ActorScreen.Y + boxHeight / 2),
+                    RenderColor,
+                    0.0f,
+                    15,
+                    1.5f
+                );
+            }
         }
     }
 }

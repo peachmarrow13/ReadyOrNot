@@ -6,43 +6,21 @@
 #include <numbers>
 
 bool AimbotEnabled = false;
-TArray<AActor*> Actors; // TArray<AActor*>
-static float LastActorUpdateTime = 0.f;
-const float ActorUpdateInterval = 1.f; // update every 1 second
-static float CurrentTime = 0.0f;
-static std::chrono::high_resolution_clock::time_point LastFrameTime = std::chrono::high_resolution_clock::now();
-
-TArray<AActor*> GetActors(Variables* Vars);
-
-// Parameters you can tweak
-float MaxFOVDegrees = 15.0f;        // Only pick targets inside this cone
-float MinDistance = 50.0f;        // Ignore absurdly close (optional)
-bool LOSRequired = true;
 
 void Cheats::ToggleAimbot() {
 	AimbotEnabled = !AimbotEnabled;
 }
 
-void Cheats::ChangeAimbotSettings(float MaxFOV, bool LOS)
-{
-	if (MaxFOV >= 0.01f)
-        MaxFOVDegrees = MaxFOV;
-
-	LOSRequired = LOS;
-}
-
 void Cheats::Aimbot(Variables* Vars)
 {
     if (!AimbotEnabled) return;
-	auto Now = std::chrono::high_resolution_clock::now();
-    float DeltaTime = std::chrono::duration<float>(Now - LastFrameTime).count();
-    LastFrameTime = Now;
-    CurrentTime += DeltaTime;
 
     if (!Vars || !Vars->PlayerController || !Vars->Character) return;
 
     ULevel* Level = Vars->Level;
     if (!Level) return;
+
+    auto* PC = Vars->PlayerController;
 
     FRotator CurrentRot;
     FVector PlayerPos;
@@ -53,27 +31,21 @@ void Cheats::Aimbot(Variables* Vars)
     float BestAngle = 99999.0f;
     float BestDist = 999999.f;
 
-    if (CurrentTime - LastActorUpdateTime > ActorUpdateInterval)
+    for (int i = 0; i < Level->Actors.Num(); ++i)
     {
-        GetActors(Vars);
-        LastActorUpdateTime = CurrentTime;
-    }
-    for (int i = 0; i < Actors.Num(); ++i)
-    {
-        AActor* Actor = Actors[i];
-        ASuspectCharacter* TargetActor;
+        AActor* Actor = Level->Actors[i];
+        AReadyOrNotCharacter* TargetActor;
 		if (!Actor) continue;
-        if (Actor->Class == ASuspectController::StaticClass())
+        if (Actor->IsA(ASuspectCharacter::StaticClass()) || AimbotSettings.TargetCivilians && Actor->IsA(ACivilianCharacter::StaticClass()))
         {
-            ASuspectController* ActorController = (ASuspectController*)Actor;
-            APawn* Pawn = ActorController->Pawn;
-			TargetActor = (ASuspectCharacter*)Pawn;
+            TargetActor = (AReadyOrNotCharacter*)Actor;
         }
-        else continue;
+        else 
+            continue;
 
-		AReadyOrNotPlayerController* PC = (AReadyOrNotPlayerController*)Vars->PlayerController;
-
-        if (LOSRequired and !PC->LineOfSightTo(TargetActor, PlayerPos, false)) continue;
+		if (!AimbotSettings.TargetDead && TargetActor->IsDeadOrUnconscious()) continue;
+		if (!AimbotSettings.TargetArrested && TargetActor->IsArrested()) continue;
+        if (AimbotSettings.LOS && !PC->LineOfSightTo(TargetActor, PlayerPos, false)) continue;
 
         if (!TargetActor || TargetActor == Vars->Character) continue;
         
@@ -81,22 +53,21 @@ void Cheats::Aimbot(Variables* Vars)
 
 		if (TargetPos.X == 0.f && TargetPos.Y == 0.f && TargetPos.Z == 0.f) continue;
 
-        FVector Delta = FVector{ TargetPos.X - PlayerPos.X,
+        FVector Delta = FVector {TargetPos.X - PlayerPos.X,
                                  TargetPos.Y - PlayerPos.Y,
                                  TargetPos.Z - PlayerPos.Z };
 
         float Dist = Length3(Delta);
-        if (Dist < MinDistance) continue;
+        if (Dist < AimbotSettings.MinDistance) continue;
         if (Dist <= 0.0001f) continue;
 
         FVector Dir = Normalize(Delta);
         float Dot = Dot3(Forward, Dir);
         float Angle = AngleDegFromDot(Dot);
 
-        if (Angle > MaxFOVDegrees) continue;
+        if (Angle > AimbotSettings.MaxFOV) continue;
 
-        if (Angle < BestAngle ||
-            (fabsf(Angle - BestAngle) < 5.0f && Dist < BestDist))
+        if (Angle < BestAngle || (fabsf(Angle - BestAngle) < 5.0f && Dist < BestDist))
         {
             BestAngle = Angle;
             BestDist = Dist;
@@ -107,8 +78,8 @@ void Cheats::Aimbot(Variables* Vars)
     if (!BestTarget) return;
 
     // Compute desired aim rotation
-    FVector AimPos;
-	BestTarget->GetActorEyesViewPoint(&AimPos, nullptr);
+    FVector AimPos = ((AReadyOrNotCharacter*)BestTarget)->Mesh->GetBoneTransform(BasicFilesImpleUtils::StringToName(L"Head"), ERelativeTransformSpace::RTS_World).Translation;
+	//BestTarget->GetActorEyesViewPoint(&AimPos, nullptr);
 
     FVector D = FVector{ AimPos.X - PlayerPos.X,
                          AimPos.Y - PlayerPos.Y,
@@ -123,18 +94,5 @@ void Cheats::Aimbot(Variables* Vars)
     TargetRot.Roll = 0.f;
     ClampRotator(TargetRot);
 
-    Vars->PlayerController->ControlRotation = TargetRot;
-}
-
-TArray<AActor*> GetActors(Variables* Vars)
-{
-    ULevel* Level = Vars->Level;
-    while (!Level)
-    {
-	    return TArray<AActor*>();
-    }
-    
-
-    Actors = Level->Actors; // TArray<AActor*>
-	return Actors;
+    PC->ControlRotation = TargetRot;
 }

@@ -65,13 +65,14 @@ WNDPROC oWndProc = nullptr;
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 	if (ImGui::GetCurrentContext())
-		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
+		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam); // pass input to ImGui before the game's input
 
 	if (AllowGameInput)
 		return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
+	if (!AllowGameInput)
+		return 0; // block input by returning 0
 
-	// block input by returning 0
-	return 0;
+	return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam); // default
 }
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
@@ -131,27 +132,51 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT F
 	ImGui::NewFrame();
 
 	if (ShowMenu) {
-		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
-
 		ShowCursor(true);
 		ImGui::GetIO().MouseDrawCursor = true;
+
+		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
 
 		ImGui::SeparatorText("Hello, Have Fun Cheating!");
 
 		if (ImGui::TreeNode("Configuration"))
 		{
 			ImGui::Checkbox("Allow Game Input", &AllowGameInput);
-
+			AddDefaultTooltip("When disabled, the game will not receive any input but you are able to use keyboard/gamepad nav to click it again (use arrow keys).");
 
 			if (ImGui::TreeNode("Aimbot Settings"))
 			{
-				if (ImGui::SliderFloat("Aimbot FOV", &AimbotFOV, 0.01f, 180.0f))
-					Cheats::ChangeAimbotSettings(AimbotFOV, AimbotLOS);
+				ImGui::SliderFloat("Aimbot FOV", &AimbotSettings.MaxFOV, 0.01f, 180.0f);
 
-				if (ImGui::Checkbox("Should Aimbot require LOS", &AimbotLOS))
-					Cheats::ChangeAimbotSettings(0.f, AimbotLOS);
-
+				ImGui::Checkbox("Should Aimbot require LOS", &AimbotSettings.LOS);
 				AddDefaultTooltip("Targets must be visible; line - of - sight required.");
+
+				ImGui::Checkbox("Target Civilians", &AimbotSettings.TargetCivilians);
+
+				ImGui::Checkbox("Target Dead", &AimbotSettings.TargetDead);
+
+				ImGui::Checkbox("Target Arrested", &AimbotSettings.TargetArrested);
+
+				ImGui::SliderFloat("Minimum Distance", &AimbotSettings.MinDistance, 0.01f, 10000);
+
+				ImGui::TreePop();
+			}
+
+			if (ImGui::TreeNode("ESP Settings"))
+			{
+				ImGui::Checkbox("Show Team", &ESPSettings.ShowTeam);
+
+				ImGui::Checkbox("Show Box", &ESPSettings.ShowBox);
+
+				ImGui::ColorEdit4("Suspect Color", (float*)&ESPSettings.SuspectColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4("Civilian Color", (float*)&ESPSettings.CivilianColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4("Dead Color", (float*)&ESPSettings.DeadColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4("Team Color", (float*)&ESPSettings.TeamColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4("Arrested Color", (float*)&ESPSettings.ArrestColor, ImGuiColorEditFlags_NoInputs);
 
 				ImGui::TreePop();
 			}

@@ -1,6 +1,7 @@
 #pragma once
 #include "SDK/Engine_classes.hpp"
 #include "SDK/ReadyOrNot_classes.hpp"
+#include "ImGui/imgui.h"
 
 class Variables;
 using namespace SDK;
@@ -11,6 +12,7 @@ public:
 	static UWorld* GetWorldSafe();
 	static APlayerController* GetPlayerController();
 	static Variables* GetVariables();
+	static unsigned ConvertImVec4toU32(ImVec4 Color);
 };
 
 class Variables

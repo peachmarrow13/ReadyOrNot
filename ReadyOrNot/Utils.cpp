@@ -1,4 +1,6 @@
 #include "Utils.h"
+
+#include <imgui.h>
 #include <Windows.h>
 #include "SDK/Engine_classes.hpp"
 
@@ -64,4 +66,9 @@ Variables* Utils::GetVariables()
     static Variables Vars;
     Variables::AutoSetVariables(Vars);
     return &Vars;
+}
+
+unsigned Utils::ConvertImVec4toU32(ImVec4 Color)
+{
+    return IM_COL32((int)(Color.x * 255.0f), (int)(Color.y * 255.0f), (int)(Color.z * 255.0f), (int)(Color.w * 255.0f));
 }

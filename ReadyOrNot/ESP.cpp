@@ -208,7 +208,7 @@ void Cheats::RenderESP(Variables* Vars)
             if (ESPSettings.ShowBox && Vars->PlayerController->ProjectWorldLocationToScreen(Actor->K2_GetActorLocation(), &ActorScreen, false))
             {
             	float distance = Vars->ReadyOrNotChar->GetDistanceTo(Actor);
-                float boxHeight = 20000.0f / distance;     // tweak scaling factor
+                float boxHeight = 200000.0f / distance;     // tweak scaling factor
                 float boxWidth = boxHeight / 2.0f;
 
                 ImGui::GetBackgroundDrawList()->AddRect(

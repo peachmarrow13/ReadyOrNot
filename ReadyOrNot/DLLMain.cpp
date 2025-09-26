@@ -31,6 +31,8 @@ bool Cleaning = false;
 bool AllowGameInput = true;
 Variables* Vars = new Variables();
 
+ULevel* LastLevel = nullptr;
+
 void SetVariablesRepeat(Variables& vars);
 void HookSwapChain();
 void Cleanup(std::thread& AutoVarsThread, Variables* Vars, HMODULE hModule);
@@ -65,7 +67,7 @@ WNDPROC oWndProc = nullptr;
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 
 	if (ImGui::GetCurrentContext())
-		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam); // pass input to ImGui before the game's input
+		ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
 
 	if (AllowGameInput)
 		return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
@@ -77,6 +79,16 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 
 HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
 {
+	if (Vars->Level && LastLevel != Vars->Level)
+	{
+		if (Vars->ReadyOrNotChar)
+		{
+			Vars->ReadyOrNotChar->bGodMode = GodMode;
+			Vars->ReadyOrNotChar->GetEquippedWeapon()->bInfiniteAmmo = InfAmmo;
+		}
+		LastLevel = Vars->Level;
+	}
+
 	if (!init)
 	{
 		if (SUCCEEDED(SwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&pDevice)))

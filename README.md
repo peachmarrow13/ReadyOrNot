@@ -1,72 +1,195 @@
-# RON CHEAT
+# Ready or Not Cheat
 
-A simple RON cheat I made. Most injectors should work. I personally use my custom injector, but other injectors should also work.
+A feature-rich cheat/trainer for Ready or Not, built with C++ using ImGui and DirectX 11. This project is designed for educational purposes and single-player use only.
 
-**Important:** Make sure you're running in DX11 and not in fullscreen. You can do this by going to the game's properties and setting your selected launch option to DirectX 11. My injector automatically opens the game in DX11 so you don't need to do this if you are using it but still make sure you are not in fullscreen.
+> **⚠️ Disclaimer:** This project is for educational purposes only. Please respect other players and use this responsibly in single-player or private sessions. Do not grief or ruin the experience for others.
 
 ---
 
-### Injection:
-1. Open the game
-2. Wait for the menu screen
-3. Inject into ReadyOrNotSteam-Win64-Shipping.exe
-4. Press insert to open or close the menu
+## Table of Contents
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Known Issues](#known-issues)
+- [Build Instructions](#build-instructions)
+- [Troubleshooting](#troubleshooting)
+- [Credits](#credits)
+- [License](#license)
 
-> Also, don't grief, please.
+---
+
+## Quick Start
+
+### Prerequisites
+- Ready or Not game installed
+- DirectX 11 mode enabled (not DX12)
+- Game running in **Windowed** or **Borderless** mode (not fullscreen)
+- A DLL injector (most standard injectors work)
+
+### Setup Instructions
+
+1. **Configure the game:**
+   - Go to Ready or Not game properties
+   - Set launch option to DirectX 11
+   - Ensure the game is NOT running in fullscreen mode
+
+2. **Injection process:**
+   - Launch Ready or Not
+   - Wait until you reach the main menu screen
+   - Use your injector to inject the DLL into `ReadyOrNotSteam-Win64-Shipping.exe`
+   - Press `Insert` to open/close the cheat menu
+   - Press `End` to uninject the DLL
+
 ---
 ## Features
-- Open/close the menu with the insert key
-- Aimbot : Snap Line, Line of Sight (LOS) Checks, FOV Checks, Max/Min Distance, Smoothing, Target Bone, Targeting Options (civilians, dead, arrested, etc.)
-- ESP : Team, Boxes, Bones, Traps, Distance, Bone Colors/Opacity, LOS.
-- Silent Aim : Hit Chance, FOV Checks, LOS Checks, Target Bone, Snap Line, Targeting Options (civilians, dead, arrested, etc.)
-- Reticle : Cross/Dot, Size, Color, Position, Only Show when throwing.
-- Saving and loading of options : Auto Saving/Loading, Manual Saving/Loading
-- GodMode
-- Infinite Ammo
-- No Recoil
-- No Spread
-- Add Auto Fire to any Gun
-- Set Fire Rate
-- Infinite Bullet Penetration
-- Infinite Bullet Damage
-- Speed Cheat
-- Add Magazine
-- Arrest All : Civilian or Suspect
-- Kill All : Civilian or Suspect
-- TriggerBot : LOS Checks, Silent Aim, Targeting Options (civilians, dead, arrested, etc.)
-- Show Enabled Options
-- Auto Win
-- Unlock All Doors
-- List Players : Give GodMode or Infinite Ammo, Teleport to you.
+
+### Core Controls
+- **Insert Key** - Toggle cheat menu on/off
+- **End Key** - Uninject the DLL from the game
+
+### Combat Features
+- **Aimbot**
+  - Snap lines and visual targeting
+  - Line of Sight (LOS) checks
+  - Field of View (FOV) adjustments
+  - Configurable max/min distance
+  - Smoothing for natural appearance
+  - Target bone selection
+  - Targeting filters (civilians, dead, arrested, etc.)
+
+- **Silent Aim**
+  - Configurable hit chance
+  - FOV and LOS checks
+  - Target bone selection
+  - Snap line visualization
+  - Advanced targeting options
+
+- **TriggerBot**
+  - LOS verification
+  - Silent aim integration
+  - Customizable targeting filters
+
+### Visual Features
+- **ESP (Extra Sensory Perception)**
+  - Team indicators
+  - Bounding boxes
+  - Skeleton visualization
+  - Trap detection
+  - Distance display
+  - Customizable bone colors and opacity
+  - Line of sight indicators
+
+- **Custom Reticle**
+  - Cross or dot styles
+  - Adjustable size and color
+  - Position customization
+  - Optional "show only when throwing" mode
+
+### Weapon Enhancements
+- **No Recoil** - Eliminate weapon kickback
+- **No Spread** - Perfect bullet accuracy
+- **Auto Fire** - Add automatic fire mode to any weapon
+- **Fire Rate Control** - Customize weapon firing speed
+- **Infinite Ammo** - Unlimited ammunition
+- **Infinite Bullet Penetration** - Shoot through any material
+- **Infinite Bullet Damage** - Maximum damage output
+- **Add Magazine** - Instant magazine addition
+
+### Player Enhancements
+- **God Mode** - Invulnerability
+- **Speed Cheat** - Enhanced movement speed
+
+### Mission Utilities
+- **Auto Win** - Automatically complete missions
+- **Unlock All Doors** - Open any locked door instantly
+- **Arrest All** - Arrest all civilians or suspects
+- **Kill All** - Eliminate all civilians or suspects (for specific scenarios)
+
+### Multiplayer Utilities
+- **Player List**
+  - Grant God Mode to players
+  - Grant Infinite Ammo to players
+  - Teleport players to your location
+
+### Configuration
+- **Auto Save/Load** - Automatically save and restore settings
+- **Manual Save/Load** - Save and load configurations on demand
+- **Show Enabled Options** - Display active features
+
 ---
-## Known issues:
-- Changing resolutions while the cheat is injected will crash your game.
-- Clicking Try Again after a mission causes an infinite loading state.
+## Known Issues
+
+- **Resolution Changes:** Changing game resolution while the cheat is injected will crash the game. Change resolution before injecting or after uninjecting.
+- **Mission Retry Bug:** Clicking "Try Again" after completing a mission may cause an infinite loading state. Exit to menu instead, then restart the mission.
+
+> **Tip:** If you encounter any of these issues, uninject the DLL (press `End`), restart the game, and reinject.
+
+---
+
+## Build Instructions
+
+This project is written in C++ and requires Visual Studio 2022 to build.
+
+### Requirements
+- **Visual Studio 2022** (Community Edition or higher)
+- **Windows SDK** (latest version)
+- **DirectX 11 SDK**
+- **ImGui** (already included in the repository)
+- **MinHook** (already included in the repository)
+
+### Building the Project
+
+1. Clone this repository to your local machine
+2. Open `ReadyOrNot.sln` in Visual Studio 2022
+3. Select the `Release` configuration from the dropdown
+4. Build the solution (`Ctrl+Shift+B` or Build → Build Solution)
+5. The compiled DLL will be located in the `x64/Release` folder
+
+### Build Notes
+- Always build in `Release` mode for optimal performance
+- The DLL is designed to be injected into Ready or Not while running in DirectX 11 mode
+- Injection should occur at or after the main menu screen for best results
+
+---
+
+## Troubleshooting
+
+### Game Crashes on Injection
+- Ensure you're running the game in DirectX 11 mode (not DX12)
+- Verify the game is in Windowed or Borderless mode (not fullscreen)
+- Make sure you're injecting at the main menu, not during loading
+
+### Cheat Menu Won't Open
+- Press `Insert` key to toggle the menu
+- Ensure the DLL was successfully injected (check your injector's logs)
+- Try reinjecting the DLL
+
+### Features Not Working
+- Some features may only work in specific game modes
+- Ensure God Mode or similar anti-cheat features aren't conflicting
+- Verify you're using the latest version of the cheat
+
+### Build Errors
+- Ensure you have all required dependencies installed
+- Try cleaning the solution and rebuilding (`Build → Clean Solution`, then rebuild)
+- Verify your Visual Studio installation includes C++ development tools
+
+---
+
+## Credits
+
+This project uses the following open-source libraries and tools:
+
+- **[ImGui](https://github.com/ocornut/imgui)** - Immediate mode GUI library
+- **[MinHook](https://github.com/TsudaKageyu/minhook)** - Minimalistic x86/x64 API hooking library
+- **[Dumper-7](https://github.com/Encryqed/Dumper-7)** - Unreal Engine SDK generator
+
+Special thanks to the developers of these libraries for making this project possible.
+
 ---
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for complete details.
 
 ---
 
-# RON Cheat – Build Instructions
-
-This project is written in C++ and uses ImGui and DirectX11. It is intended for educational purposes.
-
-## Requirements
-- Visual Studio 2022
-- Windows SDK (latest version)
-- DirectX 11
-- ImGui (Included already)
-- MinHook (Included already)
-
-## Building
-1. Open `ReadyOrNot.sln` in Visual Studio 2022.
-2. Select `Release` build configuration.
-3. Build the project.
-4. The output DLL will be in the `x64/Release` folder.
-
-## Notes
-- This build is meant to be injected into the RON game while running in DX11 mode and at or past the main menu.
-- Use the provided injector or your preferred injector to load the DLL.
-- Press `Insert` to open the cheat menu and `End` to uninject.
-- This project uses [ImGui](https://github.com/ocornut/imgui), [Dumper-7](https://github.com/Encryqed/Dumper-7), and [MinHook](https://github.com/TsudaKageyu/minhook).
+**Made for educational purposes only. Use responsibly and respectfully.**

@@ -2231,7 +2231,7 @@ bool ImGui::Combo(const char* label, int* current_item, bool (*old_getter)(void*
 static const ImGuiDataTypeInfo GDataTypeInfo[] =
 {
     { sizeof(char),             "S8",   "%d",   "%d"    },  // ImGuiDataType_S8
-    { sizeof(unsigned char),    "U8",   "%u",   "%u"    },
+    { sizeof(unsigned char),    "(const char*)u8",   "%u",   "%u"    },
     { sizeof(short),            "S16",  "%d",   "%d"    },  // ImGuiDataType_S16
     { sizeof(unsigned short),   "U16",  "%u",   "%u"    },
     { sizeof(int),              "S32",  "%d",   "%d"    },  // ImGuiDataType_S32

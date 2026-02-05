@@ -39,7 +39,7 @@ struct Engine
 {
 	static bool HookPresent();
 	static bool HookResizeBuffers();
-	static bool InitImGui();
+	static bool InitImGui(HWND hwnd);
 	typedef HRESULT(__stdcall* tPresent)(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 	static tPresent oPresent;
 	static LPVOID PresentAddr;

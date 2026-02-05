@@ -19,18 +19,15 @@ bool Engine::HookPresent()
 	return true;
 }
 
-bool Engine::InitImGui()
+bool Engine::InitImGui(HWND hwnd)
 {
-	HWND hwnd = FindWindow(L"UnrealWindow", nullptr);
 	if (!Engine::pDevice || !Engine::pContext) {
 		std::cout << "[ERROR] Device or Context is null...\n";
-		Sleep(30);
 		return false;
 	}
 
 	if (!hwnd) {
 		std::cout << "[ERROR] HWND is null...\n";
-		Sleep(30);
 		return false;
 	}
 
@@ -58,8 +55,40 @@ bool Engine::InitImGui()
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Controller Controls
-	io.Fonts->AddFontDefault();
+	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
+
+	// Load Windows system Chinese font (Microsoft YaHei)
+	char winDir[MAX_PATH];
+	GetWindowsDirectoryA(winDir, MAX_PATH);
+	std::string fontPath = std::string(winDir) + "\\Fonts\\msyh.ttc";
+	
+	std::cout << "[FontDebug] Target Font Path: " << fontPath << std::endl;
+
+	ImFont* font = nullptr;
+	if (GetFileAttributesA(fontPath.c_str()) != INVALID_FILE_ATTRIBUTES) {
+		std::cout << "[FontDebug] Font file found on disk." << std::endl;
+		font = io.Fonts->AddFontFromFileTTF(fontPath.c_str(), 18.0f, NULL, io.Fonts->GetGlyphRangesChineseFull());
+		if (font) {
+			std::cout << "[FontDebug] Font loaded successfully into ImGui." << std::endl;
+		} else {
+			std::cout << "[FontDebug] ERROR: ImGui failed to load the font file." << std::endl;
+		}
+	} else {
+		std::cout << "[FontDebug] ERROR: Font file NOT found at: " << fontPath << std::endl;
+	}
+
+	if (!font) {
+		std::cout << "[FontDebug] Falling back to default font (No Chinese support)." << std::endl;
+		io.Fonts->AddFontDefault();
+	}
+
 	io.MouseDrawCursor = true;  // Let ImGui draw the cursor
+
+	if (Engine::pSwapChain) {
+		DXGI_SWAP_CHAIN_DESC desc;
+		Engine::pSwapChain->GetDesc(&desc);
+		io.DisplaySize = ImVec2((float)desc.BufferDesc.Width, (float)desc.BufferDesc.Height);
+	}
 
 	ImGui::StyleColorsDark();
 

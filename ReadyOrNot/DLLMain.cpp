@@ -1,4 +1,4 @@
-#include "Engine.h"
+﻿#include "Engine.h"
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
@@ -45,32 +45,24 @@ WNDPROC oWndProc = nullptr;
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	if (!Cleaning.load())
 	{
-		if (ImGui::GetCurrentContext()) {
-			ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam);
-		}
+		if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
+			return true;
 
-		if (uMsg == WM_KEYUP) {
-			if (wParam == VK_INSERT) {
-				ShowMenu = !ShowMenu;
-				//std::cout << "Menu: " << (ShowMenu ? "ON" : "OFF") << "\n";
-				ImGui::GetIO().MouseDrawCursor = ShowMenu;
-				ShowCursor(ShowMenu);
-				return TRUE;
+		if (ShowMenu) {
+			// Block these messages from the game when menu is open
+			switch (uMsg) {
+				case WM_LBUTTONDOWN: case WM_LBUTTONUP: case WM_LBUTTONDBLCLK:
+				case WM_RBUTTONDOWN: case WM_RBUTTONUP: case WM_RBUTTONDBLCLK:
+				case WM_MBUTTONDOWN: case WM_MBUTTONUP: case WM_MBUTTONDBLCLK:
+				case WM_MOUSEMOVE: case WM_MOUSEWHEEL: case WM_CHAR:
+				case WM_KEYDOWN: case WM_KEYUP: case WM_SYSKEYDOWN: case WM_SYSKEYUP:
+					return true;
 			}
 		}
 
-		if (uMsg == WM_KEYUP) {
-			if (wParam == VK_END) {
-				Cleaning.store(true);
-				return TRUE;
-			}
-		}
-
-		if (uMsg == WM_SETCURSOR) {
-			if (!ShowMenu) {   // only block cursor when menu is hidden
-				SetCursor(NULL);
-				return TRUE;    // prevent Windows from drawing it
-			}
+		if (uMsg == WM_KEYUP && wParam == VK_END) {
+			Cleaning.store(true);
+			return TRUE;
 		}
 	}
 
@@ -83,82 +75,93 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 	while (g_PresentCount.load() != 0)
 		Sleep(0); 
 
-
-	// Release ImGui render target
 	if (Engine::pRenderTargetView) {
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
 	}
 
-	// Call original function
-	HRESULT hr = Engine::oResizeBuffers(Engine::pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+	ImGui_ImplDX11_InvalidateDeviceObjects();
 
-	// Recreate render target view
+	HRESULT hr = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+
+	pSwapChain->GetDesc(&Engine::sd);
+
 	ID3D11Texture2D* pBackBuffer = nullptr;
-	if (SUCCEEDED(Engine::pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
+	if (SUCCEEDED(pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
 		Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
 		pBackBuffer->Release();
 	}
 
-	Resizing.store(false);
+	ImGui_ImplDX11_CreateDeviceObjects();
 
+	if (ImGui::GetCurrentContext()) {
+		ImGui::GetIO().DisplaySize = ImVec2((float)Width, (float)Height);
+	}
+
+	Resizing.store(false);
 	return hr;
 }
 
+static bool menu_key_pressed = false;
+
 HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
 {
-	if (Cleaning.load())  // If we are cleaning, stop drawing.
-		return Engine::oPresent(SwapChain, SyncInterval, Flags);
-
-	if (Resizing.load())
+	if (Cleaning.load() || Resizing.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
 
 	g_PresentCount.fetch_add(1);
-
-	GVars.AutoSetVariables();
-
-	if (Frames % 30 == 0) // Every 30 frames, ensure cheats are correctly applied
-	{
-		AReadyOrNotCharacter* RONCT = GVars.ReadyOrNotChar;
-		if (GVars.PlayerController && RONCT && Utils::IsValidActor(RONCT) && RONCT->GetEquippedWeapon())
-		{
-			RONCT->bGodMode = CVars.GodMode;
-			RONCT->GetEquippedWeapon()->bInfiniteAmmo = CVars.InfAmmo;
-		}
-	}
-
-	if (Frames % 300 == 0 && MiscSettings.ShouldAutoSave) // Every 300 frames, save settings
-	{
-		SaveSettings();
-	}
 
 	if (!init)
 	{
 		if (SUCCEEDED(SwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&Engine::pDevice)))
 		{
-			std::cout << "[hkPresent] Device acquired successfully\n";
-			HWND hwnd = FindWindow(L"UnrealWindow", nullptr);
-			Engine::pDevice->GetImmediateContext(&Engine::pContext);
-
 			Engine::pSwapChain = SwapChain;
 			SwapChain->GetDesc(&Engine::sd);
+			HWND hwnd = Engine::sd.OutputWindow;
 
-			if (!hwnd) hwnd = GetForegroundWindow();
-
+			Engine::pDevice->GetImmediateContext(&Engine::pContext);
 			Engine::HookResizeBuffers();
+			Engine::InitImGui(hwnd);
 
-			Engine::InitImGui();
-
-			// Hook WndProc for input handling
 			if (hwnd) {
 				oWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
 			}
 
 			init = true;
 		}
-		else
-			printf("[INFO] Not DX11 (likely DX12)\n");
+	}
 
+	if (!init || !ImGui::GetCurrentContext()) {
+		g_PresentCount.fetch_sub(1);
+		return Engine::oPresent(SwapChain, SyncInterval, Flags);
+	}
+
+	// Update display size and GVars from REAL swapchain every frame
+	DXGI_SWAP_CHAIN_DESC desc;
+	SwapChain->GetDesc(&desc);
+	ImGui::GetIO().DisplaySize = ImVec2((float)desc.BufferDesc.Width, (float)desc.BufferDesc.Height);
+	GVars.ScreenSize = ImGui::GetIO().DisplaySize;
+
+	GVars.AutoSetVariables();
+
+	// Menu Toggle Logic (Using GetAsyncKeyState for reliability)
+	if (GetAsyncKeyState(VK_INSERT) & 0x8000) {
+		if (!menu_key_pressed) {
+			ShowMenu = !ShowMenu;
+			ImGui::GetIO().MouseDrawCursor = ShowMenu;
+			menu_key_pressed = true;
+		}
+	} else {
+		menu_key_pressed = false;
+	}
+
+	if (Frames % 300 == 0 && MiscSettings.ShouldAutoSave)
+	{
+		SaveSettings();
+	}
+
+	if (Frames % 60 == 0 && !CVars.SecretFeatures)
+	{
 		if (GVars.PlayerController && GVars.PlayerController->PlayerState)
 		{
 			auto PlayerState = GVars.PlayerController->PlayerState;
@@ -168,70 +171,56 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		}
 	}
 
-	if (!Engine::oPresent)
-		return 0;
-
-	if (!ImGui::GetCurrentContext())
-	{
-		printf("[ERROR] ImGui context not found!\n");
-		return Engine::oPresent(SwapChain, SyncInterval, Flags);
-	}
-
-	if (GVars.ScreenSize.x != ImGui::GetIO().DisplaySize.x || GVars.ScreenSize.y != ImGui::GetIO().DisplaySize.y)
-	{
-		GVars.ScreenSize = ImGui::GetIO().DisplaySize;
-	}
-
-	// Start the ImGui frame
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
 	if (ShowMenu) {
-		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
+		ImGui::SetNextWindowSize(ImVec2(600, 500), ImGuiCond_FirstUseEver);
+		ImGui::Begin((const char*)u8"Ready or Not 免费辅助 - PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
 
 		ImGui::SeparatorText("Hello, Have Fun Cheating!");
 
 		if  (ImGui::BeginTabBar("MainTabBar"))
 		{
-			if (ImGui::BeginTabItem("About"))
+			if (ImGui::BeginTabItem((const char*)u8"关于"))
 			{
-				ImGui::Text("Free Ready or Not Cheat by PeachMarrow12");
-				ImGui::Text("Version %d.%d.%d", MAJORVERSION, MINORVERSION, PATCHVERSION);
+				ImGui::Text((const char*)u8"Ready or Not 免费辅助 - PeachMarrow12");
+				ImGui::Text((const char*)u8"版本 %d.%d.%d", MAJORVERSION, MINORVERSION, PATCHVERSION);
 
 				if (GVars.PlayerController && GVars.PlayerController->PlayerState)
 				{
 					APlayerState* PlayerState = GVars.PlayerController->PlayerState;
 					std::string PlayerName = PlayerState->GetPlayerName().ToString();
-					ImGui::Text("Thank you for using my cheat %s!", PlayerName.c_str());
+					ImGui::Text((const char*)u8"感谢使用此辅助, %s!", PlayerName.c_str());
 				}
 				else
 				{
-					ImGui::Text("Username not found but thanks anyways!");
+					ImGui::Text((const char*)u8"未找到用户名，但仍感谢使用！");
 				}
 
 				ImGui::EndTabItem();
 			}
 
-			if (ImGui::BeginTabItem("Player"))
+			if (ImGui::BeginTabItem((const char*)u8"玩家"))
 			{
-				if (ImGui::Checkbox("GodMode", &CVars.GodMode))
+				if (ImGui::Checkbox((const char*)u8"无敌模式 (GodMode)", &CVars.GodMode))
 					Cheats::ToggleGodMode();
 				HostOnlyTooltip();
 
-				ImGui::Checkbox("Aimbot", &CVars.Aimbot);
+				ImGui::Checkbox((const char*)u8"自瞄 (Aimbot)", &CVars.Aimbot);
 
-				ImGui::Checkbox("Silent Aim", &CVars.SilentAim);
-				AddDefaultTooltip("Not fully fleshed out so use with caution.");
+				ImGui::Checkbox((const char*)u8"静默自瞄 (Silent Aim)", &CVars.SilentAim);
+				AddDefaultTooltip((const char*)u8"尚不完善，请谨慎使用。");
 				HostOnlyTooltip();
 
-				ImGui::Checkbox("ESP", &CVars.ESP);
+				ImGui::Checkbox((const char*)u8"透视 (ESP)", &CVars.ESP);
 
-				ImGui::SliderFloat("Player Speed", &CVars.Speed, 1, 30, "%.1f");
+				ImGui::SliderFloat((const char*)u8"移动速度", &CVars.Speed, 1, 30, "%.1f");
 				ImGui::SameLine();
-				ImGui::Checkbox("Enable Speed", &CVars.SpeedEnabled);
+				ImGui::Checkbox((const char*)u8"开启速度修改", &CVars.SpeedEnabled);
 
-				if (ImGui::SliderFloat("FOV", &CVars.FOV, 0.1f, 179.9f))
+				if (ImGui::SliderFloat((const char*)u8"视野 (FOV)", &CVars.FOV, 0.1f, 179.9f))
 				{
 					Cheats::ChangeFOV();
 				}
@@ -239,137 +228,137 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				ImGui::EndTabItem();
 			}
 
-			if (ImGui::BeginTabItem("Weapon"))
+			if (ImGui::BeginTabItem((const char*)u8"武器"))
 			{
-				if (ImGui::Checkbox("Infinite Ammo", &CVars.InfAmmo))
+				if (ImGui::Checkbox((const char*)u8"无限弹药", &CVars.InfAmmo))
 					Cheats::ToggleInfAmmo();
 				HostOnlyTooltip();
 
-				if (ImGui::Button("Remove Recoil"))
+				if (ImGui::Button((const char*)u8"移除后坐力"))
 					Cheats::RemoveRecoil();
 
-				if (ImGui::Button("Remove Spread"))
+				if (ImGui::Button((const char*)u8"移除扩散"))
 					Cheats::RemoveSpread();
 
-				if (ImGui::Button("Add Auto Fire"))
+				if (ImGui::Button((const char*)u8"添加全自动"))
 					Cheats::AddAutoFire();
 
-				if (ImGui::Button("Add Penetration"))
+				if (ImGui::Button((const char*)u8"添加穿墙"))
 					Cheats::PenetrateWalls();
 
-				if (ImGui::Button("Insta Kill"))
+				if (ImGui::Button((const char*)u8"秒杀"))
 					Cheats::InstaKill();
 
-				if (ImGui::Button("Increase Fire Rate"))
+				if (ImGui::Button((const char*)u8"增加射速"))
 					Cheats::SetFireRate(0.001f);
 				
-				ImGui::Checkbox("Shoot From Reticle", &CVars.ShootFromReticle);
+				ImGui::Checkbox((const char*)u8"准星处射击", &CVars.ShootFromReticle);
 
-				if (ImGui::Button("Add Magazine"))
+				if (ImGui::Button((const char*)u8"添加弹匣"))
 					Cheats::AddMag();
 
-				ImGui::Checkbox("TriggerBot", &CVars.TriggerBot);
+				ImGui::Checkbox((const char*)u8"自动射击 (TriggerBot)", &CVars.TriggerBot);
 
 				ImGui::EndTabItem();
 			}
 
-			if (ImGui::BeginTabItem("World"))
+			if (ImGui::BeginTabItem((const char*)u8"世界"))
 			{
-				if (ImGui::Button("Kill All Suspects"))
+				if (ImGui::Button((const char*)u8"杀死所有嫌疑人"))
 					Cheats::KillAll(ETeam::TEAM_SUSPECT);
 
 				ImGui::SameLine();
 
-				if (ImGui::Button("Surrender All Suspects"))
+				if (ImGui::Button((const char*)u8"降伏所有嫌疑人"))
 					Cheats::SurrenderAll(ETeam::TEAM_SUSPECT);
 
 				ImGui::SameLine();
 
-				if (ImGui::Button("Arrest All Suspects"))
+				if (ImGui::Button((const char*)u8"逮捕所有嫌疑人"))
 					Cheats::ArrestAll(ETeam::TEAM_SUSPECT);
 				HostOnlyTooltip();
 
-				if (ImGui::Button("Kill All Civilians"))
+				if (ImGui::Button((const char*)u8"杀死所有平民"))
 					Cheats::KillAll(ETeam::TEAM_CIVILIAN);
 
 				ImGui::SameLine();
 
-				if (ImGui::Button("Surrender All Civilians"))
+				if (ImGui::Button((const char*)u8"降伏所有平民"))
 					Cheats::SurrenderAll(ETeam::TEAM_CIVILIAN);
 
 				ImGui::SameLine();
 
-				if (ImGui::Button("Arrest All Civilians"))
+				if (ImGui::Button((const char*)u8"逮捕所有平民"))
 					Cheats::ArrestAll(ETeam::TEAM_CIVILIAN);
 				HostOnlyTooltip();
 
-				if (ImGui::Button("Collect All Evidence"))
+				if (ImGui::Button((const char*)u8"收集所有证据"))
 					Cheats::GetAllEvidence();
 
-				if (ImGui::Button("AutoWin"))
+				if (ImGui::Button((const char*)u8"自动获胜"))
 					Cheats::AutoWin();
 
-				if (ImGui::Button("Unlock All Doors"))
+				if (ImGui::Button((const char*)u8"解锁所有门"))
 					Cheats::UnlockDoors();
 
-				ImGui::Checkbox("Bullet Time", &CVars.BulletTime);
+				ImGui::Checkbox((const char*)u8"子弹时间", &CVars.BulletTime);
 
 				ImGui::EndTabItem();
 			}
 
-			if (ImGui::BeginTabItem("Misc"))
+			if (ImGui::BeginTabItem((const char*)u8"杂项"))
 			{
-				if (ImGui::Button("Save Settings"))
+				if (ImGui::Button((const char*)u8"保存设置"))
 					SaveSettings();
 				ImGui::SameLine();
 
-				if (ImGui::Button("Load Settings"))
+				if (ImGui::Button((const char*)u8"加载设置"))
 					LoadSettings();
-				AddDefaultTooltip("These only save and load the configs not which cheats are enabled.");
+				AddDefaultTooltip((const char*)u8"这些只保存和加载配置，而不是哪些功能已启用。");
 
-				ImGui::Checkbox("Debug", &CVars.Debug);
-				AddDefaultTooltip("This just enables options in the menu I use for finding bugs and useful information. This is most likely useless to you.");
+				ImGui::Checkbox((const char*)u8"调试 (Debug)", &CVars.Debug);
+				AddDefaultTooltip((const char*)u8"这只是开启了一些我用来查找错误和有用信息的菜单选项。对你来说可能没用。");
 
-				ImGui::InputText("Debug Func Name Must Include", &TextVars.DebugFunctionNameMustInclude);
-				ImGui::InputText("Debug Func Obj Name Must Include", &TextVars.DebugFunctionObjectMustInclude);
+				ImGui::InputText((const char*)u8"调试函数名包含", &TextVars.DebugFunctionNameMustInclude);
+				ImGui::InputText((const char*)u8"调试对象名包含", &TextVars.DebugFunctionObjectMustInclude);
 
 				if (CVars.Debug)
-					if (ImGui::Button("Print Actors"))
+					if (ImGui::Button((const char*)u8"打印 Actor"))
 						Utils::PrintActors(nullptr);
 
 				ImGui::EndTabItem();
 			}
 
-			if (ImGui::BeginTabItem("Configuration"))
+			if (ImGui::BeginTabItem((const char*)u8"配置"))
 			{
-				if (ImGui::TreeNode("Aimbot Settings"))
+				if (ImGui::TreeNode((const char*)u8"自瞄设置 (Aimbot Settings)"))
 				{
-					ImGui::SliderFloat("Aimbot FOV", &AimbotSettings.MaxFOV, 0.01f, 180.0f, "%.1f");
+					ImGui::SliderFloat((const char*)u8"自瞄视野 (Aimbot FOV)", &AimbotSettings.MaxFOV, 0.01f, 180.0f, "%.1f");
 
-					ImGui::Checkbox("Should Aimbot require LOS", &AimbotSettings.LOS);
-					AddDefaultTooltip("Targets must be visible; line - of - sight required.");
+					ImGui::Checkbox((const char*)u8"需要可见性 (LOS)", &AimbotSettings.LOS);
+					AddDefaultTooltip((const char*)u8"目标必须可见；需要视线检查。");
 
-					ImGui::Checkbox("Target Civilians", &AimbotSettings.TargetCivilians);
+					ImGui::Checkbox((const char*)u8"目标平民", &AimbotSettings.TargetCivilians);
 
-					ImGui::Checkbox("Target Dead", &AimbotSettings.TargetDead);
+					ImGui::Checkbox((const char*)u8"目标已死亡单位", &AimbotSettings.TargetDead);
 
-					ImGui::Checkbox("Target Arrested", &AimbotSettings.TargetArrested);
+					ImGui::Checkbox((const char*)u8"目标已逮捕单位", &AimbotSettings.TargetArrested);
 
-					ImGui::Checkbox("Target All", &AimbotSettings.TargetAll);
+					ImGui::Checkbox((const char*)u8"目标所有单位", &AimbotSettings.TargetAll);
 
-					ImGui::SliderFloat("Max Distance", &AimbotSettings.MaxDistance, 0.0f, 300.0f, "%.1f");
+					ImGui::SliderFloat((const char*)u8"最大距离", &AimbotSettings.MaxDistance, 0.0f, 300.0f, "%.1f");
 
-					ImGui::SliderFloat("Minimum Distance", &AimbotSettings.MinDistance, 0.0f, 100.0f, "%.1f");
+					ImGui::SliderFloat((const char*)u8"最小距离", &AimbotSettings.MinDistance, 0.0f, 100.0f, "%.1f");
 
-					ImGui::Checkbox("Smoothing", &AimbotSettings.Smooth);
+					ImGui::Checkbox((const char*)u8"平滑自瞄", &AimbotSettings.Smooth);
 
-					ImGui::SliderFloat("Smoothing Vector", &AimbotSettings.SmoothingVector, 1.0f, 20.0f, "%.2f");
+					ImGui::SliderFloat((const char*)u8"平滑系数", &AimbotSettings.SmoothingVector, 1.0f, 20.0f, "%.2f");
 
-					ImGui::Checkbox("Draw Arrow", &AimbotSettings.DrawArrow);
+					ImGui::Checkbox((const char*)u8"显示指向箭头", &AimbotSettings.DrawArrow);
 
-					ImGui::Checkbox("Draw FOV", &AimbotSettings.DrawFOV);
+					ImGui::Checkbox((const char*)u8"显示视野范围", &AimbotSettings.DrawFOV);
 
-					if (ImGui::BeginCombo("Target Bone", TextVars.AimbotBone.c_str()))
+					if (ImGui::BeginCombo((const char*)u8"目标骨骼", TextVars.AimbotBone.c_str()))
 					{
 						for (int i = 0; i < IM_ARRAYSIZE(BoneOptions); i++)
 						{
@@ -384,12 +373,12 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 						ImGui::EndCombo();
 					}
 
-					ImGui::Checkbox("Require HotKey", &AimbotSettings.RequireKeyHeld);
+					ImGui::Checkbox((const char*)u8"需要热键配合", &AimbotSettings.RequireKeyHeld);
 
 					const char* ABpreview = ImGui::GetKeyName(AimbotSettings.AimbotKey);
 					if (!ABpreview) ABpreview = "None";
 
-					if (ImGui::BeginCombo("Select Key for Aimbot", ABpreview))
+					if (ImGui::BeginCombo((const char*)u8"选择自瞄按键", ABpreview))
 					{
 						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 						{
@@ -405,37 +394,37 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 								ImGui::SetItemDefaultFocus();
 						}
 						ImGui::EndCombo();
-						AddDefaultTooltip("Only activate the aimbot while this key is held");
+						AddDefaultTooltip((const char*)u8"仅在按住此键时激活自瞄");
 					}
 
 					ImGui::TreePop();
 				}
 
-				if (ImGui::TreeNode("ESP Settings"))
+				if (ImGui::TreeNode((const char*)u8"透视设置 (ESP Settings)"))
 				{
-					ImGui::Checkbox("Show Team", &ESPSettings.ShowTeam);
+					ImGui::Checkbox((const char*)u8"显示队友", &ESPSettings.ShowTeam);
 
-					ImGui::Checkbox("Show Box", &ESPSettings.ShowBox);
+					ImGui::Checkbox((const char*)u8"显示方框", &ESPSettings.ShowBox);
 
-					ImGui::Checkbox("Show Traps", &ESPSettings.ShowTraps);
+					ImGui::Checkbox((const char*)u8"显示陷阱", &ESPSettings.ShowTraps);
 
-					ImGui::Checkbox("Show Enemy Distance", &ESPSettings.ShowEnemyDistance);
+					ImGui::Checkbox((const char*)u8"显示敌方距离", &ESPSettings.ShowEnemyDistance);
 
-					ImGui::Checkbox("Show Bones", &ESPSettings.Bones);
+					ImGui::Checkbox((const char*)u8"显示骨骼", &ESPSettings.Bones);
 
-					ImGui::ColorEdit4("Suspect Color", (float*)&ESPSettings.SuspectColor, ImGuiColorEditFlags_NoInputs);
+					ImGui::ColorEdit4((const char*)u8"嫌疑人颜色", (float*)&ESPSettings.SuspectColor, ImGuiColorEditFlags_NoInputs);
 
-					ImGui::ColorEdit4("Civilian Color", (float*)&ESPSettings.CivilianColor, ImGuiColorEditFlags_NoInputs);
+					ImGui::ColorEdit4((const char*)u8"平民颜色", (float*)&ESPSettings.CivilianColor, ImGuiColorEditFlags_NoInputs);
 
-					ImGui::ColorEdit4("Dead Color", (float*)&ESPSettings.DeadColor, ImGuiColorEditFlags_NoInputs);
+					ImGui::ColorEdit4((const char*)u8"死亡单位颜色", (float*)&ESPSettings.DeadColor, ImGuiColorEditFlags_NoInputs);
 
-					ImGui::ColorEdit4("Team Color", (float*)&ESPSettings.TeamColor, ImGuiColorEditFlags_NoInputs);
+					ImGui::ColorEdit4((const char*)u8"队友颜色", (float*)&ESPSettings.TeamColor, ImGuiColorEditFlags_NoInputs);
 
-					ImGui::ColorEdit4("Arrested Color", (float*)&ESPSettings.ArrestColor, ImGuiColorEditFlags_NoInputs);
+					ImGui::ColorEdit4((const char*)u8"被捕单位颜色", (float*)&ESPSettings.ArrestColor, ImGuiColorEditFlags_NoInputs);
 
-					ImGui::Checkbox("LOS", &ESPSettings.LOS);
+					ImGui::Checkbox((const char*)u8"仅显示可见目标 (LOS)", &ESPSettings.LOS);
 
-					if (ImGui::SliderFloat("Bone Opacity", &ESPSettings.BoneOpacity, 0.0f, 1.0f, "%.2f"))
+					if (ImGui::SliderFloat((const char*)u8"骨骼透明度", &ESPSettings.BoneOpacity, 0.0f, 1.0f, "%.2f"))
 					{
 						ESPSettings.SuspectColor = ImVec4(1.0f, 0.0f, 0.0f, ESPSettings.BoneOpacity);
 						ESPSettings.CivilianColor = ImVec4(0.0f, 0.0f, 1.0f, ESPSettings.BoneOpacity);
@@ -444,38 +433,38 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 						ESPSettings.ArrestColor = ImVec4(1.0f, 1.0f, 0.0f, ESPSettings.BoneOpacity);
 					}
 
-					ImGui::Checkbox("Show Objectives", &ESPSettings.ShowObjectives);
-					AddDefaultTooltip("The Objectives don't show the actual location");
+					ImGui::Checkbox((const char*)u8"显示任务目标", &ESPSettings.ShowObjectives);
+					AddDefaultTooltip((const char*)u8"任务目标不显示实际位置");
 					ImGui::TreePop();
 				}
 
-				if (ImGui::TreeNode("Silent Aim Settings"))
+				if (ImGui::TreeNode((const char*)u8"静默自瞄设置 (Silent Aim Settings)"))
 				{
-					ImGui::Checkbox("Target Civilians", &SilentAimSettings.TargetCivilians);
+					ImGui::Checkbox((const char*)u8"目标平民", &SilentAimSettings.TargetCivilians);
 
-					ImGui::Checkbox("Target All", &SilentAimSettings.TargetAll);
+					ImGui::Checkbox((const char*)u8"目标所有单位", &SilentAimSettings.TargetAll);
 
-					ImGui::Checkbox("Target Dead", &SilentAimSettings.TargetDead);
+					ImGui::Checkbox((const char*)u8"目标已死亡单位", &SilentAimSettings.TargetDead);
 
-					ImGui::Checkbox("Target Surrendered", &SilentAimSettings.TargetSurrendered);
+					ImGui::Checkbox((const char*)u8"目标已投降单位", &SilentAimSettings.TargetSurrendered);
 
-					ImGui::Checkbox("Target Arrested", &SilentAimSettings.TargetArrested);
+					ImGui::Checkbox((const char*)u8"目标已逮捕单位", &SilentAimSettings.TargetArrested);
 
-					ImGui::SliderFloat("Silent Aim FOV", &SilentAimSettings.MaxFOV, 0, 180.0f, "%.1f");
+					ImGui::SliderFloat((const char*)u8"静默自瞄视野", &SilentAimSettings.MaxFOV, 0, 180.0f, "%.1f");
 
-					ImGui::Checkbox("Draw FOV", &SilentAimSettings.DrawFOV);
+					ImGui::Checkbox((const char*)u8"显示视野范围", &SilentAimSettings.DrawFOV);
 
-					ImGui::SliderFloat("FOV Line Thickness", &SilentAimSettings.FOVThickness, 0.1f, 10.0f, "%.2f");
+					ImGui::SliderFloat((const char*)u8"视野线粗细", &SilentAimSettings.FOVThickness, 0.1f, 10.0f, "%.2f");
 
-					ImGui::Checkbox("Draw Snap line", &SilentAimSettings.DrawArrow);
+					ImGui::Checkbox((const char*)u8"显示追踪线", &SilentAimSettings.DrawArrow);
 
-					ImGui::SliderFloat("Snap Line Thickness", &SilentAimSettings.ArrowThickness, 0.1f, 10.0f, "%.2f");
+					ImGui::SliderFloat((const char*)u8"追踪线粗细", &SilentAimSettings.ArrowThickness, 0.1f, 10.0f, "%.2f");
 
-					ImGui::Checkbox("Require LOS", &SilentAimSettings.RequiresLOS);
+					ImGui::Checkbox((const char*)u8"需要可见性 (LOS)", &SilentAimSettings.RequiresLOS);
 
-					ImGui::SliderFloat("Hit Chance", &SilentAimSettings.HitChance, 0.0f, 100, "%.1f");
+					ImGui::SliderFloat((const char*)u8"命中概率", &SilentAimSettings.HitChance, 0.0f, 100, "%.1f");
 
-					if (ImGui::BeginCombo("Target Bone", TextVars.SilentAimBone.c_str()))
+					if (ImGui::BeginCombo((const char*)u8"目标骨骼", TextVars.SilentAimBone.c_str()))
 					{
 						for (int i = 0; i < IM_ARRAYSIZE(BoneOptions); i++)
 						{
@@ -493,46 +482,46 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					ImGui::TreePop();
 				}
 
-				if (ImGui::TreeNode("Misc Settings"))
+				if (ImGui::TreeNode((const char*)u8"杂项设置 (Misc Settings)"))
 				{
-					ImGui::SeparatorText("Reticle Settings");
+					ImGui::SeparatorText((const char*)u8"准星设置");
 
-					ImGui::Checkbox("Reticle", &CVars.Reticle);
+					ImGui::Checkbox((const char*)u8"准星", &CVars.Reticle);
 
-					ImGui::ColorEdit4("Reticle Color", (float*)&MiscSettings.ReticleColor);
+					ImGui::ColorEdit4((const char*)u8"准星颜色", (float*)&MiscSettings.ReticleColor);
 
-					ImGui::DragFloat2("Reticle Position", (float*)&MiscSettings.ReticlePosition, 1, -100, 100);
+					ImGui::DragFloat2((const char*)u8"准星位置", (float*)&MiscSettings.ReticlePosition, 1, -100, 100);
 
-					ImGui::SliderFloat("Reticle Size", &MiscSettings.ReticleSize, 1, 15);
+					ImGui::SliderFloat((const char*)u8"准星大小", &MiscSettings.ReticleSize, 1, 15);
 
-					ImGui::Checkbox("Use a Cross Reticle", &MiscSettings.CrossReticle);
+					ImGui::Checkbox((const char*)u8"使用十字准星", &MiscSettings.CrossReticle);
 
-					ImGui::Checkbox("Only Show Reticle while Throwing a Grenade", &MiscSettings.ReticleWhenThrowing);
+					ImGui::Checkbox((const char*)u8"仅在投掷手雷时显示准星", &MiscSettings.ReticleWhenThrowing);
 
-					ImGui::SeparatorText("TriggerBot Settings");
+					ImGui::SeparatorText((const char*)u8"自动射击设置 (TriggerBot)");
 
-					ImGui::Checkbox("TriggerBot Shoots Civilians", &MiscSettings.TriggerBotTargetsCivilians);
+					ImGui::Checkbox((const char*)u8"自动射击平民", &MiscSettings.TriggerBotTargetsCivilians);
 
-					ImGui::Checkbox("TriggerBot Uses SilentAim", &MiscSettings.TriggerBotUsesSilentAim);
-					AddDefaultTooltip("Guarantees you will hit the target");
+					ImGui::Checkbox((const char*)u8"自动射击使用静默自瞄", &MiscSettings.TriggerBotUsesSilentAim);
+					AddDefaultTooltip((const char*)u8"确保你能命中目标");
 
-					ImGui::SeparatorText("Other");
+					ImGui::SeparatorText((const char*)u8"其他");
 
-					ImGui::Checkbox("Show Enabled Options", &CVars.RenderOptions);
+					ImGui::Checkbox((const char*)u8"显示已开启的功能", &CVars.RenderOptions);
 
-					ImGui::Checkbox("List Players", &CVars.ListPlayers);
+					ImGui::Checkbox((const char*)u8"显示玩家列表", &CVars.ListPlayers);
 
-					ImGui::Checkbox("Should Auto Save Settings", &MiscSettings.ShouldAutoSave);
+					ImGui::Checkbox((const char*)u8"自动保存设置", &MiscSettings.ShouldAutoSave);
 					ImGui::SameLine();
-					ImGui::Checkbox("Should Save Enabled Cheats", &MiscSettings.ShouldSaveCVars);
+					ImGui::Checkbox((const char*)u8"保存已启用的功能状态", &MiscSettings.ShouldSaveCVars);
 
-					ImGui::SeparatorText("KeyBinds");
+					ImGui::SeparatorText((const char*)u8"按键绑定");
 
 					// Create a combo box
 					const char* TBpreview = ImGui::GetKeyName(TriggerBotKey);
 					if (!TBpreview) TBpreview = "None";
 
-					if (ImGui::BeginCombo("Select Key for TriggerBot", TBpreview))
+					if (ImGui::BeginCombo((const char*)u8"选择自动射击按键", TBpreview))
 					{
 						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 						{
@@ -553,7 +542,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					const char* ESPpreview = ImGui::GetKeyName(ESPKey);
 					if (!ESPpreview) ESPpreview = "None";
 
-					if (ImGui::BeginCombo("Select Key for ESP", ESPpreview))
+					if (ImGui::BeginCombo((const char*)u8"选择透视按键", ESPpreview))
 					{
 						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 						{
@@ -574,7 +563,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					const char* AimPreview = ImGui::GetKeyName(AimButton);
 					if (!AimPreview) AimPreview = "None";
 
-					if (ImGui::BeginCombo("Select AimLock button", AimPreview))
+					if (ImGui::BeginCombo((const char*)u8"选择锁定目标按键", AimPreview))
 					{
 						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 						{
@@ -601,9 +590,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 			if (CVars.SecretFeatures)
 			{
-				if (ImGui::BeginTabItem("Secret Features"))
+				if (ImGui::BeginTabItem((const char*)u8"秘密功能 (Secret Features)"))
 				{
-					ImGui::Text("This is for development.");
+					ImGui::Text((const char*)u8"此选项仅供开发使用。");
 					ImGui::EndTabItem();
 				}
 			}
@@ -612,9 +601,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		}
 
 		ImGui::Separator();
-		ImGui::Text("You can find me on UnknownCheats.me as Peachmarrow13.");
+		ImGui::Text((const char*)u8"你可以在 UnknownCheats.me 上找到我，ID 为 Peachmarrow13。");
 		ImGui::SameLine();
-		ImGui::Text("This cheat was released on UnknownCheats.me for free do not download this from anywhere else.");
+		ImGui::Text((const char*)u8"此辅助在 UnknownCheats.me 免费发布，请勿从其他任何地方下载。");
 		ImGui::End();
 	}
 
@@ -682,20 +671,20 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (CVars.SpeedEnabled)
 		Cheats::SetPlayerSpeed();
 
+	ImGui::Render();
+
 	if (Engine::pRenderTargetView) {
 		Engine::pContext->OMSetRenderTargets(1, &Engine::pRenderTargetView, nullptr);
 
 		D3D11_VIEWPORT vp = {};
-		vp.Width = (float)Engine::sd.BufferDesc.Width;
-		vp.Height = (float)Engine::sd.BufferDesc.Height;
+		vp.Width = ImGui::GetIO().DisplaySize.x;
+		vp.Height = ImGui::GetIO().DisplaySize.y;
 		vp.MinDepth = 0.0f;
 		vp.MaxDepth = 1.0f;
 		vp.TopLeftX = 0;
 		vp.TopLeftY = 0;
 		Engine::pContext->RSSetViewports(1, &vp);
 	}
-
-	ImGui::Render();
 	
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 

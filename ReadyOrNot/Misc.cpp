@@ -413,29 +413,29 @@ void Cheats::RenderEnabledOptions()
 	ImVec4 Color = ImColor::HSV(Hue, 1.f, 1.f);
 
 	ImGui::SetNextWindowBgAlpha(0.3);
-	ImGui::Begin("Enabled Options", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
+	ImGui::Begin((const char*)u8"已开启功能列表", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
 	ImGui::SetWindowPos(ImVec2(10, 30));
 
-	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), "Enabled Options:");
+	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), (const char*)u8"已开启功能:");
 	if (CVars.GodMode)
-		ImGui::TextColored(Color, "God Mode");
+		ImGui::TextColored(Color, (const char*)u8"无敌模式");
 	if (CVars.InfAmmo)
-		ImGui::TextColored(Color, "Infinite Ammo");
+		ImGui::TextColored(Color, (const char*)u8"无限弹药");
 	if (CVars.Aimbot)
-		ImGui::TextColored(Color, "Aimbot");
+		ImGui::TextColored(Color, (const char*)u8"自瞄");
 	if (CVars.ESP)
-		ImGui::TextColored(Color, "ESP");
+		ImGui::TextColored(Color, (const char*)u8"透视");
 	if (CVars.SpeedEnabled)
-		ImGui::TextColored(Color, "Speed x%.1f", CVars.Speed);
+		ImGui::TextColored(Color, (const char*)u8"速度修改 x%.1f", CVars.Speed);
 	if (CVars.SilentAim)
-		ImGui::TextColored(Color, "Silent Aim");
+		ImGui::TextColored(Color, (const char*)u8"静默自瞄");
 	if (CVars.NoClip)
-		ImGui::TextColored(Color, "No Clip");
+		ImGui::TextColored(Color, (const char*)u8"穿墙模式");
 	if (CVars.Reticle)
-		ImGui::TextColored(Color, "Reticle");
+		ImGui::TextColored(Color, (const char*)u8"自定义准星");
 	if (CVars.TriggerBot)
-		ImGui::TextColored(Color, "Trigger Bot");
+		ImGui::TextColored(Color, (const char*)u8"自动射击");
 
 	CheatOptionsWindowSize = ImGui::GetWindowSize();
 
@@ -539,9 +539,9 @@ void Cheats::ListPlayers()
 
 	ImGui::SetNextWindowPos(ImVec2(10, CheatOptionsWindowSize.y + 30));
 
-	ImGui::Begin("Players", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
+	ImGui::Begin((const char*)u8"玩家列表", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
-	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), "Players:");
+	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), (const char*)u8"当前玩家:");
 
 	TArray<APlayerCharacter*> Players = GVars.GameState->AllPlayerCharacters;
 	if (!Players || Players.Num() == 0)
@@ -565,14 +565,14 @@ void Cheats::ListPlayers()
 			ImGui::SameLine();
 			std::string ID = Player->PlayerState->GetPlayerName().ToString();
 			ImGui::PushID((ID + "GodMode").c_str());
-			if (ImGui::Checkbox("GodMode", &Utils::GetPlayerCheats(Player).GodMode))
+			if (ImGui::Checkbox((const char*)u8"无敌", &Utils::GetPlayerCheats(Player).GodMode))
 			{
 				Player->bGodMode = Utils::GetPlayerCheats(Player).GodMode;
 			}
 			ImGui::PopID();
 			ImGui::SameLine();
 			ImGui::PushID((ID + "InfAmmo").c_str());
-			if (ImGui::Checkbox("InfAmmo", &Utils::GetPlayerCheats(Player).InfAmmo))
+			if (ImGui::Checkbox((const char*)u8"无限弹药", &Utils::GetPlayerCheats(Player).InfAmmo))
 			{
 				if (Player->GetEquippedWeapon())
 				{
@@ -582,7 +582,7 @@ void Cheats::ListPlayers()
 			}
 			ImGui::PopID();
 			ImGui::PushID((ID + "Teleport").c_str());
-			if (ImGui::Button("Teleport To Self"))
+			if (ImGui::Button((const char*)u8"传送到我这"))
 			{
 				if (GVars.ReadyOrNotChar)
 					Player->Server_TeleportPlayerToLocation(GVars.ReadyOrNotChar->K2_GetActorLocation(), GVars.ReadyOrNotChar->K2_GetActorLocation());
@@ -590,7 +590,7 @@ void Cheats::ListPlayers()
 			ImGui::PopID();
 			ImGui::PushID((ID + "Speed").c_str());
 			ImGui::SameLine();
-			if (ImGui::Button("Speed"))
+			if (ImGui::Button((const char*)u8"赋予极速"))
 			{
 				Player->Server_SetWalkSpeed(240.0f * 10, 1000);
 			}

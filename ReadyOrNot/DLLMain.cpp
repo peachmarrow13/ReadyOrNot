@@ -1,4 +1,5 @@
-﻿#include "Engine.h"
+﻿#include "pch.h"
+#include "Engine.h"
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
@@ -22,6 +23,7 @@ static bool ShowMenu = true;
 bool init = false;
 
 int Frames = 0;
+bool SettingsLoaded = false;
 
 float FireRate = 1;
 
@@ -155,7 +157,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		menu_key_pressed = false;
 	}
 
-	if (Frames % 300 == 0 && MiscSettings.ShouldAutoSave)
+	if (Frames > 0 && Frames % 300 == 0 && MiscSettings.ShouldAutoSave && SettingsLoaded)
 	{
 		SaveSettings();
 	}
@@ -774,8 +776,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID lpReserved) {
 
 void SaveSettings()
 {
-	//if (!Settings.ShouldSave)
-		//return;
+	if (!SettingsLoaded) return;
 
 	// Save MiscSettings (binary)
 	std::ofstream MiscSettingsfile("MiscSettings.bin", std::ios::binary);
@@ -854,80 +855,73 @@ void LoadSettings()
 	if (!Settings.ShouldLoad)
 		return;
 
-	std::ifstream MiscSettingsinfile("MiscSettings.bin", std::ios::binary);
+	{
+		std::ifstream file("MiscSettings.bin", std::ios::binary);
+		if (file.is_open()) {
+			file.read(reinterpret_cast<char*>(&MiscSettings), sizeof(MiscSettings));
+			file.close();
+		}
+	}
 
-	if (!MiscSettingsinfile.is_open()) return;
+	{
+		std::ifstream file("AimbotSettings.bin", std::ios::binary);
+		if (file.is_open()) {
+			file.read(reinterpret_cast<char*>(&AimbotSettings), sizeof(AimbotSettings));
+			file.close();
+		}
+	}
 
-	MiscSettingsinfile.seekg(0);
+	{
+		std::ifstream file("ESPSettings.bin", std::ios::binary);
+		if (file.is_open()) {
+			file.read(reinterpret_cast<char*>(&ESPSettings), sizeof(ESPSettings));
+			file.close();
+		}
+	}
 
-	MiscSettingsinfile.read(reinterpret_cast<char*>(&MiscSettings), sizeof(MiscSettings));
+	{
+		std::ifstream file("SilentAimSettings.bin", std::ios::binary);
+		if (file.is_open()) {
+			file.read(reinterpret_cast<char*>(&SilentAimSettings), sizeof(SilentAimSettings));
+			file.close();
+		}
+	}
 
-	MiscSettingsinfile.close();
-
-	std::ifstream AimbotSettingsinfile("AimbotSettings.bin", std::ios::binary);
-
-	if (!AimbotSettingsinfile.is_open()) return;
-
-	AimbotSettingsinfile.seekg(0);
-
-	AimbotSettingsinfile.read(reinterpret_cast<char*>(&AimbotSettings), sizeof(AimbotSettings));
-
-	AimbotSettingsinfile.close();
-
-	std::ifstream ESPSettingsinfile("ESPSettings.bin", std::ios::binary);
-
-	if (!ESPSettingsinfile.is_open()) return;
-
-	ESPSettingsinfile.seekg(0);
-
-	ESPSettingsinfile.read(reinterpret_cast<char*>(&ESPSettings), sizeof(ESPSettings));
-
-	ESPSettingsinfile.close();
-
-	std::ifstream SilentAimSettingsinfile("SilentAimSettings.bin", std::ios::binary);
-
-	if (!SilentAimSettingsinfile.is_open()) return;
-
-	SilentAimSettingsinfile.seekg(0);
-
-	SilentAimSettingsinfile.read(reinterpret_cast<char*>(&SilentAimSettings), sizeof(SilentAimSettings));
-
-	SilentAimSettingsinfile.close();
-
-	std::ifstream TextVarsinfile("TextVars.bin", std::ios::binary);
-
-	if (!TextVarsinfile.is_open()) return;
-
-	size_t len;
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.AimbotBone.resize(len);
-	TextVarsinfile.read(TextVars.AimbotBone.data(), len);
-
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.SilentAimBone.resize(len);
-	TextVarsinfile.read(TextVars.SilentAimBone.data(), len);
-
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.DebugFunctionNameMustInclude.resize(len);
-	TextVarsinfile.read(TextVars.DebugFunctionNameMustInclude.data(), len);
-
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.DebugFunctionObjectMustInclude.resize(len);
-	TextVarsinfile.read(TextVars.DebugFunctionObjectMustInclude.data(), len);
-
-	TextVarsinfile.close();
+	{
+		std::ifstream file("TextVars.bin", std::ios::binary);
+		if (file.is_open()) {
+			size_t len;
+			if (file.read(reinterpret_cast<char*>(&len), sizeof(len))) {
+				TextVars.AimbotBone.resize(len);
+				file.read(TextVars.AimbotBone.data(), len);
+			}
+			if (file.read(reinterpret_cast<char*>(&len), sizeof(len))) {
+				TextVars.SilentAimBone.resize(len);
+				file.read(TextVars.SilentAimBone.data(), len);
+			}
+			if (file.read(reinterpret_cast<char*>(&len), sizeof(len))) {
+				TextVars.DebugFunctionNameMustInclude.resize(len);
+				file.read(TextVars.DebugFunctionNameMustInclude.data(), len);
+			}
+			if (file.read(reinterpret_cast<char*>(&len), sizeof(len))) {
+				TextVars.DebugFunctionObjectMustInclude.resize(len);
+				file.read(TextVars.DebugFunctionObjectMustInclude.data(), len);
+			}
+			file.close();
+		}
+	}
 
 	if (MiscSettings.ShouldSaveCVars)
 	{
-		std::ifstream CVarsinfile("CVars.bin", std::ios::binary);
-		if (!CVarsinfile.is_open()) return;
-
-		CVarsinfile.seekg(0);
-
-		CVarsinfile.read(reinterpret_cast<char*>(&CVars), sizeof(CVars));
-
-		CVarsinfile.close();
+		std::ifstream file("CVars.bin", std::ios::binary);
+		if (file.is_open()) {
+			file.read(reinterpret_cast<char*>(&CVars), sizeof(CVars));
+			file.close();
+		}
 	}
+
+	SettingsLoaded = true;
+	std::cout << "[Settings] Configuration loaded successfully.\n";
 }
 
 void Cleanup(HMODULE hModule)

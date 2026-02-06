@@ -100,6 +100,9 @@
     <ClCompile Include="ProcessEventHook.cpp">
       <Filter>Source Files\Hooks</Filter>
     </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK\Engine_classes.hpp">
@@ -114,6 +117,7 @@
     <ClInclude Include="Engine.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ImGui\misc\debuggers\imgui.natstepfilter">

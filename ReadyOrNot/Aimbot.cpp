@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Cheats.h"
 #include "Utils.h"
 #include <chrono>
@@ -18,14 +19,11 @@ void Cheats::Aimbot()
 	if (AimbotSettings.RequireKeyHeld && !AimbotKeyDown)
 		return;
 
-	std::wstring WideString = UtfN::StringToWString(TextVars.AimbotBone);
-	FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
-
 	AActor* Target = Utils::GetBestTarget(
 		GVars.PlayerController,
 		AimbotSettings.TargetCivilians,
 		AimbotSettings.TargetArrested,
-		AimbotSettings.TargetArrested,
+		false, // TargetSurrendered (Temporary fix for struct member issue)
 		AimbotSettings.TargetDead,
 		AimbotSettings.MaxFOV,
 		AimbotSettings.LOS,
@@ -35,8 +33,16 @@ void Cheats::Aimbot()
 
 	if (!Target) return;
 
+	static std::string CachedBoneString = "";
+	static FName CachedBoneName;
+	if (CachedBoneString != TextVars.AimbotBone) {
+		std::wstring WideString = UtfN::StringToWString(TextVars.AimbotBone);
+		CachedBoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
+		CachedBoneString = TextVars.AimbotBone;
+	}
+
 	FVector CameraPos = GVars.POV->Location;
-	FVector TargetPos = ((AReadyOrNotCharacter*)Target)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+	FVector TargetPos = ((AReadyOrNotCharacter*)Target)->Mesh->GetBoneTransform(CachedBoneName, ERelativeTransformSpace::RTS_World).Translation;
 
 	double Dist = CameraPos.GetDistanceToInMeters(TargetPos);
 
@@ -94,7 +100,6 @@ void Cheats::Aimbot()
 	}
 	else
 	{
-		// No smoothing — snap directly
 		GVars.PlayerController->ControlRotation.Yaw = DesiredYaw;
 		GVars.PlayerController->ControlRotation.Pitch = DesiredPitch;
 	}

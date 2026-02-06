@@ -44,6 +44,7 @@ struct AimbotSettingsstruct {
 	bool TargetCivilians = false;
 	bool TargetDead = false;
 	bool TargetArrested = false;
+	bool TargetSurrendered = false;
 	float MinDistance = 2.0f;
 	bool Smooth = false;
 	float SmoothingVector = 5.0f;

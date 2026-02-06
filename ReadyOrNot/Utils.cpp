@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Engine.h"
 
 using namespace SDK;
@@ -186,39 +187,42 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
 {
     if (!GVars.World || !GVars.Level || !ViewPoint || !ViewPoint->PlayerCameraManager) return nullptr;
 
-    std::wstring WideString = UtfN::StringToWString(TargetBone);
-    FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
+    static std::string CachedBoneString = "";
+    static FName CachedBoneName;
+    if (CachedBoneString != TargetBone) {
+        std::wstring WideString = UtfN::StringToWString(TargetBone);
+        CachedBoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
+        CachedBoneString = TargetBone;
+    }
 
     AActor* BestTarget = nullptr;
     float BestFOV = MaxFOV;
+
+    FVector CameraLocation = ViewPoint->PlayerCameraManager->CameraCachePrivate.POV.Location;
+    FVector2D ViewportSize = Utils::ImVec2ToFVector2D(GVars.ScreenSize);
+    FVector2D ViewportCenter = ViewportSize / 2.0;
+    float MaxFOVNormalized = MaxFOV / 90.0f;
 
     for (AActor* Actor : GVars.Level->Actors)
     {
         if (!Actor || !Utils::IsValidActor(Actor))
             continue;
 
-        AReadyOrNotCharacter* ReadyOrNotChar;
+        if (!Actor->IsA(AReadyOrNotCharacter::StaticClass()))
+            continue;
 
-        if (Actor->IsA(AReadyOrNotCharacter::StaticClass()))
+        AReadyOrNotCharacter* ReadyOrNotChar = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
+        if (!ReadyOrNotChar || ReadyOrNotChar == GVars.ReadyOrNotChar)
+            continue;
+
+        if (!TargetAll)
         {
-            ReadyOrNotChar = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-            if (!ReadyOrNotChar)
+            bool bIsCivilian = ReadyOrNotChar->IsCivilian();
+            bool bIsSuspect = ReadyOrNotChar->IsSuspect();
+            if (!(bIsSuspect || (bIsCivilian && TargetCivs)))
                 continue;
-            if (!TargetAll)
-            {
-	            bool bIsCivilian = ReadyOrNotChar->IsCivilian();
-            	bool bIsSuspect = ReadyOrNotChar->IsSuspect();
-
-            	// Keep target if suspect OR (civilian AND TargetCivs)
-            	if (!(bIsSuspect || (bIsCivilian && TargetCivs)))
-            		continue;
-            }
         }
-        else
-            continue;
 
-        if (!ReadyOrNotChar)
-            continue;
         if (!TargetDead && (ReadyOrNotChar->IsDeadOrUnconscious() || ReadyOrNotChar->IsIncapacitated()))
             continue;
         if (!TargetArrested && ReadyOrNotChar->IsArrested())
@@ -226,22 +230,38 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
         if (!TargetSurrendered && ReadyOrNotChar->IsSurrendered())
             continue;
 
-        // Get the target bone location
-        FVector BoneLocation = ReadyOrNotChar->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+        // 1. Quick Distance Check (optional but good)
+        FVector ActorLoc = ReadyOrNotChar->K2_GetActorLocation();
+        if (CameraLocation.GetDistanceTo(ActorLoc) > 15000.0f) // 150 meters
+            continue;
 
+        // 2. Project to screen first (cheaper than BoneTransform + LOS)
+        FVector2D ScreenLocation;
+        if (!ViewPoint->ProjectWorldLocationToScreen(ActorLoc, &ScreenLocation, true))
+            continue;
+
+        FVector2D Delta = ScreenLocation - ViewportCenter;
+        float DeltaLength = std::sqrt(Delta.X * Delta.X + Delta.Y * Delta.Y);
+        float NormalizedOffset = DeltaLength / (ViewportSize.Y * 0.5f);
+        
+        // If not even close to the FOV circle, skip
+        if (NormalizedOffset > MaxFOVNormalized * 2.0f) 
+            continue;
+
+        // 3. Now get the actual bone location
+        FVector BoneLocation = ReadyOrNotChar->Mesh->GetBoneTransform(CachedBoneName, ERelativeTransformSpace::RTS_World).Translation;
+
+        // 4. LOS Check is the most expensive, do it last
         if (RequiresLOS)
         {
-            FVector Start = ViewPoint->PlayerCameraManager->CameraCachePrivate.POV.Location;
-            FVector End = BoneLocation;
-
             TArray<AActor*> IgnoreActors;
-            //IgnoreActors.Add(GVars.ReadyOrNotChar);
+            IgnoreActors.Add(GVars.ReadyOrNotChar);
 
             FHitResult HitResult;
             bool bHit = UKismetSystemLibrary::LineTraceSingle(
                 GVars.World,
-                Start,
-                End,
+                CameraLocation,
+                BoneLocation,
                 ETraceTypeQuery::TraceTypeQuery1,
                 true,
                 IgnoreActors,
@@ -253,38 +273,28 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
                 1.0f
             );
 
-            AActor* HitActor = nullptr;
-            HitActor = HitResult.Component->GetOwner();
-
+            AActor* HitActor = HitResult.Component.Get() ? HitResult.Component->GetOwner() : nullptr;
             bool bHasLOS = !HitResult.bBlockingHit || HitActor == ReadyOrNotChar;
             if (!bHasLOS)
                 continue;
         }
 
-        FVector2D ScreenLocation;
-        if (!ViewPoint->ProjectWorldLocationToScreen(BoneLocation, &ScreenLocation, true))
-            continue;
-
-        FVector2D ViewportSize = Utils::ImVec2ToFVector2D(GVars.ScreenSize);
-        FVector2D ViewportCenter = ViewportSize / 2.0;
-        FVector2D Delta = ScreenLocation - ViewportCenter;
-
-        // Compute length manually
-        float DeltaLength = std::sqrt(Delta.X * Delta.X + Delta.Y * Delta.Y);
-
-        // Normalize by half the screen height
-        float NormalizedOffset = DeltaLength / (ViewportSize.Y * 0.5f);
-        float MaxFOVNormalized = MaxFOV / 90.0f;
-        float FOV = NormalizedOffset * 90.0f;
-        if (NormalizedOffset < MaxFOVNormalized && FOV < BestFOV)
+        // Recalculate precise FOV with bone location
+        if (ViewPoint->ProjectWorldLocationToScreen(BoneLocation, &ScreenLocation, true))
         {
-            BestFOV = FOV;
-            BestTarget = Actor;
+            Delta = ScreenLocation - ViewportCenter;
+            DeltaLength = std::sqrt(Delta.X * Delta.X + Delta.Y * Delta.Y);
+            NormalizedOffset = DeltaLength / (ViewportSize.Y * 0.5f);
+            float FOV = NormalizedOffset * 90.0f;
+
+            if (NormalizedOffset < MaxFOVNormalized && FOV < BestFOV)
+            {
+                BestFOV = FOV;
+                BestTarget = Actor;
+            }
         }
     }
-    if (BestTarget)
-        return BestTarget;
-    return nullptr;
+    return BestTarget;
 }
 
 void Utils::DrawFOV(float MaxFOV, float Thickness = 1.0f)

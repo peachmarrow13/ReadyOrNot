@@ -1,32 +1,6 @@
 #pragma once
 
-//#pragma pack(push, 8)
-#include "SDK/ReadyOrNot_parameters.hpp"
-#include "SDK/ReadyOrNot_classes.hpp"
-#include "SDK/Engine_classes.hpp"
-#include "SDK/CoreUObject_classes.hpp"
-#include "SDK/CoreUObject_parameters.hpp"
-#include "SDK/Engine_parameters.hpp"
-#include "SDK/Basic.hpp"
-//#pragma pack(pop)
-
-#include <d3d11.h>
-#include <dxgi.h>
-#include <Windows.h>
-#include "imgui.h"
-#include "misc/cpp/imgui_stdlib.h"
-#include "backends/imgui_impl_win32.h"
-#include "backends/imgui_impl_dx11.h"
-
-#include <atomic>
-#include <cstdio>
-#include <iostream>
-#include <chrono>
-#include <imgui_internal.h>
-#include <fstream>
-#include <string>
-#include <unordered_map>
-#include <numbers>
+#include "pch.h"
 
 #include "minhook/include/MinHook.h"
 #include "Cheats.h"

@@ -1,12 +1,7 @@
-#include <Windows.h>
-#include <vector>
-
-#define IMGUI_DEFINE_MATH_OPERATORS
-
+#include "pch.h"
 #include "Cheats.h"
 #include "Utils.h"
 
-#include "SDK/Engine_classes.hpp"
 //#include "SDK/ReadyOrNot_classes.hpp"
 
 using namespace SDK;

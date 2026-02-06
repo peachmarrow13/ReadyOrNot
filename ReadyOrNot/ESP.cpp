@@ -1,14 +1,7 @@
+#include "pch.h"
 #include "Cheats.h"
 #include "Utils.h"
 
-#include "imgui.h"
-#include "backends/imgui_impl_win32.h"
-#include "backends/imgui_impl_dx11.h"
-#include <d3d11.h>
-#include <dxgi.h>
-#include <Windows.h>
-#include <chrono>
-#include <vector>
 #include <vcruntime_string.h>
 #include <algorithm>
 

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Engine.h"
 
 DXGI_SWAP_CHAIN_DESC Engine::sd = {};
@@ -67,7 +68,7 @@ bool Engine::InitImGui(HWND hwnd)
 	ImFont* font = nullptr;
 	if (GetFileAttributesA(fontPath.c_str()) != INVALID_FILE_ATTRIBUTES) {
 		std::cout << "[FontDebug] Font file found on disk." << std::endl;
-		font = io.Fonts->AddFontFromFileTTF(fontPath.c_str(), 18.0f, NULL, io.Fonts->GetGlyphRangesChineseFull());
+		font = io.Fonts->AddFontFromFileTTF(fontPath.c_str(), 18.0f, NULL, io.Fonts->GetGlyphRangesChineseSimplifiedCommon());
 		if (font) {
 			std::cout << "[FontDebug] Font loaded successfully into ImGui." << std::endl;
 		} else {

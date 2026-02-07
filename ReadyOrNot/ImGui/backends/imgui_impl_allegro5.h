@@ -10,6 +10,7 @@
 // Missing features or Issues:
 //  [ ] Renderer: The renderer is suboptimal as we need to unindex our buffers and convert vertices manually.
 //  [ ] Platform: Missing gamepad support.
+//  [ ] Renderer: Multi-viewport support (multiple windows).
 
 // You can use unmodified imgui_impl_* files in your project. See examples/ folder for examples of using this.
 // Prefer including the entire imgui/ repository into your project (either as a copy or as a submodule), and only build the backends you need.
@@ -38,7 +39,7 @@ IMGUI_IMPL_API void     ImGui_ImplAllegro5_SetDisplay(ALLEGRO_DISPLAY* display);
 IMGUI_IMPL_API bool     ImGui_ImplAllegro5_CreateDeviceObjects();
 IMGUI_IMPL_API void     ImGui_ImplAllegro5_InvalidateDeviceObjects();
 
-// (Advanced) Use e.g. if you need to precisely control the timing of texture updates (e.g. for staged rendering), by setting ImDrawData::Textures = NULL to handle this manually.
+// (Advanced) Use e.g. if you need to precisely control the timing of texture updates (e.g. for staged rendering), by setting ImDrawData::Textures = nullptr to handle this manually.
 IMGUI_IMPL_API void     ImGui_ImplAllegro5_UpdateTexture(ImTextureData* tex);
 
 #endif // #ifndef IMGUI_DISABLE

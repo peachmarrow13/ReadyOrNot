@@ -148,7 +148,7 @@ void Cheats::RenderESP()
 	TArray<AActor*> ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
     for (AActor* Actor : ActorsCopy)
     {
-    	if (!Actor) continue;
+    	if (!Utils::IsValidActor(Actor)) continue;
 
         if (ESPSettings.ShowTraps)
         {

@@ -57,7 +57,7 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 
 				bool OwnerIsLocalPlayer = reinterpret_cast<const ABaseMagazineWeapon*>(Object)->Owner == GVars.ReadyOrNotChar;
 
-				if (CVars.ShootFromReticle && OwnerIsLocalPlayer)
+				if (CVars.ShootFromReticle && OwnerIsLocalPlayer && GVars.PlayerController && Utils::IsValidActor(GVars.PlayerController))
 				{
 					FVector SpawnLoc;
 					FVector Direction;

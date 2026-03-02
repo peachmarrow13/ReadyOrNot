@@ -164,7 +164,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 	if (Frames % 60 == 0 && !CVars.SecretFeatures)
 	{
-		if (GVars.PlayerController && GVars.PlayerController->PlayerState)
+		if (GVars.PlayerController && Utils::IsValidActor(GVars.PlayerController) && GVars.PlayerController->PlayerState)
 		{
 			auto PlayerState = GVars.PlayerController->PlayerState;
 			auto PlayerName = PlayerState->GetPlayerName().ToString();
@@ -622,10 +622,13 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (CVars.ListPlayers)
 		Cheats::ListPlayers();
 
-	if (CVars.BulletTime)
-		GVars.World->K2_GetWorldSettings()->TimeDilation = 0.3f; // Slow-mo
-	else
-		GVars.World->K2_GetWorldSettings()->TimeDilation = 1.0f; // Normal
+	if (GVars.World)
+	{
+		if (CVars.BulletTime)
+			GVars.World->K2_GetWorldSettings()->TimeDilation = 0.3f; // Slow-mo
+		else
+			GVars.World->K2_GetWorldSettings()->TimeDilation = 1.0f; // Normal
+	}
 
 	if (CVars.ESP)
 		Cheats::RenderESP();

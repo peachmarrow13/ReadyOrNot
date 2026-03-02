@@ -7,33 +7,16 @@ using namespace SDK;
 UWorld* Utils::GetWorldSafe() 
 {
     UWorld* World = nullptr;
-    int i = 0;
-    while (i < 50) {
-        i++;
-        UEngine* Engine = UEngine::GetEngine();
-        if (!Engine) {
-            //printf("[Error] Engine not found!\n");
-            Sleep(50);
-            continue;
-        }
+    UEngine* Engine = UEngine::GetEngine();
+    if (!Engine) return nullptr;
 
-        UGameViewportClient* Viewport = Engine->GameViewport;
-        if (!Viewport) {
-            //printf("[Error] GameViewport not found!\n");
-            Sleep(50);
-            continue;
-        }
+    UGameViewportClient* Viewport = Engine->GameViewport;
+    if (!Viewport) return nullptr;
 
-        World = Viewport->World;
-        if (!World) {
-            //printf("[Error] World not found!\n");
-            Sleep(50);
-            continue;
-        }
-		break; // Successfully obtained World
-    }
+    World = Viewport->World;
     return World;
 }
+
 
 // can return nullptr
 APlayerController* Utils::GetPlayerController()
@@ -133,22 +116,21 @@ PlayerCheatData& Utils::GetPlayerCheats(APlayerCharacter* Player)
 
 bool Utils::IsValidActor(AActor* Actor)
 {
-    if (!Actor) return false;
+    if (!Actor || !Actor->VTable) return false;
 
+    // Use Unreal's built-in validation where possible
     if (!UKismetSystemLibrary::IsValid(Actor)) return false;
 
-    if (!Actor->Class) return false;
+    if (!Actor->Class || !Actor->GetLevel()) return false;
 
-    if (!Actor->GetLevel()) return false;
+    if (Actor->IsActorBeingDestroyed() || Actor->bActorIsBeingDestroyed) return false;
 
-    if (Actor->IsActorBeingDestroyed()) return false;
-
-	if (!Actor->VTable) return false;
-
-	if (Actor->bActorIsBeingDestroyed) return false;
+    // Additional check for RootComponent which is often accessed
+    if (!Actor->RootComponent) return false;
 
     return true;
 }
+
 
 float Utils::GetFOVFromScreenCoords(const ImVec2& ScreenLocation)
 {

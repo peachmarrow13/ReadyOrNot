@@ -45,31 +45,40 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 
 HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
 {
+	if (Cleaning.load())
+		return Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+
 	Resizing.store(true);
-	while (g_PresentCount.load() != 0)
-		Sleep(0); 
+	
+	// Wait for any active Present processing to finish
+	while (g_PresentCount.load() > 0)
+		Sleep(1); 
 
 	if (Engine::pRenderTargetView) {
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
 	}
 
-	ImGui_ImplDX11_InvalidateDeviceObjects();
+	if (ImGui::GetCurrentContext())
+		ImGui_ImplDX11_InvalidateDeviceObjects();
 
 	HRESULT hr = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
 
-	pSwapChain->GetDesc(&Engine::sd);
+	if (SUCCEEDED(hr))
+	{
+		pSwapChain->GetDesc(&Engine::sd);
 
-	ID3D11Texture2D* pBackBuffer = nullptr;
-	if (SUCCEEDED(pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
-		Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
-		pBackBuffer->Release();
-	}
+		ID3D11Texture2D* pBackBuffer = nullptr;
+		if (SUCCEEDED(pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
+			Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
+			pBackBuffer->Release();
+		}
 
-	ImGui_ImplDX11_CreateDeviceObjects();
-
-	if (ImGui::GetCurrentContext()) {
-		ImGui::GetIO().DisplaySize = ImVec2((float)Width, (float)Height);
+		if (ImGui::GetCurrentContext())
+		{
+			ImGui_ImplDX11_CreateDeviceObjects();
+			ImGui::GetIO().DisplaySize = ImVec2((float)Width, (float)Height);
+		}
 	}
 
 	Resizing.store(false);
@@ -78,10 +87,22 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 
 HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
 {
-	if (Cleaning.load() || Resizing.load())
+	if (Cleaning.load())
+		return Engine::oPresent(SwapChain, SyncInterval, Flags);
+
+	if (Resizing.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
 
 	g_PresentCount.fetch_add(1);
+
+	// Recursive protection
+	static std::atomic<bool> inside_present{ false };
+	if (inside_present.exchange(true))
+	{
+		HRESULT hr = Engine::oPresent(SwapChain, SyncInterval, Flags);
+		g_PresentCount.fetch_sub(1);
+		return hr;
+	}
 
 	if (!init)
 	{
@@ -103,150 +124,97 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		}
 	}
 
-	if (!init || !ImGui::GetCurrentContext()) {
+	if (!init || !ImGui::GetCurrentContext() || !Engine::pRenderTargetView) {
+		inside_present.store(false);
+		HRESULT hr = Engine::oPresent(SwapChain, SyncInterval, Flags);
 		g_PresentCount.fetch_sub(1);
-		return Engine::oPresent(SwapChain, SyncInterval, Flags);
+		return hr;
 	}
 
-	// Update display size and GVars from REAL swapchain every frame
-	DXGI_SWAP_CHAIN_DESC desc;
-	SwapChain->GetDesc(&desc);
-	ImGui::GetIO().DisplaySize = ImVec2((float)desc.BufferDesc.Width, (float)desc.BufferDesc.Height);
+	// Update display size and GVars
+	ImGui::GetIO().DisplaySize = ImVec2((float)Engine::sd.BufferDesc.Width, (float)Engine::sd.BufferDesc.Height);
 	GVars.ScreenSize = ImGui::GetIO().DisplaySize;
 
 	GVars.AutoSetVariables();
 
-	// Menu Toggle Logic (Using GetAsyncKeyState for reliability)
-	if (GetAsyncKeyState(VK_INSERT) & 0x8000) {
-		if (!menu_key_pressed) {
-			GUI::ShowMenu = !GUI::ShowMenu;
-			ImGui::GetIO().MouseDrawCursor = GUI::ShowMenu;
-			menu_key_pressed = true;
-		}
-	} else {
-		menu_key_pressed = false;
+	// Robust Input Handling
+	static bool insert_was_down = false;
+	bool insert_is_down = (GetAsyncKeyState(VK_INSERT) & 0x8000) != 0;
+	if (insert_is_down && !insert_was_down)
+	{
+		GUI::ShowMenu = !GUI::ShowMenu;
+		ImGui::GetIO().MouseDrawCursor = GUI::ShowMenu;
 	}
+	insert_was_down = insert_is_down;
 
-	if (Frames > 0 && Frames % 300 == 0 && MiscSettings.ShouldAutoSave && SettingsLoaded)
+	if (Frames > 0 && Frames % 600 == 0 && MiscSettings.ShouldAutoSave && SettingsLoaded)
 	{
 		ConfigManager::SaveSettings();
 	}
-
-	if (Frames % 60 == 0 && !CVars.SecretFeatures)
-	{
-		if (GVars.PlayerController && Utils::IsValidActor(GVars.PlayerController) && GVars.PlayerController->PlayerState)
-		{
-			auto PlayerState = GVars.PlayerController->PlayerState;
-			auto PlayerName = PlayerState->GetPlayerName().ToString();
-			if (PlayerName == "PeachMarrow12" || PlayerName == "DiaperBlastrPC")
-				CVars.SecretFeatures = true;
-		}
-	}
+	Frames++;
 
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
-	GUI::RenderMenu();
+	try {
+		GUI::RenderMenu();
+		
+		AimbotKeyDown = (AimbotSettings.AimbotKey != ImGuiKey_None) ? ImGui::IsKeyDown(AimbotSettings.AimbotKey) : true;
 
-	if (AimbotSettings.AimbotKey != ImGuiKey_None)
-	{
-		AimbotKeyDown = ImGui::IsKeyDown(AimbotSettings.AimbotKey);
-	}
-	else
-		AimbotKeyDown = true;
+		if (CVars.RenderOptions) Cheats::RenderEnabledOptions();
+		if (CVars.ListPlayers) Cheats::ListPlayers();
 
-	if (CVars.RenderOptions)
-		Cheats::RenderEnabledOptions();
+		if (GVars.World && GVars.World->K2_GetWorldSettings())
+			GVars.World->K2_GetWorldSettings()->TimeDilation = CVars.BulletTime ? 0.3f : 1.0f;
 
-	if (CVars.ListPlayers)
-		Cheats::ListPlayers();
-
-	if (GVars.World)
-	{
-		if (CVars.BulletTime)
-			GVars.World->K2_GetWorldSettings()->TimeDilation = 0.3f; // Slow-mo
-		else
-			GVars.World->K2_GetWorldSettings()->TimeDilation = 1.0f; // Normal
-	}
-
-	if (CVars.ESP)
-		Cheats::RenderESP();
-
-	if (CVars.SilentAim)
-	{
-		if (SilentAimSettings.DrawFOV)
-			Utils::DrawFOV(SilentAimSettings.MaxFOV, SilentAimSettings.FOVThickness);
-
-		AActor* TargetActor =
-			Utils::GetBestTarget(
-				GVars.PlayerController,
-				SilentAimSettings.TargetCivilians,
-				SilentAimSettings.TargetArrested,
-				SilentAimSettings.TargetSurrendered,
-				SilentAimSettings.TargetDead,
-				SilentAimSettings.MaxFOV,
-				SilentAimSettings.RequiresLOS,
-				TextVars.SilentAimBone,
-				SilentAimSettings.TargetAll);
-
-		if (TargetActor)
+		if (CVars.ESP) Cheats::RenderESP();
+		
+		if (CVars.SilentAim)
 		{
-			auto* RONC = GVars.ReadyOrNotChar;
+			if (SilentAimSettings.DrawFOV)
+				Utils::DrawFOV(SilentAimSettings.MaxFOV, SilentAimSettings.FOVThickness);
 
-			std::wstring WideString = UtfN::StringToWString(TextVars.SilentAimBone);
-			FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
+			AActor* TargetActor = Utils::GetBestTarget(GVars.PlayerController, SilentAimSettings.TargetCivilians, SilentAimSettings.TargetArrested, SilentAimSettings.TargetSurrendered, SilentAimSettings.TargetDead, SilentAimSettings.MaxFOV, SilentAimSettings.RequiresLOS, TextVars.SilentAimBone, SilentAimSettings.TargetAll);
 
-			FVector TargetLocation = ((AReadyOrNotCharacter*)TargetActor)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+			if (TargetActor && Utils::IsValidActor(TargetActor))
+			{
+				std::wstring WideString = UtfN::StringToWString(TextVars.SilentAimBone);
+				FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
+				FVector TargetLocation = ((AReadyOrNotCharacter*)TargetActor)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
 
-			if (SilentAimSettings.DrawArrow)
-				Utils::DrawSnapLine(TargetLocation, SilentAimSettings.ArrowThickness);
+				if (SilentAimSettings.DrawArrow)
+					Utils::DrawSnapLine(TargetLocation, SilentAimSettings.ArrowThickness);
+			}
 		}
-	}
 
-	if (CVars.Reticle)
-		Cheats::DrawReticle();
+		if (CVars.Reticle) Cheats::DrawReticle();
+		if (CVars.Aimbot) Cheats::Aimbot();
+		if (CVars.TriggerBot) Cheats::TriggerBot();
+		if (CVars.SpeedEnabled) Cheats::SetPlayerSpeed();
 
-	if (CVars.Aimbot)
-		Cheats::Aimbot();
+		if (GUI::TriggerBotKey != ImGuiKey_None && ImGui::IsKeyPressed(GUI::TriggerBotKey, false))
+			CVars.TriggerBot = !CVars.TriggerBot;
 
-	if (CVars.TriggerBot)
-		Cheats::TriggerBot();
+		if (GUI::ESPKey != ImGuiKey_None && ImGui::IsKeyPressed(GUI::ESPKey, false))
+			CVars.ESP = !CVars.ESP;
 
-	if (CVars.SpeedEnabled)
-		Cheats::SetPlayerSpeed();
+	} catch (...) {}
 
 	ImGui::Render();
 
 	if (Engine::pRenderTargetView) {
 		Engine::pContext->OMSetRenderTargets(1, &Engine::pRenderTargetView, nullptr);
-
-		D3D11_VIEWPORT vp = {};
-		vp.Width = ImGui::GetIO().DisplaySize.x;
-		vp.Height = ImGui::GetIO().DisplaySize.y;
-		vp.MinDepth = 0.0f;
-		vp.MaxDepth = 1.0f;
-		vp.TopLeftX = 0;
-		vp.TopLeftY = 0;
-		Engine::pContext->RSSetViewports(1, &vp);
+		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 	}
 	
-	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-
-	if (GUI::TriggerBotKey != ImGuiKey_None && ImGui::IsKeyPressed(GUI::TriggerBotKey, false))
-	{
-		CVars.TriggerBot = !CVars.TriggerBot;
-	}
-
-	if (GUI::ESPKey != ImGuiKey_None && ImGui::IsKeyPressed(GUI::ESPKey, false))
-	{
-		CVars.ESP = !CVars.ESP;
-	}
-
+	inside_present.store(false);
+	HRESULT hr = Engine::oPresent(SwapChain, SyncInterval, Flags);
 	g_PresentCount.fetch_sub(1);
-
-	return Engine::oPresent ? Engine::oPresent(SwapChain, SyncInterval, Flags) : S_OK;
+	return hr;
 }
+
+
 
 static void Cleanup(HMODULE hModule)
 {

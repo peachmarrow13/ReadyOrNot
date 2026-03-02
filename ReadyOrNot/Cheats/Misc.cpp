@@ -540,7 +540,7 @@ void Cheats::ListPlayers()
 		if (!Player->PlayerState) continue;
 		if (!Player->PlayerState->GetPlayerName()) continue;
 
-		ImGui::TextColored(Color, "%s", Player->PlayerState->GetPlayerName().ToString());
+		ImGui::TextColored(Color, "%s", Player->PlayerState->GetPlayerName().ToString().c_str());
 
 		if (Player->GetController() && Player->GetController() == GVars.PlayerController || Player == GVars.ReadyOrNotChar) continue; // skip ourselves
 

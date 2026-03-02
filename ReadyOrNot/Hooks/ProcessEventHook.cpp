@@ -1,19 +1,23 @@
 #include "pch.h"
 #include "Engine.h"
-
-void** vTable = nullptr;
+#include "Cheats.h"
 
 using tProcessEvent = void(*)(const UObject*, UFunction*, void*);
 tProcessEvent oProcessEvent = nullptr;
 
+extern std::atomic<bool> Cleaning;
+extern std::atomic<int> g_PresentCount;
 
 void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 {
-	if (Function)
-	{
+	if (!Object || !Function || Cleaning.load()) {
+		if (oProcessEvent) oProcessEvent(Object, Function, Params);
+		return;
+	}
+
+	try {
 		if (CVars.Debug)
 		{
-			printf("Function Index: %d", Function->Index);
 			const std::string FuncName = Function->GetName();
 			const std::string ObjName = Object->GetName();
 
@@ -25,61 +29,67 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 				TextVars.DebugFunctionObjectMustInclude.empty() ||
 				ObjName.find(TextVars.DebugFunctionObjectMustInclude) != std::string::npos;
 
-			if (bFunctionPass && bObjectPass && !CVars.SaveDebugToFile)
+			if (bFunctionPass && bObjectPass)
 			{
-				printf(
-					"Function: %s\nClass: %s\nObject: %s\n\n",
-					FuncName.c_str(),
-					Object->Class->GetName().c_str(),
-					ObjName.c_str()
-				);
-			}
-			if (bFunctionPass && bObjectPass && CVars.SaveDebugToFile)
-			{
-				std::ofstream debugFile("ProcessEventLog.txt", std::ios::app);
-				if (debugFile.is_open())
+				if (!CVars.SaveDebugToFile)
 				{
-					debugFile << "Function: " << FuncName << "\n";
-					debugFile << "Class: " << Object->Class->GetName() << "\n";
-					debugFile << "Object: " << ObjName << "\n\n";
-					debugFile.close();
+					printf("Function: %s | Object: %s\n", FuncName.c_str(), ObjName.c_str());
+				}
+				else
+				{
+					std::ofstream debugFile("ProcessEventLog.txt", std::ios::app);
+					if (debugFile.is_open())
+					{
+						debugFile << "Function: " << FuncName << " | Class: " << (Object->Class ? Object->Class->GetName() : "None") << " | Object: " << ObjName << "\n";
+						debugFile.close();
+					}
 				}
 			}
 		}
 
 		if (CVars.SilentAim || CVars.ShootFromReticle)
 		{
-			if (strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)
+			// Optimization: Check function name hash or string only if needed
+			if (Function->Name.ComparisonIndex != 0) // Basic valid check for name
 			{
-				
-				auto* FireParams =
-					reinterpret_cast<Params::BaseMagazineWeapon_OnFire*>(Params);
-
-				bool OwnerIsLocalPlayer = reinterpret_cast<const ABaseMagazineWeapon*>(Object)->Owner == GVars.ReadyOrNotChar;
-
-				if (CVars.ShootFromReticle && OwnerIsLocalPlayer && GVars.PlayerController && Utils::IsValidActor(GVars.PlayerController))
+				const std::string FuncName = Function->GetName();
+				if (FuncName == "Server_OnFire")
 				{
-					FVector SpawnLoc;
-					FVector Direction;
-					GVars.PlayerController->DeprojectScreenPositionToWorld(
-						GVars.ScreenSize.x / 2.0f + MiscSettings.ReticlePosition.x,
-						GVars.ScreenSize.y / 2.0f + MiscSettings.ReticlePosition.y,
-						&SpawnLoc,
-						&Direction
-					);
-					FireParams->SpawnLoc = SpawnLoc;
-					FireParams->Direction = UKismetMathLibrary::Conv_VectorToRotator(Direction);
+					if (Object->IsA(ABaseMagazineWeapon::StaticClass()))
+					{
+						auto* Weapon = static_cast<const ABaseMagazineWeapon*>(Object);
+						auto* FireParams = static_cast<Params::BaseMagazineWeapon_OnFire*>(Params);
 
+						if (Weapon->Owner == GVars.ReadyOrNotChar)
+						{
+							if (CVars.ShootFromReticle && GVars.PlayerController && Utils::IsValidActor(GVars.PlayerController))
+							{
+								FVector SpawnLoc;
+								FVector Direction;
+								if (GVars.PlayerController->DeprojectScreenPositionToWorld(
+									GVars.ScreenSize.x / 2.0f + MiscSettings.ReticlePosition.x,
+									GVars.ScreenSize.y / 2.0f + MiscSettings.ReticlePosition.y,
+									&SpawnLoc,
+									&Direction
+								)) {
+									FireParams->SpawnLoc = SpawnLoc;
+									FireParams->Direction = UKismetMathLibrary::Conv_VectorToRotator(Direction);
+								}
+							}
+
+							if (CVars.SilentAim)
+								Cheats::SilentAim(FireParams);
+						}
+					}
 				}
-
-				if (CVars.SilentAim && OwnerIsLocalPlayer)
-					Cheats::SilentAim(FireParams);
 			}
 		}
+	} catch (...) {
+		// Suppress exceptions in hook and just proceed to original
 	}
 
-	// Call original
-	oProcessEvent(Object, Function, Params);
+	// ALWAYS call original
+	if (oProcessEvent) oProcessEvent(Object, Function, Params);
 }
 
 bool Hooks::HookProcessEvent()
@@ -100,3 +110,4 @@ bool Hooks::HookProcessEvent()
 
 	return true;
 }
+

@@ -162,7 +162,7 @@ float Utils::GetFOVFromScreenCoords(const ImVec2& ScreenLocation)
 
 ImVec2 Utils::FVector2DToImVec2(FVector2D Vector)
 {
-	return ImVec2(Vector.X, Vector.Y);
+	return ImVec2((float)Vector.X, (float)Vector.Y);
 }
 
 FRotator Utils::GetRotationToTarget(const FVector& Start, const FVector& Target)
@@ -241,8 +241,9 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
             continue;
 
         FVector2D Delta = ScreenLocation - ViewportCenter;
-        float DeltaLength = std::sqrt(Delta.X * Delta.X + Delta.Y * Delta.Y);
-        float NormalizedOffset = DeltaLength / (ViewportSize.Y * 0.5f);
+        float DeltaLength = sqrtf((float)Delta.X * (float)Delta.X + (float)Delta.Y * (float)Delta.Y);
+        float NormalizedOffset = DeltaLength / ((float)ViewportSize.Y * 0.5f);
+
         
         // If not even close to the FOV circle, skip
         if (NormalizedOffset > MaxFOVNormalized * 2.0f) 
@@ -283,8 +284,9 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
         if (ViewPoint->ProjectWorldLocationToScreen(BoneLocation, &ScreenLocation, true))
         {
             Delta = ScreenLocation - ViewportCenter;
-            DeltaLength = std::sqrt(Delta.X * Delta.X + Delta.Y * Delta.Y);
-            NormalizedOffset = DeltaLength / (ViewportSize.Y * 0.5f);
+            DeltaLength = sqrtf((float)Delta.X * (float)Delta.X + (float)Delta.Y * (float)Delta.Y);
+            NormalizedOffset = DeltaLength / ((float)ViewportSize.Y * 0.5f);
+
             float FOV = NormalizedOffset * 90.0f;
 
             if (NormalizedOffset < MaxFOVNormalized && FOV < BestFOV)
@@ -303,7 +305,7 @@ void Utils::DrawFOV(float MaxFOV, float Thickness = 1.0f)
     FVector2D Center = ViewportSize * 0.5f;
 
     float MaxFOVNormalized = MaxFOV / 90.0f;
-    float RadiusPixels = MaxFOVNormalized * (ViewportSize.Y * 0.5f);
+    float RadiusPixels = MaxFOVNormalized * ((float)ViewportSize.Y * 0.5f);
 
     // Draw using ImGui (pixel radius)
     ImGui::GetBackgroundDrawList()->AddCircle(ImVec2(Center.X, Center.Y), RadiusPixels, IM_COL32(255, 0, 0, 255), 64, Thickness);
@@ -316,8 +318,9 @@ void Utils::DrawSnapLine(FVector TargetPos, float Thickness = 2.0f)
     if (!GVars.PlayerController->ProjectWorldLocationToScreen(TargetPos, &ScreenPos, true))
         return;
 
-    ImGui::GetBackgroundDrawList()->AddLine(ImVec2(GVars.ScreenSize.x / 2, GVars.ScreenSize.y / 2), ImVec2(ScreenPos.X, ScreenPos.Y), IM_COL32(255, 255, 255, 255), Thickness);
-    ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ScreenPos.X, ScreenPos.Y), 2.0f, IM_COL32(0, 255, 0, 255));
+    ImGui::GetBackgroundDrawList()->AddLine(ImVec2(GVars.ScreenSize.x / 2.0f, GVars.ScreenSize.y / 2.0f), ImVec2((float)ScreenPos.X, (float)ScreenPos.Y), IM_COL32(255, 255, 255, 255), Thickness);
+    ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2((float)ScreenPos.X, (float)ScreenPos.Y), 2.0f, IM_COL32(0, 255, 0, 255));
+
 }
 
 void Utils::Error(std::string msg)
@@ -364,7 +367,7 @@ ACharacter* Utils::GetNearestCharacter(ETeam Team)
             continue;
         FVector PlayerLocation = GVars.ReadyOrNotChar->K2_GetActorLocation();
         FVector TargetLocation = ReadyOrNotChar->K2_GetActorLocation();
-        float Distance = PlayerLocation.GetDistanceTo(TargetLocation);
+        float Distance = (float)PlayerLocation.GetDistanceTo(TargetLocation);
         if (Distance < NearestDistance)
         {
             NearestDistance = Distance;

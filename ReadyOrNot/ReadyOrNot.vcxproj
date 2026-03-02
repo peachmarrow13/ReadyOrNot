@@ -77,7 +77,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ImGui;$(ProjectDir)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ImGui;$(ProjectDir)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
@@ -111,7 +111,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory)\ImGui;$(ProjectDir)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8</AdditionalOptions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -132,7 +132,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp23</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)\ImGui</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\ImGui;$(ProjectDir)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>/utf-8</AdditionalOptions>
@@ -143,9 +143,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Aimbot.cpp" />
+    <ClCompile Include="Cheats\Aimbot.cpp" />
+    <ClCompile Include="Cheats\ESP.cpp" />
+    <ClCompile Include="Cheats\GodMode.cpp" />
+    <ClCompile Include="Cheats\Misc.cpp" />
+    <ClCompile Include="Cheats\SilentAim.cpp" />
+    <ClCompile Include="Config\ConfigManager.cpp" />
     <ClCompile Include="DLLMain.cpp" />
-    <ClCompile Include="ESP.cpp" />
+    <ClCompile Include="GUI\Menu.cpp" />
+    <ClCompile Include="Hooks\EngineHooks.cpp" />
+    <ClCompile Include="Hooks\Init.cpp" />
+    <ClCompile Include="Hooks\ProcessEventHook.cpp" />
     <ClCompile Include="ImGui\backends\imgui_impl_dx11.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -170,7 +178,6 @@
     <ClCompile Include="ImGui\misc\cpp\imgui_stdlib.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Init.cpp" />
     <ClCompile Include="minhook\src\buffer.c">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -186,14 +193,12 @@
     <ClCompile Include="minhook\src\trampoline.c">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Misc.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="ProcessEventHook.cpp" />
     <ClCompile Include="ReadyOrNot_SDK\SDK\Basic.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -206,16 +211,19 @@
     <ClCompile Include="ReadyOrNot_SDK\SDK\ReadyOrNot_functions.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SilentAim.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cheats.h" />
+    <ClInclude Include="Config\ConfigManager.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="GUI\Menu.h" />
+    <ClInclude Include="Hooks\EngineHooks.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReadyOrNot_SDK\SDK\Engine_classes.hpp" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Utils\Utils.h" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="ImGui\misc\debuggers\imgui.natstepfilter" />
   </ItemGroup>

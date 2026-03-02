@@ -42,31 +42,7 @@ struct PlayerCheatData
 // Global map to store per-player cheat data
 inline std::unordered_map<APlayerCharacter*, PlayerCheatData> PlayerCheatMap;
 
-inline void AddDefaultTooltip(const char* Text)
-{
-	ImGui::SameLine();
-	ImGui::TextDisabled("(?)");
 
-	if (ImGui::IsItemHovered())
-	{
-		ImGui::BeginTooltip();
-		ImGui::Text(Text);
-		ImGui::EndTooltip();
-	}
-}
-
-inline void HostOnlyTooltip()
-{
-	ImGui::SameLine();
-	ImGui::TextColored(ImVec4(255, 0, 0, 255), "(!)");
-
-	if (ImGui::IsItemHovered())
-	{
-		ImGui::BeginTooltip();
-		ImGui::TextColored(ImVec4(255, 0, 0, 255), "Only works as host any use while not host will most likely crash your game");
-		ImGui::EndTooltip();
-	}
-}
 
 inline float GetDistance(AActor* Actor, FVector AActorLocation)
 {
@@ -205,12 +181,12 @@ struct Variables
 
 static inline float Dot3(const FVector& A, const FVector& B)
 {
-	return A.X * B.X + A.Y * B.Y + A.Z * B.Z;
+	return (float)A.X * (float)B.X + (float)A.Y * (float)B.Y + (float)A.Z * (float)B.Z;
 }
 
 static inline float Length3(const FVector& V)
 {
-	return sqrtf(V.X * V.X + V.Y * V.Y + V.Z * V.Z);
+	return sqrtf((float)V.X * (float)V.X + (float)V.Y * (float)V.Y + (float)V.Z * (float)V.Z);
 }
 
 static inline FVector Normalize(const FVector& V)
@@ -242,8 +218,9 @@ static inline void ClampRotator(FRotator& R)
 
 static inline FVector ForwardFromRot(const FRotator& Rot)
 {
-	float PitchRad = Rot.Pitch * (3.1415926535f / 180.0f);
-	float YawRad = Rot.Yaw * (3.1415926535f / 180.0f);
+	float PitchRad = (float)Rot.Pitch * (3.1415926535f / 180.0f);
+	float YawRad = (float)Rot.Yaw * (3.1415926535f / 180.0f);
+
 	float CP = cosf(PitchRad);
 	return FVector{
 		cosf(YawRad) * CP,

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Cheats.h"
-#include "Utils.h"
+#include "Utils/Utils.h"
 
 //#include "SDK/ReadyOrNot_classes.hpp"
 
@@ -13,20 +13,7 @@ std::vector<bool> CheatToggles;
 
 ImVec2 CheatOptionsWindowSize = ImVec2(0, 0);
 
-void Cheats::ToggleGodMode() {
-	if (!GVars.PlayerController) return;
-	if (!GVars.ReadyOrNotChar) return;
-	auto* RONC = reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar);
-	if (RONC->bGodMode != CVars.GodMode)
-	{
-		if (GVars.PlayerController->HasAuthority())
-		{
-			RONC->Server_ToggleGodMode();
-		}
-		else
-			RONC->ToggleGodMode();
-	}
-}
+
 
 void Cheats::ToggleInfAmmo() {
 	if (!GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->GetEquippedWeapon()) return;
@@ -404,10 +391,11 @@ void Cheats::TriggerBot()
 void Cheats::RenderEnabledOptions()
 {
 	if (!CVars.RenderOptions) return;
-	float Hue = fmodf(ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
+	float Hue = fmodf((float)ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
 	ImVec4 Color = ImColor::HSV(Hue, 1.f, 1.f);
 
-	ImGui::SetNextWindowBgAlpha(0.3);
+	ImGui::SetNextWindowBgAlpha(0.3f);
+
 	ImGui::Begin((const char*)u8"已开启功能列表", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
 	ImGui::SetWindowPos(ImVec2(10, 30));
@@ -527,10 +515,11 @@ void Cheats::ListPlayers()
 {
 	if (!GVars.GameState || !GVars.PlayerController) return;
 
-	float Hue = fmodf(ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
+	float Hue = fmodf((float)ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
 	ImVec4 Color = ImColor::HSV(Hue, 1.f, 1.f);
 
-	ImGui::SetNextWindowBgAlpha(0.3);
+	ImGui::SetNextWindowBgAlpha(0.3f);
+
 
 	ImGui::SetNextWindowPos(ImVec2(10, CheatOptionsWindowSize.y + 30));
 

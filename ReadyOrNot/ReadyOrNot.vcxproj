@@ -194,16 +194,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ProcessEventHook.cpp" />
-    <ClCompile Include="SDK\Basic.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\Basic.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SDK\CoreUObject_functions.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\CoreUObject_functions.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SDK\Engine_functions.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\Engine_functions.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SDK\ReadyOrNot_functions.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\ReadyOrNot_functions.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SilentAim.cpp" />
@@ -213,7 +213,7 @@
     <ClInclude Include="Cheats.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="SDK\Engine_classes.hpp" />
+    <ClInclude Include="ReadyOrNot_SDK\SDK\Engine_classes.hpp" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>

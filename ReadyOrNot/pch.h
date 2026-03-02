@@ -14,13 +14,13 @@
 #include <numbers>
 
 // SDK Headers
-#include "SDK/ReadyOrNot_parameters.hpp"
-#include "SDK/ReadyOrNot_classes.hpp"
-#include "SDK/Engine_classes.hpp"
-#include "SDK/CoreUObject_classes.hpp"
-#include "SDK/CoreUObject_parameters.hpp"
-#include "SDK/Engine_parameters.hpp"
-#include "SDK/Basic.hpp"
+#include "ReadyOrNot_SDK/SDK/ReadyOrNot_parameters.hpp"
+#include "ReadyOrNot_SDK/SDK/ReadyOrNot_classes.hpp"
+#include "ReadyOrNot_SDK/SDK/Engine_classes.hpp"
+#include "ReadyOrNot_SDK/SDK/CoreUObject_classes.hpp"
+#include "ReadyOrNot_SDK/SDK/CoreUObject_parameters.hpp"
+#include "ReadyOrNot_SDK/SDK/Engine_parameters.hpp"
+#include "ReadyOrNot_SDK/SDK/Basic.hpp"
 
 // ImGui Headers
 #include "imgui.h"

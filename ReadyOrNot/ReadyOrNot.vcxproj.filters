@@ -28,16 +28,16 @@
     <ClCompile Include="DLLMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\Basic.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\Basic.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\CoreUObject_functions.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\CoreUObject_functions.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\Engine_functions.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\Engine_functions.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
-    <ClCompile Include="SDK\ReadyOrNot_functions.cpp">
+    <ClCompile Include="ReadyOrNot_SDK\SDK\ReadyOrNot_functions.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
     <ClCompile Include="Utils.cpp">
@@ -105,7 +105,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SDK\Engine_classes.hpp">
+    <ClInclude Include="ReadyOrNot_SDK\SDK\Engine_classes.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">

@@ -2,6 +2,7 @@
 #include "Engine.h"
 #include "GUI/Menu.h"
 #include "Config/ConfigManager.h"
+#include "Utils/Localization.h"
 #include <atomic>
 
 extern bool init;
@@ -322,6 +323,8 @@ DWORD MainThread(HMODULE hModule)
 
 	std::cout << "Cheat Injected\n";
 
+	Localization::Initialize();
+	MiscSettings.CurrentLanguage = Localization::CurrentLanguage;
 	ConfigManager::LoadSettings();
 
 	Hooks::HookProcessEvent();

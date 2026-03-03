@@ -89,6 +89,8 @@ void ConfigManager::LoadSettings()
 		if (file.is_open()) {
 			file.read(reinterpret_cast<char*>(&MiscSettings), sizeof(MiscSettings));
 			file.close();
+			// Sync with Localization system
+			Localization::CurrentLanguage = MiscSettings.CurrentLanguage;
 		}
 	}
 

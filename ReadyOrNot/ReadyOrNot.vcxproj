@@ -211,6 +211,7 @@
     <ClCompile Include="ReadyOrNot_SDK\SDK\ReadyOrNot_functions.cpp">
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Utils\Localization.cpp" />
     <ClCompile Include="Utils\Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +222,7 @@
     <ClInclude Include="Hooks\EngineHooks.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReadyOrNot_SDK\SDK\Engine_classes.hpp" />
+    <ClInclude Include="Utils\Localization.h" />
     <ClInclude Include="Utils\Utils.h" />
   </ItemGroup>
 

@@ -2,6 +2,7 @@
 #include "Menu.h"
 
 #include "Config/ConfigManager.h"
+#include "Utils/Localization.h"
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
@@ -43,7 +44,7 @@ void GUI::AddDefaultTooltip(const char* desc)
 
 void GUI::HostOnlyTooltip()
 {
-	AddDefaultTooltip((const char*)u8"仅限房主 (Host Only) - 如果你不是房主，此功能将不起作用。");
+	AddDefaultTooltip(Localization::T("HOST_ONLY_IF_YOU_ARE_NOT_THE_HOST_THIS_FEATURE_WILL_NOT_FUNCTION"));
 }
 
 
@@ -52,62 +53,72 @@ void GUI::RenderMenu()
 	if (!ShowMenu) return;
 
 	ImGui::SetNextWindowSize(ImVec2(600, 500), ImGuiCond_FirstUseEver);
-	ImGui::Begin((const char*)u8"Ready or Not 免费辅助 - PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
+	ImGui::Begin(Localization::T("MENU_TITLE"), nullptr, ImGuiWindowFlags_NoCollapse);
 
 	ImGui::SeparatorText("Hello, Have Fun Cheating!");
 
 	if (ImGui::BeginTabBar("MainTabBar"))
 	{
-		if (ImGui::BeginTabItem((const char*)u8"关于"))
+		if (ImGui::BeginTabItem(Localization::T("TAB_ABOUT")))
 		{
-			ImGui::Text((const char*)u8"Ready or Not 免费辅助 - PeachMarrow12");
-			ImGui::Text((const char*)u8"版本 %d.%d.%d", MAJORVERSION, MINORVERSION, PATCHVERSION);
+			static const char* HostLangs[] = { "English", "简体中文" };
+			int CurrentLangIdx = (int)MiscSettings.CurrentLanguage;
+			if (ImGui::Combo(Localization::T("LANGUAGE"), &CurrentLangIdx, HostLangs, IM_ARRAYSIZE(HostLangs)))
+			{
+				MiscSettings.CurrentLanguage = (Language)CurrentLangIdx;
+				Localization::CurrentLanguage = MiscSettings.CurrentLanguage;
+			}
+
+			ImGui::Separator();
+
+			ImGui::Text(Localization::T("READY_OR_NOT_FREE_CHEAT_PEACHMARROW12"));
+			ImGui::Text(Localization::T("VERSION_D_D_D"), MAJORVERSION, MINORVERSION, PATCHVERSION);
 
 			if (GVars.PlayerController && GVars.PlayerController->PlayerState)
 			{
 				APlayerState* PlayerState = GVars.PlayerController->PlayerState;
 				std::string PlayerName = PlayerState->GetPlayerName().ToString();
-				ImGui::Text((const char*)u8"感谢使用此辅助, %s!", PlayerName.c_str());
+				ImGui::Text(Localization::T("THANKS_FOR_USING_THIS_CHEAT_S"), PlayerName.c_str());
 			}
 			else
 			{
-				ImGui::Text((const char*)u8"未找到用户名，但仍感谢使用！");
+				ImGui::Text(Localization::T("USERNAME_NOT_FOUND_BUT_THANKS_FOR_USING_ANYWAY"));
 			}
 
 			if (GVars.PlayerController)
 			{
 				if (GVars.PlayerController->HasAuthority())
-					ImGui::TextColored(ImVec4(0, 1, 0, 1), (const char*)u8"当前权限: 主机 (Authority/Host)");
+					ImGui::TextColored(ImVec4(0, 1, 0, 1), Localization::T("CURRENT_AUTH_HOST_AUTHORITY"));
 				else
-					ImGui::TextColored(ImVec4(1, 0, 0, 1), (const char*)u8"当前权限: 客户机 (Client)");
+					ImGui::TextColored(ImVec4(1, 0, 0, 1), Localization::T("CURRENT_AUTH_CLIENT"));
 			}
 			else
 			{
-				ImGui::TextColored(ImVec4(1, 1, 0, 1), (const char*)u8"当前权限: 等待控制器初始化...");
+				ImGui::TextColored(ImVec4(1, 1, 0, 1), Localization::T("CURRENT_AUTH_WAITING_FOR_CONTROLLER"));
 			}
 
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem((const char*)u8"玩家"))
+		if (ImGui::BeginTabItem(Localization::T("TAB_PLAYER")))
 		{
-			if (ImGui::Checkbox((const char*)u8"无敌模式 (GodMode)", &CVars.GodMode))
+			if (ImGui::Checkbox(Localization::T("GODMODE"), &CVars.GodMode))
 				Cheats::ToggleGodMode();
 			HostOnlyTooltip();
 
-			ImGui::Checkbox((const char*)u8"自瞄 (Aimbot)", &CVars.Aimbot);
+			ImGui::Checkbox(Localization::T("AIMBOT"), &CVars.Aimbot);
 
-			ImGui::Checkbox((const char*)u8"静默自瞄 (Silent Aim)", &CVars.SilentAim);
-			AddDefaultTooltip((const char*)u8"尚不完善，请谨慎使用。");
+			ImGui::Checkbox(Localization::T("SILENT_AIM"), &CVars.SilentAim);
+			AddDefaultTooltip(Localization::T("NOT_PERFECT_YET_USE_WITH_CAUTION"));
 			HostOnlyTooltip();
 
-			ImGui::Checkbox((const char*)u8"透视 (ESP)", &CVars.ESP);
+			ImGui::Checkbox(Localization::T("ESP"), &CVars.ESP);
 
-			ImGui::SliderFloat((const char*)u8"移动速度", &CVars.Speed, 1, 30, "%.1f");
+			ImGui::SliderFloat(Localization::T("SPEED"), &CVars.Speed, 1, 30, "%.1f");
 			ImGui::SameLine();
-			ImGui::Checkbox((const char*)u8"开启速度修改", &CVars.SpeedEnabled);
+			ImGui::Checkbox(Localization::T("ENABLE_SPEED"), &CVars.SpeedEnabled);
 
-			if (ImGui::SliderFloat((const char*)u8"视野 (FOV)", &CVars.FOV, 0.1f, 179.9f))
+			if (ImGui::SliderFloat(Localization::T("FOV"), &CVars.FOV, 0.1f, 179.9f))
 			{
 				Cheats::ChangeFOV();
 			}
@@ -115,137 +126,137 @@ void GUI::RenderMenu()
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem((const char*)u8"武器"))
+		if (ImGui::BeginTabItem(Localization::T("WEAPON")))
 		{
-			if (ImGui::Checkbox((const char*)u8"无限弹药", &CVars.InfAmmo))
+			if (ImGui::Checkbox(Localization::T("INFINITE_AMMO"), &CVars.InfAmmo))
 				Cheats::ToggleInfAmmo();
 			HostOnlyTooltip();
 
-			if (ImGui::Button((const char*)u8"移除后坐力"))
+			if (ImGui::Button(Localization::T("REMOVE_RECOIL")))
 				Cheats::RemoveRecoil();
 
-			if (ImGui::Button((const char*)u8"移除扩散"))
+			if (ImGui::Button(Localization::T("REMOVE_SPREAD")))
 				Cheats::RemoveSpread();
 
-			if (ImGui::Button((const char*)u8"添加全自动"))
+			if (ImGui::Button(Localization::T("ADD_FULLAUTO")))
 				Cheats::AddAutoFire();
 
-			if (ImGui::Button((const char*)u8"添加穿墙"))
+			if (ImGui::Button(Localization::T("ADD_PENETRATION")))
 				Cheats::PenetrateWalls();
 
-			if (ImGui::Button((const char*)u8"秒杀"))
+			if (ImGui::Button(Localization::T("INSTAKILL")))
 				Cheats::InstaKill();
 
-			if (ImGui::Button((const char*)u8"增加射速"))
+			if (ImGui::Button(Localization::T("INCREASE_FIRERATE")))
 				Cheats::SetFireRate(0.001f);
 
-			ImGui::Checkbox((const char*)u8"准星处射击", &CVars.ShootFromReticle);
+			ImGui::Checkbox(Localization::T("SHOOT_FROM_RETICLE"), &CVars.ShootFromReticle);
 
-			if (ImGui::Button((const char*)u8"添加弹匣"))
+			if (ImGui::Button(Localization::T("ADD_MAGAZINE")))
 				Cheats::AddMag();
 
-			ImGui::Checkbox((const char*)u8"自动射击 (TriggerBot)", &CVars.TriggerBot);
+			ImGui::Checkbox(Localization::T("TRIGGERBOT"), &CVars.TriggerBot);
 
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem((const char*)u8"世界"))
+		if (ImGui::BeginTabItem(Localization::T("WORLD")))
 		{
-			if (ImGui::Button((const char*)u8"杀死所有嫌疑人"))
+			if (ImGui::Button(Localization::T("KILL_ALL_SUSPECTS")))
 				Cheats::KillAll(ETeam::TEAM_SUSPECT);
 
 			ImGui::SameLine();
 
-			if (ImGui::Button((const char*)u8"降伏所有嫌疑人"))
+			if (ImGui::Button(Localization::T("SURRENDER_ALL_SUSPECTS")))
 				Cheats::SurrenderAll(ETeam::TEAM_SUSPECT);
 
 			ImGui::SameLine();
 
-			if (ImGui::Button((const char*)u8"逮捕所有嫌疑人"))
+			if (ImGui::Button(Localization::T("ARREST_ALL_SUSPECTS")))
 				Cheats::ArrestAll(ETeam::TEAM_SUSPECT);
 			HostOnlyTooltip();
 
-			if (ImGui::Button((const char*)u8"杀死所有平民"))
+			if (ImGui::Button(Localization::T("KILL_ALL_CIVILIANS")))
 				Cheats::KillAll(ETeam::TEAM_CIVILIAN);
 
 			ImGui::SameLine();
 
-			if (ImGui::Button((const char*)u8"降伏所有平民"))
+			if (ImGui::Button(Localization::T("SURRENDER_ALL_CIVILIANS")))
 				Cheats::SurrenderAll(ETeam::TEAM_CIVILIAN);
 
 			ImGui::SameLine();
 
-			if (ImGui::Button((const char*)u8"逮捕所有平民"))
+			if (ImGui::Button(Localization::T("ARREST_ALL_CIVILIANS")))
 				Cheats::ArrestAll(ETeam::TEAM_CIVILIAN);
 			HostOnlyTooltip();
 
-			if (ImGui::Button((const char*)u8"收集所有证据"))
+			if (ImGui::Button(Localization::T("COLLECT_ALL_EVIDENCE")))
 				Cheats::GetAllEvidence();
 
-			if (ImGui::Button((const char*)u8"自动获胜"))
+			if (ImGui::Button(Localization::T("AUTO_WIN")))
 				Cheats::AutoWin();
 
-			if (ImGui::Button((const char*)u8"解锁所有门"))
+			if (ImGui::Button(Localization::T("UNLOCK_ALL_DOORS")))
 				Cheats::UnlockDoors();
 
-			ImGui::Checkbox((const char*)u8"子弹时间", &CVars.BulletTime);
+			ImGui::Checkbox(Localization::T("BULLET_TIME"), &CVars.BulletTime);
 
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem((const char*)u8"杂项"))
+		if (ImGui::BeginTabItem(Localization::T("MISC")))
 		{
-			if (ImGui::Button((const char*)u8"保存设置"))
+			if (ImGui::Button(Localization::T("SAVE_SETTINGS")))
 				ConfigManager::SaveSettings();
 			ImGui::SameLine();
 
-			if (ImGui::Button((const char*)u8"加载设置"))
+			if (ImGui::Button(Localization::T("LOAD_SETTINGS")))
 				ConfigManager::LoadSettings();
-			AddDefaultTooltip((const char*)u8"这些只保存和加载配置，而不是哪些功能已启用。");
+			AddDefaultTooltip(Localization::T("THIS_ONLY_SAVES_LOADS_CONFIGURATION_NOT_WHICH_FEATURES_ARE_ENABLED"));
 
-			ImGui::Checkbox((const char*)u8"调试 (Debug)", &CVars.Debug);
-			AddDefaultTooltip((const char*)u8"这只是开启了一些我用来查找错误和有用信息的菜单选项。对你来说可能没用。");
+			ImGui::Checkbox(Localization::T("DEBUG"), &CVars.Debug);
+			AddDefaultTooltip(Localization::T("ENABLE_DEBUG_OPTIONS_USED_FOR_DEVELOPMENT_AND_BUG_FINDING_PROBABLY_USELESS_FOR_YOU"));
 
-			ImGui::InputText((const char*)u8"调试函数名包含", &TextVars.DebugFunctionNameMustInclude);
-			ImGui::InputText((const char*)u8"调试对象名包含", &TextVars.DebugFunctionObjectMustInclude);
+			ImGui::InputText(Localization::T("DEBUG_FUNC_CONTAINS"), &TextVars.DebugFunctionNameMustInclude);
+			ImGui::InputText(Localization::T("DEBUG_OBJ_CONTAINS"), &TextVars.DebugFunctionObjectMustInclude);
 
 			if (CVars.Debug)
-				if (ImGui::Button((const char*)u8"打印 Actor"))
+				if (ImGui::Button(Localization::T("PRINT_ACTORS")))
 					Utils::PrintActors(nullptr);
 
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem((const char*)u8"配置"))
+		if (ImGui::BeginTabItem(Localization::T("CONFIG")))
 		{
-			if (ImGui::TreeNode((const char*)u8"自瞄设置 (Aimbot Settings)"))
+			if (ImGui::TreeNode(Localization::T("AIMBOT_SETTINGS")))
 			{
-				ImGui::SliderFloat((const char*)u8"自瞄视野 (Aimbot FOV)", &AimbotSettings.MaxFOV, 0.01f, 180.0f, "%.1f");
+				ImGui::SliderFloat(Localization::T("AIMBOT_FOV"), &AimbotSettings.MaxFOV, 0.01f, 180.0f, "%.1f");
 
-				ImGui::Checkbox((const char*)u8"需要可见性 (LOS)", &AimbotSettings.LOS);
-				AddDefaultTooltip((const char*)u8"目标必须可见；需要视线检查。");
+				ImGui::Checkbox(Localization::T("REQUIRE_LOS"), &AimbotSettings.LOS);
+				AddDefaultTooltip(Localization::T("TARGET_MUST_BE_VISIBLE_REQUIRES_LINE_OF_SIGHT_CHECK"));
 
-				ImGui::Checkbox((const char*)u8"目标平民", &AimbotSettings.TargetCivilians);
+				ImGui::Checkbox(Localization::T("TARGET_CIVILIANS"), &AimbotSettings.TargetCivilians);
 
-				ImGui::Checkbox((const char*)u8"目标已死亡单位", &AimbotSettings.TargetDead);
+				ImGui::Checkbox(Localization::T("TARGET_DEAD"), &AimbotSettings.TargetDead);
 
-				ImGui::Checkbox((const char*)u8"目标已逮捕单位", &AimbotSettings.TargetArrested);
+				ImGui::Checkbox(Localization::T("TARGET_ARRESTED"), &AimbotSettings.TargetArrested);
 
-				ImGui::Checkbox((const char*)u8"目标所有单位", &AimbotSettings.TargetAll);
+				ImGui::Checkbox(Localization::T("TARGET_ALL"), &AimbotSettings.TargetAll);
 
-				ImGui::SliderFloat((const char*)u8"最大距离", &AimbotSettings.MaxDistance, 0.0f, 300.0f, "%.1f");
+				ImGui::SliderFloat(Localization::T("MAX_DISTANCE"), &AimbotSettings.MaxDistance, 0.0f, 300.0f, "%.1f");
 
-				ImGui::SliderFloat((const char*)u8"最小距离", &AimbotSettings.MinDistance, 0.0f, 100.0f, "%.1f");
+				ImGui::SliderFloat(Localization::T("MIN_DISTANCE"), &AimbotSettings.MinDistance, 0.0f, 100.0f, "%.1f");
 
-				ImGui::Checkbox((const char*)u8"平滑自瞄", &AimbotSettings.Smooth);
+				ImGui::Checkbox(Localization::T("SMOOTH_AIM"), &AimbotSettings.Smooth);
 
-				ImGui::SliderFloat((const char*)u8"平滑系数", &AimbotSettings.SmoothingVector, 1.0f, 20.0f, "%.2f");
+				ImGui::SliderFloat(Localization::T("SMOOTHING"), &AimbotSettings.SmoothingVector, 1.0f, 20.0f, "%.2f");
 
-				ImGui::Checkbox((const char*)u8"显示指向箭头", &AimbotSettings.DrawArrow);
+				ImGui::Checkbox(Localization::T("DRAW_ARROW"), &AimbotSettings.DrawArrow);
 
-				ImGui::Checkbox((const char*)u8"显示视野范围", &AimbotSettings.DrawFOV);
+				ImGui::Checkbox(Localization::T("DRAW_FOV"), &AimbotSettings.DrawFOV);
 
-				if (ImGui::BeginCombo((const char*)u8"目标骨骼", TextVars.AimbotBone.c_str()))
+				if (ImGui::BeginCombo(Localization::T("TARGET_BONE"), TextVars.AimbotBone.c_str()))
 				{
 					for (int i = 0; i < IM_ARRAYSIZE(BoneOptions); i++)
 					{
@@ -260,12 +271,12 @@ void GUI::RenderMenu()
 					ImGui::EndCombo();
 				}
 
-				ImGui::Checkbox((const char*)u8"需要热键配合", &AimbotSettings.RequireKeyHeld);
+				ImGui::Checkbox(Localization::T("REQUIRE_KEY_HELD"), &AimbotSettings.RequireKeyHeld);
 
 				const char* ABpreview = ImGui::GetKeyName(AimbotSettings.AimbotKey);
 				if (!ABpreview) ABpreview = "None";
 
-				if (ImGui::BeginCombo((const char*)u8"选择自瞄按键", ABpreview))
+				if (ImGui::BeginCombo(Localization::T("AIMBOT_KEY"), ABpreview))
 				{
 					for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 					{
@@ -281,56 +292,56 @@ void GUI::RenderMenu()
 							ImGui::SetItemDefaultFocus();
 					}
 					ImGui::EndCombo();
-					AddDefaultTooltip((const char*)u8"仅在按住此键时激活自瞄");
+					AddDefaultTooltip(Localization::T("AIMBOT_ONLY_ACTIVATES_WHILE_HOLDING_THIS_KEY"));
 				}
 
-				ImGui::Checkbox((const char*)u8"排除任务目标嫌疑人", &AimbotSettings.ExcludeTargetSuspects);
-				AddDefaultTooltip((const char*)u8"开启后常规自瞄不会瞄准需要逮捕的任务目标嫌疑人。");
+				ImGui::Checkbox(Localization::T("EXCLUDE_TARGET_SUSPECTS"), &AimbotSettings.ExcludeTargetSuspects);
+				AddDefaultTooltip(Localization::T("REGULAR_AIMBOT_WILL_NOT_TARGET_MISSION_CRITICAL_SUSPECTS_THAT_SHOULD_BE_ARRESTED"));
 
 				ImGui::TreePop();
 			}
 
-			if (ImGui::TreeNode((const char*)u8"透视设置"))
+			if (ImGui::TreeNode(Localization::T("ESP_SETTINGS")))
 			{
-				ImGui::Checkbox((const char*)u8"显示队友", &ESPSettings.ShowTeam);
+				ImGui::Checkbox(Localization::T("SHOW_TEAM"), &ESPSettings.ShowTeam);
 
-				ImGui::Checkbox((const char*)u8"显示方框", &ESPSettings.ShowBox);
+				ImGui::Checkbox(Localization::T("SHOW_BOX"), &ESPSettings.ShowBox);
 
-				ImGui::Checkbox((const char*)u8"显示陷阱", &ESPSettings.ShowTraps);
+				ImGui::Checkbox(Localization::T("SHOW_TRAPS"), &ESPSettings.ShowTraps);
 
-				ImGui::Checkbox((const char*)u8"显示敌方距离", &ESPSettings.ShowEnemyDistance);
+				ImGui::Checkbox(Localization::T("SHOW_DISTANCE"), &ESPSettings.ShowEnemyDistance);
 
-				ImGui::Checkbox((const char*)u8"显示敌方名称", &ESPSettings.ShowEnemyName);
+				ImGui::Checkbox(Localization::T("SHOW_NAME"), &ESPSettings.ShowEnemyName);
 
-				ImGui::Checkbox((const char*)u8"显示骨骼", &ESPSettings.Bones);
+				ImGui::Checkbox(Localization::T("SHOW_BONES"), &ESPSettings.Bones);
 
-				ImGui::Checkbox((const char*)u8"显示子弹弹道", &ESPSettings.BulletTracers);
+				ImGui::Checkbox(Localization::T("BULLET_TRACERS"), &ESPSettings.BulletTracers);
 				
-				ImGui::Checkbox((const char*)u8"彩虹弹道效果", &ESPSettings.TracerRainbow);
+				ImGui::Checkbox(Localization::T("RAINBOW_TRACERS"), &ESPSettings.TracerRainbow);
 
-				ImGui::SliderFloat((const char*)u8"弹道留存时间", &ESPSettings.TracerDuration, 0.5f, 10.0f, "%.1f");
+				ImGui::SliderFloat(Localization::T("TRACER_DURATION"), &ESPSettings.TracerDuration, 0.5f, 10.0f, "%.1f");
 
-				ImGui::ColorEdit4((const char*)u8"子弹弹道颜色", (float*)&ESPSettings.TracerColor);
+				ImGui::ColorEdit4(Localization::T("TRACER_COLOR"), (float*)&ESPSettings.TracerColor);
 
-				ImGui::ColorEdit4((const char*)u8"嫌疑人颜色", (float*)&ESPSettings.SuspectColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("SUSPECT_COLOR"), (float*)&ESPSettings.SuspectColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"平民颜色", (float*)&ESPSettings.CivilianColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("CIVILIAN_COLOR"), (float*)&ESPSettings.CivilianColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"死亡单位颜色", (float*)&ESPSettings.DeadColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("DEAD_COLOR"), (float*)&ESPSettings.DeadColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"队友颜色", (float*)&ESPSettings.TeamColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("TEAM_COLOR"), (float*)&ESPSettings.TeamColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"被捕单位颜色", (float*)&ESPSettings.ArrestColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("ARRESTED_COLOR"), (float*)&ESPSettings.ArrestColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"任务目标嫌疑人颜色", (float*)&ESPSettings.TargetSuspectColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("TARGET_SUSPECT_COLOR"), (float*)&ESPSettings.TargetSuspectColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"活跃任务目标颜色", (float*)&ESPSettings.ObjectiveActiveColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("ACTIVE_OBJECTIVE_COLOR"), (float*)&ESPSettings.ObjectiveActiveColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::ColorEdit4((const char*)u8"已完成任务目标颜色", (float*)&ESPSettings.ObjectiveCompletedColor, ImGuiColorEditFlags_NoInputs);
+				ImGui::ColorEdit4(Localization::T("COMPLETED_OBJECTIVE_COLOR"), (float*)&ESPSettings.ObjectiveCompletedColor, ImGuiColorEditFlags_NoInputs);
 
-				ImGui::Checkbox((const char*)u8"仅显示可见目标 (LOS)", &ESPSettings.LOS);
+				ImGui::Checkbox(Localization::T("ONLY_SHOW_VISIBLE_LOS"), &ESPSettings.LOS);
 
-				if (ImGui::SliderFloat((const char*)u8"骨骼透明度", &ESPSettings.BoneOpacity, 0.0f, 1.0f, "%.2f"))
+				if (ImGui::SliderFloat(Localization::T("BONE_OPACITY"), &ESPSettings.BoneOpacity, 0.0f, 1.0f, "%.2f"))
 				{
 					ESPSettings.SuspectColor = ImVec4(1.0f, 0.0f, 0.0f, ESPSettings.BoneOpacity);
 					ESPSettings.CivilianColor = ImVec4(0.0f, 0.0f, 1.0f, ESPSettings.BoneOpacity);
@@ -339,38 +350,38 @@ void GUI::RenderMenu()
 					ESPSettings.ArrestColor = ImVec4(1.0f, 1.0f, 0.0f, ESPSettings.BoneOpacity);
 				}
 
-				ImGui::Checkbox((const char*)u8"显示任务目标", &ESPSettings.ShowObjectives);
-				AddDefaultTooltip((const char*)u8"任务目标不显示实际位置");
+				ImGui::Checkbox(Localization::T("SHOW_OBJECTIVES"), &ESPSettings.ShowObjectives);
+				AddDefaultTooltip(Localization::T("OBJECTIVES_DO_NOT_SHOW_ACTUAL_PHYSICAL_LOCATIONS"));
 				ImGui::TreePop();
 			}
 
-			if (ImGui::TreeNode((const char*)u8"静默自瞄设置 (Silent Aim Settings)"))
+			if (ImGui::TreeNode(Localization::T("SILENT_AIM_SETTINGS")))
 			{
-				ImGui::Checkbox((const char*)u8"目标平民", &SilentAimSettings.TargetCivilians);
+				ImGui::Checkbox(Localization::T("TARGET_CIVILIANS"), &SilentAimSettings.TargetCivilians);
 
-				ImGui::Checkbox((const char*)u8"目标所有单位", &SilentAimSettings.TargetAll);
+				ImGui::Checkbox(Localization::T("TARGET_ALL"), &SilentAimSettings.TargetAll);
 
-				ImGui::Checkbox((const char*)u8"目标已死亡单位", &SilentAimSettings.TargetDead);
+				ImGui::Checkbox(Localization::T("TARGET_DEAD"), &SilentAimSettings.TargetDead);
 
-				ImGui::Checkbox((const char*)u8"目标已投降单位", &SilentAimSettings.TargetSurrendered);
+				ImGui::Checkbox(Localization::T("TARGET_SURRENDERED"), &SilentAimSettings.TargetSurrendered);
 
-				ImGui::Checkbox((const char*)u8"目标已逮捕单位", &SilentAimSettings.TargetArrested);
+				ImGui::Checkbox(Localization::T("TARGET_ARRESTED"), &SilentAimSettings.TargetArrested);
 
-				ImGui::SliderFloat((const char*)u8"静默自瞄视野", &SilentAimSettings.MaxFOV, 0, 180.0f, "%.1f");
+				ImGui::SliderFloat(Localization::T("SILENT_AIM_FOV"), &SilentAimSettings.MaxFOV, 0, 180.0f, "%.1f");
 
-				ImGui::Checkbox((const char*)u8"显示视野范围", &SilentAimSettings.DrawFOV);
+				ImGui::Checkbox(Localization::T("DRAW_FOV"), &SilentAimSettings.DrawFOV);
 
-				ImGui::SliderFloat((const char*)u8"视野线粗细", &SilentAimSettings.FOVThickness, 0.1f, 10.0f, "%.2f");
+				ImGui::SliderFloat(Localization::T("FOV_THICKNESS"), &SilentAimSettings.FOVThickness, 0.1f, 10.0f, "%.2f");
 
-				ImGui::Checkbox((const char*)u8"显示追踪线", &SilentAimSettings.DrawArrow);
+				ImGui::Checkbox(Localization::T("DRAW_ARROW"), &SilentAimSettings.DrawArrow);
 
-				ImGui::SliderFloat((const char*)u8"追踪线粗细", &SilentAimSettings.ArrowThickness, 0.1f, 10.0f, "%.2f");
+				ImGui::SliderFloat(Localization::T("ARROW_THICKNESS"), &SilentAimSettings.ArrowThickness, 0.1f, 10.0f, "%.2f");
 
-				ImGui::Checkbox((const char*)u8"需要可见性 (LOS)", &SilentAimSettings.RequiresLOS);
+				ImGui::Checkbox(Localization::T("REQUIRE_LOS"), &SilentAimSettings.RequiresLOS);
 
-				ImGui::SliderFloat((const char*)u8"命中概率", &SilentAimSettings.HitChance, 0.0f, 100, "%.1f");
+				ImGui::SliderFloat(Localization::T("HIT_CHANCE"), &SilentAimSettings.HitChance, 0.0f, 100, "%.1f");
 
-				if (ImGui::BeginCombo((const char*)u8"目标骨骼", TextVars.SilentAimBone.c_str()))
+				if (ImGui::BeginCombo(Localization::T("TARGET_BONE"), TextVars.SilentAimBone.c_str()))
 				{
 					for (int i = 0; i < IM_ARRAYSIZE(BoneOptions); i++)
 					{
@@ -384,59 +395,59 @@ void GUI::RenderMenu()
 					}
 					ImGui::EndCombo();
 				}
-				ImGui::Checkbox((const char*)u8"魔法子弹 (Magic Bullet)", &SilentAimSettings.MagicBullet);
-				AddDefaultTooltip((const char*)u8"将子弹直接生成在目标身上。建议仅在房主(Host)时开启，客机开启可能无效或不稳定。");
+				ImGui::Checkbox(Localization::T("MAGIC_BULLET"), &SilentAimSettings.MagicBullet);
+				AddDefaultTooltip(Localization::T("BULLETS_SPAWN_DIRECTLY_ON_TARGETS_RECOMMENDED_FOR_HOST_ONLY_MAY_BE_UNSTABLE_OR_NON_FUNCTIONAL_FOR_CLIENTS"));
 				HostOnlyTooltip();
 
-				ImGui::Checkbox((const char*)u8"排除任务目标嫌疑人", &SilentAimSettings.ExcludeTargetSuspects);
-				AddDefaultTooltip((const char*)u8"开启后静默自瞄不会瞄准需要逮捕的任务目标嫌疑人。");
+				ImGui::Checkbox(Localization::T("EXCLUDE_TARGET_SUSPECTS"), &SilentAimSettings.ExcludeTargetSuspects);
+				AddDefaultTooltip(Localization::T("SILENT_AIM_WILL_NOT_TARGET_MISSION_CRITICAL_SUSPECTS_THAT_SHOULD_BE_ARRESTED"));
 
 				ImGui::TreePop();
 			}
 
-			if (ImGui::TreeNode((const char*)u8"杂项设置 (Misc Settings)"))
+			if (ImGui::TreeNode(Localization::T("MISC_SETTINGS")))
 			{
-				ImGui::SeparatorText((const char*)u8"准星设置");
+				ImGui::SeparatorText(Localization::T("RETICLE_SETTINGS"));
 
-				ImGui::Checkbox((const char*)u8"准星", &CVars.Reticle);
+				ImGui::Checkbox(Localization::T("RETICLE"), &CVars.Reticle);
 
-				ImGui::ColorEdit4((const char*)u8"准星颜色", (float*)&MiscSettings.ReticleColor);
+				ImGui::ColorEdit4(Localization::T("RETICLE_COLOR"), (float*)&MiscSettings.ReticleColor);
 
-				ImGui::DragFloat2((const char*)u8"准星位置", (float*)&MiscSettings.ReticlePosition, 1, -100, 100);
+				ImGui::DragFloat2(Localization::T("RETICLE_POSITION"), (float*)&MiscSettings.ReticlePosition, 1, -100, 100);
 
-				ImGui::SliderFloat((const char*)u8"准星大小", &MiscSettings.ReticleSize, 1, 15);
+				ImGui::SliderFloat(Localization::T("RETICLE_SIZE"), &MiscSettings.ReticleSize, 1, 15);
 
-				ImGui::Checkbox((const char*)u8"使用十字准星", &MiscSettings.CrossReticle);
+				ImGui::Checkbox(Localization::T("CROSS_RETICLE"), &MiscSettings.CrossReticle);
 
-				ImGui::Checkbox((const char*)u8"仅在投掷手雷时显示准星", &MiscSettings.ReticleWhenThrowing);
+				ImGui::Checkbox(Localization::T("ONLY_SHOW_WHEN_THROWING"), &MiscSettings.ReticleWhenThrowing);
 
-				ImGui::SeparatorText((const char*)u8"自动射击设置 (TriggerBot)");
+				ImGui::SeparatorText(Localization::T("TRIGGERBOT_SETTINGS"));
 
-				ImGui::Checkbox((const char*)u8"自动射击平民", &MiscSettings.TriggerBotTargetsCivilians);
+				ImGui::Checkbox(Localization::T("TARGET_CIVILIANS"), &MiscSettings.TriggerBotTargetsCivilians);
 
-				ImGui::Checkbox((const char*)u8"自动射击使用静默自瞄", &MiscSettings.TriggerBotUsesSilentAim);
-				AddDefaultTooltip((const char*)u8"确保你能命中目标");
+				ImGui::Checkbox(Localization::T("USE_SILENT_AIM"), &MiscSettings.TriggerBotUsesSilentAim);
+				AddDefaultTooltip(Localization::T("ENSURES_HITS_ON_TARGETS"));
 
-				ImGui::Checkbox((const char*)u8"自动射击排除任务目标", &MiscSettings.TriggerBotExcludeTargetSuspects);
-				AddDefaultTooltip((const char*)u8"开启后自动射击不会射击需要逮捕的任务目标嫌疑人。");
+				ImGui::Checkbox(Localization::T("EXCLUDE_TARGET_SUSPECTS"), &MiscSettings.TriggerBotExcludeTargetSuspects);
+				AddDefaultTooltip(Localization::T("TRIGGERBOT_WILL_NOT_SHOOT_MISSION_CRITICAL_SUSPECTS_THAT_SHOULD_BE_ARRESTED"));
 
-				ImGui::SeparatorText((const char*)u8"其他");
+				ImGui::SeparatorText(Localization::T("MISC"));
 
-				ImGui::Checkbox((const char*)u8"显示已开启的功能", &CVars.RenderOptions);
+				ImGui::Checkbox(Localization::T("DRAW_ACTIVE_FEATURES"), &CVars.RenderOptions);
 
-				ImGui::Checkbox((const char*)u8"显示玩家列表", &CVars.ListPlayers);
+				ImGui::Checkbox(Localization::T("SHOW_PLAYER_LIST"), &CVars.ListPlayers);
 
-				ImGui::Checkbox((const char*)u8"自动保存设置", &MiscSettings.ShouldAutoSave);
+				ImGui::Checkbox(Localization::T("AUTO_SAVE_SETTINGS"), &MiscSettings.ShouldAutoSave);
 				ImGui::SameLine();
-				ImGui::Checkbox((const char*)u8"保存已启用的功能状态", &MiscSettings.ShouldSaveCVars);
+				ImGui::Checkbox(Localization::T("SAVE_ACTIVE_FEATURES_STATE"), &MiscSettings.ShouldSaveCVars);
 
-				ImGui::SeparatorText((const char*)u8"按键绑定");
+				ImGui::SeparatorText(Localization::T("KEYBINDS"));
 
 				// Create a combo box
 				const char* TBpreview = ImGui::GetKeyName(TriggerBotKey);
 				if (!TBpreview) TBpreview = "None";
 
-				if (ImGui::BeginCombo((const char*)u8"选择自动射击按键", TBpreview))
+				if (ImGui::BeginCombo(Localization::T("TRIGGERBOT_KEY"), TBpreview))
 				{
 					for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 					{
@@ -457,7 +468,7 @@ void GUI::RenderMenu()
 				const char* ESPpreview = ImGui::GetKeyName(ESPKey);
 				if (!ESPpreview) ESPpreview = "None";
 
-				if (ImGui::BeginCombo((const char*)u8"选择透视按键", ESPpreview))
+				if (ImGui::BeginCombo(Localization::T("ESP_KEY"), ESPpreview))
 				{
 					for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 					{
@@ -478,7 +489,7 @@ void GUI::RenderMenu()
 				const char* AimPreview = ImGui::GetKeyName(AimButton);
 				if (!AimPreview) AimPreview = "None";
 
-				if (ImGui::BeginCombo((const char*)u8"选择锁定目标按键", AimPreview))
+				if (ImGui::BeginCombo(Localization::T("AIM_KEY"), AimPreview))
 				{
 					for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 					{
@@ -505,9 +516,9 @@ void GUI::RenderMenu()
 
 		if (CVars.SecretFeatures)
 		{
-			if (ImGui::BeginTabItem((const char*)u8"秘密功能 (Secret Features)"))
+			if (ImGui::BeginTabItem(Localization::T("SECRET_FEATURES")))
 			{
-				ImGui::Text((const char*)u8"此选项仅供开发使用。");
+				ImGui::Text(Localization::T("THIS_OPTION_IS_FOR_DEVELOPMENT_ONLY"));
 				ImGui::EndTabItem();
 			}
 		}
@@ -516,8 +527,8 @@ void GUI::RenderMenu()
 	}
 
 	ImGui::Separator();
-	ImGui::Text((const char*)u8"你可以在 UnknownCheats.me 上找到我，ID 为 Peachmarrow13。");
+	ImGui::Text(Localization::T("YOU_CAN_FIND_ME_ON_UNKNOWNCHEATS_ME_ID_PEACHMARROW13"));
 	ImGui::SameLine();
-	ImGui::Text((const char*)u8"此辅助在 UnknownCheats.me 免费发布，请勿从其他任何地方下载。");
+	ImGui::Text(Localization::T("THIS_CHEAT_IS_RELEASED_FOR_FREE_ON_UNKNOWNCHEATS_ME_DO_NOT_DOWNLOAD_FROM_ELSEWHERE"));
 	ImGui::End();
 }

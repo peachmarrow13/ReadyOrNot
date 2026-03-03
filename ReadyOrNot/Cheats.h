@@ -115,6 +115,8 @@ struct CVarsstruct
 	bool BulletTime = false;
 } inline CVars;
 
+#include "Utils/Localization.h"
+
 struct MiscSettingsStruct {
 	bool Reticle = false;
 	ImVec4 ReticleColor = ImVec4(0.0f, 1.0f, 0.0f, 1.0f);
@@ -127,6 +129,7 @@ struct MiscSettingsStruct {
 	bool CrossReticle = true;
 	bool ShouldAutoSave = true;
 	bool ShouldSaveCVars = true;
+	Language CurrentLanguage = Language::English;
 } inline MiscSettings;
 
 struct Settingsstruct

@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Engine.h"
+#include "Cheats.h"
+#include "Localization.h"
 
 using namespace SDK;
 

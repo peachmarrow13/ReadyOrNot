@@ -29,4 +29,6 @@
 #include "backends/imgui_impl_dx11.h"
 #include <imgui_internal.h>
 
+#include "Utils/Localization.h"
+
 #endif //PCH_H

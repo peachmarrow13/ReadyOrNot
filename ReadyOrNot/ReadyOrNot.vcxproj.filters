@@ -40,7 +40,10 @@
     <ClCompile Include="ReadyOrNot_SDK\SDK\ReadyOrNot_functions.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="Utils\Localization.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Utils.cpp">
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Misc.cpp">
@@ -108,7 +111,10 @@
     <ClInclude Include="ReadyOrNot_SDK\SDK\Engine_classes.hpp">
       <Filter>SDK</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="Utils\Localization.h">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Utils.h">
       <Filter>Source Files\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Cheats.h">

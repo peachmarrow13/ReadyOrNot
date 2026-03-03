@@ -170,13 +170,13 @@ void Cheats::RenderESP()
 
         	if (Actor->IsA(ATrapActor::StaticClass()) && GVars.PlayerController->ProjectWorldLocationToScreen(Actor->K2_GetActorLocation(), &TrapScreen, true))
         	{
-				const char* TrapTypeName = (const char*)u8"未知陷阱";
+				const char* TrapTypeName = Localization::T("UNKNOWN_TRAP");
 				if (((ATrapActor*)Actor)->TrapType == ETrapType::Explosive)
-					TrapTypeName = (const char*)u8"爆炸陷阱";
+					TrapTypeName = Localization::T("EXPLOSIVE_TRAP");
 				else if (((ATrapActor*)Actor)->TrapType == ETrapType::Flashbang)
-                    TrapTypeName = (const char*)u8"闪光弹陷阱";
+                    TrapTypeName = Localization::T("FLASHBANG_TRAP");
 				else if (((ATrapActor*)Actor)->TrapType == ETrapType::Alarm)
-					TrapTypeName = (const char*)u8"报警器陷阱";
+					TrapTypeName = Localization::T("ALARM_TRAP");
 
         		ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(TrapScreen.X, TrapScreen.Y), 3, Colors::Red);
         		ImGui::GetBackgroundDrawList()->AddText(ImVec2(TrapScreen.X + 5, TrapScreen.Y - 5), Colors::Red, TrapTypeName);

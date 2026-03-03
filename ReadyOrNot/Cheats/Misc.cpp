@@ -410,29 +410,29 @@ void Cheats::RenderEnabledOptions()
 
 	ImGui::SetNextWindowBgAlpha(0.3f);
 
-	ImGui::Begin((const char*)u8"已开启功能列表", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
+	ImGui::Begin(Localization::T("ACTIVE_FEATURES_LIST"), nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
 	ImGui::SetWindowPos(ImVec2(10, 30));
 
-	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), (const char*)u8"已开启功能:");
+	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), Localization::T("ACTIVE_FEATURES"));
 	if (CVars.GodMode)
-		ImGui::TextColored(Color, (const char*)u8"无敌模式");
+		ImGui::TextColored(Color, Localization::T("GODMODE"));
 	if (CVars.InfAmmo)
-		ImGui::TextColored(Color, (const char*)u8"无限弹药");
+		ImGui::TextColored(Color, Localization::T("INF_AMMO"));
 	if (CVars.Aimbot)
-		ImGui::TextColored(Color, (const char*)u8"自瞄");
+		ImGui::TextColored(Color, Localization::T("AIMBOT"));
 	if (CVars.ESP)
-		ImGui::TextColored(Color, (const char*)u8"透视");
+		ImGui::TextColored(Color, Localization::T("ESP"));
 	if (CVars.SpeedEnabled)
-		ImGui::TextColored(Color, (const char*)u8"速度修改 x%.1f", CVars.Speed);
+		ImGui::TextColored(Color, Localization::T("SPEED_X_1F"), CVars.Speed);
 	if (CVars.SilentAim)
-		ImGui::TextColored(Color, (const char*)u8"静默自瞄");
+		ImGui::TextColored(Color, Localization::T("SILENT_AIM"));
 	if (CVars.NoClip)
-		ImGui::TextColored(Color, (const char*)u8"穿墙模式");
+		ImGui::TextColored(Color, Localization::T("NOCLIP"));
 	if (CVars.Reticle)
-		ImGui::TextColored(Color, (const char*)u8"自定义准星");
+		ImGui::TextColored(Color, Localization::T("CUSTOM_RETICLE"));
 	if (CVars.TriggerBot)
-		ImGui::TextColored(Color, (const char*)u8"自动射击");
+		ImGui::TextColored(Color, Localization::T("TRIGGERBOT"));
 
 	CheatOptionsWindowSize = ImGui::GetWindowSize();
 
@@ -536,9 +536,9 @@ void Cheats::ListPlayers()
 
 	ImGui::SetNextWindowPos(ImVec2(10, CheatOptionsWindowSize.y + 30));
 
-	ImGui::Begin((const char*)u8"玩家列表", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
+	ImGui::Begin(Localization::T("PLAYER_LIST"), nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
-	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), (const char*)u8"当前玩家:");
+	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), Localization::T("CURRENT_PLAYERS"));
 
 	TArray<APlayerCharacter*>& GamePlayers = GVars.GameState->AllPlayerCharacters;
 	if (GamePlayers.Num() == 0)
@@ -563,14 +563,14 @@ void Cheats::ListPlayers()
 			ImGui::SameLine();
 			std::string ID = Player->PlayerState->GetPlayerName().ToString();
 			ImGui::PushID((ID + "GodMode").c_str());
-			if (ImGui::Checkbox((const char*)u8"无敌", &Utils::GetPlayerCheats(Player).GodMode))
+			if (ImGui::Checkbox(Localization::T("GODMODE"), &Utils::GetPlayerCheats(Player).GodMode))
 			{
 				Player->bGodMode = Utils::GetPlayerCheats(Player).GodMode;
 			}
 			ImGui::PopID();
 			ImGui::SameLine();
 			ImGui::PushID((ID + "InfAmmo").c_str());
-			if (ImGui::Checkbox((const char*)u8"无限弹药", &Utils::GetPlayerCheats(Player).InfAmmo))
+			if (ImGui::Checkbox(Localization::T("INF_AMMO"), &Utils::GetPlayerCheats(Player).InfAmmo))
 			{
 				if (Player->GetEquippedWeapon())
 				{
@@ -579,7 +579,7 @@ void Cheats::ListPlayers()
 			}
 			ImGui::PopID();
 			ImGui::PushID((ID + "Teleport").c_str());
-			if (ImGui::Button((const char*)u8"传送到我这"))
+			if (ImGui::Button(Localization::T("TELEPORT_TO_ME")))
 			{
 				if (GVars.ReadyOrNotChar)
 					Player->Server_TeleportPlayerToLocation(GVars.ReadyOrNotChar->K2_GetActorLocation(), GVars.ReadyOrNotChar->K2_GetActorLocation());
@@ -587,7 +587,7 @@ void Cheats::ListPlayers()
 			ImGui::PopID();
 			ImGui::PushID((ID + "Speed").c_str());
 			ImGui::SameLine();
-			if (ImGui::Button((const char*)u8"赋予极速"))
+			if (ImGui::Button(Localization::T("GIVE_SUPER_SPEED")))
 			{
 				Player->Server_SetWalkSpeed(240.0f * 10, 1000);
 			}

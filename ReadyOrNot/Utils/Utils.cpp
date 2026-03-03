@@ -343,6 +343,59 @@ bool Utils::IsTargetSuspect(AActor* Actor)
     return false;
 }
 
+bool Utils::IsObjectiveCompletedForActor(AActor* Actor)
+{
+    if (!Actor || !GVars.GameState) return false;
+
+    // First check if the actor itself is reported (if it's a reportable)
+    if (Actor->IsA(AReportableActor::StaticClass()))
+    {
+        if (static_cast<AReportableActor*>(Actor)->bHasBeenReported)
+            return true;
+    }
+
+    // Check mission objectives for tag matches
+    TArray<AObjective*> Objectives = GVars.GameState->MissionObjectives;
+    for (int i = 0; i < Objectives.Num(); i++)
+    {
+        AObjective* Obj = Objectives[i];
+        if (!Obj || !Utils::IsValidActor(Obj)) continue;
+        
+        bool bMatch = false;
+        
+        // Handle different by-tag objective types
+        if (Obj->IsA(AReportReportableByTag::StaticClass()))
+        {
+            FName ReportTag = static_cast<AReportReportableByTag*>(Obj)->ReportTag;
+            for (int t = 0; t < Actor->Tags.Num(); t++)
+            {
+                if (Actor->Tags[t] == ReportTag) { bMatch = true; break; }
+            }
+        }
+        else if (Obj->IsA(ARescueCivilianByTag::StaticClass()))
+        {
+            FName CivilianTag = static_cast<ARescueCivilianByTag*>(Obj)->CivilianTag;
+            for (int t = 0; t < Actor->Tags.Num(); t++)
+            {
+                if (Actor->Tags[t] == CivilianTag) { bMatch = true; break; }
+            }
+        }
+        else if (Obj->IsA(ANeutralizeSuspectByTag::StaticClass()))
+        {
+            FName SuspectTag = static_cast<ANeutralizeSuspectByTag*>(Obj)->SuspectTag;
+            for (int t = 0; t < Actor->Tags.Num(); t++)
+            {
+                if (Actor->Tags[t] == SuspectTag) { bMatch = true; break; }
+            }
+        }
+
+        if (bMatch && Obj->IsObjectiveCompleted())
+            return true;
+    }
+
+    return false;
+}
+
 void cerrf(const char* Format, ...)
 {
     va_list Args;

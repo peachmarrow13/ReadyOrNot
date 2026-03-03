@@ -76,6 +76,7 @@ struct Utils
 	static ACharacter* GetNearestCharacter(ETeam Team);
 	static void Error(std::string msg);
 	static bool IsTargetSuspect(AActor* Actor);
+	static bool IsObjectiveCompletedForActor(AActor* Actor);
 
 };
 

@@ -141,7 +141,7 @@ void Cheats::RenderESP()
             
             if (GVars.PlayerController->ProjectWorldLocationToScreen(ReportableActor->K2_GetActorLocation(), &ObjectiveScreen, true))
             {
-                ImU32 ObjectiveColor = ReportableActor->bHasBeenReported
+                ImU32 ObjectiveColor = Utils::IsObjectiveCompletedForActor(ReportableActor)
                     ? Utils::ConvertImVec4toU32(ESPSettings.ObjectiveCompletedColor)
                     : Utils::ConvertImVec4toU32(ESPSettings.ObjectiveActiveColor);
 		        ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ObjectiveScreen.X, ObjectiveScreen.Y), 5, ObjectiveColor);

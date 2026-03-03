@@ -307,6 +307,8 @@ void Cheats::DrawReticle()
 
 void Cheats::GetAllEvidence()
 {
+	if (!GVars.ReadyOrNotChar || !Utils::IsValidActor(GVars.ReadyOrNotChar)) return;
+
 	ULevel* Level = GVars.Level;
 	if (!Level) return;
 
@@ -318,36 +320,34 @@ void Cheats::GetAllEvidence()
 	}
 	if (ActorsCopy.empty()) return;
 
-	AReadyOrNotCharacter* RONC = nullptr;
-
 	std::vector<ABaseWeapon*> Weapons;
 
 	for (AActor* Actor : ActorsCopy)
 	{
 		if (!Utils::IsValidActor(Actor)) continue;
 
-		if (Actor->IsA(AReadyOrNotCharacter::StaticClass()))
-			RONC = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-
 		if (Actor->IsA(ABaseWeapon::StaticClass()))
 		{
 			ABaseWeapon* Weapon = reinterpret_cast<ABaseWeapon*>(Actor);
 
 			// Verify both weapon and component are valid
-			if (Weapon && Weapon->EvidenceComponent && Weapon->EvidenceComponent->CanBeCollected())
+			if (Weapon && !IsBadReadPtr(Weapon, sizeof(void*)))
 			{
-				Weapons.push_back(Weapon);
+				if (Weapon->EvidenceComponent && !IsBadReadPtr(Weapon->EvidenceComponent, sizeof(void*)) && UKismetSystemLibrary::IsValid(Weapon->EvidenceComponent))
+				{
+					if (Weapon->EvidenceComponent->CanBeCollected())
+					{
+						Weapons.push_back(Weapon);
+					}
+				}
 			}
 		}
 	}
 
 	for (ABaseWeapon* Weapon : Weapons)
 	{
-		if (!Weapon) continue;
-		if (GVars.ReadyOrNotChar)
-			GVars.ReadyOrNotChar->PickupEvidence(Weapon);
-		else if (RONC)
-			RONC->PickupEvidence(Weapon);
+		if (!Weapon || IsBadReadPtr(Weapon, sizeof(void*))) continue;
+		GVars.ReadyOrNotChar->PickupEvidence(Weapon);
 	}
 }
 
@@ -378,6 +378,10 @@ void Cheats::TriggerBot()
 			AActor* HitActor = HitResult.HitObjectHandle.Actor.Get();
 			if (HitActor && (HitActor->IsA(ASuspectCharacter::StaticClass()) || MiscSettings.TriggerBotTargetsCivilians && HitActor->IsA(ACivilianCharacter::StaticClass())))
 			{
+				// Skip mission target suspects if exclusion is enabled
+				if (MiscSettings.TriggerBotExcludeTargetSuspects && Utils::IsTargetSuspect(HitActor))
+					return;
+
 				if (reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsDeadOrUnconscious() || reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsIncapacitated() || reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsArrestedOrSurrendered())
 					return;
 

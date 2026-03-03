@@ -185,7 +185,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 			if (SilentAimSettings.DrawArrow)
 			{
-				AActor* TargetActor = Utils::GetBestTarget(GVars.PlayerController, SilentAimSettings.TargetCivilians, SilentAimSettings.TargetArrested, SilentAimSettings.TargetSurrendered, SilentAimSettings.TargetDead, SilentAimSettings.MaxFOV, SilentAimSettings.RequiresLOS, TextVars.SilentAimBone, SilentAimSettings.TargetAll);
+				AActor* TargetActor = Utils::GetBestTarget(GVars.PlayerController, SilentAimSettings.TargetCivilians, SilentAimSettings.TargetArrested, SilentAimSettings.TargetSurrendered, SilentAimSettings.TargetDead, SilentAimSettings.MaxFOV, SilentAimSettings.RequiresLOS, TextVars.SilentAimBone, SilentAimSettings.TargetAll, SilentAimSettings.ExcludeTargetSuspects);
 
 				if (TargetActor && Utils::IsValidActor(TargetActor))
 				{
@@ -206,6 +206,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		if (CVars.Aimbot) Cheats::Aimbot();
 		if (CVars.TriggerBot) Cheats::TriggerBot();
 		if (CVars.SpeedEnabled) Cheats::SetPlayerSpeed();
+		if (CVars.InfAmmo) Cheats::ToggleInfAmmo();
 
 		if (GUI::TriggerBotKey != ImGuiKey_None && ImGui::IsKeyPressed(GUI::TriggerBotKey, false))
 			CVars.TriggerBot = !CVars.TriggerBot;

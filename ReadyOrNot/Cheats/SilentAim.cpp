@@ -17,7 +17,8 @@ void Cheats::SilentAim(Params::BaseMagazineWeapon_OnFire* FireParams)
 			SilentAimSettings.MaxFOV,
 			SilentAimSettings.RequiresLOS,
 			TextVars.SilentAimBone,
-			SilentAimSettings.TargetAll);
+			SilentAimSettings.TargetAll,
+			SilentAimSettings.ExcludeTargetSuspects);
 
 		if (!TargetActor) return;
 

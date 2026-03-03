@@ -141,9 +141,11 @@ void Cheats::RenderESP()
             
             if (GVars.PlayerController->ProjectWorldLocationToScreen(ReportableActor->K2_GetActorLocation(), &ObjectiveScreen, true))
             {
-                ImU32 ObjectiveColor = ReportableActor->bReportableEnabled ? Colors::Gray : Colors::Green;
-		        ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ObjectiveScreen.X, ObjectiveScreen.Y), 3, ObjectiveColor);
-				ImGui::GetBackgroundDrawList()->AddText(ImVec2(ObjectiveScreen.X + 5, ObjectiveScreen.Y - 5), ObjectiveColor, ReportableActor->ReportableName.ToString().c_str());
+                ImU32 ObjectiveColor = ReportableActor->bHasBeenReported
+                    ? Utils::ConvertImVec4toU32(ESPSettings.ObjectiveCompletedColor)
+                    : Utils::ConvertImVec4toU32(ESPSettings.ObjectiveActiveColor);
+		        ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ObjectiveScreen.X, ObjectiveScreen.Y), 5, ObjectiveColor);
+				ImGui::GetBackgroundDrawList()->AddText(ImVec2(ObjectiveScreen.X + 8, ObjectiveScreen.Y - 7), ObjectiveColor, ReportableActor->ReportableName.ToString().c_str());
             }
 	    }
 	}
@@ -223,6 +225,12 @@ void Cheats::RenderESP()
 
         if (IsSuspect) RenderColor = Utils::ConvertImVec4toU32(ESPSettings.SuspectColor);
 		else RenderColor = Utils::ConvertImVec4toU32(ESPSettings.CivilianColor);
+
+		// Highlight unique mission-target suspects by matching actor Tags against objective SuspectTags
+		if (IsSuspect && Utils::IsTargetSuspect(TargetActor))
+		{
+			RenderColor = Utils::ConvertImVec4toU32(ESPSettings.TargetSuspectColor);
+		}
 
 		if (IsSwat) RenderColor = Utils::ConvertImVec4toU32(ESPSettings.TeamColor);
 
@@ -329,6 +337,23 @@ void Cheats::RenderESP()
                     );
                 }
 			}
+            if (ESPSettings.ShowEnemyName && !IsSwat)
+            {
+                FVector NameLocation = TargetActor->K2_GetActorLocation();
+                FVector2D NameScreen;
+                if (GVars.PlayerController->ProjectWorldLocationToScreen(NameLocation, &NameScreen, true))
+                {
+                    std::string CharName = TargetActor->SpeechCharacterName.ToString();
+                    if (!CharName.empty())
+                    {
+                        ImGui::GetBackgroundDrawList()->AddText(
+                            ImVec2(NameScreen.X, NameScreen.Y - 20),
+                            RenderColor,
+                            CharName.c_str()
+                        );
+                    }
+                }
+            }
             if (ESPSettings.ShowTeam && IsPlayer && TargetActor && TargetActor->PlayerState && TargetActor->PlayerState->GetPlayerName() && GVars.PlayerController->ProjectWorldLocationToScreen(Actor->K2_GetActorLocation(), &ActorScreen, true))
             {
                 ImGui::GetBackgroundDrawList()->AddText(

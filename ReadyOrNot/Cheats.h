@@ -37,6 +37,7 @@ struct EspSettingsstruct {
 	bool ShowTraps = true;
 	bool ShowObjectives = false;
 	bool ShowEnemyDistance = false;
+	bool ShowEnemyName = false;
 	bool Bones = true;
 	float BoneOpacity = 1.0f;
 	ImVec4 SuspectColor = ImVec4(1.0f, 0.0f, 0.0f, BoneOpacity);
@@ -44,6 +45,9 @@ struct EspSettingsstruct {
 	ImVec4 DeadColor = ImVec4(0.0f, 0.0f, 0.0f, BoneOpacity);
 	ImVec4 TeamColor = ImVec4(0.0f, 1.0f, 0.0f, BoneOpacity);
 	ImVec4 ArrestColor = ImVec4(1.0f, 1.0f, 0.0f, BoneOpacity);
+	ImVec4 TargetSuspectColor = ImVec4(0.7f, 0.0f, 1.0f, BoneOpacity);
+	ImVec4 ObjectiveActiveColor = ImVec4(1.0f, 0.85f, 0.0f, 1.0f);
+	ImVec4 ObjectiveCompletedColor = ImVec4(0.0f, 1.0f, 0.4f, 1.0f);
 	bool LOS = false;
 	bool BulletTracers = false;
 	bool TracerRainbow = true;
@@ -69,6 +73,7 @@ struct AimbotSettingsstruct {
 	float FOVThickness = 1.0f;
 	float ArrowThickness = 2.0f;
 	bool TargetAll = false;
+	bool ExcludeTargetSuspects = false;
 } inline AimbotSettings;
 
 struct SilentAimSettingsstruct {
@@ -85,6 +90,7 @@ struct SilentAimSettingsstruct {
 	float FOVThickness = 1.0f;
 	bool TargetAll = false;
 	bool MagicBullet = false;
+	bool ExcludeTargetSuspects = false;
 } inline SilentAimSettings;
 
 struct CVarsstruct
@@ -117,6 +123,7 @@ struct MiscSettingsStruct {
 	bool ReticleWhenThrowing = false;
 	bool TriggerBotTargetsCivilians = false;
 	bool TriggerBotUsesSilentAim = false;
+	bool TriggerBotExcludeTargetSuspects = false;
 	bool CrossReticle = true;
 	bool ShouldAutoSave = true;
 	bool ShouldSaveCVars = true;

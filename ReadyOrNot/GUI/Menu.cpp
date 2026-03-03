@@ -74,6 +74,18 @@ void GUI::RenderMenu()
 				ImGui::Text((const char*)u8"未找到用户名，但仍感谢使用！");
 			}
 
+			if (GVars.PlayerController)
+			{
+				if (GVars.PlayerController->HasAuthority())
+					ImGui::TextColored(ImVec4(0, 1, 0, 1), (const char*)u8"当前权限: 主机 (Authority/Host)");
+				else
+					ImGui::TextColored(ImVec4(1, 0, 0, 1), (const char*)u8"当前权限: 客户机 (Client)");
+			}
+			else
+			{
+				ImGui::TextColored(ImVec4(1, 1, 0, 1), (const char*)u8"当前权限: 等待控制器初始化...");
+			}
+
 			ImGui::EndTabItem();
 		}
 
@@ -272,6 +284,9 @@ void GUI::RenderMenu()
 					AddDefaultTooltip((const char*)u8"仅在按住此键时激活自瞄");
 				}
 
+				ImGui::Checkbox((const char*)u8"排除任务目标嫌疑人", &AimbotSettings.ExcludeTargetSuspects);
+				AddDefaultTooltip((const char*)u8"开启后常规自瞄不会瞄准需要逮捕的任务目标嫌疑人。");
+
 				ImGui::TreePop();
 			}
 
@@ -284,6 +299,8 @@ void GUI::RenderMenu()
 				ImGui::Checkbox((const char*)u8"显示陷阱", &ESPSettings.ShowTraps);
 
 				ImGui::Checkbox((const char*)u8"显示敌方距离", &ESPSettings.ShowEnemyDistance);
+
+				ImGui::Checkbox((const char*)u8"显示敌方名称", &ESPSettings.ShowEnemyName);
 
 				ImGui::Checkbox((const char*)u8"显示骨骼", &ESPSettings.Bones);
 
@@ -304,6 +321,12 @@ void GUI::RenderMenu()
 				ImGui::ColorEdit4((const char*)u8"队友颜色", (float*)&ESPSettings.TeamColor, ImGuiColorEditFlags_NoInputs);
 
 				ImGui::ColorEdit4((const char*)u8"被捕单位颜色", (float*)&ESPSettings.ArrestColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4((const char*)u8"任务目标嫌疑人颜色", (float*)&ESPSettings.TargetSuspectColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4((const char*)u8"活跃任务目标颜色", (float*)&ESPSettings.ObjectiveActiveColor, ImGuiColorEditFlags_NoInputs);
+
+				ImGui::ColorEdit4((const char*)u8"已完成任务目标颜色", (float*)&ESPSettings.ObjectiveCompletedColor, ImGuiColorEditFlags_NoInputs);
 
 				ImGui::Checkbox((const char*)u8"仅显示可见目标 (LOS)", &ESPSettings.LOS);
 
@@ -365,6 +388,9 @@ void GUI::RenderMenu()
 				AddDefaultTooltip((const char*)u8"将子弹直接生成在目标身上。建议仅在房主(Host)时开启，客机开启可能无效或不稳定。");
 				HostOnlyTooltip();
 
+				ImGui::Checkbox((const char*)u8"排除任务目标嫌疑人", &SilentAimSettings.ExcludeTargetSuspects);
+				AddDefaultTooltip((const char*)u8"开启后静默自瞄不会瞄准需要逮捕的任务目标嫌疑人。");
+
 				ImGui::TreePop();
 			}
 
@@ -390,6 +416,9 @@ void GUI::RenderMenu()
 
 				ImGui::Checkbox((const char*)u8"自动射击使用静默自瞄", &MiscSettings.TriggerBotUsesSilentAim);
 				AddDefaultTooltip((const char*)u8"确保你能命中目标");
+
+				ImGui::Checkbox((const char*)u8"自动射击排除任务目标", &MiscSettings.TriggerBotExcludeTargetSuspects);
+				AddDefaultTooltip((const char*)u8"开启后自动射击不会射击需要逮捕的任务目标嫌疑人。");
 
 				ImGui::SeparatorText((const char*)u8"其他");
 

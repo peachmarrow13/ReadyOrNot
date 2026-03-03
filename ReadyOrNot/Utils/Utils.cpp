@@ -150,7 +150,7 @@ FVector2D Utils::ImVec2ToFVector2D(ImVec2 Vector)
 	return FVector2D(Vector.x, Vector.y);
 }
 
-AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool TargetArrested, bool TargetSurrendered, bool TargetDead, float MaxFOV, bool RequiresLOS, std::string TargetBone, bool TargetAll)
+AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool TargetArrested, bool TargetSurrendered, bool TargetDead, float MaxFOV, bool RequiresLOS, std::string TargetBone, bool TargetAll, bool ExcludeTargetSuspects)
 {
     if (!GVars.World || !GVars.World->VTable) return nullptr;
     if (!GVars.Level || !GVars.GameState || !ViewPoint || !ViewPoint->PlayerCameraManager) return nullptr;
@@ -208,6 +208,10 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
         if (!TargetArrested && ReadyOrNotChar->IsArrested())
             continue;
         if (!TargetSurrendered && ReadyOrNotChar->IsSurrendered())
+            continue;
+
+        // Skip mission target suspects if exclusion is enabled
+        if (ExcludeTargetSuspects && ReadyOrNotChar->IsSuspect() && Utils::IsTargetSuspect(Actor))
             continue;
 
         // Ensure Mesh is valid before proceeding
@@ -310,6 +314,33 @@ void Utils::DrawSnapLine(FVector TargetPos, float Thickness = 2.0f)
 void Utils::Error(std::string msg)
 {
     printf("[Error] %s\n", msg.c_str());
+}
+
+bool Utils::IsTargetSuspect(AActor* Actor)
+{
+    if (!Actor || !GVars.GameState) return false;
+
+    // Collect suspect tags from mission objectives
+    TArray<AObjective*> Objectives = GVars.GameState->MissionObjectives;
+    for (int i = 0; i < Objectives.Num(); i++)
+    {
+        AObjective* Obj = Objectives[i];
+        if (!Obj || !Utils::IsValidActor(Obj)) continue;
+        if (Obj->IsA(ANeutralizeSuspectByTag::StaticClass()))
+        {
+            ANeutralizeSuspectByTag* NeutObj = static_cast<ANeutralizeSuspectByTag*>(Obj);
+            std::string SuspTag = NeutObj->SuspectTag.ToString();
+            if (SuspTag.empty() || SuspTag == "None") continue;
+
+            // Check if the actor has a matching tag
+            for (int t = 0; t < Actor->Tags.Num(); t++)
+            {
+                if (Actor->Tags[t].ToString() == SuspTag)
+                    return true;
+            }
+        }
+    }
+    return false;
 }
 
 void cerrf(const char* Format, ...)

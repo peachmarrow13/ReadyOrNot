@@ -87,7 +87,6 @@ struct Variables
 	AReadyOrNotCharacter* ReadyOrNotChar = nullptr;
 	UWorld* World = nullptr;
 	AReadyOrNotGameState* GameState = nullptr;
-	TArray<APlayerCharacter*> Players = TArray<APlayerCharacter*>();
 	ULevel* Level = nullptr;
 	ImVec2 ScreenSize;
 
@@ -97,81 +96,59 @@ struct Variables
 	}
 
 	void AutoSetVariables() {
-
-		// Get PlayerController first
-		APlayerController* currentPC = Utils::GetPlayerController();
-		if (!currentPC) {
-
-			// Clear all dependent variables if PlayerController is null
-			this->PlayerController = nullptr;
-			this->POV = nullptr;
-			this->Pawn = nullptr;
-			this->Character = nullptr;
-			this->ReadyOrNotChar = nullptr;
-			this->World = Utils::GetWorldSafe();
-			if (this->World && this->World->GameState && this->World->GameState->IsA(AReadyOrNotGameState::StaticClass()))
-				this->GameState = this->World ? static_cast<AReadyOrNotGameState*>(this->World->GameState) : nullptr;
-			else
-				this->GameState = nullptr;
-			this->Players = this->GameState ? this->GameState->AllPlayerCharacters : TArray<APlayerCharacter*>();
-			this->Level = this->World ? this->World->PersistentLevel : nullptr;
-			return;
-		}
-
-		// Update PlayerController if changed
-		if (this->PlayerController != currentPC) {
-			this->PlayerController = currentPC;
-			// Reset dependent variables when PlayerController changes
-			this->Pawn = nullptr;
-			this->Character = nullptr;
-			this->ReadyOrNotChar = nullptr;
-		}
-
-		// Update Pawn
-		if (this->PlayerController && this->Pawn != this->PlayerController->Pawn) {
-			this->Pawn = this->PlayerController->Pawn;
-			// Reset Character-dependent variables when Pawn changes
-			this->Character = nullptr;
-			this->ReadyOrNotChar = nullptr;
-		}
-
-		// Update Character
-		if (this->PlayerController && this->Character != this->PlayerController->Character) {
-			this->Character = this->PlayerController->Character;
-			// Reset ReadyOrNotChar when Character changes
-			this->ReadyOrNotChar = nullptr;
-		}
-
-		// Update ReadyOrNotChar
-		if (this->Character) {
-			AReadyOrNotCharacter* newReadyOrNotChar = static_cast<AReadyOrNotCharacter*>(this->Character);
-			if (this->ReadyOrNotChar != newReadyOrNotChar) {
-				this->ReadyOrNotChar = newReadyOrNotChar;
-			}
-		}
-
-		// Update World
+		// 1. Update World first
 		UWorld* currentWorld = Utils::GetWorldSafe();
 		if (this->World != currentWorld) {
 			this->World = currentWorld;
-			this->Level = nullptr; // Reset Level when World changes
-		}
-
-		// Update Level
-		if (this->World && this->Level != this->World->PersistentLevel) {
-			this->Level = this->World->PersistentLevel;
-		}
-
-		// Update GameState
-		if (this->World && this->World->GameState && this->GameState != this->World->GameState && this->World->GameState->IsA(AReadyOrNotGameState::StaticClass())) 
-			this->GameState = static_cast<AReadyOrNotGameState*>(this->World->GameState);
-
-		if (this->PlayerController && this->PlayerController->PlayerCameraManager) {
-			this->POV = &this->PlayerController->PlayerCameraManager->CameraCachePrivate.POV;
-		}
-		else {
+			// Reset EVERYTHING when World changes
+			this->PlayerController = nullptr;
+			this->GameState = nullptr;
+			this->Pawn = nullptr;
+			this->Character = nullptr;
+			this->ReadyOrNotChar = nullptr;
+			this->Level = nullptr;
 			this->POV = nullptr;
 		}
+
+		if (!this->World || !this->World->VTable) return;
+
+		// 2. Update Level and GameState
+		this->Level = this->World->PersistentLevel;
+
+		if (this->World->GameState && this->World->GameState->VTable && this->World->GameState->IsA(AReadyOrNotGameState::StaticClass()))
+			this->GameState = static_cast<AReadyOrNotGameState*>(this->World->GameState);
+		else
+			this->GameState = nullptr;
+
+		// 3. Update PlayerController
+		APlayerController* currentPC = Utils::GetPlayerController();
+		if (this->PlayerController != currentPC) {
+			this->PlayerController = currentPC;
+			// Reset PC dependents
+			this->Pawn = nullptr;
+			this->Character = nullptr;
+			this->ReadyOrNotChar = nullptr;
+			this->POV = nullptr;
+		}
+
+		if (!this->PlayerController || !this->PlayerController->VTable) return;
+
+		// 4. Update PC dependents
+		this->Pawn = this->PlayerController->Pawn;
+		if (this->Pawn && !this->Pawn->VTable) this->Pawn = nullptr;
+
+		this->Character = this->PlayerController->Character;
+		if (this->Character && !this->Character->VTable) this->Character = nullptr;
+
+		if (this->Character && this->Character->IsA(AReadyOrNotCharacter::StaticClass()))
+			this->ReadyOrNotChar = static_cast<AReadyOrNotCharacter*>(this->Character);
+		else
+			this->ReadyOrNotChar = nullptr;
+
+		if (this->PlayerController->PlayerCameraManager && this->PlayerController->PlayerCameraManager->VTable)
+			this->POV = &this->PlayerController->PlayerCameraManager->CameraCachePrivate.POV;
+		else
+			this->POV = nullptr;
 
 		// Update Screen size
 		if (ImGui::GetCurrentContext())

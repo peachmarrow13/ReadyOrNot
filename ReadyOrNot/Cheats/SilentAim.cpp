@@ -25,14 +25,21 @@ void Cheats::SilentAim(Params::BaseMagazineWeapon_OnFire* FireParams)
 		bool bShouldShoot = (RandomValue <= SilentAimSettings.HitChance);
 		if (!bShouldShoot) return;
 
-		auto* RONC = GVars.ReadyOrNotChar;
-
 		std::wstring WideString = UtfN::StringToWString(TextVars.SilentAimBone);
 		FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
 
+		if (!((AReadyOrNotCharacter*)TargetActor)->Mesh) return;
 		FVector TargetLocation = ((AReadyOrNotCharacter*)TargetActor)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
 
-	if (!TargetActor) return;
+	if (SilentAimSettings.MagicBullet)
+	{
+		FireParams->SpawnLoc = TargetLocation;
+	}
+	else
+	{
+		FVector MuzzleLocation = FireParams->SpawnLoc;
+		FVector DirectionVec = TargetLocation - MuzzleLocation;
 
-	FireParams->SpawnLoc = TargetLocation;
+		FireParams->Direction = UKismetMathLibrary::Conv_VectorToRotator(DirectionVec);
+	}
 }

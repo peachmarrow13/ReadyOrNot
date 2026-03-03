@@ -21,39 +21,21 @@ UWorld* Utils::GetWorldSafe()
 // can return nullptr
 APlayerController* Utils::GetPlayerController()
 {
-    int i = 0;
-	APlayerController* PlayerController = nullptr;
+	UWorld* World = GetWorldSafe();
+	if (!World) return nullptr;
 
-    while (i < 50) {
-        i++;
-        UWorld* World = GetWorldSafe();
-        if (!World) return nullptr; // Error already logged in GetWorldSafe
-        UGameInstance* GameInstance = World->OwningGameInstance;
-        if (!GameInstance) {
-            //printf("[Error] GameInstance not found!\n");
-            Sleep(50);
-            continue;
-        }
-        if (GameInstance->LocalPlayers.Num() <= 0) {
-            //printf("[Error] No LocalPlayers in GameInstance!\n");
-            Sleep(50);
-			continue;
-        }
-        ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers[0];
-        if (!LocalPlayer) {
-            //printf("[Error] LocalPlayer is null!\n");
-            Sleep(50);
-			continue;
-        }
-        PlayerController = LocalPlayer->PlayerController;
-        if (!PlayerController) {
-            //printf("[Error] PlayerController not found!\n");
-            Sleep(50);
-			continue;
-        }
-    }
-    if (!Utils::IsValidActor(PlayerController)) return nullptr;
-    return PlayerController;
+	UGameInstance* GameInstance = World->OwningGameInstance;
+	if (!GameInstance) return nullptr;
+
+	if (GameInstance->LocalPlayers.Num() <= 0) return nullptr;
+
+	ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers[0];
+	if (!LocalPlayer) return nullptr;
+
+	APlayerController* PlayerController = LocalPlayer->PlayerController;
+	if (!PlayerController || !Utils::IsValidActor(PlayerController)) return nullptr;
+
+	return PlayerController;
 }
 
 unsigned Utils::ConvertImVec4toU32(ImVec4 Color)
@@ -63,21 +45,24 @@ unsigned Utils::ConvertImVec4toU32(ImVec4 Color)
 
 void Utils::PrintActors(const char* Exclude)
 {
+    if (!GVars.World || !GVars.World->VTable) return;
 	ULevel* Level = GVars.Level;
 	if (Level)
 	{
-        TArray<AActor*> Actors = Level->Actors;
-        for (int i = 0; i < Actors.Num(); i++)
-        {
-            AActor* Actor = Actors[i];
-            if (Actor)
-            {
-                if (!Utils::IsValidActor(Actor)) continue;
-                if (Exclude && Actor->GetName().find(Exclude) != std::string::npos)
-					continue;
+		if (Level->Actors.Num() > 0 && Level->Actors.Num() < 100000)
+		{
+			for (int i = 0; i < Level->Actors.Num(); i++)
+			{
+				AActor* Actor = Level->Actors[i];
+				if (Actor)
+				{
+					if (!Utils::IsValidActor(Actor)) continue;
+					if (Exclude && Actor->GetName().find(Exclude) != std::string::npos)
+						continue;
 
-                printf("Actor %d: %s - Class: %s\n", i, Actor->GetName().c_str(), Actor->Class->Name.ToString().c_str());
-            }
+					printf("Actor %d: %s - Class: %s\n", i, Actor->GetName().c_str(), Actor->Class->Name.ToString().c_str());
+				}
+			}
 		}
 	}
 }
@@ -116,7 +101,7 @@ PlayerCheatData& Utils::GetPlayerCheats(APlayerCharacter* Player)
 
 bool Utils::IsValidActor(AActor* Actor)
 {
-    if (!Actor || !Actor->VTable) return false;
+    if (!Actor || IsBadReadPtr(Actor, sizeof(void*)) || !Actor->VTable) return false;
 
     // Use Unreal's built-in validation where possible
     if (!UKismetSystemLibrary::IsValid(Actor)) return false;
@@ -167,7 +152,10 @@ FVector2D Utils::ImVec2ToFVector2D(ImVec2 Vector)
 
 AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool TargetArrested, bool TargetSurrendered, bool TargetDead, float MaxFOV, bool RequiresLOS, std::string TargetBone, bool TargetAll)
 {
-    if (!GVars.World || !GVars.Level || !ViewPoint || !ViewPoint->PlayerCameraManager) return nullptr;
+    if (!GVars.World || !GVars.World->VTable) return nullptr;
+    if (!GVars.Level || !GVars.GameState || !ViewPoint || !ViewPoint->PlayerCameraManager) return nullptr;
+
+    ULevel* Level = GVars.Level;
 
     static std::string CachedBoneString = "";
     static FName CachedBoneName;
@@ -185,7 +173,17 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
     FVector2D ViewportCenter = ViewportSize / 2.0;
     float MaxFOVNormalized = MaxFOV / 90.0f;
 
-    for (AActor* Actor : GVars.Level->Actors)
+    std::vector<AActor*> ActorsSafe;
+    if (Level->Actors.Num() > 0 && Level->Actors.Num() < 100000)
+    {
+        for (int i = 0; i < Level->Actors.Num(); i++)
+        {
+            AActor* Actor = Level->Actors[i];
+            if (Actor) ActorsSafe.push_back(Actor);
+        }
+    }
+
+    for (AActor* Actor : ActorsSafe)
     {
         if (!Actor || !Utils::IsValidActor(Actor))
             continue;
@@ -210,6 +208,10 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
         if (!TargetArrested && ReadyOrNotChar->IsArrested())
             continue;
         if (!TargetSurrendered && ReadyOrNotChar->IsSurrendered())
+            continue;
+
+        // Ensure Mesh is valid before proceeding
+        if (!ReadyOrNotChar->Mesh)
             continue;
 
         // 1. Quick Distance Check (optional but good)
@@ -256,7 +258,7 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
                 1.0f
             );
 
-            AActor* HitActor = HitResult.Component.Get() ? HitResult.Component->GetOwner() : nullptr;
+            AActor* HitActor = (HitResult.bBlockingHit && HitResult.Component.Get()) ? HitResult.Component->GetOwner() : nullptr;
             bool bHasLOS = !HitResult.bBlockingHit || HitActor == ReadyOrNotChar;
             if (!bHasLOS)
                 continue;
@@ -323,10 +325,24 @@ void cerrf(const char* Format, ...)
 
 ACharacter* Utils::GetNearestCharacter(ETeam Team)
 {
+    if (!GVars.World || !GVars.World->VTable) return nullptr;
     if (!GVars.Level || !GVars.ReadyOrNotChar) return nullptr;
+    
+    ULevel* Level = GVars.Level;
     ACharacter* NearestCharacter = nullptr;
     float NearestDistance = FLT_MAX;
-    for (AActor* Actor : GVars.Level->Actors)
+
+    std::vector<AActor*> ActorsSafe;
+    if (Level->Actors.Num() > 0 && Level->Actors.Num() < 100000)
+    {
+        for (int i = 0; i < Level->Actors.Num(); i++)
+        {
+            AActor* Actor = Level->Actors[i];
+            if (Actor) ActorsSafe.push_back(Actor);
+        }
+    }
+
+    for (AActor* Actor : ActorsSafe)
     {
         if (!Actor || !Utils::IsValidActor(Actor))
             continue;

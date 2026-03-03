@@ -42,6 +42,7 @@ void Cheats::Aimbot()
 	}
 
 	FVector CameraPos = GVars.POV->Location;
+	if (!((AReadyOrNotCharacter*)Target)->Mesh) return;
 	FVector TargetPos = ((AReadyOrNotCharacter*)Target)->Mesh->GetBoneTransform(CachedBoneName, ERelativeTransformSpace::RTS_World).Translation;
 
 	double Dist = CameraPos.GetDistanceToInMeters(TargetPos);

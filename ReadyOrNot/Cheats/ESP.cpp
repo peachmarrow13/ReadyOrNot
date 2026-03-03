@@ -119,10 +119,13 @@ auto RenderColor = IM_COL32(255, 255, 255, 255);
 void Cheats::RenderESP()
 {
 	if (!CVars.ESP) return;
-    if (!GVars.PlayerController || !GVars.Level) return;
+    if (!GVars.PlayerController || !GVars.Level || !GVars.GameState) return;
+
+    // Additional safety during transitions
+    if (!GVars.World || !GVars.World->VTable) return;
 
     ULevel* Level = GVars.Level;
-    if (!Level) return; 
+    if (!Level) return;
 
 	if (ESPSettings.ShowObjectives && GVars.GameState)
 	{
@@ -145,10 +148,19 @@ void Cheats::RenderESP()
 	    }
 	}
 
-	TArray<AActor*> ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
-    for (AActor* Actor : ActorsCopy)
+	std::vector<AActor*> ActorsSafe;
+	if (Level->Actors.Num() > 0)
+	{
+		for (int i = 0; i < Level->Actors.Num(); i++)
+		{
+			AActor* Actor = Level->Actors[i];
+			if (Actor) ActorsSafe.push_back(Actor);
+		}
+	}
+
+    for (AActor* Actor : ActorsSafe)
     {
-    	if (!Utils::IsValidActor(Actor)) continue;
+    	if (!Actor || !Utils::IsValidActor(Actor)) continue;
 
         if (ESPSettings.ShowTraps)
         {
@@ -354,4 +366,69 @@ void Cheats::RenderESP()
             );
         }
     }
+
+	if (ESPSettings.BulletTracers && GVars.PlayerController)
+	{
+		std::lock_guard<std::mutex> lock(TracerMutex);
+		float CurrentTime = ImGui::GetTime();
+		for (auto it = BulletTracersList.begin(); it != BulletTracersList.end(); )
+		{
+			if (CurrentTime - it->CreationTime > ESPSettings.TracerDuration)
+			{
+				it = BulletTracersList.erase(it);
+			}
+			else
+			{
+				FVector2D StartScreen, EndScreen;
+				// Compute color
+				float Age = CurrentTime - it->CreationTime;
+				float FadeRatio = 1.0f - (Age / ESPSettings.TracerDuration);
+				if (FadeRatio < 0.0f) FadeRatio = 0.0f;
+				
+				ImU32 ColorToUse = Utils::ConvertImVec4toU32(ESPSettings.TracerColor);
+				if (ESPSettings.TracerRainbow)
+				{
+					// Time-based phase offset, plus optional spatial phase based on tracer iteration or creation time
+					float Hue = fmodf(it->CreationTime * 0.5f, 1.0f);
+					float R, G, B;
+					ImGui::ColorConvertHSVtoRGB(Hue, 1.0f, 1.0f, R, G, B);
+					
+					// Fade towards gray/black based on FadeRatio
+					ColorToUse = IM_COL32((int)(R * 255), (int)(G * 255), (int)(B * 255), (int)(FadeRatio * 255));
+				}
+				else 
+				{
+					ColorToUse = IM_COL32(
+						(int)(ESPSettings.TracerColor.x * 255), 
+						(int)(ESPSettings.TracerColor.y * 255), 
+						(int)(ESPSettings.TracerColor.z * 255), 
+						(int)(FadeRatio * 255)
+					);
+				}
+
+				if (GVars.PlayerController->ProjectWorldLocationToScreen(it->Start, &StartScreen, true) &&
+					GVars.PlayerController->ProjectWorldLocationToScreen(it->End, &EndScreen, true))
+				{
+					// Instead of tracing from screen-center to target (like snaplines),
+					// bullet tracers connect the physical start and end locations in the world.
+					ImGui::GetBackgroundDrawList()->AddLine(
+						ImVec2(StartScreen.X, StartScreen.Y),
+						ImVec2(EndScreen.X, EndScreen.Y),
+						ColorToUse,
+						1.5f
+					);
+
+					if (it->bHit)
+					{
+						ImGui::GetBackgroundDrawList()->AddCircleFilled(
+							ImVec2(EndScreen.X, EndScreen.Y), 
+							2.5f, 
+							ColorToUse
+						);
+					}
+				}
+				++it;
+			}
+		}
+	}
 }

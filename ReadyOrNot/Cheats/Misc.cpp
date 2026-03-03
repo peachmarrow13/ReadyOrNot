@@ -7,7 +7,7 @@
 using namespace SDK;
 
 FRChatMessage Msg;
-TArray<AActor*> ActorsCopy;
+std::vector<AActor*> ActorsCopy;
 
 std::vector<bool> CheatToggles;
 
@@ -217,58 +217,62 @@ void Cheats::AddMag()
 
 void Cheats::ArrestAll(ETeam Team)
 {
-	if (!GVars.Level) return;
 	ULevel* Level = GVars.Level;
-	if (Level) {
-		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
-		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-		if (ActorsCopy)
-		{
-			for (AActor* Actor : ActorsCopy)
-			{
-				if (!Utils::IsValidActor(Actor)) continue;
+	if (!Level) return;
 
-				if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
-				{
-					AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-					if (!Char) continue;
-					if (!Char->VTable) continue;
-					if (Char->IsArrested()) continue; // Can't re-arrest already arrested civilians or it will crash
-					Char->Arrest(nullptr);
-					Char->ArrestComplete(nullptr, nullptr);
-					Char->Server_ReportToTOC(Char, false, false);
-				}
-			}
+	ActorsCopy.clear();
+	for (int i = 0; i < Level->Actors.Num(); i++)
+	{
+		AActor* Actor = Level->Actors[i];
+		if (Actor) ActorsCopy.push_back(Actor);
+	}
+	if (ActorsCopy.empty()) return;
+
+	for (AActor* Actor : ActorsCopy)
+	{
+		if (!Utils::IsValidActor(Actor)) continue;
+
+		if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+		{
+			AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
+			if (!Char) continue;
+			if (!Char->VTable) continue;
+			if (Char->IsArrested()) continue; // Can't re-arrest already arrested civilians or it will crash
+			Char->Arrest(nullptr);
+			Char->ArrestComplete(nullptr, nullptr);
+			Char->Server_ReportToTOC(Char, false, false);
 		}
 	}
 }
 
 void Cheats::KillAll(ETeam Team)
 {
-	if (!GVars.Level) return;
-	if (ULevel* Level = GVars.Level) {
-		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
-		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-		if (ActorsCopy)
-		{
-			for (AActor* Actor : ActorsCopy)
-			{
-				if (!Utils::IsValidActor(Actor)) continue;
+	ULevel* Level = GVars.Level;
+	if (!Level) return;
 
-				if (Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
-				{
-					if (GVars.PlayerController->HasAuthority())
-					{
-						reinterpret_cast<APlayerCharacter*>(Actor)->Server_Kill();
-						reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
-					}
-					else
-					{
-						reinterpret_cast<APlayerCharacter*>(Actor)->Kill();
-						reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
-					}
-					
-				}
+	ActorsCopy.clear();
+	for (int i = 0; i < Level->Actors.Num(); i++)
+	{
+		AActor* Actor = Level->Actors[i];
+		if (Actor) ActorsCopy.push_back(Actor);
+	}
+	if (ActorsCopy.empty()) return;
+
+	for (AActor* Actor : ActorsCopy)
+	{
+		if (!Utils::IsValidActor(Actor)) continue;
+
+		if (Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+		{
+			if (GVars.PlayerController->HasAuthority())
+			{
+				reinterpret_cast<APlayerCharacter*>(Actor)->Server_Kill();
+				reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
+			}
+			else
+			{
+				reinterpret_cast<APlayerCharacter*>(Actor)->Kill();
+				reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
 			}
 		}
 	}
@@ -303,14 +307,20 @@ void Cheats::DrawReticle()
 
 void Cheats::GetAllEvidence()
 {
-	if (!GVars.Level) return;
+	ULevel* Level = GVars.Level;
+	if (!Level) return;
 
-	ActorsCopy = GVars.Level->Actors;
-	if (!ActorsCopy || ActorsCopy.Num() == 0) return;
+	ActorsCopy.clear();
+	for (int i = 0; i < Level->Actors.Num(); i++)
+	{
+		AActor* Actor = Level->Actors[i];
+		if (Actor) ActorsCopy.push_back(Actor);
+	}
+	if (ActorsCopy.empty()) return;
 
 	AReadyOrNotCharacter* RONC = nullptr;
 
-	TAllocatedArray<ABaseWeapon*> Weapons(40);
+	std::vector<ABaseWeapon*> Weapons;
 
 	for (AActor* Actor : ActorsCopy)
 	{
@@ -318,7 +328,7 @@ void Cheats::GetAllEvidence()
 
 		if (Actor->IsA(AReadyOrNotCharacter::StaticClass()))
 			RONC = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-		
+
 		if (Actor->IsA(ABaseWeapon::StaticClass()))
 		{
 			ABaseWeapon* Weapon = reinterpret_cast<ABaseWeapon*>(Actor);
@@ -326,18 +336,18 @@ void Cheats::GetAllEvidence()
 			// Verify both weapon and component are valid
 			if (Weapon && Weapon->EvidenceComponent && Weapon->EvidenceComponent->CanBeCollected())
 			{
-				Weapons.Add(Weapon);
+				Weapons.push_back(Weapon);
 			}
 		}
 	}
 
-	for (int i = 0; i < Weapons.Num(); i++)
+	for (ABaseWeapon* Weapon : Weapons)
 	{
-		if (!Weapons[i]) continue;
+		if (!Weapon) continue;
 		if (GVars.ReadyOrNotChar)
-			GVars.ReadyOrNotChar->PickupEvidence(Weapons[i]);
+			GVars.ReadyOrNotChar->PickupEvidence(Weapon);
 		else if (RONC)
-			RONC->PickupEvidence(Weapons[i]);
+			RONC->PickupEvidence(Weapon);
 	}
 }
 
@@ -520,22 +530,22 @@ void Cheats::ListPlayers()
 
 	ImGui::SetNextWindowBgAlpha(0.3f);
 
-
 	ImGui::SetNextWindowPos(ImVec2(10, CheatOptionsWindowSize.y + 30));
 
 	ImGui::Begin((const char*)u8"玩家列表", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
 	ImGui::TextColored(ImVec4(1.0f, 1.0f, 1.0f, 1.0f), (const char*)u8"当前玩家:");
 
-	TArray<APlayerCharacter*> Players = GVars.GameState->AllPlayerCharacters;
-	if (!Players || Players.Num() == 0)
+	TArray<APlayerCharacter*>& GamePlayers = GVars.GameState->AllPlayerCharacters;
+	if (GamePlayers.Num() == 0)
 	{
 		ImGui::End();
 		return;
 	}
 
-	for (APlayerCharacter* Player : Players)
+	for (int i = 0; i < GamePlayers.Num(); i++)
 	{
+		APlayerCharacter* Player = GamePlayers[i];
 		if (!Player || !Utils::IsValidActor(Player)) continue;
 		if (!Player->PlayerState) continue;
 		if (!Player->PlayerState->GetPlayerName()) continue;
@@ -562,7 +572,6 @@ void Cheats::ListPlayers()
 				{
 					Player->GetEquippedWeapon()->bInfiniteAmmo = Utils::GetPlayerCheats(Player).InfAmmo;
 				}
-					
 			}
 			ImGui::PopID();
 			ImGui::PushID((ID + "Teleport").c_str());
@@ -602,27 +611,29 @@ void Cheats::NoClipToggle()
 
 void Cheats::SurrenderAll(ETeam Team)
 {
-	if (!GVars.Level) return;
 	ULevel* Level = GVars.Level;
-	if (Level) {
-		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
-		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-		if (ActorsCopy)
+	if (!Level) return;
+
+	ActorsCopy.clear();
+	for (int i = 0; i < Level->Actors.Num(); i++)
+	{
+		AActor* Actor = Level->Actors[i];
+		if (Actor) ActorsCopy.push_back(Actor);
+	}
+	if (ActorsCopy.empty()) return;
+
+	for (AActor* Actor : ActorsCopy)
+	{
+		if (!Actor || !Utils::IsValidActor(Actor)) continue;
+		if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()))
 		{
-			for (AActor* Actor : ActorsCopy)
-			{
-				if (!Actor || !Utils::IsValidActor(Actor)) continue;
-				if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()))
-				{
-					AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-					if (!Char) continue;
-					if (Char->IsArrestedOrSurrendered()) continue; // Can't re-surrender already surrendered civilians or it will crash
-					Char->OnRep_Surrendered();
-					Char->bSurrendered = true;
-					Char->bSurrenderComplete = true;
-					Char->OnRep_Surrendered();
-				}
-			}
+			AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
+			if (!Char) continue;
+			if (Char->IsArrestedOrSurrendered()) continue; // Can't re-surrender already surrendered civilians or it will crash
+			Char->OnRep_Surrendered();
+			Char->bSurrendered = true;
+			Char->bSurrenderComplete = true;
+			Char->OnRep_Surrendered();
 		}
 	}
 }

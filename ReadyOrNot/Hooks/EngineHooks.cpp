@@ -131,6 +131,14 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		return hr;
 	}
 
+	// Safe guard: Ensure World and Engine are fully ready before updating GVars
+	if (!Engine::pDevice || !Engine::pContext || !Engine::pRenderTargetView) {
+		inside_present.store(false);
+		HRESULT hr = Engine::oPresent(SwapChain, SyncInterval, Flags);
+		g_PresentCount.fetch_sub(1);
+		return hr;
+	}
+
 	// Update display size and GVars
 	ImGui::GetIO().DisplaySize = ImVec2((float)Engine::sd.BufferDesc.Width, (float)Engine::sd.BufferDesc.Height);
 	GVars.ScreenSize = ImGui::GetIO().DisplaySize;
@@ -170,21 +178,27 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 		if (CVars.ESP) Cheats::RenderESP();
 		
-		if (CVars.SilentAim)
+		if (CVars.SilentAim && GVars.ReadyOrNotChar && Utils::IsValidActor(GVars.ReadyOrNotChar))
 		{
 			if (SilentAimSettings.DrawFOV)
 				Utils::DrawFOV(SilentAimSettings.MaxFOV, SilentAimSettings.FOVThickness);
 
-			AActor* TargetActor = Utils::GetBestTarget(GVars.PlayerController, SilentAimSettings.TargetCivilians, SilentAimSettings.TargetArrested, SilentAimSettings.TargetSurrendered, SilentAimSettings.TargetDead, SilentAimSettings.MaxFOV, SilentAimSettings.RequiresLOS, TextVars.SilentAimBone, SilentAimSettings.TargetAll);
-
-			if (TargetActor && Utils::IsValidActor(TargetActor))
+			if (SilentAimSettings.DrawArrow)
 			{
-				std::wstring WideString = UtfN::StringToWString(TextVars.SilentAimBone);
-				FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
-				FVector TargetLocation = ((AReadyOrNotCharacter*)TargetActor)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+				AActor* TargetActor = Utils::GetBestTarget(GVars.PlayerController, SilentAimSettings.TargetCivilians, SilentAimSettings.TargetArrested, SilentAimSettings.TargetSurrendered, SilentAimSettings.TargetDead, SilentAimSettings.MaxFOV, SilentAimSettings.RequiresLOS, TextVars.SilentAimBone, SilentAimSettings.TargetAll);
 
-				if (SilentAimSettings.DrawArrow)
-					Utils::DrawSnapLine(TargetLocation, SilentAimSettings.ArrowThickness);
+				if (TargetActor && Utils::IsValidActor(TargetActor))
+				{
+					AReadyOrNotCharacter* TargetChar = reinterpret_cast<AReadyOrNotCharacter*>(TargetActor);
+					if (TargetChar->Mesh)
+					{
+						std::wstring WideString = UtfN::StringToWString(TextVars.SilentAimBone);
+						FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
+						FVector TargetLocation = TargetChar->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+
+						Utils::DrawSnapLine(TargetLocation, SilentAimSettings.ArrowThickness);
+					}
+				}
 			}
 		}
 

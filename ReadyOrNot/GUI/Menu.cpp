@@ -275,7 +275,7 @@ void GUI::RenderMenu()
 				ImGui::TreePop();
 			}
 
-			if (ImGui::TreeNode((const char*)u8"透视设置 (ESP Settings)"))
+			if (ImGui::TreeNode((const char*)u8"透视设置"))
 			{
 				ImGui::Checkbox((const char*)u8"显示队友", &ESPSettings.ShowTeam);
 
@@ -286,6 +286,14 @@ void GUI::RenderMenu()
 				ImGui::Checkbox((const char*)u8"显示敌方距离", &ESPSettings.ShowEnemyDistance);
 
 				ImGui::Checkbox((const char*)u8"显示骨骼", &ESPSettings.Bones);
+
+				ImGui::Checkbox((const char*)u8"显示子弹弹道", &ESPSettings.BulletTracers);
+				
+				ImGui::Checkbox((const char*)u8"彩虹弹道效果", &ESPSettings.TracerRainbow);
+
+				ImGui::SliderFloat((const char*)u8"弹道留存时间", &ESPSettings.TracerDuration, 0.5f, 10.0f, "%.1f");
+
+				ImGui::ColorEdit4((const char*)u8"子弹弹道颜色", (float*)&ESPSettings.TracerColor);
 
 				ImGui::ColorEdit4((const char*)u8"嫌疑人颜色", (float*)&ESPSettings.SuspectColor, ImGuiColorEditFlags_NoInputs);
 
@@ -353,6 +361,9 @@ void GUI::RenderMenu()
 					}
 					ImGui::EndCombo();
 				}
+				ImGui::Checkbox((const char*)u8"魔法子弹 (Magic Bullet)", &SilentAimSettings.MagicBullet);
+				AddDefaultTooltip((const char*)u8"将子弹直接生成在目标身上。建议仅在房主(Host)时开启，客机开启可能无效或不稳定。");
+				HostOnlyTooltip();
 
 				ImGui::TreePop();
 			}

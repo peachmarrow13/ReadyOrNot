@@ -2,8 +2,19 @@
 
 #include "Engine.h"
 #include "Utils/Utils.h"
+#include <mutex>
 
 inline bool AimbotKeyDown = false;
+
+struct BulletTracer {
+	FVector Start;
+	FVector End;
+	float CreationTime;
+	bool bHit;
+};
+
+inline std::mutex TracerMutex;
+inline std::vector<BulletTracer> BulletTracersList;
 
 struct BoneListStruct
 {
@@ -34,7 +45,10 @@ struct EspSettingsstruct {
 	ImVec4 TeamColor = ImVec4(0.0f, 1.0f, 0.0f, BoneOpacity);
 	ImVec4 ArrestColor = ImVec4(1.0f, 1.0f, 0.0f, BoneOpacity);
 	bool LOS = false;
-
+	bool BulletTracers = false;
+	bool TracerRainbow = true;
+	float TracerDuration = 2.0f;
+	ImVec4 TracerColor = ImVec4(1.0f, 0.5f, 0.0f, 1.0f); // Orange-ish by default
 } inline ESPSettings;
 
 struct AimbotSettingsstruct {
@@ -70,6 +84,7 @@ struct SilentAimSettingsstruct {
 	float ArrowThickness = 2.0f;
 	float FOVThickness = 1.0f;
 	bool TargetAll = false;
+	bool MagicBullet = false;
 } inline SilentAimSettings;
 
 struct CVarsstruct

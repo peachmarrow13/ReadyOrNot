@@ -2,7 +2,7 @@
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
-#define PATCHVERSION 4
+#define PATCHVERSION 6
 
 static const std::pair<const char*, std::string> BoneOptions[] = {
 	{"Head", BoneList.HeadBone},

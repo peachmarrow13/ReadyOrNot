@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_structs.hpp"
+#include "CommonInput_structs.hpp"
 
 
 namespace SDK::Params

@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.OnCreate_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_SeekPlayer_C_OnCreate_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_SeekPlayer_C_OnCreate_Blueprint;
+
 // Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.ExecuteUbergraph_AIAction_SeekPlayer
 // 0x0020 (0x0020 - 0x0000)
 struct AIAction_SeekPlayer_C_ExecuteUbergraph_AIAction_SeekPlayer final
@@ -26,15 +35,6 @@ public:
 	class UBaseCombatActivity*                    CallFunc_GetCombatActivity_ReturnValue;            // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_SeekPlayer_C_ExecuteUbergraph_AIAction_SeekPlayer;
-
-// Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.OnCreate_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_SeekPlayer_C_OnCreate_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_SeekPlayer_C_OnCreate_Blueprint;
 
 // Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.ShouldPerformAction
 // 0x0020 (0x0020 - 0x0000)

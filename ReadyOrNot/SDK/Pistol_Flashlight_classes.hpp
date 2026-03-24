@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Pistol_Flashlight.Pistol_Flashlight_C
-// 0x0000 (0x11F0 - 0x11F0)
-class UPistol_Flashlight_C : public ULightAttachment
+// 0x0000 (0x11C0 - 0x11C0)
+class UPistol_Flashlight_C : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

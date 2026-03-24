@@ -17,30 +17,6 @@
 namespace SDK
 {
 
-// Function AC_DistanceToLastNoise.AC_DistanceToLastNoise_C.DetermineNoiseScore
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// const struct FExposedToNoise&           Noise                                                  (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-// double*                                 Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAC_DistanceToLastNoise_C::DetermineNoiseScore(const struct FExposedToNoise& Noise, double* Return_Value) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_DistanceToLastNoise_C", "DetermineNoiseScore");
-
-	Params::AC_DistanceToLastNoise_C_DetermineNoiseScore Parms{};
-
-	Parms.Noise = std::move(Noise);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Return_Value != nullptr)
-		*Return_Value = Parms.Return_Value;
-}
-
-
 // Function AC_DistanceToLastNoise.AC_DistanceToLastNoise_C.Score
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -65,6 +41,30 @@ float UAC_DistanceToLastNoise_C::Score(const struct FAIActionDecisionContext& Co
 		*bSuccess = Parms.bSuccess;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function AC_DistanceToLastNoise.AC_DistanceToLastNoise_C.DetermineNoiseScore
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// const struct FExposedToNoise&           Noise                                                  (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// double*                                 Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAC_DistanceToLastNoise_C::DetermineNoiseScore(const struct FExposedToNoise& Noise, double* Return_Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_DistanceToLastNoise_C", "DetermineNoiseScore");
+
+	Params::AC_DistanceToLastNoise_C_DetermineNoiseScore Parms{};
+
+	Parms.Noise = std::move(Noise);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Return_Value != nullptr)
+		*Return_Value = Parms.Return_Value;
 }
 
 }

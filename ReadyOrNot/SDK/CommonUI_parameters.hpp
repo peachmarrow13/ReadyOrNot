@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "CommonUI_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_structs.hpp"
+#include "CommonUI_structs.hpp"
 
 
 namespace SDK::Params
@@ -224,359 +224,6 @@ public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonActivatableWidgetContainerBase_GetTransitionDuration;
-
-// Function CommonUI.CommonActionWidget.SetEnhancedInputAction
-// 0x0008 (0x0008 - 0x0000)
-struct CommonActionWidget_SetEnhancedInputAction final
-{
-public:
-	class UInputAction*                           InInputAction;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_SetEnhancedInputAction;
-
-// Function CommonUI.CommonActionWidget.SetIconRimBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonActionWidget_SetIconRimBrush final
-{
-public:
-	struct FSlateBrush                            InIconRimBrush;                                    // 0x0000(0x00D0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_SetIconRimBrush;
-
-// Function CommonUI.CommonActionWidget.SetInputAction
-// 0x0010 (0x0010 - 0x0000)
-struct CommonActionWidget_SetInputAction final
-{
-public:
-	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_SetInputAction;
-
-// Function CommonUI.CommonActionWidget.SetInputActions
-// 0x0010 (0x0010 - 0x0000)
-struct CommonActionWidget_SetInputActions final
-{
-public:
-	TArray<struct FDataTableRowHandle>            NewInputActions;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_SetInputActions;
-
-// Function CommonUI.CommonActionWidget.GetDisplayText
-// 0x0018 (0x0018 - 0x0000)
-struct CommonActionWidget_GetDisplayText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_GetDisplayText;
-
-// Function CommonUI.CommonActionWidget.GetIcon
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonActionWidget_GetIcon final
-{
-public:
-	struct FSlateBrush                            ReturnValue;                                       // 0x0000(0x00D0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_GetIcon;
-
-// Function CommonUI.CommonActionWidget.IsHeldAction
-// 0x0001 (0x0001 - 0x0000)
-struct CommonActionWidget_IsHeldAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActionWidget_IsHeldAction;
-
-// Function CommonUI.CommonActivatableWidget.BindVisibilityToActivation
-// 0x0008 (0x0008 - 0x0000)
-struct CommonActivatableWidget_BindVisibilityToActivation final
-{
-public:
-	class UCommonActivatableWidget*               ActivatableWidget;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_BindVisibilityToActivation;
-
-// Function CommonUI.CommonActivatableWidget.BP_OnHandleBackAction
-// 0x0001 (0x0001 - 0x0000)
-struct CommonActivatableWidget_BP_OnHandleBackAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_BP_OnHandleBackAction;
-
-// Function CommonUI.CommonActivatableWidget.SetBindVisibilities
-// 0x0003 (0x0003 - 0x0000)
-struct CommonActivatableWidget_SetBindVisibilities final
-{
-public:
-	ESlateVisibility                              OnActivatedVisibility;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESlateVisibility                              OnDeactivatedVisibility;                           // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAllActive;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_SetBindVisibilities;
-
-// Function CommonUI.CommonActivatableWidget.BP_GetDesiredFocusTarget
-// 0x0008 (0x0008 - 0x0000)
-struct CommonActivatableWidget_BP_GetDesiredFocusTarget final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_BP_GetDesiredFocusTarget;
-
-// Function CommonUI.CommonActivatableWidget.BP_GetDesiredInputConfig
-// 0x0006 (0x0006 - 0x0000)
-struct CommonActivatableWidget_BP_GetDesiredInputConfig final
-{
-public:
-	struct FUIInputConfig                         ReturnValue;                                       // 0x0000(0x0006)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_BP_GetDesiredInputConfig;
-
-// Function CommonUI.CommonActivatableWidget.GetDesiredFocusTarget
-// 0x0008 (0x0008 - 0x0000)
-struct CommonActivatableWidget_GetDesiredFocusTarget final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_GetDesiredFocusTarget;
-
-// Function CommonUI.CommonActivatableWidget.IsActivated
-// 0x0001 (0x0001 - 0x0000)
-struct CommonActivatableWidget_IsActivated final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonActivatableWidget_IsActivated;
-
-// Function CommonUI.CommonAnimatedSwitcher.ActivateNextWidget
-// 0x0001 (0x0001 - 0x0000)
-struct CommonAnimatedSwitcher_ActivateNextWidget final
-{
-public:
-	bool                                          bCanWrap;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonAnimatedSwitcher_ActivateNextWidget;
-
-// Function CommonUI.CommonAnimatedSwitcher.ActivatePreviousWidget
-// 0x0001 (0x0001 - 0x0000)
-struct CommonAnimatedSwitcher_ActivatePreviousWidget final
-{
-public:
-	bool                                          bCanWrap;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonAnimatedSwitcher_ActivatePreviousWidget;
-
-// Function CommonUI.CommonAnimatedSwitcher.SetDisableTransitionAnimation
-// 0x0001 (0x0001 - 0x0000)
-struct CommonAnimatedSwitcher_SetDisableTransitionAnimation final
-{
-public:
-	bool                                          bDisableAnimation;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonAnimatedSwitcher_SetDisableTransitionAnimation;
-
-// Function CommonUI.CommonAnimatedSwitcher.HasWidgets
-// 0x0001 (0x0001 - 0x0000)
-struct CommonAnimatedSwitcher_HasWidgets final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonAnimatedSwitcher_HasWidgets;
-
-// Function CommonUI.CommonAnimatedSwitcher.IsCurrentlySwitching
-// 0x0001 (0x0001 - 0x0000)
-struct CommonAnimatedSwitcher_IsCurrentlySwitching final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonAnimatedSwitcher_IsCurrentlySwitching;
-
-// Function CommonUI.CommonAnimatedSwitcher.IsTransitionPlaying
-// 0x0001 (0x0001 - 0x0000)
-struct CommonAnimatedSwitcher_IsTransitionPlaying final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonAnimatedSwitcher_IsTransitionPlaying;
-
-// Function CommonUI.CommonBorderStyle.GetBackgroundBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonBorderStyle_GetBackgroundBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonBorderStyle_GetBackgroundBrush;
-
-// Function CommonUI.CommonBorder.SetStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonBorder_SetStyle final
-{
-public:
-	TSubclassOf<class UCommonBorderStyle>         InStyle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonBorder_SetStyle;
-
-// Function CommonUI.CommonButtonStyle.GetButtonPadding
-// 0x0010 (0x0010 - 0x0000)
-struct CommonButtonStyle_GetButtonPadding final
-{
-public:
-	struct FMargin                                OutButtonPadding;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetButtonPadding;
-
-// Function CommonUI.CommonButtonStyle.GetCustomPadding
-// 0x0010 (0x0010 - 0x0000)
-struct CommonButtonStyle_GetCustomPadding final
-{
-public:
-	struct FMargin                                OutCustomPadding;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetCustomPadding;
-
-// Function CommonUI.CommonButtonStyle.GetDisabledBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetDisabledBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetDisabledBrush;
-
-// Function CommonUI.CommonButtonStyle.GetDisabledTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetDisabledTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetDisabledTextStyle;
-
-// Function CommonUI.CommonButtonStyle.GetMaterialBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetMaterialBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetMaterialBrush;
-
-// Function CommonUI.CommonButtonStyle.GetNormalBaseBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetNormalBaseBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetNormalBaseBrush;
-
-// Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetNormalHoveredBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetNormalHoveredBrush;
-
-// Function CommonUI.CommonButtonStyle.GetNormalHoveredTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetNormalHoveredTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetNormalHoveredTextStyle;
-
-// Function CommonUI.CommonButtonStyle.GetNormalPressedBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetNormalPressedBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetNormalPressedBrush;
-
-// Function CommonUI.CommonButtonStyle.GetNormalPressedTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetNormalPressedTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetNormalPressedTextStyle;
-
-// Function CommonUI.CommonButtonStyle.GetNormalTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetNormalTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetNormalTextStyle;
-
-// Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetSelectedBaseBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedBaseBrush;
-
-// Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetSelectedHoveredBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedHoveredBrush;
-
-// Function CommonUI.CommonButtonStyle.GetSelectedHoveredTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetSelectedHoveredTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedHoveredTextStyle;
-
-// Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush
-// 0x00D0 (0x00D0 - 0x0000)
-struct CommonButtonStyle_GetSelectedPressedBrush final
-{
-public:
-	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedPressedBrush;
-
-// Function CommonUI.CommonButtonStyle.GetSelectedPressedTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetSelectedPressedTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedPressedTextStyle;
-
-// Function CommonUI.CommonButtonStyle.GetSelectedTextStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonButtonStyle_GetSelectedTextStyle final
-{
-public:
-	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedTextStyle;
 
 // Function CommonUI.CommonButtonBase.BP_OnInputMethodChanged
 // 0x0001 (0x0001 - 0x0000)
@@ -1076,6 +723,739 @@ public:
 };
 DUMPER7_ASSERTS_CommonButtonBase_IsPressed;
 
+// Function CommonUI.CommonActionWidget.SetEnhancedInputAction
+// 0x0008 (0x0008 - 0x0000)
+struct CommonActionWidget_SetEnhancedInputAction final
+{
+public:
+	class UInputAction*                           InInputAction;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_SetEnhancedInputAction;
+
+// Function CommonUI.CommonActionWidget.SetIconRimBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonActionWidget_SetIconRimBrush final
+{
+public:
+	struct FSlateBrush                            InIconRimBrush;                                    // 0x0000(0x00D0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_SetIconRimBrush;
+
+// Function CommonUI.CommonActionWidget.SetInputAction
+// 0x0010 (0x0010 - 0x0000)
+struct CommonActionWidget_SetInputAction final
+{
+public:
+	struct FDataTableRowHandle                    InputActionRow;                                    // 0x0000(0x0010)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_SetInputAction;
+
+// Function CommonUI.CommonActionWidget.SetInputActions
+// 0x0010 (0x0010 - 0x0000)
+struct CommonActionWidget_SetInputActions final
+{
+public:
+	TArray<struct FDataTableRowHandle>            NewInputActions;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_SetInputActions;
+
+// Function CommonUI.CommonActionWidget.GetDisplayText
+// 0x0018 (0x0018 - 0x0000)
+struct CommonActionWidget_GetDisplayText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_GetDisplayText;
+
+// Function CommonUI.CommonActionWidget.GetIcon
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonActionWidget_GetIcon final
+{
+public:
+	struct FSlateBrush                            ReturnValue;                                       // 0x0000(0x00D0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_GetIcon;
+
+// Function CommonUI.CommonActionWidget.IsHeldAction
+// 0x0001 (0x0001 - 0x0000)
+struct CommonActionWidget_IsHeldAction final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActionWidget_IsHeldAction;
+
+// Function CommonUI.CommonActivatableWidget.BindVisibilityToActivation
+// 0x0008 (0x0008 - 0x0000)
+struct CommonActivatableWidget_BindVisibilityToActivation final
+{
+public:
+	class UCommonActivatableWidget*               ActivatableWidget;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_BindVisibilityToActivation;
+
+// Function CommonUI.CommonActivatableWidget.BP_OnHandleBackAction
+// 0x0001 (0x0001 - 0x0000)
+struct CommonActivatableWidget_BP_OnHandleBackAction final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_BP_OnHandleBackAction;
+
+// Function CommonUI.CommonActivatableWidget.SetBindVisibilities
+// 0x0003 (0x0003 - 0x0000)
+struct CommonActivatableWidget_SetBindVisibilities final
+{
+public:
+	ESlateVisibility                              OnActivatedVisibility;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESlateVisibility                              OnDeactivatedVisibility;                           // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAllActive;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_SetBindVisibilities;
+
+// Function CommonUI.CommonActivatableWidget.BP_GetDesiredFocusTarget
+// 0x0008 (0x0008 - 0x0000)
+struct CommonActivatableWidget_BP_GetDesiredFocusTarget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_BP_GetDesiredFocusTarget;
+
+// Function CommonUI.CommonActivatableWidget.BP_GetDesiredInputConfig
+// 0x0006 (0x0006 - 0x0000)
+struct CommonActivatableWidget_BP_GetDesiredInputConfig final
+{
+public:
+	struct FUIInputConfig                         ReturnValue;                                       // 0x0000(0x0006)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_BP_GetDesiredInputConfig;
+
+// Function CommonUI.CommonActivatableWidget.GetDesiredFocusTarget
+// 0x0008 (0x0008 - 0x0000)
+struct CommonActivatableWidget_GetDesiredFocusTarget final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_GetDesiredFocusTarget;
+
+// Function CommonUI.CommonActivatableWidget.IsActivated
+// 0x0001 (0x0001 - 0x0000)
+struct CommonActivatableWidget_IsActivated final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonActivatableWidget_IsActivated;
+
+// Function CommonUI.CommonAnimatedSwitcher.ActivateNextWidget
+// 0x0001 (0x0001 - 0x0000)
+struct CommonAnimatedSwitcher_ActivateNextWidget final
+{
+public:
+	bool                                          bCanWrap;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonAnimatedSwitcher_ActivateNextWidget;
+
+// Function CommonUI.CommonAnimatedSwitcher.ActivatePreviousWidget
+// 0x0001 (0x0001 - 0x0000)
+struct CommonAnimatedSwitcher_ActivatePreviousWidget final
+{
+public:
+	bool                                          bCanWrap;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonAnimatedSwitcher_ActivatePreviousWidget;
+
+// Function CommonUI.CommonAnimatedSwitcher.SetDisableTransitionAnimation
+// 0x0001 (0x0001 - 0x0000)
+struct CommonAnimatedSwitcher_SetDisableTransitionAnimation final
+{
+public:
+	bool                                          bDisableAnimation;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonAnimatedSwitcher_SetDisableTransitionAnimation;
+
+// Function CommonUI.CommonAnimatedSwitcher.HasWidgets
+// 0x0001 (0x0001 - 0x0000)
+struct CommonAnimatedSwitcher_HasWidgets final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonAnimatedSwitcher_HasWidgets;
+
+// Function CommonUI.CommonAnimatedSwitcher.IsCurrentlySwitching
+// 0x0001 (0x0001 - 0x0000)
+struct CommonAnimatedSwitcher_IsCurrentlySwitching final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonAnimatedSwitcher_IsCurrentlySwitching;
+
+// Function CommonUI.CommonAnimatedSwitcher.IsTransitionPlaying
+// 0x0001 (0x0001 - 0x0000)
+struct CommonAnimatedSwitcher_IsTransitionPlaying final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonAnimatedSwitcher_IsTransitionPlaying;
+
+// Function CommonUI.CommonBorderStyle.GetBackgroundBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonBorderStyle_GetBackgroundBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonBorderStyle_GetBackgroundBrush;
+
+// Function CommonUI.CommonBorder.SetStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonBorder_SetStyle final
+{
+public:
+	TSubclassOf<class UCommonBorderStyle>         InStyle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonBorder_SetStyle;
+
+// Function CommonUI.CommonButtonStyle.GetButtonPadding
+// 0x0010 (0x0010 - 0x0000)
+struct CommonButtonStyle_GetButtonPadding final
+{
+public:
+	struct FMargin                                OutButtonPadding;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetButtonPadding;
+
+// Function CommonUI.CommonButtonStyle.GetCustomPadding
+// 0x0010 (0x0010 - 0x0000)
+struct CommonButtonStyle_GetCustomPadding final
+{
+public:
+	struct FMargin                                OutCustomPadding;                                  // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetCustomPadding;
+
+// Function CommonUI.CommonButtonStyle.GetDisabledBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetDisabledBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetDisabledBrush;
+
+// Function CommonUI.CommonButtonStyle.GetDisabledTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetDisabledTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetDisabledTextStyle;
+
+// Function CommonUI.CommonButtonStyle.GetMaterialBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetMaterialBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetMaterialBrush;
+
+// Function CommonUI.CommonButtonStyle.GetNormalBaseBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetNormalBaseBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetNormalBaseBrush;
+
+// Function CommonUI.CommonButtonStyle.GetNormalHoveredBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetNormalHoveredBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetNormalHoveredBrush;
+
+// Function CommonUI.CommonButtonStyle.GetNormalHoveredTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetNormalHoveredTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetNormalHoveredTextStyle;
+
+// Function CommonUI.CommonButtonStyle.GetNormalPressedBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetNormalPressedBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetNormalPressedBrush;
+
+// Function CommonUI.CommonButtonStyle.GetNormalPressedTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetNormalPressedTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetNormalPressedTextStyle;
+
+// Function CommonUI.CommonButtonStyle.GetNormalTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetNormalTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetNormalTextStyle;
+
+// Function CommonUI.CommonButtonStyle.GetSelectedBaseBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetSelectedBaseBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedBaseBrush;
+
+// Function CommonUI.CommonButtonStyle.GetSelectedHoveredBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetSelectedHoveredBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedHoveredBrush;
+
+// Function CommonUI.CommonButtonStyle.GetSelectedHoveredTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetSelectedHoveredTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedHoveredTextStyle;
+
+// Function CommonUI.CommonButtonStyle.GetSelectedPressedBrush
+// 0x00D0 (0x00D0 - 0x0000)
+struct CommonButtonStyle_GetSelectedPressedBrush final
+{
+public:
+	struct FSlateBrush                            Brush;                                             // 0x0000(0x00D0)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedPressedBrush;
+
+// Function CommonUI.CommonButtonStyle.GetSelectedPressedTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetSelectedPressedTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedPressedTextStyle;
+
+// Function CommonUI.CommonButtonStyle.GetSelectedTextStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonButtonStyle_GetSelectedTextStyle final
+{
+public:
+	class UCommonTextStyle*                       ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonButtonStyle_GetSelectedTextStyle;
+
+// Function CommonUI.CommonRotator.BP_OnOptionSelected
+// 0x0004 (0x0004 - 0x0000)
+struct CommonRotator_BP_OnOptionSelected final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRotator_BP_OnOptionSelected;
+
+// Function CommonUI.CommonRotator.BP_OnOptionsPopulated
+// 0x0004 (0x0004 - 0x0000)
+struct CommonRotator_BP_OnOptionsPopulated final
+{
+public:
+	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRotator_BP_OnOptionsPopulated;
+
+// Function CommonUI.CommonRotator.PopulateTextLabels
+// 0x0010 (0x0010 - 0x0000)
+struct CommonRotator_PopulateTextLabels final
+{
+public:
+	TArray<class FText>                           Labels;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRotator_PopulateTextLabels;
+
+// Function CommonUI.CommonRotator.SetSelectedItem
+// 0x0004 (0x0004 - 0x0000)
+struct CommonRotator_SetSelectedItem final
+{
+public:
+	int32                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRotator_SetSelectedItem;
+
+// Function CommonUI.CommonRotator.GetSelectedIndex
+// 0x0004 (0x0004 - 0x0000)
+struct CommonRotator_GetSelectedIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRotator_GetSelectedIndex;
+
+// Function CommonUI.CommonRotator.GetSelectedText
+// 0x0018 (0x0018 - 0x0000)
+struct CommonRotator_GetSelectedText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRotator_GetSelectedText;
+
+// Function CommonUI.CommonListView.SetEntrySpacing
+// 0x0004 (0x0004 - 0x0000)
+struct CommonListView_SetEntrySpacing final
+{
+public:
+	float                                         InEntrySpacing;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonListView_SetEntrySpacing;
+
+// Function CommonUI.CommonTextBlock.GetMargin
+// 0x0010 (0x0010 - 0x0000)
+struct CommonTextBlock_GetMargin final
+{
+public:
+	struct FMargin                                ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_GetMargin;
+
+// Function CommonUI.CommonTextBlock.SetLineHeightPercentage
+// 0x0004 (0x0004 - 0x0000)
+struct CommonTextBlock_SetLineHeightPercentage final
+{
+public:
+	float                                         InLineHeightPercentage;                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetLineHeightPercentage;
+
+// Function CommonUI.CommonTextBlock.SetMargin
+// 0x0010 (0x0010 - 0x0000)
+struct CommonTextBlock_SetMargin final
+{
+public:
+	struct FMargin                                InMargin;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetMargin;
+
+// Function CommonUI.CommonTextBlock.SetMobileFontSizeMultiplier
+// 0x0004 (0x0004 - 0x0000)
+struct CommonTextBlock_SetMobileFontSizeMultiplier final
+{
+public:
+	float                                         InMobileFontSizeMultiplier;                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetMobileFontSizeMultiplier;
+
+// Function CommonUI.CommonTextBlock.SetScrollingEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CommonTextBlock_SetScrollingEnabled final
+{
+public:
+	bool                                          bInIsScrollingEnabled;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetScrollingEnabled;
+
+// Function CommonUI.CommonTextBlock.SetStyle
+// 0x0008 (0x0008 - 0x0000)
+struct CommonTextBlock_SetStyle final
+{
+public:
+	TSubclassOf<class UCommonTextStyle>           InStyle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetStyle;
+
+// Function CommonUI.CommonTextBlock.SetTextCase
+// 0x0001 (0x0001 - 0x0000)
+struct CommonTextBlock_SetTextCase final
+{
+public:
+	bool                                          bUseAllCaps;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetTextCase;
+
+// Function CommonUI.CommonTextBlock.SetWrapTextWidth
+// 0x0004 (0x0004 - 0x0000)
+struct CommonTextBlock_SetWrapTextWidth final
+{
+public:
+	int32                                         InWrapTextAt;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_SetWrapTextWidth;
+
+// Function CommonUI.CommonTextBlock.GetMobileFontSizeMultiplier
+// 0x0004 (0x0004 - 0x0000)
+struct CommonTextBlock_GetMobileFontSizeMultiplier final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonTextBlock_GetMobileFontSizeMultiplier;
+
+// Function CommonUI.CommonDateTimeTextBlock.SetCountDownCompletionText
+// 0x0018 (0x0018 - 0x0000)
+struct CommonDateTimeTextBlock_SetCountDownCompletionText final
+{
+public:
+	class FText                                   InCompletionText;                                  // 0x0000(0x0018)(ConstParm, Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonDateTimeTextBlock_SetCountDownCompletionText;
+
+// Function CommonUI.CommonDateTimeTextBlock.SetDateTimeValue
+// 0x0010 (0x0010 - 0x0000)
+struct CommonDateTimeTextBlock_SetDateTimeValue final
+{
+public:
+	struct FDateTime                              InDateTime;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShowAsCountdown;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         InRefreshDelay;                                    // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonDateTimeTextBlock_SetDateTimeValue;
+
+// Function CommonUI.CommonDateTimeTextBlock.SetTimespanValue
+// 0x0008 (0x0008 - 0x0000)
+struct CommonDateTimeTextBlock_SetTimespanValue final
+{
+public:
+	struct FTimespan                              InTimespan;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonDateTimeTextBlock_SetTimespanValue;
+
+// Function CommonUI.CommonDateTimeTextBlock.GetDateTime
+// 0x0008 (0x0008 - 0x0000)
+struct CommonDateTimeTextBlock_GetDateTime final
+{
+public:
+	struct FDateTime                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonDateTimeTextBlock_GetDateTime;
+
+// Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset
+// 0x0030 (0x0030 - 0x0000)
+struct CommonLazyImage_SetBrushFromLazyDisplayAsset final
+{
+public:
+	TSoftObjectPtr<class UObject>                 LazyObject;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMatchTextureSize;                                 // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonLazyImage_SetBrushFromLazyDisplayAsset;
+
+// Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial
+// 0x0028 (0x0028 - 0x0000)
+struct CommonLazyImage_SetBrushFromLazyMaterial final
+{
+public:
+	TSoftObjectPtr<class UMaterialInterface>      LazyMaterial;                                      // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLazyImage_SetBrushFromLazyMaterial;
+
+// Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture
+// 0x0030 (0x0030 - 0x0000)
+struct CommonLazyImage_SetBrushFromLazyTexture final
+{
+public:
+	TSoftObjectPtr<class UTexture2D>              LazyTexture;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMatchSize;                                        // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CommonLazyImage_SetBrushFromLazyTexture;
+
+// Function CommonUI.CommonLazyImage.SetMaterialTextureParamName
+// 0x0008 (0x0008 - 0x0000)
+struct CommonLazyImage_SetMaterialTextureParamName final
+{
+public:
+	class FName                                   TextureParamName;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLazyImage_SetMaterialTextureParamName;
+
+// Function CommonUI.CommonLazyImage.IsLoading
+// 0x0001 (0x0001 - 0x0000)
+struct CommonLazyImage_IsLoading final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLazyImage_IsLoading;
+
+// Function CommonUI.CommonLazyWidget.SetLazyContent
+// 0x0028 (0x0028 - 0x0000)
+struct CommonLazyWidget_SetLazyContent final
+{
+public:
+	TSoftClassPtr<class UClass>                   SoftWidget;                                        // 0x0000(0x0028)(ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLazyWidget_SetLazyContent;
+
+// Function CommonUI.CommonLazyWidget.GetContent
+// 0x0008 (0x0008 - 0x0000)
+struct CommonLazyWidget_GetContent final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLazyWidget_GetContent;
+
+// Function CommonUI.CommonLazyWidget.IsLoading
+// 0x0001 (0x0001 - 0x0000)
+struct CommonLazyWidget_IsLoading final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLazyWidget_IsLoading;
+
+// Function CommonUI.LoadGuardSlot.SetHorizontalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct LoadGuardSlot_SetHorizontalAlignment final
+{
+public:
+	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LoadGuardSlot_SetHorizontalAlignment;
+
+// Function CommonUI.LoadGuardSlot.SetPadding
+// 0x0010 (0x0010 - 0x0000)
+struct LoadGuardSlot_SetPadding final
+{
+public:
+	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LoadGuardSlot_SetPadding;
+
+// Function CommonUI.LoadGuardSlot.SetVerticalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct LoadGuardSlot_SetVerticalAlignment final
+{
+public:
+	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LoadGuardSlot_SetVerticalAlignment;
+
+// Function CommonUI.CommonLoadGuard.BP_GuardAndLoadAsset
+// 0x0038 (0x0038 - 0x0000)
+struct CommonLoadGuard_BP_GuardAndLoadAsset final
+{
+public:
+	TSoftObjectPtr<class UObject>                 InLazyAsset;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(class UObject* Object)>        OnAssetLoaded;                                     // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLoadGuard_BP_GuardAndLoadAsset;
+
+// Function CommonUI.CommonLoadGuard.SetIsLoading
+// 0x0001 (0x0001 - 0x0000)
+struct CommonLoadGuard_SetIsLoading final
+{
+public:
+	bool                                          bInIsLoading;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLoadGuard_SetIsLoading;
+
+// Function CommonUI.CommonLoadGuard.SetLoadingText
+// 0x0018 (0x0018 - 0x0000)
+struct CommonLoadGuard_SetLoadingText final
+{
+public:
+	class FText                                   InLoadingText;                                     // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLoadGuard_SetLoadingText;
+
+// Function CommonUI.CommonLoadGuard.IsLoading
+// 0x0001 (0x0001 - 0x0000)
+struct CommonLoadGuard_IsLoading final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonLoadGuard_IsLoading;
+
+// Function CommonUI.CommonNumericTextBlock.InterpolateToValue
+// 0x0010 (0x0010 - 0x0000)
+struct CommonNumericTextBlock_InterpolateToValue final
+{
+public:
+	float                                         TargetValue;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaximumInterpolationDuration;                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinimumChangeRate;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutroOffset;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_InterpolateToValue;
+
+// Function CommonUI.CommonNumericTextBlock.SetCurrentValue
+// 0x0004 (0x0004 - 0x0000)
+struct CommonNumericTextBlock_SetCurrentValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_SetCurrentValue;
+
+// Function CommonUI.CommonNumericTextBlock.SetNumericType
+// 0x0001 (0x0001 - 0x0000)
+struct CommonNumericTextBlock_SetNumericType final
+{
+public:
+	ECommonNumericType                            InNumericType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_SetNumericType;
+
+// Function CommonUI.CommonNumericTextBlock.GetTargetValue
+// 0x0004 (0x0004 - 0x0000)
+struct CommonNumericTextBlock_GetTargetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_GetTargetValue;
+
+// Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue
+// 0x0001 (0x0001 - 0x0000)
+struct CommonNumericTextBlock_IsInterpolatingNumericValue final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonNumericTextBlock_IsInterpolatingNumericValue;
+
+// Function CommonUI.CommonRichTextBlock.SetScrollingEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CommonRichTextBlock_SetScrollingEnabled final
+{
+public:
+	bool                                          bInIsScrollingEnabled;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CommonRichTextBlock_SetScrollingEnabled;
+
 // Function CommonUI.CommonTabListWidgetBase.DisableTabWithReason
 // 0x0020 (0x0020 - 0x0000)
 struct CommonTabListWidgetBase_DisableTabWithReason final
@@ -1278,386 +1658,6 @@ public:
 	class FName                                   ReturnValue;                                       // 0x0004(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CommonTabListWidgetBase_GetTabIdAtIndex;
-
-// Function CommonUI.CommonTextBlock.GetMargin
-// 0x0010 (0x0010 - 0x0000)
-struct CommonTextBlock_GetMargin final
-{
-public:
-	struct FMargin                                ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_GetMargin;
-
-// Function CommonUI.CommonTextBlock.SetLineHeightPercentage
-// 0x0004 (0x0004 - 0x0000)
-struct CommonTextBlock_SetLineHeightPercentage final
-{
-public:
-	float                                         InLineHeightPercentage;                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetLineHeightPercentage;
-
-// Function CommonUI.CommonTextBlock.SetMargin
-// 0x0010 (0x0010 - 0x0000)
-struct CommonTextBlock_SetMargin final
-{
-public:
-	struct FMargin                                InMargin;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetMargin;
-
-// Function CommonUI.CommonTextBlock.SetMobileFontSizeMultiplier
-// 0x0004 (0x0004 - 0x0000)
-struct CommonTextBlock_SetMobileFontSizeMultiplier final
-{
-public:
-	float                                         InMobileFontSizeMultiplier;                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetMobileFontSizeMultiplier;
-
-// Function CommonUI.CommonTextBlock.SetScrollingEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct CommonTextBlock_SetScrollingEnabled final
-{
-public:
-	bool                                          bInIsScrollingEnabled;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetScrollingEnabled;
-
-// Function CommonUI.CommonTextBlock.SetStyle
-// 0x0008 (0x0008 - 0x0000)
-struct CommonTextBlock_SetStyle final
-{
-public:
-	TSubclassOf<class UCommonTextStyle>           InStyle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetStyle;
-
-// Function CommonUI.CommonTextBlock.SetTextCase
-// 0x0001 (0x0001 - 0x0000)
-struct CommonTextBlock_SetTextCase final
-{
-public:
-	bool                                          bUseAllCaps;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetTextCase;
-
-// Function CommonUI.CommonTextBlock.SetWrapTextWidth
-// 0x0004 (0x0004 - 0x0000)
-struct CommonTextBlock_SetWrapTextWidth final
-{
-public:
-	int32                                         InWrapTextAt;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_SetWrapTextWidth;
-
-// Function CommonUI.CommonTextBlock.GetMobileFontSizeMultiplier
-// 0x0004 (0x0004 - 0x0000)
-struct CommonTextBlock_GetMobileFontSizeMultiplier final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonTextBlock_GetMobileFontSizeMultiplier;
-
-// Function CommonUI.LoadGuardSlot.SetHorizontalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct LoadGuardSlot_SetHorizontalAlignment final
-{
-public:
-	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LoadGuardSlot_SetHorizontalAlignment;
-
-// Function CommonUI.LoadGuardSlot.SetPadding
-// 0x0010 (0x0010 - 0x0000)
-struct LoadGuardSlot_SetPadding final
-{
-public:
-	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LoadGuardSlot_SetPadding;
-
-// Function CommonUI.LoadGuardSlot.SetVerticalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct LoadGuardSlot_SetVerticalAlignment final
-{
-public:
-	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LoadGuardSlot_SetVerticalAlignment;
-
-// Function CommonUI.CommonDateTimeTextBlock.SetCountDownCompletionText
-// 0x0018 (0x0018 - 0x0000)
-struct CommonDateTimeTextBlock_SetCountDownCompletionText final
-{
-public:
-	class FText                                   InCompletionText;                                  // 0x0000(0x0018)(ConstParm, Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonDateTimeTextBlock_SetCountDownCompletionText;
-
-// Function CommonUI.CommonDateTimeTextBlock.SetDateTimeValue
-// 0x0010 (0x0010 - 0x0000)
-struct CommonDateTimeTextBlock_SetDateTimeValue final
-{
-public:
-	struct FDateTime                              InDateTime;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bShowAsCountdown;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         InRefreshDelay;                                    // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonDateTimeTextBlock_SetDateTimeValue;
-
-// Function CommonUI.CommonDateTimeTextBlock.SetTimespanValue
-// 0x0008 (0x0008 - 0x0000)
-struct CommonDateTimeTextBlock_SetTimespanValue final
-{
-public:
-	struct FTimespan                              InTimespan;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonDateTimeTextBlock_SetTimespanValue;
-
-// Function CommonUI.CommonDateTimeTextBlock.GetDateTime
-// 0x0008 (0x0008 - 0x0000)
-struct CommonDateTimeTextBlock_GetDateTime final
-{
-public:
-	struct FDateTime                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonDateTimeTextBlock_GetDateTime;
-
-// Function CommonUI.CommonRichTextBlock.SetScrollingEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct CommonRichTextBlock_SetScrollingEnabled final
-{
-public:
-	bool                                          bInIsScrollingEnabled;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRichTextBlock_SetScrollingEnabled;
-
-// Function CommonUI.CommonLazyImage.SetBrushFromLazyDisplayAsset
-// 0x0030 (0x0030 - 0x0000)
-struct CommonLazyImage_SetBrushFromLazyDisplayAsset final
-{
-public:
-	TSoftObjectPtr<class UObject>                 LazyObject;                                        // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMatchTextureSize;                                 // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonLazyImage_SetBrushFromLazyDisplayAsset;
-
-// Function CommonUI.CommonLazyImage.SetBrushFromLazyMaterial
-// 0x0028 (0x0028 - 0x0000)
-struct CommonLazyImage_SetBrushFromLazyMaterial final
-{
-public:
-	TSoftObjectPtr<class UMaterialInterface>      LazyMaterial;                                      // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLazyImage_SetBrushFromLazyMaterial;
-
-// Function CommonUI.CommonLazyImage.SetBrushFromLazyTexture
-// 0x0030 (0x0030 - 0x0000)
-struct CommonLazyImage_SetBrushFromLazyTexture final
-{
-public:
-	TSoftObjectPtr<class UTexture2D>              LazyTexture;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMatchSize;                                        // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CommonLazyImage_SetBrushFromLazyTexture;
-
-// Function CommonUI.CommonLazyImage.SetMaterialTextureParamName
-// 0x0008 (0x0008 - 0x0000)
-struct CommonLazyImage_SetMaterialTextureParamName final
-{
-public:
-	class FName                                   TextureParamName;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLazyImage_SetMaterialTextureParamName;
-
-// Function CommonUI.CommonLazyImage.IsLoading
-// 0x0001 (0x0001 - 0x0000)
-struct CommonLazyImage_IsLoading final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLazyImage_IsLoading;
-
-// Function CommonUI.CommonLazyWidget.SetLazyContent
-// 0x0028 (0x0028 - 0x0000)
-struct CommonLazyWidget_SetLazyContent final
-{
-public:
-	TSoftClassPtr<class UClass>                   SoftWidget;                                        // 0x0000(0x0028)(ConstParm, Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLazyWidget_SetLazyContent;
-
-// Function CommonUI.CommonLazyWidget.GetContent
-// 0x0008 (0x0008 - 0x0000)
-struct CommonLazyWidget_GetContent final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLazyWidget_GetContent;
-
-// Function CommonUI.CommonLazyWidget.IsLoading
-// 0x0001 (0x0001 - 0x0000)
-struct CommonLazyWidget_IsLoading final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLazyWidget_IsLoading;
-
-// Function CommonUI.CommonListView.SetEntrySpacing
-// 0x0004 (0x0004 - 0x0000)
-struct CommonListView_SetEntrySpacing final
-{
-public:
-	float                                         InEntrySpacing;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonListView_SetEntrySpacing;
-
-// Function CommonUI.CommonLoadGuard.BP_GuardAndLoadAsset
-// 0x0038 (0x0038 - 0x0000)
-struct CommonLoadGuard_BP_GuardAndLoadAsset final
-{
-public:
-	TSoftObjectPtr<class UObject>                 InLazyAsset;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void(class UObject* Object)>        OnAssetLoaded;                                     // 0x0028(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLoadGuard_BP_GuardAndLoadAsset;
-
-// Function CommonUI.CommonLoadGuard.SetIsLoading
-// 0x0001 (0x0001 - 0x0000)
-struct CommonLoadGuard_SetIsLoading final
-{
-public:
-	bool                                          bInIsLoading;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLoadGuard_SetIsLoading;
-
-// Function CommonUI.CommonLoadGuard.SetLoadingText
-// 0x0018 (0x0018 - 0x0000)
-struct CommonLoadGuard_SetLoadingText final
-{
-public:
-	class FText                                   InLoadingText;                                     // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLoadGuard_SetLoadingText;
-
-// Function CommonUI.CommonLoadGuard.IsLoading
-// 0x0001 (0x0001 - 0x0000)
-struct CommonLoadGuard_IsLoading final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonLoadGuard_IsLoading;
-
-// Function CommonUI.CommonNumericTextBlock.InterpolateToValue
-// 0x0010 (0x0010 - 0x0000)
-struct CommonNumericTextBlock_InterpolateToValue final
-{
-public:
-	float                                         TargetValue;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaximumInterpolationDuration;                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinimumChangeRate;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         OutroOffset;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_InterpolateToValue;
-
-// Function CommonUI.CommonNumericTextBlock.SetCurrentValue
-// 0x0004 (0x0004 - 0x0000)
-struct CommonNumericTextBlock_SetCurrentValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_SetCurrentValue;
-
-// Function CommonUI.CommonNumericTextBlock.SetNumericType
-// 0x0001 (0x0001 - 0x0000)
-struct CommonNumericTextBlock_SetNumericType final
-{
-public:
-	ECommonNumericType                            InNumericType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_SetNumericType;
-
-// Function CommonUI.CommonNumericTextBlock.GetTargetValue
-// 0x0004 (0x0004 - 0x0000)
-struct CommonNumericTextBlock_GetTargetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_GetTargetValue;
-
-// Function CommonUI.CommonNumericTextBlock.IsInterpolatingNumericValue
-// 0x0001 (0x0001 - 0x0000)
-struct CommonNumericTextBlock_IsInterpolatingNumericValue final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonNumericTextBlock_IsInterpolatingNumericValue;
-
-// Function CommonUI.CommonRotator.BP_OnOptionSelected
-// 0x0004 (0x0004 - 0x0000)
-struct CommonRotator_BP_OnOptionSelected final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRotator_BP_OnOptionSelected;
-
-// Function CommonUI.CommonRotator.BP_OnOptionsPopulated
-// 0x0004 (0x0004 - 0x0000)
-struct CommonRotator_BP_OnOptionsPopulated final
-{
-public:
-	int32                                         Count;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRotator_BP_OnOptionsPopulated;
-
-// Function CommonUI.CommonRotator.PopulateTextLabels
-// 0x0010 (0x0010 - 0x0000)
-struct CommonRotator_PopulateTextLabels final
-{
-public:
-	TArray<class FText>                           Labels;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRotator_PopulateTextLabels;
-
-// Function CommonUI.CommonRotator.SetSelectedItem
-// 0x0004 (0x0004 - 0x0000)
-struct CommonRotator_SetSelectedItem final
-{
-public:
-	int32                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRotator_SetSelectedItem;
-
-// Function CommonUI.CommonRotator.GetSelectedIndex
-// 0x0004 (0x0004 - 0x0000)
-struct CommonRotator_GetSelectedIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRotator_GetSelectedIndex;
-
-// Function CommonUI.CommonRotator.GetSelectedText
-// 0x0018 (0x0018 - 0x0000)
-struct CommonRotator_GetSelectedText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CommonRotator_GetSelectedText;
 
 // Function CommonUI.CommonTextStyle.GetColor
 // 0x0010 (0x0010 - 0x0000)

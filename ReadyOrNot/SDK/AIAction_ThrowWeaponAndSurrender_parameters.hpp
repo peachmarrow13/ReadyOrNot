@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_ThrowWeaponAndSurrender.AIAction_ThrowWeaponAndSurrender_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_ThrowWeaponAndSurrender_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_ThrowWeaponAndSurrender_C_Tick_Blueprint;
+
 // Function AIAction_ThrowWeaponAndSurrender.AIAction_ThrowWeaponAndSurrender_C.ExecuteUbergraph_AIAction_ThrowWeaponAndSurrender
 // 0x0030 (0x0030 - 0x0000)
 struct AIAction_ThrowWeaponAndSurrender_C_ExecuteUbergraph_AIAction_ThrowWeaponAndSurrender final
@@ -30,15 +39,6 @@ public:
 	class UAnimMontage*                           CallFunc_PlayMontageFromTable_ReturnValue;         // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_ThrowWeaponAndSurrender_C_ExecuteUbergraph_AIAction_ThrowWeaponAndSurrender;
-
-// Function AIAction_ThrowWeaponAndSurrender.AIAction_ThrowWeaponAndSurrender_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_ThrowWeaponAndSurrender_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_ThrowWeaponAndSurrender_C_Tick_Blueprint;
 
 // Function AIAction_ThrowWeaponAndSurrender.AIAction_ThrowWeaponAndSurrender_C.ShouldPerformAction
 // 0x0001 (0x0001 - 0x0000)

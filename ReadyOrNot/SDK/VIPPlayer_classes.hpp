@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass VIPPlayer.VIPPlayer_C
-// 0x0000 (0x3060 - 0x3060)
+// 0x0000 (0x3190 - 0x3190)
 class AVIPPlayer_C final : public ABasePlayer_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_VIPPlayer_C;                        // 0x3058(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_VIPPlayer_C;                        // 0x3188(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_VIPPlayer(int32 EntryPoint);

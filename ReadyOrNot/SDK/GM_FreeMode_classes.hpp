@@ -19,16 +19,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_FreeMode.GM_FreeMode_C
-// 0x0320 (0x0CF0 - 0x09D0)
+// 0x0320 (0x0D10 - 0x09F0)
 class AGM_FreeMode_C final : public AFreeMode
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x09D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FSavedLoadout                          Loadout;                                           // 0x09E0(0x02E8)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          HasGivenGear_;                                     // 0x0CC8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_CC9[0x7];                                      // 0x0CC9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLoadoutEquipOptions                   Loadout_Equip_Options;                             // 0x0CD0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x09F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FSavedLoadout                          Loadout;                                           // 0x0A00(0x02E8)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          HasGivenGear_;                                     // 0x0CE8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CE9[0x7];                                      // 0x0CE9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLoadoutEquipOptions                   Loadout_Equip_Options;                             // 0x0CF0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
 	void ExecuteUbergraph_GM_FreeMode(int32 EntryPoint);

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PPR_IsOwningPlayerDead.PPR_IsOwningPlayerDead_C
-// 0x0000 (0x0038 - 0x0038)
+// 0x0000 (0x0040 - 0x0040)
 class UPPR_IsOwningPlayerDead_C final : public UPostProcessRequirement
 {
 public:

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DeadSpectator.DeadSpectator_C
-// 0x0008 (0x03B0 - 0x03A8)
+// 0x0008 (0x03B8 - 0x03B0)
 class ADeadSpectator_C final : public ASpectatePawn
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveUnpossessed(class AController* OldController);

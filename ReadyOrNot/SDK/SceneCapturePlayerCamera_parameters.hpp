@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.ExecuteUbergraph_SceneCapturePlayerCamera
+// 0x0004 (0x0004 - 0x0000)
+struct SceneCapturePlayerCamera_C_ExecuteUbergraph_SceneCapturePlayerCamera final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneCapturePlayerCamera_C_ExecuteUbergraph_SceneCapturePlayerCamera;
+
 // Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.Start
 // 0x0020 (0x0020 - 0x0000)
 struct SceneCapturePlayerCamera_C_Start final
@@ -27,15 +36,6 @@ public:
 	bool                                          CallFunc_K2_AttachToComponent_ReturnValue;         // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SceneCapturePlayerCamera_C_Start;
-
-// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.ExecuteUbergraph_SceneCapturePlayerCamera
-// 0x0004 (0x0004 - 0x0000)
-struct SceneCapturePlayerCamera_C_ExecuteUbergraph_SceneCapturePlayerCamera final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SceneCapturePlayerCamera_C_ExecuteUbergraph_SceneCapturePlayerCamera;
 
 }
 

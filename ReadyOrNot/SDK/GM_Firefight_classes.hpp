@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_Firefight.GM_Firefight_C
-// 0x0010 (0x0A90 - 0x0A80)
+// 0x0010 (0x0AB0 - 0x0AA0)
 class AGM_Firefight_C final : public AFirefightGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A80(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0AA0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Scope_MicroT2_Raised.Scope_MicroT2_Raised_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UScope_MicroT2_Raised_C final : public UScopedWeaponAttachment
 {
 public:

@@ -84,20 +84,6 @@ class UImage* UW_WeaponWheel_RadialSelection_C::CreateIcon(const struct FSlateBr
 }
 
 
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ExecuteRadial
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UW_WeaponWheel_RadialSelection_C::ExecuteRadial()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "ExecuteRadial");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ExecuteUbergraph_W_WeaponWheel_RadialSelection
 // (Final, UbergraphFunction)
 // Parameters:
@@ -155,6 +141,132 @@ void UW_WeaponWheel_RadialSelection_C::MoveToFront(class ABaseItem* Item_0)
 	Parms.Item_0 = Item_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveExecutableItemFromCategory
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UWeaponWheelScript*               WeaponWheelScript                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_WeaponWheel_RadialSelection_C::RemoveExecutableItemFromCategory(class UWeaponWheelScript* WeaponWheelScript)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveExecutableItemFromCategory");
+
+	Params::W_WeaponWheel_RadialSelection_C_RemoveExecutableItemFromCategory Parms{};
+
+	Parms.WeaponWheelScript = WeaponWheelScript;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveItemFromCategory
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class ABaseItem*&                 Item_0                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+
+void UW_WeaponWheel_RadialSelection_C::RemoveItemFromCategory(const class ABaseItem*& Item_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveItemFromCategory");
+
+	Params::W_WeaponWheel_RadialSelection_C_RemoveItemFromCategory Parms{};
+
+	Parms.Item_0 = Item_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveNullItems
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_WeaponWheel_RadialSelection_C::RemoveNullItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveNullItems");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveNullItems (Internal)
+// (Private, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TArray<class UObject*>&                 ItemArray                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UW_WeaponWheel_RadialSelection_C::RemoveNullItems__Internal_(TArray<class UObject*>& ItemArray)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveNullItems (Internal)");
+
+	Params::W_WeaponWheel_RadialSelection_C_RemoveNullItems__Internal_ Parms{};
+
+	Parms.ItemArray = std::move(ItemArray);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	ItemArray = std::move(Parms.ItemArray);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ShiftItemToNewSpot
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ABaseItem*                        Item_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// int32                                   NewIndex                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_WeaponWheel_RadialSelection_C::ShiftItemToNewSpot(class ABaseItem* Item_0, int32 NewIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "ShiftItemToNewSpot");
+
+	Params::W_WeaponWheel_RadialSelection_C_ShiftItemToNewSpot Parms{};
+
+	Parms.Item_0 = Item_0;
+	Parms.NewIndex = NewIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ShuffleItems
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_WeaponWheel_RadialSelection_C::ShuffleItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "ShuffleItems");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ExecuteRadial
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_WeaponWheel_RadialSelection_C::ExecuteRadial()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "ExecuteRadial");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -274,82 +386,6 @@ void UW_WeaponWheel_RadialSelection_C::Previous(bool* bSuccess)
 }
 
 
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveExecutableItemFromCategory
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UWeaponWheelScript*               WeaponWheelScript                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UW_WeaponWheel_RadialSelection_C::RemoveExecutableItemFromCategory(class UWeaponWheelScript* WeaponWheelScript)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveExecutableItemFromCategory");
-
-	Params::W_WeaponWheel_RadialSelection_C_RemoveExecutableItemFromCategory Parms{};
-
-	Parms.WeaponWheelScript = WeaponWheelScript;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveItemFromCategory
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class ABaseItem*&                 Item_0                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-
-void UW_WeaponWheel_RadialSelection_C::RemoveItemFromCategory(const class ABaseItem*& Item_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveItemFromCategory");
-
-	Params::W_WeaponWheel_RadialSelection_C_RemoveItemFromCategory Parms{};
-
-	Parms.Item_0 = Item_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveNullItems
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UW_WeaponWheel_RadialSelection_C::RemoveNullItems()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveNullItems");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.RemoveNullItems (Internal)
-// (Private, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TArray<class UObject*>&                 ItemArray                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UW_WeaponWheel_RadialSelection_C::RemoveNullItems__Internal_(TArray<class UObject*>& ItemArray)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "RemoveNullItems (Internal)");
-
-	Params::W_WeaponWheel_RadialSelection_C_RemoveNullItems__Internal_ Parms{};
-
-	Parms.ItemArray = std::move(ItemArray);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	ItemArray = std::move(Parms.ItemArray);
-}
-
-
 // Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.Select
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -367,42 +403,6 @@ void UW_WeaponWheel_RadialSelection_C::Select(int32 Index_0)
 	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ShiftItemToNewSpot
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ABaseItem*                        Item_0                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// int32                                   NewIndex                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_WeaponWheel_RadialSelection_C::ShiftItemToNewSpot(class ABaseItem* Item_0, int32 NewIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "ShiftItemToNewSpot");
-
-	Params::W_WeaponWheel_RadialSelection_C_ShiftItemToNewSpot Parms{};
-
-	Parms.Item_0 = Item_0;
-	Parms.NewIndex = NewIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_WeaponWheel_RadialSelection.W_WeaponWheel_RadialSelection_C.ShuffleItems
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UW_WeaponWheel_RadialSelection_C::ShuffleItems()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_WeaponWheel_RadialSelection_C", "ShuffleItems");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

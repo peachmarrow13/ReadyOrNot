@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function W_PageHeader_Carousel.W_PageHeader_Carousel_C.AddAutomationMetaData
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UW_PageHeader_Carousel_C::AddAutomationMetaData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PageHeader_Carousel_C", "AddAutomationMetaData");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_PageHeader_Carousel.W_PageHeader_Carousel_C.ButtonClicked
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:

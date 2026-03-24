@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "DeveloperSettings_classes.hpp"
+#include "GeometryFramework_classes.hpp"
 #include "InteractiveToolsFramework_classes.hpp"
 #include "Engine_classes.hpp"
-#include "ModelingComponents_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ModelingComponents_structs.hpp"
 #include "PhysicsCore_structs.hpp"
-#include "GeometryFramework_classes.hpp"
-#include "DeveloperSettings_classes.hpp"
 
 
 namespace SDK
@@ -1075,7 +1075,7 @@ public:
 DUMPER7_ASSERTS_UPolyEditPreviewMesh;
 
 // Class ModelingComponents.PreviewGeometryActor
-// 0x0000 (0x02A0 - 0x02A0)
+// 0x0000 (0x02A8 - 0x02A8)
 class APreviewGeometryActor final : public AInternalToolFrameworkActor
 {
 public:
@@ -1690,7 +1690,7 @@ public:
 DUMPER7_ASSERTS_UModelingObjectsCreationAPI;
 
 // Class ModelingComponents.PreviewMeshActor
-// 0x0000 (0x02A0 - 0x02A0)
+// 0x0000 (0x02A8 - 0x02A8)
 class APreviewMeshActor final : public AInternalToolFrameworkActor
 {
 public:

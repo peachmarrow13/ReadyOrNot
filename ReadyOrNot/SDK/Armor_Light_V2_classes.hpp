@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Armor_Light_V2.Armor_Light_V2_C
-// 0x0000 (0x0D30 - 0x0D30)
+// 0x0000 (0x0D80 - 0x0D80)
 class AArmor_Light_V2_C final : public ABaseBodyArmor_C
 {
 public:

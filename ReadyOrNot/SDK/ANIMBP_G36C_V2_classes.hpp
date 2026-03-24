@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ANIMBP_G36C_V2.ANIMBP_G36C_V2_C
-// 0x0860 (0x0BD0 - 0x0370)
+// 0x0990 (0x0D00 - 0x0370)
 class UANIMBP_G36C_V2_C final : public URoNWeaponAnimInstance
 {
 public:
@@ -31,9 +31,9 @@ public:
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0388(0x0008)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0390(0x0020)()
 	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x03B0(0x0020)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_3;                        // 0x03D0(0x0128)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_2;                        // 0x04F8(0x0128)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x0620(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_4;                        // 0x03D0(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_3;                        // 0x04F8(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_2;                        // 0x0620(0x0128)()
 	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0748(0x0020)()
 	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend;                    // 0x0768(0x00F0)()
 	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0858(0x0048)()
@@ -44,11 +44,13 @@ public:
 	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose;                      // 0x0980(0x0080)()
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0A00(0x0048)()
 	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0A48(0x0048)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x0A90(0x0128)()
-	bool                                          bIsSemi;                                           // 0x0BB8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BB9[0x7];                                      // 0x0BB9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Mag01Alpha;                                        // 0x0BC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        ScopeAdjustAlpha;                                  // 0x0BC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x0A90(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x0BB8(0x0128)()
+	bool                                          bIsSemi;                                           // 0x0CE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CE1[0x7];                                      // 0x0CE1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Mag01Alpha;                                        // 0x0CE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        ScopeAdjustAlpha;                                  // 0x0CF0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Sight_Front_Alpha;                                 // 0x0CF8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ANIMBP_G36C_V2(int32 EntryPoint);

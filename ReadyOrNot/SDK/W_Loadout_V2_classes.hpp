@@ -10,78 +10,82 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Loadout_V2.W_Loadout_V2_C
-// 0x03B8 (0x0C58 - 0x08A0)
+// 0x03D0 (0x0CC8 - 0x08F8)
 class UW_Loadout_V2_C final : public ULoadout_V2
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UImage*                                 BackgroundGradient;                                // 0x08A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Customization_C*                     CustomizationWidget;                               // 0x08B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 img_ClickToRotate;                                 // 0x08B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 img_ClickToRotate_DragArea;                        // 0x08C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCanvasPanel*                           LoadoutCanvas;                                     // 0x08C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCommonActivatableWidgetSwitcher*       LoadoutCustomizationSwitcher;                      // 0x08D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCommonActivatableWidgetSwitcher*       LoadoutInfoSwitcher;                               // 0x08D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCanvasPanel*                           MainCanvas;                                        // 0x08E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_PageWrapper_C*                       PageHeader;                                        // 0x08E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCommonActivatableWidgetStack*          PresetPreviewStack;                                // 0x08F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_LoadoutInformationBox_C*             W_LoadoutInformationBox;                           // 0x08F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_PresetPreview_Gamepad_C*             W_PresetPreview_Gamepad;                           // 0x0900(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UClass*                                 ItemData;                                          // 0x0908(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	EItemType                                     EquippingItemType;                                 // 0x0910(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	uint8                                         Pad_911[0x7];                                      // 0x0911(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnPrimaryWeaponEquipped;                           // 0x0918(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnSidearmWeaponEquipped;                           // 0x0928(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnArmorMaterialEquipped;                           // 0x0938(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	class FText                                   HoveredPreset;                                     // 0x0948(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class ACameraActor*                           WorkbenchCamera;                                   // 0x0960(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	struct FRotator                               DefaultWorkbenchCameraRotation;                    // 0x0968(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
-	struct FRotator                               CurrentWorkbenchCameraRotation;                    // 0x0980(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
-	struct FRotator                               TargetWorkbenchCameraRotation;                     // 0x0998(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
-	struct FRotator                               WorkbenchCameraRotation;                           // 0x09B0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
-	bool                                          bWorkbenchCameraRotating;                          // 0x09C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	bool                                          bUseGamepad;                                       // 0x09C9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	uint8                                         Pad_9CA[0x6];                                      // 0x09CA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool UsingGamepad)> OnChangedInput;                                // 0x09D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMap<class FName, class UClass*>              PageMap;                                           // 0x09E0(0x0050)(Edit, BlueprintVisible)
-	TMap<class FName, class UClass*>              PageMap_Gamepad;                                   // 0x0A30(0x0050)(Edit, BlueprintVisible)
-	class UCommonActivatableWidget*               CurrentPage;                                       // 0x0A80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	class FName                                   CurrentPageID;                                     // 0x0A88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
-	TMap<class FName, class FName>                Page_to_Camera_Tag_Map;                            // 0x0A90(0x0050)(Edit, BlueprintVisible)
-	TMap<class FName, class FString>              Page_to_Pose_Tag_Map;                              // 0x0AE0(0x0050)(Edit, BlueprintVisible)
-	bool                                          bCustomization;                                    // 0x0B30(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bOpenedInCustomization;                            // 0x0B31(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B32[0x6];                                      // 0x0B32(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, class FText>                MainNavigationOptions;                             // 0x0B38(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FName                                   MainNavSelection;                                  // 0x0B88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UW_StandardModal_C*                     PresetModal;                                       // 0x0B90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         PresetCharacterLimit;                              // 0x0B98(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B9C[0x4];                                      // 0x0B9C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool PresetDirty)> OnPresetModified;                               // 0x0BA0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	bool                                          bIsRotating;                                       // 0x0BB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BB1[0x7];                                      // 0x0BB1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        MouseDragRotateSpeed;                              // 0x0BB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(const class FString& Preset)> OnSaveModifiedPresetClicked;         // 0x0BC0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnPresetSelected;                                  // 0x0BD0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	bool                                          Editing_Preset_Name;                               // 0x0BE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EWeaponAttachmentType                         HoveredAttachmentType;                             // 0x0BE1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BE2[0x6];                                      // 0x0BE2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_LoadoutSlot_v2_C*                    HoveredAttachmentSlot;                             // 0x0BE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          bShowingWeaponClassNav;                            // 0x0BF0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BF1[0x7];                                      // 0x0BF1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, class UFMODEvent*>          Page_to_FMOD_Tag_Map;                              // 0x0BF8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FString                                 PresetToDelete;                                    // 0x0C48(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x08F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UImage*                                 BackgroundGradient;                                // 0x0900(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Customization_C*                     CustomizationWidget;                               // 0x0908(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 img_ClickToRotate;                                 // 0x0910(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 img_ClickToRotate_DragArea;                        // 0x0918(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCanvasPanel*                           LoadoutCanvas;                                     // 0x0920(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonActivatableWidgetSwitcher*       LoadoutCustomizationSwitcher;                      // 0x0928(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonActivatableWidgetSwitcher*       LoadoutInfoSwitcher;                               // 0x0930(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCanvasPanel*                           MainCanvas;                                        // 0x0938(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_PageWrapper_C*                       PageHeader;                                        // 0x0940(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonActivatableWidgetStack*          PresetPreviewStack;                                // 0x0948(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_LoadoutInformationBox_C*             W_LoadoutInformationBox;                           // 0x0950(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_PresetPreview_Gamepad_C*             W_PresetPreview_Gamepad;                           // 0x0958(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UClass*                                 ItemData;                                          // 0x0960(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	EItemType                                     EquippingItemType;                                 // 0x0968(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	uint8                                         Pad_969[0x7];                                      // 0x0969(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnPrimaryWeaponEquipped;                           // 0x0970(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnSidearmWeaponEquipped;                           // 0x0980(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnArmorMaterialEquipped;                           // 0x0990(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	class FText                                   HoveredPreset;                                     // 0x09A0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class ACameraActor*                           WorkbenchCamera;                                   // 0x09B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	struct FRotator                               DefaultWorkbenchCameraRotation;                    // 0x09C0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	struct FRotator                               CurrentWorkbenchCameraRotation;                    // 0x09D8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	struct FRotator                               TargetWorkbenchCameraRotation;                     // 0x09F0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	struct FRotator                               WorkbenchCameraRotation;                           // 0x0A08(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	bool                                          bWorkbenchCameraRotating;                          // 0x0A20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	bool                                          bUseGamepad;                                       // 0x0A21(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	uint8                                         Pad_A22[0x6];                                      // 0x0A22(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool UsingGamepad)> OnChangedInput;                                // 0x0A28(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMap<class FName, class UClass*>              PageMap;                                           // 0x0A38(0x0050)(Edit, BlueprintVisible)
+	TMap<class FName, class UClass*>              PageMap_Gamepad;                                   // 0x0A88(0x0050)(Edit, BlueprintVisible)
+	class UCommonActivatableWidget*               CurrentPage;                                       // 0x0AD8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	class FName                                   CurrentPageID;                                     // 0x0AE0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	TMap<class FName, class FName>                Page_to_Camera_Tag_Map;                            // 0x0AE8(0x0050)(Edit, BlueprintVisible)
+	TMap<class FName, class FString>              Page_to_Pose_Tag_Map;                              // 0x0B38(0x0050)(Edit, BlueprintVisible)
+	bool                                          bCustomization;                                    // 0x0B88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bOpenedInCustomization;                            // 0x0B89(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B8A[0x6];                                      // 0x0B8A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, class FText>                MainNavigationOptions;                             // 0x0B90(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FName                                   MainNavSelection;                                  // 0x0BE0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UW_StandardModal_C*                     PresetModal;                                       // 0x0BE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         PresetCharacterLimit;                              // 0x0BF0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BF4[0x4];                                      // 0x0BF4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool PresetDirty)> OnPresetModified;                               // 0x0BF8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	bool                                          bIsRotating;                                       // 0x0C08(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C09[0x7];                                      // 0x0C09(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        MouseDragRotateSpeed;                              // 0x0C10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void(const class FString& Preset)> OnSaveModifiedPresetClicked;         // 0x0C18(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnPresetSelected;                                  // 0x0C28(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	bool                                          Editing_Preset_Name;                               // 0x0C38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponAttachmentType                         HoveredAttachmentType;                             // 0x0C39(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C3A[0x6];                                      // 0x0C3A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_LoadoutSlot_v2_C*                    HoveredAttachmentSlot;                             // 0x0C40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          bShowingWeaponClassNav;                            // 0x0C48(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C49[0x7];                                      // 0x0C49(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, class UFMODEvent*>          Page_to_FMOD_Tag_Map;                              // 0x0C50(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FString                                 PresetToDelete;                                    // 0x0CA0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnLoadoutConfirmed;                                // 0x0CB0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	bool                                          bShowConfirmButton;                                // 0x0CC0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          bHidePageBackground;                               // 0x0CC1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          bIsClosing;                                        // 0x0CC2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Activate_Preview_Preset_Gamepad();
@@ -103,6 +107,7 @@ public:
 	void Clear_All_Attachments_Clicked();
 	void Clear_Attachment_Clicked();
 	void Clear_Attachment_For_Category(EWeaponAttachmentType Attachment_Type, bool Primary);
+	void ClearModal();
 	void Close_Preview_Preset_Gamepad();
 	void ClosePresetPreview();
 	void Construct();
@@ -120,12 +125,14 @@ public:
 	class FText Get_Entry_Initial_Text_Value(const class FString& Current_Preset, bool Customization, bool New_Preset);
 	class FText Get_Entry_Text_For_Current_Preset(const class FString& Current_Preset, bool Customization, bool New_Preset);
 	void Get_Null_Attachment_By_Type(EWeaponAttachmentType Selection, class UClass** NullAttachment);
+	void HasWeaponSubClass(ELoadoutCategory LoadoutCategory, EWeaponSubclass ItemCategory, bool* bFound);
 	void HeaderSubpageNavigation(class FName OptionNameID);
 	void Hide(double Delay, bool Collapse);
 	void Hide_Clear_All_Attachments_Footer_Option();
 	void Hide_Clear_Attachment_Footer_Option();
 	void Hide_Loadout_Preset_Footer_Options();
 	void Hide_Preset_Page_Footer_Options();
+	void HideHeader(bool bHideHeader, bool bHideNav);
 	void HolsterPreviewCharacterWeapon(bool* IsHolstering);
 	void InputMethodChanged(ECommonInputType bNewInputType);
 	void Is_Default_Preset(const class FText& Name_0, bool* Default);
@@ -168,8 +175,11 @@ public:
 	void SetPreMissionCamera(class FName Tag, const class FString& Animation, double BlendTime);
 	void SetPreMissionCameraBySlot(EItemCategory LoadoutSlot, double BlendTime);
 	void SetPresetModified(bool PresetDirty_0);
+	void SetupLoadoutAsSubMenu();
+	void Should_Hide_Exit(bool* NewParam);
 	void ShowMainNav();
-	void ShowWeaponClassNav(EItemClass SelectedClass, bool bIsSecondary);
+	void ShowOrHideBackButton();
+	void ShowWeaponClassNav(EWeaponSubclass SelectedClass, bool bIsSecondary);
 	void SlotUnhovered();
 	void SwitchToCustomization();
 	void SwitchToLoadout();

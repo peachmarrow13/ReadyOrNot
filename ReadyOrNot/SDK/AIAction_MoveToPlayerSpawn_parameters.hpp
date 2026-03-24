@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.OnCreate_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_MoveToPlayerSpawn_C_OnCreate_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_MoveToPlayerSpawn_C_OnCreate_Blueprint;
+
 // Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.ExecuteUbergraph_AIAction_MoveToPlayerSpawn
 // 0x0040 (0x0040 - 0x0000)
 struct AIAction_MoveToPlayerSpawn_C_ExecuteUbergraph_AIAction_MoveToPlayerSpawn final
@@ -30,15 +39,6 @@ public:
 	bool                                          CallFunc_EqualEqual_ObjectObject_ReturnValue;      // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_MoveToPlayerSpawn_C_ExecuteUbergraph_AIAction_MoveToPlayerSpawn;
-
-// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.OnCreate_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_MoveToPlayerSpawn_C_OnCreate_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_MoveToPlayerSpawn_C_OnCreate_Blueprint;
 
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Primary_S16.BP_Primary_S16_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class ABP_Primary_S16_C final : public ABaseMagazineWeapon
 {
 public:

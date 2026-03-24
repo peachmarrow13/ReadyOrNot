@@ -17,35 +17,21 @@
 namespace SDK
 {
 
-// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.BeginAction_Blueprint
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
-
-void UAIAction_AdvanceToZone_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.ExecuteUbergraph_AIAction_AdvanceToZone
-// (Final, UbergraphFunction)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_AdvanceToZone_C::ExecuteUbergraph_AIAction_AdvanceToZone(int32 EntryPoint)
+void UAIAction_AdvanceToZone_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "ExecuteUbergraph_AIAction_AdvanceToZone");
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "Tick_Blueprint");
 
-	Params::AIAction_AdvanceToZone_C_ExecuteUbergraph_AIAction_AdvanceToZone Parms{};
+	Params::AIAction_AdvanceToZone_C_Tick_Blueprint Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -71,6 +57,54 @@ void UAIAction_AdvanceToZone_C::OnCreate_Blueprint(class ACyberneticController* 
 }
 
 
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.ExecuteUbergraph_AIAction_AdvanceToZone
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_AdvanceToZone_C::ExecuteUbergraph_AIAction_AdvanceToZone(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "ExecuteUbergraph_AIAction_AdvanceToZone");
+
+	Params::AIAction_AdvanceToZone_C_ExecuteUbergraph_AIAction_AdvanceToZone Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_AdvanceToZone_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "EndAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_AdvanceToZone_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.ShouldPerformAction
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -84,6 +118,26 @@ bool UAIAction_AdvanceToZone_C::ShouldPerformAction() const
 		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "ShouldPerformAction");
 
 	Params::AIAction_AdvanceToZone_C_ShouldPerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.GetMoveStyleOverride
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class FName UAIAction_AdvanceToZone_C::GetMoveStyleOverride() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "GetMoveStyleOverride");
+
+	Params::AIAction_AdvanceToZone_C_GetMoveStyleOverride Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

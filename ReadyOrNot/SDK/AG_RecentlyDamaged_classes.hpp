@@ -21,7 +21,7 @@ namespace SDK
 class UAG_RecentlyDamaged_C final : public UAIActionGate
 {
 public:
-	double                                        SinceSeconds;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        SinceSeconds;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool CanOpen(const struct FAIActionDecisionContext& Context) const;

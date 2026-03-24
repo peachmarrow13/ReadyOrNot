@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Compensator_ASR.BP_Compensator_ASR_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UBP_Compensator_ASR_C final : public UWeaponAttachment
 {
 public:

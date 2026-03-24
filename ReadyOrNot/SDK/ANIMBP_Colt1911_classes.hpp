@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ANIMBP_Colt1911_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ANIMBP_Colt1911_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -50,14 +50,14 @@ public:
 	double                                        SlideAlpha;                                        // 0x0A10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void AnimNotify_DropSpeedReloadMagazine();
-	void AnimNotify_ShowMag();
-	void AnimNotify_SlideBack();
-	void AnimNotify_SlideForward();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_Colt1911_AnimGraphNode_BlendListByBool_0947D15B4B41B2481BEAD685D38DAB76();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_Colt1911_AnimGraphNode_BlendListByBool_6A7D8B56402439E51D649F9A89C4D725();
 	void ExecuteUbergraph_ANIMBP_Colt1911(int32 EntryPoint);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_Colt1911_AnimGraphNode_BlendListByBool_6A7D8B56402439E51D649F9A89C4D725();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_Colt1911_AnimGraphNode_BlendListByBool_0947D15B4B41B2481BEAD685D38DAB76();
+	void AnimNotify_SlideForward();
+	void AnimNotify_SlideBack();
+	void AnimNotify_ShowMag();
+	void AnimNotify_DropSpeedReloadMagazine();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

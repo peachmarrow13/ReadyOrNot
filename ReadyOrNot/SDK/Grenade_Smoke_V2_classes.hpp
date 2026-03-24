@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Grenade_Smoke_V2.Grenade_Smoke_V2_C
-// 0x0010 (0x1280 - 0x1270)
+// 0x0010 (0x12E0 - 0x12D0)
 class AGrenade_Smoke_V2_C final : public ABaseGrenade
 {
 public:
-	class USphereComponent*                       SphereSmokeBounds;                                 // 0x1270(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USphereComponent*                       SphereSmokeBounds;                                 // 0x12D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -12,8 +12,8 @@
 
 #include "ReadyOrNot_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "CommonInput_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "FMODStudio_structs.hpp"
 
 

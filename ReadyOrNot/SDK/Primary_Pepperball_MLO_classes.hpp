@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_Pepperball_MLO.Primary_Pepperball_MLO_C
-// 0x0000 (0x18E0 - 0x18E0)
+// 0x0000 (0x19C0 - 0x19C0)
 class APrimary_Pepperball_MLO_C final : public APepperballGun
 {
 public:

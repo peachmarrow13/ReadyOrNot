@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_RK1Grip.Rifle_RK1Grip_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class URifle_RK1Grip_C final : public UWeaponAttachment
 {
 public:

@@ -120,25 +120,25 @@ public:
 DUMPER7_ASSERTS_W_Loadout_Munition_SummaryEntry_C_GetAmmoIcon;
 
 // Function W_Loadout_Munition_SummaryEntry.W_Loadout_Munition_SummaryEntry_C.GetAmmoInfo
-// 0x0188 (0x0188 - 0x0000)
+// 0x01A0 (0x01A0 - 0x0000)
 struct W_Loadout_Munition_SummaryEntry_C_GetAmmoInfo final
 {
 public:
 	class UDataTable*                             CallFunc_GetAmmoLookupDataTable_ReturnValue;       // 0x0000(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0008(0x0178)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0180(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0008(0x0190)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Loadout_Munition_SummaryEntry_C_GetAmmoInfo;
 
 // Function W_Loadout_Munition_SummaryEntry.W_Loadout_Munition_SummaryEntry_C.GetAmmoName
-// 0x01A0 (0x01A0 - 0x0000)
+// 0x01B8 (0x01B8 - 0x0000)
 struct W_Loadout_Munition_SummaryEntry_C_GetAmmoName final
 {
 public:
 	class FText                                   AmmoName;                                          // 0x0000(0x0018)(Parm, OutParm)
 	class UDataTable*                             CallFunc_GetAmmoLookupDataTable_ReturnValue;       // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0020(0x0178)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0198(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0020(0x0190)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Loadout_Munition_SummaryEntry_C_GetAmmoName;
 

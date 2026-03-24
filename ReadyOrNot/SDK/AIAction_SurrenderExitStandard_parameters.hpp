@@ -52,6 +52,16 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_Tick_Blueprint;
 
+// Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.ShouldPerformAction
+// 0x0002 (0x0002 - 0x0000)
+struct AIAction_SurrenderExitStandard_C_ShouldPerformAction final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_ShouldPerformAction;
+
 // Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.IsFakeExit
 // 0x0003 (0x0003 - 0x0000)
 struct AIAction_SurrenderExitStandard_C_IsFakeExit final
@@ -62,16 +72,6 @@ public:
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_IsFakeExit;
-
-// Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.ShouldPerformAction
-// 0x0002 (0x0002 - 0x0000)
-struct AIAction_SurrenderExitStandard_C_ShouldPerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_ShouldPerformAction;
 
 }
 

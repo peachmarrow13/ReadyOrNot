@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Taser_LaserPoint.Taser_LaserPoint_C
-// 0x0000 (0x1110 - 0x1110)
-class UTaser_LaserPoint_C final : public ULaserAttachment
+// 0x0000 (0x11C0 - 0x11C0)
+class UTaser_LaserPoint_C final : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

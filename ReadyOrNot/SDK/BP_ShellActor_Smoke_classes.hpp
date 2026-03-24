@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ShellActor_Smoke.BP_ShellActor_Smoke_C
-// 0x0000 (0x02B0 - 0x02B0)
+// 0x0000 (0x02B8 - 0x02B8)
 class ABP_ShellActor_Smoke_C final : public ABP_ShellActor_C
 {
 public:

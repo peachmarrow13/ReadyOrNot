@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Pistol_Compensator_Single.Pistol_Compensator_Single_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UPistol_Compensator_Single_C final : public UWeaponAttachment
 {
 public:

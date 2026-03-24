@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "OnlineSubsystemUtils_structs.hpp"
-#include "ReadyOrNot_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
+#include "OnlineSubsystemUtils_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 

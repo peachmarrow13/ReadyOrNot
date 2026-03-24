@@ -17,6 +17,27 @@
 namespace SDK
 {
 
+// Function AG_SWATDistanceToNearestExit.AG_SWATDistanceToNearestExit_C.Get SWAT
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// TArray<class AReadyOrNotCharacter*>*    ArrayOutput                                            (Parm, OutParm)
+
+void UAG_SWATDistanceToNearestExit_C::Get_SWAT(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AG_SWATDistanceToNearestExit_C", "Get SWAT");
+
+	Params::AG_SWATDistanceToNearestExit_C_Get_SWAT Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (ArrayOutput != nullptr)
+		*ArrayOutput = std::move(Parms.ArrayOutput);
+}
+
+
 // Function AG_SWATDistanceToNearestExit.AG_SWATDistanceToNearestExit_C.CanOpen
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -37,27 +58,6 @@ bool UAG_SWATDistanceToNearestExit_C::CanOpen(const struct FAIActionDecisionCont
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
-}
-
-
-// Function AG_SWATDistanceToNearestExit.AG_SWATDistanceToNearestExit_C.Get SWAT
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// TArray<class AReadyOrNotCharacter*>*    ArrayOutput                                            (Parm, OutParm)
-
-void UAG_SWATDistanceToNearestExit_C::Get_SWAT(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AG_SWATDistanceToNearestExit_C", "Get SWAT");
-
-	Params::AG_SWATDistanceToNearestExit_C_Get_SWAT Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (ArrayOutput != nullptr)
-		*ArrayOutput = std::move(Parms.ArrayOutput);
 }
 
 }

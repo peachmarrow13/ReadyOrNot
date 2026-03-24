@@ -12,10 +12,10 @@
 
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ReadyOrNot_classes.hpp"
 #include "ANIMBP_Player_TP_V3_structs.hpp"
 #include "CustomAnimNode_structs.hpp"
 #include "AnimationWarpingRuntime_structs.hpp"
-#include "ReadyOrNot_classes.hpp"
 
 
 namespace SDK
@@ -609,13 +609,13 @@ public:
 	double                                        Alpha;                                             // 0xF2B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void SetWeaponGripPose(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
+	void ExecuteUbergraph_ANIMBP_Player_TP_V3(int32 EntryPoint);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void AnimNotify_ShowTPMesh();
+	void AnimNotify_PlayFootstep();
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void AnimNotify_HideTPMesh();
-	void AnimNotify_PlayFootstep();
-	void AnimNotify_ShowTPMesh();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void ExecuteUbergraph_ANIMBP_Player_TP_V3(int32 EntryPoint);
-	void SetWeaponGripPose(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node);
 
 public:
 	static class UClass* StaticClass()

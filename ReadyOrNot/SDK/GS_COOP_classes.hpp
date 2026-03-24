@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_COOP.GS_COOP_C
-// 0x0010 (0x0A50 - 0x0A40)
+// 0x0010 (0x0A80 - 0x0A70)
 class AGS_COOP_C : public ACoopGS
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AActor*                                 NewVar_0;                                          // 0x0A48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class AActor*                                 NewVar_0;                                          // 0x0A78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GS_COOP(int32 EntryPoint);

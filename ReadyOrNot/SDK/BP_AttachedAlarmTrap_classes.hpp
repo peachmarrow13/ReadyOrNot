@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_AttachedAlarmTrap.BP_AttachedAlarmTrap_C
-// 0x0010 (0x0410 - 0x0400)
+// 0x0010 (0x0420 - 0x0410)
 class ABP_AttachedAlarmTrap_C final : public ATrapActorAttachedToDoor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0400(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UFMODAudioComponent*                    TrapDeactivateAudio;                               // 0x0408(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0410(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UFMODAudioComponent*                    TrapDeactivateAudio;                               // 0x0418(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_AttachedAlarmTrap(int32 EntryPoint);

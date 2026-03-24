@@ -111,15 +111,6 @@ public:
 };
 DUMPER7_ASSERTS_FTrailingEvent;
 
-// ScriptStruct ChaosCaching.MovieSceneChaosCacheParams
-// 0x0008 (0x0028 - 0x0020)
-struct FMovieSceneChaosCacheParams final : public FMovieSceneBaseCacheParams
-{
-public:
-	class UChaosCacheCollection*                  CacheCollection;                                   // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMovieSceneChaosCacheParams;
-
 // ScriptStruct ChaosCaching.CacheEventTrack
 // 0x0038 (0x0038 - 0x0000)
 struct FCacheEventTrack final
@@ -198,6 +189,15 @@ public:
 	TArray<struct FCompressedRichCurve>           CompressedRichCurves;                              // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCompressedRichCurves;
+
+// ScriptStruct ChaosCaching.MovieSceneChaosCacheParams
+// 0x0008 (0x0028 - 0x0020)
+struct FMovieSceneChaosCacheParams final : public FMovieSceneBaseCacheParams
+{
+public:
+	class UChaosCacheCollection*                  CacheCollection;                                   // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FMovieSceneChaosCacheParams;
 
 // ScriptStruct ChaosCaching.MovieSceneChaosCacheSectionTemplateParameters
 // 0x0028 (0x0030 - 0x0008)

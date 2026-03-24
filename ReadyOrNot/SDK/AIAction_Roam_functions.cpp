@@ -17,69 +17,57 @@
 namespace SDK
 {
 
-// Function AIAction_Roam.AIAction_Roam_C.BeginAction_Blueprint
+// Function AIAction_Roam.AIAction_Roam_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
-
-void UAIAction_Roam_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_Roam.AIAction_Roam_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_Roam_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_Roam.AIAction_Roam_C.ExecuteUbergraph_AIAction_Roam
-// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Roam_C::ExecuteUbergraph_AIAction_Roam(int32 EntryPoint)
+void UAIAction_Roam_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "ExecuteUbergraph_AIAction_Roam");
+		Func = Class->GetFunction("AIAction_Roam_C", "Tick_Blueprint");
 
-	Params::AIAction_Roam_C_ExecuteUbergraph_AIAction_Roam Parms{};
+	Params::AIAction_Roam_C_Tick_Blueprint Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function AIAction_Roam.AIAction_Roam_C.InitAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// Function AIAction_Roam.AIAction_Roam_C.ResetData
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UAIAction_Roam_C::InitAction_Blueprint(class ACyberneticController* Controller)
+void UAIAction_Roam_C::ResetData()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "InitAction_Blueprint");
+		Func = Class->GetFunction("AIAction_Roam_C", "ResetData");
 
-	Params::AIAction_Roam_C_InitAction_Blueprint Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Controller = Controller;
+
+// Function AIAction_Roam.AIAction_Roam_C.OnPathFound_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   PathId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ERonNavigationQueryResult               Result                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_Roam_C::OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Roam_C", "OnPathFound_Blueprint");
+
+	Params::AIAction_Roam_C_OnPathFound_Blueprint Parms{};
+
+	Parms.PathId = PathId;
+	Parms.Result = Result;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -107,59 +95,71 @@ void UAIAction_Roam_C::OnMoveComplete_Blueprint(class AAIController* Controller,
 }
 
 
-// Function AIAction_Roam.AIAction_Roam_C.OnPathFound_Blueprint
+// Function AIAction_Roam.AIAction_Roam_C.InitAction_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   PathId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ERonNavigationQueryResult               Result                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Roam_C::OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result)
+void UAIAction_Roam_C::InitAction_Blueprint(class ACyberneticController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "OnPathFound_Blueprint");
+		Func = Class->GetFunction("AIAction_Roam_C", "InitAction_Blueprint");
 
-	Params::AIAction_Roam_C_OnPathFound_Blueprint Parms{};
+	Params::AIAction_Roam_C_InitAction_Blueprint Parms{};
 
-	Parms.PathId = PathId;
-	Parms.Result = Result;
+	Parms.Controller = Controller;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function AIAction_Roam.AIAction_Roam_C.ResetData
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function AIAction_Roam.AIAction_Roam_C.ExecuteUbergraph_AIAction_Roam
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Roam_C::ResetData()
+void UAIAction_Roam_C::ExecuteUbergraph_AIAction_Roam(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "ResetData");
+		Func = Class->GetFunction("AIAction_Roam_C", "ExecuteUbergraph_AIAction_Roam");
+
+	Params::AIAction_Roam_C_ExecuteUbergraph_AIAction_Roam Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_Roam.AIAction_Roam_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_Roam_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Roam_C", "EndAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function AIAction_Roam.AIAction_Roam_C.Tick_Blueprint
+// Function AIAction_Roam.AIAction_Roam_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Roam_C::Tick_Blueprint(float DeltaTime)
+void UAIAction_Roam_C::BeginAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "Tick_Blueprint");
+		Func = Class->GetFunction("AIAction_Roam_C", "BeginAction_Blueprint");
 
-	Params::AIAction_Roam_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

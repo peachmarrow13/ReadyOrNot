@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_LockPick_Gun.Device_LockPick_Gun_C
-// 0x0000 (0x0C90 - 0x0C90)
+// 0x0000 (0x0CE0 - 0x0CE0)
 class ADevice_LockPick_Gun_C final : public ALockpickGun
 {
 public:

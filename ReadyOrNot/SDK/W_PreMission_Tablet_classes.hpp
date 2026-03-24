@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_PreMission_Tablet.W_PreMission_Tablet_C
-// 0x0A78 (0x0F88 - 0x0510)
+// 0x0AC8 (0x0FD8 - 0x0510)
 class UW_PreMission_Tablet_C final : public UTabletWidget
 {
 public:
@@ -67,27 +67,27 @@ public:
 	bool                                          bInitialized;                                      // 0x0640(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_641[0x7];                                      // 0x0641(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CurrentMissionURL;                                 // 0x0648(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  CurrentMissionData;                                // 0x0658(0x0880)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<class FString, class UWidget*>           NavigationMap;                                     // 0x0ED8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	class UW_PreMission_Tablet_Roster_MP_C*       RosterListPopout;                                  // 0x0F28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          bRosterOpen;                                       // 0x0F30(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F31[0x7];                                      // 0x0F31(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                ActiveScreen;                                      // 0x0F38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         CurrentButtonIndex;                                // 0x0F40(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F44[0x4];                                      // 0x0F44(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_PremissionTablet_Button_C*           CurrentButton;                                     // 0x0F48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         ButtonNavigationDpadDirection;                     // 0x0F50(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bTabletAwake;                                      // 0x0F54(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bMissionChanged;                                   // 0x0F55(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F56[0x2];                                      // 0x0F56(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CurrentZoomDirection;                              // 0x0F58(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F5C[0x4];                                      // 0x0F5C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        ZoomVelocity;                                      // 0x0F60(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          RestoreTeamViewOnTabletClosed;                     // 0x0F68(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          OpenTabletPressed;                                 // 0x0F69(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F6A[0x6];                                      // 0x0F6A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        OpenTabletPressedDuration;                         // 0x0F70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void()>              OnScreenChange;                                    // 0x0F78(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FLevelDataLookupTable                  CurrentMissionData;                                // 0x0658(0x08D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FString, class UWidget*>           NavigationMap;                                     // 0x0F28(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	class UW_PreMission_Tablet_Roster_MP_C*       RosterListPopout;                                  // 0x0F78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          bRosterOpen;                                       // 0x0F80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F81[0x7];                                      // 0x0F81(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                ActiveScreen;                                      // 0x0F88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         CurrentButtonIndex;                                // 0x0F90(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_F94[0x4];                                      // 0x0F94(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_PremissionTablet_Button_C*           CurrentButton;                                     // 0x0F98(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         ButtonNavigationDpadDirection;                     // 0x0FA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bTabletAwake;                                      // 0x0FA4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bMissionChanged;                                   // 0x0FA5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FA6[0x2];                                      // 0x0FA6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CurrentZoomDirection;                              // 0x0FA8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FAC[0x4];                                      // 0x0FAC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        ZoomVelocity;                                      // 0x0FB0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          RestoreTeamViewOnTabletClosed;                     // 0x0FB8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          OpenTabletPressed;                                 // 0x0FB9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FBA[0x6];                                      // 0x0FBA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        OpenTabletPressedDuration;                         // 0x0FC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnScreenChange;                                    // 0x0FC8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void AudioPlayerVisible(class UW_AudioPlayer_C* PlayerWidget, bool PlayerVisible);

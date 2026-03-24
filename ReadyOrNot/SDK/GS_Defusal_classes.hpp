@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_Defusal.GS_Defusal_C
-// 0x0000 (0x0958 - 0x0958)
+// 0x0000 (0x0980 - 0x0980)
 class AGS_Defusal_C final : public ADefusalGS
 {
 public:

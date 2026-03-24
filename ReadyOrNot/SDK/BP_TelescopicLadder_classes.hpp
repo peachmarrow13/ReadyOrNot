@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TelescopicLadder.BP_TelescopicLadder_C
-// 0x0000 (0x0F80 - 0x0F80)
+// 0x0000 (0x0FD0 - 0x0FD0)
 class ABP_TelescopicLadder_C final : public ATelescopicLadder
 {
 public:

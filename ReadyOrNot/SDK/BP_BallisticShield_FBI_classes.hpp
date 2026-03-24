@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BallisticShield_FBI.BP_BallisticShield_FBI_C
-// 0x0000 (0x0CC0 - 0x0CC0)
+// 0x0000 (0x0D00 - 0x0D00)
 class ABP_BallisticShield_FBI_C final : public ABallisticsShield
 {
 public:

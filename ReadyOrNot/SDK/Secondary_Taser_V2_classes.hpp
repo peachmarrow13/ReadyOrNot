@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -19,20 +19,20 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Secondary_Taser_V2.Secondary_Taser_V2_C
-// 0x0030 (0x1C80 - 0x1C50)
+// 0x0030 (0x1D70 - 0x1D40)
 class ASecondary_Taser_V2_C final : public ATaser
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1C50(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	double                                        OverallTaserWireLength;                            // 0x1C58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                LastLocation;                                      // 0x1C60(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1D40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	double                                        OverallTaserWireLength;                            // 0x1D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                LastLocation;                                      // 0x1D50(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SpawnPouches_1();
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void ExecuteUbergraph_Secondary_Taser_V2(int32 EntryPoint);
 	void DestroyPouches_1();
+	void ExecuteUbergraph_Secondary_Taser_V2(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void SpawnPouches_1();
 
 public:
 	static class UClass* StaticClass()

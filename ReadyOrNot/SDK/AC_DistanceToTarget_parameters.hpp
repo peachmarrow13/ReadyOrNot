@@ -17,19 +17,6 @@
 namespace SDK::Params
 {
 
-// Function AC_DistanceToTarget.AC_DistanceToTarget_C.CalculateCurve
-// 0x0020 (0x0020 - 0x0000)
-struct AC_DistanceToTarget_C_CalculateCurve final
-{
-public:
-	float                                         X;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Divide_DoubleDouble_A_ImplicitCast;       // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_FunctionResult_ReturnValue_ImplicitCast;    // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AC_DistanceToTarget_C_CalculateCurve;
-
 // Function AC_DistanceToTarget.AC_DistanceToTarget_C.Score
 // 0x00B0 (0x00B0 - 0x0000)
 struct AC_DistanceToTarget_C_Score final
@@ -67,6 +54,19 @@ public:
 	double                                        CallFunc_MapRangeClamped_InRangeA_ImplicitCast;    // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AC_DistanceToTarget_C_Score;
+
+// Function AC_DistanceToTarget.AC_DistanceToTarget_C.CalculateCurve
+// 0x0020 (0x0020 - 0x0000)
+struct AC_DistanceToTarget_C_CalculateCurve final
+{
+public:
+	float                                         X;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_ReturnValue;          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Divide_DoubleDouble_A_ImplicitCast;       // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_FunctionResult_ReturnValue_ImplicitCast;    // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AC_DistanceToTarget_C_CalculateCurve;
 
 }
 

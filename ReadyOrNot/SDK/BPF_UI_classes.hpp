@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "Engine_classes.hpp"
 #include "ReadyOrNot_structs.hpp"
-#include "CommonInput_structs.hpp"
-#include "E_CustomizationGroups_structs.hpp"
 #include "Slate_structs.hpp"
+#include "E_CustomizationGroups_structs.hpp"
 
 
 namespace SDK
@@ -48,6 +48,8 @@ public:
 	static void GetSlateColorScheme(double Opacity, class UObject* __WorldContext, struct FSlateColor* White, struct FSlateColor* Dark, struct FSlateColor* Red, struct FSlateColor* Yellow, struct FSlateColor* Blue, struct FSlateColor* Green);
 	static void GetSyleGuide(class UObject* __WorldContext, class UPDA_UI_Styleguide_C** StyleGuide);
 	static void GetTeamColorByEquippingSwatEnum(EEquippingSwat EquippingSwat, double Opacity, class UObject* __WorldContext, struct FLinearColor* LinearColor, struct FSlateColor* SlateColor);
+	static void GetWeaponClassText(EWeaponSubclass ItemCategory, class UObject* __WorldContext, class FText* Category_Text);
+	static void GetWeaponSubclassFromItemClass(EItemClass ItemType, class UObject* __WorldContext, EWeaponSubclass* WeaponSubclass);
 	static void IsCurrentPresetDirty(bool Customization, class UObject* __WorldContext, bool* IsDirty);
 	static void MultiplyMargins(const struct FMargin& _, const struct FMargin& __, class UObject* __WorldContext, struct FMargin* ___);
 	static void RemoveSpacesFromString(const class FString& String, class UObject* __WorldContext, class FString* ReturnString, class FText* ReturnText, class FName* ReturnName);

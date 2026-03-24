@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "OnlineSubsystemUtils_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
+#include "OnlineSubsystemUtils_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_MainMenu_V3.W_MainMenu_V3_C
-// 0x0268 (0x06F0 - 0x0488)
+// 0x0270 (0x06F8 - 0x0488)
 class UW_MainMenu_V3_C final : public UMainMenu_V3
 {
 public:
@@ -75,6 +75,8 @@ public:
 	uint8                                         Pad_6D9[0x7];                                      // 0x06D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UW_CrossplayLobbyModal_C*               EnableCrossplayModal;                              // 0x06E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          JoinSessionAfterLinkingAccount;                    // 0x06E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6E9[0x7];                                      // 0x06E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_StandardModal_C*                     TutPopup;                                          // 0x06F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BindEnableCrossplayModalEvents(const TDelegate<void(class UStandardModal* CallingModal)>& OnCancelClicked, const TDelegate<void(class UW_CrossplayLobbyModal_C* CallingModal)>& OnOkClicked);
@@ -104,7 +106,6 @@ public:
 	void BP_OnActivated();
 	void BP_OnDeactivated();
 	bool BP_OnHandleBackAction();
-	void Cancel(class UStandardModal* CallingModal);
 	void Cancel_Restart(class UW_StandardModal_C* CallingModal, const class FText& TextEntry);
 	void Cancel_Restart_Modal(class UStandardModal* CallingModal);
 	void CancelFind();
@@ -134,7 +135,6 @@ public:
 	void InitialOptions();
 	void Join_Crossplay_Session(class UW_CrossplayLobbyModal_C* CallingModal);
 	void JoinLobbyLinkAccount(bool InWasSuccessful, const struct FBlueprintSessionResult& Session);
-	void No(class UW_StandardModal_C* CallingModal, const class FText& TextEntry);
 	void No_Crossplay(class UStandardModal* CallingModal);
 	void OnCancelHostDifficultySelect(class UStandardModal* CallingModal);
 	void OnFindMatchDifficultiesSelected(class UW_DifficultyModal_C* CallingModal, ECrossplayOverride Crossplay_Override);
@@ -159,7 +159,6 @@ public:
 	void Update_Search_Button();
 	void UpdateMultiplayerVisibility();
 	void UpdateStreamingInstallDependentButtons(bool bEnableButtons);
-	void Yes(class UW_StandardModal_C* CallingModal, const class FText& TextEntry);
 
 	class UWidget* BP_GetDesiredFocusTarget() const;
 

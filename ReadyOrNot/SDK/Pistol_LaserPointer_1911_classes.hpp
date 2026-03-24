@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Pistol_LaserPointer_1911.Pistol_LaserPointer_1911_C
-// 0x0000 (0x1110 - 0x1110)
-class UPistol_LaserPointer_1911_C final : public ULaserAttachment
+// 0x0000 (0x11C0 - 0x11C0)
+class UPistol_LaserPointer_1911_C final : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

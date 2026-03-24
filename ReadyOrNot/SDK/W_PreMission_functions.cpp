@@ -209,6 +209,20 @@ void UW_PreMission_C::BndEvt__TopMenu_ReadyUpButton_K2Node_ComponentBoundEvent_2
 }
 
 
+// Function W_PreMission.W_PreMission_C.ConfirmLoadoutEvent
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_PreMission_C::ConfirmLoadoutEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "ConfirmLoadoutEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_PreMission.W_PreMission_C.Construct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -432,6 +446,46 @@ ESlateVisibility UW_PreMission_C::Get_KeyboardControls_Button_Visibility()
 		Func = Class->GetFunction("W_PreMission_C", "Get_KeyboardControls_Button_Visibility");
 
 	Params::W_PreMission_C_Get_KeyboardControls_Button_Visibility Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_PreMission.W_PreMission_C.Get_LoadoutPlayerGameInfo_Visibility
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ESlateVisibility UW_PreMission_C::Get_LoadoutPlayerGameInfo_Visibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "Get_LoadoutPlayerGameInfo_Visibility");
+
+	Params::W_PreMission_C_Get_LoadoutPlayerGameInfo_Visibility Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_PreMission.W_PreMission_C.Get_LoadoutStartTimer_Visibility
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ESlateVisibility                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+ESlateVisibility UW_PreMission_C::Get_LoadoutStartTimer_Visibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "Get_LoadoutStartTimer_Visibility");
+
+	Params::W_PreMission_C_Get_LoadoutStartTimer_Visibility Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1170,6 +1224,34 @@ struct FEventReply UW_PreMission_C::OnMouseMove(const struct FGeometry& MyGeomet
 }
 
 
+// Function W_PreMission.W_PreMission_C.OnRequestCamera
+// (Event, Public, BlueprintEvent)
+
+void UW_PreMission_C::OnRequestCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "OnRequestCamera");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_PreMission.W_PreMission_C.OnRequestLoadoutWidget
+// (Event, Public, BlueprintEvent)
+
+void UW_PreMission_C::OnRequestLoadoutWidget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "OnRequestLoadoutWidget");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_PreMission.W_PreMission_C.OnStartFadeToBriefing
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -1365,6 +1447,20 @@ void UW_PreMission_C::SetNavigationMode__Mouse_()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_PreMission_C", "SetNavigationMode (Mouse)");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_PreMission.W_PreMission_C.SetupLoadout
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_PreMission_C::SetupLoadout()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "SetupLoadout");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1715,6 +1811,26 @@ void UW_PreMission_C::AllPlayersReady(bool* Return_Value) const
 
 	if (Return_Value != nullptr)
 		*Return_Value = Parms.Return_Value;
+}
+
+
+// Function W_PreMission.W_PreMission_C.BP_GetDesiredFocusTarget
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+class UWidget* UW_PreMission_C::BP_GetDesiredFocusTarget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PreMission_C", "BP_GetDesiredFocusTarget");
+
+	Params::W_PreMission_C_BP_GetDesiredFocusTarget Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

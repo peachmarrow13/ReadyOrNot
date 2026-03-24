@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Secondary_M92A3.Secondary_M92A3_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class ASecondary_M92A3_C final : public ABaseMagazineWeapon
 {
 public:

@@ -136,20 +136,6 @@ void UW_Customization_VariantCarousel_C::ExecuteUbergraph_W_Customization_Varian
 }
 
 
-// Function W_Customization_VariantCarousel.W_Customization_VariantCarousel_C.Finished_5D3A15DF41AE559F28640EA8D797D0E7
-// (BlueprintCallable, BlueprintEvent)
-
-void UW_Customization_VariantCarousel_C::Finished_5D3A15DF41AE559F28640EA8D797D0E7()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Customization_VariantCarousel_C", "Finished_5D3A15DF41AE559F28640EA8D797D0E7");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_Customization_VariantCarousel.W_Customization_VariantCarousel_C.Finished_CBDC193A483107451E79AFB7D86600BA
 // (BlueprintCallable, BlueprintEvent)
 
@@ -226,26 +212,6 @@ void UW_Customization_VariantCarousel_C::Hide(double Delay, bool Collapse)
 
 	Parms.Delay = Delay;
 	Parms.Collapse = Collapse;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Customization_VariantCarousel.W_Customization_VariantCarousel_C.HideList
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    RefreshList                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_Customization_VariantCarousel_C::HideList(bool RefreshList)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Customization_VariantCarousel_C", "HideList");
-
-	Params::W_Customization_VariantCarousel_C_HideList Parms{};
-
-	Parms.RefreshList = RefreshList;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

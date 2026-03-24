@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Compensator_SFMB.BP_Compensator_SFMB_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UBP_Compensator_SFMB_C final : public UWeaponAttachment
 {
 public:

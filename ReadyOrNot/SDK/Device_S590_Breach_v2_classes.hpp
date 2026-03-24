@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_S590_Breach_v2.Device_S590_Breach_v2_C
-// 0x0010 (0x1930 - 0x1920)
+// 0x0010 (0x1A20 - 0x1A10)
 class ADevice_S590_Breach_v2_C final : public ABreachingShotgun
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1920(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1A10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void DoReloadComplete_1();

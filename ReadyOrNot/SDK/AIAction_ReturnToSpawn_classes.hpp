@@ -26,8 +26,8 @@ public:
 
 public:
 	void BeginAction_Blueprint();
-	void ExecuteUbergraph_AIAction_ReturnToSpawn(int32 EntryPoint);
 	void OnMoveComplete_Blueprint(class AAIController* Controller, int32 RequestID);
+	void ExecuteUbergraph_AIAction_ReturnToSpawn(int32 EntryPoint);
 
 	bool ShouldPerformAction() const;
 

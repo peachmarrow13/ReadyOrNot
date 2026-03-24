@@ -94,6 +94,26 @@ void UW_HumanCharacter_HUD_V2_C::AddScorePopup(const class FText& ScoreText, int
 }
 
 
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.AddToast
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    Message                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UW_HumanCharacter_HUD_V2_C::AddToast(const class FString& Message)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "AddToast");
+
+	Params::W_HumanCharacter_HUD_V2_C_AddToast Parms{};
+
+	Parms.Message = std::move(Message);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.ChatPressed
 // (Event, Public, BlueprintEvent)
 
@@ -425,6 +445,30 @@ void UW_HumanCharacter_HUD_V2_C::GetCommandContextContainerVariant(class UVertic
 }
 
 
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.GetConsoleInputGlyph
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FText&                      InKey                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
+// class FText*                            OutKey                                                 (Parm, OutParm)
+
+void UW_HumanCharacter_HUD_V2_C::GetConsoleInputGlyph(const class FText& InKey, class FText* OutKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "GetConsoleInputGlyph");
+
+	Params::W_HumanCharacter_HUD_V2_C_GetConsoleInputGlyph Parms{};
+
+	Parms.InKey = std::move(InKey);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (OutKey != nullptr)
+		*OutKey = std::move(Parms.OutKey);
+}
+
+
 // Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.GetTutorialWidget
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -442,6 +486,30 @@ class UTutorialWidget* UW_HumanCharacter_HUD_V2_C::GetTutorialWidget()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.GetWeaponFromItem
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ABaseItem*                        BaseItem                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ABaseWeapon**                     BaseWeapon                                             (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_HumanCharacter_HUD_V2_C::GetWeaponFromItem(class ABaseItem* BaseItem, class ABaseWeapon** BaseWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "GetWeaponFromItem");
+
+	Params::W_HumanCharacter_HUD_V2_C_GetWeaponFromItem Parms{};
+
+	Parms.BaseItem = BaseItem;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (BaseWeapon != nullptr)
+		*BaseWeapon = Parms.BaseWeapon;
 }
 
 
@@ -567,6 +635,48 @@ void UW_HumanCharacter_HUD_V2_C::NextTabletMenu()
 }
 
 
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.On Canted Sight
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bUsingCantedSight                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_HumanCharacter_HUD_V2_C::On_Canted_Sight(bool bUsingCantedSight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "On Canted Sight");
+
+	Params::W_HumanCharacter_HUD_V2_C_On_Canted_Sight Parms{};
+
+	Parms.bUsingCantedSight = bUsingCantedSight;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.On Secondary Sight
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bUsingSecondarySight                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ABaseMagazineWeapon*              Weapon                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_HumanCharacter_HUD_V2_C::On_Secondary_Sight(bool bUsingSecondarySight, class ABaseMagazineWeapon* Weapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "On Secondary Sight");
+
+	Params::W_HumanCharacter_HUD_V2_C_On_Secondary_Sight Parms{};
+
+	Parms.bUsingSecondarySight = bUsingSecondarySight;
+	Parms.Weapon = Weapon;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnActivate
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -578,6 +688,26 @@ void UW_HumanCharacter_HUD_V2_C::OnActivate()
 		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "OnActivate");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnADS_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bIsInADS                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_HumanCharacter_HUD_V2_C::OnADS_Event(bool bIsInADS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "OnADS_Event");
+
+	Params::W_HumanCharacter_HUD_V2_C_OnADS_Event Parms{};
+
+	Parms.bIsInADS = bIsInADS;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -737,6 +867,20 @@ void UW_HumanCharacter_HUD_V2_C::OnItemGroupSelection_Released_Event_0(int32 Gro
 }
 
 
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnLowReady
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_HumanCharacter_HUD_V2_C::OnLowReady()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "OnLowReady");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnMenuOpened_Event_0
 // (BlueprintCallable, BlueprintEvent)
 
@@ -813,6 +957,20 @@ void UW_HumanCharacter_HUD_V2_C::OnTeamViewSet_Event_0(class AReadyOrNotCharacte
 }
 
 
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnWeaponAttachmentsChanged
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_HumanCharacter_HUD_V2_C::OnWeaponAttachmentsChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "OnWeaponAttachmentsChanged");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnWeaponFireModeChanged
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -872,6 +1030,26 @@ void UW_HumanCharacter_HUD_V2_C::OnWeaponMagCheck_Event_0(class ABaseMagazineWea
 	Params::W_HumanCharacter_HUD_V2_C_OnWeaponMagCheck_Event_0 Parms{};
 
 	Parms.MagazineWeapon = MagazineWeapon;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.OnWeaponZoomCommitted_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EWeaponAttachmentState                  State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_HumanCharacter_HUD_V2_C::OnWeaponZoomCommitted_Event(EWeaponAttachmentState State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "OnWeaponZoomCommitted_Event");
+
+	Params::W_HumanCharacter_HUD_V2_C_OnWeaponZoomCommitted_Event Parms{};
+
+	Parms.State = State;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -984,6 +1162,20 @@ void UW_HumanCharacter_HUD_V2_C::SetMissionCountdownTime(float Time)
 	Parms.Time = Time;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C.SetupLeanBinds
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_HumanCharacter_HUD_V2_C::SetupLeanBinds()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_HumanCharacter_HUD_V2_C", "SetupLeanBinds");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

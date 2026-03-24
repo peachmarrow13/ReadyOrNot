@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "Slate_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "CommonInput_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -117,7 +117,7 @@ public:
 DUMPER7_ASSERTS_W_ReplayBrowser_C_EntrySelected;
 
 // Function W_ReplayBrowser.W_ReplayBrowser_C.ExecuteUbergraph_W_ReplayBrowser
-// 0x0D00 (0x0D00 - 0x0000)
+// 0x0D50 (0x0D50 - 0x0000)
 struct W_ReplayBrowser_C_ExecuteUbergraph_W_ReplayBrowser final
 {
 public:
@@ -176,40 +176,40 @@ public:
 	class FText                                   Temp_text_Variable_1;                              // 0x0288(0x0018)(ConstParm)
 	class FText                                   Temp_text_Variable_2;                              // 0x02A0(0x0018)(ConstParm)
 	class FText                                   Temp_text_Variable_3;                              // 0x02B8(0x0018)(ConstParm)
-	struct FLevelDataLookupTable                  CallFunc_GetMapDetailsFromName_ReturnValue;        // 0x02D0(0x0880)()
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0B50(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0B54(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B55[0x3];                                      // 0x0B55(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0B58(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B5C[0x4];                                      // 0x0B5C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Temp_text_Variable_4;                              // 0x0B60(0x0018)(ConstParm)
-	class FText                                   Temp_text_Variable_5;                              // 0x0B78(0x0018)(ConstParm)
-	struct FVector2D                              Temp_struct_Variable;                              // 0x0B90(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              Temp_struct_Variable_1;                            // 0x0BA0(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UW_StandardModal_C* CallingModal, class FText TextEntry)> K2Node_CreateDelegate_OutputDelegate_4; // 0x0BB0(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UW_StandardModal_C*                     K2Node_CustomEvent_CallingModal_1;                 // 0x0BC0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class FText                                   K2Node_CustomEvent_TextEntry_1;                    // 0x0BC8(0x0018)()
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_2;            // 0x0BE0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UReadyOrNotGameInstance*                K2Node_DynamicCast_AsReady_or_Not_Game_Instance_2; // 0x0BE8(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x0BF0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_BF1[0x3];                                      // 0x0BF1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(class UObject* Loaded)>        K2Node_CreateDelegate_OutputDelegate_5;            // 0x0BF4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C04[0x4];                                      // 0x0C04(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue_1;          // 0x0C08(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0C20(0x0050)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0C70(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0C80(0x0018)()
-	class FString                                 K2Node_ComponentBoundEvent_ButtonID;               // 0x0C98(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0CA8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_CA9[0x7];                                      // 0x0CA9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_StandardModal_C*                     K2Node_CustomEvent_CallingModal;                   // 0x0CB0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class FText                                   K2Node_CustomEvent_TextEntry;                      // 0x0CB8(0x0018)()
-	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0CD0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FText                                   Temp_text_Variable_6;                              // 0x0CD8(0x0018)(ConstParm)
-	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue; // 0x0CF0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0CF8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              K2Node_CustomEvent_bNewInputType;                  // 0x0CF9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0CFA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  CallFunc_GetMapDetailsFromName_ReturnValue;        // 0x02D0(0x08D0)()
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0BA0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0BA4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BA5[0x3];                                      // 0x0BA5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0BA8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BAC[0x4];                                      // 0x0BAC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Temp_text_Variable_4;                              // 0x0BB0(0x0018)(ConstParm)
+	class FText                                   Temp_text_Variable_5;                              // 0x0BC8(0x0018)(ConstParm)
+	struct FVector2D                              Temp_struct_Variable;                              // 0x0BE0(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              Temp_struct_Variable_1;                            // 0x0BF0(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class UW_StandardModal_C* CallingModal, class FText TextEntry)> K2Node_CreateDelegate_OutputDelegate_4; // 0x0C00(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UW_StandardModal_C*                     K2Node_CustomEvent_CallingModal_1;                 // 0x0C10(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FText                                   K2Node_CustomEvent_TextEntry_1;                    // 0x0C18(0x0018)()
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_2;            // 0x0C30(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UReadyOrNotGameInstance*                K2Node_DynamicCast_AsReady_or_Not_Game_Instance_2; // 0x0C38(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_4;                     // 0x0C40(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C41[0x3];                                      // 0x0C41(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(class UObject* Loaded)>        K2Node_CreateDelegate_OutputDelegate_5;            // 0x0C44(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C54[0x4];                                      // 0x0C54(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue_1;          // 0x0C58(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0C70(0x0050)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0CC0(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0CD0(0x0018)()
+	class FString                                 K2Node_ComponentBoundEvent_ButtonID;               // 0x0CE8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchString_CmpSuccess;                    // 0x0CF8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CF9[0x7];                                      // 0x0CF9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_StandardModal_C*                     K2Node_CustomEvent_CallingModal;                   // 0x0D00(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class FText                                   K2Node_CustomEvent_TextEntry;                      // 0x0D08(0x0018)()
+	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0D20(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Temp_text_Variable_6;                              // 0x0D28(0x0018)(ConstParm)
+	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue; // 0x0D40(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0D48(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              K2Node_CustomEvent_bNewInputType;                  // 0x0D49(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0D4A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_ReplayBrowser_C_ExecuteUbergraph_W_ReplayBrowser;
 

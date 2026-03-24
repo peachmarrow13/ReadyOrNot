@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CoffeeCup.BP_CoffeeCup_C
-// 0x0000 (0x0C80 - 0x0C80)
+// 0x0000 (0x0CD0 - 0x0CD0)
 class ABP_CoffeeCup_C final : public ABaseItem
 {
 public:

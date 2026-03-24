@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "EnhancedInput_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "FMODStudio_structs.hpp"
 
 

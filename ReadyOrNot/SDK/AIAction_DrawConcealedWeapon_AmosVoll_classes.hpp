@@ -26,9 +26,9 @@ public:
 	class UClass*                                 WeaponToSpawn;                                     // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void ExecuteUbergraph_AIAction_DrawConcealedWeapon_AmosVoll(int32 EntryPoint);
 	void Tick_Blueprint(float DeltaTime);
+	void ExecuteUbergraph_AIAction_DrawConcealedWeapon_AmosVoll(int32 EntryPoint);
+	void BeginAction_Blueprint();
 
 public:
 	static class UClass* StaticClass()

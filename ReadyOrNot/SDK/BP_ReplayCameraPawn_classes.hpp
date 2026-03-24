@@ -10,7 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -18,16 +17,9 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ReplayCameraPawn.BP_ReplayCameraPawn_C
-// 0x0010 (0x1190 - 0x1180)
+// 0x0000 (0x1190 - 0x1190)
 class ABP_ReplayCameraPawn_C final : public AReplayCameraPawn
 {
-public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1180(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-
-public:
-	void ExecuteUbergraph_BP_ReplayCameraPawn(int32 EntryPoint);
-	void ReceiveTick(float DeltaSeconds);
-
 public:
 	static class UClass* StaticClass()
 	{

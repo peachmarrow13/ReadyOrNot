@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_Training.GM_Training_C
-// 0x0010 (0x0A50 - 0x0A40)
+// 0x0010 (0x0A70 - 0x0A60)
 class AGM_Training_C final : public ATrainingGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A40(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

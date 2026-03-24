@@ -17,70 +17,23 @@
 namespace SDK
 {
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_TakeHostage_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_TakeHostage_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.EquipBestHostageTakingWeapon
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.OnTakeHostageFinished
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool*                                   bFoundWeapon                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBaseActivity*                    Activity                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_TakeHostage_C::EquipBestHostageTakingWeapon(bool* bFoundWeapon)
+void UAIAction_TakeHostage_C::OnTakeHostageFinished(class UBaseActivity* Activity, class ACyberneticController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "EquipBestHostageTakingWeapon");
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "OnTakeHostageFinished");
 
-	Params::AIAction_TakeHostage_C_EquipBestHostageTakingWeapon Parms{};
+	Params::AIAction_TakeHostage_C_OnTakeHostageFinished Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bFoundWeapon != nullptr)
-		*bFoundWeapon = Parms.bFoundWeapon;
-}
-
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ExecuteUbergraph_AIAction_TakeHostage
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_TakeHostage_C::ExecuteUbergraph_AIAction_TakeHostage(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "ExecuteUbergraph_AIAction_TakeHostage");
-
-	Params::AIAction_TakeHostage_C_ExecuteUbergraph_AIAction_TakeHostage Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.Activity = Activity;
+	Parms.Controller = Controller;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -100,28 +53,6 @@ void UAIAction_TakeHostage_C::OnCreate_Blueprint(class ACyberneticController* Co
 
 	Params::AIAction_TakeHostage_C_OnCreate_Blueprint Parms{};
 
-	Parms.Controller = Controller;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.OnTakeHostageFinished
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UBaseActivity*                    Activity                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_TakeHostage_C::OnTakeHostageFinished(class UBaseActivity* Activity, class ACyberneticController* Controller)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "OnTakeHostageFinished");
-
-	Params::AIAction_TakeHostage_C_OnTakeHostageFinished Parms{};
-
-	Parms.Activity = Activity;
 	Parms.Controller = Controller;
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -149,50 +80,95 @@ void UAIAction_TakeHostage_C::TraceForNearbyCivilians(TArray<class ACyberneticCh
 }
 
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.AnySWATNearCivilian
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ExecuteUbergraph_AIAction_TakeHostage
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class ACyberneticCharacter*             civilian                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_TakeHostage_C::AnySWATNearCivilian(class ACyberneticCharacter* civilian, bool* Return_Value) const
+void UAIAction_TakeHostage_C::ExecuteUbergraph_AIAction_TakeHostage(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "AnySWATNearCivilian");
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "ExecuteUbergraph_AIAction_TakeHostage");
 
-	Params::AIAction_TakeHostage_C_AnySWATNearCivilian Parms{};
+	Params::AIAction_TakeHostage_C_ExecuteUbergraph_AIAction_TakeHostage Parms{};
 
-	Parms.civilian = civilian;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (Return_Value != nullptr)
-		*Return_Value = Parms.Return_Value;
 }
 
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.FindClosestCivilian
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.EquipBestHostageTakingWeapon
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// TArray<class ACyberneticCharacter*>&    Civilians                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// class ACyberneticCharacter**            Return_Value                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bFoundWeapon                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_TakeHostage_C::FindClosestCivilian(TArray<class ACyberneticCharacter*>& Civilians, class ACyberneticCharacter** Return_Value) const
+void UAIAction_TakeHostage_C::EquipBestHostageTakingWeapon(bool* bFoundWeapon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "FindClosestCivilian");
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "EquipBestHostageTakingWeapon");
 
-	Params::AIAction_TakeHostage_C_FindClosestCivilian Parms{};
-
-	Parms.Civilians = std::move(Civilians);
+	Params::AIAction_TakeHostage_C_EquipBestHostageTakingWeapon Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	Civilians = std::move(Parms.Civilians);
+	if (bFoundWeapon != nullptr)
+		*bFoundWeapon = Parms.bFoundWeapon;
+}
+
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_TakeHostage_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "EndAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_TakeHostage_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.IsCivilianNotFacingTarget
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class ACyberneticCharacter*             civilian                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AReadyOrNotCharacter*             Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_TakeHostage_C::IsCivilianNotFacingTarget(class ACyberneticCharacter* civilian, class AReadyOrNotCharacter* Target, bool* Return_Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "IsCivilianNotFacingTarget");
+
+	Params::AIAction_TakeHostage_C_IsCivilianNotFacingTarget Parms{};
+
+	Parms.civilian = civilian;
+	Parms.Target = Target;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	if (Return_Value != nullptr)
 		*Return_Value = Parms.Return_Value;
@@ -225,29 +201,23 @@ void UAIAction_TakeHostage_C::IsCivilianFacingTarget(class ACyberneticCharacter*
 }
 
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.IsCivilianNotFacingTarget
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ShouldSwitchWeapons
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class ACyberneticCharacter*             civilian                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AReadyOrNotCharacter*             Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_TakeHostage_C::IsCivilianNotFacingTarget(class ACyberneticCharacter* civilian, class AReadyOrNotCharacter* Target, bool* Return_Value) const
+bool UAIAction_TakeHostage_C::ShouldSwitchWeapons() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "IsCivilianNotFacingTarget");
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "ShouldSwitchWeapons");
 
-	Params::AIAction_TakeHostage_C_IsCivilianNotFacingTarget Parms{};
-
-	Parms.civilian = civilian;
-	Parms.Target = Target;
+	Params::AIAction_TakeHostage_C_ShouldSwitchWeapons Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Return_Value != nullptr)
-		*Return_Value = Parms.Return_Value;
+	return Parms.ReturnValue;
 }
 
 
@@ -271,23 +241,53 @@ bool UAIAction_TakeHostage_C::ShouldPerformAction() const
 }
 
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ShouldSwitchWeapons
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.FindClosestCivilian
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class ACyberneticCharacter*>&    Civilians                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class ACyberneticCharacter**            Return_Value                                           (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-bool UAIAction_TakeHostage_C::ShouldSwitchWeapons() const
+void UAIAction_TakeHostage_C::FindClosestCivilian(TArray<class ACyberneticCharacter*>& Civilians, class ACyberneticCharacter** Return_Value) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "ShouldSwitchWeapons");
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "FindClosestCivilian");
 
-	Params::AIAction_TakeHostage_C_ShouldSwitchWeapons Parms{};
+	Params::AIAction_TakeHostage_C_FindClosestCivilian Parms{};
+
+	Parms.Civilians = std::move(Civilians);
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	return Parms.ReturnValue;
+	Civilians = std::move(Parms.Civilians);
+
+	if (Return_Value != nullptr)
+		*Return_Value = Parms.Return_Value;
+}
+
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.AnySWATNearCivilian
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class ACyberneticCharacter*             civilian                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_TakeHostage_C::AnySWATNearCivilian(class ACyberneticCharacter* civilian, bool* Return_Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "AnySWATNearCivilian");
+
+	Params::AIAction_TakeHostage_C_AnySWATNearCivilian Parms{};
+
+	Parms.civilian = civilian;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Return_Value != nullptr)
+		*Return_Value = Parms.Return_Value;
 }
 
 }

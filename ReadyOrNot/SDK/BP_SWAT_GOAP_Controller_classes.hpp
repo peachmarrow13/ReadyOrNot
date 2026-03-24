@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SWAT_GOAP_Controller.BP_SWAT_GOAP_Controller_C
-// 0x0000 (0x0B60 - 0x0B60)
+// 0x0000 (0x0B68 - 0x0B68)
 class ABP_SWAT_GOAP_Controller_C final : public ASWATController
 {
 public:

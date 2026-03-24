@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_SurrenderExitMelee_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.ExecuteUbergraph_AIAction_SurrenderExitMelee
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +37,20 @@ void UAIAction_SurrenderExitMelee_C::ExecuteUbergraph_AIAction_SurrenderExitMele
 }
 
 
+// Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_SurrenderExitMelee_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -68,6 +68,26 @@ void UAIAction_SurrenderExitMelee_C::Tick_Blueprint(float DeltaTime)
 	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.ShouldPerformAction
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UAIAction_SurrenderExitMelee_C::ShouldPerformAction() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "ShouldPerformAction");
+
+	Params::AIAction_SurrenderExitMelee_C_ShouldPerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -92,26 +112,6 @@ void UAIAction_SurrenderExitMelee_C::IsFakeExit(ESurrenderExitType ExitType, boo
 
 	if (Return_Value != nullptr)
 		*Return_Value = Parms.Return_Value;
-}
-
-
-// Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.ShouldPerformAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UAIAction_SurrenderExitMelee_C::ShouldPerformAction() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "ShouldPerformAction");
-
-	Params::AIAction_SurrenderExitMelee_C_ShouldPerformAction Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 }

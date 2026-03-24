@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_Training.GS_Training_C
-// 0x0000 (0x0930 - 0x0930)
+// 0x0000 (0x0960 - 0x0960)
 class AGS_Training_C final : public ATrainingGS
 {
 public:

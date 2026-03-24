@@ -17,23 +17,26 @@
 namespace SDK::Params
 {
 
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ANIMBP_Player_TP_V3_C_AnimGraph final
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.SetWeaponGripPose
+// 0x00A8 (0x00A8 - 0x0000)
+struct ANIMBP_Player_TP_V3_C_SetWeaponGripPose final
 {
 public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+	struct FAnimUpdateContext                     Context;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FAnimNodeReference                     Node;                                              // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+	struct FSequenceEvaluatorReference            SeqEval;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, NoDestructor)
+	struct FSequenceEvaluatorReference            CallFunc_ConvertToSequenceEvaluatorPure_SequenceEvaluator; // 0x0030(0x0010)(NoDestructor)
+	bool                                          CallFunc_ConvertToSequenceEvaluatorPure_Result;    // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue;                  // 0x0048(0x0010)(NoDestructor)
+	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_1;                // 0x0058(0x0010)(NoDestructor)
+	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_2;                // 0x0068(0x0010)(NoDestructor)
+	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_3;                // 0x0078(0x0010)(NoDestructor)
+	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_4;                // 0x0088(0x0010)(NoDestructor)
+	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_5;                // 0x0098(0x0010)(NoDestructor)
 };
-DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_AnimGraph;
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ANIMBP_Player_TP_V3_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_BlueprintUpdateAnimation;
+DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_SetWeaponGripPose;
 
 // Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.ExecuteUbergraph_ANIMBP_Player_TP_V3
 // 0x0070 (0x0070 - 0x0000)
@@ -62,26 +65,23 @@ public:
 };
 DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_ExecuteUbergraph_ANIMBP_Player_TP_V3;
 
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.SetWeaponGripPose
-// 0x00A8 (0x00A8 - 0x0000)
-struct ANIMBP_Player_TP_V3_C_SetWeaponGripPose final
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ANIMBP_Player_TP_V3_C_BlueprintUpdateAnimation final
 {
 public:
-	struct FAnimUpdateContext                     Context;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	struct FAnimNodeReference                     Node;                                              // 0x0010(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-	struct FSequenceEvaluatorReference            SeqEval;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, NoDestructor)
-	struct FSequenceEvaluatorReference            CallFunc_ConvertToSequenceEvaluatorPure_SequenceEvaluator; // 0x0030(0x0010)(NoDestructor)
-	bool                                          CallFunc_ConvertToSequenceEvaluatorPure_Result;    // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0041(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue;                  // 0x0048(0x0010)(NoDestructor)
-	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_1;                // 0x0058(0x0010)(NoDestructor)
-	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_2;                // 0x0068(0x0010)(NoDestructor)
-	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_3;                // 0x0078(0x0010)(NoDestructor)
-	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_4;                // 0x0088(0x0010)(NoDestructor)
-	struct FSequenceEvaluatorReference            CallFunc_SetSequence_ReturnValue_5;                // 0x0098(0x0010)(NoDestructor)
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_SetWeaponGripPose;
+DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_BlueprintUpdateAnimation;
+
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ANIMBP_Player_TP_V3_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ANIMBP_Player_TP_V3_C_AnimGraph;
 
 }
 

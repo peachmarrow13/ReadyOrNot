@@ -44,13 +44,13 @@ public:
 DUMPER7_ASSERTS_UActorSequence;
 
 // Class ActorSequence.ActorSequenceComponent
-// 0x0030 (0x00D0 - 0x00A0)
+// 0x0030 (0x00D8 - 0x00A8)
 class UActorSequenceComponent final : public UActorComponent
 {
 public:
-	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x00A0(0x0020)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	class UActorSequence*                         Sequence;                                          // 0x00C0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UActorSequencePlayer*                   SequencePlayer;                                    // 0x00C8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x00A8(0x0020)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	class UActorSequence*                         Sequence;                                          // 0x00C8(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UActorSequencePlayer*                   SequencePlayer;                                    // 0x00D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	void PauseSequence();
@@ -74,7 +74,7 @@ public:
 DUMPER7_ASSERTS_UActorSequenceComponent;
 
 // Class ActorSequence.ActorSequencePlayer
-// 0x0000 (0x04C8 - 0x04C8)
+// 0x0000 (0x04D0 - 0x04D0)
 class UActorSequencePlayer final : public UMovieSceneSequencePlayer
 {
 public:

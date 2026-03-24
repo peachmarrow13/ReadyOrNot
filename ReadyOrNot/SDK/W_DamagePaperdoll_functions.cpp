@@ -110,6 +110,34 @@ void UW_DamagePaperdoll_C::Construct()
 }
 
 
+// Function W_DamagePaperdoll.W_DamagePaperdoll_C.CustomEvent
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Damage                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Causer                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACharacter*                       InstigatorCharacter                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACharacter*                       HitCharacter                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// const class UStunDamage*                DamageEvent                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_DamagePaperdoll_C::CustomEvent(float Damage, class AActor* Causer, class ACharacter* InstigatorCharacter, class ACharacter* HitCharacter, const class UStunDamage* DamageEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_DamagePaperdoll_C", "CustomEvent");
+
+	Params::W_DamagePaperdoll_C_CustomEvent Parms{};
+
+	Parms.Damage = Damage;
+	Parms.Causer = Causer;
+	Parms.InstigatorCharacter = InstigatorCharacter;
+	Parms.HitCharacter = HitCharacter;
+	Parms.DamageEvent = DamageEvent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_DamagePaperdoll.W_DamagePaperdoll_C.ExecuteUbergraph_W_DamagePaperdoll
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -467,6 +495,20 @@ void UW_DamagePaperdoll_C::Stop_Flashing_Torso()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_DamagePaperdoll_C", "Stop Flashing Torso");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_DamagePaperdoll.W_DamagePaperdoll_C.StopLungFlash
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_DamagePaperdoll_C::StopLungFlash()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_DamagePaperdoll_C", "StopLungFlash");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

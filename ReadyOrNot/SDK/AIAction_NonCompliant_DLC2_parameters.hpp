@@ -18,6 +18,55 @@
 namespace SDK::Params
 {
 
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_NonCompliant_DLC2_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_Tick_Blueprint;
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldForcePerformAction
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_NonCompliant_DLC2_C_ShouldForcePerformAction final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_ShouldForcePerformAction;
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.OnPathFound_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_NonCompliant_DLC2_C_OnPathFound_Blueprint final
+{
+public:
+	int32                                         PathId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ERonNavigationQueryResult                     Result;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_OnPathFound_Blueprint;
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.InitAction_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_NonCompliant_DLC2_C_InitAction_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_InitAction_Blueprint;
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.GetHesitationVoiceOver
+// 0x0028 (0x0028 - 0x0000)
+struct AIAction_NonCompliant_DLC2_C_GetHesitationVoiceOver final
+{
+public:
+	bool                                          bUseAlternate;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 NewParam;                                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_GetHesitationVoiceOver;
+
 // Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ExecuteUbergraph_AIAction_NonCompliant_DLC2
 // 0x0270 (0x0270 - 0x0000)
 struct AIAction_NonCompliant_DLC2_C_ExecuteUbergraph_AIAction_NonCompliant_DLC2 final
@@ -111,54 +160,14 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_ExecuteUbergraph_AIAction_NonCompliant_DLC2;
 
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.GetHesitationVoiceOver
-// 0x0028 (0x0028 - 0x0000)
-struct AIAction_NonCompliant_DLC2_C_GetHesitationVoiceOver final
-{
-public:
-	bool                                          bUseAlternate;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 NewParam;                                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_GetHesitationVoiceOver;
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.InitAction_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_NonCompliant_DLC2_C_InitAction_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_InitAction_Blueprint;
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.OnPathFound_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_NonCompliant_DLC2_C_OnPathFound_Blueprint final
-{
-public:
-	int32                                         PathId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ERonNavigationQueryResult                     Result;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_OnPathFound_Blueprint;
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldForcePerformAction
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldPerformAction
 // 0x0001 (0x0001 - 0x0000)
-struct AIAction_NonCompliant_DLC2_C_ShouldForcePerformAction final
+struct AIAction_NonCompliant_DLC2_C_ShouldPerformAction final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_ShouldForcePerformAction;
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_NonCompliant_DLC2_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_Tick_Blueprint;
+DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_ShouldPerformAction;
 
 // Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.GetMoveStyleOverride
 // 0x0040 (0x0040 - 0x0000)
@@ -178,15 +187,6 @@ public:
 	class FName                                   K2Node_Select_Default;                             // 0x0034(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_GetMoveStyleOverride;
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldPerformAction
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_NonCompliant_DLC2_C_ShouldPerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_NonCompliant_DLC2_C_ShouldPerformAction;
 
 }
 

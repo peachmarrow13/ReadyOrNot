@@ -409,6 +409,26 @@ void UW_PageWrapper_C::Hide(double Delay, bool Collapse)
 }
 
 
+// Function W_PageWrapper.W_PageWrapper_C.HideBackground
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bHide                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_PageWrapper_C::HideBackground(bool bHide)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PageWrapper_C", "HideBackground");
+
+	Params::W_PageWrapper_C_HideBackground Parms{};
+
+	Parms.bHide = bHide;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_PageWrapper.W_PageWrapper_C.HideFooter
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -458,6 +478,28 @@ void UW_PageWrapper_C::HideFooterEntryByIndex(int32 Index_0)
 	Params::W_PageWrapper_C_HideFooterEntryByIndex Parms{};
 
 	Parms.Index_0 = Index_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_PageWrapper.W_PageWrapper_C.HideHeader
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bHideHeader                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bHideNav                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_PageWrapper_C::HideHeader(bool bHideHeader, bool bHideNav)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PageWrapper_C", "HideHeader");
+
+	Params::W_PageWrapper_C_HideHeader Parms{};
+
+	Parms.bHideHeader = bHideHeader;
+	Parms.bHideNav = bHideNav;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_M14_ShortBarrel.Rifle_M14_ShortBarrel_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class URifle_M14_ShortBarrel_C final : public UWeaponAttachment
 {
 public:

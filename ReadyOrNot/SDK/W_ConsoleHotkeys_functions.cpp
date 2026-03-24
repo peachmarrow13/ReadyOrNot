@@ -55,6 +55,20 @@ void UW_ConsoleHotkeys_C::Construct()
 }
 
 
+// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.Debug
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_ConsoleHotkeys_C::Debug()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConsoleHotkeys_C", "Debug");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.DPadDownPressed
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -158,7 +172,7 @@ void UW_ConsoleHotkeys_C::DPadUpPressed(bool Pressed)
 
 
 // Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.ExecuteUbergraph_W_ConsoleHotkeys
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -177,25 +191,79 @@ void UW_ConsoleHotkeys_C::ExecuteUbergraph_W_ConsoleHotkeys(int32 EntryPoint)
 }
 
 
-// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.SetIconActive
+// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.OnRebuildPips
 // (Event, Public, BlueprintEvent)
-// Parameters:
-// class UImage*                           Icon                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// bool                                    Active                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_ConsoleHotkeys_C::SetIconActive(class UImage* Icon, bool Active)
+void UW_ConsoleHotkeys_C::OnRebuildPips()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ConsoleHotkeys_C", "SetIconActive");
+		Func = Class->GetFunction("W_ConsoleHotkeys_C", "OnRebuildPips");
 
-	Params::W_ConsoleHotkeys_C_SetIconActive Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Icon = Icon;
-	Parms.Active = Active;
+
+// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.OnRefreshPips
+// (Event, Public, BlueprintEvent)
+
+void UW_ConsoleHotkeys_C::OnRefreshPips()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConsoleHotkeys_C", "OnRefreshPips");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.OnUpdateHoldProgress
+// (Event, Public, BlueprintEvent)
+
+void UW_ConsoleHotkeys_C::OnUpdateHoldProgress()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConsoleHotkeys_C", "OnUpdateHoldProgress");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ConsoleHotkeys_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConsoleHotkeys_C", "PreConstruct");
+
+	Params::W_ConsoleHotkeys_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ConsoleHotkeys.W_ConsoleHotkeys_C.SetupDynMaterial
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_ConsoleHotkeys_C::SetupDynMaterial()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConsoleHotkeys_C", "SetupDynMaterial");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

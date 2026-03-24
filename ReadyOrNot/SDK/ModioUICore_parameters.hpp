@@ -11,288 +11,14 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "Modio_structs.hpp"
 #include "ModioUICore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Modio_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function ModioUICore.ModioModTagSelectorEntry.OnTagEntryClicked
-// 0x0008 (0x0008 - 0x0000)
-struct ModioModTagSelectorEntry_OnTagEntryClicked final
-{
-public:
-	class UObject*                                ClickedObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagSelectorEntry_OnTagEntryClicked;
-
-// Function ModioUICore.ModioModTagSelectorEntry.GetClickableWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioModTagSelectorEntry_GetClickableWidget final
-{
-public:
-	TScriptInterface<class IModioUIClickableWidget> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagSelectorEntry_GetClickableWidget;
-
-// Function ModioUICore.ModioModTagSelectorEntry.GetSelectionWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioModTagSelectorEntry_GetSelectionWidget final
-{
-public:
-	TScriptInterface<class IModioUISelectableWidget> ReturnValue;                                    // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagSelectorEntry_GetSelectionWidget;
-
-// Function ModioUICore.ModioModTagSelectorEntry.GetTagLabelWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioModTagSelectorEntry_GetTagLabelWidget final
-{
-public:
-	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagSelectorEntry_GetTagLabelWidget;
-
-// Function ModioUICore.ModioActivatableWidget.AddActivationChangedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioActivatableWidget_AddActivationChangedHandler final
-{
-public:
-	TDelegate<void(class UObject* ActivationContext, bool bIsActivated)> Handler;                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioActivatableWidget_AddActivationChangedHandler;
-
-// Function ModioUICore.ModioActivatableWidget.RemoveActivationChangedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioActivatableWidget_RemoveActivationChangedHandler final
-{
-public:
-	TDelegate<void(class UObject* ActivationContext, bool bIsActivated)> Handler;                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioActivatableWidget_RemoveActivationChangedHandler;
-
-// Function ModioUICore.ModioEnumEntryUIDetails.GetEnumEntryDetails
-// 0x0020 (0x0020 - 0x0000)
-struct ModioEnumEntryUIDetails_GetEnumEntryDetails final
-{
-public:
-	uint8                                         EnumValue;                                         // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   EnumValueDisplayText;                              // 0x0008(0x0018)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioEnumEntryUIDetails_GetEnumEntryDetails;
-
-// Function ModioUICore.ModioRetryLibrary.CanRetry
-// 0x0008 (0x0008 - 0x0000)
-struct ModioRetryLibrary_CanRetry final
-{
-public:
-	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioRetryLibrary_CanRetry;
-
-// Function ModioUICore.ModioRetryLibrary.CanRetryAsExec
-// 0x0008 (0x0008 - 0x0000)
-struct ModioRetryLibrary_CanRetryAsExec final
-{
-public:
-	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioRetryLibrary_CanRetryAsExec;
-
-// Function ModioUICore.ModioRetryLibrary.ResetRetryCount
-// 0x0004 (0x0004 - 0x0000)
-struct ModioRetryLibrary_ResetRetryCount final
-{
-public:
-	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioRetryLibrary_ResetRetryCount;
-
-// Function ModioUICore.ModioRetryLibrary.ResetRetryCountPure
-// 0x0008 (0x0008 - 0x0000)
-struct ModioRetryLibrary_ResetRetryCountPure final
-{
-public:
-	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FModioRetryCounter                     ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioRetryLibrary_ResetRetryCountPure;
-
-// Function ModioUICore.ModioRetryLibrary.Retry
-// 0x0008 (0x0008 - 0x0000)
-struct ModioRetryLibrary_Retry final
-{
-public:
-	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioRetryLibrary_Retry;
-
-// Function ModioUICore.ModioFocusableWidget.AddFocusPathChangedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioFocusableWidget_AddFocusPathChangedHandler final
-{
-public:
-	TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)> Handler; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioFocusableWidget_AddFocusPathChangedHandler;
-
-// Function ModioUICore.ModioFocusableWidget.RemoveFocusPathChangedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioFocusableWidget_RemoveFocusPathChangedHandler final
-{
-public:
-	TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)> Handler; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioFocusableWidget_RemoveFocusPathChangedHandler;
-
-// Function ModioUICore.ModioFocusableWidget.GetWidgetToFocus
-// 0x0010 (0x0010 - 0x0000)
-struct ModioFocusableWidget_GetWidgetToFocus final
-{
-public:
-	EUINavigation                                 NavigationType;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioFocusableWidget_GetWidgetToFocus;
-
-// Function ModioUICore.ModioGalleryImageUIDetails.GetImage
-// 0x0010 (0x0010 - 0x0000)
-struct ModioGalleryImageUIDetails_GetImage final
-{
-public:
-	struct FModioImageWrapper                     ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioGalleryImageUIDetails_GetImage;
-
-// Function ModioUICore.ModioGalleryImageUIDetails.GetIndex
-// 0x0004 (0x0004 - 0x0000)
-struct ModioGalleryImageUIDetails_GetIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioGalleryImageUIDetails_GetIndex;
-
-// Function ModioUICore.ModioModDependencyUIDetails.GetModDependency
-// 0x00F8 (0x00F8 - 0x0000)
-struct ModioModDependencyUIDetails_GetModDependency final
-{
-public:
-	struct FModioModDependency                    ReturnValue;                                       // 0x0000(0x00F8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModDependencyUIDetails_GetModDependency;
-
-// Function ModioUICore.ModioModDependencyUIDetails.GetModID
-// 0x0008 (0x0008 - 0x0000)
-struct ModioModDependencyUIDetails_GetModID final
-{
-public:
-	struct FModioModID                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModDependencyUIDetails_GetModID;
-
-// Function ModioUICore.ModioModFilterUIDetails.GetFilterName
-// 0x0020 (0x0020 - 0x0000)
-struct ModioModFilterUIDetails_GetFilterName final
-{
-public:
-	class FText                                   Name_0;                                            // 0x0000(0x0018)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioModFilterUIDetails_GetFilterName;
-
-// Function ModioUICore.ModioModFilterUIDetails.GetFilterParams
-// 0x00B8 (0x00B8 - 0x0000)
-struct ModioModFilterUIDetails_GetFilterParams final
-{
-public:
-	struct FModioFilterParams                     ReturnValue;                                       // 0x0000(0x00B8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModFilterUIDetails_GetFilterParams;
-
-// Function ModioUICore.ModioModTagSelector.GetMenuToggleClickableWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioModTagSelector_GetMenuToggleClickableWidget final
-{
-public:
-	TScriptInterface<class IModioUIClickableWidget> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagSelector_GetMenuToggleClickableWidget;
-
-// Function ModioUICore.ModioModTagSelector.GetSelectorMenuWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioModTagSelector_GetSelectorMenuWidget final
-{
-public:
-	TScriptInterface<class IModioUIModTagSelector> ReturnValue;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagSelector_GetSelectorMenuWidget;
-
-// Function ModioUICore.ModioModInfoUIDetails.GetFullModInfo
-// 0x01E8 (0x01E8 - 0x0000)
-struct ModioModInfoUIDetails_GetFullModInfo final
-{
-public:
-	struct FModioModInfo                          ReturnValue;                                       // 0x0000(0x01E8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModInfoUIDetails_GetFullModInfo;
-
-// Function ModioUICore.ModioModInfoUIDetails.GetModID
-// 0x0008 (0x0008 - 0x0000)
-struct ModioModInfoUIDetails_GetModID final
-{
-public:
-	struct FModioModID                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModInfoUIDetails_GetModID;
-
-// Function ModioUICore.ModioModTagUIDetails.GetLocalizedText
-// 0x0018 (0x0018 - 0x0000)
-struct ModioModTagUIDetails_GetLocalizedText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagUIDetails_GetLocalizedText;
-
-// Function ModioUICore.ModioModTagUIDetails.GetRawStringValue
-// 0x0010 (0x0010 - 0x0000)
-struct ModioModTagUIDetails_GetRawStringValue final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagUIDetails_GetRawStringValue;
-
-// Function ModioUICore.ModioModTagUIDetails.GetSelectionState
-// 0x0001 (0x0001 - 0x0000)
-struct ModioModTagUIDetails_GetSelectionState final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagUIDetails_GetSelectionState;
-
-// Function ModioUICore.ModioModTagUIDetails.SetSelectionState
-// 0x0001 (0x0001 - 0x0000)
-struct ModioModTagUIDetails_SetSelectionState final
-{
-public:
-	bool                                          bNewSelectionState;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioModTagUIDetails_SetSelectionState;
 
 // Function ModioUICore.PropertyOverridesLibrary.ApplyClassPathOverride
 // 0x0068 (0x0068 - 0x0000)
@@ -608,6 +334,183 @@ public:
 };
 DUMPER7_ASSERTS_PropertyOverridesLibrary_ResolveTextTransformOverrideAsExec;
 
+// Function ModioUICore.ModioActivatableWidget.AddActivationChangedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioActivatableWidget_AddActivationChangedHandler final
+{
+public:
+	TDelegate<void(class UObject* ActivationContext, bool bIsActivated)> Handler;                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioActivatableWidget_AddActivationChangedHandler;
+
+// Function ModioUICore.ModioActivatableWidget.RemoveActivationChangedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioActivatableWidget_RemoveActivationChangedHandler final
+{
+public:
+	TDelegate<void(class UObject* ActivationContext, bool bIsActivated)> Handler;                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioActivatableWidget_RemoveActivationChangedHandler;
+
+// Function ModioUICore.ModioEnumEntryUIDetails.GetEnumEntryDetails
+// 0x0020 (0x0020 - 0x0000)
+struct ModioEnumEntryUIDetails_GetEnumEntryDetails final
+{
+public:
+	uint8                                         EnumValue;                                         // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   EnumValueDisplayText;                              // 0x0008(0x0018)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioEnumEntryUIDetails_GetEnumEntryDetails;
+
+// Function ModioUICore.ModioFocusableWidget.AddFocusPathChangedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioFocusableWidget_AddFocusPathChangedHandler final
+{
+public:
+	TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)> Handler; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioFocusableWidget_AddFocusPathChangedHandler;
+
+// Function ModioUICore.ModioFocusableWidget.RemoveFocusPathChangedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioFocusableWidget_RemoveFocusPathChangedHandler final
+{
+public:
+	TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)> Handler; // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioFocusableWidget_RemoveFocusPathChangedHandler;
+
+// Function ModioUICore.ModioFocusableWidget.GetWidgetToFocus
+// 0x0010 (0x0010 - 0x0000)
+struct ModioFocusableWidget_GetWidgetToFocus final
+{
+public:
+	EUINavigation                                 NavigationType;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioFocusableWidget_GetWidgetToFocus;
+
+// Function ModioUICore.ModioGalleryImageUIDetails.GetImage
+// 0x0010 (0x0010 - 0x0000)
+struct ModioGalleryImageUIDetails_GetImage final
+{
+public:
+	struct FModioImageWrapper                     ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioGalleryImageUIDetails_GetImage;
+
+// Function ModioUICore.ModioGalleryImageUIDetails.GetIndex
+// 0x0004 (0x0004 - 0x0000)
+struct ModioGalleryImageUIDetails_GetIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioGalleryImageUIDetails_GetIndex;
+
+// Function ModioUICore.ModioModDependencyUIDetails.GetModDependency
+// 0x00F8 (0x00F8 - 0x0000)
+struct ModioModDependencyUIDetails_GetModDependency final
+{
+public:
+	struct FModioModDependency                    ReturnValue;                                       // 0x0000(0x00F8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModDependencyUIDetails_GetModDependency;
+
+// Function ModioUICore.ModioModDependencyUIDetails.GetModID
+// 0x0008 (0x0008 - 0x0000)
+struct ModioModDependencyUIDetails_GetModID final
+{
+public:
+	struct FModioModID                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModDependencyUIDetails_GetModID;
+
+// Function ModioUICore.ModioModFilterUIDetails.GetFilterName
+// 0x0020 (0x0020 - 0x0000)
+struct ModioModFilterUIDetails_GetFilterName final
+{
+public:
+	class FText                                   Name_0;                                            // 0x0000(0x0018)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioModFilterUIDetails_GetFilterName;
+
+// Function ModioUICore.ModioModFilterUIDetails.GetFilterParams
+// 0x00B8 (0x00B8 - 0x0000)
+struct ModioModFilterUIDetails_GetFilterParams final
+{
+public:
+	struct FModioFilterParams                     ReturnValue;                                       // 0x0000(0x00B8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModFilterUIDetails_GetFilterParams;
+
+// Function ModioUICore.ModioPresetFilterEntryWidget.GetLabelWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioPresetFilterEntryWidget_GetLabelWidget final
+{
+public:
+	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioPresetFilterEntryWidget_GetLabelWidget;
+
+// Function ModioUICore.ModioModInfoUIDetails.GetFullModInfo
+// 0x01E8 (0x01E8 - 0x0000)
+struct ModioModInfoUIDetails_GetFullModInfo final
+{
+public:
+	struct FModioModInfo                          ReturnValue;                                       // 0x0000(0x01E8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModInfoUIDetails_GetFullModInfo;
+
+// Function ModioUICore.ModioModInfoUIDetails.GetModID
+// 0x0008 (0x0008 - 0x0000)
+struct ModioModInfoUIDetails_GetModID final
+{
+public:
+	struct FModioModID                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModInfoUIDetails_GetModID;
+
+// Function ModioUICore.ModioModTagUIDetails.GetLocalizedText
+// 0x0018 (0x0018 - 0x0000)
+struct ModioModTagUIDetails_GetLocalizedText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagUIDetails_GetLocalizedText;
+
+// Function ModioUICore.ModioModTagUIDetails.GetRawStringValue
+// 0x0010 (0x0010 - 0x0000)
+struct ModioModTagUIDetails_GetRawStringValue final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagUIDetails_GetRawStringValue;
+
+// Function ModioUICore.ModioModTagUIDetails.GetSelectionState
+// 0x0001 (0x0001 - 0x0000)
+struct ModioModTagUIDetails_GetSelectionState final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagUIDetails_GetSelectionState;
+
+// Function ModioUICore.ModioModTagUIDetails.SetSelectionState
+// 0x0001 (0x0001 - 0x0000)
+struct ModioModTagUIDetails_SetSelectionState final
+{
+public:
+	bool                                          bNewSelectionState;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagUIDetails_SetSelectionState;
+
 // Function ModioUICore.ModioModTagCategoryUIDetails.GetAllowMultipleSelection
 // 0x0001 (0x0001 - 0x0000)
 struct ModioModTagCategoryUIDetails_GetAllowMultipleSelection final
@@ -689,23 +592,57 @@ public:
 };
 DUMPER7_ASSERTS_ModioModTagOptionsUIDetails_GetSelectedTags;
 
-// Function ModioUICore.ModioTokenPackBrowser.GetTitleTextWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioTokenPackBrowser_GetTitleTextWidget final
+// Function ModioUICore.ModioRetryLibrary.CanRetry
+// 0x0008 (0x0008 - 0x0000)
+struct ModioRetryLibrary_CanRetry final
 {
 public:
-	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_ModioTokenPackBrowser_GetTitleTextWidget;
+DUMPER7_ASSERTS_ModioRetryLibrary_CanRetry;
 
-// Function ModioUICore.ModioTokenPackBrowser.GetTokenTileViewWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioTokenPackBrowser_GetTokenTileViewWidget final
+// Function ModioUICore.ModioRetryLibrary.CanRetryAsExec
+// 0x0008 (0x0008 - 0x0000)
+struct ModioRetryLibrary_CanRetryAsExec final
 {
 public:
-	TScriptInterface<class IModioUITokenPackListInterface> ReturnValue;                              // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_ModioTokenPackBrowser_GetTokenTileViewWidget;
+DUMPER7_ASSERTS_ModioRetryLibrary_CanRetryAsExec;
+
+// Function ModioUICore.ModioRetryLibrary.ResetRetryCount
+// 0x0004 (0x0004 - 0x0000)
+struct ModioRetryLibrary_ResetRetryCount final
+{
+public:
+	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioRetryLibrary_ResetRetryCount;
+
+// Function ModioUICore.ModioRetryLibrary.ResetRetryCountPure
+// 0x0008 (0x0008 - 0x0000)
+struct ModioRetryLibrary_ResetRetryCountPure final
+{
+public:
+	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FModioRetryCounter                     ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioRetryLibrary_ResetRetryCountPure;
+
+// Function ModioUICore.ModioRetryLibrary.Retry
+// 0x0008 (0x0008 - 0x0000)
+struct ModioRetryLibrary_Retry final
+{
+public:
+	struct FModioRetryCounter                     Target;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioRetryLibrary_Retry;
 
 // Function ModioUICore.ModioScrollableWidget.SetScrollOffset
 // 0x0004 (0x0004 - 0x0000)
@@ -761,41 +698,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ModioToggleableWidget_IsOpen;
-
-// Function ModioUICore.ModioStackedBoolLibrary.PeekBoolValue
-// 0x0018 (0x0018 - 0x0000)
-struct ModioStackedBoolLibrary_PeekBoolValue final
-{
-public:
-	struct FModioStackedBool                      Target;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bDidPeekSuccessfully;                              // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioStackedBoolLibrary_PeekBoolValue;
-
-// Function ModioUICore.ModioStackedBoolLibrary.PopBoolValue
-// 0x0018 (0x0018 - 0x0000)
-struct ModioStackedBoolLibrary_PopBoolValue final
-{
-public:
-	struct FModioStackedBool                      Target;                                            // 0x0000(0x0010)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bDidPopSuccessfully;                               // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioStackedBoolLibrary_PopBoolValue;
-
-// Function ModioUICore.ModioStackedBoolLibrary.PushBoolValue
-// 0x0018 (0x0018 - 0x0000)
-struct ModioStackedBoolLibrary_PushBoolValue final
-{
-public:
-	struct FModioStackedBool                      Target;                                            // 0x0000(0x0010)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bNewValue;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioStackedBoolLibrary_PushBoolValue;
 
 // Function ModioUICore.ModioUIClickableWidget.AddClickedHandler
 // 0x0010 (0x0010 - 0x0000)
@@ -871,14 +773,23 @@ public:
 };
 DUMPER7_ASSERTS_ModioUIBoundActionWidget_TryGetBoundAction;
 
-// Function ModioUICore.ModioPresetFilterEntryWidget.GetLabelWidget
+// Function ModioUICore.ModioTagCounterIcon.GetCounterLabelWidget
 // 0x0010 (0x0010 - 0x0000)
-struct ModioPresetFilterEntryWidget_GetLabelWidget final
+struct ModioTagCounterIcon_GetCounterLabelWidget final
 {
 public:
 	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_ModioPresetFilterEntryWidget_GetLabelWidget;
+DUMPER7_ASSERTS_ModioTagCounterIcon_GetCounterLabelWidget;
+
+// Function ModioUICore.ModioTagCounterIcon.SynchronizeCounter
+// 0x0004 (0x0004 - 0x0000)
+struct ModioTagCounterIcon_SynchronizeCounter final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioTagCounterIcon_SynchronizeCounter;
 
 // Function ModioUICore.ModioUICommandMenu.AddCommandListBuilder
 // 0x0010 (0x0010 - 0x0000)
@@ -992,6 +903,24 @@ public:
 };
 DUMPER7_ASSERTS_ModioUICommonButtonWidget_ConfigureCommonButton;
 
+// Function ModioUICore.ModioTokenPackBrowser.GetTitleTextWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioTokenPackBrowser_GetTitleTextWidget final
+{
+public:
+	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioTokenPackBrowser_GetTitleTextWidget;
+
+// Function ModioUICore.ModioTokenPackBrowser.GetTokenTileViewWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioTokenPackBrowser_GetTokenTileViewWidget final
+{
+public:
+	TScriptInterface<class IModioUITokenPackListInterface> ReturnValue;                              // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioTokenPackBrowser_GetTokenTileViewWidget;
+
 // Function ModioUICore.ModioUIConnectivityChangedReceiver.OnConnectivityChanged
 // 0x0001 (0x0001 - 0x0000)
 struct ModioUIConnectivityChangedReceiver_OnConnectivityChanged final
@@ -1019,23 +948,40 @@ public:
 };
 DUMPER7_ASSERTS_ModioUIConnectivityChangedReceiverLibrary_RegisterConnectivityChangedReceiver;
 
-// Function ModioUICore.ModioTokenPackUIDetails.GetFullTokenPack
-// 0x0118 (0x0118 - 0x0000)
-struct ModioTokenPackUIDetails_GetFullTokenPack final
+// Function ModioUICore.ModioStackedBoolLibrary.PeekBoolValue
+// 0x0018 (0x0018 - 0x0000)
+struct ModioStackedBoolLibrary_PeekBoolValue final
 {
 public:
-	struct FModioTokenPack                        ReturnValue;                                       // 0x0000(0x0118)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	struct FModioStackedBool                      Target;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bDidPeekSuccessfully;                              // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_ModioTokenPackUIDetails_GetFullTokenPack;
+DUMPER7_ASSERTS_ModioStackedBoolLibrary_PeekBoolValue;
 
-// Function ModioUICore.ModioTokenPackUIDetails.GetTokenPackID
-// 0x0010 (0x0010 - 0x0000)
-struct ModioTokenPackUIDetails_GetTokenPackID final
+// Function ModioUICore.ModioStackedBoolLibrary.PopBoolValue
+// 0x0018 (0x0018 - 0x0000)
+struct ModioStackedBoolLibrary_PopBoolValue final
 {
 public:
-	struct FModioTokenPackID                      ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioStackedBool                      Target;                                            // 0x0000(0x0010)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bDidPopSuccessfully;                               // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_ModioTokenPackUIDetails_GetTokenPackID;
+DUMPER7_ASSERTS_ModioStackedBoolLibrary_PopBoolValue;
+
+// Function ModioUICore.ModioStackedBoolLibrary.PushBoolValue
+// 0x0018 (0x0018 - 0x0000)
+struct ModioStackedBoolLibrary_PushBoolValue final
+{
+public:
+	struct FModioStackedBool                      Target;                                            // 0x0000(0x0010)(Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bNewValue;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioStackedBoolLibrary_PushBoolValue;
 
 // Function ModioUICore.ModioUIDataSourceWidget.GetDataSource
 // 0x0008 (0x0008 - 0x0000)
@@ -1135,24 +1081,6 @@ public:
 	bool                                          bFocusCancelButton;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ModioUIDialog_ShowModal;
-
-// Function ModioUICore.ModioTagCounterIcon.GetCounterLabelWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ModioTagCounterIcon_GetCounterLabelWidget final
-{
-public:
-	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioTagCounterIcon_GetCounterLabelWidget;
-
-// Function ModioUICore.ModioTagCounterIcon.SynchronizeCounter
-// 0x0004 (0x0004 - 0x0000)
-struct ModioTagCounterIcon_SynchronizeCounter final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioTagCounterIcon_SynchronizeCounter;
 
 // Function ModioUICore.ModioUIDialogDisplayEventReceiver.OnDialogDisplayEvent
 // 0x0010 (0x0010 - 0x0000)
@@ -1312,229 +1240,6 @@ public:
 	bool                                          bNewEnabledState;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ModioUIHasTooltipWidget_SetTooltipEnabledState;
-
-// Function ModioUICore.ModioUIHoverableWidget.AddHoverStateChangedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIHoverableWidget_AddHoverStateChangedHandler final
-{
-public:
-	TDelegate<void(class UObject* HoverContext, bool bHoveredState)> Handler;                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIHoverableWidget_AddHoverStateChangedHandler;
-
-// Function ModioUICore.ModioUIHoverableWidget.RemoveHoverStateChangedHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIHoverableWidget_RemoveHoverStateChangedHandler final
-{
-public:
-	TDelegate<void(class UObject* HoverContext, bool bHoveredState)> Handler;                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIHoverableWidget_RemoveHoverStateChangedHandler;
-
-// Function ModioUICore.ModioUIImageDisplayWidget.AddImageLoadEventHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIImageDisplayWidget_AddImageLoadEventHandler final
-{
-public:
-	TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)> Handler;                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIImageDisplayWidget_AddImageLoadEventHandler;
-
-// Function ModioUICore.ModioUIImageDisplayWidget.BeginLoadImageFromFile
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIImageDisplayWidget_BeginLoadImageFromFile final
-{
-public:
-	struct FModioImageWrapper                     Image;                                             // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIImageDisplayWidget_BeginLoadImageFromFile;
-
-// Function ModioUICore.ModioUIImageDisplayWidget.RemoveImageLoadEventHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIImageDisplayWidget_RemoveImageLoadEventHandler final
-{
-public:
-	TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)> Handler;                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIImageDisplayWidget_RemoveImageLoadEventHandler;
-
-// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushDirectly
-// 0x00D0 (0x00D0 - 0x0000)
-struct ModioUIImageDisplayWidget_SetBrushDirectly final
-{
-public:
-	struct FSlateBrush                            NewBrush;                                          // 0x0000(0x00D0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIImageDisplayWidget_SetBrushDirectly;
-
-// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushMatchTextureSize
-// 0x0001 (0x0001 - 0x0000)
-struct ModioUIImageDisplayWidget_SetBrushMatchTextureSize final
-{
-public:
-	bool                                          bMatchTextureSize;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIImageDisplayWidget_SetBrushMatchTextureSize;
-
-// Function ModioUICore.ModioUIImageDisplayWidget.SetDesiredBrushSize
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIImageDisplayWidget_SetDesiredBrushSize final
-{
-public:
-	struct FVector2D                              DesiredSize;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIImageDisplayWidget_SetDesiredBrushSize;
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModCreatorAvatarDownloadCompleted
-// 0x0028 (0x0028 - 0x0000)
-struct ModioUIMediaDownloadCompletedReceiver_OnModCreatorAvatarDownloadCompleted final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
-	struct FModioOptionalImage                    Image;                                             // 0x0010(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiver_OnModCreatorAvatarDownloadCompleted;
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModGalleryImageDownloadCompleted
-// 0x0030 (0x0030 - 0x0000)
-struct ModioUIMediaDownloadCompletedReceiver_OnModGalleryImageDownloadCompleted final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
-	int32                                         ImageIndex;                                        // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FModioOptionalImage                    Image;                                             // 0x0018(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiver_OnModGalleryImageDownloadCompleted;
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModLogoDownloadCompleted
-// 0x0030 (0x0030 - 0x0000)
-struct ModioUIMediaDownloadCompletedReceiver_OnModLogoDownloadCompleted final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
-	struct FModioOptionalImage                    Image;                                             // 0x0010(0x0018)(Parm, NativeAccessSpecifierPublic)
-	EModioLogoSize                                LogoSize;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiver_OnModLogoDownloadCompleted;
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.DeregisterMediaDownloadCompletedReceiver
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIMediaDownloadCompletedReceiverLibrary_DeregisterMediaDownloadCompletedReceiver final
-{
-public:
-	class UObject*                                ObjectToDeregister;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EModioUIMediaDownloadEventType                DownloadTypes;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiverLibrary_DeregisterMediaDownloadCompletedReceiver;
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.RegisterMediaDownloadCompletedReceiver
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIMediaDownloadCompletedReceiverLibrary_RegisterMediaDownloadCompletedReceiver final
-{
-public:
-	class UObject*                                ObjectToRegister;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EModioUIMediaDownloadEventType                DownloadTypes;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiverLibrary_RegisterMediaDownloadCompletedReceiver;
-
-// Function ModioUICore.ModioUIModEnabledStateChangedReceiver.OnModEnabledStateChanged
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIModEnabledStateChangedReceiver_OnModEnabledStateChanged final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewEnabledState;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateChangedReceiver_OnModEnabledStateChanged;
-
-// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.DeregisterModEnabledStateChangedReceiver
-// 0x0008 (0x0008 - 0x0000)
-struct ModioUIModEnabledStateChangedReceiverLibrary_DeregisterModEnabledStateChangedReceiver final
-{
-public:
-	class UObject*                                ObjectToDeregister;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateChangedReceiverLibrary_DeregisterModEnabledStateChangedReceiver;
-
-// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.RegisterModEnabledStateChangedReceiver
-// 0x0008 (0x0008 - 0x0000)
-struct ModioUIModEnabledStateChangedReceiverLibrary_RegisterModEnabledStateChangedReceiver final
-{
-public:
-	class UObject*                                ObjectToRegister;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateChangedReceiverLibrary_RegisterModEnabledStateChangedReceiver;
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.AddModEnabledStateChangeHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIModEnabledStateProvider_AddModEnabledStateChangeHandler final
-{
-public:
-	TDelegate<void(int64 RawID, bool bNewEnabledState)> Handler;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_AddModEnabledStateChangeHandler;
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.QueryIsModEnabled
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIModEnabledStateProvider_QueryIsModEnabled final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_QueryIsModEnabled;
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.RemoveModEnabledStateChangeHandler
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIModEnabledStateProvider_RemoveModEnabledStateChangeHandler final
-{
-public:
-	TDelegate<void(int64 RawID, bool bNewEnabledState)> Handler;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_RemoveModEnabledStateChangeHandler;
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.RequestModEnabledStateChange
-// 0x0010 (0x0010 - 0x0000)
-struct ModioUIModEnabledStateProvider_RequestModEnabledStateChange final
-{
-public:
-	struct FModioModID                            ID;                                                // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewEnabledState;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_RequestModEnabledStateChange;
-
-// Function ModioUICore.ModioUIModInfoReceiver.OnListAllModsRequestCompleted
-// 0x0048 (0x0048 - 0x0000)
-struct ModioUIModInfoReceiver_OnListAllModsRequestCompleted final
-{
-public:
-	class FString                                 RequestIdentifier;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FModioErrorCode                        ErrorCode;                                         // 0x0010(0x0008)(Parm, NativeAccessSpecifierPublic)
-	struct FModioOptionalModInfoList              List;                                              // 0x0018(0x0030)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIModInfoReceiver_OnListAllModsRequestCompleted;
-
-// Function ModioUICore.ModioUIModInfoReceiver.OnModInfoRequestCompleted
-// 0x0200 (0x0200 - 0x0000)
-struct ModioUIModInfoReceiver_OnModInfoRequestCompleted final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
-	struct FModioOptionalModInfo                  Info;                                              // 0x0010(0x01F0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIModInfoReceiver_OnModInfoRequestCompleted;
 
 // Function ModioUICore.ModioUISubsystem.EnableModManagement
 // 0x0008 (0x0008 - 0x0000)
@@ -1821,6 +1526,229 @@ public:
 	struct FModioModID                            ID;                                                // 0x0008(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ModioUISubsystem_UnsubscribeHandler;
+
+// Function ModioUICore.ModioUIHoverableWidget.AddHoverStateChangedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIHoverableWidget_AddHoverStateChangedHandler final
+{
+public:
+	TDelegate<void(class UObject* HoverContext, bool bHoveredState)> Handler;                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIHoverableWidget_AddHoverStateChangedHandler;
+
+// Function ModioUICore.ModioUIHoverableWidget.RemoveHoverStateChangedHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIHoverableWidget_RemoveHoverStateChangedHandler final
+{
+public:
+	TDelegate<void(class UObject* HoverContext, bool bHoveredState)> Handler;                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIHoverableWidget_RemoveHoverStateChangedHandler;
+
+// Function ModioUICore.ModioUIImageDisplayWidget.AddImageLoadEventHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIImageDisplayWidget_AddImageLoadEventHandler final
+{
+public:
+	TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)> Handler;                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIImageDisplayWidget_AddImageLoadEventHandler;
+
+// Function ModioUICore.ModioUIImageDisplayWidget.BeginLoadImageFromFile
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIImageDisplayWidget_BeginLoadImageFromFile final
+{
+public:
+	struct FModioImageWrapper                     Image;                                             // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIImageDisplayWidget_BeginLoadImageFromFile;
+
+// Function ModioUICore.ModioUIImageDisplayWidget.RemoveImageLoadEventHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIImageDisplayWidget_RemoveImageLoadEventHandler final
+{
+public:
+	TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)> Handler;                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIImageDisplayWidget_RemoveImageLoadEventHandler;
+
+// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushDirectly
+// 0x00D0 (0x00D0 - 0x0000)
+struct ModioUIImageDisplayWidget_SetBrushDirectly final
+{
+public:
+	struct FSlateBrush                            NewBrush;                                          // 0x0000(0x00D0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIImageDisplayWidget_SetBrushDirectly;
+
+// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushMatchTextureSize
+// 0x0001 (0x0001 - 0x0000)
+struct ModioUIImageDisplayWidget_SetBrushMatchTextureSize final
+{
+public:
+	bool                                          bMatchTextureSize;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIImageDisplayWidget_SetBrushMatchTextureSize;
+
+// Function ModioUICore.ModioUIImageDisplayWidget.SetDesiredBrushSize
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIImageDisplayWidget_SetDesiredBrushSize final
+{
+public:
+	struct FVector2D                              DesiredSize;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIImageDisplayWidget_SetDesiredBrushSize;
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModCreatorAvatarDownloadCompleted
+// 0x0028 (0x0028 - 0x0000)
+struct ModioUIMediaDownloadCompletedReceiver_OnModCreatorAvatarDownloadCompleted final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
+	struct FModioOptionalImage                    Image;                                             // 0x0010(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiver_OnModCreatorAvatarDownloadCompleted;
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModGalleryImageDownloadCompleted
+// 0x0030 (0x0030 - 0x0000)
+struct ModioUIMediaDownloadCompletedReceiver_OnModGalleryImageDownloadCompleted final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
+	int32                                         ImageIndex;                                        // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FModioOptionalImage                    Image;                                             // 0x0018(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiver_OnModGalleryImageDownloadCompleted;
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModLogoDownloadCompleted
+// 0x0030 (0x0030 - 0x0000)
+struct ModioUIMediaDownloadCompletedReceiver_OnModLogoDownloadCompleted final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
+	struct FModioOptionalImage                    Image;                                             // 0x0010(0x0018)(Parm, NativeAccessSpecifierPublic)
+	EModioLogoSize                                LogoSize;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiver_OnModLogoDownloadCompleted;
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.DeregisterMediaDownloadCompletedReceiver
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIMediaDownloadCompletedReceiverLibrary_DeregisterMediaDownloadCompletedReceiver final
+{
+public:
+	class UObject*                                ObjectToDeregister;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EModioUIMediaDownloadEventType                DownloadTypes;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiverLibrary_DeregisterMediaDownloadCompletedReceiver;
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.RegisterMediaDownloadCompletedReceiver
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIMediaDownloadCompletedReceiverLibrary_RegisterMediaDownloadCompletedReceiver final
+{
+public:
+	class UObject*                                ObjectToRegister;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EModioUIMediaDownloadEventType                DownloadTypes;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioUIMediaDownloadCompletedReceiverLibrary_RegisterMediaDownloadCompletedReceiver;
+
+// Function ModioUICore.ModioUIModEnabledStateChangedReceiver.OnModEnabledStateChanged
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIModEnabledStateChangedReceiver_OnModEnabledStateChanged final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewEnabledState;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateChangedReceiver_OnModEnabledStateChanged;
+
+// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.DeregisterModEnabledStateChangedReceiver
+// 0x0008 (0x0008 - 0x0000)
+struct ModioUIModEnabledStateChangedReceiverLibrary_DeregisterModEnabledStateChangedReceiver final
+{
+public:
+	class UObject*                                ObjectToDeregister;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateChangedReceiverLibrary_DeregisterModEnabledStateChangedReceiver;
+
+// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.RegisterModEnabledStateChangedReceiver
+// 0x0008 (0x0008 - 0x0000)
+struct ModioUIModEnabledStateChangedReceiverLibrary_RegisterModEnabledStateChangedReceiver final
+{
+public:
+	class UObject*                                ObjectToRegister;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateChangedReceiverLibrary_RegisterModEnabledStateChangedReceiver;
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.AddModEnabledStateChangeHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIModEnabledStateProvider_AddModEnabledStateChangeHandler final
+{
+public:
+	TDelegate<void(int64 RawID, bool bNewEnabledState)> Handler;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_AddModEnabledStateChangeHandler;
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.QueryIsModEnabled
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIModEnabledStateProvider_QueryIsModEnabled final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_QueryIsModEnabled;
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.RemoveModEnabledStateChangeHandler
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIModEnabledStateProvider_RemoveModEnabledStateChangeHandler final
+{
+public:
+	TDelegate<void(int64 RawID, bool bNewEnabledState)> Handler;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_RemoveModEnabledStateChangeHandler;
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.RequestModEnabledStateChange
+// 0x0010 (0x0010 - 0x0000)
+struct ModioUIModEnabledStateProvider_RequestModEnabledStateChange final
+{
+public:
+	struct FModioModID                            ID;                                                // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewEnabledState;                                  // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ModioUIModEnabledStateProvider_RequestModEnabledStateChange;
+
+// Function ModioUICore.ModioUIModInfoReceiver.OnListAllModsRequestCompleted
+// 0x0048 (0x0048 - 0x0000)
+struct ModioUIModInfoReceiver_OnListAllModsRequestCompleted final
+{
+public:
+	class FString                                 RequestIdentifier;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioErrorCode                        ErrorCode;                                         // 0x0010(0x0008)(Parm, NativeAccessSpecifierPublic)
+	struct FModioOptionalModInfoList              List;                                              // 0x0018(0x0030)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIModInfoReceiver_OnListAllModsRequestCompleted;
+
+// Function ModioUICore.ModioUIModInfoReceiver.OnModInfoRequestCompleted
+// 0x0200 (0x0200 - 0x0000)
+struct ModioUIModInfoReceiver_OnModInfoRequestCompleted final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FModioErrorCode                        ErrorCode;                                         // 0x0008(0x0008)(Parm, NativeAccessSpecifierPublic)
+	struct FModioOptionalModInfo                  Info;                                              // 0x0010(0x01F0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIModInfoReceiver_OnModInfoRequestCompleted;
 
 // Function ModioUICore.ModioUIModInfoReceiverLibrary.DeregisterModInfoReceiver
 // 0x0010 (0x0010 - 0x0000)
@@ -3080,6 +3008,27 @@ public:
 };
 DUMPER7_ASSERTS_ModioDefaultScrollBox_UpdateNavigationData;
 
+// Function ModioUICore.ModioUIComponentStatics.GetAllComponentMetadata
+// 0x0050 (0x0050 - 0x0000)
+struct ModioUIComponentStatics_GetAllComponentMetadata final
+{
+public:
+	TMap<EModioUIComponentID, struct FModioUIComponentMetadata> ReturnValue;                         // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIComponentStatics_GetAllComponentMetadata;
+
+// Function ModioUICore.ModioUIComponentStatics.GetMetadataForComponent
+// 0x0028 (0x0028 - 0x0000)
+struct ModioUIComponentStatics_GetMetadataForComponent final
+{
+public:
+	EModioUIComponentID                           ComponentType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bComponentTypeFound;                               // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FModioUIComponentMetadata              ReturnValue;                                       // 0x0008(0x0020)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioUIComponentStatics_GetMetadataForComponent;
+
 // Function ModioUICore.ModioDefaultTagWidget.GetLabelWidget
 // 0x0010 (0x0010 - 0x0000)
 struct ModioDefaultTagWidget_GetLabelWidget final
@@ -3116,6 +3065,24 @@ public:
 };
 DUMPER7_ASSERTS_ModioDialogButtonUIDetails_GetDialogButtonInfo;
 
+// Function ModioUICore.ModioTokenPackUIDetails.GetFullTokenPack
+// 0x0118 (0x0118 - 0x0000)
+struct ModioTokenPackUIDetails_GetFullTokenPack final
+{
+public:
+	struct FModioTokenPack                        ReturnValue;                                       // 0x0000(0x0118)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioTokenPackUIDetails_GetFullTokenPack;
+
+// Function ModioUICore.ModioTokenPackUIDetails.GetTokenPackID
+// 0x0010 (0x0010 - 0x0000)
+struct ModioTokenPackUIDetails_GetTokenPackID final
+{
+public:
+	struct FModioTokenPackID                      ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioTokenPackUIDetails_GetTokenPackID;
+
 // Function ModioUICore.ModioDropdownAnchor.ModioHandleMenuOpenChanged
 // 0x0001 (0x0001 - 0x0000)
 struct ModioDropdownAnchor_ModioHandleMenuOpenChanged final
@@ -3124,27 +3091,6 @@ public:
 	bool                                          bIsOpen;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ModioDropdownAnchor_ModioHandleMenuOpenChanged;
-
-// Function ModioUICore.ModioUIComponentStatics.GetAllComponentMetadata
-// 0x0050 (0x0050 - 0x0000)
-struct ModioUIComponentStatics_GetAllComponentMetadata final
-{
-public:
-	TMap<EModioUIComponentID, struct FModioUIComponentMetadata> ReturnValue;                         // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIComponentStatics_GetAllComponentMetadata;
-
-// Function ModioUICore.ModioUIComponentStatics.GetMetadataForComponent
-// 0x0028 (0x0028 - 0x0000)
-struct ModioUIComponentStatics_GetMetadataForComponent final
-{
-public:
-	EModioUIComponentID                           ComponentType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bComponentTypeFound;                               // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FModioUIComponentMetadata              ReturnValue;                                       // 0x0008(0x0020)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ModioUIComponentStatics_GetMetadataForComponent;
 
 // Function ModioUICore.ModioEnumSelector.InternalSelectionChangedHandler
 // 0x0008 (0x0008 - 0x0000)
@@ -3756,6 +3702,24 @@ public:
 };
 DUMPER7_ASSERTS_ModioModTagDisplay_GetTagContainerWidget;
 
+// Function ModioUICore.ModioModTagSelector.GetMenuToggleClickableWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioModTagSelector_GetMenuToggleClickableWidget final
+{
+public:
+	TScriptInterface<class IModioUIClickableWidget> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagSelector_GetMenuToggleClickableWidget;
+
+// Function ModioUICore.ModioModTagSelector.GetSelectorMenuWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioModTagSelector_GetSelectorMenuWidget final
+{
+public:
+	TScriptInterface<class IModioUIModTagSelector> ReturnValue;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagSelector_GetSelectorMenuWidget;
+
 // Function ModioUICore.ModioModTagSelectorCategory.GetCategoryTagListWidget
 // 0x0010 (0x0010 - 0x0000)
 struct ModioModTagSelectorCategory_GetCategoryTagListWidget final
@@ -3773,6 +3737,42 @@ public:
 	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ModioModTagSelectorCategory_GetTagCategoryLabel;
+
+// Function ModioUICore.ModioModTagSelectorEntry.OnTagEntryClicked
+// 0x0008 (0x0008 - 0x0000)
+struct ModioModTagSelectorEntry_OnTagEntryClicked final
+{
+public:
+	class UObject*                                ClickedObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagSelectorEntry_OnTagEntryClicked;
+
+// Function ModioUICore.ModioModTagSelectorEntry.GetClickableWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioModTagSelectorEntry_GetClickableWidget final
+{
+public:
+	TScriptInterface<class IModioUIClickableWidget> ReturnValue;                                     // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagSelectorEntry_GetClickableWidget;
+
+// Function ModioUICore.ModioModTagSelectorEntry.GetSelectionWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioModTagSelectorEntry_GetSelectionWidget final
+{
+public:
+	TScriptInterface<class IModioUISelectableWidget> ReturnValue;                                    // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagSelectorEntry_GetSelectionWidget;
+
+// Function ModioUICore.ModioModTagSelectorEntry.GetTagLabelWidget
+// 0x0010 (0x0010 - 0x0000)
+struct ModioModTagSelectorEntry_GetTagLabelWidget final
+{
+public:
+	TScriptInterface<class IModioUIHasTextWidget> ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ModioModTagSelectorEntry_GetTagLabelWidget;
 
 // Function ModioUICore.ModioModTagSelectorMenu.GetAllowedTags
 // 0x0010 (0x0010 - 0x0000)

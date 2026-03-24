@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ShotgunShell.ShotgunShell_C
-// 0x0000 (0x0320 - 0x0320)
+// 0x0000 (0x0340 - 0x0340)
 class AShotgunShell_C final : public ABaseShell
 {
 public:

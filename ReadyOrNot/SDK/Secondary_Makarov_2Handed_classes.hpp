@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Secondary_Makarov_2Handed.Secondary_Makarov_2Handed_C
-// 0x0000 (0x18C0 - 0x18C0)
+// 0x0000 (0x19B0 - 0x19B0)
 class ASecondary_Makarov_2Handed_C final : public ASecondary_Makarov_C
 {
 public:

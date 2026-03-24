@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.BeginAction_Blueprint
+// Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.OnCreate_Blueprint
 // (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_SeekPlayer_C::BeginAction_Blueprint()
+void UAIAction_SeekPlayer_C::OnCreate_Blueprint(class ACyberneticController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SeekPlayer_C", "BeginAction_Blueprint");
+		Func = Class->GetFunction("AIAction_SeekPlayer_C", "OnCreate_Blueprint");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::AIAction_SeekPlayer_C_OnCreate_Blueprint Parms{};
+
+	Parms.Controller = Controller;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -51,23 +57,17 @@ void UAIAction_SeekPlayer_C::ExecuteUbergraph_AIAction_SeekPlayer(int32 EntryPoi
 }
 
 
-// Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.OnCreate_Blueprint
+// Function AIAction_SeekPlayer.AIAction_SeekPlayer_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_SeekPlayer_C::OnCreate_Blueprint(class ACyberneticController* Controller)
+void UAIAction_SeekPlayer_C::BeginAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SeekPlayer_C", "OnCreate_Blueprint");
+		Func = Class->GetFunction("AIAction_SeekPlayer_C", "BeginAction_Blueprint");
 
-	Params::AIAction_SeekPlayer_C_OnCreate_Blueprint Parms{};
-
-	Parms.Controller = Controller;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

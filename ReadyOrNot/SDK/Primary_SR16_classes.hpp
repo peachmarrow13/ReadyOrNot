@@ -18,11 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_SR16.Primary_SR16_C
-// 0x0010 (0x18C0 - 0x18B0)
+// 0x0010 (0x19B0 - 0x19A0)
 class APrimary_SR16_C final : public ABaseMagazineWeapon
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x18B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	uint8                                         Pad_1998[0x8];                                     // 0x1998(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x19A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_Primary_SR16(int32 EntryPoint);

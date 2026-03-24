@@ -14,6 +14,16 @@
 namespace SDK::Params
 {
 
+// Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.OnMoveComplete_Blueprint
+// 0x0010 (0x0010 - 0x0000)
+struct AIAction_ReturnToSpawn_C_OnMoveComplete_Blueprint final
+{
+public:
+	class AAIController*                          Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         RequestID;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_ReturnToSpawn_C_OnMoveComplete_Blueprint;
+
 // Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.ExecuteUbergraph_AIAction_ReturnToSpawn
 // 0x0020 (0x0020 - 0x0000)
 struct AIAction_ReturnToSpawn_C_ExecuteUbergraph_AIAction_ReturnToSpawn final
@@ -26,16 +36,6 @@ public:
 	int32                                         K2Node_Event_RequestID;                            // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_ReturnToSpawn_C_ExecuteUbergraph_AIAction_ReturnToSpawn;
-
-// Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.OnMoveComplete_Blueprint
-// 0x0010 (0x0010 - 0x0000)
-struct AIAction_ReturnToSpawn_C_OnMoveComplete_Blueprint final
-{
-public:
-	class AAIController*                          Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         RequestID;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_ReturnToSpawn_C_OnMoveComplete_Blueprint;
 
 // Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.ShouldPerformAction
 // 0x0001 (0x0001 - 0x0000)

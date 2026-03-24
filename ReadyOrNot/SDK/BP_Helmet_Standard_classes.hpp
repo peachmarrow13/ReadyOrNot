@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Helmet_Standard.BP_Helmet_Standard_C
-// 0x0000 (0x1B90 - 0x1B90)
+// 0x0000 (0x1BE0 - 0x1BE0)
 class ABP_Helmet_Standard_C final : public AHeadwear
 {
 public:

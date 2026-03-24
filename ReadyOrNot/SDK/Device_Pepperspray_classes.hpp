@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_Pepperspray.Device_Pepperspray_C
-// 0x0000 (0x0D00 - 0x0D00)
+// 0x0000 (0x0D60 - 0x0D60)
 class ADevice_Pepperspray_C final : public APepperspray
 {
 public:

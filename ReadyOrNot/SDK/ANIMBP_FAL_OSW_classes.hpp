@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ReadyOrNot_classes.hpp"
 #include "ANIMBP_FAL_OSW_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "ReadyOrNot_classes.hpp"
 
 
 namespace SDK

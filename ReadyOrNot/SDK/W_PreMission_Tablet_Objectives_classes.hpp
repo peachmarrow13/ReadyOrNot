@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_PreMission_Tablet_Objectives.W_PreMission_Tablet_Objectives_C
-// 0x09C8 (0x0C90 - 0x02C8)
+// 0x0A18 (0x0CE0 - 0x02C8)
 class UW_PreMission_Tablet_Objectives_C final : public UUserWidget
 {
 public:
@@ -30,16 +30,16 @@ public:
 	class UScrollBox*                             ObjectiveScrollBox;                                // 0x02D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_Text_C*                              txt_Situation;                                     // 0x02E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UVerticalBox*                           VB_ObjectiveList;                                  // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  LevelData;                                         // 0x02F0(0x0880)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FString                                 MissionURL;                                        // 0x0B70(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	double                                        ObjectiveSpacing;                                  // 0x0B80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B88[0x8];                                      // 0x0B88(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            DividerBrush;                                      // 0x0B90(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	double                                        ObjectiveAutoScrollSpeed;                          // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        ObjectiveAutoScrollStartDelay;                     // 0x0C68(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        ObjectiveAutoScrollEndDelay;                       // 0x0C70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        ObjectiveAutoScrollTimeAtEnd;                      // 0x0C78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        ObjectiveAutoScrollTimeAtStart;                    // 0x0C80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  LevelData;                                         // 0x02F0(0x08D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FString                                 MissionURL;                                        // 0x0BC0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	double                                        ObjectiveSpacing;                                  // 0x0BD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BD8[0x8];                                      // 0x0BD8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            DividerBrush;                                      // 0x0BE0(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	double                                        ObjectiveAutoScrollSpeed;                          // 0x0CB0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        ObjectiveAutoScrollStartDelay;                     // 0x0CB8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        ObjectiveAutoScrollEndDelay;                       // 0x0CC0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        ObjectiveAutoScrollTimeAtEnd;                      // 0x0CC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        ObjectiveAutoScrollTimeAtStart;                    // 0x0CD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AddObjectiveToList(class UW_PreMission_Tablet_Objectives_Entry_C* ObjectiveEntry, bool IsLast);

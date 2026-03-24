@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Null_IlluminatorAttachment.Null_IlluminatorAttachment_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UNull_IlluminatorAttachment_C final : public UWeaponAttachment
 {
 public:

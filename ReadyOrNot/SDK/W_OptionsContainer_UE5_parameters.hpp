@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "SlateCore_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "UMG_structs.hpp"
 
@@ -29,14 +30,13 @@ public:
 DUMPER7_ASSERTS_W_OptionsContainer_UE5_C_DisplayDependents;
 
 // Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.ExecuteUbergraph_W_OptionsContainer_UE5
-// 0x0058 (0x0058 - 0x0000)
+// 0x0190 (0x0190 - 0x0000)
 struct W_OptionsContainer_UE5_C_ExecuteUbergraph_W_OptionsContainer_UE5 final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Temp_bool_Variable;                                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_TextIsNotEmpty_NotEmpty;                  // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Temp_real_Variable;                                // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Temp_bool_Variable_1;                              // 0x000C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -58,9 +58,35 @@ public:
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSlateChildSize                        K2Node_MakeStruct_SlateChildSize;                  // 0x004C(0x0008)(NoDestructor)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_TextIsNotEmpty_NotEmpty;                  // 0x0054(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0058(0x0038)(IsPlainOldData, NoDestructor)
+	struct FPointerEvent                          K2Node_Event_MouseEvent_1;                         // 0x0090(0x0078)(ConstParm)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerEvent                          K2Node_Event_MouseEvent;                           // 0x0110(0x0078)(ConstParm)
+	class UWidget*                                CallFunc_GetContent_ReturnValue;                   // 0x0188(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_OptionsContainer_UE5_C_ExecuteUbergraph_W_OptionsContainer_UE5;
+
+// Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.OnMouseEnter
+// 0x00B0 (0x00B0 - 0x0000)
+struct W_OptionsContainer_UE5_C_OnMouseEnter final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	struct FPointerEvent                          MouseEvent;                                        // 0x0038(0x0078)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_W_OptionsContainer_UE5_C_OnMouseEnter;
+
+// Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.OnMouseLeave
+// 0x0078 (0x0078 - 0x0000)
+struct W_OptionsContainer_UE5_C_OnMouseLeave final
+{
+public:
+	struct FPointerEvent                          MouseEvent;                                        // 0x0000(0x0078)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+DUMPER7_ASSERTS_W_OptionsContainer_UE5_C_OnMouseLeave;
 
 // Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.PreConstruct
 // 0x0001 (0x0001 - 0x0000)

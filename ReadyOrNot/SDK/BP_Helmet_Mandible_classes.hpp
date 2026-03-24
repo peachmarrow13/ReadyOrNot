@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Helmet_Mandible.BP_Helmet_Mandible_C
-// 0x0000 (0x1B90 - 0x1B90)
+// 0x0000 (0x1BE0 - 0x1BE0)
 class ABP_Helmet_Mandible_C final : public AHeadwear
 {
 public:

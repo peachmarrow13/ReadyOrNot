@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Launcher_M320.Launcher_M320_C
-// 0x0000 (0x1C10 - 0x1C10)
+// 0x0000 (0x1CF0 - 0x1CF0)
 class ALauncher_M320_C : public AGrenadeLauncher
 {
 public:

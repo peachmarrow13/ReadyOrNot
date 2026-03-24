@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_COOP.GM_COOP_C
-// 0x0010 (0x0E70 - 0x0E60)
+// 0x0010 (0x0EE0 - 0x0ED0)
 class AGM_COOP_C : public ACoopGM
 {
 public:
-	uint8                                         Pad_E58[0x8];                                      // 0x0E58(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0E60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EC8[0x8];                                      // 0x0EC8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0ED0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

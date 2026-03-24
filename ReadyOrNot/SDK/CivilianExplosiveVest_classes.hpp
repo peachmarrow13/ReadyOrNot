@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CivilianExplosiveVest.CivilianExplosiveVest_C
-// 0x0000 (0x0E40 - 0x0E40)
+// 0x0000 (0x0EA0 - 0x0EA0)
 class ACivilianExplosiveVest_C final : public AExplosiveVest
 {
 public:

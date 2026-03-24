@@ -17,29 +17,49 @@
 namespace SDK
 {
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.TryScriptedFireAtCivilian
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UAIAction_ActiveShooter_TargetNextCivilian_C::BeginAction_Blueprint()
+void UAIAction_ActiveShooter_TargetNextCivilian_C::TryScriptedFireAtCivilian()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "BeginAction_Blueprint");
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "TryScriptedFireAtCivilian");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.EndAction_Blueprint
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_ActiveShooter_TargetNextCivilian_C::EndAction_Blueprint()
+void UAIAction_ActiveShooter_TargetNextCivilian_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "EndAction_Blueprint");
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "Tick_Blueprint");
+
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.FindNextCivilian
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIAction_ActiveShooter_TargetNextCivilian_C::FindNextCivilian()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "FindNextCivilian");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,15 +85,29 @@ void UAIAction_ActiveShooter_TargetNextCivilian_C::ExecuteUbergraph_AIAction_Act
 }
 
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.FindNextCivilian
-// (BlueprintCallable, BlueprintEvent)
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
 
-void UAIAction_ActiveShooter_TargetNextCivilian_C::FindNextCivilian()
+void UAIAction_ActiveShooter_TargetNextCivilian_C::EndAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "FindNextCivilian");
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "EndAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_ActiveShooter_TargetNextCivilian_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -101,77 +135,39 @@ void UAIAction_ActiveShooter_TargetNextCivilian_C::OnPathFound_Blueprint(int32 P
 }
 
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.Tick_Blueprint
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.OnCreate_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_ActiveShooter_TargetNextCivilian_C::Tick_Blueprint(float DeltaTime)
+void UAIAction_ActiveShooter_TargetNextCivilian_C::OnCreate_Blueprint(class ACyberneticController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "Tick_Blueprint");
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "OnCreate_Blueprint");
 
-	Params::AIAction_ActiveShooter_TargetNextCivilian_C_Tick_Blueprint Parms{};
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_OnCreate_Blueprint Parms{};
 
-	Parms.DeltaTime = DeltaTime;
+	Parms.Controller = Controller;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.TryScriptedFireAtCivilian
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UAIAction_ActiveShooter_TargetNextCivilian_C::TryScriptedFireAtCivilian()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "TryScriptedFireAtCivilian");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.CanTargetCivilian
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class ACyberneticCharacter*             InCivilian                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_ActiveShooter_TargetNextCivilian_C::CanTargetCivilian(class ACyberneticCharacter* InCivilian, bool* Return_Value) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "CanTargetCivilian");
-
-	Params::AIAction_ActiveShooter_TargetNextCivilian_C_CanTargetCivilian Parms{};
-
-	Parms.InCivilian = InCivilian;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Return_Value != nullptr)
-		*Return_Value = Parms.Return_Value;
-}
-
-
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.GatherDebugInfo
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ShouldPerformAction
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class FString UAIAction_ActiveShooter_TargetNextCivilian_C::GatherDebugInfo() const
+bool UAIAction_ActiveShooter_TargetNextCivilian_C::ShouldPerformAction() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "GatherDebugInfo");
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "ShouldPerformAction");
 
-	Params::AIAction_ActiveShooter_TargetNextCivilian_C_GatherDebugInfo Parms{};
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_ShouldPerformAction Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -204,23 +200,47 @@ void UAIAction_ActiveShooter_TargetNextCivilian_C::GetNextClosestAliveCivilian(c
 }
 
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ShouldPerformAction
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.GatherDebugInfo
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
 
-bool UAIAction_ActiveShooter_TargetNextCivilian_C::ShouldPerformAction() const
+class FString UAIAction_ActiveShooter_TargetNextCivilian_C::GatherDebugInfo() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "ShouldPerformAction");
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "GatherDebugInfo");
 
-	Params::AIAction_ActiveShooter_TargetNextCivilian_C_ShouldPerformAction Parms{};
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_GatherDebugInfo Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.CanTargetCivilian
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class ACyberneticCharacter*             InCivilian                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_ActiveShooter_TargetNextCivilian_C::CanTargetCivilian(class ACyberneticCharacter* InCivilian, bool* Return_Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "CanTargetCivilian");
+
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_CanTargetCivilian Parms{};
+
+	Parms.InCivilian = InCivilian;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Return_Value != nullptr)
+		*Return_Value = Parms.Return_Value;
 }
 
 }

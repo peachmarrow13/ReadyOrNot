@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_FallbackToZone.AIAction_FallbackToZone_C.OnCreate_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_FallbackToZone_C_OnCreate_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_FallbackToZone_C_OnCreate_Blueprint;
+
 // Function AIAction_FallbackToZone.AIAction_FallbackToZone_C.ExecuteUbergraph_AIAction_FallbackToZone
 // 0x0028 (0x0028 - 0x0000)
 struct AIAction_FallbackToZone_C_ExecuteUbergraph_AIAction_FallbackToZone final
@@ -27,15 +36,6 @@ public:
 	class UBaseCombatActivity*                    CallFunc_GetCombatActivity_ReturnValue;            // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_FallbackToZone_C_ExecuteUbergraph_AIAction_FallbackToZone;
-
-// Function AIAction_FallbackToZone.AIAction_FallbackToZone_C.OnCreate_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_FallbackToZone_C_OnCreate_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_FallbackToZone_C_OnCreate_Blueprint;
 
 // Function AIAction_FallbackToZone.AIAction_FallbackToZone_C.ShouldPerformAction
 // 0x0030 (0x0030 - 0x0000)

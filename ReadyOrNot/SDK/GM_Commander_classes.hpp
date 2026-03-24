@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_Commander.GM_Commander_C
-// 0x0010 (0x0E90 - 0x0E80)
+// 0x0010 (0x0F00 - 0x0EF0)
 class AGM_Commander_C final : public ACommanderGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0E80(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0EF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

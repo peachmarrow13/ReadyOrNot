@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SceneCapturePlayerCamera.SceneCapturePlayerCamera_C
-// 0x0008 (0x02B8 - 0x02B0)
+// 0x0008 (0x02C0 - 0x02B8)
 class ASceneCapturePlayerCamera_C final : public ASceneCapture2D
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void Stop();
-	void Start();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_SceneCapturePlayerCamera(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void Start();
+	void Stop();
 
 public:
 	static class UClass* StaticClass()

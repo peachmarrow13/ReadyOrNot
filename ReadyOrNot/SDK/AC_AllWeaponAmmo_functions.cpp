@@ -17,30 +17,6 @@
 namespace SDK
 {
 
-// Function AC_AllWeaponAmmo.AC_AllWeaponAmmo_C.GetTotalRemainingAmmoFromAllMags
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class ABaseMagazineWeapon*              Weapon                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// double*                                 Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAC_AllWeaponAmmo_C::GetTotalRemainingAmmoFromAllMags(class ABaseMagazineWeapon* Weapon, double* Return_Value) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_AllWeaponAmmo_C", "GetTotalRemainingAmmoFromAllMags");
-
-	Params::AC_AllWeaponAmmo_C_GetTotalRemainingAmmoFromAllMags Parms{};
-
-	Parms.Weapon = Weapon;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Return_Value != nullptr)
-		*Return_Value = Parms.Return_Value;
-}
-
-
 // Function AC_AllWeaponAmmo.AC_AllWeaponAmmo_C.Score
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -65,6 +41,30 @@ float UAC_AllWeaponAmmo_C::Score(const struct FAIActionDecisionContext& Context,
 		*bSuccess = Parms.bSuccess;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function AC_AllWeaponAmmo.AC_AllWeaponAmmo_C.GetTotalRemainingAmmoFromAllMags
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class ABaseMagazineWeapon*              Weapon                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// double*                                 Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAC_AllWeaponAmmo_C::GetTotalRemainingAmmoFromAllMags(class ABaseMagazineWeapon* Weapon, double* Return_Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_AllWeaponAmmo_C", "GetTotalRemainingAmmoFromAllMags");
+
+	Params::AC_AllWeaponAmmo_C_GetTotalRemainingAmmoFromAllMags Parms{};
+
+	Parms.Weapon = Weapon;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Return_Value != nullptr)
+		*Return_Value = Parms.Return_Value;
 }
 
 }

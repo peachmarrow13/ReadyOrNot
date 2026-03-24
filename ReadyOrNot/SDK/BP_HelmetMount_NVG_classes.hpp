@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_HelmetMount_NVG.BP_HelmetMount_NVG_C
-// 0x0000 (0x22D0 - 0x22D0)
+// 0x0000 (0x2320 - 0x2320)
 class ABP_HelmetMount_NVG_C : public ANightvisionGoggles
 {
 public:

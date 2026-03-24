@@ -37,81 +37,105 @@ void ABP_ReplayController_C::ExecuteUbergraph_BP_ReplayController(int32 EntryPoi
 }
 
 
-// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_0
+// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_IA_Replay_DecreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_2
 // (BlueprintEvent)
 // Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ReplayController_C::InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_0(const struct FKey& Key)
+void ABP_ReplayController_C::InpActEvt_IA_Replay_DecreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_0");
+		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_IA_Replay_DecreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_2");
 
-	Params::BP_ReplayController_C_InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_0 Parms{};
+	Params::BP_ReplayController_C_InpActEvt_IA_Replay_DecreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_2 Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_1
+// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_IA_Replay_IncreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_3
 // (BlueprintEvent)
 // Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ReplayController_C::InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_1(const struct FKey& Key)
+void ABP_ReplayController_C::InpActEvt_IA_Replay_IncreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_1");
+		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_IA_Replay_IncreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_3");
 
-	Params::BP_ReplayController_C_InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_1 Parms{};
+	Params::BP_ReplayController_C_InpActEvt_IA_Replay_IncreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_3 Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_2
+// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_IA_Replay_SkipBackward_K2Node_EnhancedInputActionEvent_0
 // (BlueprintEvent)
 // Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ReplayController_C::InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_2(const struct FKey& Key)
+void ABP_ReplayController_C::InpActEvt_IA_Replay_SkipBackward_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_2");
+		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_IA_Replay_SkipBackward_K2Node_EnhancedInputActionEvent_0");
 
-	Params::BP_ReplayController_C_InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_2 Parms{};
+	Params::BP_ReplayController_C_InpActEvt_IA_Replay_SkipBackward_K2Node_EnhancedInputActionEvent_0 Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_3
+// Function BP_ReplayController.BP_ReplayController_C.InpActEvt_IA_Replay_SkipForward_K2Node_EnhancedInputActionEvent_1
 // (BlueprintEvent)
 // Parameters:
-// const struct FKey&                      Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void ABP_ReplayController_C::InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_3(const struct FKey& Key)
+void ABP_ReplayController_C::InpActEvt_IA_Replay_SkipForward_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_3");
+		Func = Class->GetFunction("BP_ReplayController_C", "InpActEvt_IA_Replay_SkipForward_K2Node_EnhancedInputActionEvent_1");
 
-	Params::BP_ReplayController_C_InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_3 Parms{};
+	Params::BP_ReplayController_C_InpActEvt_IA_Replay_SkipForward_K2Node_EnhancedInputActionEvent_1 Parms{};
 
-	Parms.Key = std::move(Key);
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

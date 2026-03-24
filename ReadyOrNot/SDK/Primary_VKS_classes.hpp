@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_VKS.Primary_VKS_C
-// 0x0000 (0x18E0 - 0x18E0)
+// 0x0000 (0x19C0 - 0x19C0)
 class APrimary_VKS_C final : public APepperballGun
 {
 public:

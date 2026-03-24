@@ -17,23 +17,21 @@
 namespace SDK
 {
 
-// Function Faction_USVeterans.Faction_USVeterans_C.AlertOtherSuspectsInTeam_Blueprint
+// Function Faction_USVeterans.Faction_USVeterans_C.OnAIAdded_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ASuspectCharacter*                suspect                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AReadyOrNotCharacter*             Enemy                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ACyberneticCharacter*             Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void AFaction_USVeterans_C::AlertOtherSuspectsInTeam_Blueprint(class ASuspectCharacter* suspect, class AReadyOrNotCharacter* Enemy)
+void AFaction_USVeterans_C::OnAIAdded_Blueprint(class ACyberneticCharacter* Character)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Faction_USVeterans_C", "AlertOtherSuspectsInTeam_Blueprint");
+		Func = Class->GetFunction("Faction_USVeterans_C", "OnAIAdded_Blueprint");
 
-	Params::Faction_USVeterans_C_AlertOtherSuspectsInTeam_Blueprint Parms{};
+	Params::Faction_USVeterans_C_OnAIAdded_Blueprint Parms{};
 
-	Parms.suspect = suspect;
-	Parms.Enemy = Enemy;
+	Parms.Character = Character;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -59,21 +57,23 @@ void AFaction_USVeterans_C::ExecuteUbergraph_Faction_USVeterans(int32 EntryPoint
 }
 
 
-// Function Faction_USVeterans.Faction_USVeterans_C.OnAIAdded_Blueprint
+// Function Faction_USVeterans.Faction_USVeterans_C.AlertOtherSuspectsInTeam_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ACyberneticCharacter*             Character                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class ASuspectCharacter*                suspect                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AReadyOrNotCharacter*             Enemy                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void AFaction_USVeterans_C::OnAIAdded_Blueprint(class ACyberneticCharacter* Character)
+void AFaction_USVeterans_C::AlertOtherSuspectsInTeam_Blueprint(class ASuspectCharacter* suspect, class AReadyOrNotCharacter* Enemy)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Faction_USVeterans_C", "OnAIAdded_Blueprint");
+		Func = Class->GetFunction("Faction_USVeterans_C", "AlertOtherSuspectsInTeam_Blueprint");
 
-	Params::Faction_USVeterans_C_OnAIAdded_Blueprint Parms{};
+	Params::Faction_USVeterans_C_AlertOtherSuspectsInTeam_Blueprint Parms{};
 
-	Parms.Character = Character;
+	Parms.suspect = suspect;
+	Parms.Enemy = Enemy;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

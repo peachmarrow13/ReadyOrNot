@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MenuController.BP_MenuController_C
-// 0x0018 (0x0D40 - 0x0D28)
+// 0x0018 (0x0D58 - 0x0D40)
 class ABP_MenuController_C final : public AReadyOrNotPlayerController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0D28(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UObject*                                UI_PartyPanel;                                     // 0x0D30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UUserWidget*                            ReplaySystemWidget;                                // 0x0D38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0D40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UObject*                                UI_PartyPanel;                                     // 0x0D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UUserWidget*                            ReplaySystemWidget;                                // 0x0D50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_MenuController(int32 EntryPoint);

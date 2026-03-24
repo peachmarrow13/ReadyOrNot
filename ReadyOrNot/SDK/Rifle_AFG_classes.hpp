@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_AFG.Rifle_AFG_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class URifle_AFG_C final : public UWeaponAttachment
 {
 public:

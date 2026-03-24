@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_MP7.Primary_MP7_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class APrimary_MP7_C final : public ABaseMagazineWeapon
 {
 public:

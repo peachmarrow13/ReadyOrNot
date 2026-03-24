@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Scope_M5B.BP_Scope_M5B_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UBP_Scope_M5B_C final : public UScopedWeaponAttachment
 {
 public:

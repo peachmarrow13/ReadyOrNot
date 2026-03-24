@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_FireAtDoor.AIAction_FireAtDoor_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_FireAtDoor_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_FireAtDoor_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIAction_FireAtDoor.AIAction_FireAtDoor_C.ExecuteUbergraph_AIAction_FireAtDoor
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void UAIAction_FireAtDoor_C::ExecuteUbergraph_AIAction_FireAtDoor(int32 EntryPoi
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_FireAtDoor.AIAction_FireAtDoor_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_FireAtDoor_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_FireAtDoor_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

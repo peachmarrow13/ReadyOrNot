@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_Lobby.GS_Lobby_C
-// 0x0000 (0x0950 - 0x0950)
+// 0x0000 (0x0980 - 0x0980)
 class AGS_Lobby_C final : public ALobbyGS
 {
 public:

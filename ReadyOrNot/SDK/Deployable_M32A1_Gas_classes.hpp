@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Deployable_M32A1_Gas.Deployable_M32A1_Gas_C
-// 0x0000 (0x1C10 - 0x1C10)
+// 0x0000 (0x1CF0 - 0x1CF0)
 class ADeployable_M32A1_Gas_C final : public AGrenadeLauncher
 {
 public:

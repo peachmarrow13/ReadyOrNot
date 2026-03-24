@@ -17,42 +17,19 @@
 namespace SDK
 {
 
-// Function AG_IsClosestActortoSWAT.AG_IsClosestActortoSWAT_C.CanOpen
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UAG_IsClosestActortoSWAT_C::CanOpen(const struct FAIActionDecisionContext& Context) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AG_IsClosestActortoSWAT_C", "CanOpen");
-
-	Params::AG_IsClosestActortoSWAT_C_CanOpen Parms{};
-
-	Parms.Context = std::move(Context);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AG_IsClosestActortoSWAT.AG_IsClosestActortoSWAT_C.Get Actors
+// Function AG_IsClosestActortoSWAT.AG_IsClosestActortoSWAT_C.Get SWAT
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // TArray<class AReadyOrNotCharacter*>*    ArrayOutput                                            (Parm, OutParm)
 
-void UAG_IsClosestActortoSWAT_C::Get_Actors(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const
+void UAG_IsClosestActortoSWAT_C::Get_SWAT(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AG_IsClosestActortoSWAT_C", "Get Actors");
+		Func = Class->GetFunction("AG_IsClosestActortoSWAT_C", "Get SWAT");
 
-	Params::AG_IsClosestActortoSWAT_C_Get_Actors Parms{};
+	Params::AG_IsClosestActortoSWAT_C_Get_SWAT Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -85,24 +62,47 @@ void UAG_IsClosestActortoSWAT_C::Get_Nearest(const struct FVector& Location, cla
 }
 
 
-// Function AG_IsClosestActortoSWAT.AG_IsClosestActortoSWAT_C.Get SWAT
+// Function AG_IsClosestActortoSWAT.AG_IsClosestActortoSWAT_C.Get Actors
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // TArray<class AReadyOrNotCharacter*>*    ArrayOutput                                            (Parm, OutParm)
 
-void UAG_IsClosestActortoSWAT_C::Get_SWAT(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const
+void UAG_IsClosestActortoSWAT_C::Get_Actors(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AG_IsClosestActortoSWAT_C", "Get SWAT");
+		Func = Class->GetFunction("AG_IsClosestActortoSWAT_C", "Get Actors");
 
-	Params::AG_IsClosestActortoSWAT_C_Get_SWAT Parms{};
+	Params::AG_IsClosestActortoSWAT_C_Get_Actors Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	if (ArrayOutput != nullptr)
 		*ArrayOutput = std::move(Parms.ArrayOutput);
+}
+
+
+// Function AG_IsClosestActortoSWAT.AG_IsClosestActortoSWAT_C.CanOpen
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UAG_IsClosestActortoSWAT_C::CanOpen(const struct FAIActionDecisionContext& Context) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AG_IsClosestActortoSWAT_C", "CanOpen");
+
+	Params::AG_IsClosestActortoSWAT_C_CanOpen Parms{};
+
+	Parms.Context = std::move(Context);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
 
 
 namespace SDK
@@ -105,7 +105,7 @@ public:
 	void CreateEntryPoints(const struct FLevelDataLookupTable& LevelDataLookupTable, const TDelegate<void(class UW_PreMission_Tablet_EntryPoint_C* Clicked)>& OnEntryPointSelected);
 	void CreateMapLevelCanvas(int32 Index_0, const struct FLevelFloor& LevelData);
 	void DrawLine(int32 ID, const struct FPlanningLine& LineData);
-	void DrawMarker(const int32& MarkerID, const struct FPlanningMarker& MarkerData);
+	void DrawMarker(const int32& markerId, const struct FPlanningMarker& MarkerData);
 	void EndMarkerRotation(class UW_PreMission_Tablet_MapMarker_C* TriggeringMarker);
 	void EraseLine(int32 ID);
 	void ExecuteUbergraph_W_PreMission_PlanningMap(int32 EntryPoint);
@@ -124,7 +124,7 @@ public:
 	void LineDrawn(const int32 LineID, const class UCanvasPanel* LineCanvas);
 	void LineStartNodeRightClicked(class UW_OfficerMarker_C* OfficerMarker);
 	void LineStartNodeSelected(class UW_OfficerMarker_C* OfficerMarker);
-	void MapMarkerDrawn(const int32 MarkerID, const class UW_PreMission_Tablet_MapMarker_C* Marker);
+	void MapMarkerDrawn(const int32 markerId, const class UW_PreMission_Tablet_MapMarker_C* Marker);
 	void MarkerRotated(class UW_PreMission_Tablet_MapMarker_C* TriggeringMarker, int32 Floor, double Rotation);
 	void MissionChanged(const class FString& MissionURL, const struct FLevelDataLookupTable& LevelData);
 	void MissionSetup(const class FString& URL, const struct FLevelDataLookupTable& LevelData);

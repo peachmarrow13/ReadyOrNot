@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
 #include "EJoystickTypes_structs.hpp"
 
 
@@ -21,25 +21,25 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseController.BP_BaseController_C
-// 0x0058 (0x0D80 - 0x0D28)
+// 0x0058 (0x0D98 - 0x0D40)
 class ABP_BaseController_C final : public AReadyOrNotPlayerController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0D28(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UW_PauseMenu_C*                         EscapeMenuRef;                                     // 0x0D30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          EscapeMenuOpen;                                    // 0x0D38(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EFreeDrawColor                                CurrentFreeDrawColor;                              // 0x0D39(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          MouseButtonDown;                                   // 0x0D3A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D3B[0x5];                                      // 0x0D3B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Slomo;                                             // 0x0D40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  LastPawn;                                          // 0x0D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          bFreeCamera;                                       // 0x0D50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D51[0x7];                                      // 0x0D51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UUserWidget*                            ReplaySystemWidget;                                // 0x0D58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  PawnBeforePremissionPlanning;                      // 0x0D60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UW_COOPScorePopUp_C*                    Pop_UpWidget;                                      // 0x0D68(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_VotePopUp_C*                         VoteWidget;                                        // 0x0D70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_VotePopUp_gamepad_C*                 VoteWidget_Gamepad;                                // 0x0D78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0D40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UW_PauseMenu_C*                         EscapeMenuRef;                                     // 0x0D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          EscapeMenuOpen;                                    // 0x0D50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EFreeDrawColor                                CurrentFreeDrawColor;                              // 0x0D51(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          MouseButtonDown;                                   // 0x0D52(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D53[0x5];                                      // 0x0D53(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Slomo;                                             // 0x0D58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  LastPawn;                                          // 0x0D60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          bFreeCamera;                                       // 0x0D68(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D69[0x7];                                      // 0x0D69(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            ReplaySystemWidget;                                // 0x0D70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  PawnBeforePremissionPlanning;                      // 0x0D78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UW_COOPScorePopUp_C*                    Pop_UpWidget;                                      // 0x0D80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_VotePopUp_C*                         VoteWidget;                                        // 0x0D88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_VotePopUp_gamepad_C*                 VoteWidget_Gamepad;                                // 0x0D90(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AcknowledgeVote(const struct FVoteData& CurrentVoteData);

@@ -16,13 +16,6 @@
 namespace SDK
 {
 
-// ScriptStruct ANIMBP_Taser.ANIMBP_Taser_C.AnimBlueprintGeneratedMutableData
-// 0x0000 (0x0001 - 0x0001)
-struct ANIMBP_Taser::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-};
-DUMPER7_ASSERTS_ANIMBP_Taser__FAnimBlueprintGeneratedMutableData;
-
 // ScriptStruct ANIMBP_Taser.ANIMBP_Taser_C.AnimBlueprintGeneratedConstantData
 // 0x0107 (0x0108 - 0x0001)
 struct ANIMBP_Taser::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -45,6 +38,13 @@ public:
 	struct FAnimSubsystem_Base                    AnimBlueprintExtension_Base;                       // 0x00F0(0x0018)()
 };
 DUMPER7_ASSERTS_ANIMBP_Taser__FAnimBlueprintGeneratedConstantData;
+
+// ScriptStruct ANIMBP_Taser.ANIMBP_Taser_C.AnimBlueprintGeneratedMutableData
+// 0x0000 (0x0001 - 0x0001)
+struct ANIMBP_Taser::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+};
+DUMPER7_ASSERTS_ANIMBP_Taser__FAnimBlueprintGeneratedMutableData;
 
 }
 

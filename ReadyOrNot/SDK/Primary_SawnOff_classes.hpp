@@ -19,14 +19,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_SawnOff.Primary_SawnOff_C
-// 0x0020 (0x1940 - 0x1920)
+// 0x0020 (0x1A30 - 0x1A10)
 class APrimary_SawnOff_C final : public AShotgun
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1920(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UPointLightComponent*                   PointLight;                                        // 0x1928(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USpotLightComponent*                    PointLight1;                                       // 0x1930(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAnimMontage*                           LightToggle1P;                                     // 0x1938(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1A10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UPointLightComponent*                   PointLight;                                        // 0x1A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USpotLightComponent*                    PointLight1;                                       // 0x1A20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           LightToggle1P;                                     // 0x1A28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Primary_SawnOff(int32 EntryPoint);

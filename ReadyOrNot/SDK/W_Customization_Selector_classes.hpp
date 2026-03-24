@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
+#include "CommonUI_classes.hpp"
 
 
 namespace SDK

@@ -24,10 +24,10 @@ public:
 	bool                                          ExcludeCivilians;                                  // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool CanOpen(const struct FAIActionDecisionContext& Context) const;
-	void Get_Actors(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const;
-	void Get_Nearest(const struct FVector& Location, class AActor** Nearest) const;
 	void Get_SWAT(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const;
+	void Get_Nearest(const struct FVector& Location, class AActor** Nearest) const;
+	void Get_Actors(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const;
+	bool CanOpen(const struct FAIActionDecisionContext& Context) const;
 
 public:
 	static class UClass* StaticClass()

@@ -80,11 +80,11 @@ public:
 DUMPER7_ASSERTS_UPaperFlipbook;
 
 // Class Paper2D.PaperFlipbookActor
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class APaperFlipbookActor final : public AActor
 {
 public:
-	class UPaperFlipbookComponent*                RenderComponent;                                   // 0x0298(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperFlipbookComponent*                RenderComponent;                                   // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -164,11 +164,11 @@ public:
 DUMPER7_ASSERTS_UPaperFlipbookComponent;
 
 // Class Paper2D.PaperGroupedSpriteActor
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class APaperGroupedSpriteActor final : public AActor
 {
 public:
-	class UPaperGroupedSpriteComponent*           RenderComponent;                                   // 0x0298(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperGroupedSpriteComponent*           RenderComponent;                                   // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -286,11 +286,11 @@ public:
 DUMPER7_ASSERTS_UPaperSprite;
 
 // Class Paper2D.PaperSpriteActor
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class APaperSpriteActor final : public AActor
 {
 public:
-	class UPaperSpriteComponent*                  RenderComponent;                                   // 0x0298(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperSpriteComponent*                  RenderComponent;                                   // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -464,11 +464,11 @@ public:
 DUMPER7_ASSERTS_UPaperTileMap;
 
 // Class Paper2D.PaperTileMapActor
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class APaperTileMapActor final : public AActor
 {
 public:
-	class UPaperTileMapComponent*                 RenderComponent;                                   // 0x0298(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperTileMapComponent*                 RenderComponent;                                   // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -608,13 +608,13 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionSpriteTextureSampler;
 
 // Class Paper2D.PaperTerrainActor
-// 0x0018 (0x02B0 - 0x0298)
+// 0x0018 (0x02B8 - 0x02A0)
 class APaperTerrainActor final : public AActor
 {
 public:
-	class USceneComponent*                        DummyRoot;                                         // 0x0298(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UPaperTerrainSplineComponent*           SplineComponent;                                   // 0x02A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UPaperTerrainComponent*                 RenderComponent;                                   // 0x02A8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class USceneComponent*                        DummyRoot;                                         // 0x02A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperTerrainSplineComponent*           SplineComponent;                                   // 0x02A8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UPaperTerrainComponent*                 RenderComponent;                                   // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

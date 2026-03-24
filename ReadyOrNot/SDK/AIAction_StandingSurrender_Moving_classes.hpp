@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -29,16 +29,16 @@ public:
 	bool                                          bUseOtherVoiceLine;                                // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void EndAction_Blueprint();
-	void ExecuteUbergraph_AIAction_StandingSurrender_Moving(int32 EntryPoint);
-	void GetComplianceVoiceOver(bool bUseAlternate, class FString* NewParam);
-	void InitAction_Blueprint(class ACyberneticController* Controller);
-	void PlayComplianceVO();
 	void Tick_Blueprint(float DeltaTime);
+	void PlayComplianceVO();
+	void InitAction_Blueprint(class ACyberneticController* Controller);
+	void GetComplianceVoiceOver(bool bUseAlternate, class FString* NewParam);
+	void ExecuteUbergraph_AIAction_StandingSurrender_Moving(int32 EntryPoint);
+	void EndAction_Blueprint();
+	void BeginAction_Blueprint();
 
-	class FName GetMoveStyleOverride() const;
 	bool ShouldPerformAction() const;
+	class FName GetMoveStyleOverride() const;
 
 public:
 	static class UClass* StaticClass()

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -151,6 +151,7 @@ public:
 	void Construct();
 	void CreateFooterEntryMap(TMap<class FString, struct FScreenFooterEntry>* Map);
 	void CycleActorChanged();
+	void Decrease_Playback_Speed();
 	void ExecuteUbergraph_W_ReplayControls(int32 EntryPoint);
 	void FocalLength_to_FOV(double FocalLength, double* FOV);
 	void FOV_to_FocalLength(double FOV2, double* FocalLength2);
@@ -169,13 +170,15 @@ public:
 	ESlateVisibility GetVisibility_1();
 	void Hide(double Delay, bool Collapse);
 	void HideLabelText();
+	void Increase_Playback_Speed();
 	void InitializeDefaults();
 	void InitializeFooter();
-	void InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
-	void InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_Pause_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void InputMethodChanged(ECommonInputType bNewInputType);
 	void NextActor();
 	struct FEventReply OnKeyDown(const struct FGeometry& MyGeometry, const struct FKeyEvent& InKeyEvent);

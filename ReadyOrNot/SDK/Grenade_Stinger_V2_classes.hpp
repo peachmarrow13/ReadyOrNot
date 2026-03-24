@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Grenade_Stinger_V2.Grenade_Stinger_V2_C
-// 0x0000 (0x1270 - 0x1270)
+// 0x0000 (0x12D0 - 0x12D0)
 class AGrenade_Stinger_V2_C final : public ABaseGrenade
 {
 public:

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "MovieRenderPipelineRenderPasses_structs.hpp"
 #include "MovieRenderPipelineCore_classes.hpp"
+#include "MovieRenderPipelineRenderPasses_structs.hpp"
 #include "ActorLayerUtilities_structs.hpp"
 #include "CoreUObject_structs.hpp"
 

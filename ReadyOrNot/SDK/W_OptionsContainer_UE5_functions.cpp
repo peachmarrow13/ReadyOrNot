@@ -71,6 +71,48 @@ void UW_OptionsContainer_UE5_C::ExecuteUbergraph_W_OptionsContainer_UE5(int32 En
 }
 
 
+// Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.OnMouseEnter
+// (BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FGeometry&                 MyGeometry                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UW_OptionsContainer_UE5_C::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_OptionsContainer_UE5_C", "OnMouseEnter");
+
+	Params::W_OptionsContainer_UE5_C_OnMouseEnter Parms{};
+
+	Parms.MyGeometry = std::move(MyGeometry);
+	Parms.MouseEvent = std::move(MouseEvent);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.OnMouseLeave
+// (BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FPointerEvent&             MouseEvent                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UW_OptionsContainer_UE5_C::OnMouseLeave(const struct FPointerEvent& MouseEvent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_OptionsContainer_UE5_C", "OnMouseLeave");
+
+	Params::W_OptionsContainer_UE5_C_OnMouseLeave Parms{};
+
+	Parms.MouseEvent = std::move(MouseEvent);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_OptionsContainer_UE5.W_OptionsContainer_UE5_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:

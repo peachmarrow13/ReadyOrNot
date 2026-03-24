@@ -17,15 +17,15 @@
 namespace SDK
 {
 
-// Function BP_CTF_Flag.BP_CTF_Flag_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_CTF_Flag.BP_CTF_Flag_C.CustomEvent_0
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_CTF_Flag_C::ReceiveBeginPlay()
+void ABP_CTF_Flag_C::CustomEvent_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CTF_Flag_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_CTF_Flag_C", "CustomEvent_0");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,15 +51,15 @@ void ABP_CTF_Flag_C::ExecuteUbergraph_BP_CTF_Flag(int32 EntryPoint)
 }
 
 
-// Function BP_CTF_Flag.BP_CTF_Flag_C.CustomEvent_0
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_CTF_Flag.BP_CTF_Flag_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_CTF_Flag_C::CustomEvent_0()
+void ABP_CTF_Flag_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CTF_Flag_C", "CustomEvent_0");
+		Func = Class->GetFunction("BP_CTF_Flag_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

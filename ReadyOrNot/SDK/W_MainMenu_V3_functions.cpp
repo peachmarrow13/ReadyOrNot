@@ -541,26 +541,6 @@ bool UW_MainMenu_V3_C::BP_OnHandleBackAction()
 }
 
 
-// Function W_MainMenu_V3.W_MainMenu_V3_C.Cancel
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UStandardModal*                   CallingModal                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void UW_MainMenu_V3_C::Cancel(class UStandardModal* CallingModal)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MainMenu_V3_C", "Cancel");
-
-	Params::W_MainMenu_V3_C_Cancel Parms{};
-
-	Parms.CallingModal = CallingModal;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_MainMenu_V3.W_MainMenu_V3_C.Cancel Restart
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1109,28 +1089,6 @@ void UW_MainMenu_V3_C::JoinLobbyLinkAccount(bool InWasSuccessful, const struct F
 }
 
 
-// Function W_MainMenu_V3.W_MainMenu_V3_C.No
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UW_StandardModal_C*               CallingModal                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// const class FText&                      TextEntry                                              (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UW_MainMenu_V3_C::No(class UW_StandardModal_C* CallingModal, const class FText& TextEntry)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MainMenu_V3_C", "No");
-
-	Params::W_MainMenu_V3_C_No Parms{};
-
-	Parms.CallingModal = CallingModal;
-	Parms.TextEntry = std::move(TextEntry);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_MainMenu_V3.W_MainMenu_V3_C.No Crossplay
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1561,28 +1519,6 @@ void UW_MainMenu_V3_C::UpdateStreamingInstallDependentButtons(bool bEnableButton
 	Params::W_MainMenu_V3_C_UpdateStreamingInstallDependentButtons Parms{};
 
 	Parms.bEnableButtons = bEnableButtons;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_MainMenu_V3.W_MainMenu_V3_C.Yes
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UW_StandardModal_C*               CallingModal                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-// const class FText&                      TextEntry                                              (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UW_MainMenu_V3_C::Yes(class UW_StandardModal_C* CallingModal, const class FText& TextEntry)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MainMenu_V3_C", "Yes");
-
-	Params::W_MainMenu_V3_C_Yes Parms{};
-
-	Parms.CallingModal = CallingModal;
-	Parms.TextEntry = std::move(TextEntry);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "UMG_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_HumanCharacter_HUD_V2.W_HumanCharacter_HUD_V2_C
-// 0x0390 (0x0920 - 0x0590)
+// 0x03A0 (0x0930 - 0x0590)
 class UW_HumanCharacter_HUD_V2_C final : public UHumanCharacterHUD_V2
 {
 public:
@@ -73,32 +73,35 @@ public:
 	class UW_RoundupWidget_C*                     RoundupWidget;                                     // 0x06F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_SWATTeamStatus_V2_C*                 SWATTeamStatus_V2;                                 // 0x06F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_SWATTeamStatus_V2_C*                 SWATTeamStatus_V2_Gamepad;                         // 0x0700(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_TutorialMessagePopup_C*              TutorialMessagePopup;                              // 0x0708(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Tutorial_C*                          TutorialPopup;                                     // 0x0710(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class URichTextBlock*                         ViewTabletHint_Text;                               // 0x0718(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Compass_Tape_C*                      W_Compass_Tape;                                    // 0x0720(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Compass_Rotating_C*                  W_Compass_V3_1;                                    // 0x0728(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Compass_Rotating_C*                  W_Compass_V3_Gamepad;                              // 0x0730(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_DamagePaperdoll_C*                   W_DamagePaperdoll;                                 // 0x0738(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_VotePopUp_gamepad_C*                 W_VotePopUp_gamepad;                               // 0x0740(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	uint8                                         Pad_748[0x8];                                      // 0x0748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            DoorCommandBrush;                                  // 0x0750(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                            HumanCommandBrush;                                 // 0x0820(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UW_TutorialOverviewText_C*              TutorialOverview;                                  // 0x08F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          bDelegatesInitialized;                             // 0x08F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8F9[0x7];                                      // 0x08F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTimerHandle                           TH_UpdateItemPanel;                                // 0x0900(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsGamepad;                                         // 0x0908(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EUMGSequencePlayMode                          PlayModeIn;                                        // 0x0909(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_90A[0x6];                                      // 0x090A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        currAnimationTime;                                 // 0x0910(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ForceGamepad;                                      // 0x0918(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bShowHUD;                                          // 0x0919(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UVerticalBox*                           ToastBox;                                          // 0x0708(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_TutorialMessagePopup_C*              TutorialMessagePopup;                              // 0x0710(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Tutorial_C*                          TutorialPopup;                                     // 0x0718(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class URichTextBlock*                         ViewTabletHint_Text;                               // 0x0720(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Compass_Tape_C*                      W_Compass_Tape;                                    // 0x0728(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Compass_Rotating_C*                  W_Compass_V3_1;                                    // 0x0730(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_Compass_Rotating_C*                  W_Compass_V3_Gamepad;                              // 0x0738(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_DamagePaperdoll_C*                   W_DamagePaperdoll;                                 // 0x0740(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_VariableZoom_C*                      W_VariableZoom;                                    // 0x0748(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_VotePopUp_gamepad_C*                 W_VotePopUp_gamepad;                               // 0x0750(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	uint8                                         Pad_758[0x8];                                      // 0x0758(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            DoorCommandBrush;                                  // 0x0760(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            HumanCommandBrush;                                 // 0x0830(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UW_TutorialOverviewText_C*              TutorialOverview;                                  // 0x0900(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          bDelegatesInitialized;                             // 0x0908(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_909[0x7];                                      // 0x0909(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           TH_UpdateItemPanel;                                // 0x0910(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsGamepad;                                         // 0x0918(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EUMGSequencePlayMode                          PlayModeIn;                                        // 0x0919(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_91A[0x6];                                      // 0x091A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        currAnimationTime;                                 // 0x0920(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ForceGamepad;                                      // 0x0928(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bShowHUD;                                          // 0x0929(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	class UMapActorWidget* AddMapActor(class UMapActorComponent* MapActorComponent, TSubclassOf<class UMapActorWidget> MapActorIconWidgetClass, const struct FSlateBrush& IconBrush, const struct FLinearColor& IconColor, const struct FLinearColor& IconTextColor, float RotationOffset);
 	void AddObjectivePopup(const class FText& PopupText);
 	void AddScorePopup(const class FText& ScoreText, int32 ScoreValue, bool bGive);
+	void AddToast(const class FString& Message);
 	void ChatPressed();
 	void Construct();
 	void CustomEvent_0(const class FText& InText, bool ClearText, bool bAnimate, bool bLoopAnimation);
@@ -115,7 +118,9 @@ public:
 	ESlateVisibility Get_CommandReticle_Image_Visibility();
 	ESlateVisibility Get_PlayerActions_Box_Visibility();
 	void GetCommandContextContainerVariant(class UVerticalBox** NewParam);
+	void GetConsoleInputGlyph(const class FText& InKey, class FText* OutKey);
 	class UTutorialWidget* GetTutorialWidget();
+	void GetWeaponFromItem(class ABaseItem* BaseItem, class ABaseWeapon** BaseWeapon);
 	void HideTablet();
 	void HideTutorialPrompt(const class FString& MessageID);
 	void InitalizeDelegateEvents();
@@ -123,7 +128,10 @@ public:
 	void InputMethodChanged(ECommonInputType bNewInputType);
 	void LocalReadyStateChanged(bool bReady);
 	void NextTabletMenu();
+	void On_Canted_Sight(bool bUsingCantedSight);
+	void On_Secondary_Sight(bool bUsingSecondarySight, class ABaseMagazineWeapon* Weapon);
 	void OnActivate();
+	void OnADS_Event(bool bIsInADS);
 	void OnCharacterTakeDamage_Event_0(class AReadyOrNotCharacter* InstigatorCharacter, class AReadyOrNotCharacter* DamagedCharacter, class AActor* DamageCauser, float Damage, float HealthRemaining);
 	void OnExitSettingsMenu();
 	void OnInitialized();
@@ -132,14 +140,17 @@ public:
 	void OnItemGroupSelection_ItemChanged_Event_0(int32 GroupIndex, int32 CategoryIndex);
 	void OnItemGroupSelection_Pressed_Event_0(int32 GroupIndex, int32 CategoryIndex);
 	void OnItemGroupSelection_Released_Event_0(int32 GroupIndex, int32 CategoryIndex);
+	void OnLowReady();
 	void OnMenuOpened_Event_0();
 	void OnMissionSelected();
 	void OnTabletNotificationEvent();
 	void OnTabletOpen();
 	void OnTeamViewSet_Event_0(class AReadyOrNotCharacter* NewViewCharacter);
+	void OnWeaponAttachmentsChanged();
 	void OnWeaponFireModeChanged(EFireMode newFireMode);
 	void OnWeaponFireModeChanged_Event_0(class APlayerCharacter* PlayerCharacter_0, EFireMode newFireMode, EFireMode LastFireMode);
 	void OnWeaponMagCheck_Event_0(class ABaseMagazineWeapon* MagazineWeapon);
+	void OnWeaponZoomCommitted_Event(EWeaponAttachmentState State);
 	void PreviousTabletMenu();
 	void Re_Initialize_Item_Selection_Menu();
 	void ReadiedPlayersChanged();
@@ -147,6 +158,7 @@ public:
 	void ReflectHUDSettings();
 	void RemoveMapActor(class UMapActorComponent* MapActorComponent);
 	void SetMissionCountdownTime(float Time);
+	void SetupLeanBinds();
 	void ShowFireModes(class ABaseWeapon* Weapon);
 	void ShowMagCheck(class ABaseMagazineWeapon* Weapon);
 	void ShowTablet();

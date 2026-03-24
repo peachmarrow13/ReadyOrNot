@@ -20,14 +20,14 @@ namespace SDK
 {
 
 // Class DynamicCoverSystem.CoverGenOverrideVolume
-// 0x0050 (0x0320 - 0x02D0)
+// 0x0050 (0x0328 - 0x02D8)
 class ACoverGenOverrideVolume final : public AVolume
 {
 public:
-	struct FCoverGenSettings                      CoverGenSettings;                                  // 0x02D0(0x0030)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         NumCoverPoints;                                    // 0x0300(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CoverGenTime;                                      // 0x0304(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_308[0x18];                                     // 0x0308(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FCoverGenSettings                      CoverGenSettings;                                  // 0x02D8(0x0030)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         NumCoverPoints;                                    // 0x0308(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CoverGenTime;                                      // 0x030C(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_310[0x18];                                     // 0x0310(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void GenerateCoverPoints();
@@ -49,21 +49,21 @@ public:
 DUMPER7_ASSERTS_ACoverGenOverrideVolume;
 
 // Class DynamicCoverSystem.CoverPoint
-// 0x00D0 (0x0368 - 0x0298)
+// 0x00D0 (0x0370 - 0x02A0)
 class ACoverPoint final : public AActor
 {
 public:
-	class USceneComponent*                        SceneComponent;                                    // 0x0298(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TWeakObjectPtr<class AActor>                  CoverActor;                                        // 0x02A0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCoverRail                             CoverRail;                                         // 0x02A8(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NativeAccessSpecifierPublic)
-	struct FCoverDirection                        StandCoverDirection;                               // 0x0300(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	struct FCoverDirection                        CrouchCoverDirection;                              // 0x0330(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0360(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bIsCrouchOnlyCover : 1;                            // 0x0364(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         bOverrideCoverType : 1;                            // 0x0364(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	EStandCoverType                               StandCoverType;                                    // 0x0365(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ECrouchCoverType                              CrouchCoverType;                                   // 0x0366(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_367[0x1];                                      // 0x0367(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USceneComponent*                        SceneComponent;                                    // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AActor>                  CoverActor;                                        // 0x02A8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCoverRail                             CoverRail;                                         // 0x02B0(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NativeAccessSpecifierPublic)
+	struct FCoverDirection                        StandCoverDirection;                               // 0x0308(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	struct FCoverDirection                        CrouchCoverDirection;                              // 0x0338(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0368(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bIsCrouchOnlyCover : 1;                            // 0x036C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bOverrideCoverType : 1;                            // 0x036C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	EStandCoverType                               StandCoverType;                                    // 0x036D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ECrouchCoverType                              CrouchCoverType;                                   // 0x036E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_36F[0x1];                                      // 0x036F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void PreviewCoverAnim();
@@ -118,18 +118,18 @@ public:
 DUMPER7_ASSERTS_UCoverSystem;
 
 // Class DynamicCoverSystem.NotifyingRecastNavMesh
-// 0x00D8 (0x06A0 - 0x05C8)
+// 0x00D8 (0x06A8 - 0x05D0)
 class ANotifyingRecastNavMesh : public ARecastNavMesh
 {
 public:
-	int32                                         NumCoverPoints;                                    // 0x05C8(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CoverGenTimeMs;                                    // 0x05CC(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FCoverGenSettings                      CoverGenSettings;                                  // 0x05D0(0x0030)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         MinDistanceBetweenCoverPoints;                     // 0x0600(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_604[0x4];                                      // 0x0604(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<EPhysicalSurface>                      IgnoredPhysicalSurfacesForGeoTest;                 // 0x0608(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<EPhysicalSurface>                      IgnoredPhysicalSurfacesForEdgeTests;               // 0x0618(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_628[0x78];                                     // 0x0628(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         NumCoverPoints;                                    // 0x05D0(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CoverGenTimeMs;                                    // 0x05D4(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FCoverGenSettings                      CoverGenSettings;                                  // 0x05D8(0x0030)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         MinDistanceBetweenCoverPoints;                     // 0x0608(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_60C[0x4];                                      // 0x060C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EPhysicalSurface>                      IgnoredPhysicalSurfacesForGeoTest;                 // 0x0610(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<EPhysicalSurface>                      IgnoredPhysicalSurfacesForEdgeTests;               // 0x0620(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_630[0x78];                                     // 0x0630(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void DeleteAllCoverPoints();

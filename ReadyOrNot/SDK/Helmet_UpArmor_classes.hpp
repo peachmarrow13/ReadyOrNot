@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Helmet_UpArmor.Helmet_UpArmor_C
-// 0x0010 (0x1BA0 - 0x1B90)
+// 0x0010 (0x1BF0 - 0x1BE0)
 class AHelmet_UpArmor_C final : public AHeadwear
 {
 public:
-	uint8                                         Pad_1B88[0x8];                                     // 0x1B88(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1B90(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class APlayerState*                           PlayerState;                                       // 0x1B98(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1BD8[0x8];                                     // 0x1BD8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1BE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class APlayerState*                           PlayerState;                                       // 0x1BE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Helmet_UpArmor(int32 EntryPoint);

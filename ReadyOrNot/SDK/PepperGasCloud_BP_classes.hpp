@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PepperGasCloud_BP.PepperGasCloud_BP_C
-// 0x0000 (0x02B8 - 0x02B8)
+// 0x0000 (0x02C0 - 0x02C0)
 class APepperGasCloud_BP_C final : public APepperGasCloud
 {
 public:

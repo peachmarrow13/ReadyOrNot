@@ -21,14 +21,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_GameInstance.BP_GameInstance_C
-// 0x0078 (0x0EC8 - 0x0E50)
+// 0x0088 (0x0F98 - 0x0F10)
 class UBP_GameInstance_C final : public UReadyOrNotGameInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0E50(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	TArray<class FString>                         StreamedLevels;                                    // 0x0E58(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FString                                 ModeURL;                                           // 0x0E68(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FSGraphicPreset                        SteamDeckPreset;                                   // 0x0E78(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0F10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	TArray<class FString>                         StreamedLevels;                                    // 0x0F18(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FString                                 ModeURL;                                           // 0x0F28(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSGraphicPreset                        SteamDeckPreset;                                   // 0x0F38(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSGraphicPreset>                GraphicsPresets;                                   // 0x0F88(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void AddPauseGameCondition(const class FString& PauseCondition);
@@ -36,7 +37,10 @@ public:
 	void AdjustVolume();
 	void ApplyAudioPreset();
 	void ApplyDeckPreset();
+	void ApplyPreset(int32 PresetIndex);
+	void Compare_Graphics_Preset(const struct FSGraphicPreset& A, const struct FSGraphicPreset& B, bool* bIsEqual);
 	void ExecuteUbergraph_BP_GameInstance(int32 EntryPoint);
+	bool IsCustomPreset();
 	void OnSettingsSaved();
 	void PauseGameWithConditon(const class FString& NewCondition);
 	void ReceiveInit();

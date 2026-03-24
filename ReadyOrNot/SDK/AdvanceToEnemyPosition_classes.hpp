@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -18,16 +19,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AdvanceToEnemyPosition.AdvanceToEnemyPosition_C
-// 0x0010 (0x0240 - 0x0230)
+// 0x0028 (0x0280 - 0x0258)
 class UAdvanceToEnemyPosition_C final : public UBaseCombatMoveActivity
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0230(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AReadyOrNotCharacter*                   SeekingPlayer;                                     // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0258(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class AReadyOrNotCharacter*                   SeekingPlayer;                                     // 0x0260(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                GoalVector;                                        // 0x0268(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_AdvanceToEnemyPosition(int32 EntryPoint);
+	void StartActivity_Blueprint(class AAIController* Owner);
 	void RequestCombatMove_Blueprint(float DeltaTime);
+	void GetTargetPos(struct FVector* TargetPosition);
+	void ExecuteUbergraph_AdvanceToEnemyPosition(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

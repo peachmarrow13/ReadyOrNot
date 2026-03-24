@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_WCQB.Primary_WCQB_C
-// 0x0010 (0x1930 - 0x1920)
+// 0x0010 (0x1A20 - 0x1A10)
 #pragma pack(push, 0x1)
 class alignas(0x10) APrimary_WCQB_C : public AShotgun
 {
 public:
-	class UAnimMontage*                           LightToggle1P;                                     // 0x1920(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           LightToggle1P;                                     // 0x1A10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

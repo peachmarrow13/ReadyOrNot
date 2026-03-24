@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_NonCompliant.AIAction_NonCompliant_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_NonCompliant_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_NonCompliant_C_Tick_Blueprint;
+
 // Function AIAction_NonCompliant.AIAction_NonCompliant_C.ExecuteUbergraph_AIAction_NonCompliant
 // 0x00B0 (0x00B0 - 0x0000)
 struct AIAction_NonCompliant_C_ExecuteUbergraph_AIAction_NonCompliant final
@@ -49,15 +58,6 @@ public:
 	float                                         CallFunc_IncreaseMoraleOnCharacter_MoraleValue_ImplicitCast; // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_NonCompliant_C_ExecuteUbergraph_AIAction_NonCompliant;
-
-// Function AIAction_NonCompliant.AIAction_NonCompliant_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_NonCompliant_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_NonCompliant_C_Tick_Blueprint;
 
 // Function AIAction_NonCompliant.AIAction_NonCompliant_C.CanBeNonCompliant
 // 0x0020 (0x0020 - 0x0000)

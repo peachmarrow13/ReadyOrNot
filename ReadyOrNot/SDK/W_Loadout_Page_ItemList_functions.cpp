@@ -391,8 +391,10 @@ void UW_Loadout_Page_ItemList_C::InitializeHelmetMounts()
 // ELoadoutCategory                        LoadoutCategory_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EItemClass                              ItemClass_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bFilterByItemClass_0                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EWeaponSubclass                         WeaponSubclass_0                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    FilterByWeaponSubclass                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Loadout_Page_ItemList_C::InitializeWeapons(ELoadoutCategory LoadoutCategory_0, EItemClass ItemClass_0, bool bFilterByItemClass_0)
+void UW_Loadout_Page_ItemList_C::InitializeWeapons(ELoadoutCategory LoadoutCategory_0, EItemClass ItemClass_0, bool bFilterByItemClass_0, EWeaponSubclass WeaponSubclass_0, bool FilterByWeaponSubclass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -404,6 +406,8 @@ void UW_Loadout_Page_ItemList_C::InitializeWeapons(ELoadoutCategory LoadoutCateg
 	Parms.LoadoutCategory_0 = LoadoutCategory_0;
 	Parms.ItemClass_0 = ItemClass_0;
 	Parms.bFilterByItemClass_0 = bFilterByItemClass_0;
+	Parms.WeaponSubclass_0 = WeaponSubclass_0;
+	Parms.FilterByWeaponSubclass = FilterByWeaponSubclass;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PPR_ShouldNotFadeToGrey.PPR_ShouldNotFadeToGrey_C
-// 0x0000 (0x0038 - 0x0038)
+// 0x0000 (0x0040 - 0x0040)
 class UPPR_ShouldNotFadeToGrey_C final : public UPostProcessRequirement
 {
 public:

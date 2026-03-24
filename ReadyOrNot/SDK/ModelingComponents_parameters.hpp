@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ModelingComponents_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ModelingComponents_structs.hpp"
 
 
 namespace SDK::Params

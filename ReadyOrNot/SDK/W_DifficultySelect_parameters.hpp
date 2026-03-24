@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "CommonInput_structs.hpp"
@@ -37,7 +38,7 @@ public:
 DUMPER7_ASSERTS_W_DifficultySelect_C_BndEvt__W_DifficultySelect_w_Dropdown_K2Node_ComponentBoundEvent_0_OnOptionSelected__DelegateSignature;
 
 // Function W_DifficultySelect.W_DifficultySelect_C.ExecuteUbergraph_W_DifficultySelect
-// 0x01F0 (0x01F0 - 0x0000)
+// 0x0200 (0x0200 - 0x0000)
 struct W_DifficultySelect_C_ExecuteUbergraph_W_DifficultySelect final
 {
 public:
@@ -64,15 +65,15 @@ public:
 	uint8                                         Pad_7B[0x5];                                       // 0x007B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDifficultySubsystem*                   CallFunc_GetEngineSubsystem_ReturnValue;           // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UWidget*                                K2Node_Select_Default;                             // 0x0088(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FDifficultyData                        CallFunc_Map_Find_Value;                           // 0x0090(0x0098)()
-	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UDifficultySubsystem*                   CallFunc_GetEngineSubsystem_ReturnValue_1;         // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_GetTagName_ReturnValue;                   // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FDifficultyData                        CallFunc_Map_Find_Value_1;                         // 0x0140(0x0098)()
-	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1D9[0x7];                                      // 0x01D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetDebugStringFromGameplayTag_ReturnValue; // 0x01E0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FDifficultyData                        CallFunc_Map_Find_Value;                           // 0x0090(0x00A0)()
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDifficultySubsystem*                   CallFunc_GetEngineSubsystem_ReturnValue_1;         // 0x0138(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_GetTagName_ReturnValue;                   // 0x0140(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FDifficultyData                        CallFunc_Map_Find_Value_1;                         // 0x0148(0x00A0)()
+	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetDebugStringFromGameplayTag_ReturnValue; // 0x01F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_DifficultySelect_C_ExecuteUbergraph_W_DifficultySelect;
 
@@ -104,7 +105,7 @@ public:
 DUMPER7_ASSERTS_W_DifficultySelect_C_OnOptionSelected;
 
 // Function W_DifficultySelect.W_DifficultySelect_C.PopulateDifficulties
-// 0x0100 (0x0100 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct W_DifficultySelect_C_PopulateDifficulties final
 {
 public:
@@ -118,12 +119,12 @@ public:
 	struct FGameplayTag                           CallFunc_Array_Get_Item;                           // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDifficultyData                        CallFunc_Map_Find_Value;                           // 0x0048(0x0098)()
-	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E2[0x6];                                       // 0x00E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetDebugStringFromGameplayTag_ReturnValue; // 0x00E8(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x00F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FDifficultyData                        CallFunc_Map_Find_Value;                           // 0x0048(0x00A0)()
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_GetDebugStringFromGameplayTag_ReturnValue; // 0x00F0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_DifficultySelect_C_PopulateDifficulties;
 
@@ -135,6 +136,23 @@ public:
 	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_DifficultySelect_C_PreConstruct;
+
+// Function W_DifficultySelect.W_DifficultySelect_C.UpdateDescriptionVisibility
+// 0x0009 (0x0009 - 0x0000)
+struct W_DifficultySelect_C_UpdateDescriptionVisibility final
+{
+public:
+	bool                                          Temp_bool_Variable;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable;                                // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_1;                              // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_2;                              // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_3;                              // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              K2Node_Select_Default;                             // 0x0007(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              K2Node_Select_Default_1;                           // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_DifficultySelect_C_UpdateDescriptionVisibility;
 
 }
 

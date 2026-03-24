@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass WalkImpactEffects.WalkImpactEffects_C
-// 0x0008 (0x0D38 - 0x0D30)
+// 0x0008 (0x0D40 - 0x0D38)
 class AWalkImpactEffects_C final : public AImpactEffect
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

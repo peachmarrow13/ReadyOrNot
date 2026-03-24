@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "E_Style_Buttons_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ST_DropdownOptions_structs.hpp"
 #include "UMG_classes.hpp"
 
@@ -33,7 +33,7 @@ public:
 	class UBorder*                                Label;                                             // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_Text_C*                              txt_Label;                                         // 0x0300(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_Text_C*                              txt_Placeholder;                                   // 0x0308(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_Text_C*                              txt_Selection;                                     // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonTextBlock*                       txt_Selection;                                     // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class FText                                   LabelText;                                         // 0x0318(0x0018)(Edit, BlueprintVisible, ExposeOnSpawn)
 	class FText                                   PlaceholderText;                                   // 0x0330(0x0018)(Edit, BlueprintVisible, ExposeOnSpawn)
 	TMap<class FString, class FText>              Options;                                           // 0x0348(0x0050)(Edit, BlueprintVisible, ExposeOnSpawn)

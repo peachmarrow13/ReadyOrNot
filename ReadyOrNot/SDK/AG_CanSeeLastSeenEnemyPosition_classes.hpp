@@ -17,10 +17,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AG_CanSeeLastSeenEnemyPosition.AG_CanSeeLastSeenEnemyPosition_C
-// 0x0000 (0x0028 - 0x0028)
+// 0x0008 (0x0030 - 0x0028)
 class UAG_CanSeeLastSeenEnemyPosition_C final : public UAIActionGate
 {
 public:
+	bool                                          CheckLast_Known;                                   // 0x0028(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+public:
+	void GetTargetPos(class ACyberneticController* Controller, struct FVector* TargetPosition) const;
 	bool CanOpen(const struct FAIActionDecisionContext& Context) const;
 
 public:

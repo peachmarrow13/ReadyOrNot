@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "StreamlineRHI_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "StreamlineRHI_structs.hpp"
 
 
 namespace SDK

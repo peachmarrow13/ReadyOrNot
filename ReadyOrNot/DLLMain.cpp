@@ -2,7 +2,7 @@
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
-#define PATCHVERSION 6
+#define PATCHVERSION 4
 
 static const std::pair<const char*, std::string> BoneOptions[] = {
 	{"Head", BoneList.HeadBone},
@@ -38,6 +38,8 @@ static ImGuiKey TriggerBotKey = ImGuiKey_None;
 static ImGuiKey ESPKey = ImGuiKey_None;
 static ImGuiKey AimButton = ImGuiKey_None;
 
+static int UninjectButton = VK_END;
+
 // Add WndProc hook for input handling
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 WNDPROC oWndProc = nullptr;
@@ -60,7 +62,7 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 		}
 
 		if (uMsg == WM_KEYUP) {
-			if (wParam == VK_END) {
+			if (wParam == UninjectButton) {
 				Cleaning.store(true);
 				return TRUE;
 			}
@@ -109,7 +111,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 {
 	if (Cleaning.load())  // If we are cleaning, stop drawing.
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
-
+	
 	if (Resizing.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
 
@@ -385,7 +387,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					}
 
 					ImGui::Checkbox("Require HotKey", &AimbotSettings.RequireKeyHeld);
-
+					
 					const char* ABpreview = ImGui::GetKeyName(AimbotSettings.AimbotKey);
 					if (!ABpreview) ABpreview = "None";
 
@@ -407,7 +409,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 						ImGui::EndCombo();
 						AddDefaultTooltip("Only activate the aimbot while this key is held");
 					}
-
+					
 					ImGui::TreePop();
 				}
 
@@ -574,7 +576,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					const char* AimPreview = ImGui::GetKeyName(AimButton);
 					if (!AimPreview) AimPreview = "None";
 
-					if (ImGui::BeginCombo("Select AimLock button", AimPreview))
+					if (ImGui::BeginCombo("Select AimLock Button", AimPreview))
 					{
 						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
 						{
@@ -591,7 +593,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 						}
 						ImGui::EndCombo();
 					}
-
+					
 					ImGui::TreePop();
 				}
 
@@ -614,7 +616,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		ImGui::Separator();
 		ImGui::Text("You can find me on UnknownCheats.me as Peachmarrow13.");
 		ImGui::SameLine();
-		ImGui::Text("This cheat was released on UnknownCheats.me for free do not download this from anywhere else.");
+		ImGui::Text("This cheat was released on UnknownCheats.me for free, do not download this from anywhere else.");
 		ImGui::End();
 	}
 
@@ -795,6 +797,8 @@ void SaveSettings()
 		MiscSettingsfile.write(reinterpret_cast<char*>(&MiscSettings), sizeof(MiscSettings));
 		MiscSettingsfile.close();
 	}
+	else
+		printf("[ERROR] Could not open MiscSettings.bin for writing!\n");
 
 	// Save AimbotSettings (binary)
 	std::ofstream AimbotSettingsfile("AimbotSettings.bin", std::ios::binary);
@@ -803,6 +807,8 @@ void SaveSettings()
 		AimbotSettingsfile.write(reinterpret_cast<char*>(&AimbotSettings), sizeof(AimbotSettings));
 		AimbotSettingsfile.close();
 	}
+	else
+		printf("[ERROR] Could not open AimbotSettings.bin for writing!\n");
 
 	// Save ESPSettings (binary)
 	std::ofstream ESPSettingsfile("ESPSettings.bin", std::ios::binary);
@@ -811,6 +817,8 @@ void SaveSettings()
 		ESPSettingsfile.write(reinterpret_cast<char*>(&ESPSettings), sizeof(ESPSettings));
 		ESPSettingsfile.close();
 	}
+	else
+		printf("[ERROR] Could not open ESPSettings.bin for writing!\n");
 
 	// Save SilentAimSettings (binary)
 	std::ofstream SilentAimSettingsfile("SilentAimSettings.bin", std::ios::binary);
@@ -819,6 +827,8 @@ void SaveSettings()
 		SilentAimSettingsfile.write(reinterpret_cast<char*>(&SilentAimSettings), sizeof(SilentAimSettings));
 		SilentAimSettingsfile.close();
 	}
+	else
+		printf("[ERROR] Could not open SilentAimSettings.bin for writing!\n");
 
 	// Save TextVars strings
 	std::ofstream TextVarsfile("TextVars.bin", std::ios::binary);
@@ -844,6 +854,8 @@ void SaveSettings()
 
 		TextVarsfile.close();
 	}
+	else
+		printf("[ERROR] Could not open TextVars.bin for writing!\n");
 
 	if (MiscSettings.ShouldSaveCVars)
 	{
@@ -856,6 +868,8 @@ void SaveSettings()
 
 			CVarsinfile.close();
 		}
+		else
+			printf("[ERROR] Could not open CVars.bin for writing!\n");
 	}
 }
 
@@ -867,7 +881,11 @@ void LoadSettings()
 
 	std::ifstream MiscSettingsinfile("MiscSettings.bin", std::ios::binary);
 
-	if (!MiscSettingsinfile.is_open()) return;
+	if (!MiscSettingsinfile.is_open()) 
+	{
+		printf("[INFO] MiscSettings.bin not found, using defaults.\n");
+		return;
+	}
 
 	MiscSettingsinfile.seekg(0);
 
@@ -877,7 +895,11 @@ void LoadSettings()
 
 	std::ifstream AimbotSettingsinfile("AimbotSettings.bin", std::ios::binary);
 
-	if (!AimbotSettingsinfile.is_open()) return;
+	if (!AimbotSettingsinfile.is_open()) 
+	{
+		printf("[INFO] AimbotSettings.bin not found, using defaults.\n");
+		return;
+	}
 
 	AimbotSettingsinfile.seekg(0);
 
@@ -887,7 +909,11 @@ void LoadSettings()
 
 	std::ifstream ESPSettingsinfile("ESPSettings.bin", std::ios::binary);
 
-	if (!ESPSettingsinfile.is_open()) return;
+	if (!ESPSettingsinfile.is_open()) 
+	{
+		printf("[INFO] ESPSettings.bin not found, using defaults.\n");
+		return;
+	}
 
 	ESPSettingsinfile.seekg(0);
 
@@ -897,7 +923,11 @@ void LoadSettings()
 
 	std::ifstream SilentAimSettingsinfile("SilentAimSettings.bin", std::ios::binary);
 
-	if (!SilentAimSettingsinfile.is_open()) return;
+	if (!SilentAimSettingsinfile.is_open()) 
+	{
+		printf("[INFO] SilentAimSettings.bin not found, using defaults.\n");
+		return;
+	}
 
 	SilentAimSettingsinfile.seekg(0);
 
@@ -907,7 +937,11 @@ void LoadSettings()
 
 	std::ifstream TextVarsinfile("TextVars.bin", std::ios::binary);
 
-	if (!TextVarsinfile.is_open()) return;
+	if (!TextVarsinfile.is_open()) 
+	{
+		printf("[INFO] TextVars.bin not found, using defaults.\n");
+		return;
+	}
 
 	size_t len;
 	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
@@ -931,7 +965,11 @@ void LoadSettings()
 	if (MiscSettings.ShouldSaveCVars)
 	{
 		std::ifstream CVarsinfile("CVars.bin", std::ios::binary);
-		if (!CVarsinfile.is_open()) return;
+		if (!CVarsinfile.is_open()) 
+		{
+			printf("[INFO] CVars.bin not found, using defaults.\n");
+			return;
+		}
 
 		CVarsinfile.seekg(0);
 

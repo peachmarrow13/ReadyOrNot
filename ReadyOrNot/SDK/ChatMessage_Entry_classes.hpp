@@ -19,14 +19,14 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass ChatMessage_Entry.ChatMessage_Entry_C
-// 0x0098 (0x0360 - 0x02C8)
+// 0x00A0 (0x0368 - 0x02C8)
 class UChatMessage_Entry_C final : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UTextBlock*                             MessageText;                                       // 0x02D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FRChatMessage                          Message;                                           // 0x02D8(0x0078)(Edit, BlueprintVisible, ExposeOnSpawn)
-	class FString                                 Team;                                              // 0x0350(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FRChatMessage                          Message;                                           // 0x02D8(0x0080)(Edit, BlueprintVisible, ExposeOnSpawn)
+	class FString                                 Team;                                              // 0x0358(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void Construct();

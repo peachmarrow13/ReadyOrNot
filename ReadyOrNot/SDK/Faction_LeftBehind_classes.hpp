@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Faction_LeftBehind.Faction_LeftBehind_C
-// 0x0010 (0x0300 - 0x02F0)
+// 0x0010 (0x0308 - 0x02F8)
 class AFaction_LeftBehind_C final : public AAIFactionManager
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0300(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Faction_LeftBehind(int32 EntryPoint);

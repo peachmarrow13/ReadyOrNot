@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_LadderSnapZone.BP_LadderSnapZone_C
-// 0x0000 (0x02E0 - 0x02E0)
+// 0x0000 (0x02E8 - 0x02E8)
 class ABP_LadderSnapZone_C final : public ALadderSnapZone
 {
 public:

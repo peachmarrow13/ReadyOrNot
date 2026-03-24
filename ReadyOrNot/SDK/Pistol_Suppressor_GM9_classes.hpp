@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Pistol_Suppressor_GM9.Pistol_Suppressor_GM9_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UPistol_Suppressor_GM9_C final : public UWeaponAttachment
 {
 public:

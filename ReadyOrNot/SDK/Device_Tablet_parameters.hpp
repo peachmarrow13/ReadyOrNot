@@ -17,17 +17,8 @@
 namespace SDK::Params
 {
 
-// Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
-// 0x0008 (0x0008 - 0x0000)
-struct Device_Tablet_C_PlaySoundEvent final
-{
-public:
-	class UFMODEvent*                             Event;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Device_Tablet_C_PlaySoundEvent;
-
 // Function Device_Tablet.Device_Tablet_C.ExecuteUbergraph_Device_Tablet
-// 0x08F0 (0x08F0 - 0x0000)
+// 0x0940 (0x0940 - 0x0000)
 struct Device_Tablet_C_ExecuteUbergraph_Device_Tablet final
 {
 public:
@@ -47,10 +38,19 @@ public:
 	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UFMODEvent*                             K2Node_Event_Event;                                // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UFMODAudioComponent*                    CallFunc_PlayEventAttached_ReturnValue;            // 0x0058(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  CallFunc_GetLevelData_ReturnValue;                 // 0x0060(0x0880)()
-	struct FLinearColor                           CallFunc_MakeColor_ReturnValue;                    // 0x08E0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  CallFunc_GetLevelData_ReturnValue;                 // 0x0060(0x08D0)()
+	struct FLinearColor                           CallFunc_MakeColor_ReturnValue;                    // 0x0930(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Device_Tablet_C_ExecuteUbergraph_Device_Tablet;
+
+// Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
+// 0x0008 (0x0008 - 0x0000)
+struct Device_Tablet_C_PlaySoundEvent final
+{
+public:
+	class UFMODEvent*                             Event;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Device_Tablet_C_PlaySoundEvent;
 
 }
 

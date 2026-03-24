@@ -90,10 +90,10 @@ void UW_PreMission_PlanningMap_Level_C::DrawLine(int32 LineID, const struct FPla
 // Function W_PreMission_PlanningMap_Level.W_PreMission_PlanningMap_Level_C.DrawMarker
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const int32&                            MarkerID                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32&                            markerId                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FPlanningMarker&           MarkerData                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void UW_PreMission_PlanningMap_Level_C::DrawMarker(const int32& MarkerID, const struct FPlanningMarker& MarkerData)
+void UW_PreMission_PlanningMap_Level_C::DrawMarker(const int32& markerId, const struct FPlanningMarker& MarkerData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102,7 +102,7 @@ void UW_PreMission_PlanningMap_Level_C::DrawMarker(const int32& MarkerID, const 
 
 	Params::W_PreMission_PlanningMap_Level_C_DrawMarker Parms{};
 
-	Parms.MarkerID = MarkerID;
+	Parms.markerId = markerId;
 	Parms.MarkerData = std::move(MarkerData);
 
 	UObject::ProcessEvent(Func, &Parms);

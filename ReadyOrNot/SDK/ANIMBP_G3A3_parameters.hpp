@@ -16,6 +16,24 @@
 namespace SDK::Params
 {
 
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ANIMBP_G3A3_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ANIMBP_G3A3_C_AnimGraph;
+
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ANIMBP_G3A3_C_BlueprintUpdateAnimation final
+{
+public:
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ANIMBP_G3A3_C_BlueprintUpdateAnimation;
+
 // Function ANIMBP_G3A3.ANIMBP_G3A3_C.ExecuteUbergraph_ANIMBP_G3A3
 // 0x0050 (0x0050 - 0x0000)
 struct ANIMBP_G3A3_C_ExecuteUbergraph_ANIMBP_G3A3 final
@@ -40,24 +58,6 @@ public:
 	double                                        CallFunc_FTrunc_A_ImplicitCast;                    // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ANIMBP_G3A3_C_ExecuteUbergraph_ANIMBP_G3A3;
-
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ANIMBP_G3A3_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ANIMBP_G3A3_C_BlueprintUpdateAnimation;
-
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ANIMBP_G3A3_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ANIMBP_G3A3_C_AnimGraph;
 
 }
 

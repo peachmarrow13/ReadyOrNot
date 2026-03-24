@@ -31,26 +31,6 @@ void UAIAction_ReturnToSpawn_C::BeginAction_Blueprint()
 }
 
 
-// Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.ExecuteUbergraph_AIAction_ReturnToSpawn
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_ReturnToSpawn_C::ExecuteUbergraph_AIAction_ReturnToSpawn(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ReturnToSpawn_C", "ExecuteUbergraph_AIAction_ReturnToSpawn");
-
-	Params::AIAction_ReturnToSpawn_C_ExecuteUbergraph_AIAction_ReturnToSpawn Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.OnMoveComplete_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -68,6 +48,26 @@ void UAIAction_ReturnToSpawn_C::OnMoveComplete_Blueprint(class AAIController* Co
 
 	Parms.Controller = Controller;
 	Parms.RequestID = RequestID;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.ExecuteUbergraph_AIAction_ReturnToSpawn
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_ReturnToSpawn_C::ExecuteUbergraph_AIAction_ReturnToSpawn(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ReturnToSpawn_C", "ExecuteUbergraph_AIAction_ReturnToSpawn");
+
+	Params::AIAction_ReturnToSpawn_C_ExecuteUbergraph_AIAction_ReturnToSpawn Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

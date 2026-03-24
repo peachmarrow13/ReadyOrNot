@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
-#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "CommonInput_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Slate_structs.hpp"
+#include "CommonUI_classes.hpp"
 
 
 namespace SDK
@@ -48,6 +48,7 @@ public:
 	TArray<class UW_LoadoutSlot_v2_C*>            ItemSlots;                                         // 0x04E8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	EItemClass                                    ItemClass;                                         // 0x04F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          bFilterByItemClass;                                // 0x04F9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               WeaponSubclass;                                    // 0x04FA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AddAttachmentItem(EWeaponAttachmentType AttachmentType, class UClass* Attachment, bool Secondary_0);
@@ -69,7 +70,7 @@ public:
 	void InitializeFacewear();
 	void InitializeHeadwear();
 	void InitializeHelmetMounts();
-	void InitializeWeapons(ELoadoutCategory LoadoutCategory_0, EItemClass ItemClass_0, bool bFilterByItemClass_0);
+	void InitializeWeapons(ELoadoutCategory LoadoutCategory_0, EItemClass ItemClass_0, bool bFilterByItemClass_0, EWeaponSubclass WeaponSubclass_0, bool FilterByWeaponSubclass);
 	void InputMethodChanged(ECommonInputType bNewInputType);
 	void ItemClicked(class UW_LoadoutSlot_v2_C* TriggeringSlot);
 	void ItemHovered(class UW_LoadoutSlot_v2_C* TriggeringSlot);

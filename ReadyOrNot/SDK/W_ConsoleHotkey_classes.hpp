@@ -18,17 +18,20 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_ConsoleHotkey.W_ConsoleHotkey_C
-// 0x0020 (0x03E0 - 0x03C0)
+// 0x0030 (0x0410 - 0x03E0)
 class UW_ConsoleHotkey_C final : public UConsoleHotkey
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCommonVisibilitySwitcher*              IconSwitcher;                                      // 0x03C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FDataTableRowHandle                    InputAction;                                       // 0x03D0(0x0010)(Edit, BlueprintVisible, NoDestructor, ExposeOnSpawn)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCommonVisibilitySwitcher*              IconSwitcher;                                      // 0x03E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 T_gradient;                                        // 0x03F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FDataTableRowHandle                    InputAction;                                       // 0x03F8(0x0010)(Edit, BlueprintVisible, NoDestructor, ExposeOnSpawn)
+	bool                                          bSupportsInput;                                    // 0x0408(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Construct();
 	void ExecuteUbergraph_W_ConsoleHotkey(int32 EntryPoint);
+	void PreConstruct(bool IsDesignTime);
 	void ShoulderButtonPressed(bool Pressed);
 
 public:

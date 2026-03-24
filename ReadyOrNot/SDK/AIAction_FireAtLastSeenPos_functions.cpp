@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_FireAtLastSeenPos.AIAction_FireAtLastSeenPos_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_FireAtLastSeenPos_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_FireAtLastSeenPos_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIAction_FireAtLastSeenPos.AIAction_FireAtLastSeenPos_C.ExecuteUbergraph_AIAction_FireAtLastSeenPos
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void UAIAction_FireAtLastSeenPos_C::ExecuteUbergraph_AIAction_FireAtLastSeenPos(
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_FireAtLastSeenPos.AIAction_FireAtLastSeenPos_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_FireAtLastSeenPos_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_FireAtLastSeenPos_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

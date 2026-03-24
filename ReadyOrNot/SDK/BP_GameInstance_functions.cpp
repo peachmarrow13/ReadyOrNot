@@ -93,6 +93,52 @@ void UBP_GameInstance_C::ApplyDeckPreset()
 }
 
 
+// Function BP_GameInstance.BP_GameInstance_C.ApplyPreset
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   PresetIndex                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_GameInstance_C::ApplyPreset(int32 PresetIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameInstance_C", "ApplyPreset");
+
+	Params::BP_GameInstance_C_ApplyPreset Parms{};
+
+	Parms.PresetIndex = PresetIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GameInstance.BP_GameInstance_C.Compare Graphics Preset
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const struct FSGraphicPreset&           A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FSGraphicPreset&           B                                                      (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bIsEqual                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_GameInstance_C::Compare_Graphics_Preset(const struct FSGraphicPreset& A, const struct FSGraphicPreset& B, bool* bIsEqual)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameInstance_C", "Compare Graphics Preset");
+
+	Params::BP_GameInstance_C_Compare_Graphics_Preset Parms{};
+
+	Parms.A = std::move(A);
+	Parms.B = std::move(B);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bIsEqual != nullptr)
+		*bIsEqual = Parms.bIsEqual;
+}
+
+
 // Function BP_GameInstance.BP_GameInstance_C.ExecuteUbergraph_BP_GameInstance
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -110,6 +156,26 @@ void UBP_GameInstance_C::ExecuteUbergraph_BP_GameInstance(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GameInstance.BP_GameInstance_C.IsCustomPreset
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UBP_GameInstance_C::IsCustomPreset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GameInstance_C", "IsCustomPreset");
+
+	Params::BP_GameInstance_C_IsCustomPreset Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

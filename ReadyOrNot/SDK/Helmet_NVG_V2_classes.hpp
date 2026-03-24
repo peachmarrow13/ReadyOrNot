@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Helmet_NVG_V2.Helmet_NVG_V2_C
-// 0x0020 (0x22F0 - 0x22D0)
+// 0x0020 (0x2340 - 0x2320)
 class AHelmet_NVG_V2_C : public ANightvisionGoggles
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x22D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USpotLightComponent*                    SpotLight;                                         // 0x22D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UArrowComponent*                        Arrow;                                             // 0x22E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class APlayerState*                           PlayerState;                                       // 0x22E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x2320(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USpotLightComponent*                    SpotLight;                                         // 0x2328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UArrowComponent*                        Arrow;                                             // 0x2330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class APlayerState*                           PlayerState;                                       // 0x2338(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_Helmet_NVG_V2(int32 EntryPoint);

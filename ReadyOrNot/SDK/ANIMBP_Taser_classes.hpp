@@ -35,10 +35,10 @@ public:
 	double                                        Mag01Alpha;                                        // 0x05A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_ANIMBP_Taser(int32 EntryPoint);
-	void AnimNotify_ShowMag();
-	void AnimNotify_DropSpeedReloadMagazine();
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimNotify_DropSpeedReloadMagazine();
+	void AnimNotify_ShowMag();
+	void ExecuteUbergraph_ANIMBP_Taser(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

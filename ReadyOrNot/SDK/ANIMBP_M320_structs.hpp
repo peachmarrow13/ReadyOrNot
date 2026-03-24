@@ -17,15 +17,6 @@
 namespace SDK
 {
 
-// ScriptStruct ANIMBP_M320.ANIMBP_M320_C.AnimBlueprintGeneratedMutableData
-// 0x0001 (0x0002 - 0x0001)
-struct ANIMBP_M320::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-public:
-	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ANIMBP_M320__FAnimBlueprintGeneratedMutableData;
-
 // ScriptStruct ANIMBP_M320.ANIMBP_M320_C.AnimBlueprintGeneratedConstantData
 // 0x012F (0x0130 - 0x0001)
 struct ANIMBP_M320::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -54,6 +45,15 @@ public:
 	struct FAnimSubsystem_Base                    AnimBlueprintExtension_Base;                       // 0x0118(0x0018)()
 };
 DUMPER7_ASSERTS_ANIMBP_M320__FAnimBlueprintGeneratedConstantData;
+
+// ScriptStruct ANIMBP_M320.ANIMBP_M320_C.AnimBlueprintGeneratedMutableData
+// 0x0001 (0x0002 - 0x0001)
+struct ANIMBP_M320::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+public:
+	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ANIMBP_M320__FAnimBlueprintGeneratedMutableData;
 
 }
 

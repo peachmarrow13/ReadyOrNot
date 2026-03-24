@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Null_AmmunitionAttachment.Null_AmmunitionAttachment_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UNull_AmmunitionAttachment_C final : public UWeaponAttachment
 {
 public:

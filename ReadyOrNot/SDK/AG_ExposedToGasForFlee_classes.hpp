@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -17,9 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AG_ExposedToGasForFlee.AG_ExposedToGasForFlee_C
-// 0x0000 (0x0028 - 0x0028)
+// 0x0010 (0x0038 - 0x0028)
 class UAG_ExposedToGasForFlee_C final : public UAIActionGate
 {
+public:
+	TArray<EGasType>                              GasType;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+
 public:
 	bool CanOpen(const struct FAIActionDecisionContext& Context) const;
 

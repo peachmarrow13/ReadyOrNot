@@ -17,65 +17,37 @@
 namespace SDK
 {
 
-// Function AIAction_Startle.AIAction_Startle_C.BeginAction_Blueprint
+// Function AIAction_Startle.AIAction_Startle_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
-
-void UAIAction_Startle_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_Startle.AIAction_Startle_C.CustomEvent_0
-// (BlueprintCallable, BlueprintEvent)
-
-void UAIAction_Startle_C::CustomEvent_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "CustomEvent_0");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_Startle.AIAction_Startle_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_Startle_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_Startle.AIAction_Startle_C.ExecuteUbergraph_AIAction_Startle
-// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Startle_C::ExecuteUbergraph_AIAction_Startle(int32 EntryPoint)
+void UAIAction_Startle_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "ExecuteUbergraph_AIAction_Startle");
+		Func = Class->GetFunction("AIAction_Startle_C", "Tick_Blueprint");
 
-	Params::AIAction_Startle_C_ExecuteUbergraph_AIAction_Startle Parms{};
+	Params::AIAction_Startle_C_Tick_Blueprint Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_Startle.AIAction_Startle_C.ResetData
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIAction_Startle_C::ResetData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Startle_C", "ResetData");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -99,84 +71,85 @@ void UAIAction_Startle_C::InitAction_Blueprint(class ACyberneticController* Cont
 }
 
 
-// Function AIAction_Startle.AIAction_Startle_C.ResetData
-// (BlueprintCallable, BlueprintEvent)
+// Function AIAction_Startle.AIAction_Startle_C.ExecuteUbergraph_AIAction_Startle
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Startle_C::ResetData()
+void UAIAction_Startle_C::ExecuteUbergraph_AIAction_Startle(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "ResetData");
+		Func = Class->GetFunction("AIAction_Startle_C", "ExecuteUbergraph_AIAction_Startle");
+
+	Params::AIAction_Startle_C_ExecuteUbergraph_AIAction_Startle Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_Startle.AIAction_Startle_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_Startle_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Startle_C", "EndAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function AIAction_Startle.AIAction_Startle_C.Tick_Blueprint
+// Function AIAction_Startle.AIAction_Startle_C.CustomEvent_0
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIAction_Startle_C::CustomEvent_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Startle_C", "CustomEvent_0");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_Startle.AIAction_Startle_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Startle_C::Tick_Blueprint(float DeltaTime)
+void UAIAction_Startle_C::BeginAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "Tick_Blueprint");
+		Func = Class->GetFunction("AIAction_Startle_C", "BeginAction_Blueprint");
 
-	Params::AIAction_Startle_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function AIAction_Startle.AIAction_Startle_C.AngleToAnimation
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function AIAction_Startle.AIAction_Startle_C.ShouldPerformAction
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// double                                  InAngle                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bRight                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FString*                          Return_Value                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_Startle_C::AngleToAnimation(double InAngle, bool bRight, class FString* Return_Value) const
+bool UAIAction_Startle_C::ShouldPerformAction() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "AngleToAnimation");
+		Func = Class->GetFunction("AIAction_Startle_C", "ShouldPerformAction");
 
-	Params::AIAction_Startle_C_AngleToAnimation Parms{};
-
-	Parms.InAngle = InAngle;
-	Parms.bRight = bRight;
+	Params::AIAction_Startle_C_ShouldPerformAction Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (Return_Value != nullptr)
-		*Return_Value = std::move(Parms.Return_Value);
-}
-
-
-// Function AIAction_Startle.AIAction_Startle_C.CanStartle
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_Startle_C::CanStartle(bool* Return_Value) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "CanStartle");
-
-	Params::AIAction_Startle_C_CanStartle Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Return_Value != nullptr)
-		*Return_Value = Parms.Return_Value;
+	return Parms.ReturnValue;
 }
 
 
@@ -204,23 +177,50 @@ void UAIAction_Startle_C::IsLocationRightOfUs(const struct FVector& InLocation, 
 }
 
 
-// Function AIAction_Startle.AIAction_Startle_C.ShouldPerformAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Function AIAction_Startle.AIAction_Startle_C.CanStartle
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   Return_Value                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UAIAction_Startle_C::ShouldPerformAction() const
+void UAIAction_Startle_C::CanStartle(bool* Return_Value) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Startle_C", "ShouldPerformAction");
+		Func = Class->GetFunction("AIAction_Startle_C", "CanStartle");
 
-	Params::AIAction_Startle_C_ShouldPerformAction Parms{};
+	Params::AIAction_Startle_C_CanStartle Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	return Parms.ReturnValue;
+	if (Return_Value != nullptr)
+		*Return_Value = Parms.Return_Value;
+}
+
+
+// Function AIAction_Startle.AIAction_Startle_C.AngleToAnimation
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// double                                  InAngle                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bRight                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString*                          Return_Value                                           (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UAIAction_Startle_C::AngleToAnimation(double InAngle, bool bRight, class FString* Return_Value) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Startle_C", "AngleToAnimation");
+
+	Params::AIAction_Startle_C_AngleToAnimation Parms{};
+
+	Parms.InAngle = InAngle;
+	Parms.bRight = bRight;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Return_Value != nullptr)
+		*Return_Value = std::move(Parms.Return_Value);
 }
 
 }

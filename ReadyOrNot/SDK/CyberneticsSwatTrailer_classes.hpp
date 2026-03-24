@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CyberneticsSwatTrailer.CyberneticsSwatTrailer_C
-// 0x0000 (0x2830 - 0x2830)
+// 0x0000 (0x28E0 - 0x28E0)
 class ACyberneticsSwatTrailer_C final : public ATrailerSWATCharacter
 {
 public:

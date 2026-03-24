@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Pistol_FlashHider.Pistol_FlashHider_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UPistol_FlashHider_C final : public UWeaponAttachment
 {
 public:

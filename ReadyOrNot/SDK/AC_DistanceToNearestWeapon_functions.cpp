@@ -17,29 +17,6 @@
 namespace SDK
 {
 
-// Function AC_DistanceToNearestWeapon.AC_DistanceToNearestWeapon_C.CalculateCurve
-// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// float                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UAC_DistanceToNearestWeapon_C::CalculateCurve(float X) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_DistanceToNearestWeapon_C", "CalculateCurve");
-
-	Params::AC_DistanceToNearestWeapon_C_CalculateCurve Parms{};
-
-	Parms.X = X;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AC_DistanceToNearestWeapon.AC_DistanceToNearestWeapon_C.FindWeaponsInRange
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -61,6 +38,29 @@ void UAC_DistanceToNearestWeapon_C::FindWeaponsInRange(class ACyberneticCharacte
 
 	if (Return_Value != nullptr)
 		*Return_Value = std::move(Parms.Return_Value);
+}
+
+
+// Function AC_DistanceToNearestWeapon.AC_DistanceToNearestWeapon_C.CalculateCurve
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// float                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UAC_DistanceToNearestWeapon_C::CalculateCurve(float X) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_DistanceToNearestWeapon_C", "CalculateCurve");
+
+	Params::AC_DistanceToNearestWeapon_C_CalculateCurve Parms{};
+
+	Parms.X = X;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

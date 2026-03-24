@@ -26,10 +26,10 @@ public:
 	class UMoveToPlayerSpawn*                     MoveToPlayerSpawnCombatMove;                       // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void EndAction_Blueprint();
-	void ExecuteUbergraph_AIAction_MoveToPlayerSpawn(int32 EntryPoint);
 	void OnCreate_Blueprint(class ACyberneticController* Controller);
+	void ExecuteUbergraph_AIAction_MoveToPlayerSpawn(int32 EntryPoint);
+	void EndAction_Blueprint();
+	void BeginAction_Blueprint();
 
 public:
 	static class UClass* StaticClass()

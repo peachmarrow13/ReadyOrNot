@@ -530,7 +530,7 @@ void Cheats::UnlockDoors()
 
 void Cheats::ListPlayers()
 {
-	if (!GVars.GameState || !GVars.PlayerController) return;
+	if (!GVars.GameState || !GVars.PlayerController || !GVars.Level) return;
 
 	float Hue = fmodf(ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
 	ImVec4 Color = ImColor::HSV(Hue, 1.f, 1.f);

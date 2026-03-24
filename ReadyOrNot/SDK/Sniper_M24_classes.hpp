@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Sniper_M24.Sniper_M24_C
-// 0x0000 (0x1920 - 0x1920)
+// 0x0000 (0x1A10 - 0x1A10)
 class ASniper_M24_C final : public AShotgun
 {
 public:

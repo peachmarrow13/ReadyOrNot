@@ -219,8 +219,9 @@ void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Nod
 // Parameters:
 // bool                                    Secondary                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EItemClass                              ItemClass                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EWeaponSubclass                         WeaponClass                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_1_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass)
+void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_1_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass, EWeaponSubclass WeaponClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -231,6 +232,7 @@ void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Nod
 
 	Parms.Secondary = Secondary;
 	Parms.ItemClass = ItemClass;
+	Parms.WeaponClass = WeaponClass;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -277,8 +279,9 @@ void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Nod
 // Parameters:
 // bool                                    Secondary                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // EItemClass                              ItemClass                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EWeaponSubclass                         WeaponClass                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_WeaponEdit_K2Node_ComponentBoundEvent_0_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass)
+void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_WeaponEdit_K2Node_ComponentBoundEvent_0_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass, EWeaponSubclass WeaponClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -289,6 +292,7 @@ void UW_Loadout_Page_Weapon_C::BndEvt__W_Loadout_Page_Weapon_WeaponEdit_K2Node_C
 
 	Parms.Secondary = Secondary;
 	Parms.ItemClass = ItemClass;
+	Parms.WeaponClass = WeaponClass;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

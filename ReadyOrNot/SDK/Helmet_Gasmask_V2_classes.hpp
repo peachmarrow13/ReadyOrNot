@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Helmet_Gasmask_V2.Helmet_Gasmask_V2_C
-// 0x0000 (0x1B90 - 0x1B90)
+// 0x0000 (0x1BE0 - 0x1BE0)
 class AHelmet_Gasmask_V2_C final : public AHeadwear
 {
 public:

@@ -16,20 +16,6 @@
 namespace SDK::Params
 {
 
-// Function AC_DistanceToLastNoise.AC_DistanceToLastNoise_C.DetermineNoiseScore
-// 0x0068 (0x0068 - 0x0000)
-struct AC_DistanceToLastNoise_C_DetermineNoiseScore final
-{
-public:
-	struct FExposedToNoise                        Noise;                                             // 0x0000(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-	double                                        Return_Value;                                      // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_MapRangeClamped_Value_ImplicitCast;       // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_MapRangeClamped_InRangeB_ImplicitCast;    // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_MapRangeClamped_InRangeA_ImplicitCast;    // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AC_DistanceToLastNoise_C_DetermineNoiseScore;
-
 // Function AC_DistanceToLastNoise.AC_DistanceToLastNoise_C.Score
 // 0x0080 (0x0080 - 0x0000)
 struct AC_DistanceToLastNoise_C_Score final
@@ -50,6 +36,20 @@ public:
 	float                                         K2Node_FunctionResult_ReturnValue_ImplicitCast_1;  // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AC_DistanceToLastNoise_C_Score;
+
+// Function AC_DistanceToLastNoise.AC_DistanceToLastNoise_C.DetermineNoiseScore
+// 0x0068 (0x0068 - 0x0000)
+struct AC_DistanceToLastNoise_C_DetermineNoiseScore final
+{
+public:
+	struct FExposedToNoise                        Noise;                                             // 0x0000(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	double                                        Return_Value;                                      // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_ReturnValue;              // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_Value_ImplicitCast;       // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_InRangeB_ImplicitCast;    // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_MapRangeClamped_InRangeA_ImplicitCast;    // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AC_DistanceToLastNoise_C_DetermineNoiseScore;
 
 }
 

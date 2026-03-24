@@ -27,8 +27,8 @@ public:
 	class FName                                   Tag;                                               // 0x00DC(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void DetermineNoiseScore(const struct FExposedToNoise& Noise, double* Return_Value) const;
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
+	void DetermineNoiseScore(const struct FExposedToNoise& Noise, double* Return_Value) const;
 
 public:
 	static class UClass* StaticClass()

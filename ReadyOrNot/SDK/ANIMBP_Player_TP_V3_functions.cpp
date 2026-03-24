@@ -17,6 +17,96 @@
 namespace SDK
 {
 
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.SetWeaponGripPose
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FAnimUpdateContext&        Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const struct FAnimNodeReference&        Node                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+
+void UANIMBP_Player_TP_V3_C::SetWeaponGripPose(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "SetWeaponGripPose");
+
+	Params::ANIMBP_Player_TP_V3_C_SetWeaponGripPose Parms{};
+
+	Parms.Context = std::move(Context);
+	Parms.Node = std::move(Node);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.ExecuteUbergraph_ANIMBP_Player_TP_V3
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UANIMBP_Player_TP_V3_C::ExecuteUbergraph_ANIMBP_Player_TP_V3(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "ExecuteUbergraph_ANIMBP_Player_TP_V3");
+
+	Params::ANIMBP_Player_TP_V3_C_ExecuteUbergraph_ANIMBP_Player_TP_V3 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.BlueprintUpdateAnimation
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UANIMBP_Player_TP_V3_C::BlueprintUpdateAnimation(float DeltaTimeX)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "BlueprintUpdateAnimation");
+
+	Params::ANIMBP_Player_TP_V3_C_BlueprintUpdateAnimation Parms{};
+
+	Parms.DeltaTimeX = DeltaTimeX;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimNotify_ShowTPMesh
+// (BlueprintCallable, BlueprintEvent)
+
+void UANIMBP_Player_TP_V3_C::AnimNotify_ShowTPMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_ShowTPMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimNotify_PlayFootstep
+// (BlueprintCallable, BlueprintEvent)
+
+void UANIMBP_Player_TP_V3_C::AnimNotify_PlayFootstep()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_PlayFootstep");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -49,96 +139,6 @@ void UANIMBP_Player_TP_V3_C::AnimNotify_HideTPMesh()
 		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_HideTPMesh");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimNotify_PlayFootstep
-// (BlueprintCallable, BlueprintEvent)
-
-void UANIMBP_Player_TP_V3_C::AnimNotify_PlayFootstep()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_PlayFootstep");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimNotify_ShowTPMesh
-// (BlueprintCallable, BlueprintEvent)
-
-void UANIMBP_Player_TP_V3_C::AnimNotify_ShowTPMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_ShowTPMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UANIMBP_Player_TP_V3_C::BlueprintUpdateAnimation(float DeltaTimeX)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "BlueprintUpdateAnimation");
-
-	Params::ANIMBP_Player_TP_V3_C_BlueprintUpdateAnimation Parms{};
-
-	Parms.DeltaTimeX = DeltaTimeX;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.ExecuteUbergraph_ANIMBP_Player_TP_V3
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UANIMBP_Player_TP_V3_C::ExecuteUbergraph_ANIMBP_Player_TP_V3(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "ExecuteUbergraph_ANIMBP_Player_TP_V3");
-
-	Params::ANIMBP_Player_TP_V3_C_ExecuteUbergraph_ANIMBP_Player_TP_V3 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.SetWeaponGripPose
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FAnimUpdateContext&        Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// const struct FAnimNodeReference&        Node                                                   (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-
-void UANIMBP_Player_TP_V3_C::SetWeaponGripPose(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "SetWeaponGripPose");
-
-	Params::ANIMBP_Player_TP_V3_C_SetWeaponGripPose Parms{};
-
-	Parms.Context = std::move(Context);
-	Parms.Node = std::move(Node);
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

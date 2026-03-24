@@ -21,8 +21,8 @@ namespace SDK
 class UAC_AllWeaponAmmo_C final : public UAIActionConsideration
 {
 public:
-	void GetTotalRemainingAmmoFromAllMags(class ABaseMagazineWeapon* Weapon, double* Return_Value) const;
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
+	void GetTotalRemainingAmmoFromAllMags(class ABaseMagazineWeapon* Weapon, double* Return_Value) const;
 
 public:
 	static class UClass* StaticClass()

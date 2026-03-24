@@ -18,19 +18,22 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MenuGameMode.BP_MenuGameMode_C
-// 0x0030 (0x0438 - 0x0408)
+// 0x0030 (0x0468 - 0x0438)
 class ABP_MenuGameMode_C final : public AMainMenuGM
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0408(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0410(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	int32                                         RandomMapInt;                                      // 0x0418(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_41C[0x4];                                      // 0x041C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                ConnectingWidget;                                  // 0x0420(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class UUserWidget*                            RequestRestart;                                    // 0x0428(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UBP_MessageDisplayBox_C*                CurrentDispalyBox;                                 // 0x0430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0438(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0440(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	int32                                         RandomMapInt;                                      // 0x0448(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_44C[0x4];                                      // 0x044C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                ConnectingWidget;                                  // 0x0450(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UUserWidget*                            RequestRestart;                                    // 0x0458(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UBP_MessageDisplayBox_C*                CurrentDispalyBox;                                 // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ExecuteUbergraph_BP_MenuGameMode(int32 EntryPoint);
+	void CreateRestartWidget();
+	class AActor* ChoosePlayerStart(class AController* Player);
 	class APawn* SpawnDefaultPawnFor(class AController* NewPlayer, class AActor* StartSpot);
 	void ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen);
 	void ReceiveTick(float DeltaSeconds);
@@ -38,9 +41,6 @@ public:
 	void ReceiveBeginPlay();
 	void OnMessageClicked();
 	void FindSpawnPoint(const class FString& Tag, struct FTransform* SpawnPoint);
-	void ExecuteUbergraph_BP_MenuGameMode(int32 EntryPoint);
-	void CreateRestartWidget();
-	class AActor* ChoosePlayerStart(class AController* Player);
 
 public:
 	static class UClass* StaticClass()

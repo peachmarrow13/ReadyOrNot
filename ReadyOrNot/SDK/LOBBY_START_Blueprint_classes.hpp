@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass LOBBY_START_Blueprint.LOBBY_START_Blueprint_C
-// 0x0008 (0x0300 - 0x02F8)
+// 0x0008 (0x0308 - 0x0300)
 class ALOBBY_START_Blueprint_C final : public ADefaultPlayerStart_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_LOBBY_START_Blueprint_C;            // 0x02F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_LOBBY_START_Blueprint_C;            // 0x0300(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_LOBBY_START_Blueprint(int32 EntryPoint);
+	void ReceiveBeginPlay();
 	void CustomEvent_0();
 
 public:

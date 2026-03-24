@@ -51,6 +51,20 @@ void UW_Hotkeys_C::ExecuteUbergraph_W_Hotkeys(int32 EntryPoint)
 }
 
 
+// Function W_Hotkeys.W_Hotkeys_C.HandleOpticHotkeyVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_Hotkeys_C::HandleOpticHotkeyVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hotkeys_C", "HandleOpticHotkeyVisibility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Hotkeys.W_Hotkeys_C.OnAttachmentLightToggled_Event_0
 // (BlueprintCallable, BlueprintEvent)
 
@@ -153,6 +167,26 @@ void UW_Hotkeys_C::OnSecondarySightToggled_Event_0(bool bUsingSecondarySight, cl
 }
 
 
+// Function W_Hotkeys.W_Hotkeys_C.OnWeaponZoomCommitted_Event
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EWeaponAttachmentState                  State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Hotkeys_C::OnWeaponZoomCommitted_Event(EWeaponAttachmentState State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hotkeys_C", "OnWeaponZoomCommitted_Event");
+
+	Params::W_Hotkeys_C_OnWeaponZoomCommitted_Event Parms{};
+
+	Parms.State = State;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_Hotkeys.W_Hotkeys_C.RefreshHotkeyInput
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -162,6 +196,20 @@ void UW_Hotkeys_C::RefreshHotkeyInput()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_Hotkeys_C", "RefreshHotkeyInput");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Hotkeys.W_Hotkeys_C.WeaponAttachmentsChanged_Event_0
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_Hotkeys_C::WeaponAttachmentsChanged_Event_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Hotkeys_C", "WeaponAttachmentsChanged_Event_0");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -111,253 +111,6 @@ class FString UMovieGraphBlueprintLibrary::ResolveFilenameFormatArguments(const 
 }
 
 
-// Function MovieRenderPipelineCore.MoviePipelineQueue.AllocateNewJob
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UMoviePipelineExecutorJob>InJobType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMoviePipelineExecutorJob*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMoviePipelineExecutorJob* UMoviePipelineQueue::AllocateNewJob(TSubclassOf<class UMoviePipelineExecutorJob> InJobType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "AllocateNewJob");
-
-	Params::MoviePipelineQueue_AllocateNewJob Parms{};
-
-	Parms.InJobType = InJobType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.CopyFrom
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineQueue*              InQueue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineQueue::CopyFrom(class UMoviePipelineQueue* InQueue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "CopyFrom");
-
-	Params::MoviePipelineQueue_CopyFrom Parms{};
-
-	Parms.InQueue = InQueue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.DeleteAllJobs
-// (Final, Native, Public, BlueprintCallable)
-
-void UMoviePipelineQueue::DeleteAllJobs()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "DeleteAllJobs");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.DeleteJob
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineQueue::DeleteJob(class UMoviePipelineExecutorJob* InJob)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "DeleteJob");
-
-	Params::MoviePipelineQueue_DeleteJob Parms{};
-
-	Parms.InJob = InJob;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.DuplicateJob
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMoviePipelineExecutorJob*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMoviePipelineExecutorJob* UMoviePipelineQueue::DuplicateJob(class UMoviePipelineExecutorJob* InJob)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "DuplicateJob");
-
-	Params::MoviePipelineQueue_DuplicateJob Parms{};
-
-	Parms.InJob = InJob;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.SetJobIndex
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineQueue::SetJobIndex(class UMoviePipelineExecutorJob* InJob, int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "SetJobIndex");
-
-	Params::MoviePipelineQueue_SetJobIndex Parms{};
-
-	Parms.InJob = InJob;
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.SetQueueOrigin
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineQueue*              InConfig                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineQueue::SetQueueOrigin(class UMoviePipelineQueue* InConfig)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "SetQueueOrigin");
-
-	Params::MoviePipelineQueue_SetQueueOrigin Parms{};
-
-	Parms.InConfig = InConfig;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.GetJobs
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class UMoviePipelineExecutorJob*>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class UMoviePipelineExecutorJob*> UMoviePipelineQueue::GetJobs() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "GetJobs");
-
-	Params::MoviePipelineQueue_GetJobs Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineQueue.GetQueueOrigin
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMoviePipelineQueue*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMoviePipelineQueue* UMoviePipelineQueue::GetQueueOrigin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineQueue", "GetQueueOrigin");
-
-	Params::MoviePipelineQueue_GetQueueOrigin Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MovieGraphBurnInWidget.UpdateForGraph
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UMovieGraphPipeline*              InGraphPipeline                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieGraphBurnInWidget::UpdateForGraph(class UMovieGraphPipeline* InGraphPipeline)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieGraphBurnInWidget", "UpdateForGraph");
-
-	Params::MovieGraphBurnInWidget_UpdateForGraph Parms{};
-
-	Parms.InGraphPipeline = InGraphPipeline;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function MovieRenderPipelineCore.MoviePipelineSetting.SetIsEnabled
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -471,6 +224,235 @@ bool UMoviePipelineSetting::IsEnabled() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.AddCollection
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineCollection*         Collection                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineCollectionModifier::AddCollection(class UMoviePipelineCollection* Collection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineCollectionModifier", "AddCollection");
+
+	Params::MoviePipelineCollectionModifier_AddCollection Parms{};
+
+	Parms.Collection = Collection;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.SetCollections
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const TArray<class UMoviePipelineCollection*>&InCollections                                          (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UMoviePipelineCollectionModifier::SetCollections(const TArray<class UMoviePipelineCollection*>& InCollections)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineCollectionModifier", "SetCollections");
+
+	Params::MoviePipelineCollectionModifier_SetCollections Parms{};
+
+	Parms.InCollections = std::move(InCollections);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.SetIsInverted
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const bool                              bIsInverted                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineCollectionModifier::SetIsInverted(const bool bIsInverted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineCollectionModifier", "SetIsInverted");
+
+	Params::MoviePipelineCollectionModifier_SetIsInverted Parms{};
+
+	Parms.bIsInverted = bIsInverted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.GetCollections
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class UMoviePipelineCollection*> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class UMoviePipelineCollection*> UMoviePipelineCollectionModifier::GetCollections() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineCollectionModifier", "GetCollections");
+
+	Params::MoviePipelineCollectionModifier_GetCollections Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.IsInverted
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMoviePipelineCollectionModifier::IsInverted() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineCollectionModifier", "IsInverted");
+
+	Params::MoviePipelineCollectionModifier_IsInverted Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.OnEngineTickBeginFrame
+// (Event, Public, BlueprintEvent)
+
+void UMoviePipelineSetting_BlueprintBase::OnEngineTickBeginFrame()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "OnEngineTickBeginFrame");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveSetupForPipelineImpl
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UMoviePipeline*                   InPipeline                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineSetting_BlueprintBase::ReceiveSetupForPipelineImpl(class UMoviePipeline* InPipeline)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "ReceiveSetupForPipelineImpl");
+
+	Params::MoviePipelineSetting_BlueprintBase_ReceiveSetupForPipelineImpl Parms{};
+
+	Parms.InPipeline = InPipeline;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveTeardownForPipelineImpl
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UMoviePipeline*                   InPipeline                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineSetting_BlueprintBase::ReceiveTeardownForPipelineImpl(class UMoviePipeline* InPipeline)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "ReceiveTeardownForPipelineImpl");
+
+	Params::MoviePipelineSetting_BlueprintBase_ReceiveTeardownForPipelineImpl Parms{};
+
+	Parms.InPipeline = InPipeline;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveGetFormatArguments
+// (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// struct FMoviePipelineFormatArgs&        InOutFormatArgs                                        (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FMoviePipelineFormatArgs         ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FMoviePipelineFormatArgs UMoviePipelineSetting_BlueprintBase::ReceiveGetFormatArguments(struct FMoviePipelineFormatArgs& InOutFormatArgs) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "ReceiveGetFormatArguments");
+
+	Params::MoviePipelineSetting_BlueprintBase_ReceiveGetFormatArguments Parms{};
+
+	Parms.InOutFormatArgs = std::move(InOutFormatArgs);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	InOutFormatArgs = std::move(Parms.InOutFormatArgs);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MovieGraphBurnInWidget.UpdateForGraph
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UMovieGraphPipeline*              InGraphPipeline                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieGraphBurnInWidget::UpdateForGraph(class UMovieGraphPipeline* InGraphPipeline)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieGraphBurnInWidget", "UpdateForGraph");
+
+	Params::MovieGraphBurnInWidget_UpdateForGraph Parms{};
+
+	Parms.InGraphPipeline = InGraphPipeline;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -1354,6 +1336,278 @@ const class UObject* UMovieGraphValueContainer::GetValueTypeObject() const
 		Func = Class->GetFunction("MovieGraphValueContainer", "GetValueTypeObject");
 
 	Params::MovieGraphValueContainer_GetValueTypeObject Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.ApplyModifier
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineMaterialModifier::ApplyModifier(const class UWorld* World)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineMaterialModifier", "ApplyModifier");
+
+	Params::MoviePipelineMaterialModifier_ApplyModifier Parms{};
+
+	Parms.World = World;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.SetMaterial
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSoftObjectPtr<class UMaterialInterface>InMaterial                                             (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineMaterialModifier::SetMaterial(TSoftObjectPtr<class UMaterialInterface> InMaterial)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineMaterialModifier", "SetMaterial");
+
+	Params::MoviePipelineMaterialModifier_SetMaterial Parms{};
+
+	Parms.InMaterial = InMaterial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.UndoModifier
+// (Native, Public, BlueprintCallable)
+
+void UMoviePipelineMaterialModifier::UndoModifier()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineMaterialModifier", "UndoModifier");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.AddModifier
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineCollectionModifier* Modifier                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineRenderLayer::AddModifier(class UMoviePipelineCollectionModifier* Modifier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "AddModifier");
+
+	Params::MoviePipelineRenderLayer_AddModifier Parms{};
+
+	Parms.Modifier = Modifier;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.Preview
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineRenderLayer::Preview(const class UWorld* World)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "Preview");
+
+	Params::MoviePipelineRenderLayer_Preview Parms{};
+
+	Parms.World = World;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.RemoveModifier
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineCollectionModifier* Modifier                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineRenderLayer::RemoveModifier(class UMoviePipelineCollectionModifier* Modifier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "RemoveModifier");
+
+	Params::MoviePipelineRenderLayer_RemoveModifier Parms{};
+
+	Parms.Modifier = Modifier;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.SetRenderLayerName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    NewName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineRenderLayer::SetRenderLayerName(const class FString& NewName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "SetRenderLayerName");
+
+	Params::MoviePipelineRenderLayer_SetRenderLayerName Parms{};
+
+	Parms.NewName = std::move(NewName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.UndoPreview
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineRenderLayer::UndoPreview(const class UWorld* World)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "UndoPreview");
+
+	Params::MoviePipelineRenderLayer_UndoPreview Parms{};
+
+	Parms.World = World;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetCollectionByName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMoviePipelineCollection*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMoviePipelineCollection* UMoviePipelineRenderLayer::GetCollectionByName(const class FString& Name_0) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "GetCollectionByName");
+
+	Params::MoviePipelineRenderLayer_GetCollectionByName Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetModifiers
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class UMoviePipelineCollectionModifier*>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class UMoviePipelineCollectionModifier*> UMoviePipelineRenderLayer::GetModifiers() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "GetModifiers");
+
+	Params::MoviePipelineRenderLayer_GetModifiers Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetRenderLayerName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UMoviePipelineRenderLayer::GetRenderLayerName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineRenderLayer", "GetRenderLayerName");
+
+	Params::MoviePipelineRenderLayer_GetRenderLayerName Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2801,200 +3055,6 @@ TArray<class AActor*> UMoviePipelineCollection::GetMatchingActors(const class UW
 }
 
 
-// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.AddCollection
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineCollection*         Collection                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineCollectionModifier::AddCollection(class UMoviePipelineCollection* Collection)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineCollectionModifier", "AddCollection");
-
-	Params::MoviePipelineCollectionModifier_AddCollection Parms{};
-
-	Parms.Collection = Collection;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.SetCollections
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const TArray<class UMoviePipelineCollection*>&InCollections                                          (ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UMoviePipelineCollectionModifier::SetCollections(const TArray<class UMoviePipelineCollection*>& InCollections)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineCollectionModifier", "SetCollections");
-
-	Params::MoviePipelineCollectionModifier_SetCollections Parms{};
-
-	Parms.InCollections = std::move(InCollections);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.SetIsInverted
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const bool                              bIsInverted                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineCollectionModifier::SetIsInverted(const bool bIsInverted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineCollectionModifier", "SetIsInverted");
-
-	Params::MoviePipelineCollectionModifier_SetIsInverted Parms{};
-
-	Parms.bIsInverted = bIsInverted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.GetCollections
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class UMoviePipelineCollection*> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class UMoviePipelineCollection*> UMoviePipelineCollectionModifier::GetCollections() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineCollectionModifier", "GetCollections");
-
-	Params::MoviePipelineCollectionModifier_GetCollections Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineCollectionModifier.IsInverted
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UMoviePipelineCollectionModifier::IsInverted() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineCollectionModifier", "IsInverted");
-
-	Params::MoviePipelineCollectionModifier_IsInverted Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.ApplyModifier
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineMaterialModifier::ApplyModifier(const class UWorld* World)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineMaterialModifier", "ApplyModifier");
-
-	Params::MoviePipelineMaterialModifier_ApplyModifier Parms{};
-
-	Parms.World = World;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.SetMaterial
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSoftObjectPtr<class UMaterialInterface>InMaterial                                             (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineMaterialModifier::SetMaterial(TSoftObjectPtr<class UMaterialInterface> InMaterial)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineMaterialModifier", "SetMaterial");
-
-	Params::MoviePipelineMaterialModifier_SetMaterial Parms{};
-
-	Parms.InMaterial = InMaterial;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineMaterialModifier.UndoModifier
-// (Native, Public, BlueprintCallable)
-
-void UMoviePipelineMaterialModifier::UndoModifier()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineMaterialModifier", "UndoModifier");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MovieRenderPipelineCore.MoviePipelineVisibilityModifier.ApplyModifier
 // (Native, Public, BlueprintCallable)
 // Parameters:
@@ -3205,209 +3265,6 @@ bool UMoviePipelineCollectionCommonQuery::DoesActorMatchQuery(const class AActor
 	Params::MoviePipelineCollectionCommonQuery_DoesActorMatchQuery Parms{};
 
 	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.AddModifier
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineCollectionModifier* Modifier                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineRenderLayer::AddModifier(class UMoviePipelineCollectionModifier* Modifier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "AddModifier");
-
-	Params::MoviePipelineRenderLayer_AddModifier Parms{};
-
-	Parms.Modifier = Modifier;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.Preview
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineRenderLayer::Preview(const class UWorld* World)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "Preview");
-
-	Params::MoviePipelineRenderLayer_Preview Parms{};
-
-	Parms.World = World;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.RemoveModifier
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMoviePipelineCollectionModifier* Modifier                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineRenderLayer::RemoveModifier(class UMoviePipelineCollectionModifier* Modifier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "RemoveModifier");
-
-	Params::MoviePipelineRenderLayer_RemoveModifier Parms{};
-
-	Parms.Modifier = Modifier;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.SetRenderLayerName
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    NewName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineRenderLayer::SetRenderLayerName(const class FString& NewName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "SetRenderLayerName");
-
-	Params::MoviePipelineRenderLayer_SetRenderLayerName Parms{};
-
-	Parms.NewName = std::move(NewName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.UndoPreview
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UWorld*                     World                                                  (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineRenderLayer::UndoPreview(const class UWorld* World)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "UndoPreview");
-
-	Params::MoviePipelineRenderLayer_UndoPreview Parms{};
-
-	Parms.World = World;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetCollectionByName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMoviePipelineCollection*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMoviePipelineCollection* UMoviePipelineRenderLayer::GetCollectionByName(const class FString& Name_0) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "GetCollectionByName");
-
-	Params::MoviePipelineRenderLayer_GetCollectionByName Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetModifiers
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class UMoviePipelineCollectionModifier*>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class UMoviePipelineCollectionModifier*> UMoviePipelineRenderLayer::GetModifiers() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "GetModifiers");
-
-	Params::MoviePipelineRenderLayer_GetModifiers Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineRenderLayer.GetRenderLayerName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UMoviePipelineRenderLayer::GetRenderLayerName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineRenderLayer", "GetRenderLayerName");
-
-	Params::MoviePipelineRenderLayer_GetRenderLayerName Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -3722,90 +3579,6 @@ class UMoviePipelineRenderLayer* UMoviePipelineRenderLayerSubsystem::GetActiveRe
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.OnEngineTickBeginFrame
-// (Event, Public, BlueprintEvent)
-
-void UMoviePipelineSetting_BlueprintBase::OnEngineTickBeginFrame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "OnEngineTickBeginFrame");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveSetupForPipelineImpl
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UMoviePipeline*                   InPipeline                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineSetting_BlueprintBase::ReceiveSetupForPipelineImpl(class UMoviePipeline* InPipeline)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "ReceiveSetupForPipelineImpl");
-
-	Params::MoviePipelineSetting_BlueprintBase_ReceiveSetupForPipelineImpl Parms{};
-
-	Parms.InPipeline = InPipeline;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveTeardownForPipelineImpl
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UMoviePipeline*                   InPipeline                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMoviePipelineSetting_BlueprintBase::ReceiveTeardownForPipelineImpl(class UMoviePipeline* InPipeline)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "ReceiveTeardownForPipelineImpl");
-
-	Params::MoviePipelineSetting_BlueprintBase_ReceiveTeardownForPipelineImpl Parms{};
-
-	Parms.InPipeline = InPipeline;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase.ReceiveGetFormatArguments
-// (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
-// Parameters:
-// struct FMoviePipelineFormatArgs&        InOutFormatArgs                                        (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FMoviePipelineFormatArgs         ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FMoviePipelineFormatArgs UMoviePipelineSetting_BlueprintBase::ReceiveGetFormatArguments(struct FMoviePipelineFormatArgs& InOutFormatArgs) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineSetting_BlueprintBase", "ReceiveGetFormatArguments");
-
-	Params::MoviePipelineSetting_BlueprintBase_ReceiveGetFormatArguments Parms{};
-
-	Parms.InOutFormatArgs = std::move(InOutFormatArgs);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	InOutFormatArgs = std::move(Parms.InOutFormatArgs);
 
 	return Parms.ReturnValue;
 }
@@ -6609,6 +6382,233 @@ bool UMoviePipelineExecutorJob::IsUsingGraphConfiguration() const
 		Func = Class->GetFunction("MoviePipelineExecutorJob", "IsUsingGraphConfiguration");
 
 	Params::MoviePipelineExecutorJob_IsUsingGraphConfiguration Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.AllocateNewJob
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UMoviePipelineExecutorJob>InJobType                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMoviePipelineExecutorJob*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMoviePipelineExecutorJob* UMoviePipelineQueue::AllocateNewJob(TSubclassOf<class UMoviePipelineExecutorJob> InJobType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "AllocateNewJob");
+
+	Params::MoviePipelineQueue_AllocateNewJob Parms{};
+
+	Parms.InJobType = InJobType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.CopyFrom
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineQueue*              InQueue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineQueue::CopyFrom(class UMoviePipelineQueue* InQueue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "CopyFrom");
+
+	Params::MoviePipelineQueue_CopyFrom Parms{};
+
+	Parms.InQueue = InQueue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.DeleteAllJobs
+// (Final, Native, Public, BlueprintCallable)
+
+void UMoviePipelineQueue::DeleteAllJobs()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "DeleteAllJobs");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.DeleteJob
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineQueue::DeleteJob(class UMoviePipelineExecutorJob* InJob)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "DeleteJob");
+
+	Params::MoviePipelineQueue_DeleteJob Parms{};
+
+	Parms.InJob = InJob;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.DuplicateJob
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMoviePipelineExecutorJob*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMoviePipelineExecutorJob* UMoviePipelineQueue::DuplicateJob(class UMoviePipelineExecutorJob* InJob)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "DuplicateJob");
+
+	Params::MoviePipelineQueue_DuplicateJob Parms{};
+
+	Parms.InJob = InJob;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.SetJobIndex
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineExecutorJob*        InJob                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineQueue::SetJobIndex(class UMoviePipelineExecutorJob* InJob, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "SetJobIndex");
+
+	Params::MoviePipelineQueue_SetJobIndex Parms{};
+
+	Parms.InJob = InJob;
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.SetQueueOrigin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMoviePipelineQueue*              InConfig                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMoviePipelineQueue::SetQueueOrigin(class UMoviePipelineQueue* InConfig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "SetQueueOrigin");
+
+	Params::MoviePipelineQueue_SetQueueOrigin Parms{};
+
+	Parms.InConfig = InConfig;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.GetJobs
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class UMoviePipelineExecutorJob*>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class UMoviePipelineExecutorJob*> UMoviePipelineQueue::GetJobs() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "GetJobs");
+
+	Params::MoviePipelineQueue_GetJobs Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieRenderPipelineCore.MoviePipelineQueue.GetQueueOrigin
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMoviePipelineQueue*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMoviePipelineQueue* UMoviePipelineQueue::GetQueueOrigin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MoviePipelineQueue", "GetQueueOrigin");
+
+	Params::MoviePipelineQueue_GetQueueOrigin Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

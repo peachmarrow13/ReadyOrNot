@@ -37,12 +37,12 @@ public:
 	bool                                          bIsSemi;                                           // 0x06D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_ANIMBP_G3A3(int32 EntryPoint);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void AnimNotify_ShowMag();
-	void AnimNotify_DropSpeedReloadMagazine();
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void AnimNotify_DropSpeedReloadMagazine();
+	void AnimNotify_ShowMag();
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060();
+	void ExecuteUbergraph_ANIMBP_G3A3(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function AIAction_NonCompliant.AIAction_NonCompliant_C.BeginAction_Blueprint
+// Function AIAction_NonCompliant.AIAction_NonCompliant_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_NonCompliant_C::BeginAction_Blueprint()
+void UAIAction_NonCompliant_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_NonCompliant_C", "BeginAction_Blueprint");
+		Func = Class->GetFunction("AIAction_NonCompliant_C", "Tick_Blueprint");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::AIAction_NonCompliant_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -51,23 +57,17 @@ void UAIAction_NonCompliant_C::ExecuteUbergraph_AIAction_NonCompliant(int32 Entr
 }
 
 
-// Function AIAction_NonCompliant.AIAction_NonCompliant_C.Tick_Blueprint
+// Function AIAction_NonCompliant.AIAction_NonCompliant_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_NonCompliant_C::Tick_Blueprint(float DeltaTime)
+void UAIAction_NonCompliant_C::BeginAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_NonCompliant_C", "Tick_Blueprint");
+		Func = Class->GetFunction("AIAction_NonCompliant_C", "BeginAction_Blueprint");
 
-	Params::AIAction_NonCompliant_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

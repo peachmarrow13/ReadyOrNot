@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ST_LineSegment_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "ST_VertexID_structs.hpp"
+#include "ST_LineSegment_structs.hpp"
 
 
 namespace SDK::Params

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Optic_SRO_Pistol.BP_Optic_SRO_Pistol_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UBP_Optic_SRO_Pistol_C final : public UScopedWeaponAttachment
 {
 public:

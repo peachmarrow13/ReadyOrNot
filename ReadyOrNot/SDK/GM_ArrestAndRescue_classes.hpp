@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_ArrestAndRescue.GM_ArrestAndRescue_C
-// 0x0010 (0x0A70 - 0x0A60)
+// 0x0010 (0x0A90 - 0x0A80)
 class AGM_ArrestAndRescue_C final : public AArrestAndRescueGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A80(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

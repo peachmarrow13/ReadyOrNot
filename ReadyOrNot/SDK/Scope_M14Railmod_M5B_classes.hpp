@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Scope_M14Railmod_M5B.Scope_M14Railmod_M5B_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UScope_M14Railmod_M5B_C final : public UScopedWeaponAttachment
 {
 public:

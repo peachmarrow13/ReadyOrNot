@@ -51,7 +51,7 @@ public:
 DUMPER7_ASSERTS_W_DLC_Button_C_ExecuteUbergraph_W_DLC_Button;
 
 // Function W_DLC_Button.W_DLC_Button_C.GetToolTipWidget
-// 0x0230 (0x0230 - 0x0000)
+// 0x0248 (0x0248 - 0x0000)
 struct W_DLC_Button_C_GetToolTipWidget final
 {
 public:
@@ -66,20 +66,21 @@ public:
 	class FText                                   Temp_text_Variable_7;                              // 0x00B0(0x0018)()
 	class FText                                   Temp_text_Variable_8;                              // 0x00C8(0x0018)()
 	class FText                                   Temp_text_Variable_9;                              // 0x00E0(0x0018)()
-	bool                                          Temp_bool_Variable;                                // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_Simple_Tooltip_C*                    CallFunc_Create_ReturnValue;                       // 0x0100(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	EGameVersionRestriction                       Temp_byte_Variable;                                // 0x0108(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsGameVersionEnabled_ReturnValue;         // 0x0109(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_10A[0x6];                                      // 0x010A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   K2Node_Select_Default;                             // 0x0110(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0128(0x0050)(HasGetValueTypeHash)
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0178(0x0050)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x01C8(0x0010)(ReferenceParm)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array_1;                          // 0x01D8(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x01E8(0x0018)()
-	class FText                                   CallFunc_Format_ReturnValue_1;                     // 0x0200(0x0018)()
-	class FText                                   K2Node_Select_Default_1;                           // 0x0218(0x0018)(ConstParm)
+	class FText                                   Temp_text_Variable_10;                             // 0x00F8(0x0018)()
+	bool                                          Temp_bool_Variable;                                // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_Simple_Tooltip_C*                    CallFunc_Create_ReturnValue;                       // 0x0118(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	EGameVersionRestriction                       Temp_byte_Variable;                                // 0x0120(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsGameVersionEnabled_ReturnValue;         // 0x0121(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_122[0x6];                                      // 0x0122(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   K2Node_Select_Default;                             // 0x0128(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0140(0x0050)(HasGetValueTypeHash)
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0190(0x0050)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x01E0(0x0010)(ReferenceParm)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array_1;                          // 0x01F0(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0200(0x0018)()
+	class FText                                   CallFunc_Format_ReturnValue_1;                     // 0x0218(0x0018)()
+	class FText                                   K2Node_Select_Default_1;                           // 0x0230(0x0018)(ConstParm)
 };
 DUMPER7_ASSERTS_W_DLC_Button_C_GetToolTipWidget;
 

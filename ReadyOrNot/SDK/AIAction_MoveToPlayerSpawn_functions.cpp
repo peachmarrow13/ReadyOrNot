@@ -17,31 +17,23 @@
 namespace SDK
 {
 
-// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.BeginAction_Blueprint
+// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.OnCreate_Blueprint
 // (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_MoveToPlayerSpawn_C::BeginAction_Blueprint()
+void UAIAction_MoveToPlayerSpawn_C::OnCreate_Blueprint(class ACyberneticController* Controller)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "BeginAction_Blueprint");
+		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "OnCreate_Blueprint");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::AIAction_MoveToPlayerSpawn_C_OnCreate_Blueprint Parms{};
 
+	Parms.Controller = Controller;
 
-// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_MoveToPlayerSpawn_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -65,23 +57,31 @@ void UAIAction_MoveToPlayerSpawn_C::ExecuteUbergraph_AIAction_MoveToPlayerSpawn(
 }
 
 
-// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.OnCreate_Blueprint
+// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.EndAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_MoveToPlayerSpawn_C::OnCreate_Blueprint(class ACyberneticController* Controller)
+void UAIAction_MoveToPlayerSpawn_C::EndAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "OnCreate_Blueprint");
+		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "EndAction_Blueprint");
 
-	Params::AIAction_MoveToPlayerSpawn_C_OnCreate_Blueprint Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.Controller = Controller;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_MoveToPlayerSpawn_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

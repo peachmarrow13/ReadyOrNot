@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_GunGame.GM_GunGame_C
-// 0x0010 (0x0D40 - 0x0D30)
+// 0x0010 (0x0D60 - 0x0D50)
 class AGM_GunGame_C final : public AGunGameGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0D50(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

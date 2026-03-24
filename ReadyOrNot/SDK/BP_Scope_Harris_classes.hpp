@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Scope_Harris.BP_Scope_Harris_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UBP_Scope_Harris_C final : public UScopedWeaponAttachment
 {
 public:

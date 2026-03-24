@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Facewear_None.BP_Facewear_None_C
-// 0x0000 (0x1B90 - 0x1B90)
+// 0x0000 (0x1BE0 - 0x1BE0)
 class ABP_Facewear_None_C final : public AHeadwear
 {
 public:

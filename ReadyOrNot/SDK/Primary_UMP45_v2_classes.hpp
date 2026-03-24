@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_UMP45_v2.Primary_UMP45_v2_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class APrimary_UMP45_v2_C final : public ABaseMagazineWeapon
 {
 public:

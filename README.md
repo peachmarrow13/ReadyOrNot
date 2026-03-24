@@ -1,8 +1,6 @@
 # Ready or Not Cheat
 
-A feature-rich cheat/trainer for Ready or Not, built with C++ using ImGui and DirectX 11. This project is designed for educational purposes and single-player use only.
-
-> **⚠️ Disclaimer:** This project is for educational purposes only. Please respect other players and use this responsibly in single-player or private sessions. Do not grief or ruin the experience for others.
+> **⚠️ Disclaimer:** Do not grief or ruin the experience for others.
 
 ---
 
@@ -129,10 +127,10 @@ A feature-rich cheat/trainer for Ready or Not, built with C++ using ImGui and Di
 
 ## Build Instructions
 
-This project is written in C++ and requires Visual Studio to build.
+This project is written in C++ and requires Visual Studio and Windows to build.
 
 ### Requirements
-- **Visual Studio 2022** (Community Edition or higher)
+- **Visual Studio 2022 (or higher)**
 - **Windows SDK** (latest version)
 - **DirectX 11 SDK**
 - **ImGui** (already included in the repository)
@@ -143,7 +141,7 @@ This project is written in C++ and requires Visual Studio to build.
 1. Clone this repository to your local machine
 2. Open `ReadyOrNot.sln` in Visual Studio
 3. Select the `Release` configuration from the dropdown
-4. Build the solution (`Ctrl+Shift+B` or Build → Build Solution)
+4. Build the solution
 5. The compiled DLL will be located in the `x64/Release` folder
 
 ### Build Notes
@@ -174,6 +172,8 @@ This project is written in C++ and requires Visual Studio to build.
 - Try cleaning the solution and rebuilding (`Build → Clean Solution`, then rebuild)
 - Verify your Visual Studio installation includes C++ development tools
 
+**Only contact me if you have tried troubleshooting yourself.**
+
 ---
 
 ## Credits
@@ -184,13 +184,7 @@ This project uses the following open-source libraries and tools:
 - **[MinHook](https://github.com/TsudaKageyu/minhook)** - Minimalistic x86/x64 API hooking library
 - **[Dumper-7](https://github.com/Encryqed/Dumper-7)** - Unreal Engine SDK generator
 
-Special thanks to the developers of these libraries for making this project possible.
-
 ---
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for complete details.
-
----
-
-**Made for educational purposes only. Use responsibly and respectfully.**

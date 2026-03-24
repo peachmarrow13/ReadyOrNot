@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "ST_Style_Text_structs.hpp"
 #include "Slate_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "ST_Style_Text_structs.hpp"
 
 
 namespace SDK::Params

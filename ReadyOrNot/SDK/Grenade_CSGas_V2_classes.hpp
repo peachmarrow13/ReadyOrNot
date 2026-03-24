@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Grenade_CSGas_V2.Grenade_CSGas_V2_C
-// 0x0010 (0x12C0 - 0x12B0)
+// 0x0010 (0x1320 - 0x1310)
 class AGrenade_CSGas_V2_C final : public ABaseGasGrenade
 {
 public:
-	double                                        AffectingPlayerPercentage;                         // 0x12B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        AffectingPlayerPercentage;                         // 0x1310(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	float PercentageAffectingPlayers() const;

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "AICompliantAction_Base_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void EndAction_Blueprint();
 	void ExecuteUbergraph_AICompliantAction_StationaryFake(int32 EntryPoint);
+	void EndAction_Blueprint();
 
 public:
 	static class UClass* StaticClass()

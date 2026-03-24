@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Suppressor_SOCOM338.BP_Suppressor_SOCOM338_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UBP_Suppressor_SOCOM338_C final : public UWeaponAttachment
 {
 public:

@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Modio_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "Modio_structs.hpp"
 
 
 namespace SDK
@@ -151,15 +151,25 @@ enum class EModioUIFeatureFlags : uint8
 	EModioUIFeatureFlags_MAX                 = 3,
 };
 
-// ScriptStruct ModioUICore.ModioUICommandAssetEntry
-// 0x00A0 (0x00A8 - 0x0008)
-struct FModioUICommandAssetEntry final : public FTableRowBase
+// ScriptStruct ModioUICore.ModioUIComponentMetadata
+// 0x0020 (0x0020 - 0x0000)
+struct FModioUIComponentMetadata
 {
 public:
-	TMap<class FName, class FText>                CommandTexts;                                      // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FSlateBrush>         CommandIconBrushes;                                // 0x0058(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TArray<class UClass*>                         RequiredInterfaces;                                // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	EModioUIComponentID                           ComponentID;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   ComponentDisplayName;                              // 0x0014(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioUICommandAssetEntry;
+DUMPER7_ASSERTS_FModioUIComponentMetadata;
+
+// ScriptStruct ModioUICore.ModioUIPresetFilterSelectorEntryComponentMetadata
+// 0x0000 (0x0020 - 0x0020)
+struct FModioUIPresetFilterSelectorEntryComponentMetadata final : public FModioUIComponentMetadata
+{
+};
+DUMPER7_ASSERTS_FModioUIPresetFilterSelectorEntryComponentMetadata;
 
 // ScriptStruct ModioUICore.ModioDefaultCodeInputTextBoxStyle
 // 0x02B0 (0x05F0 - 0x0340)
@@ -179,6 +189,16 @@ public:
 	uint8                                         Pad_5E8[0x8];                                      // 0x05E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FModioDefaultCodeInputTextBoxStyle;
+
+// ScriptStruct ModioUICore.ModioUICommandAssetEntry
+// 0x00A0 (0x00A8 - 0x0008)
+struct FModioUICommandAssetEntry final : public FTableRowBase
+{
+public:
+	TMap<class FName, class FText>                CommandTexts;                                      // 0x0008(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FSlateBrush>         CommandIconBrushes;                                // 0x0058(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModioUICommandAssetEntry;
 
 // ScriptStruct ModioUICore.ModioTextValidationRule
 // 0x0028 (0x0028 - 0x0000)
@@ -381,19 +401,6 @@ public:
 };
 DUMPER7_ASSERTS_FModioStackedBool;
 
-// ScriptStruct ModioUICore.ModioUIComponentMetadata
-// 0x0020 (0x0020 - 0x0000)
-struct FModioUIComponentMetadata
-{
-public:
-	TArray<class UClass*>                         RequiredInterfaces;                                // 0x0000(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	EModioUIComponentID                           ComponentID;                                       // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   ComponentDisplayName;                              // 0x0014(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioUIComponentMetadata;
-
 // ScriptStruct ModioUICore.ModioUIButtonComponentMetadata
 // 0x0000 (0x0020 - 0x0020)
 struct FModioUIButtonComponentMetadata final : public FModioUIComponentMetadata
@@ -477,13 +484,6 @@ struct FModioUIPresetFilterSelectorComponentMetadata final : public FModioUIComp
 {
 };
 DUMPER7_ASSERTS_FModioUIPresetFilterSelectorComponentMetadata;
-
-// ScriptStruct ModioUICore.ModioUIPresetFilterSelectorEntryComponentMetadata
-// 0x0000 (0x0020 - 0x0020)
-struct FModioUIPresetFilterSelectorEntryComponentMetadata final : public FModioUIComponentMetadata
-{
-};
-DUMPER7_ASSERTS_FModioUIPresetFilterSelectorEntryComponentMetadata;
 
 // ScriptStruct ModioUICore.ModioUICommandMenuComponentMetadata
 // 0x0000 (0x0020 - 0x0020)

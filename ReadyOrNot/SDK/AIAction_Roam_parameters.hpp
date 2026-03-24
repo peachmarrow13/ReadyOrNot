@@ -17,6 +17,44 @@
 namespace SDK::Params
 {
 
+// Function AIAction_Roam.AIAction_Roam_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_Roam_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_Roam_C_Tick_Blueprint;
+
+// Function AIAction_Roam.AIAction_Roam_C.OnPathFound_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_Roam_C_OnPathFound_Blueprint final
+{
+public:
+	int32                                         PathId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ERonNavigationQueryResult                     Result;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_Roam_C_OnPathFound_Blueprint;
+
+// Function AIAction_Roam.AIAction_Roam_C.OnMoveComplete_Blueprint
+// 0x0010 (0x0010 - 0x0000)
+struct AIAction_Roam_C_OnMoveComplete_Blueprint final
+{
+public:
+	class AAIController*                          Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         RequestID;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_Roam_C_OnMoveComplete_Blueprint;
+
+// Function AIAction_Roam.AIAction_Roam_C.InitAction_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_Roam_C_InitAction_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_Roam_C_InitAction_Blueprint;
+
 // Function AIAction_Roam.AIAction_Roam_C.ExecuteUbergraph_AIAction_Roam
 // 0x0290 (0x0290 - 0x0000)
 struct AIAction_Roam_C_ExecuteUbergraph_AIAction_Roam final
@@ -88,44 +126,6 @@ public:
 	double                                        CallFunc_Subtract_DoubleDouble_B_ImplicitCast;     // 0x0288(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_Roam_C_ExecuteUbergraph_AIAction_Roam;
-
-// Function AIAction_Roam.AIAction_Roam_C.InitAction_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_Roam_C_InitAction_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_Roam_C_InitAction_Blueprint;
-
-// Function AIAction_Roam.AIAction_Roam_C.OnMoveComplete_Blueprint
-// 0x0010 (0x0010 - 0x0000)
-struct AIAction_Roam_C_OnMoveComplete_Blueprint final
-{
-public:
-	class AAIController*                          Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         RequestID;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_Roam_C_OnMoveComplete_Blueprint;
-
-// Function AIAction_Roam.AIAction_Roam_C.OnPathFound_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_Roam_C_OnPathFound_Blueprint final
-{
-public:
-	int32                                         PathId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ERonNavigationQueryResult                     Result;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_Roam_C_OnPathFound_Blueprint;
-
-// Function AIAction_Roam.AIAction_Roam_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_Roam_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_Roam_C_Tick_Blueprint;
 
 // Function AIAction_Roam.AIAction_Roam_C.ShouldPerformAction
 // 0x0002 (0x0002 - 0x0000)

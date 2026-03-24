@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0058(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void BeginAction_Blueprint();
-	void ExecuteUbergraph_AIAction_NonCompliant(int32 EntryPoint);
 	void Tick_Blueprint(float DeltaTime);
+	void ExecuteUbergraph_AIAction_NonCompliant(int32 EntryPoint);
+	void BeginAction_Blueprint();
 
 	void CanBeNonCompliant(bool* Return_Value) const;
 

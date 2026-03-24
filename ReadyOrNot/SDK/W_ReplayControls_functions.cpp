@@ -741,6 +741,20 @@ void UW_ReplayControls_C::CycleActorChanged()
 }
 
 
+// Function W_ReplayControls.W_ReplayControls_C.Decrease Playback Speed
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_ReplayControls_C::Decrease_Playback_Speed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ReplayControls_C", "Decrease Playback Speed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_ReplayControls.W_ReplayControls_C.ExecuteUbergraph_W_ReplayControls
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -1099,6 +1113,20 @@ void UW_ReplayControls_C::HideLabelText()
 }
 
 
+// Function W_ReplayControls.W_ReplayControls_C.Increase Playback Speed
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_ReplayControls_C::Increase_Playback_Speed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ReplayControls_C", "Increase Playback Speed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_ReplayControls.W_ReplayControls_C.InitializeDefaults
 // (BlueprintCallable, BlueprintEvent)
 
@@ -1127,7 +1155,7 @@ void UW_ReplayControls_C::InitializeFooter()
 }
 
 
-// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_1
+// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_2
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1135,14 +1163,14 @@ void UW_ReplayControls_C::InitializeFooter()
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UW_ReplayControls_C::InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void UW_ReplayControls_C::InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_1");
+		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_2");
 
-	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_1 Parms{};
+	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputActionEvent_2 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1153,7 +1181,7 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputAct
 }
 
 
-// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_2
+// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_3
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1161,14 +1189,14 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CameraZoom_K2Node_EnhancedInputAct
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_2");
+		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_3");
 
-	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_2 Parms{};
+	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInputActionEvent_3 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1179,7 +1207,7 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInp
 }
 
 
-// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_3
+// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_4
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1187,14 +1215,14 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleCameraMode_K2Node_EnhancedInp
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_3");
+		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_4");
 
-	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_3 Parms{};
+	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInputActionEvent_4 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1205,7 +1233,7 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInpu
 }
 
 
-// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_4
+// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_5
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1213,14 +1241,14 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CycleNextActor_K2Node_EnhancedInpu
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UW_ReplayControls_C::InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void UW_ReplayControls_C::InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_4");
+		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_5");
 
-	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_4 Parms{};
+	Params::W_ReplayControls_C_InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInputActionEvent_5 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;
@@ -1231,7 +1259,7 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInpu
 }
 
 
-// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_0
+// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_1
 // (BlueprintEvent)
 // Parameters:
 // const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
@@ -1239,14 +1267,40 @@ void UW_ReplayControls_C::InpActEvt_IA_Replay_CyclePrevActor_K2Node_EnhancedInpu
 // float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UW_ReplayControls_C::InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+void UW_ReplayControls_C::InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_0");
+		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_1");
 
-	Params::W_ReplayControls_C_InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_0 Parms{};
+	Params::W_ReplayControls_C_InpActEvt_IA_Replay_HideHUD_K2Node_EnhancedInputActionEvent_1 Parms{};
+
+	Parms.ActionValue = std::move(ActionValue);
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TriggeredTime = TriggeredTime;
+	Parms.SourceAction = SourceAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_ReplayControls.W_ReplayControls_C.InpActEvt_IA_Replay_Pause_K2Node_EnhancedInputActionEvent_0
+// (BlueprintEvent)
+// Parameters:
+// const struct FInputActionValue&         ActionValue                                            (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TriggeredTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UInputAction*               SourceAction                                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UW_ReplayControls_C::InpActEvt_IA_Replay_Pause_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ReplayControls_C", "InpActEvt_IA_Replay_Pause_K2Node_EnhancedInputActionEvent_0");
+
+	Params::W_ReplayControls_C_InpActEvt_IA_Replay_Pause_K2Node_EnhancedInputActionEvent_0 Parms{};
 
 	Parms.ActionValue = std::move(ActionValue);
 	Parms.ElapsedTime = ElapsedTime;

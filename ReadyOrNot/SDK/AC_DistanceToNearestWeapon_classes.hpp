@@ -24,8 +24,8 @@ public:
 	double                                        SearchRange;                                       // 0x00D8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	float CalculateCurve(float X) const;
 	void FindWeaponsInRange(class ACyberneticCharacter* Start, TArray<class ABaseMagazineWeapon*>* Return_Value) const;
+	float CalculateCurve(float X) const;
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
 
 public:

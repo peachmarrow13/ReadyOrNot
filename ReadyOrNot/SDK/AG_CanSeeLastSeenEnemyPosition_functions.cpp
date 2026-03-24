@@ -17,6 +17,30 @@
 namespace SDK
 {
 
+// Function AG_CanSeeLastSeenEnemyPosition.AG_CanSeeLastSeenEnemyPosition_C.GetTargetPos
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// struct FVector*                         TargetPosition                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAG_CanSeeLastSeenEnemyPosition_C::GetTargetPos(class ACyberneticController* Controller, struct FVector* TargetPosition) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AG_CanSeeLastSeenEnemyPosition_C", "GetTargetPos");
+
+	Params::AG_CanSeeLastSeenEnemyPosition_C_GetTargetPos Parms{};
+
+	Parms.Controller = Controller;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TargetPosition != nullptr)
+		*TargetPosition = std::move(Parms.TargetPosition);
+}
+
+
 // Function AG_CanSeeLastSeenEnemyPosition.AG_CanSeeLastSeenEnemyPosition_C.CanOpen
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:

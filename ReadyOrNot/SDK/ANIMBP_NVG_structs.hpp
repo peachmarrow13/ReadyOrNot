@@ -31,5 +31,12 @@ public:
 };
 DUMPER7_ASSERTS_ANIMBP_NVG__FAnimBlueprintGeneratedConstantData;
 
+// ScriptStruct ANIMBP_NVG.ANIMBP_NVG_C.AnimBlueprintGeneratedMutableData
+// 0x0000 (0x0001 - 0x0001)
+struct ANIMBP_NVG::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+};
+DUMPER7_ASSERTS_ANIMBP_NVG__FAnimBlueprintGeneratedMutableData;
+
 }
 

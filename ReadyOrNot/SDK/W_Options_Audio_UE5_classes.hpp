@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
 #include "Engine_structs.hpp"
+#include "CommonUI_classes.hpp"
 #include "ReadyOrNot_structs.hpp"
 
 
@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Options_Audio_UE5.W_Options_Audio_UE5_C
-// 0x0088 (0x04A0 - 0x0418)
+// 0x0090 (0x04A8 - 0x0418)
 class UW_Options_Audio_UE5_C final : public UCommonActivatableWidget
 {
 public:
@@ -38,8 +38,9 @@ public:
 	class UW_OnOffButton_C*                       Audio_SubtitlesEnabled;                            // 0x0478(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_CommonCarousel_C*                    Audio_SubtitlesLanguage;                           // 0x0480(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_CommonCarousel_C*                    Audio_SubtitlesSize;                               // 0x0488(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UScrollBox*                             Tab_Audio;                                         // 0x0490(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          Initialized;                                       // 0x0498(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UW_OptionsContainer_UE5_C*              AudioInputDeviceContainer;                         // 0x0490(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UScrollBox*                             Tab_Audio;                                         // 0x0498(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          Initialized;                                       // 0x04A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_Options_Audio_UE5_Audio_AudioMix_K2Node_ComponentBoundEvent_4_OnPageIndexChanged__DelegateSignature(int32 Index_0, const class FString& Value);

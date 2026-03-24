@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Faction_TheHand.Faction_TheHand_C
-// 0x0008 (0x02F8 - 0x02F0)
+// 0x0008 (0x0300 - 0x02F8)
 class AFaction_TheHand_C final : public AAIFactionManager
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

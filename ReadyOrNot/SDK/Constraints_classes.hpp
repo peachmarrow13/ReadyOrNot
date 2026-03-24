@@ -22,11 +22,11 @@ namespace SDK
 {
 
 // Class Constraints.ConstraintsActor
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class AConstraintsActor final : public AActor
 {
 public:
-	class UConstraintsManager*                    ConstraintsManager;                                // 0x0298(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UConstraintsManager*                    ConstraintsManager;                                // 0x02A0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

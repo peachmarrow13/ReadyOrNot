@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "EIconAnimationStyles_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "EIconAnimationStyles_structs.hpp"
 
 
 namespace SDK::Params

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Melee_Knife.Melee_Knife_C
-// 0x0000 (0x13A0 - 0x13A0)
+// 0x0000 (0x1410 - 0x1410)
 class AMelee_Knife_C final : public AMeleeWeapon
 {
 public:

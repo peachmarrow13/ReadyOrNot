@@ -10,21 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "EnhancedInput_classes.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
 {
 
 // Class RedpointEOSFramework.RedpointEOSPartyMember
-// 0x0040 (0x02D8 - 0x0298)
+// 0x0040 (0x02E0 - 0x02A0)
 class ARedpointEOSPartyMember final : public AActor
 {
 public:
-	uint8                                         Pad_298[0x38];                                     // 0x0298(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PartyMemberSlot;                                   // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D4[0x4];                                      // 0x02D4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2A0[0x38];                                     // 0x02A0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PartyMemberSlot;                                   // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2DC[0x4];                                      // 0x02DC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void PartyMemberChanged(const struct FRedpointEOSPartyMemberInfo& PartyMember);
@@ -71,7 +71,7 @@ public:
 DUMPER7_ASSERTS_ARedpointEOSStarterCharacter;
 
 // Class RedpointEOSFramework.RedpointEOSStarterGameMode
-// 0x0000 (0x0338 - 0x0338)
+// 0x0000 (0x0340 - 0x0340)
 class ARedpointEOSStarterGameMode final : public AGameModeBase
 {
 public:
@@ -151,15 +151,15 @@ public:
 DUMPER7_ASSERTS_URedpointEOSStarterMoveAction;
 
 // Class RedpointEOSFramework.RedpointEOSStarterPlayerController
-// 0x0080 (0x08D8 - 0x0858)
+// 0x0080 (0x08E0 - 0x0860)
 class ARedpointEOSStarterPlayerController final : public APlayerController
 {
 public:
-	TSoftObjectPtr<class UInputAction>            MoveAction;                                        // 0x0858(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UInputAction>            JumpAction;                                        // 0x0880(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UInputMappingContext>    InputMappingContext;                               // 0x08A8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSkipInputMappingContext;                          // 0x08D0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8D1[0x7];                                      // 0x08D1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UInputAction>            MoveAction;                                        // 0x0860(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UInputAction>            JumpAction;                                        // 0x0888(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UInputMappingContext>    InputMappingContext;                               // 0x08B0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSkipInputMappingContext;                          // 0x08D8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8D9[0x7];                                      // 0x08D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

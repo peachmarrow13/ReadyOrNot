@@ -17,29 +17,6 @@
 namespace SDK
 {
 
-// Function AC_DistanceToTarget.AC_DistanceToTarget_C.CalculateCurve
-// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// float                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UAC_DistanceToTarget_C::CalculateCurve(float X) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_DistanceToTarget_C", "CalculateCurve");
-
-	Params::AC_DistanceToTarget_C_CalculateCurve Parms{};
-
-	Parms.X = X;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AC_DistanceToTarget.AC_DistanceToTarget_C.Score
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -62,6 +39,29 @@ float UAC_DistanceToTarget_C::Score(const struct FAIActionDecisionContext& Conte
 
 	if (bSuccess != nullptr)
 		*bSuccess = Parms.bSuccess;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AC_DistanceToTarget.AC_DistanceToTarget_C.CalculateCurve
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// float                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UAC_DistanceToTarget_C::CalculateCurve(float X) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_DistanceToTarget_C", "CalculateCurve");
+
+	Params::AC_DistanceToTarget_C_CalculateCurve Parms{};
+
+	Parms.X = X;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
 }

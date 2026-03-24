@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Scope_Holosight_HS510C.Scope_Holosight_HS510C_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UScope_Holosight_HS510C_C final : public UScopedWeaponAttachment
 {
 public:

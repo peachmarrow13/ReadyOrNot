@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ANIMBP_M320_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "ANIMBP_M320_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -39,9 +39,9 @@ public:
 	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x05F0(0x0048)()
 
 public:
-	void ExecuteUbergraph_ANIMBP_M320(int32 EntryPoint);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_M320_AnimGraphNode_ModifyBone_EDE7589748607C162DE04CB3782BCD3A();
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_M320_AnimGraphNode_ModifyBone_EDE7589748607C162DE04CB3782BCD3A();
+	void ExecuteUbergraph_ANIMBP_M320(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

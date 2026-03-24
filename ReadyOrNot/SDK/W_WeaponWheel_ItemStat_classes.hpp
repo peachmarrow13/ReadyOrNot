@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_WeaponWheel_ItemStat.W_WeaponWheel_ItemStat_C
-// 0x0768 (0x0A30 - 0x02C8)
+// 0x0758 (0x0A20 - 0x02C8)
 class UW_WeaponWheel_ItemStat_C final : public UWeaponWheel_ItemStat_Base
 {
 public:
@@ -38,10 +38,10 @@ public:
 	double                                        TargetPercent;                                     // 0x0328(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	EEasingFunc                                   EasingFunction;                                    // 0x0330(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 	uint8                                         Pad_331[0xF];                                      // 0x0331(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FItemLookupTable                       ItemLookupTable;                                   // 0x0340(0x06D0)(Edit, BlueprintVisible, ExposeOnSpawn)
-	double                                        WheelSize;                                         // 0x0A10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	double                                        MaxWheelSize;                                      // 0x0A18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	struct FVector2D                              WidgetSize;                                        // 0x0A20(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FItemLookupTable                       ItemLookupTable;                                   // 0x0340(0x06C0)(Edit, BlueprintVisible, ExposeOnSpawn)
+	double                                        WheelSize;                                         // 0x0A00(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	double                                        MaxWheelSize;                                      // 0x0A08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	struct FVector2D                              WidgetSize;                                        // 0x0A10(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_W_WeaponWheel_ItemStat(int32 EntryPoint);

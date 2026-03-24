@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_Flashlight.Rifle_Flashlight_C
-// 0x0000 (0x11F0 - 0x11F0)
+// 0x0000 (0x11C0 - 0x11C0)
 class URifle_Flashlight_C final : public UPistol_Flashlight_C
 {
 public:

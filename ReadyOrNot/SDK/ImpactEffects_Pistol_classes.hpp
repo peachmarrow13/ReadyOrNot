@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ImpactEffects_Pistol.ImpactEffects_Pistol_C
-// 0x0000 (0x0D30 - 0x0D30)
+// 0x0000 (0x0D38 - 0x0D38)
 class AImpactEffects_Pistol_C final : public AImpactEffect
 {
 public:

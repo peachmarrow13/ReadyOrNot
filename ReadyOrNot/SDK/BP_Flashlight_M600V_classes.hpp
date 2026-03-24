@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Pistol_Flashlight_classes.hpp"
+#include "ReadyOrNot_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Flashlight_M600V.BP_Flashlight_M600V_C
-// 0x0000 (0x11F0 - 0x11F0)
-class UBP_Flashlight_M600V_C final : public UPistol_Flashlight_C
+// 0x0000 (0x11C0 - 0x11C0)
+class UBP_Flashlight_M600V_C final : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

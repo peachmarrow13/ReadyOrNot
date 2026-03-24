@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
+#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
-#include "CommonInput_structs.hpp"
 #include "Slate_structs.hpp"
+#include "CommonUI_classes.hpp"
 
 
 namespace SDK
@@ -40,7 +40,7 @@ public:
 	class UW_Loadout_Page_ItemList_C*             WeaponList;                                        // 0x0478(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	bool                                          ChangingPrimary;                                   // 0x0480(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ChangingSecondary;                                 // 0x0481(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EItemClass                                    CurrentItemClass;                                  // 0x0482(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               CurrentItemClass;                                  // 0x0482(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_483[0x5];                                      // 0x0483(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class UFMODEvent*                             PrimarySelectedEvent;                              // 0x0488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UFMODEvent*                             SecondarySelectedEvent;                            // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
@@ -58,10 +58,10 @@ public:
 	void BndEvt__W_Loadout_Page_Weapon_PrimaryEdit_K2Node_ComponentBoundEvent_7_OnAttachmentUnhovered__DelegateSignature();
 	void BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_11_OnCurrentWeaponHovered__DelegateSignature();
 	void BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_17_OnItemUpdated__DelegateSignature();
-	void BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_1_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass);
+	void BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_1_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass, EWeaponSubclass WeaponClass);
 	void BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_3_OnAttachmentHovered__DelegateSignature(class UWeaponAttachment* Attachment, EWeaponAttachmentType AttachmentType);
 	void BndEvt__W_Loadout_Page_Weapon_SecondaryEdit_K2Node_ComponentBoundEvent_8_OnAttachmentUnhovered__DelegateSignature();
-	void BndEvt__W_Loadout_Page_Weapon_WeaponEdit_K2Node_ComponentBoundEvent_0_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass);
+	void BndEvt__W_Loadout_Page_Weapon_WeaponEdit_K2Node_ComponentBoundEvent_0_OnCurrentWeaponClicked__DelegateSignature(bool Secondary, EItemClass ItemClass, EWeaponSubclass WeaponClass);
 	void BndEvt__W_Loadout_Page_Weapon_WeaponList_K2Node_ComponentBoundEvent_12_OnWidgetActivationChanged__DelegateSignature();
 	void BndEvt__W_Loadout_Page_WeaponEdit_WeaponList_K2Node_ComponentBoundEvent_4_OnWeaponHovered__DelegateSignature(class ABaseWeapon* Weapon, class UW_LoadoutSlot_v2_C* TriggeringSlot);
 	void BndEvt__W_Loadout_Page_WeaponEdit_WeaponList_K2Node_ComponentBoundEvent_5_OnWeaponUnhovered__DelegateSignature();

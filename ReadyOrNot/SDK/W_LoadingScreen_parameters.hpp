@@ -115,7 +115,7 @@ public:
 DUMPER7_ASSERTS_W_LoadingScreen_C_Tick;
 
 // Function W_LoadingScreen.W_LoadingScreen_C.UpdateHeaderText
-// 0x08D8 (0x08D8 - 0x0000)
+// 0x0928 (0x0928 - 0x0000)
 struct W_LoadingScreen_C_UpdateHeaderText final
 {
 public:
@@ -123,10 +123,10 @@ public:
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_MakeLiteralText_ReturnValue;              // 0x0008(0x0018)()
 	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0020(0x0018)()
-	struct FLevelDataLookupTable                  CallFunc_GetMapDetailsFromName_ReturnValue;        // 0x0038(0x0880)()
-	bool                                          CallFunc_TextIsEmpty_ReturnValue;                  // 0x08B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8B9[0x7];                                      // 0x08B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   K2Node_Select_Default;                             // 0x08C0(0x0018)()
+	struct FLevelDataLookupTable                  CallFunc_GetMapDetailsFromName_ReturnValue;        // 0x0038(0x08D0)()
+	bool                                          CallFunc_TextIsEmpty_ReturnValue;                  // 0x0908(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_909[0x7];                                      // 0x0909(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   K2Node_Select_Default;                             // 0x0910(0x0018)()
 };
 DUMPER7_ASSERTS_W_LoadingScreen_C_UpdateHeaderText;
 

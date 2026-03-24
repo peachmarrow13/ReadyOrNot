@@ -27,8 +27,8 @@ public:
 	bool                                          bAllowNeutral;                                     // 0x00DB(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	float CalculateCurve(float X) const;
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
+	float CalculateCurve(float X) const;
 
 public:
 	static class UClass* StaticClass()

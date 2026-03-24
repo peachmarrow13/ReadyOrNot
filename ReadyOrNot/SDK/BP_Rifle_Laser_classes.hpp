@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Rifle_Laser.BP_Rifle_Laser_C
-// 0x0000 (0x1110 - 0x1110)
-class UBP_Rifle_Laser_C final : public ULaserAttachment
+// 0x0000 (0x11C0 - 0x11C0)
+class UBP_Rifle_Laser_C final : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

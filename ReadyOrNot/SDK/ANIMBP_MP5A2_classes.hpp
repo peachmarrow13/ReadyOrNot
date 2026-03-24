@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ANIMBP_MP5A2_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ANIMBP_MP5A2_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -45,11 +45,11 @@ public:
 	uint8                                         CurrentFireMode;                                   // 0x0808(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void AnimNotify_DropSpeedReloadMagazine();
-	void AnimNotify_ShowMag();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void ExecuteUbergraph_ANIMBP_MP5A2(int32 EntryPoint);
+	void AnimNotify_DropSpeedReloadMagazine();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void AnimNotify_ShowMag();
 
 public:
 	static class UClass* StaticClass()

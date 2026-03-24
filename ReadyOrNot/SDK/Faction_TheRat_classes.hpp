@@ -18,19 +18,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Faction_TheRat.Faction_TheRat_C
-// 0x0018 (0x0308 - 0x02F0)
+// 0x0018 (0x0310 - 0x02F8)
 class AFaction_TheRat_C final : public AAIFactionManager
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ACyberneticCharacter*                   Gerard;                                            // 0x0300(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0300(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ACyberneticCharacter*                   Gerard;                                            // 0x0308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void CustomEvent_0();
-	void ExecuteUbergraph_Faction_TheRat(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_Faction_TheRat(int32 EntryPoint);
+	void CustomEvent_0();
 
 public:
 	static class UClass* StaticClass()

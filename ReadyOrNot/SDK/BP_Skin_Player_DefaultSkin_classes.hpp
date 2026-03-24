@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Skin_Player_DefaultSkin.BP_Skin_Player_DefaultSkin_C
-// 0x0000 (0x0258 - 0x0258)
+// 0x0000 (0x0260 - 0x0260)
 class UBP_Skin_Player_DefaultSkin_C final : public USkinComponent
 {
 public:

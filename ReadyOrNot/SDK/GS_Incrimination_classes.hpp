@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_Incrimination.GS_Incrimination_C
-// 0x0000 (0x0A00 - 0x0A00)
+// 0x0000 (0x0A30 - 0x0A30)
 class AGS_Incrimination_C final : public AIncriminationGS
 {
 public:

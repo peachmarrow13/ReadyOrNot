@@ -17,6 +17,36 @@
 namespace SDK::Params
 {
 
+// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_StandingSurrender_Moving_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_Tick_Blueprint;
+
+// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.InitAction_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_StandingSurrender_Moving_C_InitAction_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_InitAction_Blueprint;
+
+// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.GetComplianceVoiceOver
+// 0x0028 (0x0028 - 0x0000)
+struct AIAction_StandingSurrender_Moving_C_GetComplianceVoiceOver final
+{
+public:
+	bool                                          bUseAlternate;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 NewParam;                                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_GetComplianceVoiceOver;
+
 // Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.ExecuteUbergraph_AIAction_StandingSurrender_Moving
 // 0x0120 (0x0120 - 0x0000)
 struct AIAction_StandingSurrender_Moving_C_ExecuteUbergraph_AIAction_StandingSurrender_Moving final
@@ -66,35 +96,14 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_ExecuteUbergraph_AIAction_StandingSurrender_Moving;
 
-// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.GetComplianceVoiceOver
-// 0x0028 (0x0028 - 0x0000)
-struct AIAction_StandingSurrender_Moving_C_GetComplianceVoiceOver final
+// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.ShouldPerformAction
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_StandingSurrender_Moving_C_ShouldPerformAction final
 {
 public:
-	bool                                          bUseAlternate;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 NewParam;                                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_SelectString_ReturnValue;                 // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_GetComplianceVoiceOver;
-
-// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.InitAction_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_StandingSurrender_Moving_C_InitAction_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_InitAction_Blueprint;
-
-// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_StandingSurrender_Moving_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_Tick_Blueprint;
+DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_ShouldPerformAction;
 
 // Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.GetMoveStyleOverride
 // 0x0010 (0x0010 - 0x0000)
@@ -105,15 +114,6 @@ public:
 	class FName                                   CallFunc_MakeLiteralName_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_GetMoveStyleOverride;
-
-// Function AIAction_StandingSurrender_Moving.AIAction_StandingSurrender_Moving_C.ShouldPerformAction
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_StandingSurrender_Moving_C_ShouldPerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_StandingSurrender_Moving_C_ShouldPerformAction;
 
 }
 

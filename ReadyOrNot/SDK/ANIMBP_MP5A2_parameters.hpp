@@ -16,6 +16,20 @@
 namespace SDK::Params
 {
 
+// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.ExecuteUbergraph_ANIMBP_MP5A2
+// 0x0020 (0x0020 - 0x0000)
+struct ANIMBP_MP5A2_C_ExecuteUbergraph_ANIMBP_MP5A2 final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaTimeX;                           // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetOwningActor_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ABaseMagazineWeapon*                    K2Node_DynamicCast_AsBase_Magazine_Weapon;         // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ANIMBP_MP5A2_C_ExecuteUbergraph_ANIMBP_MP5A2;
+
 // Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.AnimGraph
 // 0x0010 (0x0010 - 0x0000)
 struct ANIMBP_MP5A2_C_AnimGraph final
@@ -33,20 +47,6 @@ public:
 	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ANIMBP_MP5A2_C_BlueprintUpdateAnimation;
-
-// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.ExecuteUbergraph_ANIMBP_MP5A2
-// 0x0020 (0x0020 - 0x0000)
-struct ANIMBP_MP5A2_C_ExecuteUbergraph_ANIMBP_MP5A2 final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaTimeX;                           // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetOwningActor_ReturnValue;               // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ABaseMagazineWeapon*                    K2Node_DynamicCast_AsBase_Magazine_Weapon;         // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ANIMBP_MP5A2_C_ExecuteUbergraph_ANIMBP_MP5A2;
 
 }
 

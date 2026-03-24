@@ -26,11 +26,14 @@ public:
 	class UMoveToZoneCombatMove*                  AdvanceToZoneCM;                                   // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void ExecuteUbergraph_AIAction_AdvanceToZone(int32 EntryPoint);
+	void Tick_Blueprint(float DeltaTime);
 	void OnCreate_Blueprint(class ACyberneticController* Controller);
+	void ExecuteUbergraph_AIAction_AdvanceToZone(int32 EntryPoint);
+	void EndAction_Blueprint();
+	void BeginAction_Blueprint();
 
 	bool ShouldPerformAction() const;
+	class FName GetMoveStyleOverride() const;
 
 public:
 	static class UClass* StaticClass()

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass KilledSuspectNavigationAvoidanceShape.KilledSuspectNavigationAvoidanceShape_C
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class AKilledSuspectNavigationAvoidanceShape_C final : public AActor
 {
 public:
-	class UBoxComponent*                          Box;                                               // 0x0298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          Box;                                               // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

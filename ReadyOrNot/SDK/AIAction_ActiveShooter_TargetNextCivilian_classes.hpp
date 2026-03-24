@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C
-// 0x0038 (0x0090 - 0x0058)
+// 0x0040 (0x0098 - 0x0058)
 class UAIAction_ActiveShooter_TargetNextCivilian_C final : public UAIAction
 {
 public:
@@ -29,20 +29,22 @@ public:
 	TArray<class ACyberneticCharacter*>           FailedCivilianPaths;                               // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	double                                        TimeUntilKill;                                     // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	double                                        TimeUntilNextVO;                                   // 0x0088(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UTargetCivActivity_C*                   TargetCivAction;                                   // 0x0090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void EndAction_Blueprint();
-	void ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian(int32 EntryPoint);
-	void FindNextCivilian();
-	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
-	void Tick_Blueprint(float DeltaTime);
 	void TryScriptedFireAtCivilian();
+	void Tick_Blueprint(float DeltaTime);
+	void FindNextCivilian();
+	void ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian(int32 EntryPoint);
+	void EndAction_Blueprint();
+	void BeginAction_Blueprint();
+	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
+	void OnCreate_Blueprint(class ACyberneticController* Controller);
 
-	void CanTargetCivilian(class ACyberneticCharacter* InCivilian, bool* Return_Value) const;
-	class FString GatherDebugInfo() const;
-	void GetNextClosestAliveCivilian(class ACyberneticCharacter** civilian, bool* Return_Value) const;
 	bool ShouldPerformAction() const;
+	void GetNextClosestAliveCivilian(class ACyberneticCharacter** civilian, bool* Return_Value) const;
+	class FString GatherDebugInfo() const;
+	void CanTargetCivilian(class ACyberneticCharacter* InCivilian, bool* Return_Value) const;
 
 public:
 	static class UClass* StaticClass()

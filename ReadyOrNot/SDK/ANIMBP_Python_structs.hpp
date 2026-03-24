@@ -39,5 +39,12 @@ public:
 };
 DUMPER7_ASSERTS_ANIMBP_Python__FAnimBlueprintGeneratedConstantData;
 
+// ScriptStruct ANIMBP_Python.ANIMBP_Python_C.AnimBlueprintGeneratedMutableData
+// 0x0000 (0x0001 - 0x0001)
+struct ANIMBP_Python::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+};
+DUMPER7_ASSERTS_ANIMBP_Python__FAnimBlueprintGeneratedMutableData;
+
 }
 

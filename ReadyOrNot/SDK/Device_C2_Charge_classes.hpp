@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_C2_Charge.Device_C2_Charge_C
-// 0x0000 (0x0D90 - 0x0D90)
+// 0x0000 (0x0DE0 - 0x0DE0)
 class ADevice_C2_Charge_C final : public AC2Explosive
 {
 public:

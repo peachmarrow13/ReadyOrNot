@@ -24,9 +24,9 @@ public:
 	double                                        SearchRange;                                       // 0x00D8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	float CalculateCurve(float X) const;
-	void FindCiviliansInRange(class ACyberneticCharacter* Start, TArray<class ACivilianCharacter*>* Return_Value) const;
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
+	void FindCiviliansInRange(class ACyberneticCharacter* Start, TArray<class ACivilianCharacter*>* Return_Value) const;
+	float CalculateCurve(float X) const;
 
 public:
 	static class UClass* StaticClass()

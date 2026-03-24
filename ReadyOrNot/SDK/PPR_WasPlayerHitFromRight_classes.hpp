@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PPR_WasPlayerHitFromRight.PPR_WasPlayerHitFromRight_C
-// 0x0000 (0x0038 - 0x0038)
+// 0x0000 (0x0040 - 0x0040)
 class UPPR_WasPlayerHitFromRight_C final : public UPostProcessRequirement
 {
 public:

@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_OptionsContainer_UE5.W_OptionsContainer_UE5_C
-// 0x0080 (0x0348 - 0x02C8)
+// 0x0088 (0x0350 - 0x02C8)
 class UW_OptionsContainer_UE5_C final : public UUserWidget
 {
 public:
@@ -37,11 +37,14 @@ public:
 	bool                                          bDesignTime;                                       // 0x0329(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_32A[0x6];                                      // 0x032A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   InputBindText_PS5Variant;                          // 0x0330(0x0018)(Edit, BlueprintVisible)
+	bool                                          bMouseFocused;                                     // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Construct();
 	void DisplayDependents(bool ShowDependents);
 	void ExecuteUbergraph_W_OptionsContainer_UE5(int32 EntryPoint);
+	void OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	void OnMouseLeave(const struct FPointerEvent& MouseEvent);
 	void PreConstruct(bool IsDesignTime);
 
 public:

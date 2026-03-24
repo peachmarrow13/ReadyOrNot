@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Keycard.BP_Keycard_C
-// 0x0018 (0x02B0 - 0x0298)
+// 0x0018 (0x02B8 - 0x02A0)
 class ABP_Keycard_C final : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UInteractableComponent*                 PickupInteractable;                                // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   KeycardMesh;                                       // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UInteractableComponent*                 PickupInteractable;                                // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   KeycardMesh;                                       // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveBeginPlay();
@@ -32,13 +32,12 @@ public:
 	void OnFocusGain(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void MeleeInteract(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void Interact(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
-	void Fire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void ExecuteUbergraph_BP_Keycard(int32 EntryPoint);
 	void EndInteract(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void EndFire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void DoubleTapInteract(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
+	void Fire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 
-	class UInteractableComponent* GetInteractableComponent() const;
 	float DetermineInteractionDistance() const;
 	EInputEvent DetermineInputEvent() const;
 	float DetermineCurrentProgress() const;
@@ -46,6 +45,7 @@ public:
 	class FText DetermineActionText() const;
 	bool CanInteractThroughHitActors(const struct FHitResult& Hit) const;
 	bool CanInteract() const;
+	class UInteractableComponent* GetInteractableComponent() const;
 
 public:
 	static class UClass* StaticClass()

@@ -72,6 +72,7 @@ public:
 	void SetupNavigation();
 	void Show_Footer_Options();
 	void ShowCreditsButton(bool* Show);
+	void ShowMissionOptions();
 	bool ShowQuitButton();
 	void UpdateActiveNavButton();
 

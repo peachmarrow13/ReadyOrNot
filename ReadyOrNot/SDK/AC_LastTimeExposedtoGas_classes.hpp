@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -17,10 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AC_LastTimeExposedtoGas.AC_LastTimeExposedtoGas_C
-// 0x0000 (0x00D8 - 0x00D8)
+// 0x0010 (0x00E8 - 0x00D8)
 class UAC_LastTimeExposedtoGas_C final : public UAIActionConsideration
 {
 public:
+	TArray<EGasType>                              GasType;                                           // 0x00D8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+
+public:
+	void TempFunc(EGasType GasType_0);
+
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
 
 public:

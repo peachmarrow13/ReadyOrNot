@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_Zipcuffs_v2.Device_Zipcuffs_v2_C
-// 0x0000 (0x0DE0 - 0x0DE0)
+// 0x0000 (0x0E30 - 0x0E30)
 class ADevice_Zipcuffs_v2_C final : public AZipcuffs
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Helmet_GPNVG.Helmet_GPNVG_C
-// 0x0000 (0x22F0 - 0x22F0)
+// 0x0000 (0x2340 - 0x2340)
 class AHelmet_GPNVG_C final : public AHelmet_NVG_V2_C
 {
 public:

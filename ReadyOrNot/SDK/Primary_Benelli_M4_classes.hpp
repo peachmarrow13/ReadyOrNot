@@ -17,18 +17,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_Benelli_M4.Primary_Benelli_M4_C
-// 0x0040 (0x1960 - 0x1920)
+// 0x0040 (0x1A50 - 0x1A10)
 class APrimary_Benelli_M4_C final : public AShotgun
 {
 public:
-	class UShellRackShellComponent*               Shell6;                                            // 0x1920(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell5;                                            // 0x1928(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell4;                                            // 0x1930(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell3;                                            // 0x1938(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell2;                                            // 0x1940(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell1;                                            // 0x1948(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell0;                                            // 0x1950(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAnimMontage*                           LightToggle1P;                                     // 0x1958(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell6;                                            // 0x1A10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell5;                                            // 0x1A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell4;                                            // 0x1A20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell3;                                            // 0x1A28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell2;                                            // 0x1A30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell1;                                            // 0x1A38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell0;                                            // 0x1A40(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           LightToggle1P;                                     // 0x1A48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

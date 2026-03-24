@@ -19,11 +19,11 @@ namespace SDK
 {
 
 // Class StandinActor.StandInMeshActor
-// 0x0008 (0x02A0 - 0x0298)
+// 0x0008 (0x02A8 - 0x02A0)
 class AStandInMeshActor final : public AActor
 {
 public:
-	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x0298(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x02A0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()

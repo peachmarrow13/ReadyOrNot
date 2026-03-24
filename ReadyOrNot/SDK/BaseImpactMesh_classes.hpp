@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BaseImpactMesh.BaseImpactMesh_C
-// 0x0010 (0x02A8 - 0x0298)
+// 0x0010 (0x02B0 - 0x02A0)
 class ABaseImpactMesh_C : public AActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   ImpactMesh;                                        // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   ImpactMesh;                                        // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BaseImpactMesh(int32 EntryPoint);

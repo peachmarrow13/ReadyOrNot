@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BatteringRam_GunGame.BP_BatteringRam_GunGame_C
-// 0x0000 (0x0DA0 - 0x0DA0)
+// 0x0000 (0x0DF0 - 0x0DF0)
 class ABP_BatteringRam_GunGame_C final : public ABP_BatteringRam_C
 {
 public:

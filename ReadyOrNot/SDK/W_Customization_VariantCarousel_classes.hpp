@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
+#include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
-#include "CommonInput_structs.hpp"
+#include "CommonUI_classes.hpp"
 #include "UMG_structs.hpp"
 
 
@@ -79,12 +79,10 @@ public:
 	void ClearVariants();
 	void CreateSlotWidget(class ULoadoutCustomization* Item, class UW_Customization_Slot_C** NewSlot);
 	void ExecuteUbergraph_W_Customization_VariantCarousel(int32 EntryPoint);
-	void Finished_5D3A15DF41AE559F28640EA8D797D0E7();
 	void Finished_CBDC193A483107451E79AFB7D86600BA();
 	void GetActionIconSizeRatio(class UCommonActionWidget* CommonActionWidget, double* IconRatio);
 	void GetInputIconVisibility(ESlateVisibility* Visibility_0);
 	void Hide(double Delay, bool Collapse);
-	void HideList(bool RefreshList);
 	void HighlightSlot(class UW_Customization_Slot_C* NewHighlight);
 	void InputMethodChanged(ECommonInputType bNewInputType);
 	void NavigateNextTerminated(bool Terminated);

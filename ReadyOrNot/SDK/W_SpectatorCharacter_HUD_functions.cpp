@@ -52,6 +52,20 @@ void UW_SpectatorCharacter_HUD_C::BndEvt__W_COOPDeathScreen_K2Node_ComponentBoun
 }
 
 
+// Function W_SpectatorCharacter_HUD.W_SpectatorCharacter_HUD_C.BndEvt__W_SpectatorCharacter_HUD_COOPDeathScreen_K2Node_ComponentBoundEvent_0_OnEditLoadoutButtonClicked__DelegateSignature
+// (BlueprintEvent)
+
+void UW_SpectatorCharacter_HUD_C::BndEvt__W_SpectatorCharacter_HUD_COOPDeathScreen_K2Node_ComponentBoundEvent_0_OnEditLoadoutButtonClicked__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpectatorCharacter_HUD_C", "BndEvt__W_SpectatorCharacter_HUD_COOPDeathScreen_K2Node_ComponentBoundEvent_0_OnEditLoadoutButtonClicked__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_SpectatorCharacter_HUD.W_SpectatorCharacter_HUD_C.CenterPrint
 // (BlueprintEvent)
 // Parameters:
@@ -458,6 +472,20 @@ class FText UW_SpectatorCharacter_HUD_C::GetVoteVotersText()
 }
 
 
+// Function W_SpectatorCharacter_HUD.W_SpectatorCharacter_HUD_C.HideHUD
+// (Event, Public, BlueprintEvent)
+
+void UW_SpectatorCharacter_HUD_C::HideHUD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpectatorCharacter_HUD_C", "HideHUD");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_SpectatorCharacter_HUD.W_SpectatorCharacter_HUD_C.Input Changed
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -605,6 +633,20 @@ void UW_SpectatorCharacter_HUD_C::Show_VOIP_Toggle(ECommonInputType Input_Type)
 	Parms.Input_Type = Input_Type;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_SpectatorCharacter_HUD.W_SpectatorCharacter_HUD_C.ShowHUD
+// (Event, Public, BlueprintEvent)
+
+void UW_SpectatorCharacter_HUD_C::ShowHUD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SpectatorCharacter_HUD_C", "ShowHUD");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

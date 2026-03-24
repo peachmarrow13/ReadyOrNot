@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass MainMenu_V2.MainMenu_V2_C
-// 0x0008 (0x0C98 - 0x0C90)
+// 0x0008 (0x1130 - 0x1128)
 class AMainMenu_V2_C final : public AReadyOrNotLevelScript
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C90(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1128(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ReceiveBeginPlay();

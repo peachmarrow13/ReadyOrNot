@@ -396,6 +396,20 @@ void UW_Loadout_V2_C::Clear_Attachment_For_Category(EWeaponAttachmentType Attach
 }
 
 
+// Function W_Loadout_V2.W_Loadout_V2_C.ClearModal
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_Loadout_V2_C::ClearModal()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Loadout_V2_C", "ClearModal");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Loadout_V2.W_Loadout_V2_C.Close Preview Preset Gamepad
 // (BlueprintCallable, BlueprintEvent)
 
@@ -738,6 +752,32 @@ void UW_Loadout_V2_C::Get_Null_Attachment_By_Type(EWeaponAttachmentType Selectio
 }
 
 
+// Function W_Loadout_V2.W_Loadout_V2_C.HasWeaponSubClass
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// ELoadoutCategory                        LoadoutCategory                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EWeaponSubclass                         ItemCategory                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   bFound                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Loadout_V2_C::HasWeaponSubClass(ELoadoutCategory LoadoutCategory, EWeaponSubclass ItemCategory, bool* bFound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Loadout_V2_C", "HasWeaponSubClass");
+
+	Params::W_Loadout_V2_C_HasWeaponSubClass Parms{};
+
+	Parms.LoadoutCategory = LoadoutCategory;
+	Parms.ItemCategory = ItemCategory;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bFound != nullptr)
+		*bFound = Parms.bFound;
+}
+
+
 // Function W_Loadout_V2.W_Loadout_V2_C.HeaderSubpageNavigation
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -833,6 +873,28 @@ void UW_Loadout_V2_C::Hide_Preset_Page_Footer_Options()
 		Func = Class->GetFunction("W_Loadout_V2_C", "Hide Preset Page Footer Options");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Loadout_V2.W_Loadout_V2_C.HideHeader
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bHideHeader                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bHideNav                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Loadout_V2_C::HideHeader(bool bHideHeader, bool bHideNav)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Loadout_V2_C", "HideHeader");
+
+	Params::W_Loadout_V2_C_HideHeader Parms{};
+
+	Parms.bHideHeader = bHideHeader;
+	Parms.bHideNav = bHideNav;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -1698,6 +1760,41 @@ void UW_Loadout_V2_C::SetPresetModified(bool PresetDirty_0)
 }
 
 
+// Function W_Loadout_V2.W_Loadout_V2_C.SetupLoadoutAsSubMenu
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_Loadout_V2_C::SetupLoadoutAsSubMenu()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Loadout_V2_C", "SetupLoadoutAsSubMenu");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Loadout_V2.W_Loadout_V2_C.Should Hide Exit
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool*                                   NewParam                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Loadout_V2_C::Should_Hide_Exit(bool* NewParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Loadout_V2_C", "Should Hide Exit");
+
+	Params::W_Loadout_V2_C_Should_Hide_Exit Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
 // Function W_Loadout_V2.W_Loadout_V2_C.ShowMainNav
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -1712,13 +1809,27 @@ void UW_Loadout_V2_C::ShowMainNav()
 }
 
 
+// Function W_Loadout_V2.W_Loadout_V2_C.ShowOrHideBackButton
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_Loadout_V2_C::ShowOrHideBackButton()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Loadout_V2_C", "ShowOrHideBackButton");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Loadout_V2.W_Loadout_V2_C.ShowWeaponClassNav
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// EItemClass                              SelectedClass                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EWeaponSubclass                         SelectedClass                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bIsSecondary                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UW_Loadout_V2_C::ShowWeaponClassNav(EItemClass SelectedClass, bool bIsSecondary)
+void UW_Loadout_V2_C::ShowWeaponClassNav(EWeaponSubclass SelectedClass, bool bIsSecondary)
 {
 	static class UFunction* Func = nullptr;
 

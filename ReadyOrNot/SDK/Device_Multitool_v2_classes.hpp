@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_Multitool_v2.Device_Multitool_v2_C
-// 0x0000 (0x0D20 - 0x0D20)
+// 0x0000 (0x0D70 - 0x0D70)
 class ADevice_Multitool_v2_C final : public AMultitool
 {
 public:

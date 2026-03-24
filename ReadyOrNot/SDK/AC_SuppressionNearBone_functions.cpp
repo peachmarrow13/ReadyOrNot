@@ -17,6 +17,33 @@
 namespace SDK
 {
 
+// Function AC_SuppressionNearBone.AC_SuppressionNearBone_C.Score
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UAC_SuppressionNearBone_C::Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_SuppressionNearBone_C", "Score");
+
+	Params::AC_SuppressionNearBone_C_Score Parms{};
+
+	Parms.Context = std::move(Context);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bSuccess != nullptr)
+		*bSuccess = Parms.bSuccess;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AC_SuppressionNearBone.AC_SuppressionNearBone_C.IsBoneSuppressed
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -42,33 +69,6 @@ void UAC_SuppressionNearBone_C::IsBoneSuppressed(class AReadyOrNotCharacter* Cha
 
 	if (Suppression_Amount != nullptr)
 		*Suppression_Amount = Parms.Suppression_Amount;
-}
-
-
-// Function AC_SuppressionNearBone.AC_SuppressionNearBone_C.Score
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UAC_SuppressionNearBone_C::Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_SuppressionNearBone_C", "Score");
-
-	Params::AC_SuppressionNearBone_C_Score Parms{};
-
-	Parms.Context = std::move(Context);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bSuccess != nullptr)
-		*bSuccess = Parms.bSuccess;
-
-	return Parms.ReturnValue;
 }
 
 }

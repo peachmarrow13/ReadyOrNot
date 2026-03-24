@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Slate_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "StandardButtonStyles_structs.hpp"
-#include "Slate_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 

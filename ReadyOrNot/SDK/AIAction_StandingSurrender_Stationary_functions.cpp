@@ -17,51 +17,37 @@
 namespace SDK
 {
 
-// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.BeginAction_Blueprint
+// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
-
-void UAIAction_StandingSurrender_Stationary_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_StandingSurrender_Stationary_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.ExecuteUbergraph_AIAction_StandingSurrender_Stationary
-// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_StandingSurrender_Stationary_C::ExecuteUbergraph_AIAction_StandingSurrender_Stationary(int32 EntryPoint)
+void UAIAction_StandingSurrender_Stationary_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "ExecuteUbergraph_AIAction_StandingSurrender_Stationary");
+		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "Tick_Blueprint");
 
-	Params::AIAction_StandingSurrender_Stationary_C_ExecuteUbergraph_AIAction_StandingSurrender_Stationary Parms{};
+	Params::AIAction_StandingSurrender_Stationary_C_Tick_Blueprint Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.PlayComplianceVO
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIAction_StandingSurrender_Stationary_C::PlayComplianceVO()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "PlayComplianceVO");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -89,57 +75,51 @@ void UAIAction_StandingSurrender_Stationary_C::GetComplianceVoiceOver(bool bUseA
 }
 
 
-// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.PlayComplianceVO
-// (BlueprintCallable, BlueprintEvent)
+// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.ExecuteUbergraph_AIAction_StandingSurrender_Stationary
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_StandingSurrender_Stationary_C::PlayComplianceVO()
+void UAIAction_StandingSurrender_Stationary_C::ExecuteUbergraph_AIAction_StandingSurrender_Stationary(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "PlayComplianceVO");
+		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "ExecuteUbergraph_AIAction_StandingSurrender_Stationary");
+
+	Params::AIAction_StandingSurrender_Stationary_C_ExecuteUbergraph_AIAction_StandingSurrender_Stationary Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_StandingSurrender_Stationary_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "EndAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.Tick_Blueprint
+// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_StandingSurrender_Stationary_C::Tick_Blueprint(float DeltaTime)
+void UAIAction_StandingSurrender_Stationary_C::BeginAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "Tick_Blueprint");
+		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "BeginAction_Blueprint");
 
-	Params::AIAction_StandingSurrender_Stationary_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.GetMoveStyleOverride
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-class FName UAIAction_StandingSurrender_Stationary_C::GetMoveStyleOverride() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "GetMoveStyleOverride");
-
-	Params::AIAction_StandingSurrender_Stationary_C_GetMoveStyleOverride Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -156,6 +136,26 @@ bool UAIAction_StandingSurrender_Stationary_C::ShouldPerformAction() const
 		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "ShouldPerformAction");
 
 	Params::AIAction_StandingSurrender_Stationary_C_ShouldPerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIAction_StandingSurrender_Stationary.AIAction_StandingSurrender_Stationary_C.GetMoveStyleOverride
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class FName UAIAction_StandingSurrender_Stationary_C::GetMoveStyleOverride() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_StandingSurrender_Stationary_C", "GetMoveStyleOverride");
+
+	Params::AIAction_StandingSurrender_Stationary_C_GetMoveStyleOverride Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_AutoShotgunForPerfTest.BP_AutoShotgunForPerfTest_C
-// 0x0000 (0x1930 - 0x1930)
+// 0x0000 (0x1A20 - 0x1A20)
 class ABP_AutoShotgunForPerfTest_C final : public APrimary_WCQB_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1928(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1A18(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_AutoShotgunForPerfTest(int32 EntryPoint);

@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Rifle_PEQ.Rifle_PEQ_C
-// 0x0000 (0x1110 - 0x1110)
-class URifle_PEQ_C final : public ULaserAttachment
+// 0x0000 (0x11C0 - 0x11C0)
+class URifle_PEQ_C final : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

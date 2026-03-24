@@ -17,6 +17,40 @@
 namespace SDK
 {
 
+// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.ExecuteUbergraph_ANIMBP_MP5A2
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UANIMBP_MP5A2_C::ExecuteUbergraph_ANIMBP_MP5A2(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_MP5A2_C", "ExecuteUbergraph_ANIMBP_MP5A2");
+
+	Params::ANIMBP_MP5A2_C_ExecuteUbergraph_ANIMBP_MP5A2 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.AnimNotify_DropSpeedReloadMagazine
+// (BlueprintCallable, BlueprintEvent)
+
+void UANIMBP_MP5A2_C::AnimNotify_DropSpeedReloadMagazine()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_MP5A2_C", "AnimNotify_DropSpeedReloadMagazine");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -35,34 +69,6 @@ void UANIMBP_MP5A2_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
-}
-
-
-// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.AnimNotify_DropSpeedReloadMagazine
-// (BlueprintCallable, BlueprintEvent)
-
-void UANIMBP_MP5A2_C::AnimNotify_DropSpeedReloadMagazine()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_MP5A2_C", "AnimNotify_DropSpeedReloadMagazine");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.AnimNotify_ShowMag
-// (BlueprintCallable, BlueprintEvent)
-
-void UANIMBP_MP5A2_C::AnimNotify_ShowMag()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_MP5A2_C", "AnimNotify_ShowMag");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -86,23 +92,17 @@ void UANIMBP_MP5A2_C::BlueprintUpdateAnimation(float DeltaTimeX)
 }
 
 
-// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.ExecuteUbergraph_ANIMBP_MP5A2
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function ANIMBP_MP5A2.ANIMBP_MP5A2_C.AnimNotify_ShowMag
+// (BlueprintCallable, BlueprintEvent)
 
-void UANIMBP_MP5A2_C::ExecuteUbergraph_ANIMBP_MP5A2(int32 EntryPoint)
+void UANIMBP_MP5A2_C::AnimNotify_ShowMag()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_MP5A2_C", "ExecuteUbergraph_ANIMBP_MP5A2");
+		Func = Class->GetFunction("ANIMBP_MP5A2_C", "AnimNotify_ShowMag");
 
-	Params::ANIMBP_MP5A2_C_ExecuteUbergraph_ANIMBP_MP5A2 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

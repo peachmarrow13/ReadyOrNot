@@ -17,49 +17,15 @@
 namespace SDK
 {
 
-// Function Secondary_Taser_V2.Secondary_Taser_V2_C.SpawnPouches_1
+// Function Secondary_Taser_V2.Secondary_Taser_V2_C.DestroyPouches_1
 // (BlueprintCallable, BlueprintEvent)
 
-void ASecondary_Taser_V2_C::SpawnPouches_1()
+void ASecondary_Taser_V2_C::DestroyPouches_1()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Secondary_Taser_V2_C", "SpawnPouches_1");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Secondary_Taser_V2.Secondary_Taser_V2_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASecondary_Taser_V2_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Secondary_Taser_V2_C", "ReceiveTick");
-
-	Params::Secondary_Taser_V2_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Secondary_Taser_V2.Secondary_Taser_V2_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ASecondary_Taser_V2_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Secondary_Taser_V2_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("Secondary_Taser_V2_C", "DestroyPouches_1");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -85,15 +51,49 @@ void ASecondary_Taser_V2_C::ExecuteUbergraph_Secondary_Taser_V2(int32 EntryPoint
 }
 
 
-// Function Secondary_Taser_V2.Secondary_Taser_V2_C.DestroyPouches_1
-// (BlueprintCallable, BlueprintEvent)
+// Function Secondary_Taser_V2.Secondary_Taser_V2_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ASecondary_Taser_V2_C::DestroyPouches_1()
+void ASecondary_Taser_V2_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Secondary_Taser_V2_C", "DestroyPouches_1");
+		Func = Class->GetFunction("Secondary_Taser_V2_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Secondary_Taser_V2.Secondary_Taser_V2_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASecondary_Taser_V2_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Secondary_Taser_V2_C", "ReceiveTick");
+
+	Params::Secondary_Taser_V2_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Secondary_Taser_V2.Secondary_Taser_V2_C.SpawnPouches_1
+// (BlueprintCallable, BlueprintEvent)
+
+void ASecondary_Taser_V2_C::SpawnPouches_1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Secondary_Taser_V2_C", "SpawnPouches_1");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

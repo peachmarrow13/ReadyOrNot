@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "CommonInput_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 
@@ -141,7 +141,7 @@ public:
 DUMPER7_ASSERTS_W_PreMission_Tablet_Brief_C_DispatchPlayingNotPaused;
 
 // Function W_PreMission_Tablet_Brief.W_PreMission_Tablet_Brief_C.ExecuteUbergraph_W_PreMission_Tablet_Brief
-// 0x09C0 (0x09C0 - 0x0000)
+// 0x0A10 (0x0A10 - 0x0000)
 struct W_PreMission_Tablet_Brief_C_ExecuteUbergraph_W_PreMission_Tablet_Brief final
 {
 public:
@@ -155,37 +155,37 @@ public:
 	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_5;               // 0x0028(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_4;               // 0x0030(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_MissionURL;                           // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  K2Node_Event_LevelData;                            // 0x0048(0x0880)()
-	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x08C8(0x0038)(IsPlainOldData, NoDestructor)
-	float                                         K2Node_Event_InDeltaTime;                          // 0x0900(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_904[0x4];                                      // 0x0904(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_6;               // 0x0908(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0910(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_911[0x3];                                      // 0x0911(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   K2Node_Event_PageName;                             // 0x0914(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_DispatchPlayingNotPaused_ReturnValue;     // 0x091C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_91D[0x3];                                      // 0x091D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue_1;    // 0x0920(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0928(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsAwake;                              // 0x0929(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_92A[0x6];                                      // 0x092A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        K2Node_Event_Delay_1;                              // 0x0930(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        K2Node_Event_Delay;                                // 0x0938(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_Collapse;                             // 0x0940(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsGamepad;                            // 0x0941(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_942[0x6];                                      // 0x0942(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_3;               // 0x0948(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_2;               // 0x0950(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_1;               // 0x0958(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_AudioPlayer_C*                       K2Node_Event_PlayerWidget;                         // 0x0960(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_PlayerVisible;                        // 0x0968(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_969[0x7];                                      // 0x0969(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button;                 // 0x0970(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0978(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0988(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_3;            // 0x0998(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x09A8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_UseDarkTheme;                         // 0x09B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  K2Node_Event_LevelData;                            // 0x0048(0x08D0)()
+	struct FGeometry                              K2Node_Event_MyGeometry;                           // 0x0918(0x0038)(IsPlainOldData, NoDestructor)
+	float                                         K2Node_Event_InDeltaTime;                          // 0x0950(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_954[0x4];                                      // 0x0954(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_6;               // 0x0958(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x0960(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_961[0x3];                                      // 0x0961(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   K2Node_Event_PageName;                             // 0x0964(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_DispatchPlayingNotPaused_ReturnValue;     // 0x096C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_96D[0x3];                                      // 0x096D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue_1;    // 0x0970(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0978(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsAwake;                              // 0x0979(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_97A[0x6];                                      // 0x097A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        K2Node_Event_Delay_1;                              // 0x0980(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        K2Node_Event_Delay;                                // 0x0988(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_Collapse;                             // 0x0990(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsGamepad;                            // 0x0991(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_992[0x6];                                      // 0x0992(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_3;               // 0x0998(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_2;               // 0x09A0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button_1;               // 0x09A8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_AudioPlayer_C*                       K2Node_Event_PlayerWidget;                         // 0x09B0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_PlayerVisible;                        // 0x09B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9B9[0x7];                                      // 0x09B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_Button_C*                            K2Node_ComponentBoundEvent_Button;                 // 0x09C0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x09C8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x09D8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_3;            // 0x09E8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x09F8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_UseDarkTheme;                         // 0x0A08(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_PreMission_Tablet_Brief_C_ExecuteUbergraph_W_PreMission_Tablet_Brief;
 
@@ -239,12 +239,12 @@ public:
 DUMPER7_ASSERTS_W_PreMission_Tablet_Brief_C_IsAudioPlaying;
 
 // Function W_PreMission_Tablet_Brief.W_PreMission_Tablet_Brief_C.MissionChanged
-// 0x0890 (0x0890 - 0x0000)
+// 0x08E0 (0x08E0 - 0x0000)
 struct W_PreMission_Tablet_Brief_C_MissionChanged final
 {
 public:
 	class FString                                 MissionURL;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x0880)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x08D0)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 DUMPER7_ASSERTS_W_PreMission_Tablet_Brief_C_MissionChanged;
 

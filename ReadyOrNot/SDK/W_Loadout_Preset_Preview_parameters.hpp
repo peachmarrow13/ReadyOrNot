@@ -66,7 +66,7 @@ public:
 DUMPER7_ASSERTS_W_Loadout_Preset_Preview_C_ExecuteUbergraph_W_Loadout_Preset_Preview;
 
 // Function W_Loadout_Preset_Preview.W_Loadout_Preset_Preview_C.GetAmmoInfo
-// 0x02F0 (0x02F0 - 0x0000)
+// 0x0308 (0x0308 - 0x0000)
 struct W_Loadout_Preset_Preview_C_GetAmmoInfo final
 {
 public:
@@ -77,20 +77,20 @@ public:
 	class FText                                   Ammo_Caliber;                                      // 0x0028(0x0018)(Parm, OutParm)
 	class FText                                   Caliber;                                           // 0x0040(0x0018)(Edit, BlueprintVisible)
 	class FText                                   Variety;                                           // 0x0058(0x0018)(Edit, BlueprintVisible)
-	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0070(0x0178)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_Conv_NameToText_ReturnValue;              // 0x01F0(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0208(0x0050)(HasGetValueTypeHash)
-	class AReadyOrNotGameState*                   CallFunc_GetReadyOrNotGameState_ReturnValue;       // 0x0258(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetPreviewSecondarySlotCount_ReturnValue; // 0x0260(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetPreviewPrimarySlotCount_ReturnValue;   // 0x0264(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_SelectInt_ReturnValue;                    // 0x0268(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_26C[0x4];                                      // 0x026C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	int64                                         CallFunc_Conv_IntToInt64_ReturnValue;              // 0x0270(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0278(0x0050)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x02C8(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x02D8(0x0018)()
+	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0070(0x0190)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   CallFunc_Conv_NameToText_ReturnValue;              // 0x0208(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0220(0x0050)(HasGetValueTypeHash)
+	class AReadyOrNotGameState*                   CallFunc_GetReadyOrNotGameState_ReturnValue;       // 0x0270(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetPreviewSecondarySlotCount_ReturnValue; // 0x0278(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetPreviewPrimarySlotCount_ReturnValue;   // 0x027C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_SelectInt_ReturnValue;                    // 0x0280(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_284[0x4];                                      // 0x0284(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         CallFunc_Conv_IntToInt64_ReturnValue;              // 0x0288(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0290(0x0050)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x02E0(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x02F0(0x0018)()
 };
 DUMPER7_ASSERTS_W_Loadout_Preset_Preview_C_GetAmmoInfo;
 

@@ -17,15 +17,35 @@
 namespace SDK
 {
 
-// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.Stop
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.ExecuteUbergraph_SceneCapturePlayerCamera
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ASceneCapturePlayerCamera_C::Stop()
+void ASceneCapturePlayerCamera_C::ExecuteUbergraph_SceneCapturePlayerCamera(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCapturePlayerCamera_C", "Stop");
+		Func = Class->GetFunction("SceneCapturePlayerCamera_C", "ExecuteUbergraph_SceneCapturePlayerCamera");
+
+	Params::SceneCapturePlayerCamera_C_ExecuteUbergraph_SceneCapturePlayerCamera Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ASceneCapturePlayerCamera_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCapturePlayerCamera_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -45,37 +65,17 @@ void ASceneCapturePlayerCamera_C::Start()
 }
 
 
-// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.Stop
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneCapturePlayerCamera_C::ReceiveBeginPlay()
+void ASceneCapturePlayerCamera_C::Stop()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCapturePlayerCamera_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("SceneCapturePlayerCamera_C", "Stop");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function SceneCapturePlayerCamera.SceneCapturePlayerCamera_C.ExecuteUbergraph_SceneCapturePlayerCamera
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASceneCapturePlayerCamera_C::ExecuteUbergraph_SceneCapturePlayerCamera(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCapturePlayerCamera_C", "ExecuteUbergraph_SceneCapturePlayerCamera");
-
-	Params::SceneCapturePlayerCamera_C_ExecuteUbergraph_SceneCapturePlayerCamera Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -12,8 +12,8 @@
 
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
-#include "RigVM_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "RigVM_structs.hpp"
 
 
 namespace SDK

@@ -17,6 +17,15 @@
 namespace SDK
 {
 
+// ScriptStruct ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimBlueprintGeneratedMutableData
+// 0x0001 (0x0002 - 0x0001)
+struct ANIMBP_Head_Smudge::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
+{
+public:
+	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ANIMBP_Head_Smudge__FAnimBlueprintGeneratedMutableData;
+
 // ScriptStruct ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimBlueprintGeneratedConstantData
 // 0x012F (0x0130 - 0x0001)
 struct ANIMBP_Head_Smudge::FAnimBlueprintGeneratedConstantData final : public FAnimBlueprintConstantData
@@ -45,15 +54,6 @@ public:
 	struct FAnimSubsystem_Base                    AnimBlueprintExtension_Base;                       // 0x0118(0x0018)()
 };
 DUMPER7_ASSERTS_ANIMBP_Head_Smudge__FAnimBlueprintGeneratedConstantData;
-
-// ScriptStruct ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimBlueprintGeneratedMutableData
-// 0x0001 (0x0002 - 0x0001)
-struct ANIMBP_Head_Smudge::FAnimBlueprintGeneratedMutableData final : public FAnimBlueprintMutableData
-{
-public:
-	bool                                          __BoolProperty;                                    // 0x0001(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ANIMBP_Head_Smudge__FAnimBlueprintGeneratedMutableData;
 
 }
 

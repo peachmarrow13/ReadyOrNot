@@ -344,7 +344,7 @@ void UW_PlayersList_C::RefreshPlayerEntry(const struct FLobbyPlayer& Player)
 
 
 // Function W_PlayersList.W_PlayersList_C.Toggle Mute Player
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const struct FLobbyPlayer&              LobbyPlayer                                            (BlueprintVisible, BlueprintReadOnly, Parm)
 // class UW_PlayersList_Entry_C*           EntryRef                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)

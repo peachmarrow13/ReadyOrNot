@@ -351,6 +351,20 @@ bool UW_ScreenFooter_C::IsHiddenIndex(const int32& Index_0)
 }
 
 
+// Function W_ScreenFooter.W_ScreenFooter_C.Populate MetaData
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UW_ScreenFooter_C::Populate_MetaData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ScreenFooter_C", "Populate MetaData");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_ScreenFooter.W_ScreenFooter_C.PopulateEntries
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_M9_Brake.BP_M9_Brake_C
-// 0x0000 (0x10D0 - 0x10D0)
+// 0x0000 (0x1190 - 0x1190)
 class UBP_M9_Brake_C final : public UWeaponAttachment
 {
 public:

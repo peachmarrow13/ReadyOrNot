@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -35,7 +35,7 @@ public:
 	TMap<int32, class UCanvasPanel*>              Lines;                                             // 0x0368(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	TMap<int32, class UW_PreMission_Tablet_MapMarker_C*> Icons;                                      // 0x03B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 	class UW_PreMission_PlanningMap_C*            PlanningMapWidget;                                 // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	TMulticastInlineDelegate<void(int32 MarkerID, class UW_PreMission_Tablet_MapMarker_C* Marker)> OnMarkerDrawn; // 0x0410(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(int32 markerId, class UW_PreMission_Tablet_MapMarker_C* Marker)> OnMarkerDrawn; // 0x0410(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void(int32 LineID, class UCanvasPanel* LineCanvas)> OnLineDrawn;        // 0x0420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TArray<struct FEntryPoint>                    LevelEntryPoints;                                  // 0x0430(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMulticastInlineDelegate<void(class UW_PreMission_Tablet_MapMarker_C* TriggeringMarker, int32 FloorLevel, double Rotation)> OnMarkerRotated; // 0x0440(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
@@ -53,7 +53,7 @@ public:
 	void ConfirmHoveredIdOwnership();
 	void Construct();
 	void DrawLine(int32 LineID, const struct FPlanningLine& LineData);
-	void DrawMarker(const int32& MarkerID, const struct FPlanningMarker& MarkerData);
+	void DrawMarker(const int32& markerId, const struct FPlanningMarker& MarkerData);
 	void EraseIcon(int32 ID);
 	void EraseLine(int32 LineID);
 	void EraseMarkerAndLine(int32 Key);

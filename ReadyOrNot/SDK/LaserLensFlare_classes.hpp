@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass LaserLensFlare.LaserLensFlare_C
-// 0x0000 (0x0580 - 0x0580)
+// 0x0000 (0x0588 - 0x0588)
 class ALaserLensFlare_C final : public ALensFlare
 {
 public:

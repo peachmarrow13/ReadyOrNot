@@ -22,7 +22,7 @@ namespace SDK
 class UAG_IsGassed_C final : public UAIActionGate
 {
 public:
-	TArray<EStunType>                             Stun_Type;                                         // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ExposeOnSpawn)
+	TArray<EGasType>                              GasType;                                           // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ExposeOnSpawn)
 
 public:
 	bool CanOpen(const struct FAIActionDecisionContext& Context) const;

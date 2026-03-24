@@ -17,12 +17,12 @@ namespace SDK::Params
 {
 
 // Function BPI_MissionPlanning.BPI_MissionPlanning_C.MissionChanged
-// 0x0890 (0x0890 - 0x0000)
+// 0x08E0 (0x08E0 - 0x0000)
 struct BPI_MissionPlanning_C_MissionChanged final
 {
 public:
 	class FString                                 MissionURL;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x0880)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x08D0)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 DUMPER7_ASSERTS_BPI_MissionPlanning_C_MissionChanged;
 

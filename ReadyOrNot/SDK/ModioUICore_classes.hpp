@@ -10,78 +10,67 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
+#include "Modio_structs.hpp"
+#include "ModioUICore_structs.hpp"
 #include "Engine_classes.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "ModioUICore_structs.hpp"
-#include "Modio_structs.hpp"
-#include "UMG_classes.hpp"
 #include "Slate_structs.hpp"
+#include "CommonUI_classes.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
 {
 
-// Class ModioUICore.ModioUIComponentBase
-// 0x0060 (0x0478 - 0x0418)
-class UModioUIComponentBase : public UCommonActivatableWidget
+// Class ModioUICore.PropertyOverridesLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UPropertyOverridesLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	uint8                                         Pad_418[0x38];                                     // 0x0418(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                DataSource;                                        // 0x0450(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(class UObject* ActivationContext, bool bIsActivated)> OnModioActivationChanged; // 0x0458(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)> OnModioFocusPathChanged; // 0x0468(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	static struct FSoftClassPath ApplyClassPathOverride(const struct FClassPathOverride& Target, const struct FSoftClassPath& DefaultValue);
+	static class UClass* ApplyClassPathOverride_Casted(const struct FClassPathOverride& Target, TSubclassOf<class UObject> BaseClass, class UClass* DefaultValue);
+	static float ApplyFloatOverride(const struct FFloatOverride& Target, float DefaultValue);
+	static struct FSlateFontInfo ApplyFontInfoOverride(const struct FSlateFontInfoOverride& Target, const struct FSlateFontInfo& DefaultValue);
+	static EHorizontalAlignment ApplyHAlignOverride(const struct FHAlignOverride& Target, EHorizontalAlignment DefaultValue);
+	static struct FDataTableRowHandle ApplyInputActionOverride(const struct FInputActionOverride& Target, const struct FDataTableRowHandle& DefaultValue);
+	static int32 ApplyIntOverride(const struct FIntegerOverride& Target, int32 DefaultValue);
+	static class FText ApplyTextOverride(const struct FTextOverride& Target, const class FText& DefaultValue);
+	static ETextTransformPolicy ApplyTextTransformOverride(const struct FTextTransformOverride& Target, ETextTransformPolicy DefaultValue);
+	static struct FSoftClassPath ResolveClassPathOverride(const struct FClassPathOverride& Target, bool* bOverrideSet);
+	static class UClass* ResolveClassPathOverride_Casted(const struct FClassPathOverride& Target, TSubclassOf<class UObject> BaseClass, bool* bOverrideSet);
+	static struct FSoftClassPath ResolveClassPathOverrideAsExec(const struct FClassPathOverride& Target, bool* bOverrideSet);
+	static class UClass* ResolveClassPathOverrideAsExec_Casted(const struct FClassPathOverride& Target, TSubclassOf<class UObject> BaseClass, bool* bOverrideSet);
+	static float ResolveFloatOverride(const struct FFloatOverride& Target, bool* bOverrideSet);
+	static float ResolveFloatOverrideAsExec(const struct FFloatOverride& Target, bool* bOverrideSet);
+	static struct FSlateFontInfo ResolveFontInfoOverride(const struct FSlateFontInfoOverride& Target, bool* bOverrideSet);
+	static struct FSlateFontInfo ResolveFontInfoOverrideAsExec(const struct FSlateFontInfoOverride& Target, bool* bOverrideSet);
+	static EHorizontalAlignment ResolveHAlignOverride(const struct FHAlignOverride& Target, bool* bOverrideSet);
+	static EHorizontalAlignment ResolveHAlignOverrideAsExec(const struct FHAlignOverride& Target, bool* bOverrideSet);
+	static struct FDataTableRowHandle ResolveInputActionOverride(const struct FInputActionOverride& Target, bool* bOverrideSet);
+	static struct FDataTableRowHandle ResolveInputActionOverrideAsExec(const struct FInputActionOverride& Target, bool* bOverrideSet);
+	static int32 ResolveIntOverride(const struct FIntegerOverride& Target, bool* bOverrideSet);
+	static int32 ResolveIntOverrideAsExec(const struct FIntegerOverride& Target, bool* bOverrideSet);
+	static class FText ResolveTextOverride(const struct FTextOverride& Target, bool* bOverrideSet);
+	static class FText ResolveTextOverrideAsExec(const struct FTextOverride& Target, bool* bOverrideSet);
+	static ETextTransformPolicy ResolveTextTransformOverride(const struct FTextTransformOverride& Target, bool* bOverrideSet);
+	static ETextTransformPolicy ResolveTextTransformOverrideAsExec(const struct FTextTransformOverride& Target, bool* bOverrideSet);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioUIComponentBase")
+		STATIC_CLASS_IMPL("PropertyOverridesLibrary")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioUIComponentBase")
+		STATIC_NAME_IMPL(L"PropertyOverridesLibrary")
 	}
-	static class UModioUIComponentBase* GetDefaultObj()
+	static class UPropertyOverridesLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioUIComponentBase>();
+		return GetDefaultObjImpl<UPropertyOverridesLibrary>();
 	}
 };
-DUMPER7_ASSERTS_UModioUIComponentBase;
-
-// Class ModioUICore.ModioModTagSelectorEntry
-// 0x0048 (0x04C0 - 0x0478)
-class UModioModTagSelectorEntry final : public UModioUIComponentBase
-{
-public:
-	uint8                                         Pad_478[0x28];                                     // 0x0478(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UObject* SelectionContext, bool bNewSelectedState)> OnSelectionStateChanged; // 0x04A0(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(class UObject* ClickContext)> OnClicked;                           // 0x04B0(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	void NotifyClicked();
-	void NotifySelectionChanged();
-	void OnTagEntryClicked(class UObject* ClickedObject);
-
-	TScriptInterface<class IModioUIClickableWidget> GetClickableWidget() const;
-	TScriptInterface<class IModioUISelectableWidget> GetSelectionWidget() const;
-	TScriptInterface<class IModioUIHasTextWidget> GetTagLabelWidget() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioModTagSelectorEntry")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioModTagSelectorEntry")
-	}
-	static class UModioModTagSelectorEntry* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioModTagSelectorEntry>();
-	}
-};
-DUMPER7_ASSERTS_UModioModTagSelectorEntry;
+DUMPER7_ASSERTS_UPropertyOverridesLibrary;
 
 // Class ModioUICore.ModioActivatableWidget
 // 0x0000 (0x0000 - 0x0000)
@@ -150,32 +139,31 @@ public:
 };
 DUMPER7_ASSERTS_IModioEnumEntryUIDetails;
 
-// Class ModioUICore.ModioRetryLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UModioRetryLibrary final : public UBlueprintFunctionLibrary
+// Class ModioUICore.ModioObjectWrapBox
+// 0x0038 (0x0200 - 0x01C8)
+class UModioObjectWrapBox final : public UWrapBox
 {
 public:
-	static bool CanRetry(const struct FModioRetryCounter& Target);
-	static bool CanRetryAsExec(const struct FModioRetryCounter& Target);
-	static void ResetRetryCount(struct FModioRetryCounter& Target);
-	static struct FModioRetryCounter ResetRetryCountPure(struct FModioRetryCounter& Target);
-	static bool Retry(struct FModioRetryCounter& Target);
+	uint8                                         Pad_1C8[0x10];                                     // 0x01C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UObject*>                        BoundObjects;                                      // 0x01D8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
+	TSubclassOf<class UWidget>                    WidgetClass;                                       // 0x01E8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(class UWidget* ObjectWidget, class UObject* Object)> OnWidgetCreated; // 0x01F0(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioRetryLibrary")
+		STATIC_CLASS_IMPL("ModioObjectWrapBox")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioRetryLibrary")
+		STATIC_NAME_IMPL(L"ModioObjectWrapBox")
 	}
-	static class UModioRetryLibrary* GetDefaultObj()
+	static class UModioObjectWrapBox* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioRetryLibrary>();
+		return GetDefaultObjImpl<UModioObjectWrapBox>();
 	}
 };
-DUMPER7_ASSERTS_UModioRetryLibrary;
+DUMPER7_ASSERTS_UModioObjectWrapBox;
 
 // Class ModioUICore.ModioFocusableWidget
 // 0x0000 (0x0000 - 0x0000)
@@ -245,25 +233,54 @@ public:
 };
 DUMPER7_ASSERTS_IModioGalleryImageUIDetails;
 
-// Class ModioUICore.ModioPlatformSpecificWidget
-// 0x0000 (0x01A0 - 0x01A0)
-class UModioPlatformSpecificWidget final : public UContentWidget
+// Class ModioUICore.ModioUIComponentBase
+// 0x0060 (0x0478 - 0x0418)
+class UModioUIComponentBase : public UCommonActivatableWidget
 {
+public:
+	uint8                                         Pad_418[0x38];                                     // 0x0418(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                DataSource;                                        // 0x0450(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(class UObject* ActivationContext, bool bIsActivated)> OnModioActivationChanged; // 0x0458(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)> OnModioFocusPathChanged; // 0x0468(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioPlatformSpecificWidget")
+		STATIC_CLASS_IMPL("ModioUIComponentBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioPlatformSpecificWidget")
+		STATIC_NAME_IMPL(L"ModioUIComponentBase")
 	}
-	static class UModioPlatformSpecificWidget* GetDefaultObj()
+	static class UModioUIComponentBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioPlatformSpecificWidget>();
+		return GetDefaultObjImpl<UModioUIComponentBase>();
 	}
 };
-DUMPER7_ASSERTS_UModioPlatformSpecificWidget;
+DUMPER7_ASSERTS_UModioUIComponentBase;
+
+// Class ModioUICore.ModioModSubscriptionStatusWidget
+// 0x0010 (0x0488 - 0x0478)
+class UModioModSubscriptionStatusWidget final : public UModioUIComponentBase
+{
+public:
+	uint8                                         Pad_478[0x10];                                     // 0x0478(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioModSubscriptionStatusWidget")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioModSubscriptionStatusWidget")
+	}
+	static class UModioModSubscriptionStatusWidget* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioModSubscriptionStatusWidget>();
+	}
+};
+DUMPER7_ASSERTS_UModioModSubscriptionStatusWidget;
 
 // Class ModioUICore.ModioModDependencyUIDetails
 // 0x0000 (0x0000 - 0x0000)
@@ -331,33 +348,31 @@ public:
 };
 DUMPER7_ASSERTS_IModioModFilterUIDetails;
 
-// Class ModioUICore.ModioModTagSelector
-// 0x0018 (0x0490 - 0x0478)
-class UModioModTagSelector final : public UModioUIComponentBase
+// Class ModioUICore.ModioPresetFilterEntryWidget
+// 0x0020 (0x0498 - 0x0478)
+class UModioPresetFilterEntryWidget final : public UModioUIComponentBase
 {
 public:
-	uint8                                         Pad_478[0x8];                                      // 0x0478(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IModioModTagOptionsUIDetails> CachedTagOptions;                           // 0x0480(0x0010)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_478[0x20];                                     // 0x0478(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	TScriptInterface<class IModioUIClickableWidget> GetMenuToggleClickableWidget() const;
-	TScriptInterface<class IModioUIModTagSelector> GetSelectorMenuWidget() const;
+	TScriptInterface<class IModioUIHasTextWidget> GetLabelWidget() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioModTagSelector")
+		STATIC_CLASS_IMPL("ModioPresetFilterEntryWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioModTagSelector")
+		STATIC_NAME_IMPL(L"ModioPresetFilterEntryWidget")
 	}
-	static class UModioModTagSelector* GetDefaultObj()
+	static class UModioPresetFilterEntryWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioModTagSelector>();
+		return GetDefaultObjImpl<UModioPresetFilterEntryWidget>();
 	}
 };
-DUMPER7_ASSERTS_UModioModTagSelector;
+DUMPER7_ASSERTS_UModioPresetFilterEntryWidget;
 
 // Class ModioUICore.ModioModInfoUIDetails
 // 0x0000 (0x0000 - 0x0000)
@@ -427,54 +442,31 @@ public:
 };
 DUMPER7_ASSERTS_IModioModTagUIDetails;
 
-// Class ModioUICore.PropertyOverridesLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UPropertyOverridesLibrary final : public UBlueprintFunctionLibrary
+// Class ModioUICore.ModioModTagInfoUI
+// 0x00E8 (0x0110 - 0x0028)
+class UModioModTagInfoUI final : public UObject
 {
 public:
-	static struct FSoftClassPath ApplyClassPathOverride(const struct FClassPathOverride& Target, const struct FSoftClassPath& DefaultValue);
-	static class UClass* ApplyClassPathOverride_Casted(const struct FClassPathOverride& Target, TSubclassOf<class UObject> BaseClass, class UClass* DefaultValue);
-	static float ApplyFloatOverride(const struct FFloatOverride& Target, float DefaultValue);
-	static struct FSlateFontInfo ApplyFontInfoOverride(const struct FSlateFontInfoOverride& Target, const struct FSlateFontInfo& DefaultValue);
-	static EHorizontalAlignment ApplyHAlignOverride(const struct FHAlignOverride& Target, EHorizontalAlignment DefaultValue);
-	static struct FDataTableRowHandle ApplyInputActionOverride(const struct FInputActionOverride& Target, const struct FDataTableRowHandle& DefaultValue);
-	static int32 ApplyIntOverride(const struct FIntegerOverride& Target, int32 DefaultValue);
-	static class FText ApplyTextOverride(const struct FTextOverride& Target, const class FText& DefaultValue);
-	static ETextTransformPolicy ApplyTextTransformOverride(const struct FTextTransformOverride& Target, ETextTransformPolicy DefaultValue);
-	static struct FSoftClassPath ResolveClassPathOverride(const struct FClassPathOverride& Target, bool* bOverrideSet);
-	static class UClass* ResolveClassPathOverride_Casted(const struct FClassPathOverride& Target, TSubclassOf<class UObject> BaseClass, bool* bOverrideSet);
-	static struct FSoftClassPath ResolveClassPathOverrideAsExec(const struct FClassPathOverride& Target, bool* bOverrideSet);
-	static class UClass* ResolveClassPathOverrideAsExec_Casted(const struct FClassPathOverride& Target, TSubclassOf<class UObject> BaseClass, bool* bOverrideSet);
-	static float ResolveFloatOverride(const struct FFloatOverride& Target, bool* bOverrideSet);
-	static float ResolveFloatOverrideAsExec(const struct FFloatOverride& Target, bool* bOverrideSet);
-	static struct FSlateFontInfo ResolveFontInfoOverride(const struct FSlateFontInfoOverride& Target, bool* bOverrideSet);
-	static struct FSlateFontInfo ResolveFontInfoOverrideAsExec(const struct FSlateFontInfoOverride& Target, bool* bOverrideSet);
-	static EHorizontalAlignment ResolveHAlignOverride(const struct FHAlignOverride& Target, bool* bOverrideSet);
-	static EHorizontalAlignment ResolveHAlignOverrideAsExec(const struct FHAlignOverride& Target, bool* bOverrideSet);
-	static struct FDataTableRowHandle ResolveInputActionOverride(const struct FInputActionOverride& Target, bool* bOverrideSet);
-	static struct FDataTableRowHandle ResolveInputActionOverrideAsExec(const struct FInputActionOverride& Target, bool* bOverrideSet);
-	static int32 ResolveIntOverride(const struct FIntegerOverride& Target, bool* bOverrideSet);
-	static int32 ResolveIntOverrideAsExec(const struct FIntegerOverride& Target, bool* bOverrideSet);
-	static class FText ResolveTextOverride(const struct FTextOverride& Target, bool* bOverrideSet);
-	static class FText ResolveTextOverrideAsExec(const struct FTextOverride& Target, bool* bOverrideSet);
-	static ETextTransformPolicy ResolveTextTransformOverride(const struct FTextTransformOverride& Target, bool* bOverrideSet);
-	static ETextTransformPolicy ResolveTextTransformOverrideAsExec(const struct FTextTransformOverride& Target, bool* bOverrideSet);
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FModioModTagInfo                       Underlying;                                        // 0x0030(0x00B8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class FText                                   LocalizedCategoryName;                             // 0x00E8(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TArray<class UModioModTagUI*>                 BindableTags;                                      // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PropertyOverridesLibrary")
+		STATIC_CLASS_IMPL("ModioModTagInfoUI")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PropertyOverridesLibrary")
+		STATIC_NAME_IMPL(L"ModioModTagInfoUI")
 	}
-	static class UPropertyOverridesLibrary* GetDefaultObj()
+	static class UModioModTagInfoUI* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPropertyOverridesLibrary>();
+		return GetDefaultObjImpl<UModioModTagInfoUI>();
 	}
 };
-DUMPER7_ASSERTS_UPropertyOverridesLibrary;
+DUMPER7_ASSERTS_UModioModTagInfoUI;
 
 // Class ModioUICore.ModioModTagCategoryUIDetails
 // 0x0000 (0x0000 - 0x0000)
@@ -548,32 +540,32 @@ public:
 };
 DUMPER7_ASSERTS_IModioModTagOptionsUIDetails;
 
-// Class ModioUICore.ModioTokenPackBrowser
-// 0x0030 (0x04A8 - 0x0478)
-class UModioTokenPackBrowser final : public UModioUIComponentBase
+// Class ModioUICore.ModioRetryLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UModioRetryLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	uint8                                         Pad_478[0x30];                                     // 0x0478(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	TScriptInterface<class IModioUIHasTextWidget> GetTitleTextWidget() const;
-	TScriptInterface<class IModioUITokenPackListInterface> GetTokenTileViewWidget() const;
+	static bool CanRetry(const struct FModioRetryCounter& Target);
+	static bool CanRetryAsExec(const struct FModioRetryCounter& Target);
+	static void ResetRetryCount(struct FModioRetryCounter& Target);
+	static struct FModioRetryCounter ResetRetryCountPure(struct FModioRetryCounter& Target);
+	static bool Retry(struct FModioRetryCounter& Target);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioTokenPackBrowser")
+		STATIC_CLASS_IMPL("ModioRetryLibrary")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioTokenPackBrowser")
+		STATIC_NAME_IMPL(L"ModioRetryLibrary")
 	}
-	static class UModioTokenPackBrowser* GetDefaultObj()
+	static class UModioRetryLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioTokenPackBrowser>();
+		return GetDefaultObjImpl<UModioRetryLibrary>();
 	}
 };
-DUMPER7_ASSERTS_UModioTokenPackBrowser;
+DUMPER7_ASSERTS_UModioRetryLibrary;
 
 // Class ModioUICore.ModioScrollableWidget
 // 0x0000 (0x0000 - 0x0000)
@@ -648,30 +640,25 @@ public:
 };
 DUMPER7_ASSERTS_IModioToggleableWidget;
 
-// Class ModioUICore.ModioStackedBoolLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UModioStackedBoolLibrary final : public UBlueprintFunctionLibrary
+// Class ModioUICore.ModioPlatformSpecificWidget
+// 0x0000 (0x01A0 - 0x01A0)
+class UModioPlatformSpecificWidget final : public UContentWidget
 {
-public:
-	static bool PeekBoolValue(const struct FModioStackedBool& Target, bool* bDidPeekSuccessfully);
-	static bool PopBoolValue(struct FModioStackedBool& Target, bool* bDidPopSuccessfully);
-	static void PushBoolValue(struct FModioStackedBool& Target, bool bNewValue);
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioStackedBoolLibrary")
+		STATIC_CLASS_IMPL("ModioPlatformSpecificWidget")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioStackedBoolLibrary")
+		STATIC_NAME_IMPL(L"ModioPlatformSpecificWidget")
 	}
-	static class UModioStackedBoolLibrary* GetDefaultObj()
+	static class UModioPlatformSpecificWidget* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioStackedBoolLibrary>();
+		return GetDefaultObjImpl<UModioPlatformSpecificWidget>();
 	}
 };
-DUMPER7_ASSERTS_UModioStackedBoolLibrary;
+DUMPER7_ASSERTS_UModioPlatformSpecificWidget;
 
 // Class ModioUICore.ModioUIClickableWidget
 // 0x0000 (0x0000 - 0x0000)
@@ -747,31 +734,32 @@ public:
 };
 DUMPER7_ASSERTS_IModioUIBoundActionWidget;
 
-// Class ModioUICore.ModioPresetFilterEntryWidget
-// 0x0020 (0x0498 - 0x0478)
-class UModioPresetFilterEntryWidget final : public UModioUIComponentBase
+// Class ModioUICore.ModioTagCounterIcon
+// 0x0010 (0x0488 - 0x0478)
+class UModioTagCounterIcon final : public UModioUIComponentBase
 {
 public:
-	uint8                                         Pad_478[0x20];                                     // 0x0478(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_478[0x10];                                     // 0x0478(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	TScriptInterface<class IModioUIHasTextWidget> GetLabelWidget() const;
+	TScriptInterface<class IModioUIHasTextWidget> GetCounterLabelWidget();
+	int32 SynchronizeCounter();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioPresetFilterEntryWidget")
+		STATIC_CLASS_IMPL("ModioTagCounterIcon")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioPresetFilterEntryWidget")
+		STATIC_NAME_IMPL(L"ModioTagCounterIcon")
 	}
-	static class UModioPresetFilterEntryWidget* GetDefaultObj()
+	static class UModioTagCounterIcon* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioPresetFilterEntryWidget>();
+		return GetDefaultObjImpl<UModioTagCounterIcon>();
 	}
 };
-DUMPER7_ASSERTS_UModioPresetFilterEntryWidget;
+DUMPER7_ASSERTS_UModioTagCounterIcon;
 
 // Class ModioUICore.ModioUICommandMenu
 // 0x0000 (0x0000 - 0x0000)
@@ -843,31 +831,29 @@ public:
 };
 DUMPER7_ASSERTS_IModioUICommandObject;
 
-// Class ModioUICore.ModioModTagInfoUI
-// 0x00E8 (0x0110 - 0x0028)
-class UModioModTagInfoUI final : public UObject
+// Class ModioUICore.ModioUIManageModSubscriptionCommand
+// 0x0010 (0x0038 - 0x0028)
+class UModioUIManageModSubscriptionCommand final : public UObject
 {
 public:
 	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FModioModTagInfo                       Underlying;                                        // 0x0030(0x00B8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class FText                                   LocalizedCategoryName;                             // 0x00E8(0x0018)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TArray<class UModioModTagUI*>                 BindableTags;                                      // 0x0100(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	class UObject*                                DataSource;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioModTagInfoUI")
+		STATIC_CLASS_IMPL("ModioUIManageModSubscriptionCommand")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioModTagInfoUI")
+		STATIC_NAME_IMPL(L"ModioUIManageModSubscriptionCommand")
 	}
-	static class UModioModTagInfoUI* GetDefaultObj()
+	static class UModioUIManageModSubscriptionCommand* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioModTagInfoUI>();
+		return GetDefaultObjImpl<UModioUIManageModSubscriptionCommand>();
 	}
 };
-DUMPER7_ASSERTS_UModioModTagInfoUI;
+DUMPER7_ASSERTS_UModioUIManageModSubscriptionCommand;
 
 // Class ModioUICore.ModioUICommandLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -926,29 +912,32 @@ public:
 };
 DUMPER7_ASSERTS_IModioUICommonButtonWidget;
 
-// Class ModioUICore.ModioUIPurchaseModCommand
-// 0x0010 (0x0038 - 0x0028)
-class UModioUIPurchaseModCommand final : public UObject
+// Class ModioUICore.ModioTokenPackBrowser
+// 0x0030 (0x04A8 - 0x0478)
+class UModioTokenPackBrowser final : public UModioUIComponentBase
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                DataSource;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_478[0x30];                                     // 0x0478(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	TScriptInterface<class IModioUIHasTextWidget> GetTitleTextWidget() const;
+	TScriptInterface<class IModioUITokenPackListInterface> GetTokenTileViewWidget() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioUIPurchaseModCommand")
+		STATIC_CLASS_IMPL("ModioTokenPackBrowser")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioUIPurchaseModCommand")
+		STATIC_NAME_IMPL(L"ModioTokenPackBrowser")
 	}
-	static class UModioUIPurchaseModCommand* GetDefaultObj()
+	static class UModioTokenPackBrowser* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioUIPurchaseModCommand>();
+		return GetDefaultObjImpl<UModioTokenPackBrowser>();
 	}
 };
-DUMPER7_ASSERTS_UModioUIPurchaseModCommand;
+DUMPER7_ASSERTS_UModioTokenPackBrowser;
 
 // Class ModioUICore.ModioUIConnectivityChangedReceiver
 // 0x0000 (0x0000 - 0x0000)
@@ -1006,38 +995,30 @@ public:
 };
 DUMPER7_ASSERTS_UModioUIConnectivityChangedReceiverLibrary;
 
-// Class ModioUICore.ModioTokenPackUIDetails
-// 0x0000 (0x0000 - 0x0000)
-class IModioTokenPackUIDetails final
+// Class ModioUICore.ModioStackedBoolLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UModioStackedBoolLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	struct FModioTokenPack GetFullTokenPack();
-	struct FModioTokenPackID GetTokenPackID();
+	static bool PeekBoolValue(const struct FModioStackedBool& Target, bool* bDidPeekSuccessfully);
+	static bool PopBoolValue(struct FModioStackedBool& Target, bool* bDidPopSuccessfully);
+	static void PushBoolValue(struct FModioStackedBool& Target, bool bNewValue);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioTokenPackUIDetails")
+		STATIC_CLASS_IMPL("ModioStackedBoolLibrary")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioTokenPackUIDetails")
+		STATIC_NAME_IMPL(L"ModioStackedBoolLibrary")
 	}
-	static class IModioTokenPackUIDetails* GetDefaultObj()
+	static class UModioStackedBoolLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<IModioTokenPackUIDetails>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
+		return GetDefaultObjImpl<UModioStackedBoolLibrary>();
 	}
 };
-DUMPER7_ASSERTS_IModioTokenPackUIDetails;
+DUMPER7_ASSERTS_UModioStackedBoolLibrary;
 
 // Class ModioUICore.ModioUIDataSourceWidget
 // 0x0000 (0x0000 - 0x0000)
@@ -1113,33 +1094,6 @@ public:
 };
 DUMPER7_ASSERTS_IModioUIDialog;
 
-// Class ModioUICore.ModioTagCounterIcon
-// 0x0010 (0x0488 - 0x0478)
-class UModioTagCounterIcon final : public UModioUIComponentBase
-{
-public:
-	uint8                                         Pad_478[0x10];                                     // 0x0478(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	TScriptInterface<class IModioUIHasTextWidget> GetCounterLabelWidget();
-	int32 SynchronizeCounter();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioTagCounterIcon")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioTagCounterIcon")
-	}
-	static class UModioTagCounterIcon* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioTagCounterIcon>();
-	}
-};
-DUMPER7_ASSERTS_UModioTagCounterIcon;
-
 // Class ModioUICore.ModioUIDialogDisplayEventReceiver
 // 0x0000 (0x0000 - 0x0000)
 class IModioUIDialogDisplayEventReceiver final
@@ -1195,6 +1149,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UModioUIDialogDisplayEventReceiverLibrary;
+
+// Class ModioUICore.ModioUIViewModCommand
+// 0x0010 (0x0038 - 0x0028)
+class UModioUIViewModCommand final : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                DataSource;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioUIViewModCommand")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioUIViewModCommand")
+	}
+	static class UModioUIViewModCommand* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioUIViewModCommand>();
+	}
+};
+DUMPER7_ASSERTS_UModioUIViewModCommand;
 
 // Class ModioUICore.ModioUIEntitlementRefreshEventReceiver
 // 0x0000 (0x0000 - 0x0000)
@@ -1389,6 +1367,67 @@ public:
 };
 DUMPER7_ASSERTS_IModioUIHasTooltipWidget;
 
+// Class ModioUICore.ModioUISubsystem
+// 0x02C0 (0x02F0 - 0x0030)
+class UModioUISubsystem final : public UEngineSubsystem
+{
+public:
+	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                ModEnabledStateDataProvider;                       // 0x0080(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UObject*                                ModRatingStateProvider;                            // 0x0088(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_90[0x260];                                     // 0x0090(0x0260)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void DisableModManagement();
+	struct FModioErrorCode EnableModManagement();
+	float GetCurrentDPIScaleValue();
+	bool IsUGCFeatureEnabled(EModioUIFeatureFlags Feature);
+	void NotifyConnectivityChange(bool bNewConnectivityState);
+	void OnModEnabledChanged(int64 RawModID, bool bNewEnabledState);
+	bool QueryConnectivityState();
+	bool QueryIsModEnabled(const struct FModioModID& ID);
+	void RequestEmailAuthenticationWithHandler(const struct FModioEmailAuthCode& Code, const TDelegate<void(const struct FModioErrorCode& ErrorCode)> Callback);
+	void RequestGalleryImageDownloadForModID(const struct FModioModID& ID, int32 Index_0, EModioGallerySize ImageSize);
+	void RequestListAllMods(const struct FModioFilterParams& Params_0, const class FString& RequestIdentifier);
+	void RequestListAllTokenPacks();
+	void RequestLogoDownloadForModID(const struct FModioModID& ID, EModioLogoSize LogoSize);
+	bool RequestModEnabledStateChange(const struct FModioModID& ID, bool bNewEnabledState);
+	void RequestModInfoForModIDs(const TArray<struct FModioModID>& IDs);
+	void RequestPurchaseForModIDWithHandler(const struct FModioModID& ID, const struct FModioUnsigned64& ExpectedPrice, const TDelegate<void(const struct FModioErrorCode& ErrorCode, const struct FModioOptionalTransactionRecord& Transaction)>& Callback);
+	bool RequestPurchaseTokenPack(const struct FModioTokenPackID& TokenPackID, const TDelegate<void(bool bSuccess, const class FString& Message)>& Callback);
+	void RequestRefreshEntitlements();
+	void RequestRemoveSubscriptionForModID(const struct FModioModID& ID);
+	void RequestRemoveSubscriptionForModIDWithHandler(const struct FModioModID& ID, TDelegate<void(const struct FModioErrorCode& ErrorCode)> DedicatedCallback);
+	void RequestShowDialog(EModioUIDialogType DialogType, class UObject* DataSource);
+	EModioOpenStoreResult RequestShowTokenPurchaseUI();
+	EModioOpenStoreResult RequestShowTokenPurchaseUIWithHandler(const TDelegate<void(bool bResult, const class FString& Message)>& Callback);
+	void RequestSubscriptionForModID(const struct FModioModID& ID, bool IncludeDependencies);
+	void RequestSubscriptionForModIDWithHandler(const struct FModioModID& ID, bool IncludeDependencies, TDelegate<void(const struct FModioErrorCode& ErrorCode)> Callback);
+	void RequestUserAvatar();
+	void RequestWalletBalanceRefresh();
+	void RequestWalletBalanceRefreshWithHandler(const TDelegate<void(const struct FModioErrorCode& ErrorCode, const struct FModioOptionalUInt64& WalletBalance)>& Callback);
+	void SetModEnabledStateDataProvider(TScriptInterface<class IModioUIModEnabledStateProvider> InModEnabledStateDataProvider);
+	void SetModRatingStateDataProvider(TScriptInterface<class IModRatingStateProvider> InModRatingStateProvider);
+	void SubscriptionHandler(const struct FModioErrorCode& ErrorCode, const struct FModioModID& ID);
+	void UninstallHandler(const struct FModioErrorCode& ErrorCode, const struct FModioModID& ID);
+	void UnsubscribeHandler(const struct FModioErrorCode& ErrorCode, const struct FModioModID& ID);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioUISubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioUISubsystem")
+	}
+	static class UModioUISubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioUISubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UModioUISubsystem;
+
 // Class ModioUICore.ModioUIHoverableWidget
 // 0x0000 (0x0000 - 0x0000)
 class IModioUIHoverableWidget final
@@ -1460,30 +1499,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IModioUIImageDisplayWidget;
-
-// Class ModioUICore.ModioUIViewModCommand
-// 0x0010 (0x0038 - 0x0028)
-class UModioUIViewModCommand final : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                DataSource;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioUIViewModCommand")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioUIViewModCommand")
-	}
-	static class UModioUIViewModCommand* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioUIViewModCommand>();
-	}
-};
-DUMPER7_ASSERTS_UModioUIViewModCommand;
 
 // Class ModioUICore.ModioUIMediaDownloadCompletedReceiver
 // 0x0000 (0x0000 - 0x0000)
@@ -1599,6 +1614,33 @@ public:
 };
 DUMPER7_ASSERTS_UModioUIModEnabledStateChangedReceiverLibrary;
 
+// Class ModioUICore.ModioUISettings
+// 0x00B0 (0x00D8 - 0x0028)
+class UModioUISettings final : public UObject
+{
+public:
+	TSoftObjectPtr<class UDataTable>              ColorsTable;                                       // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UDataTable>              CommandsTable;                                     // 0x0050(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UMaterial>               UnderlineMaterial;                                 // 0x0078(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UMaterial>               FakeCaretMaterial;                                 // 0x00A0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FModioPresetFilterParams>       PresetNamedFilters;                                // 0x00C8(0x0010)(Edit, ZeroConstructor, Config, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioUISettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioUISettings")
+	}
+	static class UModioUISettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioUISettings>();
+	}
+};
+DUMPER7_ASSERTS_UModioUISettings;
+
 // Class ModioUICore.ModioUIModEnabledStateProvider
 // 0x0000 (0x0000 - 0x0000)
 class IModioUIModEnabledStateProvider final
@@ -1666,67 +1708,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IModioUIModInfoReceiver;
-
-// Class ModioUICore.ModioUISubsystem
-// 0x02C0 (0x02F0 - 0x0030)
-class UModioUISubsystem final : public UEngineSubsystem
-{
-public:
-	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                ModEnabledStateDataProvider;                       // 0x0080(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UObject*                                ModRatingStateProvider;                            // 0x0088(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_90[0x260];                                     // 0x0090(0x0260)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void DisableModManagement();
-	struct FModioErrorCode EnableModManagement();
-	float GetCurrentDPIScaleValue();
-	bool IsUGCFeatureEnabled(EModioUIFeatureFlags Feature);
-	void NotifyConnectivityChange(bool bNewConnectivityState);
-	void OnModEnabledChanged(int64 RawModID, bool bNewEnabledState);
-	bool QueryConnectivityState();
-	bool QueryIsModEnabled(const struct FModioModID& ID);
-	void RequestEmailAuthenticationWithHandler(const struct FModioEmailAuthCode& Code, const TDelegate<void(const struct FModioErrorCode& ErrorCode)> Callback);
-	void RequestGalleryImageDownloadForModID(const struct FModioModID& ID, int32 Index_0, EModioGallerySize ImageSize);
-	void RequestListAllMods(const struct FModioFilterParams& Params_0, const class FString& RequestIdentifier);
-	void RequestListAllTokenPacks();
-	void RequestLogoDownloadForModID(const struct FModioModID& ID, EModioLogoSize LogoSize);
-	bool RequestModEnabledStateChange(const struct FModioModID& ID, bool bNewEnabledState);
-	void RequestModInfoForModIDs(const TArray<struct FModioModID>& IDs);
-	void RequestPurchaseForModIDWithHandler(const struct FModioModID& ID, const struct FModioUnsigned64& ExpectedPrice, const TDelegate<void(const struct FModioErrorCode& ErrorCode, const struct FModioOptionalTransactionRecord& Transaction)>& Callback);
-	bool RequestPurchaseTokenPack(const struct FModioTokenPackID& TokenPackID, const TDelegate<void(bool bSuccess, const class FString& Message)>& Callback);
-	void RequestRefreshEntitlements();
-	void RequestRemoveSubscriptionForModID(const struct FModioModID& ID);
-	void RequestRemoveSubscriptionForModIDWithHandler(const struct FModioModID& ID, TDelegate<void(const struct FModioErrorCode& ErrorCode)> DedicatedCallback);
-	void RequestShowDialog(EModioUIDialogType DialogType, class UObject* DataSource);
-	EModioOpenStoreResult RequestShowTokenPurchaseUI();
-	EModioOpenStoreResult RequestShowTokenPurchaseUIWithHandler(const TDelegate<void(bool bResult, const class FString& Message)>& Callback);
-	void RequestSubscriptionForModID(const struct FModioModID& ID, bool IncludeDependencies);
-	void RequestSubscriptionForModIDWithHandler(const struct FModioModID& ID, bool IncludeDependencies, TDelegate<void(const struct FModioErrorCode& ErrorCode)> Callback);
-	void RequestUserAvatar();
-	void RequestWalletBalanceRefresh();
-	void RequestWalletBalanceRefreshWithHandler(const TDelegate<void(const struct FModioErrorCode& ErrorCode, const struct FModioOptionalUInt64& WalletBalance)>& Callback);
-	void SetModEnabledStateDataProvider(TScriptInterface<class IModioUIModEnabledStateProvider> InModEnabledStateDataProvider);
-	void SetModRatingStateDataProvider(TScriptInterface<class IModRatingStateProvider> InModRatingStateProvider);
-	void SubscriptionHandler(const struct FModioErrorCode& ErrorCode, const struct FModioModID& ID);
-	void UninstallHandler(const struct FModioErrorCode& ErrorCode, const struct FModioModID& ID);
-	void UnsubscribeHandler(const struct FModioErrorCode& ErrorCode, const struct FModioModID& ID);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioUISubsystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioUISubsystem")
-	}
-	static class UModioUISubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioUISubsystem>();
-	}
-};
-DUMPER7_ASSERTS_UModioUISubsystem;
 
 // Class ModioUICore.ModioUIModInfoReceiverLibrary
 // 0x0000 (0x0028 - 0x0028)
@@ -3173,6 +3154,30 @@ public:
 };
 DUMPER7_ASSERTS_UModioDefaultScrollBox;
 
+// Class ModioUICore.ModioUIComponentStatics
+// 0x0000 (0x0028 - 0x0028)
+class UModioUIComponentStatics final : public UObject
+{
+public:
+	static const TMap<EModioUIComponentID, struct FModioUIComponentMetadata> GetAllComponentMetadata();
+	static const struct FModioUIComponentMetadata GetMetadataForComponent(EModioUIComponentID ComponentType, bool* bComponentTypeFound);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioUIComponentStatics")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioUIComponentStatics")
+	}
+	static class UModioUIComponentStatics* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioUIComponentStatics>();
+	}
+};
+DUMPER7_ASSERTS_UModioUIComponentStatics;
+
 // Class ModioUICore.ModioDefaultTagWidget
 // 0x0000 (0x0478 - 0x0478)
 class UModioDefaultTagWidget final : public UModioUIComponentBase
@@ -3220,30 +3225,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UModioDefaultTextBlock;
-
-// Class ModioUICore.ModioUIManageModSubscriptionCommand
-// 0x0010 (0x0038 - 0x0028)
-class UModioUIManageModSubscriptionCommand final : public UObject
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                DataSource;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioUIManageModSubscriptionCommand")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioUIManageModSubscriptionCommand")
-	}
-	static class UModioUIManageModSubscriptionCommand* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioUIManageModSubscriptionCommand>();
-	}
-};
-DUMPER7_ASSERTS_UModioUIManageModSubscriptionCommand;
 
 // Class ModioUICore.ModioDefaultTokenPackTile
 // 0x0068 (0x04E0 - 0x0478)
@@ -3304,6 +3285,30 @@ public:
 };
 DUMPER7_ASSERTS_UModioDefaultTokenPackTileView;
 
+// Class ModioUICore.ModioUIPurchaseModCommand
+// 0x0010 (0x0038 - 0x0028)
+class UModioUIPurchaseModCommand final : public UObject
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                DataSource;                                        // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioUIPurchaseModCommand")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioUIPurchaseModCommand")
+	}
+	static class UModioUIPurchaseModCommand* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioUIPurchaseModCommand>();
+	}
+};
+DUMPER7_ASSERTS_UModioUIPurchaseModCommand;
+
 // Class ModioUICore.ModioDialogButtonUIDetails
 // 0x0000 (0x0000 - 0x0000)
 class IModioDialogButtonUIDetails final
@@ -3360,32 +3365,38 @@ public:
 };
 DUMPER7_ASSERTS_UModioModBrowserDialogButtonInfoUI;
 
-// Class ModioUICore.ModioUISettings
-// 0x00B0 (0x00D8 - 0x0028)
-class UModioUISettings final : public UObject
+// Class ModioUICore.ModioTokenPackUIDetails
+// 0x0000 (0x0000 - 0x0000)
+class IModioTokenPackUIDetails final
 {
 public:
-	TSoftObjectPtr<class UDataTable>              ColorsTable;                                       // 0x0028(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UDataTable>              CommandsTable;                                     // 0x0050(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UMaterial>               UnderlineMaterial;                                 // 0x0078(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UMaterial>               FakeCaretMaterial;                                 // 0x00A0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FModioPresetFilterParams>       PresetNamedFilters;                                // 0x00C8(0x0010)(Edit, ZeroConstructor, Config, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FModioTokenPack GetFullTokenPack();
+	struct FModioTokenPackID GetTokenPackID();
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ModioUISettings")
+		STATIC_CLASS_IMPL("ModioTokenPackUIDetails")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ModioUISettings")
+		STATIC_NAME_IMPL(L"ModioTokenPackUIDetails")
 	}
-	static class UModioUISettings* GetDefaultObj()
+	static class IModioTokenPackUIDetails* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UModioUISettings>();
+		return GetDefaultObjImpl<IModioTokenPackUIDetails>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
 	}
 };
-DUMPER7_ASSERTS_UModioUISettings;
+DUMPER7_ASSERTS_IModioTokenPackUIDetails;
 
 // Class ModioUICore.ModioDropdownAnchor
 // 0x0018 (0x0208 - 0x01F0)
@@ -3438,30 +3449,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UModioEnumEntryUI;
-
-// Class ModioUICore.ModioUIComponentStatics
-// 0x0000 (0x0028 - 0x0028)
-class UModioUIComponentStatics final : public UObject
-{
-public:
-	static const TMap<EModioUIComponentID, struct FModioUIComponentMetadata> GetAllComponentMetadata();
-	static const struct FModioUIComponentMetadata GetMetadataForComponent(EModioUIComponentID ComponentType, bool* bComponentTypeFound);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioUIComponentStatics")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioUIComponentStatics")
-	}
-	static class UModioUIComponentStatics* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioUIComponentStatics>();
-	}
-};
-DUMPER7_ASSERTS_UModioUIComponentStatics;
 
 // Class ModioUICore.ModioEnumSelector
 // 0x0028 (0x04A0 - 0x0478)
@@ -4122,29 +4109,6 @@ public:
 };
 DUMPER7_ASSERTS_UModioModRatingDisplay;
 
-// Class ModioUICore.ModioModSubscriptionStatusWidget
-// 0x0010 (0x0488 - 0x0478)
-class UModioModSubscriptionStatusWidget final : public UModioUIComponentBase
-{
-public:
-	uint8                                         Pad_478[0x10];                                     // 0x0478(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioModSubscriptionStatusWidget")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioModSubscriptionStatusWidget")
-	}
-	static class UModioModSubscriptionStatusWidget* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioModSubscriptionStatusWidget>();
-	}
-};
-DUMPER7_ASSERTS_UModioModSubscriptionStatusWidget;
-
 // Class ModioUICore.ModioModTagDisplay
 // 0x0000 (0x0478 - 0x0478)
 class UModioModTagDisplay final : public UModioUIComponentBase
@@ -4167,6 +4131,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UModioModTagDisplay;
+
+// Class ModioUICore.ModioModTagSelector
+// 0x0018 (0x0490 - 0x0478)
+class UModioModTagSelector final : public UModioUIComponentBase
+{
+public:
+	uint8                                         Pad_478[0x8];                                      // 0x0478(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IModioModTagOptionsUIDetails> CachedTagOptions;                           // 0x0480(0x0010)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	TScriptInterface<class IModioUIClickableWidget> GetMenuToggleClickableWidget() const;
+	TScriptInterface<class IModioUIModTagSelector> GetSelectorMenuWidget() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioModTagSelector")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioModTagSelector")
+	}
+	static class UModioModTagSelector* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioModTagSelector>();
+	}
+};
+DUMPER7_ASSERTS_UModioModTagSelector;
 
 // Class ModioUICore.ModioModTagSelectorCategory
 // 0x0018 (0x0490 - 0x0478)
@@ -4194,6 +4186,40 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UModioModTagSelectorCategory;
+
+// Class ModioUICore.ModioModTagSelectorEntry
+// 0x0048 (0x04C0 - 0x0478)
+class UModioModTagSelectorEntry final : public UModioUIComponentBase
+{
+public:
+	uint8                                         Pad_478[0x28];                                     // 0x0478(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UObject* SelectionContext, bool bNewSelectedState)> OnSelectionStateChanged; // 0x04A0(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(class UObject* ClickContext)> OnClicked;                           // 0x04B0(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
+
+public:
+	void NotifyClicked();
+	void NotifySelectionChanged();
+	void OnTagEntryClicked(class UObject* ClickedObject);
+
+	TScriptInterface<class IModioUIClickableWidget> GetClickableWidget() const;
+	TScriptInterface<class IModioUISelectableWidget> GetSelectionWidget() const;
+	TScriptInterface<class IModioUIHasTextWidget> GetTagLabelWidget() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ModioModTagSelectorEntry")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ModioModTagSelectorEntry")
+	}
+	static class UModioModTagSelectorEntry* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UModioModTagSelectorEntry>();
+	}
+};
+DUMPER7_ASSERTS_UModioModTagSelectorEntry;
 
 // Class ModioUICore.ModioModTagSelectorMenu
 // 0x0030 (0x04A8 - 0x0478)
@@ -4230,32 +4256,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UModioModTagSelectorMenu;
-
-// Class ModioUICore.ModioObjectWrapBox
-// 0x0038 (0x0200 - 0x01C8)
-class UModioObjectWrapBox final : public UWrapBox
-{
-public:
-	uint8                                         Pad_1C8[0x10];                                     // 0x01C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UObject*>                        BoundObjects;                                      // 0x01D8(0x0010)(ZeroConstructor, Transient, Protected, NativeAccessSpecifierProtected)
-	TSubclassOf<class UWidget>                    WidgetClass;                                       // 0x01E8(0x0008)(Edit, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMulticastInlineDelegate<void(class UWidget* ObjectWidget, class UObject* Object)> OnWidgetCreated; // 0x01F0(0x0010)(ZeroConstructor, InstancedReference, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ModioObjectWrapBox")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ModioObjectWrapBox")
-	}
-	static class UModioObjectWrapBox* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UModioObjectWrapBox>();
-	}
-};
-DUMPER7_ASSERTS_UModioObjectWrapBox;
 
 // Class ModioUICore.ModioOperationTracker
 // 0x0078 (0x04F0 - 0x0478)

@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "E_CustomizationGroups_structs.hpp"
+#include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "Slate_structs.hpp"
-#include "E_CustomizationGroups_structs.hpp"
-#include "E_BoxShape_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "CommonInput_structs.hpp"
+#include "Slate_structs.hpp"
+#include "E_BoxShape_structs.hpp"
 #include "UMG_structs.hpp"
 
 

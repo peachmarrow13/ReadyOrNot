@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.BeginAction_Blueprint
+// Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_CheckEmptyWeapon_C::BeginAction_Blueprint()
+void UAIAction_CheckEmptyWeapon_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_CheckEmptyWeapon_C", "BeginAction_Blueprint");
+		Func = Class->GetFunction("AIAction_CheckEmptyWeapon_C", "Tick_Blueprint");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::AIAction_CheckEmptyWeapon_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -51,23 +57,17 @@ void UAIAction_CheckEmptyWeapon_C::ExecuteUbergraph_AIAction_CheckEmptyWeapon(in
 }
 
 
-// Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.Tick_Blueprint
+// Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UAIAction_CheckEmptyWeapon_C::Tick_Blueprint(float DeltaTime)
+void UAIAction_CheckEmptyWeapon_C::BeginAction_Blueprint()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_CheckEmptyWeapon_C", "Tick_Blueprint");
+		Func = Class->GetFunction("AIAction_CheckEmptyWeapon_C", "BeginAction_Blueprint");
 
-	Params::AIAction_CheckEmptyWeapon_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

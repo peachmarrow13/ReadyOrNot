@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_TugOfWar.GM_TugOfWar_C
-// 0x0010 (0x0A70 - 0x0A60)
+// 0x0010 (0x0AA0 - 0x0A90)
 class AGM_TugOfWar_C final : public ATugOfWarGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A60(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A90(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

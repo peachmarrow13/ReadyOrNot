@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -35,18 +35,18 @@ public:
 	double                                        StartingRadius;                                    // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void EndAction_Blueprint();
-	void ExecuteUbergraph_AIAction_NonCompliant_DLC2(int32 EntryPoint);
-	void GetHesitationVoiceOver(bool bUseAlternate, class FString* NewParam);
-	void InitAction_Blueprint(class ACyberneticController* Controller);
-	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
-	void PlayHesitationVO();
-	bool ShouldForcePerformAction();
 	void Tick_Blueprint(float DeltaTime);
+	bool ShouldForcePerformAction();
+	void PlayHesitationVO();
+	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
+	void InitAction_Blueprint(class ACyberneticController* Controller);
+	void GetHesitationVoiceOver(bool bUseAlternate, class FString* NewParam);
+	void ExecuteUbergraph_AIAction_NonCompliant_DLC2(int32 EntryPoint);
+	void EndAction_Blueprint();
+	void BeginAction_Blueprint();
 
-	class FName GetMoveStyleOverride() const;
 	bool ShouldPerformAction() const;
+	class FName GetMoveStyleOverride() const;
 
 public:
 	static class UClass* StaticClass()

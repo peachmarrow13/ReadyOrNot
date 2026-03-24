@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function LOBBY_START_Blueprint.LOBBY_START_Blueprint_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ALOBBY_START_Blueprint_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LOBBY_START_Blueprint_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function LOBBY_START_Blueprint.LOBBY_START_Blueprint_C.ExecuteUbergraph_LOBBY_START_Blueprint
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -48,6 +34,20 @@ void ALOBBY_START_Blueprint_C::ExecuteUbergraph_LOBBY_START_Blueprint(int32 Entr
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function LOBBY_START_Blueprint.LOBBY_START_Blueprint_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ALOBBY_START_Blueprint_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LOBBY_START_Blueprint_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

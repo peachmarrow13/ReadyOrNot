@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -18,21 +19,24 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Hotkeys.W_Hotkeys_C
-// 0x0010 (0x0830 - 0x0820)
+// 0x0010 (0x0840 - 0x0830)
 class UW_Hotkeys_C final : public UHotkeysWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0820(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void Construct();
 	void ExecuteUbergraph_W_Hotkeys(int32 EntryPoint);
+	void HandleOpticHotkeyVisibility();
 	void OnAttachmentLightToggled_Event_0();
 	void OnNightVisionGogglesToggled_Event_0(class AReadyOrNotCharacter* Character, bool bOn);
 	void OnQuickThrowEnd_Event_0(class ABaseItem* QuickThrowGrenade);
 	void OnQuickThrowStart_Event_0(class AReadyOrNotCharacter* Character, class ABaseItem* LastItemBeforeQuickThrow, class ABaseItem* QuickThrowGrenade);
 	void OnSecondarySightToggled_Event_0(bool bUsingSecondarySight, class ABaseMagazineWeapon* Weapon);
+	void OnWeaponZoomCommitted_Event(EWeaponAttachmentState State);
 	void RefreshHotkeyInput();
+	void WeaponAttachmentsChanged_Event_0();
 
 public:
 	static class UClass* StaticClass()

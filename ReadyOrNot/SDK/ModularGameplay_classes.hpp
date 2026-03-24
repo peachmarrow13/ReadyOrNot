@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Class ModularGameplay.GameFrameworkComponent
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00A8 - 0x00A8)
 class UGameFrameworkComponent : public UActorComponent
 {
 public:
@@ -38,7 +38,7 @@ public:
 DUMPER7_ASSERTS_UGameFrameworkComponent;
 
 // Class ModularGameplay.ControllerComponent
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00A8 - 0x00A8)
 class UControllerComponent final : public UGameFrameworkComponent
 {
 public:
@@ -127,7 +127,7 @@ public:
 DUMPER7_ASSERTS_IGameFrameworkInitStateInterface;
 
 // Class ModularGameplay.GameStateComponent
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00A8 - 0x00A8)
 class UGameStateComponent : public UGameFrameworkComponent
 {
 public:
@@ -147,7 +147,7 @@ public:
 DUMPER7_ASSERTS_UGameStateComponent;
 
 // Class ModularGameplay.PawnComponent
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00A8 - 0x00A8)
 class UPawnComponent final : public UGameFrameworkComponent
 {
 public:
@@ -167,7 +167,7 @@ public:
 DUMPER7_ASSERTS_UPawnComponent;
 
 // Class ModularGameplay.PlayerStateComponent
-// 0x0000 (0x00A0 - 0x00A0)
+// 0x0000 (0x00A8 - 0x00A8)
 class UPlayerStateComponent final : public UGameFrameworkComponent
 {
 public:

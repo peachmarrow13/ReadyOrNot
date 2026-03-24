@@ -60,6 +60,20 @@ class UWidget* UW_MissionSelect_C::AcceptMissionNavigate(EUINavigation Navigatio
 }
 
 
+// Function W_MissionSelect.W_MissionSelect_C.BndEvt__W_MissionSelect_W_GotoStation_K2Node_ComponentBoundEvent_4_OnGotoLobby__DelegateSignature
+// (BlueprintEvent)
+
+void UW_MissionSelect_C::BndEvt__W_MissionSelect_W_GotoStation_K2Node_ComponentBoundEvent_4_OnGotoLobby__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionSelect_C", "BndEvt__W_MissionSelect_W_GotoStation_K2Node_ComponentBoundEvent_4_OnGotoLobby__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MissionSelect.W_MissionSelect_C.BndEvt__W_MissionSelect_W_PageWrapper_K2Node_ComponentBoundEvent_0_OnNavOptionPrevious__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -422,6 +436,20 @@ void UW_MissionSelect_C::NoCommanderModeNotice(class UMissionSelectCampaign* Cam
 }
 
 
+// Function W_MissionSelect.W_MissionSelect_C.OnFocusFullyLost
+// (Event, Public, BlueprintEvent)
+
+void UW_MissionSelect_C::OnFocusFullyLost()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionSelect_C", "OnFocusFullyLost");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MissionSelect.W_MissionSelect_C.OnMissionClicked
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -603,6 +631,30 @@ void UW_MissionSelect_C::SetNavigation()
 		Func = Class->GetFunction("W_MissionSelect_C", "SetNavigation");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_MissionSelect.W_MissionSelect_C.SetupMissionWidget
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMissionSelectLevel*              LevelData                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UW_MissionSelect_Level_C*         LevelWidget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLast                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_MissionSelect_C::SetupMissionWidget(class UMissionSelectLevel* LevelData, class UW_MissionSelect_Level_C* LevelWidget, bool bIsLast)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionSelect_C", "SetupMissionWidget");
+
+	Params::W_MissionSelect_C_SetupMissionWidget Parms{};
+
+	Parms.LevelData = LevelData;
+	Parms.LevelWidget = LevelWidget;
+	Parms.bIsLast = bIsLast;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

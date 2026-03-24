@@ -10,39 +10,61 @@
 
 #include "Basic.hpp"
 
+#include "ReadyOrNot_structs.hpp"
+
 
 namespace SDK::Params
 {
 
 // Function W_Hotkeys.W_Hotkeys_C.ExecuteUbergraph_W_Hotkeys
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00F8 (0x00F8 - 0x0000)
 struct W_Hotkeys_C_ExecuteUbergraph_W_Hotkeys final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class AReadyOrNotCharacter* Character, class ABaseItem* LastItemBeforeQuickThrow, class ABaseItem* QuickThrowGrenade)> K2Node_CreateDelegate_OutputDelegate; // 0x0004(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class ABaseItem* QuickThrowGrenade)> K2Node_CreateDelegate_OutputDelegate_1;      // 0x0014(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(bool bUsingSecondarySight, class ABaseMagazineWeapon* Weapon)> K2Node_CreateDelegate_OutputDelegate_2; // 0x0024(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_3;            // 0x0034(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class AReadyOrNotCharacter* Character, bool bOn)> K2Node_CreateDelegate_OutputDelegate_4; // 0x0044(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AReadyOrNotCharacter*                   K2Node_CustomEvent_Character_1;                    // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ABaseItem*                              K2Node_CustomEvent_LastItemBeforeQuickThrow;       // 0x0060(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ABaseItem*                              K2Node_CustomEvent_QuickThrowGrenade_1;            // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ABaseItem*                              K2Node_CustomEvent_QuickThrowGrenade;              // 0x0070(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bUsingSecondarySight;           // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABaseMagazineWeapon*                    K2Node_CustomEvent_Weapon;                         // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AReadyOrNotCharacter*                   K2Node_CustomEvent_Character;                      // 0x0088(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_CustomEvent_bOn;                            // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EquippedWeaponHasLaserAttachment_ReturnValue; // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EquippedWeaponHasLightAttachment_ReturnValue; // 0x0092(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_93[0x5];                                       // 0x0093(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class APawn*                                  CallFunc_GetOwningPlayerPawn_ReturnValue;          // 0x0098(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APlayerCharacter*                       K2Node_DynamicCast_AsPlayer_Character;             // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponAttachmentState                        K2Node_CustomEvent_State;                          // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class AReadyOrNotCharacter*                   K2Node_CustomEvent_Character_1;                    // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ABaseItem*                              K2Node_CustomEvent_LastItemBeforeQuickThrow;       // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ABaseItem*                              K2Node_CustomEvent_QuickThrowGrenade_1;            // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ABaseItem*                              K2Node_CustomEvent_QuickThrowGrenade;              // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bUsingSecondarySight;           // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABaseMagazineWeapon*                    K2Node_CustomEvent_Weapon;                         // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AReadyOrNotCharacter*                   K2Node_CustomEvent_Character;                      // 0x0038(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_bOn;                            // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APawn*                                  CallFunc_GetOwningPlayerPawn_ReturnValue;          // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ABaseMagazineWeapon*                    CallFunc_GetEquippedWeapon_ReturnValue;            // 0x0050(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APlayerCharacter*                       K2Node_DynamicCast_AsPlayer_Character;             // 0x0058(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABaseWeapon*                            K2Node_DynamicCast_AsBase_Weapon;                  // 0x0068(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0070(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEmitterComponent*                      CallFunc_GetSelectedEmitter_ReturnValue;           // 0x0078(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(EWeaponAttachmentState State)> K2Node_CreateDelegate_OutputDelegate;              // 0x0084(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0094(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class AReadyOrNotCharacter* Character, bool bOn)> K2Node_CreateDelegate_OutputDelegate_2; // 0x00A4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_3;            // 0x00B4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(bool bUsingSecondarySight, class ABaseMagazineWeapon* Weapon)> K2Node_CreateDelegate_OutputDelegate_4; // 0x00C4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class ABaseItem* QuickThrowGrenade)> K2Node_CreateDelegate_OutputDelegate_5;      // 0x00D4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class AReadyOrNotCharacter* Character, class ABaseItem* LastItemBeforeQuickThrow, class ABaseItem* QuickThrowGrenade)> K2Node_CreateDelegate_OutputDelegate_6; // 0x00E4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Hotkeys_C_ExecuteUbergraph_W_Hotkeys;
+
+// Function W_Hotkeys.W_Hotkeys_C.HandleOpticHotkeyVisibility
+// 0x0010 (0x0010 - 0x0000)
+struct W_Hotkeys_C_HandleOpticHotkeyVisibility final
+{
+public:
+	class UScopedWeaponAttachment*                VariableZoomAttachment;                            // 0x0000(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class APlayerCharacter*                       PlayerCharacter_0;                                 // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_Hotkeys_C_HandleOpticHotkeyVisibility;
 
 // Function W_Hotkeys.W_Hotkeys_C.OnNightVisionGogglesToggled_Event_0
 // 0x0010 (0x0010 - 0x0000)
@@ -84,6 +106,15 @@ public:
 	class ABaseMagazineWeapon*                    Weapon;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Hotkeys_C_OnSecondarySightToggled_Event_0;
+
+// Function W_Hotkeys.W_Hotkeys_C.OnWeaponZoomCommitted_Event
+// 0x0001 (0x0001 - 0x0000)
+struct W_Hotkeys_C_OnWeaponZoomCommitted_Event final
+{
+public:
+	EWeaponAttachmentState                        State;                                             // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_Hotkeys_C_OnWeaponZoomCommitted_Event;
 
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_Doorjam.Device_Doorjam_C
-// 0x0000 (0x0CC0 - 0x0CC0)
+// 0x0000 (0x0D10 - 0x0D10)
 class ADevice_Doorjam_C final : public ADoorJam
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BulletShell.BulletShell_C
-// 0x0000 (0x0320 - 0x0320)
+// 0x0000 (0x0340 - 0x0340)
 class ABulletShell_C final : public ABaseShell
 {
 public:

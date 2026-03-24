@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BaseBodyArmor.BaseBodyArmor_C
-// 0x0000 (0x0D30 - 0x0D30)
+// 0x0000 (0x0D80 - 0x0D80)
 class ABaseBodyArmor_C : public ASWATArmour
 {
 public:

@@ -491,6 +491,20 @@ void UW_MissionEnd_C::ShowCreditsButton(bool* Show)
 }
 
 
+// Function W_MissionEnd.W_MissionEnd_C.ShowMissionOptions
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_MissionEnd_C::ShowMissionOptions()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionEnd_C", "ShowMissionOptions");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MissionEnd.W_MissionEnd_C.ShowQuitButton
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:

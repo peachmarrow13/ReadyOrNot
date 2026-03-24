@@ -17,35 +17,50 @@
 namespace SDK
 {
 
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.ExecuteUbergraph_ANIMBP_G3A3
-// (Final, UbergraphFunction)
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UANIMBP_G3A3_C::ExecuteUbergraph_ANIMBP_G3A3(int32 EntryPoint)
+void UANIMBP_G3A3_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_G3A3_C", "ExecuteUbergraph_ANIMBP_G3A3");
+		Func = Class->GetFunction("ANIMBP_G3A3_C", "AnimGraph");
 
-	Params::ANIMBP_G3A3_C_ExecuteUbergraph_ANIMBP_G3A3 Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::ANIMBP_G3A3_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060
-// (BlueprintEvent)
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimNotify_DropSpeedReloadMagazine
+// (BlueprintCallable, BlueprintEvent)
 
-void UANIMBP_G3A3_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060()
+void UANIMBP_G3A3_C::AnimNotify_DropSpeedReloadMagazine()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_G3A3_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060");
+		Func = Class->GetFunction("ANIMBP_G3A3_C", "AnimNotify_DropSpeedReloadMagazine");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimNotify_ShowMag
+// (BlueprintCallable, BlueprintEvent)
+
+void UANIMBP_G3A3_C::AnimNotify_ShowMag()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_G3A3_C", "AnimNotify_ShowMag");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,52 +86,37 @@ void UANIMBP_G3A3_C::BlueprintUpdateAnimation(float DeltaTimeX)
 }
 
 
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimNotify_ShowMag
-// (BlueprintCallable, BlueprintEvent)
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060
+// (BlueprintEvent)
 
-void UANIMBP_G3A3_C::AnimNotify_ShowMag()
+void UANIMBP_G3A3_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_G3A3_C", "AnimNotify_ShowMag");
+		Func = Class->GetFunction("ANIMBP_G3A3_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G3A3_AnimGraphNode_ModifyBone_41A9F9E2439542D91162F78986CAF060");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimNotify_DropSpeedReloadMagazine
-// (BlueprintCallable, BlueprintEvent)
-
-void UANIMBP_G3A3_C::AnimNotify_DropSpeedReloadMagazine()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_G3A3_C", "AnimNotify_DropSpeedReloadMagazine");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ANIMBP_G3A3.ANIMBP_G3A3_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function ANIMBP_G3A3.ANIMBP_G3A3_C.ExecuteUbergraph_ANIMBP_G3A3
+// (Final, UbergraphFunction)
 // Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UANIMBP_G3A3_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UANIMBP_G3A3_C::ExecuteUbergraph_ANIMBP_G3A3(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_G3A3_C", "AnimGraph");
+		Func = Class->GetFunction("ANIMBP_G3A3_C", "ExecuteUbergraph_ANIMBP_G3A3");
 
-	Params::ANIMBP_G3A3_C_AnimGraph Parms{};
+	Params::ANIMBP_G3A3_C_ExecuteUbergraph_ANIMBP_G3A3 Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

@@ -19,23 +19,23 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DefaultPlayerStart.DefaultPlayerStart_C
-// 0x0030 (0x02F8 - 0x02C8)
+// 0x0030 (0x0300 - 0x02D0)
 class ADefaultPlayerStart_C : public APlayerStart
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ADefaultPlayerStart_C*                  NextPlayerStart;                                   // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
-	ETeamType                                     Team;                                              // 0x02D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2D9[0x7];                                      // 0x02D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UClass*>                         SpawnsClasses;                                     // 0x02E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bOverlapping;                                      // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ADefaultPlayerStart_C*                  NextPlayerStart;                                   // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, NoDestructor, HasGetValueTypeHash)
+	ETeamType                                     Team;                                              // 0x02E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2E1[0x7];                                      // 0x02E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UClass*>                         SpawnsClasses;                                     // 0x02E8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bOverlapping;                                      // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
 	void GetNextPlayerStart(class AActor** NewParam);
 	void ExecuteUbergraph_DefaultPlayerStart(int32 EntryPoint);
 	void BndEvt__CapsuleComponent_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	void BndEvt__CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

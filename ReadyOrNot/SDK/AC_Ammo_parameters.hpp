@@ -14,19 +14,6 @@
 namespace SDK::Params
 {
 
-// Function AC_Ammo.AC_Ammo_C.CalculateCurve
-// 0x0020 (0x0020 - 0x0000)
-struct AC_Ammo_C_CalculateCurve final
-{
-public:
-	float                                         X;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_LogisticCurve_Return_Value;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_LogisticCurve_X_ImplicitCast;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_FunctionResult_ReturnValue_ImplicitCast;    // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AC_Ammo_C_CalculateCurve;
-
 // Function AC_Ammo.AC_Ammo_C.ReloadCurve
 // 0x0058 (0x0058 - 0x0000)
 struct AC_Ammo_C_ReloadCurve final
@@ -45,6 +32,19 @@ public:
 	double                                        CallFunc_Subtract_DoubleDouble_ReturnValue;        // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AC_Ammo_C_ReloadCurve;
+
+// Function AC_Ammo.AC_Ammo_C.CalculateCurve
+// 0x0020 (0x0020 - 0x0000)
+struct AC_Ammo_C_CalculateCurve final
+{
+public:
+	float                                         X;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_LogisticCurve_Return_Value;               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_LogisticCurve_X_ImplicitCast;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_FunctionResult_ReturnValue_ImplicitCast;    // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AC_Ammo_C_CalculateCurve;
 
 }
 

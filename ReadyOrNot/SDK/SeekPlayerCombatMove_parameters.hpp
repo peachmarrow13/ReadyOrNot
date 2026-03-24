@@ -16,6 +16,33 @@
 namespace SDK::Params
 {
 
+// Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.StartActivity_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct SeekPlayerCombatMove_C_StartActivity_Blueprint final
+{
+public:
+	class AAIController*                          Owner;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SeekPlayerCombatMove_C_StartActivity_Blueprint;
+
+// Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.RequestCombatMove_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct SeekPlayerCombatMove_C_RequestCombatMove_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SeekPlayerCombatMove_C_RequestCombatMove_Blueprint;
+
+// Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.FinishedActivity_Blueprint
+// 0x0001 (0x0001 - 0x0000)
+struct SeekPlayerCombatMove_C_FinishedActivity_Blueprint final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SeekPlayerCombatMove_C_FinishedActivity_Blueprint;
+
 // Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.ExecuteUbergraph_SeekPlayerCombatMove
 // 0x00C8 (0x00C8 - 0x0000)
 struct SeekPlayerCombatMove_C_ExecuteUbergraph_SeekPlayerCombatMove final
@@ -55,33 +82,6 @@ public:
 	double                                        CallFunc_LessEqual_DoubleDouble_A_ImplicitCast;    // 0x00C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_SeekPlayerCombatMove_C_ExecuteUbergraph_SeekPlayerCombatMove;
-
-// Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.FinishedActivity_Blueprint
-// 0x0001 (0x0001 - 0x0000)
-struct SeekPlayerCombatMove_C_FinishedActivity_Blueprint final
-{
-public:
-	bool                                          bSuccess;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SeekPlayerCombatMove_C_FinishedActivity_Blueprint;
-
-// Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.RequestCombatMove_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct SeekPlayerCombatMove_C_RequestCombatMove_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SeekPlayerCombatMove_C_RequestCombatMove_Blueprint;
-
-// Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.StartActivity_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct SeekPlayerCombatMove_C_StartActivity_Blueprint final
-{
-public:
-	class AAIController*                          Owner;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SeekPlayerCombatMove_C_StartActivity_Blueprint;
 
 // Function SeekPlayerCombatMove.SeekPlayerCombatMove_C.GetMoveStyleOverride
 // 0x0030 (0x0030 - 0x0000)

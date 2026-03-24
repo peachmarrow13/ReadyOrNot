@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Launcher_M320_Gas.Launcher_M320_Gas_C
-// 0x0000 (0x1C10 - 0x1C10)
+// 0x0000 (0x1CF0 - 0x1CF0)
 class ALauncher_M320_Gas_C final : public ALauncher_M320_C
 {
 public:

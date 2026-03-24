@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_CheckEmptyWeapon_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_CheckEmptyWeapon_C_Tick_Blueprint;
+
 // Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.ExecuteUbergraph_AIAction_CheckEmptyWeapon
 // 0x0030 (0x0030 - 0x0000)
 struct AIAction_CheckEmptyWeapon_C_ExecuteUbergraph_AIAction_CheckEmptyWeapon final
@@ -30,15 +39,6 @@ public:
 	bool                                          CallFunc_IsTableMontagePlayingWithTimeRemaining_ReturnValue; // 0x002C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_CheckEmptyWeapon_C_ExecuteUbergraph_AIAction_CheckEmptyWeapon;
-
-// Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_CheckEmptyWeapon_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_CheckEmptyWeapon_C_Tick_Blueprint;
 
 // Function AIAction_CheckEmptyWeapon.AIAction_CheckEmptyWeapon_C.ShouldPerformAction
 // 0x0001 (0x0001 - 0x0000)

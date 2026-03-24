@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ColorCorrectRegions_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "ColorCorrectRegions_structs.hpp"
 #include "DisplayClusterLightCardExtender_structs.hpp"
 
 
@@ -21,33 +21,33 @@ namespace SDK
 {
 
 // Class ColorCorrectRegions.ColorCorrectRegion
-// 0x03B8 (0x0650 - 0x0298)
+// 0x03C0 (0x0660 - 0x02A0)
 #pragma pack(push, 0x1)
 class alignas(0x10) AColorCorrectRegion : public AActor
 {
 public:
-	EColorCorrectRegionsType                      Type;                                              // 0x0298(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_299[0x3];                                      // 0x0299(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Priority;                                          // 0x029C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Intensity;                                         // 0x02A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Inner;                                             // 0x02A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Outer_0;                                           // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Falloff;                                           // 0x02AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Invert;                                            // 0x02B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EColorCorrectRegionTemperatureType            TemperatureType;                                   // 0x02B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2B2[0x2];                                      // 0x02B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Temperature;                                       // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Tint;                                              // 0x02B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColorGradingSettings                  ColorGradingSettings;                              // 0x02C0(0x0290)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          Enabled;                                           // 0x0550(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnablePerActorCC;                                 // 0x0551(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EColorCorrectRegionStencilType                PerActorColorCorrection;                           // 0x0552(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_553[0x5];                                      // 0x0553(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<TSoftObjectPtr<class AActor>>            AffectedActors;                                    // 0x0558(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5A8[0x50];                                     // 0x05A8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	class UColorCorrectionInvisibleComponent*     IdentityComponent;                                 // 0x05F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_600[0x48];                                     // 0x0600(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EColorCorrectRegionsType                      Type;                                              // 0x02A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A1[0x3];                                      // 0x02A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Priority;                                          // 0x02A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Intensity;                                         // 0x02A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Inner;                                             // 0x02AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Outer_0;                                           // 0x02B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Falloff;                                           // 0x02B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Invert;                                            // 0x02B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EColorCorrectRegionTemperatureType            TemperatureType;                                   // 0x02B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BA[0x2];                                      // 0x02BA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Temperature;                                       // 0x02BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Tint;                                              // 0x02C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C4[0xC];                                      // 0x02C4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColorGradingSettings                  ColorGradingSettings;                              // 0x02D0(0x0290)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          Enabled;                                           // 0x0560(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnablePerActorCC;                                 // 0x0561(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EColorCorrectRegionStencilType                PerActorColorCorrection;                           // 0x0562(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_563[0x5];                                      // 0x0563(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<TSoftObjectPtr<class AActor>>            AffectedActors;                                    // 0x0568(0x0050)(Edit, BlueprintVisible, UObjectWrapper, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5B8[0x50];                                     // 0x05B8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	class UColorCorrectionInvisibleComponent*     IdentityComponent;                                 // 0x0608(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_610[0x48];                                     // 0x0610(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -67,12 +67,12 @@ public:
 DUMPER7_ASSERTS_AColorCorrectRegion;
 
 // Class ColorCorrectRegions.ColorCorrectionRegion
-// 0x0010 (0x0660 - 0x0650)
+// 0x0010 (0x0670 - 0x0660)
 class AColorCorrectionRegion final : public AColorCorrectRegion
 {
 public:
-	TArray<class UStaticMeshComponent*>           MeshComponents;                                    // 0x0648(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                         Pad_658[0x8];                                      // 0x0658(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UStaticMeshComponent*>           MeshComponents;                                    // 0x0658(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	uint8                                         Pad_668[0x8];                                      // 0x0668(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -137,17 +137,17 @@ public:
 DUMPER7_ASSERTS_UColorCorrectRegionsSubsystem;
 
 // Class ColorCorrectRegions.ColorCorrectionWindow
-// 0x00D0 (0x0720 - 0x0650)
+// 0x00D0 (0x0730 - 0x0660)
 class AColorCorrectionWindow : public AColorCorrectRegion
 {
 public:
-	uint8                                         Pad_648[0x8];                                      // 0x0648(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UStaticMeshComponent*>           MeshComponents;                                    // 0x0650(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
-	EColorCorrectWindowType                       WindowType;                                        // 0x0660(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_661[0x7];                                      // 0x0661(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDisplayClusterPositionalParams        PositionalParams;                                  // 0x0668(0x0048)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	struct FTransform                             Origin;                                            // 0x06B0(0x0060)(Edit, BlueprintVisible, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_710[0x10];                                     // 0x0710(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_658[0x8];                                      // 0x0658(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UStaticMeshComponent*>           MeshComponents;                                    // 0x0660(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	EColorCorrectWindowType                       WindowType;                                        // 0x0670(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_671[0x7];                                      // 0x0671(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDisplayClusterPositionalParams        PositionalParams;                                  // 0x0678(0x0048)(Edit, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	struct FTransform                             Origin;                                            // 0x06C0(0x0060)(Edit, BlueprintVisible, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_720[0x10];                                     // 0x0720(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetDistanceFromCenter(double InValue);
@@ -189,7 +189,7 @@ public:
 DUMPER7_ASSERTS_AColorCorrectionWindow;
 
 // Class ColorCorrectRegions.ColorCorrectWindow
-// 0x0000 (0x0720 - 0x0720)
+// 0x0000 (0x0730 - 0x0730)
 class AColorCorrectWindow final : public AColorCorrectionWindow
 {
 public:

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_MK18.Primary_MK18_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class APrimary_MK18_C final : public ABaseMagazineWeapon
 {
 public:

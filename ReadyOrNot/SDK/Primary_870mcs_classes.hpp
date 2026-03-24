@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_870mcs.Primary_870mcs_C
-// 0x0020 (0x1940 - 0x1920)
+// 0x0020 (0x1A30 - 0x1A10)
 class APrimary_870mcs_C final : public AShotgun
 {
 public:
-	class UPointLightComponent*                   PointLight;                                        // 0x1920(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USpotLightComponent*                    PointLight1;                                       // 0x1928(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAnimMontage*                           LightToggle1P;                                     // 0x1930(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UPointLightComponent*                   PointLight;                                        // 0x1A10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USpotLightComponent*                    PointLight1;                                       // 0x1A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAnimMontage*                           LightToggle1P;                                     // 0x1A20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

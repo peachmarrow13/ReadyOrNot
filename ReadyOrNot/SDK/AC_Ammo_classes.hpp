@@ -21,8 +21,8 @@ namespace SDK
 class UAC_Ammo_C final : public UAC_Ammo
 {
 public:
-	float CalculateCurve(float X) const;
 	void ReloadCurve(double X, double* Return_Value) const;
+	float CalculateCurve(float X) const;
 
 public:
 	static class UClass* StaticClass()

@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
-#include "SlateCore_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "CommonInput_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CommonUI_classes.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_PreMission_Tablet_Brief.W_PreMission_Tablet_Brief_C
-// 0x0A80 (0x0E98 - 0x0418)
+// 0x0AD0 (0x0EE8 - 0x0418)
 class UW_PreMission_Tablet_Brief_C final : public UCommonActivatableWidget
 {
 public:
@@ -53,31 +53,31 @@ public:
 	class UW_TabletText_C*                        W_TabletText_Address;                              // 0x04E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_TabletText_C*                        W_TabletText_Location;                             // 0x04E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_TabletText_C*                        W_TabletText_OperationOrder;                       // 0x04F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  Level_Data;                                        // 0x04F8(0x0880)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FString                                 Mission_URL;                                       // 0x0D78(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	TMap<class UW_Button_C*, class UWidget*>      NavigationMap;                                     // 0x0D88(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	class UW_Button_C*                            ActiveButton;                                      // 0x0DD8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	int32                                         ActiveButtonIndex;                                 // 0x0DE0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bUseGamepad;                                       // 0x0DE4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DE5[0x3];                                      // 0x0DE5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_Button_C*                            CurrentActiveButton;                               // 0x0DE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FMissionAudio>                  MissionAudio;                                      // 0x0DF0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FMissionPhoto>                  MissionPhotos;                                     // 0x0E00(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UW_Briefing_Media_GalleryEntry_C*       CurrentGallerySelection;                           // 0x0E10(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          bGalleryInfoVisible;                               // 0x0E18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E19[0x7];                                      // 0x0E19(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UFMODAudioComponent*                    MediaAudioFMODComponent;                           // 0x0E20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UW_Briefing_Media_AudioEntry_C*         ActiveAudioEntry;                                  // 0x0E28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                GalleryPadding;                                    // 0x0E30(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FMargin                                AudioPadding;                                      // 0x0E40(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          bDispatchAutoPaused;                               // 0x0E50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bTabletIsAwake;                                    // 0x0E51(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bNewDispatchAudio;                                 // 0x0E52(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E53[0x5];                                      // 0x0E53(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FCharacterBio>                  Civilians_Bios;                                    // 0x0E58(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMulticastInlineDelegate<void()>              OnPlay;                                            // 0x0E68(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnTabChanged;                                      // 0x0E78(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TMulticastInlineDelegate<void()>              OnStop;                                            // 0x0E88(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	struct FLevelDataLookupTable                  Level_Data;                                        // 0x04F8(0x08D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FString                                 Mission_URL;                                       // 0x0DC8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	TMap<class UW_Button_C*, class UWidget*>      NavigationMap;                                     // 0x0DD8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	class UW_Button_C*                            ActiveButton;                                      // 0x0E28(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	int32                                         ActiveButtonIndex;                                 // 0x0E30(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bUseGamepad;                                       // 0x0E34(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E35[0x3];                                      // 0x0E35(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_Button_C*                            CurrentActiveButton;                               // 0x0E38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FMissionAudio>                  MissionAudio;                                      // 0x0E40(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FMissionPhoto>                  MissionPhotos;                                     // 0x0E50(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UW_Briefing_Media_GalleryEntry_C*       CurrentGallerySelection;                           // 0x0E60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          bGalleryInfoVisible;                               // 0x0E68(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E69[0x7];                                      // 0x0E69(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UFMODAudioComponent*                    MediaAudioFMODComponent;                           // 0x0E70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UW_Briefing_Media_AudioEntry_C*         ActiveAudioEntry;                                  // 0x0E78(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                GalleryPadding;                                    // 0x0E80(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FMargin                                AudioPadding;                                      // 0x0E90(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          bDispatchAutoPaused;                               // 0x0EA0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bTabletIsAwake;                                    // 0x0EA1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bNewDispatchAudio;                                 // 0x0EA2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_EA3[0x5];                                      // 0x0EA3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCharacterBio>                  Civilians_Bios;                                    // 0x0EA8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMulticastInlineDelegate<void()>              OnPlay;                                            // 0x0EB8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnTabChanged;                                      // 0x0EC8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void()>              OnStop;                                            // 0x0ED8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void AudioPlayerVisible(class UW_AudioPlayer_C* PlayerWidget, bool PlayerVisible);

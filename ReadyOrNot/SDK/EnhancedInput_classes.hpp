@@ -12,9 +12,9 @@
 
 #include "GameplayTags_structs.hpp"
 #include "Engine_classes.hpp"
+#include "EnhancedInput_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "EnhancedInput_structs.hpp"
 #include "DeveloperSettings_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "InputCore_structs.hpp"
@@ -164,11 +164,11 @@ public:
 DUMPER7_ASSERTS_UEnhancedInputActionValueBinding;
 
 // Class EnhancedInput.EnhancedInputComponent
-// 0x0038 (0x0160 - 0x0128)
+// 0x0038 (0x0168 - 0x0130)
 class UEnhancedInputComponent : public UInputComponent
 {
 public:
-	uint8                                         Pad_128[0x38];                                     // 0x0128(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x38];                                     // 0x0130(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	struct FInputActionValue GetBoundActionValue(const class UInputAction* Action) const;

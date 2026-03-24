@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_DrawConcealedWeapon_AmosVoll.AIAction_DrawConcealedWeapon_AmosVoll_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_DrawConcealedWeapon_AmosVoll_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_DrawConcealedWeapon_AmosVoll_C_Tick_Blueprint;
+
 // Function AIAction_DrawConcealedWeapon_AmosVoll.AIAction_DrawConcealedWeapon_AmosVoll_C.ExecuteUbergraph_AIAction_DrawConcealedWeapon_AmosVoll
 // 0x00D0 (0x00D0 - 0x0000)
 struct AIAction_DrawConcealedWeapon_AmosVoll_C_ExecuteUbergraph_AIAction_DrawConcealedWeapon_AmosVoll final
@@ -44,15 +53,6 @@ public:
 	float                                         CallFunc_Delay_Duration_ImplicitCast;              // 0x00C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_DrawConcealedWeapon_AmosVoll_C_ExecuteUbergraph_AIAction_DrawConcealedWeapon_AmosVoll;
-
-// Function AIAction_DrawConcealedWeapon_AmosVoll.AIAction_DrawConcealedWeapon_AmosVoll_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_DrawConcealedWeapon_AmosVoll_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_DrawConcealedWeapon_AmosVoll_C_Tick_Blueprint;
 
 }
 

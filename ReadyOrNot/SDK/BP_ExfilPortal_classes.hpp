@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ExfilPortal.BP_ExfilPortal_C
-// 0x0008 (0x02F0 - 0x02E8)
+// 0x0008 (0x02F8 - 0x02F0)
 class ABP_ExfilPortal_C final : public AExfilPortal
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void CancelModal();

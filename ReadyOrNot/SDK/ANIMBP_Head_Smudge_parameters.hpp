@@ -16,24 +16,6 @@
 namespace SDK::Params
 {
 
-// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ANIMBP_Head_Smudge_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ANIMBP_Head_Smudge_C_AnimGraph;
-
-// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.BlueprintUpdateAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct ANIMBP_Head_Smudge_C_BlueprintUpdateAnimation final
-{
-public:
-	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_ANIMBP_Head_Smudge_C_BlueprintUpdateAnimation;
-
 // Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.ExecuteUbergraph_ANIMBP_Head_Smudge
 // 0x0028 (0x0028 - 0x0000)
 struct ANIMBP_Head_Smudge_C_ExecuteUbergraph_ANIMBP_Head_Smudge final
@@ -49,6 +31,24 @@ public:
 	bool                                          CallFunc_IsDeadOrUnconscious_ReturnValue;          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ANIMBP_Head_Smudge_C_ExecuteUbergraph_ANIMBP_Head_Smudge;
+
+// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.BlueprintUpdateAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct ANIMBP_Head_Smudge_C_BlueprintUpdateAnimation final
+{
+public:
+	float                                         DeltaTimeX;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_ANIMBP_Head_Smudge_C_BlueprintUpdateAnimation;
+
+// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ANIMBP_Head_Smudge_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ANIMBP_Head_Smudge_C_AnimGraph;
 
 }
 

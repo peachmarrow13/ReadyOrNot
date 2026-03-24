@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function DefaultPlayerStart.DefaultPlayerStart_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ADefaultPlayerStart_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DefaultPlayerStart_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function DefaultPlayerStart.DefaultPlayerStart_C.GetNextPlayerStart
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -125,6 +111,20 @@ void ADefaultPlayerStart_C::BndEvt__CapsuleComponent_K2Node_ComponentBoundEvent_
 	Parms.SweepResult = std::move(SweepResult);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function DefaultPlayerStart.DefaultPlayerStart_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ADefaultPlayerStart_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DefaultPlayerStart_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DataSingleton.BP_DataSingleton_C
-// 0x0000 (0x03B8 - 0x03B8)
+// 0x0000 (0x03D8 - 0x03D8)
 class UBP_DataSingleton_C final : public UDataSingleton
 {
 public:

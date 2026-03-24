@@ -17,15 +17,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Secondary_S_Python.Secondary_S_Python_C
-// 0x0030 (0x18E0 - 0x18B0)
+// 0x0030 (0x19D0 - 0x19A0)
 class ASecondary_S_Python_C final : public ABaseMagazineWeapon
 {
 public:
-	int32                                         BarrelIndex;                                       // 0x18B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_18B4[0x4];                                     // 0x18B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UAnimMontage*>                   FireMontagesEmpty;                                 // 0x18B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UAnimMontage*>                   FireMontages;                                      // 0x18C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bCocked;                                           // 0x18D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1998[0x8];                                     // 0x1998(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         BarrelIndex;                                       // 0x19A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_19A4[0x4];                                     // 0x19A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UAnimMontage*>                   FireMontagesEmpty;                                 // 0x19A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class UAnimMontage*>                   FireMontages;                                      // 0x19B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bCocked;                                           // 0x19C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

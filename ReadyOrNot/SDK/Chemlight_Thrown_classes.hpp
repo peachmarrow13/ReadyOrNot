@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Chemlight_Thrown.Chemlight_Thrown_C
-// 0x0000 (0x0658 - 0x0658)
+// 0x0000 (0x0660 - 0x0660)
 class AChemlight_Thrown_C final : public AThrownChemlight
 {
 public:

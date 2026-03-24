@@ -18,31 +18,31 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ReplayController.BP_ReplayController_C
-// 0x0040 (0x0E10 - 0x0DD0)
+// 0x0040 (0x0E28 - 0x0DE8)
 class ABP_ReplayController_C final : public AReplayController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0DD0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          bRemoveReplayControls;                             // 0x0DD8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSetInitialPosition;                               // 0x0DD9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSprintHeld;                                       // 0x0DDA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCrouchHeld;                                       // 0x0DDB(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bFollowLocalPlayer;                                // 0x0DDC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DDD[0x3];                                      // 0x0DDD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class AReadyOrNotCharacter*                   LocalPlayer;                                       // 0x0DE0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	double                                        DeltaSeconds;                                      // 0x0DE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ABaseItem*>                      IgnoredActors;                                     // 0x0DF0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	bool                                          MouseRightPressed;                                 // 0x0E00(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_E01[0x3];                                      // 0x0E01(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         HUDState;                                          // 0x0E04(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bPrePaused;                                        // 0x0E08(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0DE8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          bRemoveReplayControls;                             // 0x0DF0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSetInitialPosition;                               // 0x0DF1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSprintHeld;                                       // 0x0DF2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCrouchHeld;                                       // 0x0DF3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bFollowLocalPlayer;                                // 0x0DF4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DF5[0x3];                                      // 0x0DF5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class AReadyOrNotCharacter*                   LocalPlayer;                                       // 0x0DF8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	double                                        DeltaSeconds;                                      // 0x0E00(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class ABaseItem*>                      IgnoredActors;                                     // 0x0E08(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	bool                                          MouseRightPressed;                                 // 0x0E18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_E19[0x3];                                      // 0x0E19(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         HUDState;                                          // 0x0E1C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bPrePaused;                                        // 0x0E20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ReplayController(int32 EntryPoint);
-	void InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_0(const struct FKey& Key);
-	void InpActEvt_ReplayDecreasePlaybackSpeed_K2Node_InputActionEvent_1(const struct FKey& Key);
-	void InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_2(const struct FKey& Key);
-	void InpActEvt_ReplayIncreasePlaybackSpeed_K2Node_InputActionEvent_3(const struct FKey& Key);
+	void InpActEvt_IA_Replay_DecreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_IncreasePlaybackSpeed_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_SkipBackward_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
+	void InpActEvt_IA_Replay_SkipForward_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction);
 	void OnPauseMenuClosed();
 	void OnPauseMenuOpened();
 	void OnScrubComplete();

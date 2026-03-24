@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -35,18 +35,18 @@ public:
 	bool                                          bEverShotBefore;                                   // 0x00A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void CustomEvent_0();
-	void EndAction_Blueprint();
-	void ExecuteUbergraph_AIAction_Startle(int32 EntryPoint);
-	void InitAction_Blueprint(class ACyberneticController* Controller);
-	void ResetData();
 	void Tick_Blueprint(float DeltaTime);
+	void ResetData();
+	void InitAction_Blueprint(class ACyberneticController* Controller);
+	void ExecuteUbergraph_AIAction_Startle(int32 EntryPoint);
+	void EndAction_Blueprint();
+	void CustomEvent_0();
+	void BeginAction_Blueprint();
 
-	void AngleToAnimation(double InAngle, bool bRight, class FString* Return_Value) const;
-	void CanStartle(bool* Return_Value) const;
-	void IsLocationRightOfUs(const struct FVector& InLocation, bool* Return_Value) const;
 	bool ShouldPerformAction() const;
+	void IsLocationRightOfUs(const struct FVector& InLocation, bool* Return_Value) const;
+	void CanStartle(bool* Return_Value) const;
+	void AngleToAnimation(double InAngle, bool bRight, class FString* Return_Value) const;
 
 public:
 	static class UClass* StaticClass()

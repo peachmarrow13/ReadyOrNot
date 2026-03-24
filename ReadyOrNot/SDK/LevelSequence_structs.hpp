@@ -18,37 +18,6 @@
 namespace SDK
 {
 
-// ScriptStruct LevelSequence.LevelSequenceBindingReference
-// 0x0040 (0x0040 - 0x0000)
-struct FLevelSequenceBindingReference final
-{
-public:
-	class FString                                 PackageName;                                       // 0x0000(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FSoftObjectPath                        ExternalObjectPath;                                // 0x0010(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class FString                                 ObjectPath;                                        // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FLevelSequenceBindingReference;
-
-// ScriptStruct LevelSequence.LevelSequenceBindingReferenceArray
-// 0x0010 (0x0010 - 0x0000)
-struct FLevelSequenceBindingReferenceArray final
-{
-public:
-	TArray<struct FLevelSequenceBindingReference> References;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FLevelSequenceBindingReferenceArray;
-
-// ScriptStruct LevelSequence.LevelSequenceBindingReferences
-// 0x00F0 (0x00F0 - 0x0000)
-struct FLevelSequenceBindingReferences final
-{
-public:
-	TMap<struct FGuid, struct FLevelSequenceBindingReferenceArray> BindingIdToReferences;            // 0x0000(0x0050)(NativeAccessSpecifierPrivate)
-	TSet<struct FGuid>                            AnimSequenceInstances;                             // 0x0050(0x0050)(NativeAccessSpecifierPrivate)
-	TSet<struct FGuid>                            PostProcessInstances;                              // 0x00A0(0x0050)(NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FLevelSequenceBindingReferences;
-
 // ScriptStruct LevelSequence.LevelSequenceCameraSettings
 // 0x0002 (0x0002 - 0x0000)
 struct FLevelSequenceCameraSettings final
@@ -103,6 +72,37 @@ public:
 	bool                                          bEvaluateAllSkeletalMeshComponents;                // 0x0037(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FLevelSequenceAnimSequenceLinkItem;
+
+// ScriptStruct LevelSequence.LevelSequenceBindingReference
+// 0x0040 (0x0040 - 0x0000)
+struct FLevelSequenceBindingReference final
+{
+public:
+	class FString                                 PackageName;                                       // 0x0000(0x0010)(ZeroConstructor, Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FSoftObjectPath                        ExternalObjectPath;                                // 0x0010(0x0020)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FString                                 ObjectPath;                                        // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FLevelSequenceBindingReference;
+
+// ScriptStruct LevelSequence.LevelSequenceBindingReferenceArray
+// 0x0010 (0x0010 - 0x0000)
+struct FLevelSequenceBindingReferenceArray final
+{
+public:
+	TArray<struct FLevelSequenceBindingReference> References;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FLevelSequenceBindingReferenceArray;
+
+// ScriptStruct LevelSequence.LevelSequenceBindingReferences
+// 0x00F0 (0x00F0 - 0x0000)
+struct FLevelSequenceBindingReferences final
+{
+public:
+	TMap<struct FGuid, struct FLevelSequenceBindingReferenceArray> BindingIdToReferences;            // 0x0000(0x0050)(NativeAccessSpecifierPrivate)
+	TSet<struct FGuid>                            AnimSequenceInstances;                             // 0x0050(0x0050)(NativeAccessSpecifierPrivate)
+	TSet<struct FGuid>                            PostProcessInstances;                              // 0x00A0(0x0050)(NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FLevelSequenceBindingReferences;
 
 // ScriptStruct LevelSequence.LevelSequenceObject
 // 0x0030 (0x0030 - 0x0000)

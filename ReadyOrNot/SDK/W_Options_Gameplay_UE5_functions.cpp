@@ -373,6 +373,26 @@ void UW_Options_Gameplay_UE5_C::BndEvt__W_Options_Gameplay_UE5_Options_UnlockedD
 }
 
 
+// Function W_Options_Gameplay_UE5.W_Options_Gameplay_UE5_C.BndEvt__W_Options_Gameplay_UE5_SimpleGraphics_OnOff_ADSZoom_1_K2Node_ComponentBoundEvent_22_OnValueStateChange__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// bool                                    bNewCheckState                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_Options_Gameplay_UE5_C::BndEvt__W_Options_Gameplay_UE5_SimpleGraphics_OnOff_ADSZoom_1_K2Node_ComponentBoundEvent_22_OnValueStateChange__DelegateSignature(bool bNewCheckState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Options_Gameplay_UE5_C", "BndEvt__W_Options_Gameplay_UE5_SimpleGraphics_OnOff_ADSZoom_1_K2Node_ComponentBoundEvent_22_OnValueStateChange__DelegateSignature");
+
+	Params::W_Options_Gameplay_UE5_C_BndEvt__W_Options_Gameplay_UE5_SimpleGraphics_OnOff_ADSZoom_1_K2Node_ComponentBoundEvent_22_OnValueStateChange__DelegateSignature Parms{};
+
+	Parms.bNewCheckState = bNewCheckState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_Options_Gameplay_UE5.W_Options_Gameplay_UE5_C.BndEvt__W_SettingsMenuGamepad_ClearModioUserData_K2Node_ComponentBoundEvent_90_Clicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -386,26 +406,6 @@ void UW_Options_Gameplay_UE5_C::BndEvt__W_SettingsMenuGamepad_ClearModioUserData
 		Func = Class->GetFunction("W_Options_Gameplay_UE5_C", "BndEvt__W_SettingsMenuGamepad_ClearModioUserData_K2Node_ComponentBoundEvent_90_Clicked__DelegateSignature");
 
 	Params::W_Options_Gameplay_UE5_C_BndEvt__W_SettingsMenuGamepad_ClearModioUserData_K2Node_ComponentBoundEvent_90_Clicked__DelegateSignature Parms{};
-
-	Parms.Button = Button;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_Options_Gameplay_UE5.W_Options_Gameplay_UE5_C.BndEvt__W_SettingsMenuGamepad_CopySupporterCodeButton_K2Node_ComponentBoundEvent_45_Clicked__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UW_Button_C*                      Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void UW_Options_Gameplay_UE5_C::BndEvt__W_SettingsMenuGamepad_CopySupporterCodeButton_K2Node_ComponentBoundEvent_45_Clicked__DelegateSignature(class UW_Button_C* Button)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_Options_Gameplay_UE5_C", "BndEvt__W_SettingsMenuGamepad_CopySupporterCodeButton_K2Node_ComponentBoundEvent_45_Clicked__DelegateSignature");
-
-	Params::W_Options_Gameplay_UE5_C_BndEvt__W_SettingsMenuGamepad_CopySupporterCodeButton_K2Node_ComponentBoundEvent_45_Clicked__DelegateSignature Parms{};
 
 	Parms.Button = Button;
 
@@ -838,6 +838,20 @@ void UW_Options_Gameplay_UE5_C::BP_OnDeactivated()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("W_Options_Gameplay_UE5_C", "BP_OnDeactivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_Options_Gameplay_UE5.W_Options_Gameplay_UE5_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_Options_Gameplay_UE5_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Options_Gameplay_UE5_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

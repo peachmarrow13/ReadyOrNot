@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass LD_MainMenu.LD_MainMenu_C
-// 0x0000 (0x08C0 - 0x08C0)
+// 0x0000 (0x0910 - 0x0910)
 class ULD_MainMenu_C final : public ULevelData
 {
 public:

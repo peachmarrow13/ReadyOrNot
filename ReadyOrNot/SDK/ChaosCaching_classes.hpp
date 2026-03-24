@@ -14,9 +14,9 @@
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MovieScene_classes.hpp"
 #include "ChaosCaching_structs.hpp"
 #include "MovieSceneTracks_classes.hpp"
-#include "MovieScene_classes.hpp"
 
 
 namespace SDK
@@ -46,18 +46,18 @@ public:
 DUMPER7_ASSERTS_UChaosCacheCollection;
 
 // Class ChaosCaching.ChaosCacheManager
-// 0x00B0 (0x0348 - 0x0298)
+// 0x00B0 (0x0350 - 0x02A0)
 class AChaosCacheManager : public AActor
 {
 public:
-	class UChaosCacheCollection*                  CacheCollection;                                   // 0x0298(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECacheMode                                    CacheMode;                                         // 0x02A0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStartMode                                    StartMode;                                         // 0x02A1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A2[0x2];                                      // 0x02A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         StartTime;                                         // 0x02A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FObservedComponent>             ObservedComponents;                                // 0x02B0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_2C0[0x88];                                     // 0x02C0(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UChaosCacheCollection*                  CacheCollection;                                   // 0x02A0(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECacheMode                                    CacheMode;                                         // 0x02A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStartMode                                    StartMode;                                         // 0x02A9(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2AA[0x2];                                      // 0x02AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StartTime;                                         // 0x02AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2B0[0x8];                                      // 0x02B0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FObservedComponent>             ObservedComponents;                                // 0x02B8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2C8[0x88];                                     // 0x02C8(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void EnablePlayback(int32 Index_0, bool bEnable);
@@ -87,7 +87,7 @@ public:
 DUMPER7_ASSERTS_AChaosCacheManager;
 
 // Class ChaosCaching.ChaosCachePlayer
-// 0x0000 (0x0348 - 0x0348)
+// 0x0000 (0x0350 - 0x0350)
 class AChaosCachePlayer final : public AChaosCacheManager
 {
 public:

@@ -24,8 +24,8 @@ public:
 	double                                        Max_Distance;                                      // 0x0028(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	bool CanOpen(const struct FAIActionDecisionContext& Context) const;
 	void Get_SWAT(TArray<class AReadyOrNotCharacter*>* ArrayOutput) const;
+	bool CanOpen(const struct FAIActionDecisionContext& Context) const;
 
 public:
 	static class UClass* StaticClass()

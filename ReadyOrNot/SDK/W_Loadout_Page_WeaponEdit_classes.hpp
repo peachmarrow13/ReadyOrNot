@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CommonUI_classes.hpp"
+#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
-#include "CommonInput_structs.hpp"
+#include "CommonUI_classes.hpp"
 
 
 namespace SDK
@@ -49,7 +49,7 @@ public:
 	bool                                          ChangingWeapon;                                    // 0x04C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ChangingAttachment;                                // 0x04C9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4CA[0x6];                                      // 0x04CA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool Secondary, EItemClass ItemClass)> OnCurrentWeaponClicked;     // 0x04D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
+	TMulticastInlineDelegate<void(bool Secondary, EItemClass ItemClass, EWeaponSubclass WeaponClass)> OnCurrentWeaponClicked; // 0x04D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class UFMODEvent*                             AttachmentSelectedEvent;                           // 0x04E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	class UFMODEvent*                             NullAttachmentSelectedEvent;                       // 0x04E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 	TMulticastInlineDelegate<void()>              OnCurrentWeaponHovered;                            // 0x04F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)

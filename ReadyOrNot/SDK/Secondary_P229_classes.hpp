@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Secondary_P229.Secondary_P229_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class ASecondary_P229_C final : public ABaseMagazineWeapon
 {
 public:

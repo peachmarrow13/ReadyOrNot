@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_Zipcuffs_Placed.Device_Zipcuffs_Placed_C
-// 0x0000 (0x02A0 - 0x02A0)
+// 0x0000 (0x02A8 - 0x02A8)
 class ADevice_Zipcuffs_Placed_C final : public APlacedZipcuffs
 {
 public:

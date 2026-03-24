@@ -18,16 +18,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_SuperShorty.Device_SuperShorty_C
-// 0x0030 (0x1950 - 0x1920)
+// 0x0030 (0x1A40 - 0x1A10)
 class ADevice_SuperShorty_C final : public AShotgun
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1920(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UShellRackShellComponent*               Shell4;                                            // 0x1928(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell3;                                            // 0x1930(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell2;                                            // 0x1938(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell1;                                            // 0x1940(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UShellRackShellComponent*               Shell0;                                            // 0x1948(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1A10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UShellRackShellComponent*               Shell4;                                            // 0x1A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell3;                                            // 0x1A20(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell2;                                            // 0x1A28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell1;                                            // 0x1A30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UShellRackShellComponent*               Shell0;                                            // 0x1A38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void DoReloadComplete_1();

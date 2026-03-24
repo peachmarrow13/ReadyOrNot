@@ -33,11 +33,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x08A4D430;
-	constexpr int32 AppendString      = 0x00C8E8D0;
-	constexpr int32 GNames            = 0x089A7080;
-	constexpr int32 GWorld            = 0x08BB9FC8;
-	constexpr int32 ProcessEvent      = 0x00E47830;
+	constexpr int32 GObjects          = 0x08CC4570;
+	constexpr int32 AppendString      = 0x00C924B0;
+	constexpr int32 GNames            = 0x08BC2CB8;
+	constexpr int32 GWorld            = 0x08E32888;
+	constexpr int32 ProcessEvent      = 0x00E4D670;
 	constexpr int32 ProcessEventIdx   = 0x0000004D;
 }
 
@@ -91,7 +91,7 @@ namespace BasicFilesImpleUtils
 const FName& GetStaticName(const wchar_t* Name, FName& StaticName);
 
 template<bool bIsFullName = false>
-class UClass* GetStaticClass(const char* Name, class UClass*& StaticClass)
+class UClass* GetStaticClassImpl(const char* Name, class UClass*& StaticClass)
 {
 	if (StaticClass == nullptr)
 	{
@@ -157,7 +157,7 @@ ClassType* GetDefaultObjImpl()
 
 	if (StaticClass)
 	{
-		return reinterpret_cast<ClassType*>(StaticClass->DefaultObject);
+		return reinterpret_cast<ClassType*>(StaticClass->ClassDefaultObject);
 	}
 
 	return nullptr;
@@ -166,13 +166,13 @@ ClassType* GetDefaultObjImpl()
 #define STATIC_CLASS_IMPL(NameString) \
 { \
     static UClass* Clss = nullptr; \
-    return GetStaticClass(NameString, Clss); \
+    return GetStaticClassImpl(NameString, Clss); \
 }
 
 #define STATIC_CLASS_IMPL_FULLNAME(FullNameString) \
 { \
     static UClass* Clss = nullptr; \
-    return GetStaticClass<true>(FullNameString, Clss); \
+    return GetStaticClassImpl<true>(FullNameString, Clss); \
 }
 
 #define BP_STATIC_CLASS_IMPL(NameString) \
@@ -318,11 +318,11 @@ class FName final
 public:
 	static inline void*                           AppendString = nullptr;                            // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
-	int32                                         ComparisonIndex;                                   // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	uint32                                        Number;                                            // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	int32                                         ComparisonIndex = 0x0;                             // 0x0000(0x0004)(NOT AUTO-GENERATED PROPERTY)
+	uint32                                        Number = 0x0;                                      // 0x0004(0x0004)(NOT AUTO-GENERATED PROPERTY)
 
 public:
-	constexpr FName(int32 ComparisonIndex = 0, uint32 Number = 0)
+	constexpr explicit FName(int32 ComparisonIndex, uint32 Number = 0)
 		: ComparisonIndex(ComparisonIndex), Number(Number)
 	{
 	}
@@ -332,10 +332,16 @@ public:
 		AppendString = reinterpret_cast<void*>(Location);
 	}
 
-	constexpr FName(const FName& other)
-		: ComparisonIndex(other.ComparisonIndex), Number(other.Number)
-	{
-	}
+	constexpr FName() = default;
+	
+	constexpr FName(const FName&) = default;
+	
+	constexpr FName(FName&&) = default;
+	
+	constexpr FName& operator=(const FName&) = default;
+	
+	constexpr  FName& operator=(FName&&) = default;
+	
 
 	static void InitInternal()
 	{
@@ -377,15 +383,6 @@ public:
 		return OutputString.substr(pos + 1);
 	}
 	
-
-	FName& operator=(const FName& Other)
-	{
-		ComparisonIndex = Other.ComparisonIndex;
-		Number = Other.Number;
-	
-		return *this;
-	}
-
 	bool operator==(const FName& Other) const
 	{
 		return ComparisonIndex == Other.ComparisonIndex && Number == Other.Number;
@@ -458,6 +455,17 @@ public:
 		return ClassPtr != Other;
 	}
 };
+
+// Predefined struct FStructBaseChain
+// 0x0010 (0x0010 - 0x0000)
+struct FStructBaseChain
+{
+public:
+	FStructBaseChain**                            StructBaseChainArray;                              // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+	int32                                         NumStructBasesInChainMinusOne;                     // 0x0008(0x0004)(NOT AUTO-GENERATED PROPERTY)
+};
+DUMPER7_ASSERTS_FStructBaseChain;
+
 namespace FTextImpl
 {
 // Predefined struct FTextData
@@ -624,62 +632,6 @@ public:
 	UEType* operator->() const
 	{
 		return static_cast<UEType*>(TPersistentObjectPtr::Get());
-	}
-};
-
-class FEncryptedObjPtr
-{
-public:
-	class UObject* Object;
-	uint64_t KeyOrSomething;
-};
-
-template<typename UEType>
-class TEncryptedObjPtr : public FEncryptedObjPtr
-{
-public:
-
-public:
-	UEType* Get()
-	{
-		return static_cast<UEType*>(Object);
-	}
-	const UEType* Get() const
-	{
-		return static_cast<const UEType*>(Object);
-	}
-
-	UEType* operator->()
-	{
-		return Get();
-	}
-	const UEType* operator->() const
-	{
-		return Get();
-	}
-
-	inline operator UEType* ()
-	{
-		return Get();
-	}
-	inline operator UEType* () const
-	{
-		return Get();
-	}
-
-public:
-	inline bool operator==(const FEncryptedObjPtr& Other) const
-	{
-		return Object == Other.Object;
-	}
-	inline bool operator!=(const FEncryptedObjPtr& Other) const
-	{
-		return Object != Other.Object;
-	}
-
-	inline explicit operator bool() const
-	{
-		return Object != nullptr;
 	}
 };
 

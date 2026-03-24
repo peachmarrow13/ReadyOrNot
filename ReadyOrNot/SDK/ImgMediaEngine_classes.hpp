@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // Class ImgMediaEngine.ImgMediaPlaybackComponent
-// 0x0028 (0x00C8 - 0x00A0)
+// 0x0028 (0x00D0 - 0x00A8)
 class UImgMediaPlaybackComponent final : public UActorComponent
 {
 public:
-	float                                         LODBias;                                           // 0x00A0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A4[0x24];                                      // 0x00A4(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         LODBias;                                           // 0x00A8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x24];                                      // 0x00AC(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

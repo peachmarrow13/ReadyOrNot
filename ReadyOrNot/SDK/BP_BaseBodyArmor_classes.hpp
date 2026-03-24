@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseBodyArmor.BP_BaseBodyArmor_C
-// 0x0000 (0x0CF0 - 0x0CF0)
+// 0x0000 (0x0D40 - 0x0D40)
 class ABP_BaseBodyArmor_C final : public ABaseArmour
 {
 public:

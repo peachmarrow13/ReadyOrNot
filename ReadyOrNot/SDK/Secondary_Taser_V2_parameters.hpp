@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function Secondary_Taser_V2.Secondary_Taser_V2_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct Secondary_Taser_V2_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Secondary_Taser_V2_C_ReceiveTick;
-
 // Function Secondary_Taser_V2.Secondary_Taser_V2_C.ExecuteUbergraph_Secondary_Taser_V2
 // 0x00E0 (0x00E0 - 0x0000)
 struct Secondary_Taser_V2_C_ExecuteUbergraph_Secondary_Taser_V2 final
@@ -64,6 +55,15 @@ public:
 	float                                         K2Node_VariableSet_CableLength_ImplicitCast;       // 0x00D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Secondary_Taser_V2_C_ExecuteUbergraph_Secondary_Taser_V2;
+
+// Function Secondary_Taser_V2.Secondary_Taser_V2_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct Secondary_Taser_V2_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Secondary_Taser_V2_C_ReceiveTick;
 
 }
 

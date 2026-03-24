@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Flashbang_Thrown.Flashbang_Thrown_C
-// 0x0000 (0x05F8 - 0x05F8)
+// 0x0000 (0x0600 - 0x0600)
 class AFlashbang_Thrown_C final : public AThrownGrenade
 {
 public:

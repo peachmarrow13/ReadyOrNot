@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ResonanceAudio_structs.hpp"
 #include "AudioExtensions_classes.hpp"
+#include "ResonanceAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
@@ -69,13 +69,13 @@ public:
 DUMPER7_ASSERTS_UResonanceAudioBlueprintFunctionLibrary;
 
 // Class ResonanceAudio.ResonanceAudioDirectivityVisualizer
-// 0x0080 (0x0318 - 0x0298)
+// 0x0080 (0x0320 - 0x02A0)
 class AResonanceAudioDirectivityVisualizer final : public AActor
 {
 public:
-	uint8                                         Pad_298[0x70];                                     // 0x0298(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterial*                              Material;                                          // 0x0308(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UResonanceAudioSpatializationSourceSettings* Settings;                                     // 0x0310(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_2A0[0x70];                                     // 0x02A0(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterial*                              Material;                                          // 0x0310(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UResonanceAudioSpatializationSourceSettings* Settings;                                     // 0x0318(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

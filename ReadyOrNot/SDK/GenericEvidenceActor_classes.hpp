@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GenericEvidenceActor.GenericEvidenceActor_C
-// 0x0000 (0x0360 - 0x0360)
+// 0x0000 (0x0368 - 0x0368)
 class AGenericEvidenceActor_C final : public AEvidenceActor
 {
 public:

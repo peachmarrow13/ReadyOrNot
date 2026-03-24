@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ImpactMesh_Windshield.BP_ImpactMesh_Windshield_C
-// 0x0000 (0x02A8 - 0x02A8)
+// 0x0000 (0x02B0 - 0x02B0)
 class ABP_ImpactMesh_Windshield_C final : public ABaseImpactMesh_C
 {
 public:

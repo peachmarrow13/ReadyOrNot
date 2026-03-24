@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "FBasicIconSettings_structs.hpp"
-#include "Engine_structs.hpp"
-#include "ST_Commands_structs.hpp"
-#include "ReadyOrNot_structs.hpp"
-#include "UMG_classes.hpp"
 #include "EIconAnimationStyles_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
+#include "FBasicIconSettings_structs.hpp"
+#include "ST_Commands_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
@@ -49,7 +49,7 @@ public:
 	class FText                                   IconText;                                          // 0x0450(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 	EPreMissionSubCategory                        SubCategory;                                       // 0x0468(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_469[0x7];                                      // 0x0469(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                PremissionPlanning;                                // 0x0470(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                PreMissionPlanning;                                // 0x0470(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void Construct();

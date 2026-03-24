@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass ShotgunImpactEffects.ShotgunImpactEffects_C
-// 0x0000 (0x0D30 - 0x0D30)
+// 0x0000 (0x0D38 - 0x0D38)
 class AShotgunImpactEffects_C final : public AImpactEffect
 {
 public:

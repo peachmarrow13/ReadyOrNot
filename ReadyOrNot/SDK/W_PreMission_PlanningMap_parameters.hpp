@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "InputCore_structs.hpp"
-#include "CommonInput_structs.hpp"
-#include "UMG_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "UMG_structs.hpp"
 #include "Slate_structs.hpp"
 
 
@@ -160,16 +160,16 @@ public:
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_CloseRadial;
 
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.CreateEntryPoints
-// 0x08C8 (0x08C8 - 0x0000)
+// 0x0918 (0x0918 - 0x0000)
 struct W_PreMission_PlanningMap_C_CreateEntryPoints final
 {
 public:
-	struct FLevelDataLookupTable                  LevelDataLookupTable;                              // 0x0000(0x0880)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TDelegate<void(class UW_PreMission_Tablet_EntryPoint_C* Clicked)> OnEntryPointSelected;          // 0x0880(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-	class FName                                   PointTag;                                          // 0x0890(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   PointName;                                         // 0x0898(0x0018)(Edit, BlueprintVisible)
-	TArray<struct FEntryPoint>                    EntryPoints;                                       // 0x08B0(0x0010)(Edit, BlueprintVisible)
-	class UW_PreMission_Tablet_EntryPoint_C*      NewEntryPoint;                                     // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  LevelDataLookupTable;                              // 0x0000(0x08D0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TDelegate<void(class UW_PreMission_Tablet_EntryPoint_C* Clicked)> OnEntryPointSelected;          // 0x08D0(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	class FName                                   PointTag;                                          // 0x08E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   PointName;                                         // 0x08E8(0x0018)(Edit, BlueprintVisible)
+	TArray<struct FEntryPoint>                    EntryPoints;                                       // 0x0900(0x0010)(Edit, BlueprintVisible)
+	class UW_PreMission_Tablet_EntryPoint_C*      NewEntryPoint;                                     // 0x0910(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_CreateEntryPoints;
 
@@ -185,7 +185,7 @@ public:
 	TDelegate<void(class UW_PreMission_Tablet_MapMarker_C* TriggeringMarker, int32 FloorLevel, double Rotation)> K2Node_CreateDelegate_OutputDelegate; // 0x0078(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UW_PreMission_PlanningMap_Level_C*      CallFunc_Create_ReturnValue;                       // 0x0088(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	TDelegate<void(int32 LineID, class UCanvasPanel* LineCanvas)> K2Node_CreateDelegate_OutputDelegate_1; // 0x0090(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(int32 MarkerID, class UW_PreMission_Tablet_MapMarker_C* Marker)> K2Node_CreateDelegate_OutputDelegate_2; // 0x00A0(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(int32 markerId, class UW_PreMission_Tablet_MapMarker_C* Marker)> K2Node_CreateDelegate_OutputDelegate_2; // 0x00A0(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x00B0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UWidgetSwitcherSlot*                    K2Node_DynamicCast_AsWidget_Switcher_Slot;         // 0x00B8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -257,7 +257,7 @@ DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_DrawLine;
 struct W_PreMission_PlanningMap_C_DrawMarker final
 {
 public:
-	int32                                         MarkerID;                                          // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         markerId;                                          // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPlanningMarker                        MarkerData;                                        // 0x0008(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 	class UW_PreMission_Tablet_MapMarker_C*       Marker;                                            // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
@@ -289,7 +289,7 @@ public:
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_EraseLine;
 
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.ExecuteUbergraph_W_PreMission_PlanningMap
-// 0x1440 (0x1440 - 0x0000)
+// 0x14E0 (0x14E0 - 0x0000)
 struct W_PreMission_PlanningMap_C_ExecuteUbergraph_W_PreMission_PlanningMap final
 {
 public:
@@ -313,56 +313,56 @@ public:
 	struct FPlanningMarker                        K2Node_Event_Marker;                               // 0x0078(0x0030)(ConstParm, NoDestructor)
 	double                                        K2Node_Event_Delay_1;                              // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FString                                 K2Node_Event_MissionURL;                           // 0x00B0(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  K2Node_Event_LevelData_1;                          // 0x00C0(0x0880)()
-	double                                        K2Node_Event_Delay;                                // 0x0940(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_Collapse;                             // 0x0948(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_949[0x7];                                      // 0x0949(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x0950(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FEntryPoint                            K2Node_Event_NewEntryPoint;                        // 0x0958(0x00A8)()
-	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0A00(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A01[0x3];                                      // 0x0A01(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         K2Node_CustomEvent_LineID;                         // 0x0A04(0x0004)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	const class UCanvasPanel*                     K2Node_CustomEvent_LineCanvas;                     // 0x0A08(0x0008)(ConstParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(class UW_PreMission_Tablet_EntryPoint_C* Clicked)> K2Node_CreateDelegate_OutputDelegate; // 0x0A10(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0A20(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0A28(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0A29(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_ObjectObject_ReturnValue;        // 0x0A2A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A2B[0x1];                                      // 0x0A2B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGeometry                              K2Node_Event_InGeometry;                           // 0x0A2C(0x0038)(ConstParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A64[0x4];                                      // 0x0A64(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerEvent                          K2Node_Event_InMouseEvent;                         // 0x0A68(0x0078)(ConstParm)
-	double                                        K2Node_Event_CurrentZoom;                          // 0x0AE0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_ID_2;                                 // 0x0AE8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_ID_1;                                 // 0x0AEC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FPlanningLine                          K2Node_Event_Line;                                 // 0x0AF0(0x0028)(ConstParm)
-	int32                                         K2Node_Event_ID;                                   // 0x0B18(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B1C[0x4];                                      // 0x0B1C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 K2Node_Event_URL;                                  // 0x0B20(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  K2Node_Event_LevelData;                            // 0x0B30(0x0880)(ConstParm)
-	struct FFocusEvent                            K2Node_Event_InFocusEvent;                         // 0x13B0(0x0008)(NoDestructor)
-	class UW_PreMission_PlanningMap_Level_C*      CallFunc_Map_Find_Value;                           // 0x13B8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x13C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C1[0x7];                                     // 0x13C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_PreMission_PlanningMap_Level_C*      CallFunc_Map_Find_Value_1;                         // 0x13C8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x13D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13D1[0x3];                                     // 0x13D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(ECommonInputType bNewInputType)> K2Node_CreateDelegate_OutputDelegate_1;          // 0x13D4(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13E4[0x4];                                     // 0x13E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_PreMission_Tablet_MapMarker_C*       CallFunc_Map_Find_Value_2;                         // 0x13E8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Find_ReturnValue_2;                   // 0x13F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x13F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              K2Node_CustomEvent_bNewInputType;                  // 0x13F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x13F3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMissionPlanLineColors                 CallFunc_GetPlanLineColors_Colors;                 // 0x13F4(0x0030)(NoDestructor)
-	uint8                                         Pad_1424[0x4];                                     // 0x1424(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UW_PremissionTablet_Button_C*           K2Node_ComponentBoundEvent_TriggeringButton;       // 0x1428(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Toggle_IsOpen_1;                          // 0x1430(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Toggle_IsOpen_2;                          // 0x1431(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsMultiplayer_ReturnValue_1;              // 0x1432(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1433[0x1];                                     // 0x1433(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_SetUserSpecifiedScale_InUserSpecifiedScale_ImplicitCast; // 0x1434(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        CallFunc_Gamepad_Zoom_Map_DeltaTime_ImplicitCast;  // 0x1438(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  K2Node_Event_LevelData_1;                          // 0x00C0(0x08D0)()
+	double                                        K2Node_Event_Delay;                                // 0x0990(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_Collapse;                             // 0x0998(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_999[0x7];                                      // 0x0999(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class APlayerController*                      CallFunc_GetOwningPlayer_ReturnValue;              // 0x09A0(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FEntryPoint                            K2Node_Event_NewEntryPoint;                        // 0x09A8(0x00A8)()
+	bool                                          CallFunc_HasAuthority_ReturnValue;                 // 0x0A50(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A51[0x3];                                      // 0x0A51(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         K2Node_CustomEvent_LineID;                         // 0x0A54(0x0004)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	const class UCanvasPanel*                     K2Node_CustomEvent_LineCanvas;                     // 0x0A58(0x0008)(ConstParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(class UW_PreMission_Tablet_EntryPoint_C* Clicked)> K2Node_CreateDelegate_OutputDelegate; // 0x0A60(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0A70(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0A78(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0A79(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_ObjectObject_ReturnValue;        // 0x0A7A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_A7B[0x1];                                      // 0x0A7B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGeometry                              K2Node_Event_InGeometry;                           // 0x0A7C(0x0038)(ConstParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_AB4[0x4];                                      // 0x0AB4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerEvent                          K2Node_Event_InMouseEvent;                         // 0x0AB8(0x0078)(ConstParm)
+	double                                        K2Node_Event_CurrentZoom;                          // 0x0B30(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_ID_2;                                 // 0x0B38(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_ID_1;                                 // 0x0B3C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPlanningLine                          K2Node_Event_Line;                                 // 0x0B40(0x0028)(ConstParm)
+	int32                                         K2Node_Event_ID;                                   // 0x0B68(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B6C[0x4];                                      // 0x0B6C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 K2Node_Event_URL;                                  // 0x0B70(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  K2Node_Event_LevelData;                            // 0x0B80(0x08D0)(ConstParm)
+	struct FFocusEvent                            K2Node_Event_InFocusEvent;                         // 0x1450(0x0008)(NoDestructor)
+	class UW_PreMission_PlanningMap_Level_C*      CallFunc_Map_Find_Value;                           // 0x1458(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x1460(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1461[0x7];                                     // 0x1461(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_PreMission_PlanningMap_Level_C*      CallFunc_Map_Find_Value_1;                         // 0x1468(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue_1;                   // 0x1470(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1471[0x3];                                     // 0x1471(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(ECommonInputType bNewInputType)> K2Node_CreateDelegate_OutputDelegate_1;          // 0x1474(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1484[0x4];                                     // 0x1484(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_PreMission_Tablet_MapMarker_C*       CallFunc_Map_Find_Value_2;                         // 0x1488(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Find_ReturnValue_2;                   // 0x1490(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x1491(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              K2Node_CustomEvent_bNewInputType;                  // 0x1492(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x1493(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMissionPlanLineColors                 CallFunc_GetPlanLineColors_Colors;                 // 0x1494(0x0030)(NoDestructor)
+	uint8                                         Pad_14C4[0x4];                                     // 0x14C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_PremissionTablet_Button_C*           K2Node_ComponentBoundEvent_TriggeringButton;       // 0x14C8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Toggle_IsOpen_1;                          // 0x14D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Toggle_IsOpen_2;                          // 0x14D1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsMultiplayer_ReturnValue_1;              // 0x14D2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14D3[0x1];                                     // 0x14D3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_SetUserSpecifiedScale_InUserSpecifiedScale_ImplicitCast; // 0x14D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        CallFunc_Gamepad_Zoom_Map_DeltaTime_ImplicitCast;  // 0x14D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_ExecuteUbergraph_W_PreMission_PlanningMap;
 
@@ -587,7 +587,7 @@ DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_LineStartNodeSelected;
 struct W_PreMission_PlanningMap_C_MapMarkerDrawn final
 {
 public:
-	int32                                         MarkerID;                                          // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         markerId;                                          // 0x0000(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	const class UW_PreMission_Tablet_MapMarker_C* Marker;                                            // 0x0008(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
@@ -608,39 +608,39 @@ public:
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_MarkerRotated;
 
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.MissionChanged
-// 0x0890 (0x0890 - 0x0000)
+// 0x08E0 (0x08E0 - 0x0000)
 struct W_PreMission_PlanningMap_C_MissionChanged final
 {
 public:
 	class FString                                 MissionURL;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x0880)(BlueprintVisible, BlueprintReadOnly, Parm)
+	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x08D0)(BlueprintVisible, BlueprintReadOnly, Parm)
 };
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_MissionChanged;
 
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.MissionSetup
-// 0x0928 (0x0928 - 0x0000)
+// 0x0978 (0x0978 - 0x0000)
 struct W_PreMission_PlanningMap_C_MissionSetup final
 {
 public:
 	class FString                                 URL;                                               // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x0880)(BlueprintVisible, BlueprintReadOnly, Parm)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0890(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_891[0x3];                                      // 0x0891(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0894(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x0898(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x089C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsEmpty_ReturnValue;                      // 0x089D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_89E[0x2];                                      // 0x089E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Temp_int_Array_Index_Variable;                     // 0x08A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x08A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLevelFloor                            CallFunc_Array_Get_Item;                           // 0x08A8(0x0068)()
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0910(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_911[0x3];                                      // 0x0911(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0914(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UCanvasPanelSlot*                       CallFunc_SlotAsCanvasSlot_ReturnValue;             // 0x0918(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0920(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_921[0x3];                                      // 0x0921(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_SetUserSpecifiedScale_InUserSpecifiedScale_ImplicitCast; // 0x0924(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x08D0)(BlueprintVisible, BlueprintReadOnly, Parm)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x08E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8E1[0x3];                                      // 0x08E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x08E4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue_1;               // 0x08E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Greater_IntInt_ReturnValue;               // 0x08EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsEmpty_ReturnValue;                      // 0x08ED(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_8EE[0x2];                                      // 0x08EE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Temp_int_Array_Index_Variable;                     // 0x08F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x08F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelFloor                            CallFunc_Array_Get_Item;                           // 0x08F8(0x0068)()
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0960(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_961[0x3];                                      // 0x0961(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0964(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCanvasPanelSlot*                       CallFunc_SlotAsCanvasSlot_ReturnValue;             // 0x0968(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NotEqual_StrStr_ReturnValue;              // 0x0970(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_971[0x3];                                      // 0x0971(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_SetUserSpecifiedScale_InUserSpecifiedScale_ImplicitCast; // 0x0974(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_MissionSetup;
 
@@ -820,12 +820,12 @@ public:
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_OnMarkerRemoved;
 
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.OnMissionChanged
-// 0x0890 (0x0890 - 0x0000)
+// 0x08E0 (0x08E0 - 0x0000)
 struct W_PreMission_PlanningMap_C_OnMissionChanged final
 {
 public:
 	class FString                                 URL;                                               // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x0880)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	struct FLevelDataLookupTable                  LevelData;                                         // 0x0010(0x08D0)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 };
 DUMPER7_ASSERTS_W_PreMission_PlanningMap_C_OnMissionChanged;
 

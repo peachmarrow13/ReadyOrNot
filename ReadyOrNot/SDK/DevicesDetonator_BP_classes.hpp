@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass DevicesDetonator_BP.DevicesDetonator_BP_C
-// 0x0000 (0x0CA0 - 0x0CA0)
+// 0x0000 (0x0CF0 - 0x0CF0)
 class ADevicesDetonator_BP_C final : public ADetonator
 {
 public:

@@ -17,14 +17,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Primary_S_MK18_VAR2.Primary_S_MK18_VAR2_C
-// 0x0020 (0x18D0 - 0x18B0)
+// 0x0020 (0x19C0 - 0x19A0)
 class APrimary_S_MK18_VAR2_C final : public ABaseMagazineWeapon
 {
 public:
-	class USpotLightComponent*                    SpotLight;                                         // 0x18B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 Light;                                             // 0x18B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 Grip;                                              // 0x18C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 Optic;                                             // 0x18C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1998[0x8];                                     // 0x1998(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USpotLightComponent*                    SpotLight;                                         // 0x19A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 Light;                                             // 0x19A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 Grip;                                              // 0x19B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 Optic;                                             // 0x19B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

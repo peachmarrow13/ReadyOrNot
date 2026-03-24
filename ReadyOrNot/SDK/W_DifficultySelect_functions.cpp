@@ -212,5 +212,19 @@ void UW_DifficultySelect_C::Stop_Listening()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function W_DifficultySelect.W_DifficultySelect_C.UpdateDescriptionVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_DifficultySelect_C::UpdateDescriptionVisibility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_DifficultySelect_C", "UpdateDescriptionVisibility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Secondary_TCR.Secondary_TCR_C
-// 0x0000 (0x18B0 - 0x18B0)
+// 0x0000 (0x19A0 - 0x19A0)
 class ASecondary_TCR_C final : public ABaseMagazineWeapon
 {
 public:

@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function ANIMBP_Colt1911.ANIMBP_Colt1911_C.AnimGraph
-// 0x0010 (0x0010 - 0x0000)
-struct ANIMBP_Colt1911_C_AnimGraph final
-{
-public:
-	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
-};
-DUMPER7_ASSERTS_ANIMBP_Colt1911_C_AnimGraph;
-
 // Function ANIMBP_Colt1911.ANIMBP_Colt1911_C.ExecuteUbergraph_ANIMBP_Colt1911
 // 0x0028 (0x0028 - 0x0000)
 struct ANIMBP_Colt1911_C_ExecuteUbergraph_ANIMBP_Colt1911 final
@@ -41,6 +32,15 @@ public:
 	double                                        CallFunc_Round_A_ImplicitCast_1;                   // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_ANIMBP_Colt1911_C_ExecuteUbergraph_ANIMBP_Colt1911;
+
+// Function ANIMBP_Colt1911.ANIMBP_Colt1911_C.AnimGraph
+// 0x0010 (0x0010 - 0x0000)
+struct ANIMBP_Colt1911_C_AnimGraph final
+{
+public:
+	struct FPoseLink                              AnimGraph_0;                                       // 0x0000(0x0010)(Parm, OutParm, NoDestructor)
+};
+DUMPER7_ASSERTS_ANIMBP_Colt1911_C_AnimGraph;
 
 }
 

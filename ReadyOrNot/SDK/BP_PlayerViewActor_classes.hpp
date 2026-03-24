@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlayerViewActor.BP_PlayerViewActor_C
-// 0x0000 (0x0370 - 0x0370)
+// 0x0000 (0x0378 - 0x0378)
 class ABP_PlayerViewActor_C final : public APlayerViewActor
 {
 public:

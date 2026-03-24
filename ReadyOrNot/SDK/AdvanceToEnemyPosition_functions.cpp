@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function AdvanceToEnemyPosition.AdvanceToEnemyPosition_C.ExecuteUbergraph_AdvanceToEnemyPosition
-// (Final, UbergraphFunction)
+// Function AdvanceToEnemyPosition.AdvanceToEnemyPosition_C.StartActivity_Blueprint
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AAIController*                    Owner                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void UAdvanceToEnemyPosition_C::ExecuteUbergraph_AdvanceToEnemyPosition(int32 EntryPoint)
+void UAdvanceToEnemyPosition_C::StartActivity_Blueprint(class AAIController* Owner)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AdvanceToEnemyPosition_C", "ExecuteUbergraph_AdvanceToEnemyPosition");
+		Func = Class->GetFunction("AdvanceToEnemyPosition_C", "StartActivity_Blueprint");
 
-	Params::AdvanceToEnemyPosition_C_ExecuteUbergraph_AdvanceToEnemyPosition Parms{};
+	Params::AdvanceToEnemyPosition_C_StartActivity_Blueprint Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Owner = Owner;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -52,6 +52,47 @@ void UAdvanceToEnemyPosition_C::RequestCombatMove_Blueprint(float DeltaTime)
 	Params::AdvanceToEnemyPosition_C_RequestCombatMove_Blueprint Parms{};
 
 	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AdvanceToEnemyPosition.AdvanceToEnemyPosition_C.GetTargetPos
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector*                         TargetPosition                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAdvanceToEnemyPosition_C::GetTargetPos(struct FVector* TargetPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdvanceToEnemyPosition_C", "GetTargetPos");
+
+	Params::AdvanceToEnemyPosition_C_GetTargetPos Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TargetPosition != nullptr)
+		*TargetPosition = std::move(Parms.TargetPosition);
+}
+
+
+// Function AdvanceToEnemyPosition.AdvanceToEnemyPosition_C.ExecuteUbergraph_AdvanceToEnemyPosition
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAdvanceToEnemyPosition_C::ExecuteUbergraph_AdvanceToEnemyPosition(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdvanceToEnemyPosition_C", "ExecuteUbergraph_AdvanceToEnemyPosition");
+
+	Params::AdvanceToEnemyPosition_C_ExecuteUbergraph_AdvanceToEnemyPosition Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

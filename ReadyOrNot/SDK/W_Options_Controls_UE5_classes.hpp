@@ -12,9 +12,9 @@
 
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SStandardModalDetails_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
+#include "SStandardModalDetails_structs.hpp"
 
 
 namespace SDK

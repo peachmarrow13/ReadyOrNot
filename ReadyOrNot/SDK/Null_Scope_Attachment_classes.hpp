@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Null_Scope_Attachment.Null_Scope_Attachment_C
-// 0x0000 (0x1840 - 0x1840)
+// 0x0000 (0x1940 - 0x1940)
 class UNull_Scope_Attachment_C final : public UScopedWeaponAttachment
 {
 public:

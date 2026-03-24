@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function AICompliantAction_StationaryFake.AICompliantAction_StationaryFake_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAICompliantAction_StationaryFake_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AICompliantAction_StationaryFake_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AICompliantAction_StationaryFake.AICompliantAction_StationaryFake_C.ExecuteUbergraph_AICompliantAction_StationaryFake
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void UAICompliantAction_StationaryFake_C::ExecuteUbergraph_AICompliantAction_Sta
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AICompliantAction_StationaryFake.AICompliantAction_StationaryFake_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAICompliantAction_StationaryFake_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AICompliantAction_StationaryFake_C", "EndAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

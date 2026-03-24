@@ -285,10 +285,10 @@ void UW_PreMission_PlanningMap_C::DrawLine(int32 ID, const struct FPlanningLine&
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.DrawMarker
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const int32&                            MarkerID                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32&                            markerId                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FPlanningMarker&           MarkerData                                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
-void UW_PreMission_PlanningMap_C::DrawMarker(const int32& MarkerID, const struct FPlanningMarker& MarkerData)
+void UW_PreMission_PlanningMap_C::DrawMarker(const int32& markerId, const struct FPlanningMarker& MarkerData)
 {
 	static class UFunction* Func = nullptr;
 
@@ -297,7 +297,7 @@ void UW_PreMission_PlanningMap_C::DrawMarker(const int32& MarkerID, const struct
 
 	Params::W_PreMission_PlanningMap_C_DrawMarker Parms{};
 
-	Parms.MarkerID = MarkerID;
+	Parms.markerId = markerId;
 	Parms.MarkerData = std::move(MarkerData);
 
 	UObject::ProcessEvent(Func, &Parms);
@@ -690,10 +690,10 @@ void UW_PreMission_PlanningMap_C::LineStartNodeSelected(class UW_OfficerMarker_C
 // Function W_PreMission_PlanningMap.W_PreMission_PlanningMap_C.MapMarkerDrawn
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const int32                             MarkerID                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const int32                             markerId                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const class UW_PreMission_Tablet_MapMarker_C*Marker                                                 (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void UW_PreMission_PlanningMap_C::MapMarkerDrawn(const int32 MarkerID, const class UW_PreMission_Tablet_MapMarker_C* Marker)
+void UW_PreMission_PlanningMap_C::MapMarkerDrawn(const int32 markerId, const class UW_PreMission_Tablet_MapMarker_C* Marker)
 {
 	static class UFunction* Func = nullptr;
 
@@ -702,7 +702,7 @@ void UW_PreMission_PlanningMap_C::MapMarkerDrawn(const int32 MarkerID, const cla
 
 	Params::W_PreMission_PlanningMap_C_MapMarkerDrawn Parms{};
 
-	Parms.MarkerID = MarkerID;
+	Parms.markerId = markerId;
 	Parms.Marker = Marker;
 
 	UObject::ProcessEvent(Func, &Parms);

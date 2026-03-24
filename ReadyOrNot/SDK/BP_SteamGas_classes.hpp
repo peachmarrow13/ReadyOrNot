@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SteamGas.BP_SteamGas_C
-// 0x0010 (0x12C0 - 0x12B0)
+// 0x0010 (0x1320 - 0x1310)
 class ABP_SteamGas_C final : public ABaseGasGrenade
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x12B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         GasRadius;                                         // 0x12B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1310(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         GasRadius;                                         // 0x1318(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool CanPing();

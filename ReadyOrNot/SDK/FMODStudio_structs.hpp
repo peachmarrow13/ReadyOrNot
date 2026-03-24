@@ -209,7 +209,7 @@ struct FFMODEventParameterSectionTemplate final : public FMovieSceneParameterSec
 DUMPER7_ASSERTS_FFMODEventParameterSectionTemplate;
 
 // ScriptStruct FMODStudio.FMODPlatformSettings
-// 0x0060 (0x0060 - 0x0000)
+// 0x0088 (0x0088 - 0x0000)
 struct FFMODPlatformSettings final
 {
 public:
@@ -220,6 +220,7 @@ public:
 	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CustomPoolSize;                                    // 0x000C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TMap<EFMODCodec, int32>                       Codecs;                                            // 0x0010(0x0050)(Edit, Config, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   CallbackHandler;                                   // 0x0060(0x0028)(Edit, Config, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FFMODPlatformSettings;
 

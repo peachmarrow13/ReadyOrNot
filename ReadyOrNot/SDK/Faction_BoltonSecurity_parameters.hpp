@@ -14,15 +14,14 @@
 namespace SDK::Params
 {
 
-// Function Faction_BoltonSecurity.Faction_BoltonSecurity_C.AlertOtherSuspectsInTeam_Blueprint
-// 0x0010 (0x0010 - 0x0000)
-struct Faction_BoltonSecurity_C_AlertOtherSuspectsInTeam_Blueprint final
+// Function Faction_BoltonSecurity.Faction_BoltonSecurity_C.OnAIAdded_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct Faction_BoltonSecurity_C_OnAIAdded_Blueprint final
 {
 public:
-	class ASuspectCharacter*                      suspect;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AReadyOrNotCharacter*                   Enemy;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACyberneticCharacter*                   Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_Faction_BoltonSecurity_C_AlertOtherSuspectsInTeam_Blueprint;
+DUMPER7_ASSERTS_Faction_BoltonSecurity_C_OnAIAdded_Blueprint;
 
 // Function Faction_BoltonSecurity.Faction_BoltonSecurity_C.ExecuteUbergraph_Faction_BoltonSecurity
 // 0x0028 (0x0028 - 0x0000)
@@ -38,14 +37,15 @@ public:
 };
 DUMPER7_ASSERTS_Faction_BoltonSecurity_C_ExecuteUbergraph_Faction_BoltonSecurity;
 
-// Function Faction_BoltonSecurity.Faction_BoltonSecurity_C.OnAIAdded_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct Faction_BoltonSecurity_C_OnAIAdded_Blueprint final
+// Function Faction_BoltonSecurity.Faction_BoltonSecurity_C.AlertOtherSuspectsInTeam_Blueprint
+// 0x0010 (0x0010 - 0x0000)
+struct Faction_BoltonSecurity_C_AlertOtherSuspectsInTeam_Blueprint final
 {
 public:
-	class ACyberneticCharacter*                   Character;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ASuspectCharacter*                      suspect;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AReadyOrNotCharacter*                   Enemy;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_Faction_BoltonSecurity_C_OnAIAdded_Blueprint;
+DUMPER7_ASSERTS_Faction_BoltonSecurity_C_AlertOtherSuspectsInTeam_Blueprint;
 
 }
 

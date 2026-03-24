@@ -17,24 +17,23 @@
 namespace SDK
 {
 
-// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.ExecuteUbergraph_ANIMBP_Head_Smudge
+// (Final, UbergraphFunction)
 // Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UANIMBP_Head_Smudge_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UANIMBP_Head_Smudge_C::ExecuteUbergraph_ANIMBP_Head_Smudge(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Head_Smudge_C", "AnimGraph");
+		Func = Class->GetFunction("ANIMBP_Head_Smudge_C", "ExecuteUbergraph_ANIMBP_Head_Smudge");
 
-	Params::ANIMBP_Head_Smudge_C_AnimGraph Parms{};
+	Params::ANIMBP_Head_Smudge_C_ExecuteUbergraph_ANIMBP_Head_Smudge Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 
@@ -58,23 +57,24 @@ void UANIMBP_Head_Smudge_C::BlueprintUpdateAnimation(float DeltaTimeX)
 }
 
 
-// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.ExecuteUbergraph_ANIMBP_Head_Smudge
-// (Final, UbergraphFunction)
+// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UANIMBP_Head_Smudge_C::ExecuteUbergraph_ANIMBP_Head_Smudge(int32 EntryPoint)
+void UANIMBP_Head_Smudge_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Head_Smudge_C", "ExecuteUbergraph_ANIMBP_Head_Smudge");
+		Func = Class->GetFunction("ANIMBP_Head_Smudge_C", "AnimGraph");
 
-	Params::ANIMBP_Head_Smudge_C_ExecuteUbergraph_ANIMBP_Head_Smudge Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::ANIMBP_Head_Smudge_C_AnimGraph Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

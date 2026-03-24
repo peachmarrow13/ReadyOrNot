@@ -154,7 +154,7 @@ DUMPER7_ASSERTS_UTimeManagementBlueprintLibrary;
 
 // Class TimeManagement.TimeSynchronizationSource
 // 0x0008 (0x0030 - 0x0028)
-class UTimeSynchronizationSource final : public UObject
+class UTimeSynchronizationSource : public UObject
 {
 public:
 	bool                                          bUseForSynchronization;                            // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

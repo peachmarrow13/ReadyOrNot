@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass HUD_COOP.HUD_COOP_C
-// 0x0008 (0x0398 - 0x0390)
+// 0x0008 (0x03A0 - 0x0398)
 class AHUD_COOP_C final : public APlayerHUD
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0390(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0398(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -675,6 +675,58 @@ void UBPF_UI_C::GetTeamColorByEquippingSwatEnum(EEquippingSwat EquippingSwat, do
 }
 
 
+// Function BPF_UI.BPF_UI_C.GetWeaponClassText
+// (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// EWeaponSubclass                         ItemCategory                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class FText*                            Category_Text                                          (Parm, OutParm)
+
+void UBPF_UI_C::GetWeaponClassText(EWeaponSubclass ItemCategory, class UObject* __WorldContext, class FText* Category_Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BPF_UI_C", "GetWeaponClassText");
+
+	Params::BPF_UI_C_GetWeaponClassText Parms{};
+
+	Parms.ItemCategory = ItemCategory;
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (Category_Text != nullptr)
+		*Category_Text = std::move(Parms.Category_Text);
+}
+
+
+// Function BPF_UI.BPF_UI_C.GetWeaponSubclassFromItemClass
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// EItemClass                              ItemType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// EWeaponSubclass*                        WeaponSubclass                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBPF_UI_C::GetWeaponSubclassFromItemClass(EItemClass ItemType, class UObject* __WorldContext, EWeaponSubclass* WeaponSubclass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BPF_UI_C", "GetWeaponSubclassFromItemClass");
+
+	Params::BPF_UI_C_GetWeaponSubclassFromItemClass Parms{};
+
+	Parms.ItemType = ItemType;
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (WeaponSubclass != nullptr)
+		*WeaponSubclass = Parms.WeaponSubclass;
+}
+
+
 // Function BPF_UI.BPF_UI_C.IsCurrentPresetDirty
 // (Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:

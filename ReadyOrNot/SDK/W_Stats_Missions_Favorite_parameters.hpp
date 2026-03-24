@@ -71,7 +71,7 @@ public:
 DUMPER7_ASSERTS_W_Stats_Missions_Favorite_C_ExecuteUbergraph_W_Stats_Missions_Favorite;
 
 // Function W_Stats_Missions_Favorite.W_Stats_Missions_Favorite_C.GetLevelContent
-// 0x0960 (0x0960 - 0x0000)
+// 0x09B0 (0x09B0 - 0x0000)
 struct W_Stats_Missions_Favorite_C_GetLevelContent final
 {
 public:
@@ -91,12 +91,12 @@ public:
 	TArray<struct FLevelDataLookupTable>          CallFunc_GetLevels_ReturnValue;                    // 0x00A8(0x0010)(ReferenceParm)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLevelDataLookupTable                  CallFunc_Array_Get_Item;                           // 0x00C0(0x0880)()
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0940(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0941(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_942[0x6];                                      // 0x0942(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0948(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0958(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  CallFunc_Array_Get_Item;                           // 0x00C0(0x08D0)()
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0990(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0991(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_992[0x6];                                      // 0x0992(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Conv_NameToString_ReturnValue;            // 0x0998(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x09A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Stats_Missions_Favorite_C_GetLevelContent;
 

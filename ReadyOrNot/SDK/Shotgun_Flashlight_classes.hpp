@@ -17,8 +17,8 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Shotgun_Flashlight.Shotgun_Flashlight_C
-// 0x0000 (0x11F0 - 0x11F0)
-class UShotgun_Flashlight_C final : public ULightAttachment
+// 0x0000 (0x11C0 - 0x11C0)
+class UShotgun_Flashlight_C final : public UEmitterAttachment
 {
 public:
 	static class UClass* StaticClass()

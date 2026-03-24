@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Device_Chemlight.Device_Chemlight_C
-// 0x0000 (0x0CB0 - 0x0CB0)
+// 0x0000 (0x0D00 - 0x0D00)
 class ADevice_Chemlight_C final : public AChemlight
 {
 public:

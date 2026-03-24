@@ -179,6 +179,8 @@ struct Variables
 		if (this->World != currentWorld) {
 			this->World = currentWorld;
 			this->Level = nullptr; // Reset Level when World changes
+			this->GameState = nullptr; // Reset GameState when World changes
+			this->Players = TArray<APlayerCharacter*>(); // Reset Players when World changes
 		}
 
 		// Update Level

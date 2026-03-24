@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_VIPEscort.GM_VIPEscort_C
-// 0x0010 (0x0A80 - 0x0A70)
+// 0x0010 (0x0AB0 - 0x0AA0)
 class AGM_VIPEscort_C final : public AVIPEscortGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A70(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0AA0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

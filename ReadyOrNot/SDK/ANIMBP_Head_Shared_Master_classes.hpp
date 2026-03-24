@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
-#include "ANIMBP_Head_Shared_Master_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
+#include "ANIMBP_Head_Shared_Master_structs.hpp"
 
 
 namespace SDK
@@ -32,40 +32,39 @@ public:
 	struct FAnimSubsystemInstance                 AnimBlueprintExtension_Base;                       // 0x0408(0x0008)()
 	struct FAnimNode_SequenceEvaluator            AnimGraphNode_SequenceEvaluator;                   // 0x0410(0x0040)()
 	struct FAnimNode_Inertialization              AnimGraphNode_Inertialization;                     // 0x0450(0x0110)()
-	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve_3;                       // 0x0560(0x0120)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_7;                    // 0x0680(0x0048)()
-	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve_2;                       // 0x06C8(0x0120)()
-	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend_1;                  // 0x07E8(0x00F0)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x08D8(0x0048)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_6;                    // 0x0920(0x0048)()
-	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool_1;                   // 0x0968(0x0048)()
-	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose;                      // 0x09B0(0x0080)()
-	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose;                       // 0x0A30(0x0028)()
-	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve_1;                       // 0x0A58(0x0120)()
-	struct FAnimNode_RefPose                      AnimGraphNode_LocalRefPose;                        // 0x0B78(0x0010)()
-	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0B88(0x0048)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_5;                    // 0x0BD0(0x0048)()
-	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend;                    // 0x0C18(0x00F0)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_4;                    // 0x0D08(0x0048)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_3;                    // 0x0D50(0x0048)()
-	struct FAnimNode_PoseBlendNode                AnimGraphNode_PoseBlendNode;                       // 0x0D98(0x00D0)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x0E68(0x0048)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0EB0(0x0048)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0EF8(0x0048)()
-	struct FAnimNode_BlendListByEnum              AnimGraphNode_BlendListByEnum;                     // 0x0F40(0x0048)()
-	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve;                         // 0x0F88(0x0120)()
+	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool_1;                   // 0x0560(0x0048)()
+	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve_3;                       // 0x05A8(0x0120)()
+	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend_1;                  // 0x06C8(0x00F0)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x07B8(0x0048)()
+	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve_2;                       // 0x0800(0x0120)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_7;                    // 0x0920(0x0048)()
+	struct FAnimNode_SaveCachedPose               AnimGraphNode_SaveCachedPose;                      // 0x0968(0x0080)()
+	struct FAnimNode_UseCachedPose                AnimGraphNode_UseCachedPose;                       // 0x09E8(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_6;                    // 0x0A10(0x0048)()
+	struct FAnimNode_RefPose                      AnimGraphNode_LocalRefPose;                        // 0x0A58(0x0010)()
+	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve_1;                       // 0x0A68(0x0120)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_5;                    // 0x0B88(0x0048)()
+	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0BD0(0x0048)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_4;                    // 0x0C18(0x0048)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_3;                    // 0x0C60(0x0048)()
+	struct FAnimNode_LayeredBoneBlend             AnimGraphNode_LayeredBoneBlend;                    // 0x0CA8(0x00F0)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x0D98(0x0048)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x0DE0(0x0048)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0E28(0x0048)()
+	struct FAnimNode_BlendListByEnum              AnimGraphNode_BlendListByEnum;                     // 0x0E70(0x0048)()
+	struct FAnimNode_ModifyCurve                  AnimGraphNode_ModifyCurve;                         // 0x0EB8(0x0120)()
+	struct FAnimNode_PoseBlendNode                AnimGraphNode_PoseBlendNode;                       // 0x0FD8(0x00D0)()
 	struct FAnimNode_CopyPoseFromMesh             AnimGraphNode_CopyPoseFromMesh;                    // 0x10A8(0x0158)(ContainsInstancedReference)
 	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x1200(0x0048)()
 	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x1248(0x0020)()
-	bool                                          IsPlayerDead;                                      // 0x1268(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1269[0x7];                                     // 0x1269(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        EmotionWeight;                                     // 0x1270(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        LookAtAlpha;                                       // 0x1278(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                LookAtLocation;                                    // 0x1280(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 BodyMeshRef;                                       // 0x1298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	ECharacterEmotion                             Emotion;                                           // 0x12A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12A1[0x7];                                     // 0x12A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        LipSyncScale;                                      // 0x12A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        EmotionWeight;                                     // 0x1268(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        LookAtAlpha;                                       // 0x1270(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                LookAtLocation;                                    // 0x1278(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 BodyMeshRef;                                       // 0x1290(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	ECharacterEmotion                             Emotion;                                           // 0x1298(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1299[0x7];                                     // 0x1299(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        LipSyncScale;                                      // 0x12A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bUseDeadPose;                                      // 0x12A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void AnimGraph(struct FPoseLink* AnimGraph_0);

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Legacy_Armor_Light_V2.Legacy_Armor_Light_V2_C
-// 0x0010 (0x0D40 - 0x0D30)
+// 0x0010 (0x0D90 - 0x0D80)
 class ALegacy_Armor_Light_V2_C final : public ABaseBodyArmor_C
 {
 public:
-	class UCapsuleComponent*                      Collision;                                         // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Collision;                                         // 0x0D80(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_COOP_Raid.GM_COOP_Raid_C
-// 0x0000 (0x0E70 - 0x0E70)
+// 0x0000 (0x0EE0 - 0x0EE0)
 class AGM_COOP_Raid_C final : public AGM_COOP_C
 {
 public:

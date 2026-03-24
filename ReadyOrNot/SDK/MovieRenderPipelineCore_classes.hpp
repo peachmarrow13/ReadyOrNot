@@ -14,11 +14,11 @@
 #include "CoreUObject_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "UMG_classes.hpp"
-#include "MovieRenderPipelineCore_structs.hpp"
 #include "StructUtils_structs.hpp"
-#include "OpenColorIO_structs.hpp"
+#include "MovieRenderPipelineCore_structs.hpp"
+#include "UMG_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "OpenColorIO_structs.hpp"
 
 
 namespace SDK
@@ -49,6 +49,38 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphBlueprintLibrary;
 
+// Class MovieRenderPipelineCore.MoviePipelineSetting
+// 0x0020 (0x0048 - 0x0028)
+class UMoviePipelineSetting : public UObject
+{
+public:
+	TWeakObjectPtr<class UMoviePipeline>          CachedPipeline;                                    // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bEnabled;                                          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_31[0x17];                                      // 0x0031(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetIsEnabled(bool bInEnabled);
+
+	void BuildNewProcessCommandLine(class FString& InOutUnrealURLParams, class FString& InOutCommandLineArgs) const;
+	void BuildNewProcessCommandLineArgs(TArray<class FString>& InOutUnrealURLParams, TArray<class FString>& InOutCommandLineArgs, TArray<class FString>& InOutDeviceProfileCvars, TArray<class FString>& InOutExecCmds) const;
+	bool IsEnabled() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineSetting")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineSetting")
+	}
+	static class UMoviePipelineSetting* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineSetting>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineSetting;
+
 // Class MovieRenderPipelineCore.MovieGraphNode
 // 0x0068 (0x0090 - 0x0028)
 class UMovieGraphNode : public UObject
@@ -77,6 +109,39 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphNode;
 
+// Class MovieRenderPipelineCore.MoviePipelineCollectionModifier
+// 0x0018 (0x0040 - 0x0028)
+class UMoviePipelineCollectionModifier : public UObject
+{
+public:
+	TArray<class UMoviePipelineCollection*>       Collections;                                       // 0x0028(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	bool                                          bUseInvertedActors;                                // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddCollection(class UMoviePipelineCollection* Collection);
+	void SetCollections(const TArray<class UMoviePipelineCollection*>& InCollections);
+	void SetIsInverted(const bool bIsInverted);
+
+	TArray<class UMoviePipelineCollection*> GetCollections() const;
+	bool IsInverted() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineCollectionModifier")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineCollectionModifier")
+	}
+	static class UMoviePipelineCollectionModifier* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineCollectionModifier>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineCollectionModifier;
+
 // Class MovieRenderPipelineCore.MovieGraphBranchNode
 // 0x0000 (0x0090 - 0x0090)
 class UMovieGraphBranchNode final : public UMovieGraphNode
@@ -97,42 +162,39 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphBranchNode;
 
-// Class MovieRenderPipelineCore.MoviePipelineQueue
-// 0x0040 (0x0068 - 0x0028)
-class UMoviePipelineQueue final : public UObject
+// Class MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase
+// 0x0020 (0x0068 - 0x0048)
+class UMoviePipelineSetting_BlueprintBase final : public UMoviePipelineSetting
 {
 public:
-	TArray<class UMoviePipelineExecutorJob*>      Jobs;                                              // 0x0028(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
-	TSoftObjectPtr<class UMoviePipelineQueue>     QueueOrigin;                                       // 0x0038(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FText                                   CategoryText;                                      // 0x0048(0x0018)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	bool                                          bIsValidOnPrimary;                                 // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bIsValidOnShots;                                   // 0x0061(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bCanBeDisabled;                                    // 0x0062(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_63[0x5];                                       // 0x0063(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	class UMoviePipelineExecutorJob* AllocateNewJob(TSubclassOf<class UMoviePipelineExecutorJob> InJobType);
-	void CopyFrom(class UMoviePipelineQueue* InQueue);
-	void DeleteAllJobs();
-	void DeleteJob(class UMoviePipelineExecutorJob* InJob);
-	class UMoviePipelineExecutorJob* DuplicateJob(class UMoviePipelineExecutorJob* InJob);
-	void SetJobIndex(class UMoviePipelineExecutorJob* InJob, int32 Index_0);
-	void SetQueueOrigin(class UMoviePipelineQueue* InConfig);
+	void OnEngineTickBeginFrame();
+	void ReceiveSetupForPipelineImpl(class UMoviePipeline* InPipeline);
+	void ReceiveTeardownForPipelineImpl(class UMoviePipeline* InPipeline);
 
-	TArray<class UMoviePipelineExecutorJob*> GetJobs() const;
-	class UMoviePipelineQueue* GetQueueOrigin() const;
+	struct FMoviePipelineFormatArgs ReceiveGetFormatArguments(struct FMoviePipelineFormatArgs& InOutFormatArgs) const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MoviePipelineQueue")
+		STATIC_CLASS_IMPL("MoviePipelineSetting_BlueprintBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MoviePipelineQueue")
+		STATIC_NAME_IMPL(L"MoviePipelineSetting_BlueprintBase")
 	}
-	static class UMoviePipelineQueue* GetDefaultObj()
+	static class UMoviePipelineSetting_BlueprintBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMoviePipelineQueue>();
+		return GetDefaultObjImpl<UMoviePipelineSetting_BlueprintBase>();
 	}
 };
-DUMPER7_ASSERTS_UMoviePipelineQueue;
+DUMPER7_ASSERTS_UMoviePipelineSetting_BlueprintBase;
 
 // Class MovieRenderPipelineCore.MovieGraphSettingNode
 // 0x0000 (0x0090 - 0x0090)
@@ -173,6 +235,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieGraphRenderPassNode;
+
+// Class MovieRenderPipelineCore.MoviePipelineInProcessExecutorSettings
+// 0x0030 (0x0068 - 0x0038)
+class UMoviePipelineInProcessExecutorSettings final : public UDeveloperSettings
+{
+public:
+	bool                                          bCloseEditor;                                      // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 AdditionalCommandLineArguments;                    // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InheritedCommandLineArguments;                     // 0x0050(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Config, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InitialDelayFrameCount;                            // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineInProcessExecutorSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineInProcessExecutorSettings")
+	}
+	static class UMoviePipelineInProcessExecutorSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineInProcessExecutorSettings>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineInProcessExecutorSettings;
 
 // Class MovieRenderPipelineCore.MovieGraphBurnInNode
 // 0x00F0 (0x0180 - 0x0090)
@@ -226,81 +316,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieGraphBurnInWidget;
-
-// Class MovieRenderPipelineCore.MoviePipelineSetting
-// 0x0020 (0x0048 - 0x0028)
-class UMoviePipelineSetting : public UObject
-{
-public:
-	TWeakObjectPtr<class UMoviePipeline>          CachedPipeline;                                    // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bEnabled;                                          // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_31[0x17];                                      // 0x0031(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetIsEnabled(bool bInEnabled);
-
-	void BuildNewProcessCommandLine(class FString& InOutUnrealURLParams, class FString& InOutCommandLineArgs) const;
-	void BuildNewProcessCommandLineArgs(TArray<class FString>& InOutUnrealURLParams, TArray<class FString>& InOutCommandLineArgs, TArray<class FString>& InOutDeviceProfileCvars, TArray<class FString>& InOutExecCmds) const;
-	bool IsEnabled() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineSetting")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineSetting")
-	}
-	static class UMoviePipelineSetting* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineSetting>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineSetting;
-
-// Class MovieRenderPipelineCore.MoviePipelineOutputBase
-// 0x0000 (0x0048 - 0x0048)
-class UMoviePipelineOutputBase : public UMoviePipelineSetting
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineOutputBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineOutputBase")
-	}
-	static class UMoviePipelineOutputBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineOutputBase>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineOutputBase;
-
-// Class MovieRenderPipelineCore.MoviePipelineVideoOutputBase
-// 0x0048 (0x0090 - 0x0048)
-class UMoviePipelineVideoOutputBase final : public UMoviePipelineOutputBase
-{
-public:
-	uint8                                         Pad_48[0x48];                                      // 0x0048(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineVideoOutputBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineVideoOutputBase")
-	}
-	static class UMoviePipelineVideoOutputBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineVideoOutputBase>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineVideoOutputBase;
 
 // Class MovieRenderPipelineCore.MovieGraphCollectionNode
 // 0x0020 (0x00B0 - 0x0090)
@@ -387,6 +402,35 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphValueContainer;
 
+// Class MovieRenderPipelineCore.MoviePipelineMaterialModifier
+// 0x0078 (0x00B8 - 0x0040)
+class UMoviePipelineMaterialModifier final : public UMoviePipelineCollectionModifier
+{
+public:
+	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UMaterialInterface>      MaterialToApply;                                   // 0x0090(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void ApplyModifier(const class UWorld* World);
+	void SetMaterial(TSoftObjectPtr<class UMaterialInterface> InMaterial);
+	void UndoModifier();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineMaterialModifier")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineMaterialModifier")
+	}
+	static class UMoviePipelineMaterialModifier* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineMaterialModifier>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineMaterialModifier;
+
 // Class MovieRenderPipelineCore.MovieGraphMember
 // 0x0038 (0x0070 - 0x0038)
 class UMovieGraphMember : public UMovieGraphValueContainer
@@ -438,6 +482,26 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphVariable;
 
+// Class MovieRenderPipelineCore.MoviePipelineViewFamilySetting
+// 0x0000 (0x0048 - 0x0048)
+class UMoviePipelineViewFamilySetting final : public UMoviePipelineSetting
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineViewFamilySetting")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineViewFamilySetting")
+	}
+	static class UMoviePipelineViewFamilySetting* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineViewFamilySetting>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineViewFamilySetting;
+
 // Class MovieRenderPipelineCore.MovieGraphInterfaceBase
 // 0x0008 (0x0078 - 0x0070)
 class UMovieGraphInterfaceBase : public UMovieGraphMember
@@ -481,6 +545,41 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieGraphInput;
+
+// Class MovieRenderPipelineCore.MoviePipelineRenderLayer
+// 0x0020 (0x0048 - 0x0028)
+class UMoviePipelineRenderLayer final : public UObject
+{
+public:
+	class FString                                 RenderLayerName;                                   // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class UMoviePipelineCollectionModifier*> Modifiers;                                       // 0x0038(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+
+public:
+	void AddModifier(class UMoviePipelineCollectionModifier* Modifier);
+	void Preview(const class UWorld* World);
+	void RemoveModifier(class UMoviePipelineCollectionModifier* Modifier);
+	void SetRenderLayerName(const class FString& NewName);
+	void UndoPreview(const class UWorld* World);
+
+	class UMoviePipelineCollection* GetCollectionByName(const class FString& Name_0) const;
+	TArray<class UMoviePipelineCollectionModifier*> GetModifiers() const;
+	class FString GetRenderLayerName() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineRenderLayer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineRenderLayer")
+	}
+	static class UMoviePipelineRenderLayer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineRenderLayer>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineRenderLayer;
 
 // Class MovieRenderPipelineCore.MovieGraphOutput
 // 0x0000 (0x0078 - 0x0078)
@@ -643,6 +742,73 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphDefaultRenderer;
 
+// Class MovieRenderPipelineCore.MoviePipelineBase
+// 0x0030 (0x0058 - 0x0028)
+class UMoviePipelineBase : public UObject
+{
+public:
+	uint8                                         Pad_28[0x30];                                      // 0x0028(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void RequestShutdown(bool bIsError);
+	void Shutdown(bool bIsError);
+
+	EMovieRenderPipelineState GetPipelineState() const;
+	bool IsShutdownRequested() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineBase")
+	}
+	static class UMoviePipelineBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineBase>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineBase;
+
+// Class MovieRenderPipelineCore.MovieGraphPipeline
+// 0x00D8 (0x0130 - 0x0058)
+class UMovieGraphPipeline final : public UMoviePipelineBase
+{
+public:
+	class UMovieGraphTimeStepBase*                GraphTimeStepInstance;                             // 0x0058(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMovieGraphRendererBase*                GraphRendererInstance;                             // 0x0060(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMovieGraphDataSourceBase*              GraphDataSourceInstance;                           // 0x0068(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UMoviePipelineExecutorJob*              CurrentJob;                                        // 0x0070(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UMoviePipelineExecutorShot*>     ActiveShotList;                                    // 0x0078(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	TSet<class UMovieGraphFileOutputNode*>        OutputNodesDataSentTo;                             // 0x0088(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
+	uint8                                         Pad_D8[0x58];                                      // 0x00D8(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void Initialize(class UMoviePipelineExecutorJob* InJob, const struct FMovieGraphInitConfig& InitConfig);
+	void OnMoviePipelineFinishedImpl();
+	void SetInitializationTime(const struct FDateTime& InDateTime);
+
+	class UMoviePipelineExecutorJob* GetCurrentJob() const;
+	struct FDateTime GetInitializationTime() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieGraphPipeline")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieGraphPipeline")
+	}
+	static class UMovieGraphPipeline* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieGraphPipeline>();
+	}
+};
+DUMPER7_ASSERTS_UMovieGraphPipeline;
+
 // Class MovieRenderPipelineCore.MovieGraphDeferredRenderPassNode
 // 0x0010 (0x00A0 - 0x0090)
 class UMovieGraphDeferredRenderPassNode final : public UMovieGraphRenderPassNode
@@ -734,6 +900,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieGraphGetCVarValueNode;
+
+// Class MovieRenderPipelineCore.MovieGraphRenderLayerNode
+// 0x0018 (0x00A8 - 0x0090)
+class UMovieGraphRenderLayerNode final : public UMovieGraphSettingNode
+{
+public:
+	uint8                                         bOverride_LayerName : 1;                           // 0x0090(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LayerName;                                         // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieGraphRenderLayerNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieGraphRenderLayerNode")
+	}
+	static class UMovieGraphRenderLayerNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieGraphRenderLayerNode>();
+	}
+};
+DUMPER7_ASSERTS_UMovieGraphRenderLayerNode;
 
 // Class MovieRenderPipelineCore.MovieGraphGlobalGameOverridesNode
 // 0x0030 (0x00C0 - 0x0090)
@@ -850,6 +1041,34 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphImageSequenceOutputNode_JPG;
 
+// Class MovieRenderPipelineCore.MovieGraphSubgraphNode
+// 0x0028 (0x00B8 - 0x0090)
+class UMovieGraphSubgraphNode final : public UMovieGraphNode
+{
+public:
+	TSoftObjectPtr<class UMovieGraphConfig>       SubgraphAsset;                                     // 0x0090(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void SetSubGraphAsset(const TSoftObjectPtr<class UMovieGraphConfig>& InSubgraphAsset);
+
+	class UMovieGraphConfig* GetSubgraphAsset() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieGraphSubgraphNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieGraphSubgraphNode")
+	}
+	static class UMovieGraphSubgraphNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieGraphSubgraphNode>();
+	}
+};
+DUMPER7_ASSERTS_UMovieGraphSubgraphNode;
+
 // Class MovieRenderPipelineCore.MovieGraphImageSequenceOutputNode_PNG
 // 0x0000 (0x00B0 - 0x00B0)
 class UMovieGraphImageSequenceOutputNode_PNG final : public UMovieGraphImageSequenceOutputNode
@@ -916,6 +1135,31 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphLinearTimeStep;
 
+// Class MovieRenderPipelineCore.MovieGraphSelectNode
+// 0x0030 (0x00C0 - 0x0090)
+class UMovieGraphSelectNode final : public UMovieGraphNode
+{
+public:
+	TArray<class FString>                         SelectOptions;                                     // 0x0090(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	class FString                                 SelectedOption;                                    // 0x00A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Description;                                       // 0x00B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieGraphSelectNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieGraphSelectNode")
+	}
+	static class UMovieGraphSelectNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieGraphSelectNode>();
+	}
+};
+DUMPER7_ASSERTS_UMovieGraphSelectNode;
+
 // Class MovieRenderPipelineCore.MovieGraphEngineTimeStep
 // 0x0010 (0x0038 - 0x0028)
 class UMovieGraphEngineTimeStep final : public UEngineCustomTimeStep
@@ -938,6 +1182,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieGraphEngineTimeStep;
+
+// Class MovieRenderPipelineCore.MoviePipelineCameraSetting
+// 0x0010 (0x0058 - 0x0048)
+class UMoviePipelineCameraSetting final : public UMoviePipelineSetting
+{
+public:
+	EMoviePipelineShutterTiming                   ShutterTiming;                                     // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         OverscanPercentage;                                // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRenderAllCameras;                                 // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineCameraSetting")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineCameraSetting")
+	}
+	static class UMoviePipelineCameraSetting* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineCameraSetting>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineCameraSetting;
 
 // Class MovieRenderPipelineCore.MovieGraphModifierNode
 // 0x0030 (0x00C0 - 0x0090)
@@ -1053,73 +1324,6 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphPin;
 
-// Class MovieRenderPipelineCore.MoviePipelineBase
-// 0x0030 (0x0058 - 0x0028)
-class UMoviePipelineBase : public UObject
-{
-public:
-	uint8                                         Pad_28[0x30];                                      // 0x0028(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void RequestShutdown(bool bIsError);
-	void Shutdown(bool bIsError);
-
-	EMovieRenderPipelineState GetPipelineState() const;
-	bool IsShutdownRequested() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineBase")
-	}
-	static class UMoviePipelineBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineBase>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineBase;
-
-// Class MovieRenderPipelineCore.MovieGraphPipeline
-// 0x00D8 (0x0130 - 0x0058)
-class UMovieGraphPipeline final : public UMoviePipelineBase
-{
-public:
-	class UMovieGraphTimeStepBase*                GraphTimeStepInstance;                             // 0x0058(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMovieGraphRendererBase*                GraphRendererInstance;                             // 0x0060(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMovieGraphDataSourceBase*              GraphDataSourceInstance;                           // 0x0068(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UMoviePipelineExecutorJob*              CurrentJob;                                        // 0x0070(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class UMoviePipelineExecutorShot*>     ActiveShotList;                                    // 0x0078(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	TSet<class UMovieGraphFileOutputNode*>        OutputNodesDataSentTo;                             // 0x0088(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x58];                                      // 0x00D8(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Initialize(class UMoviePipelineExecutorJob* InJob, const struct FMovieGraphInitConfig& InitConfig);
-	void OnMoviePipelineFinishedImpl();
-	void SetInitializationTime(const struct FDateTime& InDateTime);
-
-	class UMoviePipelineExecutorJob* GetCurrentJob() const;
-	struct FDateTime GetInitializationTime() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieGraphPipeline")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieGraphPipeline")
-	}
-	static class UMovieGraphPipeline* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieGraphPipeline>();
-	}
-};
-DUMPER7_ASSERTS_UMovieGraphPipeline;
-
 // Class MovieRenderPipelineCore.MovieGraphPathTracedRendererNode
 // 0x0000 (0x0090 - 0x0090)
 class UMovieGraphPathTracedRendererNode final : public UMovieGraphSettingNode
@@ -1180,56 +1384,6 @@ public:
 };
 DUMPER7_ASSERTS_UMovieGraphAntiAliasingNode;
 
-// Class MovieRenderPipelineCore.MovieGraphRenderLayerNode
-// 0x0018 (0x00A8 - 0x0090)
-class UMovieGraphRenderLayerNode final : public UMovieGraphSettingNode
-{
-public:
-	uint8                                         bOverride_LayerName : 1;                           // 0x0090(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LayerName;                                         // 0x0098(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieGraphRenderLayerNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieGraphRenderLayerNode")
-	}
-	static class UMovieGraphRenderLayerNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieGraphRenderLayerNode>();
-	}
-};
-DUMPER7_ASSERTS_UMovieGraphRenderLayerNode;
-
-// Class MovieRenderPipelineCore.MovieGraphSelectNode
-// 0x0030 (0x00C0 - 0x0090)
-class UMovieGraphSelectNode final : public UMovieGraphNode
-{
-public:
-	TArray<class FString>                         SelectOptions;                                     // 0x0090(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	class FString                                 SelectedOption;                                    // 0x00A0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Description;                                       // 0x00B0(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieGraphSelectNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieGraphSelectNode")
-	}
-	static class UMovieGraphSelectNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieGraphSelectNode>();
-	}
-};
-DUMPER7_ASSERTS_UMovieGraphSelectNode;
-
 // Class MovieRenderPipelineCore.MovieGraphSequenceDataSource
 // 0x0018 (0x0040 - 0x0028)
 class UMovieGraphSequenceDataSource final : public UMovieGraphDataSourceBase
@@ -1280,34 +1434,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieGraphSetCVarValueNode;
-
-// Class MovieRenderPipelineCore.MovieGraphSubgraphNode
-// 0x0028 (0x00B8 - 0x0090)
-class UMovieGraphSubgraphNode final : public UMovieGraphNode
-{
-public:
-	TSoftObjectPtr<class UMovieGraphConfig>       SubgraphAsset;                                     // 0x0090(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	void SetSubGraphAsset(const TSoftObjectPtr<class UMovieGraphConfig>& InSubgraphAsset);
-
-	class UMovieGraphConfig* GetSubgraphAsset() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieGraphSubgraphNode")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieGraphSubgraphNode")
-	}
-	static class UMovieGraphSubgraphNode* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieGraphSubgraphNode>();
-	}
-};
-DUMPER7_ASSERTS_UMovieGraphSubgraphNode;
 
 // Class MovieRenderPipelineCore.MovieGraphVariableNode
 // 0x0018 (0x00A8 - 0x0090)
@@ -1393,35 +1519,8 @@ public:
 };
 DUMPER7_ASSERTS_UMovieJobVariableAssignmentContainer;
 
-// Class MovieRenderPipelineCore.MoviePipelineCameraSetting
-// 0x0010 (0x0058 - 0x0048)
-class UMoviePipelineCameraSetting final : public UMoviePipelineSetting
-{
-public:
-	EMoviePipelineShutterTiming                   ShutterTiming;                                     // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         OverscanPercentage;                                // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRenderAllCameras;                                 // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineCameraSetting")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineCameraSetting")
-	}
-	static class UMoviePipelineCameraSetting* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineCameraSetting>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineCameraSetting;
-
 // Class MovieRenderPipelineCore.MoviePipelineGameMode
-// 0x0000 (0x0338 - 0x0338)
+// 0x0000 (0x0340 - 0x0340)
 class AMoviePipelineGameMode final : public AGameModeBase
 {
 public:
@@ -1470,33 +1569,25 @@ public:
 };
 DUMPER7_ASSERTS_UMoviePipelineHighResSetting;
 
-// Class MovieRenderPipelineCore.MoviePipelineInProcessExecutorSettings
-// 0x0030 (0x0068 - 0x0038)
-class UMoviePipelineInProcessExecutorSettings final : public UDeveloperSettings
+// Class MovieRenderPipelineCore.MoviePipelineOutputBase
+// 0x0000 (0x0048 - 0x0048)
+class UMoviePipelineOutputBase : public UMoviePipelineSetting
 {
-public:
-	bool                                          bCloseEditor;                                      // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 AdditionalCommandLineArguments;                    // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 InheritedCommandLineArguments;                     // 0x0050(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, Config, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InitialDelayFrameCount;                            // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("MoviePipelineInProcessExecutorSettings")
+		STATIC_CLASS_IMPL("MoviePipelineOutputBase")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"MoviePipelineInProcessExecutorSettings")
+		STATIC_NAME_IMPL(L"MoviePipelineOutputBase")
 	}
-	static class UMoviePipelineInProcessExecutorSettings* GetDefaultObj()
+	static class UMoviePipelineOutputBase* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMoviePipelineInProcessExecutorSettings>();
+		return GetDefaultObjImpl<UMoviePipelineOutputBase>();
 	}
 };
-DUMPER7_ASSERTS_UMoviePipelineInProcessExecutorSettings;
+DUMPER7_ASSERTS_UMoviePipelineOutputBase;
 
 // Class MovieRenderPipelineCore.MoviePipelineCollection
 // 0x0020 (0x0048 - 0x0028)
@@ -1528,68 +1619,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMoviePipelineCollection;
-
-// Class MovieRenderPipelineCore.MoviePipelineCollectionModifier
-// 0x0018 (0x0040 - 0x0028)
-class UMoviePipelineCollectionModifier : public UObject
-{
-public:
-	TArray<class UMoviePipelineCollection*>       Collections;                                       // 0x0028(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
-	bool                                          bUseInvertedActors;                                // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AddCollection(class UMoviePipelineCollection* Collection);
-	void SetCollections(const TArray<class UMoviePipelineCollection*>& InCollections);
-	void SetIsInverted(const bool bIsInverted);
-
-	TArray<class UMoviePipelineCollection*> GetCollections() const;
-	bool IsInverted() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineCollectionModifier")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineCollectionModifier")
-	}
-	static class UMoviePipelineCollectionModifier* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineCollectionModifier>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineCollectionModifier;
-
-// Class MovieRenderPipelineCore.MoviePipelineMaterialModifier
-// 0x0078 (0x00B8 - 0x0040)
-class UMoviePipelineMaterialModifier final : public UMoviePipelineCollectionModifier
-{
-public:
-	uint8                                         Pad_40[0x50];                                      // 0x0040(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UMaterialInterface>      MaterialToApply;                                   // 0x0090(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	void ApplyModifier(const class UWorld* World);
-	void SetMaterial(TSoftObjectPtr<class UMaterialInterface> InMaterial);
-	void UndoModifier();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineMaterialModifier")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineMaterialModifier")
-	}
-	static class UMoviePipelineMaterialModifier* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineMaterialModifier>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineMaterialModifier;
 
 // Class MovieRenderPipelineCore.MoviePipelineVisibilityModifier
 // 0x0058 (0x0098 - 0x0040)
@@ -1678,41 +1707,6 @@ public:
 };
 DUMPER7_ASSERTS_UMoviePipelineCollectionCommonQuery;
 
-// Class MovieRenderPipelineCore.MoviePipelineRenderLayer
-// 0x0020 (0x0048 - 0x0028)
-class UMoviePipelineRenderLayer final : public UObject
-{
-public:
-	class FString                                 RenderLayerName;                                   // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<class UMoviePipelineCollectionModifier*> Modifiers;                                       // 0x0038(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
-
-public:
-	void AddModifier(class UMoviePipelineCollectionModifier* Modifier);
-	void Preview(const class UWorld* World);
-	void RemoveModifier(class UMoviePipelineCollectionModifier* Modifier);
-	void SetRenderLayerName(const class FString& NewName);
-	void UndoPreview(const class UWorld* World);
-
-	class UMoviePipelineCollection* GetCollectionByName(const class FString& Name_0) const;
-	TArray<class UMoviePipelineCollectionModifier*> GetModifiers() const;
-	class FString GetRenderLayerName() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineRenderLayer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineRenderLayer")
-	}
-	static class UMoviePipelineRenderLayer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineRenderLayer>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineRenderLayer;
-
 // Class MovieRenderPipelineCore.MoviePipelineRenderLayerSubsystem
 // 0x0048 (0x0078 - 0x0030)
 class UMoviePipelineRenderLayerSubsystem final : public UWorldSubsystem
@@ -1759,60 +1753,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMoviePipelineRenderLayerSubsystem;
-
-// Class MovieRenderPipelineCore.MoviePipelineSetting_BlueprintBase
-// 0x0020 (0x0068 - 0x0048)
-class UMoviePipelineSetting_BlueprintBase final : public UMoviePipelineSetting
-{
-public:
-	class FText                                   CategoryText;                                      // 0x0048(0x0018)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	bool                                          bIsValidOnPrimary;                                 // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsValidOnShots;                                   // 0x0061(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bCanBeDisabled;                                    // 0x0062(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_63[0x5];                                       // 0x0063(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnEngineTickBeginFrame();
-	void ReceiveSetupForPipelineImpl(class UMoviePipeline* InPipeline);
-	void ReceiveTeardownForPipelineImpl(class UMoviePipeline* InPipeline);
-
-	struct FMoviePipelineFormatArgs ReceiveGetFormatArguments(struct FMoviePipelineFormatArgs& InOutFormatArgs) const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineSetting_BlueprintBase")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineSetting_BlueprintBase")
-	}
-	static class UMoviePipelineSetting_BlueprintBase* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineSetting_BlueprintBase>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineSetting_BlueprintBase;
-
-// Class MovieRenderPipelineCore.MoviePipelineViewFamilySetting
-// 0x0000 (0x0048 - 0x0048)
-class UMoviePipelineViewFamilySetting final : public UMoviePipelineSetting
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MoviePipelineViewFamilySetting")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MoviePipelineViewFamilySetting")
-	}
-	static class UMoviePipelineViewFamilySetting* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMoviePipelineViewFamilySetting>();
-	}
-};
-DUMPER7_ASSERTS_UMoviePipelineViewFamilySetting;
 
 // Class MovieRenderPipelineCore.MovieRenderDebugWidget
 // 0x0000 (0x02C8 - 0x02C8)
@@ -2540,6 +2480,43 @@ public:
 };
 DUMPER7_ASSERTS_UMoviePipelineExecutorJob;
 
+// Class MovieRenderPipelineCore.MoviePipelineQueue
+// 0x0040 (0x0068 - 0x0028)
+class UMoviePipelineQueue final : public UObject
+{
+public:
+	TArray<class UMoviePipelineExecutorJob*>      Jobs;                                              // 0x0028(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TSoftObjectPtr<class UMoviePipelineQueue>     QueueOrigin;                                       // 0x0038(0x0028)(UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UMoviePipelineExecutorJob* AllocateNewJob(TSubclassOf<class UMoviePipelineExecutorJob> InJobType);
+	void CopyFrom(class UMoviePipelineQueue* InQueue);
+	void DeleteAllJobs();
+	void DeleteJob(class UMoviePipelineExecutorJob* InJob);
+	class UMoviePipelineExecutorJob* DuplicateJob(class UMoviePipelineExecutorJob* InJob);
+	void SetJobIndex(class UMoviePipelineExecutorJob* InJob, int32 Index_0);
+	void SetQueueOrigin(class UMoviePipelineQueue* InConfig);
+
+	TArray<class UMoviePipelineExecutorJob*> GetJobs() const;
+	class UMoviePipelineQueue* GetQueueOrigin() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineQueue")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineQueue")
+	}
+	static class UMoviePipelineQueue* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineQueue>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineQueue;
+
 // Class MovieRenderPipelineCore.MoviePipelineQueueEngineSubsystem
 // 0x0060 (0x0090 - 0x0030)
 class UMoviePipelineQueueEngineSubsystem final : public UEngineSubsystem
@@ -2616,6 +2593,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMoviePipelineShotConfig;
+
+// Class MovieRenderPipelineCore.MoviePipelineVideoOutputBase
+// 0x0048 (0x0090 - 0x0048)
+class UMoviePipelineVideoOutputBase : public UMoviePipelineOutputBase
+{
+public:
+	uint8                                         Pad_48[0x48];                                      // 0x0048(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MoviePipelineVideoOutputBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MoviePipelineVideoOutputBase")
+	}
+	static class UMoviePipelineVideoOutputBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMoviePipelineVideoOutputBase>();
+	}
+};
+DUMPER7_ASSERTS_UMoviePipelineVideoOutputBase;
 
 }
 

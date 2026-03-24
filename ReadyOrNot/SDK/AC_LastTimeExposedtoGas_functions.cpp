@@ -17,8 +17,28 @@
 namespace SDK
 {
 
+// Function AC_LastTimeExposedtoGas.AC_LastTimeExposedtoGas_C.TempFunc
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EGasType                                GasType_0                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAC_LastTimeExposedtoGas_C::TempFunc(EGasType GasType_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_LastTimeExposedtoGas_C", "TempFunc");
+
+	Params::AC_LastTimeExposedtoGas_C_TempFunc Parms{};
+
+	Parms.GasType_0 = GasType_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function AC_LastTimeExposedtoGas.AC_LastTimeExposedtoGas_C.Score
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
 // const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 // bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

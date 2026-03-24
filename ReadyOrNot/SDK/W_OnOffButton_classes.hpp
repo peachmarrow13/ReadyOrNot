@@ -46,6 +46,8 @@ public:
 	void Construct();
 	void ExecuteUbergraph_W_OnOffButton(int32 EntryPoint);
 	bool IsPS5TextValid(const class FText& InputString);
+	void OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
+	void OnMouseLeave(const struct FPointerEvent& MouseEvent);
 	void PreConstruct(bool IsDesignTime);
 	void SetCheckedState(bool NewChecked);
 	void SetDisabledText(const class FText& EnabledText_0);

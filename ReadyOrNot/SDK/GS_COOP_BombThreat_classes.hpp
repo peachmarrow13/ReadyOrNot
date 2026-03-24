@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_COOP_BombThreat.GS_COOP_BombThreat_C
-// 0x0000 (0x0A50 - 0x0A50)
+// 0x0000 (0x0A80 - 0x0A80)
 class AGS_COOP_BombThreat_C final : public AGS_COOP_C
 {
 public:

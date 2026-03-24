@@ -17,29 +17,6 @@
 namespace SDK
 {
 
-// Function AC_Ammo.AC_Ammo_C.CalculateCurve
-// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// float                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UAC_Ammo_C::CalculateCurve(float X) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_Ammo_C", "CalculateCurve");
-
-	Params::AC_Ammo_C_CalculateCurve Parms{};
-
-	Parms.X = X;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
 // Function AC_Ammo.AC_Ammo_C.ReloadCurve
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -61,6 +38,29 @@ void UAC_Ammo_C::ReloadCurve(double X, double* Return_Value) const
 
 	if (Return_Value != nullptr)
 		*Return_Value = Parms.Return_Value;
+}
+
+
+// Function AC_Ammo.AC_Ammo_C.CalculateCurve
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// float                                   X                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UAC_Ammo_C::CalculateCurve(float X) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_Ammo_C", "CalculateCurve");
+
+	Params::AC_Ammo_C_CalculateCurve Parms{};
+
+	Parms.X = X;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

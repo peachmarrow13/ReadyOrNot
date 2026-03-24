@@ -18,19 +18,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SeekPlayerCombatMove.SeekPlayerCombatMove_C
-// 0x0018 (0x0248 - 0x0230)
+// 0x0018 (0x0270 - 0x0258)
 class USeekPlayerCombatMove_C final : public UBaseCombatMoveActivity
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0230(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AReadyOrNotCharacter*                   SeekingPlayer;                                     // 0x0238(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	double                                        StopDistance;                                      // 0x0240(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0258(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class AReadyOrNotCharacter*                   SeekingPlayer;                                     // 0x0260(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	double                                        StopDistance;                                      // 0x0268(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_SeekPlayerCombatMove(int32 EntryPoint);
-	void FinishedActivity_Blueprint(bool bSuccess);
-	void RequestCombatMove_Blueprint(float DeltaTime);
 	void StartActivity_Blueprint(class AAIController* Owner);
+	void RequestCombatMove_Blueprint(float DeltaTime);
+	void FinishedActivity_Blueprint(bool bSuccess);
+	void ExecuteUbergraph_SeekPlayerCombatMove(int32 EntryPoint);
 
 	class FName GetMoveStyleOverride() const;
 

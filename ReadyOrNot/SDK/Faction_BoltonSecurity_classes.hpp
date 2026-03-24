@@ -18,18 +18,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Faction_BoltonSecurity.Faction_BoltonSecurity_C
-// 0x0018 (0x0308 - 0x02F0)
+// 0x0018 (0x0310 - 0x02F8)
 class AFaction_BoltonSecurity_C final : public AAIFactionManager
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ACyberneticCharacter*                   LeviShanks;                                        // 0x0300(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0300(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ACyberneticCharacter*                   LeviShanks;                                        // 0x0308(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AlertOtherSuspectsInTeam_Blueprint(class ASuspectCharacter* suspect, class AReadyOrNotCharacter* Enemy);
-	void ExecuteUbergraph_Faction_BoltonSecurity(int32 EntryPoint);
 	void OnAIAdded_Blueprint(class ACyberneticCharacter* Character);
+	void ExecuteUbergraph_Faction_BoltonSecurity(int32 EntryPoint);
+	void AlertOtherSuspectsInTeam_Blueprint(class ASuspectCharacter* suspect, class AReadyOrNotCharacter* Enemy);
 
 public:
 	static class UClass* StaticClass()

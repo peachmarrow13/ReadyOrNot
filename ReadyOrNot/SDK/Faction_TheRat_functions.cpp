@@ -17,15 +17,35 @@
 namespace SDK
 {
 
-// Function Faction_TheRat.Faction_TheRat_C.CustomEvent_0
-// (BlueprintCallable, BlueprintEvent)
+// Function Faction_TheRat.Faction_TheRat_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AFaction_TheRat_C::CustomEvent_0()
+void AFaction_TheRat_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Faction_TheRat_C", "CustomEvent_0");
+		Func = Class->GetFunction("Faction_TheRat_C", "ReceiveTick");
+
+	Params::Faction_TheRat_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Faction_TheRat.Faction_TheRat_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AFaction_TheRat_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Faction_TheRat_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,37 +71,17 @@ void AFaction_TheRat_C::ExecuteUbergraph_Faction_TheRat(int32 EntryPoint)
 }
 
 
-// Function Faction_TheRat.Faction_TheRat_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function Faction_TheRat.Faction_TheRat_C.CustomEvent_0
+// (BlueprintCallable, BlueprintEvent)
 
-void AFaction_TheRat_C::ReceiveBeginPlay()
+void AFaction_TheRat_C::CustomEvent_0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Faction_TheRat_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("Faction_TheRat_C", "CustomEvent_0");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Faction_TheRat.Faction_TheRat_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AFaction_TheRat_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Faction_TheRat_C", "ReceiveTick");
-
-	Params::Faction_TheRat_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_Defusal.GM_Defusal_C
-// 0x0010 (0x0AE0 - 0x0AD0)
+// 0x0010 (0x0B00 - 0x0AF0)
 class AGM_Defusal_C final : public ADefusalGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0AD0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0AF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

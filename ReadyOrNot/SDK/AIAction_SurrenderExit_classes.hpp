@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -31,12 +31,12 @@ public:
 	struct FVector                                FocalPoint;                                        // 0x0068(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BeginAction_Blueprint();
-	void ExecuteUbergraph_AIAction_SurrenderExit(int32 EntryPoint);
 	void Tick_Blueprint(float DeltaTime);
+	void ExecuteUbergraph_AIAction_SurrenderExit(int32 EntryPoint);
+	void BeginAction_Blueprint();
 
-	void IsFakeExit(ESurrenderExitType ExitType, bool* Return_Value) const;
 	bool ShouldPerformAction() const;
+	void IsFakeExit(ESurrenderExitType ExitType, bool* Return_Value) const;
 
 public:
 	static class UClass* StaticClass()

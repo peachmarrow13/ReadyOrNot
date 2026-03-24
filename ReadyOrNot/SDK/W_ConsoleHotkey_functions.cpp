@@ -51,6 +51,26 @@ void UW_ConsoleHotkey_C::ExecuteUbergraph_W_ConsoleHotkey(int32 EntryPoint)
 }
 
 
+// Function W_ConsoleHotkey.W_ConsoleHotkey_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ConsoleHotkey_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ConsoleHotkey_C", "PreConstruct");
+
+	Params::W_ConsoleHotkey_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_ConsoleHotkey.W_ConsoleHotkey_C.ShoulderButtonPressed
 // (Event, Public, BlueprintEvent)
 // Parameters:

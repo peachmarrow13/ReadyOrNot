@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass Stinger_Thrown.Stinger_Thrown_C
-// 0x0000 (0x05F8 - 0x05F8)
+// 0x0000 (0x0600 - 0x0600)
 class AStinger_Thrown_C final : public AThrownGrenade
 {
 public:

@@ -17,838 +17,6 @@
 namespace SDK
 {
 
-// Function ModioUICore.ModioModTagSelectorEntry.NotifyClicked
-// (Final, Native, Protected, BlueprintCallable)
-
-void UModioModTagSelectorEntry::NotifyClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelectorEntry", "NotifyClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioModTagSelectorEntry.NotifySelectionChanged
-// (Final, Native, Protected, BlueprintCallable)
-
-void UModioModTagSelectorEntry::NotifySelectionChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelectorEntry", "NotifySelectionChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioModTagSelectorEntry.OnTagEntryClicked
-// (Final, Native, Protected)
-// Parameters:
-// class UObject*                          ClickedObject                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModioModTagSelectorEntry::OnTagEntryClicked(class UObject* ClickedObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelectorEntry", "OnTagEntryClicked");
-
-	Params::ModioModTagSelectorEntry_OnTagEntryClicked Parms{};
-
-	Parms.ClickedObject = ClickedObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioModTagSelectorEntry.GetClickableWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TScriptInterface<class IModioUIClickableWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TScriptInterface<class IModioUIClickableWidget> UModioModTagSelectorEntry::GetClickableWidget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelectorEntry", "GetClickableWidget");
-
-	Params::ModioModTagSelectorEntry_GetClickableWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagSelectorEntry.GetSelectionWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TScriptInterface<class IModioUISelectableWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TScriptInterface<class IModioUISelectableWidget> UModioModTagSelectorEntry::GetSelectionWidget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelectorEntry", "GetSelectionWidget");
-
-	Params::ModioModTagSelectorEntry_GetSelectionWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagSelectorEntry.GetTagLabelWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TScriptInterface<class IModioUIHasTextWidget> UModioModTagSelectorEntry::GetTagLabelWidget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelectorEntry", "GetTagLabelWidget");
-
-	Params::ModioModTagSelectorEntry_GetTagLabelWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioActivatableWidget.Activate
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IModioActivatableWidget::Activate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "Activate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioActivatableWidget.AddActivationChangedHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioActivatableWidget::AddActivationChangedHandler(const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "AddActivationChangedHandler");
-
-	Params::ModioActivatableWidget_AddActivationChangedHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioActivatableWidget.Deactivate
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IModioActivatableWidget::Deactivate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "Deactivate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioActivatableWidget.RemoveActivationChangedHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioActivatableWidget::RemoveActivationChangedHandler(const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "RemoveActivationChangedHandler");
-
-	Params::ModioActivatableWidget_RemoveActivationChangedHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioEnumEntryUIDetails.GetEnumEntryDetails
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// uint8*                                  EnumValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FText*                            EnumValueDisplayText                                   (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void IModioEnumEntryUIDetails::GetEnumEntryDetails(uint8* EnumValue, class FText* EnumValueDisplayText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioEnumEntryUIDetails", "GetEnumEntryDetails");
-
-	Params::ModioEnumEntryUIDetails_GetEnumEntryDetails Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (EnumValue != nullptr)
-		*EnumValue = Parms.EnumValue;
-
-	if (EnumValueDisplayText != nullptr)
-		*EnumValueDisplayText = std::move(Parms.EnumValueDisplayText);
-}
-
-
-// Function ModioUICore.ModioRetryLibrary.CanRetry
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FModioRetryCounter&        Target                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModioRetryLibrary::CanRetry(const struct FModioRetryCounter& Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioRetryLibrary", "CanRetry");
-
-	Params::ModioRetryLibrary_CanRetry Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioRetryLibrary.CanRetryAsExec
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FModioRetryCounter&        Target                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModioRetryLibrary::CanRetryAsExec(const struct FModioRetryCounter& Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioRetryLibrary", "CanRetryAsExec");
-
-	Params::ModioRetryLibrary_CanRetryAsExec Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioRetryLibrary.ResetRetryCount
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FModioRetryCounter&              Target                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UModioRetryLibrary::ResetRetryCount(struct FModioRetryCounter& Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioRetryLibrary", "ResetRetryCount");
-
-	Params::ModioRetryLibrary_ResetRetryCount Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Target = std::move(Parms.Target);
-}
-
-
-// Function ModioUICore.ModioRetryLibrary.ResetRetryCountPure
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// struct FModioRetryCounter&              Target                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FModioRetryCounter               ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FModioRetryCounter UModioRetryLibrary::ResetRetryCountPure(struct FModioRetryCounter& Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioRetryLibrary", "ResetRetryCountPure");
-
-	Params::ModioRetryLibrary_ResetRetryCountPure Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Target = std::move(Parms.Target);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioRetryLibrary.Retry
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FModioRetryCounter&              Target                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModioRetryLibrary::Retry(struct FModioRetryCounter& Target)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioRetryLibrary", "Retry");
-
-	Params::ModioRetryLibrary_Retry Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Target = std::move(Parms.Target);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioFocusableWidget.AddFocusPathChangedHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioFocusableWidget::AddFocusPathChangedHandler(const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioFocusableWidget", "AddFocusPathChangedHandler");
-
-	Params::ModioFocusableWidget_AddFocusPathChangedHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioFocusableWidget.RemoveFocusPathChangedHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioFocusableWidget::RemoveFocusPathChangedHandler(const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioFocusableWidget", "RemoveFocusPathChangedHandler");
-
-	Params::ModioFocusableWidget_RemoveFocusPathChangedHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioFocusableWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// EUINavigation                           NavigationType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* IModioFocusableWidget::GetWidgetToFocus(EUINavigation NavigationType) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioFocusableWidget", "GetWidgetToFocus");
-
-	Params::ModioFocusableWidget_GetWidgetToFocus Parms{};
-
-	Parms.NavigationType = NavigationType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioGalleryImageUIDetails.GetImage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FModioImageWrapper               ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FModioImageWrapper IModioGalleryImageUIDetails::GetImage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioGalleryImageUIDetails", "GetImage");
-
-	Params::ModioGalleryImageUIDetails_GetImage Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioGalleryImageUIDetails.GetIndex
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 IModioGalleryImageUIDetails::GetIndex()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioGalleryImageUIDetails", "GetIndex");
-
-	Params::ModioGalleryImageUIDetails_GetIndex Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModDependencyUIDetails.GetModDependency
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FModioModDependency              ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FModioModDependency IModioModDependencyUIDetails::GetModDependency()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModDependencyUIDetails", "GetModDependency");
-
-	Params::ModioModDependencyUIDetails_GetModDependency Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModDependencyUIDetails.GetModID
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FModioModID                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FModioModID IModioModDependencyUIDetails::GetModID()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModDependencyUIDetails", "GetModID");
-
-	Params::ModioModDependencyUIDetails_GetModID Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModFilterUIDetails.GetFilterName
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FText&                            Name_0                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IModioModFilterUIDetails::GetFilterName(class FText& Name_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModFilterUIDetails", "GetFilterName");
-
-	Params::ModioModFilterUIDetails_GetFilterName Parms{};
-
-	Parms.Name_0 = std::move(Name_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Name_0 = std::move(Parms.Name_0);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModFilterUIDetails.GetFilterParams
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FModioFilterParams               ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FModioFilterParams IModioModFilterUIDetails::GetFilterParams()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModFilterUIDetails", "GetFilterParams");
-
-	Params::ModioModFilterUIDetails_GetFilterParams Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagSelector.GetMenuToggleClickableWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TScriptInterface<class IModioUIClickableWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TScriptInterface<class IModioUIClickableWidget> UModioModTagSelector::GetMenuToggleClickableWidget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelector", "GetMenuToggleClickableWidget");
-
-	Params::ModioModTagSelector_GetMenuToggleClickableWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagSelector.GetSelectorMenuWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TScriptInterface<class IModioUIModTagSelector>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TScriptInterface<class IModioUIModTagSelector> UModioModTagSelector::GetSelectorMenuWidget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioModTagSelector", "GetSelectorMenuWidget");
-
-	Params::ModioModTagSelector_GetSelectorMenuWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModInfoUIDetails.GetFullModInfo
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FModioModInfo                    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FModioModInfo IModioModInfoUIDetails::GetFullModInfo()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModInfoUIDetails", "GetFullModInfo");
-
-	Params::ModioModInfoUIDetails_GetFullModInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModInfoUIDetails.GetModID
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FModioModID                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FModioModID IModioModInfoUIDetails::GetModID()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModInfoUIDetails", "GetModID");
-
-	Params::ModioModInfoUIDetails_GetModID Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagUIDetails.GetLocalizedText
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText IModioModTagUIDetails::GetLocalizedText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "GetLocalizedText");
-
-	Params::ModioModTagUIDetails_GetLocalizedText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagUIDetails.GetRawStringValue
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString IModioModTagUIDetails::GetRawStringValue()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "GetRawStringValue");
-
-	Params::ModioModTagUIDetails_GetRawStringValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagUIDetails.GetSelectionState
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IModioModTagUIDetails::GetSelectionState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "GetSelectionState");
-
-	Params::ModioModTagUIDetails_GetSelectionState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioModTagUIDetails.SetSelectionState
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bNewSelectionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioModTagUIDetails::SetSelectionState(bool bNewSelectionState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "SetSelectionState");
-
-	Params::ModioModTagUIDetails_SetSelectionState Parms{};
-
-	Parms.bNewSelectionState = bNewSelectionState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function ModioUICore.PropertyOverridesLibrary.ApplyClassPathOverride
 // (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -1701,6 +869,532 @@ ETextTransformPolicy UPropertyOverridesLibrary::ResolveTextTransformOverrideAsEx
 }
 
 
+// Function ModioUICore.ModioActivatableWidget.Activate
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IModioActivatableWidget::Activate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "Activate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioActivatableWidget.AddActivationChangedHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioActivatableWidget::AddActivationChangedHandler(const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "AddActivationChangedHandler");
+
+	Params::ModioActivatableWidget_AddActivationChangedHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioActivatableWidget.Deactivate
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IModioActivatableWidget::Deactivate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "Deactivate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioActivatableWidget.RemoveActivationChangedHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioActivatableWidget::RemoveActivationChangedHandler(const TDelegate<void(class UObject* ActivationContext, bool bIsActivated)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioActivatableWidget", "RemoveActivationChangedHandler");
+
+	Params::ModioActivatableWidget_RemoveActivationChangedHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioEnumEntryUIDetails.GetEnumEntryDetails
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// uint8*                                  EnumValue                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText*                            EnumValueDisplayText                                   (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void IModioEnumEntryUIDetails::GetEnumEntryDetails(uint8* EnumValue, class FText* EnumValueDisplayText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioEnumEntryUIDetails", "GetEnumEntryDetails");
+
+	Params::ModioEnumEntryUIDetails_GetEnumEntryDetails Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (EnumValue != nullptr)
+		*EnumValue = Parms.EnumValue;
+
+	if (EnumValueDisplayText != nullptr)
+		*EnumValueDisplayText = std::move(Parms.EnumValueDisplayText);
+}
+
+
+// Function ModioUICore.ModioFocusableWidget.AddFocusPathChangedHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioFocusableWidget::AddFocusPathChangedHandler(const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioFocusableWidget", "AddFocusPathChangedHandler");
+
+	Params::ModioFocusableWidget_AddFocusPathChangedHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioFocusableWidget.RemoveFocusPathChangedHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioFocusableWidget::RemoveFocusPathChangedHandler(const TDelegate<void(class UObject* FocusContext, const struct FFocusEvent& InFocusEvent, bool bIsFocused)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioFocusableWidget", "RemoveFocusPathChangedHandler");
+
+	Params::ModioFocusableWidget_RemoveFocusPathChangedHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioFocusableWidget.GetWidgetToFocus
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// EUINavigation                           NavigationType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* IModioFocusableWidget::GetWidgetToFocus(EUINavigation NavigationType) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioFocusableWidget", "GetWidgetToFocus");
+
+	Params::ModioFocusableWidget_GetWidgetToFocus Parms{};
+
+	Parms.NavigationType = NavigationType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioGalleryImageUIDetails.GetImage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioImageWrapper               ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FModioImageWrapper IModioGalleryImageUIDetails::GetImage()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioGalleryImageUIDetails", "GetImage");
+
+	Params::ModioGalleryImageUIDetails_GetImage Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioGalleryImageUIDetails.GetIndex
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 IModioGalleryImageUIDetails::GetIndex()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioGalleryImageUIDetails", "GetIndex");
+
+	Params::ModioGalleryImageUIDetails_GetIndex Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModDependencyUIDetails.GetModDependency
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioModDependency              ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FModioModDependency IModioModDependencyUIDetails::GetModDependency()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModDependencyUIDetails", "GetModDependency");
+
+	Params::ModioModDependencyUIDetails_GetModDependency Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModDependencyUIDetails.GetModID
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioModID                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FModioModID IModioModDependencyUIDetails::GetModID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModDependencyUIDetails", "GetModID");
+
+	Params::ModioModDependencyUIDetails_GetModID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModFilterUIDetails.GetFilterName
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FText&                            Name_0                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IModioModFilterUIDetails::GetFilterName(class FText& Name_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModFilterUIDetails", "GetFilterName");
+
+	Params::ModioModFilterUIDetails_GetFilterName Parms{};
+
+	Parms.Name_0 = std::move(Name_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Name_0 = std::move(Parms.Name_0);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModFilterUIDetails.GetFilterParams
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioFilterParams               ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FModioFilterParams IModioModFilterUIDetails::GetFilterParams()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModFilterUIDetails", "GetFilterParams");
+
+	Params::ModioModFilterUIDetails_GetFilterParams Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioPresetFilterEntryWidget.GetLabelWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUIHasTextWidget> UModioPresetFilterEntryWidget::GetLabelWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioPresetFilterEntryWidget", "GetLabelWidget");
+
+	Params::ModioPresetFilterEntryWidget_GetLabelWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModInfoUIDetails.GetFullModInfo
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioModInfo                    ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FModioModInfo IModioModInfoUIDetails::GetFullModInfo()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModInfoUIDetails", "GetFullModInfo");
+
+	Params::ModioModInfoUIDetails_GetFullModInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModInfoUIDetails.GetModID
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioModID                      ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FModioModID IModioModInfoUIDetails::GetModID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModInfoUIDetails", "GetModID");
+
+	Params::ModioModInfoUIDetails_GetModID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagUIDetails.GetLocalizedText
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText IModioModTagUIDetails::GetLocalizedText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "GetLocalizedText");
+
+	Params::ModioModTagUIDetails_GetLocalizedText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagUIDetails.GetRawStringValue
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString IModioModTagUIDetails::GetRawStringValue()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "GetRawStringValue");
+
+	Params::ModioModTagUIDetails_GetRawStringValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagUIDetails.GetSelectionState
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IModioModTagUIDetails::GetSelectionState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "GetSelectionState");
+
+	Params::ModioModTagUIDetails_GetSelectionState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagUIDetails.SetSelectionState
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bNewSelectionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioModTagUIDetails::SetSelectionState(bool bNewSelectionState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioModTagUIDetails", "SetSelectionState");
+
+	Params::ModioModTagUIDetails_SetSelectionState Parms{};
+
+	Parms.bNewSelectionState = bNewSelectionState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function ModioUICore.ModioModTagCategoryUIDetails.GetAllowMultipleSelection
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1945,24 +1639,27 @@ TArray<class FString> IModioModTagOptionsUIDetails::GetSelectedTags()
 }
 
 
-// Function ModioUICore.ModioTokenPackBrowser.GetTitleTextWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function ModioUICore.ModioRetryLibrary.CanRetry
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioRetryCounter&        Target                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TScriptInterface<class IModioUIHasTextWidget> UModioTokenPackBrowser::GetTitleTextWidget() const
+bool UModioRetryLibrary::CanRetry(const struct FModioRetryCounter& Target)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ModioTokenPackBrowser", "GetTitleTextWidget");
+		Func = StaticClass()->GetFunction("ModioRetryLibrary", "CanRetry");
 
-	Params::ModioTokenPackBrowser_GetTitleTextWidget Parms{};
+	Params::ModioRetryLibrary_CanRetry Parms{};
+
+	Parms.Target = std::move(Target);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -1970,26 +1667,116 @@ TScriptInterface<class IModioUIHasTextWidget> UModioTokenPackBrowser::GetTitleTe
 }
 
 
-// Function ModioUICore.ModioTokenPackBrowser.GetTokenTileViewWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function ModioUICore.ModioRetryLibrary.CanRetryAsExec
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// TScriptInterface<class IModioUITokenPackListInterface>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioRetryCounter&        Target                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TScriptInterface<class IModioUITokenPackListInterface> UModioTokenPackBrowser::GetTokenTileViewWidget() const
+bool UModioRetryLibrary::CanRetryAsExec(const struct FModioRetryCounter& Target)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ModioTokenPackBrowser", "GetTokenTileViewWidget");
+		Func = StaticClass()->GetFunction("ModioRetryLibrary", "CanRetryAsExec");
 
-	Params::ModioTokenPackBrowser_GetTokenTileViewWidget Parms{};
+	Params::ModioRetryLibrary_CanRetryAsExec Parms{};
+
+	Parms.Target = std::move(Target);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioRetryLibrary.ResetRetryCount
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FModioRetryCounter&              Target                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UModioRetryLibrary::ResetRetryCount(struct FModioRetryCounter& Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioRetryLibrary", "ResetRetryCount");
+
+	Params::ModioRetryLibrary_ResetRetryCount Parms{};
+
+	Parms.Target = std::move(Target);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Target = std::move(Parms.Target);
+}
+
+
+// Function ModioUICore.ModioRetryLibrary.ResetRetryCountPure
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// struct FModioRetryCounter&              Target                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FModioRetryCounter               ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FModioRetryCounter UModioRetryLibrary::ResetRetryCountPure(struct FModioRetryCounter& Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioRetryLibrary", "ResetRetryCountPure");
+
+	Params::ModioRetryLibrary_ResetRetryCountPure Parms{};
+
+	Parms.Target = std::move(Target);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Target = std::move(Parms.Target);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioRetryLibrary.Retry
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FModioRetryCounter&              Target                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UModioRetryLibrary::Retry(struct FModioRetryCounter& Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioRetryLibrary", "Retry");
+
+	Params::ModioRetryLibrary_Retry Parms{};
+
+	Parms.Target = std::move(Target);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Target = std::move(Parms.Target);
 
 	return Parms.ReturnValue;
 }
@@ -2201,101 +1988,6 @@ bool IModioToggleableWidget::IsOpen() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioStackedBoolLibrary.PeekBoolValue
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FModioStackedBool&         Target                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool*                                   bDidPeekSuccessfully                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModioStackedBoolLibrary::PeekBoolValue(const struct FModioStackedBool& Target, bool* bDidPeekSuccessfully)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioStackedBoolLibrary", "PeekBoolValue");
-
-	Params::ModioStackedBoolLibrary_PeekBoolValue Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (bDidPeekSuccessfully != nullptr)
-		*bDidPeekSuccessfully = Parms.bDidPeekSuccessfully;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioStackedBoolLibrary.PopBoolValue
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FModioStackedBool&               Target                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool*                                   bDidPopSuccessfully                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModioStackedBoolLibrary::PopBoolValue(struct FModioStackedBool& Target, bool* bDidPopSuccessfully)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioStackedBoolLibrary", "PopBoolValue");
-
-	Params::ModioStackedBoolLibrary_PopBoolValue Parms{};
-
-	Parms.Target = std::move(Target);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Target = std::move(Parms.Target);
-
-	if (bDidPopSuccessfully != nullptr)
-		*bDidPopSuccessfully = Parms.bDidPopSuccessfully;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioStackedBoolLibrary.PushBoolValue
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// struct FModioStackedBool&               Target                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModioStackedBoolLibrary::PushBoolValue(struct FModioStackedBool& Target, bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioStackedBoolLibrary", "PushBoolValue");
-
-	Params::ModioStackedBoolLibrary_PushBoolValue Parms{};
-
-	Parms.Target = std::move(Target);
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	Target = std::move(Parms.Target);
 }
 
 
@@ -2560,19 +2252,44 @@ bool IModioUIBoundActionWidget::TryGetBoundAction(struct FDataTableRowHandle* In
 }
 
 
-// Function ModioUICore.ModioPresetFilterEntryWidget.GetLabelWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Function ModioUICore.ModioTagCounterIcon.GetCounterLabelWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TScriptInterface<class IModioUIHasTextWidget> UModioPresetFilterEntryWidget::GetLabelWidget() const
+TScriptInterface<class IModioUIHasTextWidget> UModioTagCounterIcon::GetCounterLabelWidget()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ModioPresetFilterEntryWidget", "GetLabelWidget");
+		Func = Class->GetFunction("ModioTagCounterIcon", "GetCounterLabelWidget");
 
-	Params::ModioPresetFilterEntryWidget_GetLabelWidget Parms{};
+	Params::ModioTagCounterIcon_GetCounterLabelWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioTagCounterIcon.SynchronizeCounter
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UModioTagCounterIcon::SynchronizeCounter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioTagCounterIcon", "SynchronizeCounter");
+
+	Params::ModioTagCounterIcon_SynchronizeCounter Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2907,6 +2624,56 @@ void IModioUICommonButtonWidget::ConfigureCommonButton(const struct FModioCommon
 }
 
 
+// Function ModioUICore.ModioTokenPackBrowser.GetTitleTextWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUIHasTextWidget> UModioTokenPackBrowser::GetTitleTextWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioTokenPackBrowser", "GetTitleTextWidget");
+
+	Params::ModioTokenPackBrowser_GetTitleTextWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioTokenPackBrowser.GetTokenTileViewWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUITokenPackListInterface>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUITokenPackListInterface> UModioTokenPackBrowser::GetTokenTileViewWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioTokenPackBrowser", "GetTokenTileViewWidget");
+
+	Params::ModioTokenPackBrowser_GetTokenTileViewWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ModioUICore.ModioUIConnectivityChangedReceiver.OnConnectivityChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -2977,53 +2744,98 @@ void UModioUIConnectivityChangedReceiverLibrary::RegisterConnectivityChangedRece
 }
 
 
-// Function ModioUICore.ModioTokenPackUIDetails.GetFullTokenPack
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Function ModioUICore.ModioStackedBoolLibrary.PeekBoolValue
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
-// struct FModioTokenPack                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// const struct FModioStackedBool&         Target                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool*                                   bDidPeekSuccessfully                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FModioTokenPack IModioTokenPackUIDetails::GetFullTokenPack()
+bool UModioStackedBoolLibrary::PeekBoolValue(const struct FModioStackedBool& Target, bool* bDidPeekSuccessfully)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioTokenPackUIDetails", "GetFullTokenPack");
+		Func = StaticClass()->GetFunction("ModioStackedBoolLibrary", "PeekBoolValue");
 
-	Params::ModioTokenPackUIDetails_GetFullTokenPack Parms{};
+	Params::ModioStackedBoolLibrary_PeekBoolValue Parms{};
+
+	Parms.Target = std::move(Target);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	AsUObject()->ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (bDidPeekSuccessfully != nullptr)
+		*bDidPeekSuccessfully = Parms.bDidPeekSuccessfully;
 
 	return Parms.ReturnValue;
 }
 
 
-// Function ModioUICore.ModioTokenPackUIDetails.GetTokenPackID
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Function ModioUICore.ModioStackedBoolLibrary.PopBoolValue
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FModioTokenPackID                ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FModioStackedBool&               Target                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool*                                   bDidPopSuccessfully                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FModioTokenPackID IModioTokenPackUIDetails::GetTokenPackID()
+bool UModioStackedBoolLibrary::PopBoolValue(struct FModioStackedBool& Target, bool* bDidPopSuccessfully)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioTokenPackUIDetails", "GetTokenPackID");
+		Func = StaticClass()->GetFunction("ModioStackedBoolLibrary", "PopBoolValue");
 
-	Params::ModioTokenPackUIDetails_GetTokenPackID Parms{};
+	Params::ModioStackedBoolLibrary_PopBoolValue Parms{};
+
+	Parms.Target = std::move(Target);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	AsUObject()->ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
+	Target = std::move(Parms.Target);
+
+	if (bDidPopSuccessfully != nullptr)
+		*bDidPopSuccessfully = Parms.bDidPopSuccessfully;
+
 	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioStackedBoolLibrary.PushBoolValue
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FModioStackedBool&               Target                                                 (Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModioStackedBoolLibrary::PushBoolValue(struct FModioStackedBool& Target, bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioStackedBoolLibrary", "PushBoolValue");
+
+	Params::ModioStackedBoolLibrary_PushBoolValue Parms{};
+
+	Parms.Target = std::move(Target);
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	Target = std::move(Parms.Target);
 }
 
 
@@ -3318,56 +3130,6 @@ void IModioUIDialog::ShowModal(bool bFocusCancelButton)
 	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioTagCounterIcon.GetCounterLabelWidget
-// (Native, Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TScriptInterface<class IModioUIHasTextWidget> UModioTagCounterIcon::GetCounterLabelWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioTagCounterIcon", "GetCounterLabelWidget");
-
-	Params::ModioTagCounterIcon_GetCounterLabelWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioTagCounterIcon.SynchronizeCounter
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UModioTagCounterIcon::SynchronizeCounter()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModioTagCounterIcon", "SynchronizeCounter");
-
-	Params::ModioTagCounterIcon_SynchronizeCounter Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -3812,602 +3574,6 @@ void IModioUIHasTooltipWidget::SetTooltipEnabledState(bool bNewEnabledState)
 	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIHoverableWidget.AddHoverStateChangedHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIHoverableWidget::AddHoverStateChangedHandler(const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "AddHoverStateChangedHandler");
-
-	Params::ModioUIHoverableWidget_AddHoverStateChangedHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIHoverableWidget.DisableHoverEvents
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IModioUIHoverableWidget::DisableHoverEvents()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "DisableHoverEvents");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIHoverableWidget.EnableHoverEvents
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IModioUIHoverableWidget::EnableHoverEvents()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "EnableHoverEvents");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIHoverableWidget.RemoveHoverStateChangedHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIHoverableWidget::RemoveHoverStateChangedHandler(const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "RemoveHoverStateChangedHandler");
-
-	Params::ModioUIHoverableWidget_RemoveHoverStateChangedHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIImageDisplayWidget.AddImageLoadEventHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIImageDisplayWidget::AddImageLoadEventHandler(const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "AddImageLoadEventHandler");
-
-	Params::ModioUIImageDisplayWidget_AddImageLoadEventHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIImageDisplayWidget.BeginLoadImageFromFile
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FModioImageWrapper&        Image                                                  (Parm, NativeAccessSpecifierPublic)
-
-void IModioUIImageDisplayWidget::BeginLoadImageFromFile(const struct FModioImageWrapper& Image)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "BeginLoadImageFromFile");
-
-	Params::ModioUIImageDisplayWidget_BeginLoadImageFromFile Parms{};
-
-	Parms.Image = std::move(Image);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIImageDisplayWidget.RemoveImageLoadEventHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIImageDisplayWidget::RemoveImageLoadEventHandler(const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "RemoveImageLoadEventHandler");
-
-	Params::ModioUIImageDisplayWidget_RemoveImageLoadEventHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushDirectly
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FSlateBrush&               NewBrush                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void IModioUIImageDisplayWidget::SetBrushDirectly(const struct FSlateBrush& NewBrush)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "SetBrushDirectly");
-
-	Params::ModioUIImageDisplayWidget_SetBrushDirectly Parms{};
-
-	Parms.NewBrush = std::move(NewBrush);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushMatchTextureSize
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bMatchTextureSize                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIImageDisplayWidget::SetBrushMatchTextureSize(bool bMatchTextureSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "SetBrushMatchTextureSize");
-
-	Params::ModioUIImageDisplayWidget_SetBrushMatchTextureSize Parms{};
-
-	Parms.bMatchTextureSize = bMatchTextureSize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIImageDisplayWidget.SetDesiredBrushSize
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector2D&                 DesiredSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIImageDisplayWidget::SetDesiredBrushSize(const struct FVector2D& DesiredSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "SetDesiredBrushSize");
-
-	Params::ModioUIImageDisplayWidget_SetDesiredBrushSize Parms{};
-
-	Parms.DesiredSize = std::move(DesiredSize);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModCreatorAvatarDownloadCompleted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
-// const struct FModioOptionalImage&       Image                                                  (Parm, NativeAccessSpecifierPublic)
-
-void IModioUIMediaDownloadCompletedReceiver::OnModCreatorAvatarDownloadCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalImage& Image)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIMediaDownloadCompletedReceiver", "OnModCreatorAvatarDownloadCompleted");
-
-	Params::ModioUIMediaDownloadCompletedReceiver_OnModCreatorAvatarDownloadCompleted Parms{};
-
-	Parms.ModId = std::move(ModId);
-	Parms.ErrorCode = std::move(ErrorCode);
-	Parms.Image = std::move(Image);
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModGalleryImageDownloadCompleted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
-// int32                                   ImageIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioOptionalImage&       Image                                                  (Parm, NativeAccessSpecifierPublic)
-
-void IModioUIMediaDownloadCompletedReceiver::OnModGalleryImageDownloadCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, int32 ImageIndex, const struct FModioOptionalImage& Image)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIMediaDownloadCompletedReceiver", "OnModGalleryImageDownloadCompleted");
-
-	Params::ModioUIMediaDownloadCompletedReceiver_OnModGalleryImageDownloadCompleted Parms{};
-
-	Parms.ModId = std::move(ModId);
-	Parms.ErrorCode = std::move(ErrorCode);
-	Parms.ImageIndex = ImageIndex;
-	Parms.Image = std::move(Image);
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModLogoDownloadCompleted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
-// const struct FModioOptionalImage&       Image                                                  (Parm, NativeAccessSpecifierPublic)
-// EModioLogoSize                          LogoSize                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIMediaDownloadCompletedReceiver::OnModLogoDownloadCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalImage& Image, EModioLogoSize LogoSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIMediaDownloadCompletedReceiver", "OnModLogoDownloadCompleted");
-
-	Params::ModioUIMediaDownloadCompletedReceiver_OnModLogoDownloadCompleted Parms{};
-
-	Parms.ModId = std::move(ModId);
-	Parms.ErrorCode = std::move(ErrorCode);
-	Parms.Image = std::move(Image);
-	Parms.LogoSize = LogoSize;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.DeregisterMediaDownloadCompletedReceiver
-// (Final, Native, Static, Private, BlueprintCallable)
-// Parameters:
-// class UObject*                          ObjectToDeregister                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EModioUIMediaDownloadEventType          DownloadTypes                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModioUIMediaDownloadCompletedReceiverLibrary::DeregisterMediaDownloadCompletedReceiver(class UObject* ObjectToDeregister, EModioUIMediaDownloadEventType DownloadTypes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioUIMediaDownloadCompletedReceiverLibrary", "DeregisterMediaDownloadCompletedReceiver");
-
-	Params::ModioUIMediaDownloadCompletedReceiverLibrary_DeregisterMediaDownloadCompletedReceiver Parms{};
-
-	Parms.ObjectToDeregister = ObjectToDeregister;
-	Parms.DownloadTypes = DownloadTypes;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.RegisterMediaDownloadCompletedReceiver
-// (Final, Native, Static, Private, BlueprintCallable)
-// Parameters:
-// class UObject*                          ObjectToRegister                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EModioUIMediaDownloadEventType          DownloadTypes                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModioUIMediaDownloadCompletedReceiverLibrary::RegisterMediaDownloadCompletedReceiver(class UObject* ObjectToRegister, EModioUIMediaDownloadEventType DownloadTypes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioUIMediaDownloadCompletedReceiverLibrary", "RegisterMediaDownloadCompletedReceiver");
-
-	Params::ModioUIMediaDownloadCompletedReceiverLibrary_RegisterMediaDownloadCompletedReceiver Parms{};
-
-	Parms.ObjectToRegister = ObjectToRegister;
-	Parms.DownloadTypes = DownloadTypes;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateChangedReceiver.OnModEnabledStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewEnabledState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIModEnabledStateChangedReceiver::OnModEnabledStateChanged(const struct FModioModID& ModId, bool bNewEnabledState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateChangedReceiver", "OnModEnabledStateChanged");
-
-	Params::ModioUIModEnabledStateChangedReceiver_OnModEnabledStateChanged Parms{};
-
-	Parms.ModId = std::move(ModId);
-	Parms.bNewEnabledState = bNewEnabledState;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.DeregisterModEnabledStateChangedReceiver
-// (Final, Native, Static, Private, BlueprintCallable)
-// Parameters:
-// class UObject*                          ObjectToDeregister                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModioUIModEnabledStateChangedReceiverLibrary::DeregisterModEnabledStateChangedReceiver(class UObject* ObjectToDeregister)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioUIModEnabledStateChangedReceiverLibrary", "DeregisterModEnabledStateChangedReceiver");
-
-	Params::ModioUIModEnabledStateChangedReceiverLibrary_DeregisterModEnabledStateChangedReceiver Parms{};
-
-	Parms.ObjectToDeregister = ObjectToDeregister;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.RegisterModEnabledStateChangedReceiver
-// (Final, Native, Static, Private, BlueprintCallable)
-// Parameters:
-// class UObject*                          ObjectToRegister                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModioUIModEnabledStateChangedReceiverLibrary::RegisterModEnabledStateChangedReceiver(class UObject* ObjectToRegister)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioUIModEnabledStateChangedReceiverLibrary", "RegisterModEnabledStateChangedReceiver");
-
-	Params::ModioUIModEnabledStateChangedReceiverLibrary_RegisterModEnabledStateChangedReceiver Parms{};
-
-	Parms.ObjectToRegister = ObjectToRegister;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.AddModEnabledStateChangeHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(int64 RawID, bool bNewEnabledState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIModEnabledStateProvider::AddModEnabledStateChangeHandler(const TDelegate<void(int64 RawID, bool bNewEnabledState)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "AddModEnabledStateChangeHandler");
-
-	Params::ModioUIModEnabledStateProvider_AddModEnabledStateChangeHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.QueryIsModEnabled
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IModioUIModEnabledStateProvider::QueryIsModEnabled(const struct FModioModID& ModId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "QueryIsModEnabled");
-
-	Params::ModioUIModEnabledStateProvider_QueryIsModEnabled Parms{};
-
-	Parms.ModId = std::move(ModId);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.RemoveModEnabledStateChangeHandler
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void(int64 RawID, bool bNewEnabledState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IModioUIModEnabledStateProvider::RemoveModEnabledStateChangeHandler(const TDelegate<void(int64 RawID, bool bNewEnabledState)>& Handler)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "RemoveModEnabledStateChangeHandler");
-
-	Params::ModioUIModEnabledStateProvider_RemoveModEnabledStateChangeHandler Parms{};
-
-	Parms.Handler = Handler;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIModEnabledStateProvider.RequestModEnabledStateChange
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ID                                                     (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewEnabledState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IModioUIModEnabledStateProvider::RequestModEnabledStateChange(const struct FModioModID& ID, bool bNewEnabledState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "RequestModEnabledStateChange");
-
-	Params::ModioUIModEnabledStateProvider_RequestModEnabledStateChange Parms{};
-
-	Parms.ID = std::move(ID);
-	Parms.bNewEnabledState = bNewEnabledState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioUIModInfoReceiver.OnListAllModsRequestCompleted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const class FString&                    RequestIdentifier                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
-// const struct FModioOptionalModInfoList& List                                                   (Parm, NativeAccessSpecifierPublic)
-
-void IModioUIModInfoReceiver::OnListAllModsRequestCompleted(const class FString& RequestIdentifier, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalModInfoList& List)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModInfoReceiver", "OnListAllModsRequestCompleted");
-
-	Params::ModioUIModInfoReceiver_OnListAllModsRequestCompleted Parms{};
-
-	Parms.RequestIdentifier = std::move(RequestIdentifier);
-	Parms.ErrorCode = std::move(ErrorCode);
-	Parms.List = std::move(List);
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function ModioUICore.ModioUIModInfoReceiver.OnModInfoRequestCompleted
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
-// const struct FModioOptionalModInfo&     Info                                                   (Parm, NativeAccessSpecifierPublic)
-
-void IModioUIModInfoReceiver::OnModInfoRequestCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalModInfo& Info)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ModioUIModInfoReceiver", "OnModInfoRequestCompleted");
-
-	Params::ModioUIModInfoReceiver_OnModInfoRequestCompleted Parms{};
-
-	Parms.ModId = std::move(ModId);
-	Parms.ErrorCode = std::move(ErrorCode);
-	Parms.Info = std::move(Info);
-
-	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -5254,6 +4420,602 @@ void UModioUISubsystem::UnsubscribeHandler(const struct FModioErrorCode& ErrorCo
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIHoverableWidget.AddHoverStateChangedHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIHoverableWidget::AddHoverStateChangedHandler(const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "AddHoverStateChangedHandler");
+
+	Params::ModioUIHoverableWidget_AddHoverStateChangedHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIHoverableWidget.DisableHoverEvents
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IModioUIHoverableWidget::DisableHoverEvents()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "DisableHoverEvents");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIHoverableWidget.EnableHoverEvents
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IModioUIHoverableWidget::EnableHoverEvents()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "EnableHoverEvents");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIHoverableWidget.RemoveHoverStateChangedHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIHoverableWidget::RemoveHoverStateChangedHandler(const TDelegate<void(class UObject* HoverContext, bool bHoveredState)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIHoverableWidget", "RemoveHoverStateChangedHandler");
+
+	Params::ModioUIHoverableWidget_RemoveHoverStateChangedHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIImageDisplayWidget.AddImageLoadEventHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIImageDisplayWidget::AddImageLoadEventHandler(const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "AddImageLoadEventHandler");
+
+	Params::ModioUIImageDisplayWidget_AddImageLoadEventHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIImageDisplayWidget.BeginLoadImageFromFile
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FModioImageWrapper&        Image                                                  (Parm, NativeAccessSpecifierPublic)
+
+void IModioUIImageDisplayWidget::BeginLoadImageFromFile(const struct FModioImageWrapper& Image)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "BeginLoadImageFromFile");
+
+	Params::ModioUIImageDisplayWidget_BeginLoadImageFromFile Parms{};
+
+	Parms.Image = std::move(Image);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIImageDisplayWidget.RemoveImageLoadEventHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIImageDisplayWidget::RemoveImageLoadEventHandler(const TDelegate<void(class UObject* LoadContext, bool bLoadSuccess)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "RemoveImageLoadEventHandler");
+
+	Params::ModioUIImageDisplayWidget_RemoveImageLoadEventHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushDirectly
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FSlateBrush&               NewBrush                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void IModioUIImageDisplayWidget::SetBrushDirectly(const struct FSlateBrush& NewBrush)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "SetBrushDirectly");
+
+	Params::ModioUIImageDisplayWidget_SetBrushDirectly Parms{};
+
+	Parms.NewBrush = std::move(NewBrush);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIImageDisplayWidget.SetBrushMatchTextureSize
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bMatchTextureSize                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIImageDisplayWidget::SetBrushMatchTextureSize(bool bMatchTextureSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "SetBrushMatchTextureSize");
+
+	Params::ModioUIImageDisplayWidget_SetBrushMatchTextureSize Parms{};
+
+	Parms.bMatchTextureSize = bMatchTextureSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIImageDisplayWidget.SetDesiredBrushSize
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector2D&                 DesiredSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIImageDisplayWidget::SetDesiredBrushSize(const struct FVector2D& DesiredSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIImageDisplayWidget", "SetDesiredBrushSize");
+
+	Params::ModioUIImageDisplayWidget_SetDesiredBrushSize Parms{};
+
+	Parms.DesiredSize = std::move(DesiredSize);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModCreatorAvatarDownloadCompleted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
+// const struct FModioOptionalImage&       Image                                                  (Parm, NativeAccessSpecifierPublic)
+
+void IModioUIMediaDownloadCompletedReceiver::OnModCreatorAvatarDownloadCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalImage& Image)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIMediaDownloadCompletedReceiver", "OnModCreatorAvatarDownloadCompleted");
+
+	Params::ModioUIMediaDownloadCompletedReceiver_OnModCreatorAvatarDownloadCompleted Parms{};
+
+	Parms.ModId = std::move(ModId);
+	Parms.ErrorCode = std::move(ErrorCode);
+	Parms.Image = std::move(Image);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModGalleryImageDownloadCompleted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
+// int32                                   ImageIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioOptionalImage&       Image                                                  (Parm, NativeAccessSpecifierPublic)
+
+void IModioUIMediaDownloadCompletedReceiver::OnModGalleryImageDownloadCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, int32 ImageIndex, const struct FModioOptionalImage& Image)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIMediaDownloadCompletedReceiver", "OnModGalleryImageDownloadCompleted");
+
+	Params::ModioUIMediaDownloadCompletedReceiver_OnModGalleryImageDownloadCompleted Parms{};
+
+	Parms.ModId = std::move(ModId);
+	Parms.ErrorCode = std::move(ErrorCode);
+	Parms.ImageIndex = ImageIndex;
+	Parms.Image = std::move(Image);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiver.OnModLogoDownloadCompleted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
+// const struct FModioOptionalImage&       Image                                                  (Parm, NativeAccessSpecifierPublic)
+// EModioLogoSize                          LogoSize                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIMediaDownloadCompletedReceiver::OnModLogoDownloadCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalImage& Image, EModioLogoSize LogoSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIMediaDownloadCompletedReceiver", "OnModLogoDownloadCompleted");
+
+	Params::ModioUIMediaDownloadCompletedReceiver_OnModLogoDownloadCompleted Parms{};
+
+	Parms.ModId = std::move(ModId);
+	Parms.ErrorCode = std::move(ErrorCode);
+	Parms.Image = std::move(Image);
+	Parms.LogoSize = LogoSize;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.DeregisterMediaDownloadCompletedReceiver
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UObject*                          ObjectToDeregister                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EModioUIMediaDownloadEventType          DownloadTypes                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModioUIMediaDownloadCompletedReceiverLibrary::DeregisterMediaDownloadCompletedReceiver(class UObject* ObjectToDeregister, EModioUIMediaDownloadEventType DownloadTypes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioUIMediaDownloadCompletedReceiverLibrary", "DeregisterMediaDownloadCompletedReceiver");
+
+	Params::ModioUIMediaDownloadCompletedReceiverLibrary_DeregisterMediaDownloadCompletedReceiver Parms{};
+
+	Parms.ObjectToDeregister = ObjectToDeregister;
+	Parms.DownloadTypes = DownloadTypes;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIMediaDownloadCompletedReceiverLibrary.RegisterMediaDownloadCompletedReceiver
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UObject*                          ObjectToRegister                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EModioUIMediaDownloadEventType          DownloadTypes                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModioUIMediaDownloadCompletedReceiverLibrary::RegisterMediaDownloadCompletedReceiver(class UObject* ObjectToRegister, EModioUIMediaDownloadEventType DownloadTypes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioUIMediaDownloadCompletedReceiverLibrary", "RegisterMediaDownloadCompletedReceiver");
+
+	Params::ModioUIMediaDownloadCompletedReceiverLibrary_RegisterMediaDownloadCompletedReceiver Parms{};
+
+	Parms.ObjectToRegister = ObjectToRegister;
+	Parms.DownloadTypes = DownloadTypes;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateChangedReceiver.OnModEnabledStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewEnabledState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIModEnabledStateChangedReceiver::OnModEnabledStateChanged(const struct FModioModID& ModId, bool bNewEnabledState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateChangedReceiver", "OnModEnabledStateChanged");
+
+	Params::ModioUIModEnabledStateChangedReceiver_OnModEnabledStateChanged Parms{};
+
+	Parms.ModId = std::move(ModId);
+	Parms.bNewEnabledState = bNewEnabledState;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.DeregisterModEnabledStateChangedReceiver
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UObject*                          ObjectToDeregister                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModioUIModEnabledStateChangedReceiverLibrary::DeregisterModEnabledStateChangedReceiver(class UObject* ObjectToDeregister)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioUIModEnabledStateChangedReceiverLibrary", "DeregisterModEnabledStateChangedReceiver");
+
+	Params::ModioUIModEnabledStateChangedReceiverLibrary_DeregisterModEnabledStateChangedReceiver Parms{};
+
+	Parms.ObjectToDeregister = ObjectToDeregister;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateChangedReceiverLibrary.RegisterModEnabledStateChangedReceiver
+// (Final, Native, Static, Private, BlueprintCallable)
+// Parameters:
+// class UObject*                          ObjectToRegister                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModioUIModEnabledStateChangedReceiverLibrary::RegisterModEnabledStateChangedReceiver(class UObject* ObjectToRegister)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioUIModEnabledStateChangedReceiverLibrary", "RegisterModEnabledStateChangedReceiver");
+
+	Params::ModioUIModEnabledStateChangedReceiverLibrary_RegisterModEnabledStateChangedReceiver Parms{};
+
+	Parms.ObjectToRegister = ObjectToRegister;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.AddModEnabledStateChangeHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(int64 RawID, bool bNewEnabledState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIModEnabledStateProvider::AddModEnabledStateChangeHandler(const TDelegate<void(int64 RawID, bool bNewEnabledState)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "AddModEnabledStateChangeHandler");
+
+	Params::ModioUIModEnabledStateProvider_AddModEnabledStateChangeHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.QueryIsModEnabled
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IModioUIModEnabledStateProvider::QueryIsModEnabled(const struct FModioModID& ModId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "QueryIsModEnabled");
+
+	Params::ModioUIModEnabledStateProvider_QueryIsModEnabled Parms{};
+
+	Parms.ModId = std::move(ModId);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.RemoveModEnabledStateChangeHandler
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const TDelegate<void(int64 RawID, bool bNewEnabledState)>&Handler                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IModioUIModEnabledStateProvider::RemoveModEnabledStateChangeHandler(const TDelegate<void(int64 RawID, bool bNewEnabledState)>& Handler)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "RemoveModEnabledStateChangeHandler");
+
+	Params::ModioUIModEnabledStateProvider_RemoveModEnabledStateChangeHandler Parms{};
+
+	Parms.Handler = Handler;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioUIModEnabledStateProvider.RequestModEnabledStateChange
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ID                                                     (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewEnabledState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IModioUIModEnabledStateProvider::RequestModEnabledStateChange(const struct FModioModID& ID, bool bNewEnabledState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModEnabledStateProvider", "RequestModEnabledStateChange");
+
+	Params::ModioUIModEnabledStateProvider_RequestModEnabledStateChange Parms{};
+
+	Parms.ID = std::move(ID);
+	Parms.bNewEnabledState = bNewEnabledState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioUIModInfoReceiver.OnListAllModsRequestCompleted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class FString&                    RequestIdentifier                                      (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
+// const struct FModioOptionalModInfoList& List                                                   (Parm, NativeAccessSpecifierPublic)
+
+void IModioUIModInfoReceiver::OnListAllModsRequestCompleted(const class FString& RequestIdentifier, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalModInfoList& List)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModInfoReceiver", "OnListAllModsRequestCompleted");
+
+	Params::ModioUIModInfoReceiver_OnListAllModsRequestCompleted Parms{};
+
+	Parms.RequestIdentifier = std::move(RequestIdentifier);
+	Parms.ErrorCode = std::move(ErrorCode);
+	Parms.List = std::move(List);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function ModioUICore.ModioUIModInfoReceiver.OnModInfoRequestCompleted
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const struct FModioModID&               ModId                                                  (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioErrorCode&           ErrorCode                                              (Parm, NativeAccessSpecifierPublic)
+// const struct FModioOptionalModInfo&     Info                                                   (Parm, NativeAccessSpecifierPublic)
+
+void IModioUIModInfoReceiver::OnModInfoRequestCompleted(const struct FModioModID& ModId, const struct FModioErrorCode& ErrorCode, const struct FModioOptionalModInfo& Info)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioUIModInfoReceiver", "OnModInfoRequestCompleted");
+
+	Params::ModioUIModInfoReceiver_OnModInfoRequestCompleted Parms{};
+
+	Parms.ModId = std::move(ModId);
+	Parms.ErrorCode = std::move(ErrorCode);
+	Parms.Info = std::move(Info);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -8714,6 +8476,63 @@ void UModioDefaultScrollBox::UpdateNavigationData(int32 PendingScrollOffset)
 }
 
 
+// Function ModioUICore.ModioUIComponentStatics.GetAllComponentMetadata
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const TMap<EModioUIComponentID, struct FModioUIComponentMetadata>ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TMap<EModioUIComponentID, struct FModioUIComponentMetadata> UModioUIComponentStatics::GetAllComponentMetadata()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioUIComponentStatics", "GetAllComponentMetadata");
+
+	Params::ModioUIComponentStatics_GetAllComponentMetadata Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioUIComponentStatics.GetMetadataForComponent
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// EModioUIComponentID                     ComponentType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bComponentTypeFound                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FModioUIComponentMetadata  ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const struct FModioUIComponentMetadata UModioUIComponentStatics::GetMetadataForComponent(EModioUIComponentID ComponentType, bool* bComponentTypeFound)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ModioUIComponentStatics", "GetMetadataForComponent");
+
+	Params::ModioUIComponentStatics_GetMetadataForComponent Parms{};
+
+	Parms.ComponentType = ComponentType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (bComponentTypeFound != nullptr)
+		*bComponentTypeFound = Parms.bComponentTypeFound;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ModioUICore.ModioDefaultTagWidget.GetLabelWidget
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -8833,6 +8652,56 @@ struct FModioDialogButtonInfo IModioDialogButtonUIDetails::GetDialogButtonInfo()
 }
 
 
+// Function ModioUICore.ModioTokenPackUIDetails.GetFullTokenPack
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioTokenPack                  ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FModioTokenPack IModioTokenPackUIDetails::GetFullTokenPack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioTokenPackUIDetails", "GetFullTokenPack");
+
+	Params::ModioTokenPackUIDetails_GetFullTokenPack Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioTokenPackUIDetails.GetTokenPackID
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FModioTokenPackID                ReturnValue                                            (Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FModioTokenPackID IModioTokenPackUIDetails::GetTokenPackID()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("ModioTokenPackUIDetails", "GetTokenPackID");
+
+	Params::ModioTokenPackUIDetails_GetTokenPackID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ModioUICore.ModioDropdownAnchor.ModioHandleMenuOpenChanged
 // (Native, Protected)
 // Parameters:
@@ -8855,63 +8724,6 @@ void UModioDropdownAnchor::ModioHandleMenuOpenChanged(bool bIsOpen)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function ModioUICore.ModioUIComponentStatics.GetAllComponentMetadata
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const TMap<EModioUIComponentID, struct FModioUIComponentMetadata>ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TMap<EModioUIComponentID, struct FModioUIComponentMetadata> UModioUIComponentStatics::GetAllComponentMetadata()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioUIComponentStatics", "GetAllComponentMetadata");
-
-	Params::ModioUIComponentStatics_GetAllComponentMetadata Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ModioUICore.ModioUIComponentStatics.GetMetadataForComponent
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// EModioUIComponentID                     ComponentType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool*                                   bComponentTypeFound                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FModioUIComponentMetadata  ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const struct FModioUIComponentMetadata UModioUIComponentStatics::GetMetadataForComponent(EModioUIComponentID ComponentType, bool* bComponentTypeFound)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ModioUIComponentStatics", "GetMetadataForComponent");
-
-	Params::ModioUIComponentStatics_GetMetadataForComponent Parms{};
-
-	Parms.ComponentType = ComponentType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (bComponentTypeFound != nullptr)
-		*bComponentTypeFound = Parms.bComponentTypeFound;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -10697,6 +10509,56 @@ TScriptInterface<class IModioUIObjectListWidget> UModioModTagDisplay::GetTagCont
 }
 
 
+// Function ModioUICore.ModioModTagSelector.GetMenuToggleClickableWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUIClickableWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUIClickableWidget> UModioModTagSelector::GetMenuToggleClickableWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelector", "GetMenuToggleClickableWidget");
+
+	Params::ModioModTagSelector_GetMenuToggleClickableWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagSelector.GetSelectorMenuWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUIModTagSelector>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUIModTagSelector> UModioModTagSelector::GetSelectorMenuWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelector", "GetSelectorMenuWidget");
+
+	Params::ModioModTagSelector_GetSelectorMenuWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function ModioUICore.ModioModTagSelectorCategory.GetCategoryTagListWidget
 // (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -10735,6 +10597,144 @@ TScriptInterface<class IModioUIHasTextWidget> UModioModTagSelectorCategory::GetT
 		Func = Class->GetFunction("ModioModTagSelectorCategory", "GetTagCategoryLabel");
 
 	Params::ModioModTagSelectorCategory_GetTagCategoryLabel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagSelectorEntry.NotifyClicked
+// (Final, Native, Protected, BlueprintCallable)
+
+void UModioModTagSelectorEntry::NotifyClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelectorEntry", "NotifyClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioModTagSelectorEntry.NotifySelectionChanged
+// (Final, Native, Protected, BlueprintCallable)
+
+void UModioModTagSelectorEntry::NotifySelectionChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelectorEntry", "NotifySelectionChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioModTagSelectorEntry.OnTagEntryClicked
+// (Final, Native, Protected)
+// Parameters:
+// class UObject*                          ClickedObject                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModioModTagSelectorEntry::OnTagEntryClicked(class UObject* ClickedObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelectorEntry", "OnTagEntryClicked");
+
+	Params::ModioModTagSelectorEntry_OnTagEntryClicked Parms{};
+
+	Parms.ClickedObject = ClickedObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function ModioUICore.ModioModTagSelectorEntry.GetClickableWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUIClickableWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUIClickableWidget> UModioModTagSelectorEntry::GetClickableWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelectorEntry", "GetClickableWidget");
+
+	Params::ModioModTagSelectorEntry_GetClickableWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagSelectorEntry.GetSelectionWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUISelectableWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUISelectableWidget> UModioModTagSelectorEntry::GetSelectionWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelectorEntry", "GetSelectionWidget");
+
+	Params::ModioModTagSelectorEntry_GetSelectionWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ModioUICore.ModioModTagSelectorEntry.GetTagLabelWidget
+// (Native, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TScriptInterface<class IModioUIHasTextWidget>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TScriptInterface<class IModioUIHasTextWidget> UModioModTagSelectorEntry::GetTagLabelWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModioModTagSelectorEntry", "GetTagLabelWidget");
+
+	Params::ModioModTagSelectorEntry_GetTagLabelWidget Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

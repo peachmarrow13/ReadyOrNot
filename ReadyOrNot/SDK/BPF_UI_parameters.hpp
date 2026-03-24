@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "ReadyOrNot_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "CommonInput_structs.hpp"
-#include "E_CustomizationGroups_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
 #include "Slate_structs.hpp"
+#include "E_CustomizationGroups_structs.hpp"
 
 
 namespace SDK::Params
@@ -541,6 +541,66 @@ public:
 	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x00DC(0x0014)()
 };
 DUMPER7_ASSERTS_BPF_UI_C_GetTeamColorByEquippingSwatEnum;
+
+// Function BPF_UI.BPF_UI_C.GetWeaponClassText
+// 0x0150 (0x0150 - 0x0000)
+struct BPF_UI_C_GetWeaponClassText final
+{
+public:
+	EWeaponSubclass                               ItemCategory;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Category_Text;                                     // 0x0010(0x0018)(Parm, OutParm)
+	EWeaponSubclass                               Temp_byte_Variable;                                // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Temp_text_Variable;                                // 0x0030(0x0018)()
+	class FText                                   Temp_text_Variable_1;                              // 0x0048(0x0018)()
+	class FText                                   Temp_text_Variable_2;                              // 0x0060(0x0018)()
+	class FText                                   Temp_text_Variable_3;                              // 0x0078(0x0018)()
+	class FText                                   Temp_text_Variable_4;                              // 0x0090(0x0018)()
+	class FText                                   Temp_text_Variable_5;                              // 0x00A8(0x0018)()
+	class FText                                   Temp_text_Variable_6;                              // 0x00C0(0x0018)()
+	class FText                                   Temp_text_Variable_7;                              // 0x00D8(0x0018)()
+	class FText                                   Temp_text_Variable_8;                              // 0x00F0(0x0018)()
+	class FText                                   Temp_text_Variable_9;                              // 0x0108(0x0018)()
+	class FText                                   Temp_text_Variable_10;                             // 0x0120(0x0018)()
+	class FText                                   K2Node_Select_Default;                             // 0x0138(0x0018)()
+};
+DUMPER7_ASSERTS_BPF_UI_C_GetWeaponClassText;
+
+// Function BPF_UI.BPF_UI_C.GetWeaponSubclassFromItemClass
+// 0x0028 (0x0028 - 0x0000)
+struct BPF_UI_C_GetWeaponSubclassFromItemClass final
+{
+public:
+	EItemClass                                    ItemType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               WeaponSubclass;                                    // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EItemClass                                    Temp_byte_Variable;                                // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_1;                              // 0x0012(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_2;                              // 0x0013(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_3;                              // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_4;                              // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_5;                              // 0x0016(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_6;                              // 0x0017(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_7;                              // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_8;                              // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_9;                              // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_10;                             // 0x001B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_11;                             // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_12;                             // 0x001D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_13;                             // 0x001E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_14;                             // 0x001F(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_15;                             // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_16;                             // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_17;                             // 0x0022(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_18;                             // 0x0023(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_19;                             // 0x0024(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               Temp_byte_Variable_20;                             // 0x0025(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EWeaponSubclass                               K2Node_Select_Default;                             // 0x0026(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPF_UI_C_GetWeaponSubclassFromItemClass;
 
 // Function BPF_UI.BPF_UI_C.IsCurrentPresetDirty
 // 0x0648 (0x0648 - 0x0000)

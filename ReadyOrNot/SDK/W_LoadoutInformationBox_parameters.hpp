@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "ReadyOrNot_structs.hpp"
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -39,7 +39,7 @@ public:
 DUMPER7_ASSERTS_W_LoadoutInformationBox_C_CreateEffectsElement;
 
 // Function W_LoadoutInformationBox.W_LoadoutInformationBox_C.ExecuteUbergraph_W_LoadoutInformationBox
-// 0x0498 (0x0498 - 0x0000)
+// 0x04B0 (0x04B0 - 0x0000)
 struct W_LoadoutInformationBox_C_ExecuteUbergraph_W_LoadoutInformationBox final
 {
 public:
@@ -87,29 +87,29 @@ public:
 	class FName                                   K2Node_CustomEvent_AmmoName;                       // 0x015C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   K2Node_CustomEvent_CategoryText_1;                 // 0x0168(0x0018)()
-	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0180(0x0178)()
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x02F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2F9[0x3];                                      // 0x02F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           K2Node_Select_Default;                             // 0x02FC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_30C[0x4];                                      // 0x030C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0310(0x0050)(HasGetValueTypeHash)
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0360(0x0050)(HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable_1;                              // 0x03B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3B1[0x7];                                      // 0x03B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x03B8(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x03C8(0x0018)()
-	struct FSlateColor                            K2Node_Select_Default_1;                           // 0x03E0(0x0014)()
-	uint8                                         Pad_3F4[0x4];                                      // 0x03F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   Temp_text_Variable;                                // 0x03F8(0x0018)()
-	ENVGStyle                                     K2Node_CustomEvent_NVG_Style;                      // 0x0410(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_411[0x7];                                      // 0x0411(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   K2Node_CustomEvent_CategoryText;                   // 0x0418(0x0018)()
-	class FText                                   CallFunc_GetNVG_StyleDescription_CoverageText;     // 0x0430(0x0018)()
-	class FText                                   CallFunc_GetNVG_StyleText_CoverageText;            // 0x0448(0x0018)()
-	class FText                                   Temp_text_Variable_1;                              // 0x0460(0x0018)()
-	bool                                          Temp_bool_Variable_2;                              // 0x0478(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_479[0x7];                                      // 0x0479(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   K2Node_Select_Default_2;                           // 0x0480(0x0018)()
+	struct FAmmoTypeData                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0180(0x0190)()
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0310(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_311[0x3];                                      // 0x0311(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           K2Node_Select_Default;                             // 0x0314(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_324[0x4];                                      // 0x0324(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0328(0x0050)(HasGetValueTypeHash)
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData_1;            // 0x0378(0x0050)(HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x03C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C9[0x7];                                      // 0x03C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x03D0(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x03E0(0x0018)()
+	struct FSlateColor                            K2Node_Select_Default_1;                           // 0x03F8(0x0014)()
+	uint8                                         Pad_40C[0x4];                                      // 0x040C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   Temp_text_Variable;                                // 0x0410(0x0018)()
+	ENVGStyle                                     K2Node_CustomEvent_NVG_Style;                      // 0x0428(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_429[0x7];                                      // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   K2Node_CustomEvent_CategoryText;                   // 0x0430(0x0018)()
+	class FText                                   CallFunc_GetNVG_StyleDescription_CoverageText;     // 0x0448(0x0018)()
+	class FText                                   CallFunc_GetNVG_StyleText_CoverageText;            // 0x0460(0x0018)()
+	class FText                                   Temp_text_Variable_1;                              // 0x0478(0x0018)()
+	bool                                          Temp_bool_Variable_2;                              // 0x0490(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_491[0x7];                                      // 0x0491(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   K2Node_Select_Default_2;                           // 0x0498(0x0018)()
 };
 DUMPER7_ASSERTS_W_LoadoutInformationBox_C_ExecuteUbergraph_W_LoadoutInformationBox;
 

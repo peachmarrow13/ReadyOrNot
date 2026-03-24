@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "ReadyOrNot_structs.hpp"
 #include "W_RadialSelectionBase_classes.hpp"
+#include "ReadyOrNot_structs.hpp"
 
 
 namespace SDK
@@ -48,23 +48,23 @@ public:
 	void AddExecutableItemToCategory(class UWeaponWheelScript* WeaponWheelScript, int32 AtIndex);
 	void AddItemToCategory(const class ABaseItem*& NewItem, int32 AtIndex);
 	class UImage* CreateIcon(const struct FSlateBrush& InBrush);
-	void ExecuteRadial();
 	void ExecuteUbergraph_W_WeaponWheel_RadialSelection(int32 EntryPoint);
 	void MoveToBack(class ABaseItem* Item_0);
 	void MoveToFront(class ABaseItem* Item_0);
+	void RemoveExecutableItemFromCategory(class UWeaponWheelScript* WeaponWheelScript);
+	void RemoveItemFromCategory(const class ABaseItem*& Item_0);
+	void RemoveNullItems();
+	void RemoveNullItems__Internal_(TArray<class UObject*>& ItemArray);
+	void ShiftItemToNewSpot(class ABaseItem* Item_0, int32 NewIndex);
+	void ShuffleItems();
+	void ExecuteRadial();
 	void Next(bool* bSuccess);
 	void On_Wheel_Created();
 	void OnDeselected(bool Play_Animation);
 	void OnSelected(bool Play_Animation);
 	void PreConstruct(bool IsDesignTime);
 	void Previous(bool* bSuccess);
-	void RemoveExecutableItemFromCategory(class UWeaponWheelScript* WeaponWheelScript);
-	void RemoveItemFromCategory(const class ABaseItem*& Item_0);
-	void RemoveNullItems();
-	void RemoveNullItems__Internal_(TArray<class UObject*>& ItemArray);
 	void Select(int32 Index_0);
-	void ShiftItemToNewSpot(class ABaseItem* Item_0, int32 NewIndex);
-	void ShuffleItems();
 	void UpdateIcon(int32 SelectionIndex, const struct FSlateBrush& InBrush);
 
 	void GetCategory(class FText* Category) const;

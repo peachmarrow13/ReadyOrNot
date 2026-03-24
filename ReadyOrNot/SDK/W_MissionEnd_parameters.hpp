@@ -18,21 +18,23 @@ namespace SDK::Params
 {
 
 // Function W_MissionEnd.W_MissionEnd_C.AddFooterOptions
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00D0 (0x00D0 - 0x0000)
 struct W_MissionEnd_C_AddFooterOptions final
 {
 public:
 	TMap<class FString, struct FScreenFooterEntry> FooterEntries;                                    // 0x0000(0x0050)(Edit, BlueprintVisible)
 	TArray<struct FScreenFooterEntry>             FooterEntriesArray;                                // 0x0050(0x0010)(Edit, BlueprintVisible)
-	bool                                          CallFunc_ShowCreditsButton_Show;                   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 Temp_string_Variable;                              // 0x0068(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 Temp_string_Variable_1;                            // 0x0078(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 Temp_string_Variable_2;                            // 0x0088(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable;                              // 0x0060(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_1;                            // 0x0070(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_2;                            // 0x0080(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ShowCreditsButton_Show;                   // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_91[0x7];                                       // 0x0091(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 Temp_string_Variable_3;                            // 0x0098(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ShowReturnButton_ReturnValue;             // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ShowQuitButton_ReturnValue;               // 0x00A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_ShowRestartButton_ReturnValue;            // 0x00AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_4;                            // 0x00A8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 Temp_string_Variable_5;                            // 0x00B8(0x0010)(ConstParm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ShowReturnButton_ReturnValue;             // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ShowQuitButton_ReturnValue;               // 0x00C9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_ShowRestartButton_ReturnValue;            // 0x00CA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_MissionEnd_C_AddFooterOptions;
 
@@ -100,7 +102,7 @@ public:
 DUMPER7_ASSERTS_W_MissionEnd_C_ChangePage;
 
 // Function W_MissionEnd.W_MissionEnd_C.ExecuteUbergraph_W_MissionEnd
-// 0x09D8 (0x09D8 - 0x0000)
+// 0x0A28 (0x0A28 - 0x0000)
 struct W_MissionEnd_C_ExecuteUbergraph_W_MissionEnd final
 {
 public:
@@ -154,10 +156,10 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0128(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue_3;        // 0x0130(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FLevelDataLookupTable                  CallFunc_GetLevelData_ReturnValue;                 // 0x0138(0x0880)()
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x09B8(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x09C8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Delay_Duration_ImplicitCast;              // 0x09D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLevelDataLookupTable                  CallFunc_GetLevelData_ReturnValue;                 // 0x0138(0x08D0)()
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0A08(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0A18(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Delay_Duration_ImplicitCast;              // 0x0A20(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_MissionEnd_C_ExecuteUbergraph_W_MissionEnd;
 
@@ -239,6 +241,15 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue_1;                 // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_MissionEnd_C_ShowCreditsButton;
+
+// Function W_MissionEnd.W_MissionEnd_C.ShowMissionOptions
+// 0x0008 (0x0008 - 0x0000)
+struct W_MissionEnd_C_ShowMissionOptions final
+{
+public:
+	class UW_MissionOptions_C*                    CallFunc_Create_ReturnValue;                       // 0x0000(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_MissionEnd_C_ShowMissionOptions;
 
 // Function W_MissionEnd.W_MissionEnd_C.ShowQuitButton
 // 0x0002 (0x0002 - 0x0000)

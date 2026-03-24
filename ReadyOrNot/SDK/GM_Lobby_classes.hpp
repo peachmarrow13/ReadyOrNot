@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GM_Lobby.GM_Lobby_C
-// 0x0010 (0x0AA0 - 0x0A90)
+// 0x0010 (0x0AD0 - 0x0AC0)
 class AGM_Lobby_C final : public ALobbyGM
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A90(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0AC0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

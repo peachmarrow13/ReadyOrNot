@@ -17,6 +17,46 @@
 namespace SDK
 {
 
+// Function W_COOPDeathScreen.W_COOPDeathScreen_C.BndEvt__W_COOPDeathScreen_btn_EditLoadout_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_COOPDeathScreen_C::BndEvt__W_COOPDeathScreen_btn_EditLoadout_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_COOPDeathScreen_C", "BndEvt__W_COOPDeathScreen_btn_EditLoadout_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_COOPDeathScreen_C_BndEvt__W_COOPDeathScreen_btn_EditLoadout_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_COOPDeathScreen.W_COOPDeathScreen_C.BndEvt__W_COOPDeathScreen_btn_EditLoadoutAlt_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_COOPDeathScreen_C::BndEvt__W_COOPDeathScreen_btn_EditLoadoutAlt_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_COOPDeathScreen_C", "BndEvt__W_COOPDeathScreen_btn_EditLoadoutAlt_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_COOPDeathScreen_C_BndEvt__W_COOPDeathScreen_btn_EditLoadoutAlt_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_COOPDeathScreen.W_COOPDeathScreen_C.BndEvt__W_COOPDeathScreen_btn_Spectate_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -30,6 +70,46 @@ void UW_COOPDeathScreen_C::BndEvt__W_COOPDeathScreen_btn_Spectate_K2Node_Compone
 		Func = Class->GetFunction("W_COOPDeathScreen_C", "BndEvt__W_COOPDeathScreen_btn_Spectate_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature");
 
 	Params::W_COOPDeathScreen_C_BndEvt__W_COOPDeathScreen_btn_Spectate_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_COOPDeathScreen.W_COOPDeathScreen_C.BndEvt__W_COOPDeathScreen_btn_SpectateNext_K2Node_ComponentBoundEvent_4_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_COOPDeathScreen_C::BndEvt__W_COOPDeathScreen_btn_SpectateNext_K2Node_ComponentBoundEvent_4_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_COOPDeathScreen_C", "BndEvt__W_COOPDeathScreen_btn_SpectateNext_K2Node_ComponentBoundEvent_4_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_COOPDeathScreen_C_BndEvt__W_COOPDeathScreen_btn_SpectateNext_K2Node_ComponentBoundEvent_4_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_COOPDeathScreen.W_COOPDeathScreen_C.BndEvt__W_COOPDeathScreen_btn_SpectatePrev_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_COOPDeathScreen_C::BndEvt__W_COOPDeathScreen_btn_SpectatePrev_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_COOPDeathScreen_C", "BndEvt__W_COOPDeathScreen_btn_SpectatePrev_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_COOPDeathScreen_C_BndEvt__W_COOPDeathScreen_btn_SpectatePrev_K2Node_ComponentBoundEvent_3_CommonButtonBaseClicked__DelegateSignature Parms{};
 
 	Parms.Button = Button;
 
@@ -68,6 +148,20 @@ void UW_COOPDeathScreen_C::ExecuteUbergraph_W_COOPDeathScreen(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_COOPDeathScreen.W_COOPDeathScreen_C.Hide
+// (BlueprintCallable, BlueprintEvent)
+
+void UW_COOPDeathScreen_C::Hide()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_COOPDeathScreen_C", "Hide");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

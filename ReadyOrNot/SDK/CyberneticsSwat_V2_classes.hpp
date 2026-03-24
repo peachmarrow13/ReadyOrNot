@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CyberneticsSwat_V2.CyberneticsSwat_V2_C
-// 0x0000 (0x2830 - 0x2830)
+// 0x0000 (0x28E0 - 0x28E0)
 class ACyberneticsSwat_V2_C final : public ASWATCharacter
 {
 public:

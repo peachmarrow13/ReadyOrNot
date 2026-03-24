@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Flashlight_M600V_MLOK.BP_Flashlight_M600V_MLOK_C
-// 0x0000 (0x11F0 - 0x11F0)
+// 0x0000 (0x11C0 - 0x11C0)
 class UBP_Flashlight_M600V_MLOK_C final : public UPistol_Flashlight_C
 {
 public:

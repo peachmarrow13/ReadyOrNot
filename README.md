@@ -1,5 +1,7 @@
 # Ready or Not Cheat
 
+https://discord.gg/YkWmxdhyJ7
+
 > **⚠️ Disclaimer:** Do not grief or ruin the experience for others.
 
 ---

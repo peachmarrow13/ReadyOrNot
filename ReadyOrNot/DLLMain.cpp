@@ -192,8 +192,6 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (ShowMenu) {
 		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
 
-		ImGui::SeparatorText("Hello, Have Fun Cheating!");
-
 		if  (ImGui::BeginTabBar("MainTabBar"))
 		{
 			if (ImGui::BeginTabItem("About"))
@@ -249,6 +247,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::Button("Remove Recoil"))
 					Cheats::RemoveRecoil();
+
+				ImGui::Checkbox("Anti Sway", &CVars.AntiSway);
 
 				if (ImGui::Button("Remove Spread"))
 					Cheats::RemoveSpread();
@@ -671,6 +671,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				Utils::DrawSnapLine(TargetLocation, SilentAimSettings.ArrowThickness);
 		}
 	}
+
+	if (CVars::AntiSway)
+		Cheats::AntiSway();
 
 	if (CVars.Reticle)
 		Cheats::DrawReticle();

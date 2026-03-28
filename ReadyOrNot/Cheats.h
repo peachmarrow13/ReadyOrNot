@@ -91,6 +91,7 @@ struct CVarsstruct
 	bool ShootFromReticle = false;
 	bool SaveDebugToFile = false;
 	bool BulletTime = false;
+	bool AntiSway = false;
 } inline CVars;
 
 struct MiscSettingsStruct {
@@ -150,4 +151,5 @@ struct Cheats
 	static void NoClipToggle();
 	static void GoTo(FVector Location);
 	static void SurrenderAll(ETeam Team); // Surrender all of a specific team
+	static void AntiSway();
 };

@@ -642,3 +642,23 @@ void Cheats::SurrenderAll(ETeam Team)
 		}
 	}
 }
+
+void Cheats::AntiSway()
+{
+	if (GVars.ReadyOrNotChar && GVars.ReadyOrNotChar->GetEquippedWeapon())
+	{
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobScaleH = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->DrawCameraShake = nullptr;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->bCalculateProcRecoil = false;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->InertiaDragStrafeRotation = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->InertiaDragStrafeLocation = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->InertiaDragAimLocation = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->InertiaDragAimRotation = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobScaleV = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobSpeedScaleH = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobSpeedScaleV = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobAmplitudeBaseSpeed = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobAmplitudeWalkScale = 0.0f;
+		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobAmplitudeSprintScale = 0.0f;
+	}
+}

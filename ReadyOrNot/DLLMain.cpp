@@ -2,7 +2,7 @@
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
-#define PATCHVERSION 6
+#define PATCHVERSION 7
 
 static const std::pair<const char*, std::string> BoneOptions[] = {
 	{"Head", BoneList.HeadBone},
@@ -235,6 +235,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				{
 					Cheats::ChangeFOV();
 				}
+
+				if (ImGui::Button("Give all Achievements"))
+					Cheats::GiveAchievements();
 
 				ImGui::EndTabItem();
 			}
@@ -672,7 +675,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		}
 	}
 
-	if (CVars::AntiSway)
+	if (CVars.AntiSway)
 		Cheats::AntiSway();
 
 	if (CVars.Reticle)
@@ -1028,11 +1031,21 @@ void Cleanup(HMODULE hModule)
 
 	MH_Uninitialize();
 
+	if (Engine::pContext) {
+		Engine::pContext->ClearState();
+		Engine::pContext->Flush();
+	}
+
 	// Clean up DirectX resources
 	if (Engine::pRenderTargetView) {
 		printf("Releasing render target view...\n");
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
+	}
+	if (Engine::pSwapChain) {
+		printf("Releasing swap chain...\n");
+		Engine::pSwapChain->Release();
+		Engine::pSwapChain = nullptr;
 	}
 	if (Engine::pContext) {
 		printf("Releasing device context...\n");
@@ -1043,11 +1056,6 @@ void Cleanup(HMODULE hModule)
 		printf("Releasing device...\n");
 		Engine::pDevice->Release();
 		Engine::pDevice = nullptr;
-	}
-	if (Engine::pSwapChain) {
-		printf("Releasing swap chain...\n");
-		Engine::pSwapChain->Release();
-		Engine::pSwapChain = nullptr;
 	}
 
 	std::cout << "Cleanup complete. Unloading DLL...\n";

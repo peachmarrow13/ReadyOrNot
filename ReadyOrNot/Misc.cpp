@@ -662,3 +662,13 @@ void Cheats::AntiSway()
 		GVars.ReadyOrNotChar->GetEquippedWeapon()->CameraBobAmplitudeSprintScale = 0.0f;
 	}
 }
+
+void Cheats::GiveAchievements()
+{
+	if (!GVars.ReadyOrNotChar) return;
+
+	for (int i = 0; i < 68; i++)
+	{
+		reinterpret_cast<AReadyOrNotPlayerState*>(GVars.ReadyOrNotChar->PlayerState)->Client_GrantAchievement(static_cast<EAchievement>(i)); //EAchievement
+	}
+}

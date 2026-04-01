@@ -102,17 +102,33 @@ bool Engine::HookResizeBuffers()
 
 bool HookPresentLocal()
 {
-	WNDCLASSA wc = { 0 };
+	WNDCLASSA wc = {};
 	wc.lpfnWndProc = DefWindowProcA;
 	wc.hInstance = GetModuleHandleA(nullptr);
 	wc.lpszClassName = "DummyWindowClass";
-	RegisterClassA(&wc);
+	if (!RegisterClassA(&wc))
+	{
+		if (GetLastError() != ERROR_CLASS_ALREADY_EXISTS)
+			return false;
+	}
+
+	HWND hDummyWnd = CreateWindowA(
+		"DummyWindowClass", "Dummy",
+		WS_OVERLAPPEDWINDOW,
+		0, 0, 1, 1,
+		nullptr, nullptr,
+		GetModuleHandleA(nullptr),
+		nullptr
+	);
+
+	if (!hDummyWnd)
+		return false;
 
 	ZeroMemory(&Engine::sd, sizeof(DXGI_SWAP_CHAIN_DESC));
 	Engine::sd.BufferCount = 1;
 	Engine::sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	Engine::sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-	Engine::sd.OutputWindow = CreateWindowA("DummyWindowClass", "Dummy Window", WS_OVERLAPPEDWINDOW, 0, 0, 100, 100, nullptr, nullptr, nullptr, nullptr);
+	Engine::sd.OutputWindow = hDummyWnd;
 	Engine::sd.SampleDesc.Count = 1;
 	Engine::sd.SampleDesc.Quality = 0;
 	Engine::sd.Windowed = TRUE;

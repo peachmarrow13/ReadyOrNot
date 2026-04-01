@@ -152,4 +152,5 @@ struct Cheats
 	static void GoTo(FVector Location);
 	static void SurrenderAll(ETeam Team); // Surrender all of a specific team
 	static void AntiSway();
+	static void GiveAchievements();
 };

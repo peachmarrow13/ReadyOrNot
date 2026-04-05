@@ -92,6 +92,7 @@ struct CVarsstruct
 	bool SaveDebugToFile = false;
 	bool BulletTime = false;
 	bool AntiSway = false;
+	float BulletTimeSpeed = 0.3f;
 } inline CVars;
 
 struct MiscSettingsStruct {

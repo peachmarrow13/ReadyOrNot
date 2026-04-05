@@ -50,29 +50,31 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 		{
 			if (strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)
 			{
-				
-				auto* FireParams =
-					reinterpret_cast<Params::BaseMagazineWeapon_OnFire*>(Params);
-
 				bool OwnerIsLocalPlayer = reinterpret_cast<const ABaseMagazineWeapon*>(Object)->Owner == GVars.ReadyOrNotChar;
 
-				if (CVars.ShootFromReticle && OwnerIsLocalPlayer)
+				if (OwnerIsLocalPlayer)
 				{
-					FVector SpawnLoc;
-					FVector Direction;
-					GVars.PlayerController->DeprojectScreenPositionToWorld(
-						GVars.ScreenSize.x / 2.0f + MiscSettings.ReticlePosition.x,
-						GVars.ScreenSize.y / 2.0f + MiscSettings.ReticlePosition.y,
-						&SpawnLoc,
-						&Direction
-					);
-					FireParams->SpawnLoc = SpawnLoc;
-					FireParams->Direction = UKismetMathLibrary::Conv_VectorToRotator(Direction);
+					auto* FireParams =
+						reinterpret_cast<Params::BaseMagazineWeapon_OnFire*>(Params);
 
+					if (CVars.ShootFromReticle && OwnerIsLocalPlayer)
+					{
+						FVector SpawnLoc;
+						FVector Direction;
+						GVars.PlayerController->DeprojectScreenPositionToWorld(
+							GVars.ScreenSize.x / 2.0f + MiscSettings.ReticlePosition.x,
+							GVars.ScreenSize.y / 2.0f + MiscSettings.ReticlePosition.y,
+							&SpawnLoc,
+							&Direction
+						);
+						FireParams->SpawnLoc = SpawnLoc;
+						FireParams->Direction = UKismetMathLibrary::Conv_VectorToRotator(Direction);
+
+					}
+
+					if (CVars.SilentAim && OwnerIsLocalPlayer)
+						Cheats::SilentAim(FireParams);
 				}
-
-				if (CVars.SilentAim && OwnerIsLocalPlayer)
-					Cheats::SilentAim(FireParams);
 			}
 		}
 	}

@@ -2,7 +2,7 @@
 
 #define MAJORVERSION 2
 #define MINORVERSION 4
-#define PATCHVERSION 7
+#define PATCHVERSION 8
 
 static const std::pair<const char*, std::string> BoneOptions[] = {
 	{"Head", BoneList.HeadBone},
@@ -38,6 +38,7 @@ static ImGuiKey TriggerBotKey = ImGuiKey_None;
 static ImGuiKey ESPKey = ImGuiKey_None;
 static ImGuiKey AimButton = ImGuiKey_None;
 
+static std::string PlayerName;
 static int UninjectButton = VK_END;
 
 // Add WndProc hook for input handling
@@ -129,7 +130,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		}
 	}
 
-	if (Frames % 300 == 0 && MiscSettings.ShouldAutoSave) // Every 300 frames, save settings
+	if (Frames % 900 == 0 && MiscSettings.ShouldAutoSave) // Every 900 frames, save settings
 	{
 		SaveSettings();
 	}
@@ -163,8 +164,10 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 		if (GVars.PlayerController && GVars.PlayerController->PlayerState)
 		{
-			auto PlayerState = GVars.PlayerController->PlayerState;
-			auto PlayerName = PlayerState->GetPlayerName().ToString();
+			APlayerState* PlayerState = GVars.PlayerController->PlayerState;
+			if (PlayerName.empty())
+				PlayerName = PlayerState->GetPlayerName().ToString();
+
 			if (PlayerName == "PeachMarrow12" || PlayerName == "DiaperBlastrPC")
 				CVars.SecretFeatures = true;
 		}
@@ -199,10 +202,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				ImGui::Text("Free Ready or Not Cheat by PeachMarrow12");
 				ImGui::Text("Version %d.%d.%d", MAJORVERSION, MINORVERSION, PATCHVERSION);
 
-				if (GVars.PlayerController && GVars.PlayerController->PlayerState)
+				if (GVars.PlayerController)
 				{
 					APlayerState* PlayerState = GVars.PlayerController->PlayerState;
-					std::string PlayerName = PlayerState->GetPlayerName().ToString();
 					ImGui::Text("Thank you for using my cheat %s!", PlayerName.c_str());
 				}
 				else
@@ -231,7 +233,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				ImGui::SameLine();
 				ImGui::Checkbox("Enable Speed", &CVars.SpeedEnabled);
 
-				if (ImGui::SliderFloat("FOV", &CVars.FOV, 0.1f, 179.9f))
+				if (ImGui::SliderFloat("FOV", &CVars.FOV, 10.0f, 179.9f))
 				{
 					Cheats::ChangeFOV();
 				}
@@ -266,7 +268,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					Cheats::InstaKill();
 
 				if (ImGui::Button("Increase Fire Rate"))
-					Cheats::SetFireRate(0.001f);
+					Cheats::SetFireRate(0.01f);
 				
 				ImGui::Checkbox("Shoot From Reticle", &CVars.ShootFromReticle);
 
@@ -287,6 +289,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::Button("Surrender All Suspects"))
 					Cheats::SurrenderAll(ETeam::TEAM_SUSPECT);
+				HostOnlyTooltip();
 
 				ImGui::SameLine();
 
@@ -301,6 +304,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::Button("Surrender All Civilians"))
 					Cheats::SurrenderAll(ETeam::TEAM_CIVILIAN);
+				HostOnlyTooltip();
 
 				ImGui::SameLine();
 
@@ -313,11 +317,14 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::Button("AutoWin"))
 					Cheats::AutoWin();
+				HostOnlyTooltip();
 
 				if (ImGui::Button("Unlock All Doors"))
 					Cheats::UnlockDoors();
+				HostOnlyTooltip();
 
 				ImGui::Checkbox("Bullet Time", &CVars.BulletTime);
+				HostOnlyTooltip();
 
 				ImGui::EndTabItem();
 			}
@@ -500,6 +507,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::TreeNode("Misc Settings"))
 				{
+					ImGui::InputFloat("Bullet Time Speed", &CVars.BulletTimeSpeed);
+
 					ImGui::SeparatorText("Reticle Settings");
 
 					ImGui::Checkbox("Reticle", &CVars.Reticle);
@@ -619,7 +628,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		ImGui::Separator();
 		ImGui::Text("You can find me on UnknownCheats.me as Peachmarrow13.");
 		ImGui::SameLine();
-		ImGui::Text("This cheat was released on UnknownCheats.me for free, do not download this from anywhere else.");
+		ImGui::Text("This cheat was released on UnknownCheats.me for free, do not pay for this.");
 		ImGui::End();
 	}
 
@@ -637,7 +646,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		Cheats::ListPlayers();
 
 	if (CVars.BulletTime)
-		GVars.World->K2_GetWorldSettings()->TimeDilation = 0.3f; // Slow-mo
+		GVars.World->K2_GetWorldSettings()->TimeDilation = CVars.BulletTimeSpeed; // Slow-mo
 	else
 		GVars.World->K2_GetWorldSettings()->TimeDilation = 1.0f; // Normal
 

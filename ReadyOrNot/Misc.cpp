@@ -35,9 +35,9 @@ void Cheats::ToggleGodMode() {
 
 void Cheats::ToggleInfAmmo() {
 	if (!GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->GetEquippedWeapon()) return;
+
 	ABaseMagazineWeapon* Gun = GVars.ReadyOrNotChar->GetEquippedWeapon();
 	Gun->bInfiniteAmmo = CVars.InfAmmo;
-
 }
 
 void Cheats::PenetrateWalls()
@@ -210,6 +210,8 @@ void Cheats::RemoveRecoil()
 
 void Cheats::SetPlayerSpeed()
 {
+	if (!GVars.ReadyOrNotChar || !GVars.PlayerController) return;
+
 	APlayerCharacter* PlayerChar = reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar);
 
 	if (PlayerChar)
@@ -223,12 +225,14 @@ void Cheats::SetPlayerSpeed()
 
 void Cheats::AddMag()
 {
-	if (!GVars.ReadyOrNotChar || !GVars.PlayerController) return;
+	if (!GVars.ReadyOrNotChar || !GVars.PlayerController || !GVars.PlayerController->HasAuthority()) 
+		return;
+
 	auto* Gun = GVars.ReadyOrNotChar->GetEquippedWeapon();
 	if (!Gun) return;
-	if (!GVars.PlayerController->HasAuthority()) return; // Server_AddMagazine is server-only
+
 	FMagazine NewMag;
-	NewMag.Ammo = 30;
+	NewMag.Ammo = Gun->MagazineCountDefault;
 	NewMag.AmmoType = 1;
 	Gun->Server_AddMagazine(NewMag);
 }
@@ -240,22 +244,20 @@ void Cheats::ArrestAll(ETeam Team)
 	if (Level) {
 		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
 		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-		if (ActorsCopy)
-		{
-			for (AActor* Actor : ActorsCopy)
-			{
-				if (!Utils::IsValidActor(Actor)) continue;
 
-				if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
-				{
-					AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-					if (!Char) continue;
-					if (!Char->VTable) continue;
-					if (Char->IsArrested()) continue; // Can't re-arrest already arrested civilians or it will crash
-					Char->Arrest(nullptr);
-					Char->ArrestComplete(nullptr, nullptr);
-					Char->Server_ReportToTOC(Char, false, false);
-				}
+		for (AActor* Actor : ActorsCopy)
+		{
+			if (!Actor || !Utils::IsValidActor(Actor)) continue;
+
+			if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+			{
+				AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
+				if (!Char) continue;
+				if (!Char->VTable) continue;
+				if (Char->IsArrested()) continue; // Can't re-arrest already arrested civilians or it will crash
+				Char->Arrest(nullptr);
+				Char->ArrestComplete(nullptr, nullptr);
+				Char->Server_ReportToTOC(Char, false, false);
 			}
 		}
 	}
@@ -267,26 +269,24 @@ void Cheats::KillAll(ETeam Team)
 	if (ULevel* Level = GVars.Level) {
 		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
 		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-		if (ActorsCopy)
-		{
-			for (AActor* Actor : ActorsCopy)
-			{
-				if (!Utils::IsValidActor(Actor)) continue;
 
-				if (Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+		for (AActor* Actor : ActorsCopy)
+		{
+			if (!Actor || !Utils::IsValidActor(Actor)) continue;
+
+			if (Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+			{
+				if (GVars.PlayerController->HasAuthority())
 				{
-					if (GVars.PlayerController->HasAuthority())
-					{
-						reinterpret_cast<APlayerCharacter*>(Actor)->Server_Kill();
-						reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
-					}
-					else
-					{
-						reinterpret_cast<APlayerCharacter*>(Actor)->Kill();
-						reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
-					}
-					
+					reinterpret_cast<APlayerCharacter*>(Actor)->Server_Kill();
+					reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
 				}
+				else
+				{
+					reinterpret_cast<APlayerCharacter*>(Actor)->Kill();
+					reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
+				}
+					
 			}
 		}
 	}
@@ -295,10 +295,9 @@ void Cheats::KillAll(ETeam Team)
 void Cheats::DrawReticle()
 {
 	if (!CVars.Reticle) return;
-
 	if (!GVars.ReadyOrNotChar) return;
 
-	if (MiscSettings.ReticleWhenThrowing && (!reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->bQuickThrowing || !(reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->GetEquippedItem() && (reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->GetEquippedItem()->ItemType == EItemType::IT_Grenade || reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->GetEquippedItem()->ItemType == EItemType::IT_GrenadeNonLethal)))) 
+	if (MiscSettings.ReticleWhenThrowing && !reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->bQuickThrowing) 
 		return;
 
 	if (MiscSettings.CrossReticle)
@@ -321,21 +320,16 @@ void Cheats::DrawReticle()
 
 void Cheats::GetAllEvidence()
 {
-	if (!GVars.Level) return;
+	if (!GVars.Level || !GVars.ReadyOrNotChar) return;
 
 	ActorsCopy = GVars.Level->Actors;
 	if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-
-	AReadyOrNotCharacter* RONC = nullptr;
 
 	TAllocatedArray<ABaseWeapon*> Weapons(40);
 
 	for (AActor* Actor : ActorsCopy)
 	{
-		if (!Utils::IsValidActor(Actor)) continue;
-
-		if (Actor->IsA(AReadyOrNotCharacter::StaticClass()))
-			RONC = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
+		if (!Actor || !Utils::IsValidActor(Actor)) continue;
 		
 		if (Actor->IsA(ABaseWeapon::StaticClass()))
 		{
@@ -354,15 +348,13 @@ void Cheats::GetAllEvidence()
 		if (!Weapons[i]) continue;
 		if (GVars.ReadyOrNotChar)
 			GVars.ReadyOrNotChar->PickupEvidence(Weapons[i]);
-		else if (RONC)
-			RONC->PickupEvidence(Weapons[i]);
 	}
 }
 
 void Cheats::TriggerBot()
 {
 	if (!CVars.TriggerBot) return;
-	if (!GVars.PlayerController || !GVars.ReadyOrNotChar) return;
+	if (!GVars.PlayerController || !GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->GetEquippedWeapon()) return;
 
 	FHitResult HitResult;
 
@@ -389,12 +381,12 @@ void Cheats::TriggerBot()
 				if (reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsDeadOrUnconscious() || reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsIncapacitated() || reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsArrestedOrSurrendered())
 					return;
 
-				if (MiscSettings.TriggerBotUsesSilentAim && GVars.ReadyOrNotChar->GetEquippedWeapon())
+				if (MiscSettings.TriggerBotUsesSilentAim)
 				{
 					GVars.ReadyOrNotChar->GetEquippedWeapon()->OnFire(FRotator(), HitResult.ImpactPoint);
 					return;
 				}
-				if (GVars.ReadyOrNotChar->GetEquippedWeapon())
+				else
 				{
 					GVars.ReadyOrNotChar->GetEquippedWeapon()->OnFire(
 						GVars.PlayerController->PlayerCameraManager->GetCameraRotation(), // Direction: if we don't set this the bullet just chills
@@ -667,8 +659,16 @@ void Cheats::GiveAchievements()
 {
 	if (!GVars.ReadyOrNotChar) return;
 
+	AReadyOrNotPlayerState* PlayerState = reinterpret_cast<AReadyOrNotPlayerState*>(GVars.ReadyOrNotChar->PlayerState);
+
 	for (int i = 0; i < 68; i++)
 	{
-		reinterpret_cast<AReadyOrNotPlayerState*>(GVars.ReadyOrNotChar->PlayerState)->Client_GrantAchievement(static_cast<EAchievement>(i)); //EAchievement
+		PlayerState->Client_GrantAchievement(static_cast<EAchievement>(i));
+		if (i < 47)
+			PlayerState->Client_IncreaseAchievementStat(static_cast<EAchievementStats>(i), 100000, GVars.ReadyOrNotChar, GVars.ReadyOrNotChar);
 	}
+	/*for (int i = 0; i < 47; i++)
+	{
+		PlayerState->Client_IncreaseAchievementStat(static_cast<EAchievementStats>(i), 100000, GVars.ReadyOrNotChar, GVars.ReadyOrNotChar);
+	}*/
 }

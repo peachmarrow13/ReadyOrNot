@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Engine.h"
 
 #define MAJORVERSION 2
@@ -110,7 +111,7 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 
 HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
 {
-	if (Cleaning.load())  // If we are cleaning, stop drawing.
+	if (Cleaning.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
 	
 	if (Resizing.load())
@@ -229,7 +230,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				ImGui::Checkbox("ESP", &CVars.ESP);
 
-				ImGui::SliderFloat("Player Speed", &CVars.Speed, 1, 30, "%.1f");
+				ImGui::SliderFloat("Player Speed", &CVars.Speed, 1.0f, 30.0f, "%.1f");
 				ImGui::SameLine();
 				ImGui::Checkbox("Enable Speed", &CVars.SpeedEnabled);
 
@@ -268,7 +269,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					Cheats::InstaKill();
 
 				if (ImGui::Button("Increase Fire Rate"))
-					Cheats::SetFireRate(0.01f);
+					Cheats::SetFireRate(3000.0f);
 				
 				ImGui::Checkbox("Shoot From Reticle", &CVars.ShootFromReticle);
 
@@ -376,6 +377,11 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					ImGui::Checkbox("Smoothing", &AimbotSettings.Smooth);
 
 					ImGui::SliderFloat("Smoothing Vector", &AimbotSettings.SmoothingVector, 1.0f, 20.0f, "%.2f");
+
+					ImGui::Checkbox("Prediction", &AimbotSettings.Prediction);
+					ImGui::SliderFloat("Prediction Strength", &AimbotSettings.PredictionMultiplier, 0.0f, 2.0f, "%.2f");
+
+					ImGui::Checkbox("Target Lock", &AimbotSettings.TargetLock);
 
 					ImGui::Checkbox("Draw Arrow", &AimbotSettings.DrawArrow);
 
@@ -698,6 +704,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 	if (CVars.SpeedEnabled)
 		Cheats::SetPlayerSpeed();
+
+	Cheats::ProcessArrestQueue();
 
 	if (Engine::pRenderTargetView) {
 		Engine::pContext->OMSetRenderTargets(1, &Engine::pRenderTargetView, nullptr);

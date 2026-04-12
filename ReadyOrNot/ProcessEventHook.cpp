@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Engine.h"
 
 void** vTable = nullptr;
@@ -76,6 +77,10 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 						Cheats::SilentAim(FireParams);
 				}
 			}
+		}
+		if (Function->Name.ToString().find("ReceiveTick") != std::string::npos && Object->IsA(APlayerController::StaticClass()))
+		{
+
 		}
 	}
 

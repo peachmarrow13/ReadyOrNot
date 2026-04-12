@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Engine.h"
 
 void Cheats::SilentAim(Params::BaseMagazineWeapon_OnFire* FireParams)

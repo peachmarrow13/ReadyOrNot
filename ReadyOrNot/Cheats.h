@@ -54,6 +54,9 @@ struct AimbotSettingsstruct {
 	float FOVThickness = 1.0f;
 	float ArrowThickness = 2.0f;
 	bool TargetAll = false;
+	bool Prediction = false;
+	float PredictionMultiplier = 1.0f;
+	bool TargetLock = true;
 } inline AimbotSettings;
 
 struct SilentAimSettingsstruct {
@@ -71,28 +74,27 @@ struct SilentAimSettingsstruct {
 	bool TargetAll = false;
 } inline SilentAimSettings;
 
-struct CVarsstruct
+struct CVarsStruct
 {
+	float Speed = 1;
+	float FOV = 120.0f;
+	float BulletTimeSpeed = 0.3f;
 	bool Debug = false;
 	bool SecretFeatures = false;
 	bool GodMode = false;
 	bool InfAmmo = false;
 	bool Aimbot = false;
 	bool ESP = false;
-	float Speed = 1;
 	bool SpeedEnabled = false;
 	bool SilentAim = false;
-	bool NoClip = false;
 	bool Reticle = false;
 	bool TriggerBot = false;
 	bool RenderOptions = false;
-	float FOV = 120.0f;
 	bool ListPlayers = false;
 	bool ShootFromReticle = false;
 	bool SaveDebugToFile = false;
 	bool BulletTime = false;
 	bool AntiSway = false;
-	float BulletTimeSpeed = 0.3f;
 } inline CVars;
 
 struct MiscSettingsStruct {
@@ -138,18 +140,17 @@ struct Cheats
 	static void SilentAim(Params::BaseMagazineWeapon_OnFire* FireParams);
 	static void AddMag();
 	static void ArrestAll(ETeam Team); // Arrest all of a specific team
+	static void ProcessArrestQueue();
 	static void KillAll(ETeam Team);   // Kill all of a specific team
 	static void DrawReticle();
 	static void GetAllEvidence();
 	static void TriggerBot();
 	static void RenderEnabledOptions();
 	static void ChangeFOV();
-	static void Lean();
 	static void UnlockDoors();
 	static void AutoWin();
 	static void ListPlayers();
 	static void ChangeGameRenderSettings();
-	static void NoClipToggle();
 	static void GoTo(FVector Location);
 	static void SurrenderAll(ETeam Team); // Surrender all of a specific team
 	static void AntiSway();

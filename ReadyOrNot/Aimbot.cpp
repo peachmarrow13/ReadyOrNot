@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Cheats.h"
 #include "Utils.h"
 #include <chrono>
@@ -15,28 +16,78 @@ void Cheats::Aimbot()
 
 	if (!GVars.POV || !GVars.PlayerController || !GVars.Level || !GVars.ReadyOrNotChar) return;
 
+	static AActor* LastTarget = nullptr;
+
 	if (AimbotSettings.RequireKeyHeld && !AimbotKeyDown)
+	{
+		LastTarget = nullptr;
 		return;
+	}
 
 	std::wstring WideString = UtfN::StringToWString(TextVars.AimbotBone);
 	FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
 
-	AActor* Target = Utils::GetBestTarget(
-		GVars.PlayerController,
-		AimbotSettings.TargetCivilians,
-		AimbotSettings.TargetArrested,
-		AimbotSettings.TargetArrested,
-		AimbotSettings.TargetDead,
-		AimbotSettings.MaxFOV,
-		AimbotSettings.LOS,
-		TextVars.AimbotBone,
-		AimbotSettings.TargetAll
-	);
+	AActor* Target = nullptr;
+
+	if (AimbotSettings.TargetLock)
+	{
+		if (LastTarget)
+			Target = LastTarget;
+		else
+		{
+			Target = Utils::GetBestTarget(
+				GVars.PlayerController,
+				AimbotSettings.TargetCivilians,
+				AimbotSettings.TargetArrested,
+				AimbotSettings.TargetArrested,
+				AimbotSettings.TargetDead,
+				AimbotSettings.MaxFOV,
+				AimbotSettings.LOS,
+				TextVars.AimbotBone,
+				AimbotSettings.TargetAll
+			);
+			LastTarget = Target;
+		}
+	}
+	else
+	{
+		LastTarget = nullptr;
+
+		Target = Utils::GetBestTarget(
+			GVars.PlayerController,
+			AimbotSettings.TargetCivilians,
+			AimbotSettings.TargetArrested,
+			AimbotSettings.TargetArrested,
+			AimbotSettings.TargetDead,
+			AimbotSettings.MaxFOV,
+			AimbotSettings.LOS,
+			TextVars.AimbotBone,
+			AimbotSettings.TargetAll
+		);
+	}
 
 	if (!Target) return;
 
 	FVector CameraPos = GVars.POV->Location;
 	FVector TargetPos = ((AReadyOrNotCharacter*)Target)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+
+	if (AimbotSettings.Prediction)
+	{
+		float ProjectileSpeed = 37000.0f; // Random default I made.
+		if (GVars.ReadyOrNotChar->GetEquippedWeapon())
+		{
+			ProjectileSpeed = GVars.ReadyOrNotChar->GetEquippedWeapon()->ProjectileMovementSpeed;
+			printf("Projectile speed: %f\n", ProjectileSpeed);
+		}
+
+		float Distance = TargetPos.GetDistanceTo(GVars.ReadyOrNotChar->K2_GetActorLocation());
+
+		float TimeToHit = Distance / ProjectileSpeed;
+
+		FVector PredictedPos = TargetPos + ((Target->GetVelocity() * TimeToHit) * AimbotSettings.PredictionMultiplier);
+
+		TargetPos = PredictedPos;
+	}
 
 	double Dist = CameraPos.GetDistanceToInMeters(TargetPos);
 

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <Windows.h>
 #include <vector>
 
@@ -8,6 +9,8 @@
 
 #include "SDK/Engine_classes.hpp"
 //#include "SDK/ReadyOrNot_classes.hpp"
+
+#define VAR_NAME(x) #x
 
 using namespace SDK;
 
@@ -24,7 +27,7 @@ void Cheats::ToggleGodMode() {
 	auto* RONC = reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar);
 	if (RONC->bGodMode != CVars.GodMode)
 	{
-		if (GVars.PlayerController->HasAuthority())
+		if (GVars.HasAuthority)
 		{
 			RONC->Server_ToggleGodMode();
 		}
@@ -115,9 +118,9 @@ void Cheats::SetFireRate(float FireRateMult)
 	auto* Character = reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar);
 	auto* Gun = Character->GetEquippedWeapon();
 	
-	Gun->FireRate = 60 / FireRateMult; // Fire rate has to be adjusted from RPM to delay between shots
+	printf("Original Fire Rate: %f\n", Gun->FireRate);
 
-	//Gun->RefireDelay = 0.0f;
+	Gun->FireRate = 60.0f / FireRateMult; // Fire rate has to be adjusted from RPM to delay between shots
 }
 
 void Cheats::RemoveSpread()
@@ -216,7 +219,7 @@ void Cheats::SetPlayerSpeed()
 
 	if (PlayerChar)
 	{
-		if (GVars.PlayerController->HasAuthority())
+		if (GVars.HasAuthority)
 			PlayerChar->Server_SetWalkSpeed(240.0f * CVars.Speed, 240.0f * CVars.Speed); // 240 is default walk speed
 		else
 			PlayerChar->Client_SetWalkSpeed(240.0f * CVars.Speed, 240.0f * CVars.Speed); // 240 is default walk speed
@@ -225,7 +228,7 @@ void Cheats::SetPlayerSpeed()
 
 void Cheats::AddMag()
 {
-	if (!GVars.ReadyOrNotChar || !GVars.PlayerController || !GVars.PlayerController->HasAuthority()) 
+	if (!GVars.ReadyOrNotChar || !GVars.PlayerController || !GVars.HasAuthority) 
 		return;
 
 	auto* Gun = GVars.ReadyOrNotChar->GetEquippedWeapon();
@@ -237,28 +240,170 @@ void Cheats::AddMag()
 	Gun->Server_AddMagazine(NewMag);
 }
 
+enum class EArrestStage : uint8_t
+{
+	Surrender,
+	Arrest,
+	ArrestComplete,
+	WaitForArrested,
+	ReportToTOC
+};
+
+struct FPendingArrest
+{
+	ACyberneticCharacter* Char = nullptr;
+	EArrestStage Stage = EArrestStage::Surrender;
+	ULONGLONG LastStepMs = 0;
+	int WaitTicks = 0;
+};
+
+std::vector<FPendingArrest> GPendingArrests;
+
+constexpr ULONGLONG ArrestStepDelayMs = 120;
+constexpr int MaxArrestOpsPerFrame = 2;
+constexpr int MaxWaitTicks = 15;
+
+bool MatchesTeam(AActor* Actor, ETeam Team)
+{
+	return (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass())) ||
+		(Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass())) ||
+		(Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()));
+}
+
 void Cheats::ArrestAll(ETeam Team)
 {
-	if (!GVars.Level) return;
+	if (!GVars.Level || !GVars.ReadyOrNotChar || !GVars.PlayerController || !GVars.HasAuthority)
+		return;
+
 	ULevel* Level = GVars.Level;
-	if (Level) {
-		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
-		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
+	if (!Level)
+		return;
 
-		for (AActor* Actor : ActorsCopy)
+	ActorsCopy = Level->Actors;
+	if (!ActorsCopy || ActorsCopy.Num() == 0)
+		return;
+
+	for (AActor* Actor : ActorsCopy)
+	{
+		if (!Actor || !Utils::IsValidActor(Actor) || !GVars.ReadyOrNotChar)
+			continue;
+
+		if (!MatchesTeam(Actor, Team))
+			continue;
+
+		ACyberneticCharacter* Char = reinterpret_cast<ACyberneticCharacter*>(Actor);
+		if (!Char || Char->IsArrested())
+			continue;
+
+		bool bAlreadyQueued = false;
+		for (const FPendingArrest& Entry : GPendingArrests)
 		{
-			if (!Actor || !Utils::IsValidActor(Actor)) continue;
-
-			if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+			if (Entry.Char == Char)
 			{
-				AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-				if (!Char) continue;
-				if (!Char->VTable) continue;
-				if (Char->IsArrested()) continue; // Can't re-arrest already arrested civilians or it will crash
-				Char->Arrest(nullptr);
-				Char->ArrestComplete(nullptr, nullptr);
-				Char->Server_ReportToTOC(Char, false, false);
+				bAlreadyQueued = true;
+				break;
 			}
+		}
+		if (bAlreadyQueued)
+			continue;
+
+		Char->ForceComplianceStrength = 0.0f;
+		Char->AbuseCount = 0;
+
+		FPendingArrest NewEntry;
+		NewEntry.Char = Char;
+		NewEntry.Stage = EArrestStage::Surrender;
+		NewEntry.LastStepMs = 0;
+		NewEntry.WaitTicks = 0;
+		GPendingArrests.push_back(NewEntry);
+	}
+}
+
+void Cheats::ProcessArrestQueue()
+{
+	if (GPendingArrests.empty())
+		return;
+
+	if (!GVars.ReadyOrNotChar || !GVars.PlayerController || !GVars.HasAuthority)
+	{
+		GPendingArrests.clear();
+		return;
+	}
+
+	const ULONGLONG Now = GetTickCount64();
+	int OpsThisFrame = 0;
+
+	for (size_t i = 0; i < GPendingArrests.size() && OpsThisFrame < MaxArrestOpsPerFrame; )
+	{
+		FPendingArrest& Entry = GPendingArrests[i];
+		ACyberneticCharacter* Char = Entry.Char;
+
+		if (!Char || !Utils::IsValidActor(Char))
+		{
+			GPendingArrests.erase(GPendingArrests.begin() + static_cast<long long>(i));
+			continue;
+		}
+
+		if (Now - Entry.LastStepMs < ArrestStepDelayMs)
+		{
+			++i;
+			continue;
+		}
+
+		switch (Entry.Stage)
+		{
+		case EArrestStage::Surrender:
+			Char->Surrender();
+			Entry.Stage = EArrestStage::Arrest;
+			Entry.LastStepMs = Now;
+			++OpsThisFrame;
+			++i;
+			break;
+
+		case EArrestStage::Arrest:
+			Char->Arrest(GVars.ReadyOrNotChar);
+			Entry.Stage = EArrestStage::ArrestComplete;
+			Entry.LastStepMs = Now;
+			++OpsThisFrame;
+			++i;
+			break;
+
+		case EArrestStage::ArrestComplete:
+			Char->ArrestComplete(GVars.ReadyOrNotChar, nullptr);
+			Entry.Stage = EArrestStage::WaitForArrested;
+			Entry.LastStepMs = Now;
+			++OpsThisFrame;
+			++i;
+			break;
+
+		case EArrestStage::WaitForArrested:
+			if (Char->IsArrested())
+			{
+				Entry.Stage = EArrestStage::ReportToTOC;
+				Entry.LastStepMs = Now;
+			}
+			else
+			{
+				Entry.WaitTicks++;
+				if (Entry.WaitTicks >= MaxWaitTicks)
+				{
+					Char->Arrest(GVars.ReadyOrNotChar);
+					Char->ArrestComplete(GVars.ReadyOrNotChar, nullptr);
+					Entry.WaitTicks = 0;
+					Entry.LastStepMs = Now;
+					++OpsThisFrame;
+				}
+			}
+			++i;
+			break;
+
+		case EArrestStage::ReportToTOC:
+			if (Char->IsArrested())
+				GVars.ReadyOrNotChar->Server_ReportToTOC(Char, false, false);
+
+			GPendingArrests.erase(GPendingArrests.begin() + static_cast<long long>(i));
+			++OpsThisFrame;
+			break;
 		}
 	}
 }
@@ -272,11 +417,13 @@ void Cheats::KillAll(ETeam Team)
 
 		for (AActor* Actor : ActorsCopy)
 		{
-			if (!Actor || !Utils::IsValidActor(Actor)) continue;
+			if (!Actor || !Utils::IsValidActor(Actor) || !GVars.ReadyOrNotChar) continue;
 
-			if (Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()) || Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass()))
+			if ((Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass())) ||
+				(Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass())) ||
+				(Team == ETeam::TEAM_SWAT && Actor->IsA(ASWATCharacter::StaticClass())))
 			{
-				if (GVars.PlayerController->HasAuthority())
+				if (GVars.HasAuthority)
 				{
 					reinterpret_cast<APlayerCharacter*>(Actor)->Server_Kill();
 					reinterpret_cast<APlayerCharacter*>(Actor)->Server_ReportToTOC(Actor, false, false);
@@ -294,8 +441,7 @@ void Cheats::KillAll(ETeam Team)
 
 void Cheats::DrawReticle()
 {
-	if (!CVars.Reticle) return;
-	if (!GVars.ReadyOrNotChar) return;
+	if (!CVars.Reticle || !GVars.ReadyOrNotChar) return;
 
 	if (MiscSettings.ReticleWhenThrowing && !reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->bQuickThrowing) 
 		return;
@@ -303,33 +449,40 @@ void Cheats::DrawReticle()
 	if (MiscSettings.CrossReticle)
 	{
 		ImGui::GetBackgroundDrawList()->AddLine(
-			ImVec2((GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x) - 5, GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y),
-			ImVec2((GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x) + 5, GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y), Utils::ConvertImVec4toU32(MiscSettings.ReticleColor));
+			ImVec2((GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x) - 5,
+				GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y),
+			ImVec2((GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x) + 5,
+				GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y), Utils::ConvertImVec4toU32(MiscSettings.ReticleColor));
+
 		ImGui::GetBackgroundDrawList()->AddLine(
-			ImVec2(GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x, (GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y) - 5),
-			ImVec2(GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x, (GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y) + 5), Utils::ConvertImVec4toU32(MiscSettings.ReticleColor));
+			ImVec2(GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x,
+				(GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y) - 5),
+			ImVec2(GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x,
+				(GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y) + 5), Utils::ConvertImVec4toU32(MiscSettings.ReticleColor));
 	}
 	else
 	{
 		ImGui::GetBackgroundDrawList()->AddCircleFilled(
 			ImVec2(GVars.ScreenSize.x / 2 + MiscSettings.ReticlePosition.x, GVars.ScreenSize.y / 2 + MiscSettings.ReticlePosition.y),
-			MiscSettings.ReticleSize,
-			Utils::ConvertImVec4toU32(MiscSettings.ReticleColor));
+			MiscSettings.ReticleSize, Utils::ConvertImVec4toU32(MiscSettings.ReticleColor));
 	}
 }
 
 void Cheats::GetAllEvidence()
 {
-	if (!GVars.Level || !GVars.ReadyOrNotChar) return;
+	if (!GVars.Level || !GVars.ReadyOrNotChar)
+		return;
 
 	ActorsCopy = GVars.Level->Actors;
-	if (!ActorsCopy || ActorsCopy.Num() == 0) return;
+	if (!ActorsCopy || ActorsCopy.Num() == 0)
+		return;
 
-	TAllocatedArray<ABaseWeapon*> Weapons(40);
+	//TAllocatedArray<ABaseWeapon*> Weapons(40); // ??? Why is this an allocated array? Why is there an array at all???? Was I high?????????????
 
 	for (AActor* Actor : ActorsCopy)
 	{
-		if (!Actor || !Utils::IsValidActor(Actor)) continue;
+		if (!Actor || !Utils::IsValidActor(Actor)) 
+			continue;
 		
 		if (Actor->IsA(ABaseWeapon::StaticClass()))
 		{
@@ -338,23 +491,28 @@ void Cheats::GetAllEvidence()
 			// Verify both weapon and component are valid
 			if (Weapon && Weapon->EvidenceComponent && Weapon->EvidenceComponent->CanBeCollected())
 			{
-				Weapons.Add(Weapon);
+				GVars.ReadyOrNotChar->PickupEvidence(Weapon);
+				//Weapons.Add(Weapon);
 			}
 		}
 	}
 
-	for (int i = 0; i < Weapons.Num(); i++)
+	/*for (int i = 0; i < Weapons.Num(); i++)
 	{
 		if (!Weapons[i]) continue;
 		if (GVars.ReadyOrNotChar)
 			GVars.ReadyOrNotChar->PickupEvidence(Weapons[i]);
-	}
+	}*/
 }
 
 void Cheats::TriggerBot()
 {
-	if (!CVars.TriggerBot) return;
-	if (!GVars.PlayerController || !GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->GetEquippedWeapon()) return;
+	if (!CVars.TriggerBot || !GVars.PlayerController || !GVars.ReadyOrNotChar)
+		return;
+
+	ABaseMagazineWeapon* Weapon = GVars.ReadyOrNotChar->GetEquippedWeapon();
+	if (!Weapon)
+		return;
 
 	FHitResult HitResult;
 
@@ -365,11 +523,11 @@ void Cheats::TriggerBot()
 		ETraceTypeQuery::TraceTypeQuery1,
 		false,
 		TArray<AActor*>(),
-		EDrawDebugTrace::ForDuration,
+		EDrawDebugTrace::None,
 		&HitResult,
 		true,
-		FLinearColor(255, 0, 0, 255),
-		FLinearColor(255, 255, 255, 255),
+		FLinearColor(0, 0, 0, 0),
+		FLinearColor(0, 0, 0, 0),
 		5.0f
 	))
 	{
@@ -378,17 +536,18 @@ void Cheats::TriggerBot()
 			AActor* HitActor = HitResult.HitObjectHandle.Actor.Get();
 			if (HitActor && (HitActor->IsA(ASuspectCharacter::StaticClass()) || MiscSettings.TriggerBotTargetsCivilians && HitActor->IsA(ACivilianCharacter::StaticClass())))
 			{
-				if (reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsDeadOrUnconscious() || reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsIncapacitated() || reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsArrestedOrSurrendered())
+				if (reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsDeadOrUnconscious()
+					|| reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsArrestedOrSurrendered())
 					return;
 
 				if (MiscSettings.TriggerBotUsesSilentAim)
 				{
-					GVars.ReadyOrNotChar->GetEquippedWeapon()->OnFire(FRotator(), HitResult.ImpactPoint);
+					Weapon->OnFire(FRotator(), HitResult.ImpactPoint);
 					return;
 				}
 				else
 				{
-					GVars.ReadyOrNotChar->GetEquippedWeapon()->OnFire(
+					Weapon->OnFire(
 						GVars.PlayerController->PlayerCameraManager->GetCameraRotation(), // Direction: if we don't set this the bullet just chills
 						GVars.PlayerController->PlayerCameraManager->GetCameraLocation()); // Start location
 					return;
@@ -401,10 +560,10 @@ void Cheats::TriggerBot()
 void Cheats::RenderEnabledOptions()
 {
 	if (!CVars.RenderOptions) return;
-	float Hue = fmodf(ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
+	float Hue = fmodf(ImGui::GetTime() * 0.2, 1.0f); // cycles every 5s
 	ImVec4 Color = ImColor::HSV(Hue, 1.f, 1.f);
 
-	ImGui::SetNextWindowBgAlpha(0.3);
+	ImGui::SetNextWindowBgAlpha(0.3f);
 	ImGui::Begin("Enabled Options", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoTitleBar);
 
 	ImGui::SetWindowPos(ImVec2(10, 30));
@@ -422,24 +581,20 @@ void Cheats::RenderEnabledOptions()
 		ImGui::TextColored(Color, "Speed x%.1f", CVars.Speed);
 	if (CVars.SilentAim)
 		ImGui::TextColored(Color, "Silent Aim");
-	if (CVars.NoClip)
-		ImGui::TextColored(Color, "No Clip");
 	if (CVars.Reticle)
 		ImGui::TextColored(Color, "Reticle");
 	if (CVars.TriggerBot)
 		ImGui::TextColored(Color, "Trigger Bot");
+	if (CVars.AntiSway)
+		ImGui::TextColored(Color, "Anti Sway");
+	if (CVars.BulletTime)
+		ImGui::TextColored(Color, "Bullet Time");
+	if (CVars.ShootFromReticle)
+		ImGui::TextColored(Color, "Shoot From Reticle");
 
 	CheatOptionsWindowSize = ImGui::GetWindowSize();
 
 	ImGui::End();
-}
-
-void Cheats::Lean()
-{
-	if (!GVars.ReadyOrNotChar) return;
-
-	GVars.ReadyOrNotChar->QuickLeanAmount = 100000.0f;
-	GVars.ReadyOrNotChar->QuickLeanIntensity = 1000000.0f;
 }
 
 void Cheats::ChangeFOV()
@@ -451,7 +606,7 @@ void Cheats::ChangeFOV()
 
 void Cheats::AutoWin()
 {
-	if (!GVars.GameState || !GVars.ReadyOrNotChar) return;
+	if (!GVars.GameState || !GVars.ReadyOrNotChar || !GVars.PlayerController || !GVars.HasAuthority) return;
 
 	AReadyOrNotGameState* GameState = GVars.GameState;
 
@@ -461,8 +616,10 @@ void Cheats::AutoWin()
 
 	for (AEvidenceActor* Evidence : GameState->AllEvidenceActors)
 	{
-		if (!Evidence) continue;
-		if (Evidence->EvidenceComponent&& Evidence->EvidenceComponent->CanBeCollected())
+		if (!Evidence) 
+			continue;
+
+		if (Evidence->EvidenceComponent && Evidence->EvidenceComponent->CanBeCollected())
 		{
 			for (FScoreBonus& Bonus : Evidence->ScoringComponent->ScoringData.Bonuses)
 			{
@@ -470,12 +627,7 @@ void Cheats::AutoWin()
 				Bonus.bGiven = true;
 				Bonus.Score = 10000;
 			}
-			for (FScorePenalty& Penalty : Evidence->ScoringComponent->ScoringData.Penalties)
-			{
-				Penalty.bEnabled = false;
-				Penalty.bGiven = false;
-				Penalty.Score = 0;
-			}
+
 			Evidence->OnEvidenceStateChanged(EEvidenceActorState::Collected);
 		}
 	}
@@ -487,20 +639,18 @@ void Cheats::AutoWin()
 	}
 	for (AObjective* Objective : GameState->MissionObjectives)
 	{
-		if (!Objective) continue;
+		if (!Objective) 
+			continue;
+
 		for (FScoreBonus &Bonus : Objective->ScoringComponent->ScoringData.Bonuses)
 		{
 			Bonus.bEnabled = true;
 			Bonus.bGiven = true;
 			Bonus.Score = 10000;
-			
 		}
-		for (FScorePenalty& Penalty : Objective->ScoringComponent->ScoringData.Penalties)
-		{
-			Penalty.bEnabled = false;
-			Penalty.bGiven = false;
-			Penalty.Score = 0;
-		}
+
+		Objective->ObjectiveCompleted();
+		Objective->OnObjectiveCompleted();
 	}
 }
 
@@ -524,10 +674,10 @@ void Cheats::ListPlayers()
 {
 	if (!GVars.GameState || !GVars.PlayerController || !GVars.Level) return;
 
-	float Hue = fmodf(ImGui::GetTime() * 0.2f, 1.0f); // cycles every 5s
+	float Hue = fmodf(ImGui::GetTime() * 0.2, 1.0f); // cycles every 5s
 	ImVec4 Color = ImColor::HSV(Hue, 1.f, 1.f);
 
-	ImGui::SetNextWindowBgAlpha(0.3);
+	ImGui::SetNextWindowBgAlpha(0.3f);
 
 	ImGui::SetNextWindowPos(ImVec2(10, CheatOptionsWindowSize.y + 30));
 
@@ -552,7 +702,7 @@ void Cheats::ListPlayers()
 
 		if (Player->GetController() && Player->GetController() == GVars.PlayerController || Player == GVars.ReadyOrNotChar) continue; // skip ourselves
 
-		if (GVars.PlayerController && GVars.PlayerController->HasAuthority())
+		if (GVars.PlayerController && GVars.HasAuthority)
 		{
 			ImGui::SameLine();
 			std::string ID = Player->PlayerState->GetPlayerName().ToString();
@@ -592,44 +742,33 @@ void Cheats::ListPlayers()
 	ImGui::End();
 }
 
-void Cheats::NoClipToggle()
-{
-	if (!GVars.ReadyOrNotChar || !GVars.PlayerController)
-	{
-		Utils::Error("[ERROR]: NoClipToggle ; Invalid Player Character or Controller");
-		return;
-	}
-
-	GVars.ReadyOrNotChar->GetMovementComponent()->MovementState.bCanFly = true;
-	auto* RONMovementComponent = GVars.ReadyOrNotChar->CharacterMovement;
-	auto* RONCharacter = GVars.ReadyOrNotChar;
-
-	RONMovementComponent->SetMovementMode(EMovementMode::MOVE_Flying, 5);
-	RONCharacter->CapsuleComponent->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
-}
-
 void Cheats::SurrenderAll(ETeam Team)
 {
-	if (!GVars.Level) return;
+	if (!GVars.Level || !GVars.PlayerController || !GVars.HasAuthority) 
+		return; // Crashes if you aren't host because we use a replicate function.
+
 	ULevel* Level = GVars.Level;
+
 	if (Level) {
-		ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
-		if (!ActorsCopy || ActorsCopy.Num() == 0) return;
-		if (ActorsCopy)
+		if (!ActorsCopy || ActorsCopy.Num() == 0) 
+			return;
+
+		for (AActor* Actor : ActorsCopy)
 		{
-			for (AActor* Actor : ActorsCopy)
+			if (!Actor || !Utils::IsValidActor(Actor))
+				continue;
+
+			if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()))
 			{
-				if (!Actor || !Utils::IsValidActor(Actor)) continue;
-				if (Team == ETeam::TEAM_CIVILIAN && Actor->IsA(ACivilianCharacter::StaticClass()) || Team == ETeam::TEAM_SUSPECT && Actor->IsA(ASuspectCharacter::StaticClass()))
-				{
-					AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
-					if (!Char) continue;
-					if (Char->IsArrestedOrSurrendered()) continue; // Can't re-surrender already surrendered civilians or it will crash
-					Char->OnRep_Surrendered();
-					Char->bSurrendered = true;
-					Char->bSurrenderComplete = true;
-					Char->OnRep_Surrendered();
-				}
+				AReadyOrNotCharacter* Char = reinterpret_cast<AReadyOrNotCharacter*>(Actor);
+				if (!Char) 
+					continue;
+				if (Char->IsArrestedOrSurrendered())
+					continue;
+				Char->bSurrendered = true;
+				Char->bSurrenderComplete = true;
+				Char->OnRep_Surrendered();
+				Sleep(10); // Without this, if there are a lot of actors it can cause some weird replication issues that can crash the game.
 			}
 		}
 	}

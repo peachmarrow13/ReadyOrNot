@@ -102,9 +102,10 @@ struct Utils
 
 };
 
-struct Variables
+struct Variables // horrible naming scheme holy shit
 {
 	APlayerController* PlayerController = nullptr;
+	bool HasAuthority = false;
 	FMinimalViewInfo* POV = nullptr;
 	APawn* Pawn = nullptr;
 	ACharacter* Character = nullptr;
@@ -149,6 +150,7 @@ struct Variables
 			this->Pawn = nullptr;
 			this->Character = nullptr;
 			this->ReadyOrNotChar = nullptr;
+			this->HasAuthority = this->PlayerController->HasAuthority();
 		}
 
 		// Update Pawn

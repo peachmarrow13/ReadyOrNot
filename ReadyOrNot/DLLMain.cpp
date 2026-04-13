@@ -628,14 +628,14 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::TreeNode("Misc Settings"))
 				{
-					static int MenuButtonCurrentIndex = MiscSettings.MenuButton;
+					static int MenuButtonCurrentIndex = KeyNames[MiscSettings.MenuButton].second;
 
 					if (ImGui::Combo("Menu Toggle Key", &MenuButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
 					{
 						MiscSettings.MenuButton = KeyNames[MenuButtonCurrentIndex].second;
 					}
 
-					static int UninjectButtonCurrentIndex = MiscSettings.UninjectButton;
+					static int UninjectButtonCurrentIndex = KeyNames[MiscSettings.UninjectButton].second;
 
 					if (ImGui::Combo("Uninject Key", &UninjectButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
 					{

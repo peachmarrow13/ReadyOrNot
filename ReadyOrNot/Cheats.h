@@ -108,6 +108,8 @@ struct MiscSettingsStruct {
 	bool CrossReticle = true;
 	bool ShouldAutoSave = true;
 	bool ShouldSaveCVars = true;
+	int UninjectButton = VK_END;
+	int MenuButton = VK_INSERT;
 } inline MiscSettings;
 
 struct Settingsstruct

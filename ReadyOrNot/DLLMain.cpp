@@ -2,8 +2,122 @@
 #include "Engine.h"
 
 #define MAJORVERSION 2
-#define MINORVERSION 4
-#define PATCHVERSION 8
+#define MINORVERSION 5
+#define PATCHVERSION 0
+
+static const std::pair<const char*, int> KeyNames[] = {
+{"Lbutton", VK_LBUTTON},
+{"Rbutton", VK_RBUTTON},
+{"Cancel", VK_CANCEL},
+{"Mbutton", VK_MBUTTON},
+{"Xbutton1", VK_XBUTTON1},
+{"Xbutton2", VK_XBUTTON2},
+{"Back", VK_BACK},
+{"Tab", VK_TAB},
+{"Clear", VK_CLEAR},
+{"Enter", VK_RETURN},
+{"Shift", VK_SHIFT},
+{"Ctrl", VK_CONTROL},
+{"Alt", VK_MENU},
+{"Pause", VK_PAUSE},
+{"Capital", VK_CAPITAL},
+{"Escape", VK_ESCAPE},
+{"Accept", VK_ACCEPT},
+{"Space", VK_SPACE},
+{"Next", VK_NEXT},
+{"End", VK_END},
+{"Home", VK_HOME},
+{"Left", VK_LEFT},
+{"Up", VK_UP},
+{"Right", VK_RIGHT},
+{"Down", VK_DOWN},
+{"Select", VK_SELECT},
+{"Print", VK_PRINT},
+{"Execute", VK_EXECUTE},
+{"Snapshot", VK_SNAPSHOT},
+{"Insert", VK_INSERT},
+{"Delete", VK_DELETE},
+{"Help", VK_HELP},
+{"Lwin", VK_LWIN},
+{"Rwin", VK_RWIN},
+{"Apps", VK_APPS},
+{"Sleep", VK_SLEEP},
+{"Numpad0", VK_NUMPAD0},
+{"Numpad1", VK_NUMPAD1},
+{"Numpad2", VK_NUMPAD2},
+{"Numpad3", VK_NUMPAD3},
+{"Numpad4", VK_NUMPAD4},
+{"Numpad5", VK_NUMPAD5},
+{"Numpad6", VK_NUMPAD6},
+{"Numpad7", VK_NUMPAD7},
+{"Numpad8", VK_NUMPAD8},
+{"Numpad9", VK_NUMPAD9},
+{"Multiply", VK_MULTIPLY},
+{"Add", VK_ADD},
+{"Separator", VK_SEPARATOR},
+{"Subtract", VK_SUBTRACT},
+{"Decimal", VK_DECIMAL},
+{"Divide", VK_DIVIDE},
+{"F1", VK_F1},
+{"F2", VK_F2},
+{"F3", VK_F3},
+{"F4", VK_F4},
+{"F5", VK_F5},
+{"F6", VK_F6},
+{"F7", VK_F7},
+{"F8", VK_F8},
+{"F9", VK_F9},
+{"F10", VK_F10},
+{"F11", VK_F11},
+{"F12", VK_F12},
+{"Numlock", VK_NUMLOCK},
+{"Scroll", VK_SCROLL},
+{"Lshift", VK_LSHIFT},
+{"Rshift", VK_RSHIFT},
+{"Lcontrol", VK_LCONTROL},
+{"Rcontrol", VK_RCONTROL},
+{"Lmenu", VK_LMENU},
+{"Rmenu", VK_RMENU},
+{"Oem1", VK_OEM_1},
+{"OemPlus", VK_OEM_PLUS},
+{"OemComma", VK_OEM_COMMA},
+{"OemMinus", VK_OEM_MINUS},
+{"OemPeriod", VK_OEM_PERIOD},
+{"Oem2", VK_OEM_2},
+{"Oem3", VK_OEM_3},
+{"GamepadA", VK_GAMEPAD_A},
+{"GamepadB", VK_GAMEPAD_B},
+{"GamepadX", VK_GAMEPAD_X},
+{"GamepadY", VK_GAMEPAD_Y},
+{"GamepadRightShoulder", VK_GAMEPAD_RIGHT_SHOULDER},
+{"GamepadLeftShoulder", VK_GAMEPAD_LEFT_SHOULDER},
+{"GamepadLeftTrigger", VK_GAMEPAD_LEFT_TRIGGER},
+{"GamepadRightTrigger", VK_GAMEPAD_RIGHT_TRIGGER},
+{"GamepadDpadUp", VK_GAMEPAD_DPAD_UP},
+{"GamepadDpadDown", VK_GAMEPAD_DPAD_DOWN},
+{"GamepadDpadLeft", VK_GAMEPAD_DPAD_LEFT},
+{"GamepadDpadRight", VK_GAMEPAD_DPAD_RIGHT},
+{"GamepadMenu", VK_GAMEPAD_MENU},
+{"GamepadView", VK_GAMEPAD_VIEW},
+{"GamepadLeftThumbstickButton", VK_GAMEPAD_LEFT_THUMBSTICK_BUTTON},
+{"GamepadRightThumbstickButton", VK_GAMEPAD_RIGHT_THUMBSTICK_BUTTON},
+{"GamepadLeftThumbstickUp", VK_GAMEPAD_LEFT_THUMBSTICK_UP},
+{"GamepadLeftThumbstickDown", VK_GAMEPAD_LEFT_THUMBSTICK_DOWN},
+{"GamepadLeftThumbstickRight", VK_GAMEPAD_LEFT_THUMBSTICK_RIGHT},
+{"GamepadLeftThumbstickLeft", VK_GAMEPAD_LEFT_THUMBSTICK_LEFT},
+{"GamepadRightThumbstickUp", VK_GAMEPAD_RIGHT_THUMBSTICK_UP},
+{"GamepadRightThumbstickDown", VK_GAMEPAD_RIGHT_THUMBSTICK_DOWN},
+{"GamepadRightThumbstickRight", VK_GAMEPAD_RIGHT_THUMBSTICK_RIGHT},
+{"GamepadRightThumbstickLeft", VK_GAMEPAD_RIGHT_THUMBSTICK_LEFT},
+{"OemClear", VK_OEM_CLEAR}
+};
+
+bool KeyGetter(void* Data, int Index, const char** OutText)
+{
+	auto* Items = static_cast<std::pair<const char*, int>*>(Data);
+	*OutText = Items[Index].first;
+	return true;
+}
 
 static const std::pair<const char*, std::string> BoneOptions[] = {
 	{"Head", BoneList.HeadBone},
@@ -40,7 +154,6 @@ static ImGuiKey ESPKey = ImGuiKey_None;
 static ImGuiKey AimButton = ImGuiKey_None;
 
 static std::string PlayerName;
-static int UninjectButton = VK_END;
 
 // Add WndProc hook for input handling
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
@@ -54,20 +167,22 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 		}
 
 		if (uMsg == WM_KEYUP) {
-			if (wParam == VK_INSERT) {
+			if (wParam == MiscSettings.MenuButton) {
 				ShowMenu = !ShowMenu;
 				//std::cout << "Menu: " << (ShowMenu ? "ON" : "OFF") << "\n";
 				ImGui::GetIO().MouseDrawCursor = ShowMenu;
 				ShowCursor(ShowMenu);
 				return TRUE;
 			}
-		}
 
-		if (uMsg == WM_KEYUP) {
-			if (wParam == UninjectButton) {
+			if (wParam == MiscSettings.UninjectButton) {
 				Cleaning.store(true);
 				return TRUE;
 			}
+		}
+
+		if (uMsg == WM_KEYUP) {
+
 		}
 
 		if (uMsg == WM_SETCURSOR) {
@@ -513,6 +628,20 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::TreeNode("Misc Settings"))
 				{
+					static int MenuButtonCurrentIndex = MiscSettings.MenuButton;
+
+					if (ImGui::Combo("Menu Toggle Key", &MenuButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
+					{
+						MiscSettings.MenuButton = KeyNames[MenuButtonCurrentIndex].second;
+					}
+
+					static int UninjectButtonCurrentIndex = MiscSettings.UninjectButton;
+
+					if (ImGui::Combo("Uninject Key", &UninjectButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
+					{
+						MiscSettings.UninjectButton = KeyNames[UninjectButtonCurrentIndex].second;
+					}
+
 					ImGui::InputFloat("Bullet Time Speed", &CVars.BulletTimeSpeed);
 
 					ImGui::SeparatorText("Reticle Settings");

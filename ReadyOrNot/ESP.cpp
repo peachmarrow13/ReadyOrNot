@@ -132,28 +132,9 @@ void Cheats::RenderESP()
     ULevel* Level = GVars.Level;
     if (!Level) return; 
 
-	if (ESPSettings.ShowObjectives && GVars.GameState)
-	{
-		AReadyOrNotGameState* GameState = GVars.GameState;
-		if (!GameState) return;
+    TArray<AActor*> ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
+	if (ActorsCopy.Num() == 0) return;
 
-        TArray<AReportableActor*> AllReportableActors = GameState->AllReportableActors;
-        for (AReportableActor* ReportableActor : AllReportableActors)
-		{
-	        if (!ReportableActor || !Utils::IsValidActor(ReportableActor)) continue;
-
-            FVector2D ObjectiveScreen;
-            
-            if (GVars.PlayerController->ProjectWorldLocationToScreen(ReportableActor->K2_GetActorLocation(), &ObjectiveScreen, true))
-            {
-                ImU32 ObjectiveColor = ReportableActor->bReportableEnabled ? Colors::Gray : Colors::Green;
-		        ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ObjectiveScreen.X, ObjectiveScreen.Y), 3, ObjectiveColor);
-				ImGui::GetBackgroundDrawList()->AddText(ImVec2(ObjectiveScreen.X + 5, ObjectiveScreen.Y - 5), ObjectiveColor, ReportableActor->ReportableName.ToString().c_str());
-            }
-	    }
-	}
-
-	TArray<AActor*> ActorsCopy = Level->Actors; // snapshot to prevent mid-iteration changes causing crashes
     for (AActor* Actor : ActorsCopy)
     {
     	if (!Actor) continue;
@@ -174,13 +155,44 @@ void Cheats::RenderESP()
 
         		ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(TrapScreen.X, TrapScreen.Y), 3, Colors::Red);
         		ImGui::GetBackgroundDrawList()->AddText(ImVec2(TrapScreen.X + 5, TrapScreen.Y - 5), Colors::Red, TrapTypeName);
-        		continue;
+                continue; // We can continue as there is no chance this can be a Ready Or Not character anymore so we save some performance by skipping.
         	}
         }
 
-        if (true) // Change to CVars.ShowGunESP
+		if (ESPSettings.ShowObjectives)
         {
+            if (Actor->IsA(AReportableActor::StaticClass()))
+            {
+                AReportableActor* ReportableActor = reinterpret_cast<AReportableActor*>(Actor);
 
+                FVector2D ObjectiveScreen;
+
+                if (GVars.PlayerController->ProjectWorldLocationToScreen(ReportableActor->K2_GetActorLocation(), &ObjectiveScreen, true))
+                {
+                    ImU32 ObjectiveColor = ReportableActor->bReportableEnabled ? Colors::Gray : Colors::Green;
+                    ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ObjectiveScreen.X, ObjectiveScreen.Y), 3, ObjectiveColor);
+                    ImGui::GetBackgroundDrawList()->AddText(ImVec2(ObjectiveScreen.X + 5, ObjectiveScreen.Y - 5), ObjectiveColor, ReportableActor->ReportableName.ToString().c_str());
+                    continue; // We can continue as there is no chance this can be a Ready Or Not character anymore so we save some performance by skipping.
+                }
+            }
+            else if (Actor->IsA(ABombActor::StaticClass()))
+            {
+                ABombActor* BombActor = reinterpret_cast<ABombActor*>(Actor);
+                FVector2D BombScreen;
+                if (GVars.PlayerController->ProjectWorldLocationToScreen(BombActor->K2_GetActorLocation(), &BombScreen, true))
+                {
+                    ImU32 BombColor;
+					if (BombActor->BombState == EBombState::BS_Disabled || BombActor->BombState == EBombState::BS_Exploded || BombActor->BombState == EBombState::BS_HiddenAndFullyDisabled)
+                        BombColor = Colors::Green;
+                    else if (BombActor->BombState == EBombState::BS_Active)
+                        BombColor = Colors::Red;
+                    else
+                        BombColor = Colors::Gray;
+                    ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(BombScreen.X, BombScreen.Y), 3, BombColor);
+                    ImGui::GetBackgroundDrawList()->AddText(ImVec2(BombScreen.X + 5, BombScreen.Y - 5), BombColor, "Bomb");
+                    continue; // We can continue as there is no chance this can be a Ready Or Not character anymore so we save some performance by skipping.
+                }
+			}
         }
 
         AReadyOrNotCharacter* TargetActor = nullptr;

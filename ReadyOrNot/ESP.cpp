@@ -175,7 +175,7 @@ void Cheats::RenderESP()
                     continue; // We can continue as there is no chance this can be a Ready Or Not character anymore so we save some performance by skipping.
                 }
             }
-            else if (Actor->IsA(ABombActor::StaticClass()))
+            else if (Actor->IsA(ABombActor::StaticClass())) // credit to CrimsonSpark for the bomb ESP idea
             {
                 ABombActor* BombActor = reinterpret_cast<ABombActor*>(Actor);
                 FVector2D BombScreen;

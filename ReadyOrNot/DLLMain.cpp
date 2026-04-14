@@ -357,6 +357,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				if (ImGui::Button("Give all Achievements"))
 					Cheats::GiveAchievements();
 
+				ImGui::Checkbox("Instant MultiTool", &CVars.InstantMultiTool);
+
 				ImGui::EndTabItem();
 			}
 
@@ -581,7 +583,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					AddDefaultTooltip("The Objectives don't show the actual location");
 					ImGui::TreePop();
 				}
-
+		
 				if (ImGui::TreeNode("Silent Aim Settings"))
 				{
 					ImGui::Checkbox("Target Civilians", &SilentAimSettings.TargetCivilians);
@@ -868,7 +870,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	return Engine::oPresent ? Engine::oPresent(SwapChain, SyncInterval, Flags) : S_OK;
 }
 
-DWORD MainThread(HMODULE hModule)
+static DWORD MainThread(HMODULE hModule)
 {
 	AllocConsole();
 	FILE* Dummy;
@@ -1095,7 +1097,7 @@ void LoadSettings()
 		return;
 	}
 
-	size_t len;
+	size_t len = 0;
 	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
 	TextVars.AimbotBone.resize(len);
 	TextVarsinfile.read(TextVars.AimbotBone.data(), len);

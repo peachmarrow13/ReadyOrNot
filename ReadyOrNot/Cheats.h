@@ -95,6 +95,7 @@ struct CVarsStruct
 	bool SaveDebugToFile = false;
 	bool BulletTime = false;
 	bool AntiSway = false;
+	bool InstantMultiTool = false;
 } inline CVars;
 
 struct MiscSettingsStruct {

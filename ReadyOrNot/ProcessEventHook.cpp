@@ -47,6 +47,15 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 			}
 		}
 
+		if (Function->GetName() == "GetMultitoolUseTime") // credit to CrimsonSpark for this instant multitool use time
+		{
+			oProcessEvent(Object, Function, Params);
+
+			struct GetMultitoolUseTime_Params { float ReturnValue; };
+			reinterpret_cast<GetMultitoolUseTime_Params*>(Params)->ReturnValue = 0.1f;
+			return;
+		}
+
 		if (CVars.SilentAim || CVars.ShootFromReticle)
 		{
 			if (strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)

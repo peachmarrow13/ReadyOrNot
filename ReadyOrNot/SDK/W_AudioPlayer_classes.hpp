@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "FMODStudio_structs.hpp"
-#include "E_Briefing_Audio_PlayStates_structs.hpp"
 #include "UMG_classes.hpp"
+#include "E_Briefing_Audio_PlayStates_structs.hpp"
+#include "FMODStudio_structs.hpp"
 
 
 namespace SDK

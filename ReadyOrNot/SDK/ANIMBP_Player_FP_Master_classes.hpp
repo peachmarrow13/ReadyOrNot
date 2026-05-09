@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ANIMBP_Player_FP_Master_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ANIMBP_Player_FP_Master_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"

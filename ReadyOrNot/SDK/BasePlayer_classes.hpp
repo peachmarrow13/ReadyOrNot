@@ -20,8 +20,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BasePlayer.BasePlayer_C
 // 0x00F0 (0x3190 - 0x30A0)
-#pragma pack(push, 0x1)
-class alignas(0x10) ABasePlayer_C : public APlayerCharacter
+class ABasePlayer_C final : public APlayerCharacter
 {
 public:
 	uint8                                         Pad_3098[0x8];                                     // 0x3098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -102,7 +101,6 @@ public:
 		return GetDefaultObjImpl<ABasePlayer_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ABasePlayer_C;
 
 }

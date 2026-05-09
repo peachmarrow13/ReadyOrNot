@@ -143,7 +143,7 @@ void Cheats::RenderESP()
         {
 	        FVector2D TrapScreen;
 
-        	if (Actor->IsA(ATrapActor::StaticClass()) && GVars.PlayerController->ProjectWorldLocationToScreen(Actor->K2_GetActorLocation(), &TrapScreen, true))
+        	if (Actor->IsA(ATrapActor::StaticClass()) && Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, Actor->K2_GetActorLocation(), &TrapScreen, true))
         	{
 				const char* TrapTypeName = "Unknown Trap";
 				if (((ATrapActor*)Actor)->TrapType == ETrapType::Explosive)
@@ -167,7 +167,7 @@ void Cheats::RenderESP()
 
                 FVector2D ObjectiveScreen;
 
-                if (GVars.PlayerController->ProjectWorldLocationToScreen(ReportableActor->K2_GetActorLocation(), &ObjectiveScreen, true))
+                if (Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ReportableActor->K2_GetActorLocation(), &ObjectiveScreen, true))
                 {
                     ImU32 ObjectiveColor = ReportableActor->bReportableEnabled ? Colors::Gray : Colors::Green;
                     ImGui::GetBackgroundDrawList()->AddCircleFilled(ImVec2(ObjectiveScreen.X, ObjectiveScreen.Y), 3, ObjectiveColor);
@@ -179,7 +179,7 @@ void Cheats::RenderESP()
             {
                 ABombActor* BombActor = reinterpret_cast<ABombActor*>(Actor);
                 FVector2D BombScreen;
-                if (GVars.PlayerController->ProjectWorldLocationToScreen(BombActor->K2_GetActorLocation(), &BombScreen, true))
+                if (Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, BombActor->K2_GetActorLocation(), &BombScreen, true))
                 {
                     ImU32 BombColor;
 					if (BombActor->BombState == EBombState::BS_Disabled || BombActor->BombState == EBombState::BS_Exploded || BombActor->BombState == EBombState::BS_HiddenAndFullyDisabled)
@@ -299,9 +299,8 @@ void Cheats::RenderESP()
 
             if (ESPSettings.Bones)
             {
-                
-                if (GVars.PlayerController->ProjectWorldLocationToScreen(ParentPos, &ParentScreen, true) &&
-                    GVars.PlayerController->ProjectWorldLocationToScreen(ChildPos, &ChildScreen, true))
+                if (Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ParentPos, &ParentScreen, true) &&
+                    Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ChildPos, &ChildScreen, true))
                 {
                     if (ESPSettings.ShowBox)
                     {
@@ -326,7 +325,7 @@ void Cheats::RenderESP()
 				float Distance = GVars.POV->Location.GetDistanceToInMeters(ActorLocation);
                 if (Distance < 0.0f) continue;
                 FVector2D DistanceScreen;
-                if (GVars.PlayerController->ProjectWorldLocationToScreen(ActorLocation, &DistanceScreen, true))
+                if (Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ActorLocation, &DistanceScreen, true))
                 {
                     char DistanceText[32];
                     snprintf(DistanceText, sizeof(DistanceText), "%.1f m", Distance);
@@ -337,7 +336,8 @@ void Cheats::RenderESP()
                     );
                 }
 			}
-            if (ESPSettings.ShowTeam && IsPlayer && TargetActor && TargetActor->PlayerState && TargetActor->PlayerState->GetPlayerName() && GVars.PlayerController->ProjectWorldLocationToScreen(Actor->K2_GetActorLocation(), &ActorScreen, true))
+            if (ESPSettings.ShowTeam && IsPlayer && TargetActor && TargetActor->PlayerState && TargetActor->PlayerState->GetPlayerName() &&
+                Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, Actor->K2_GetActorLocation(), &ActorScreen, true))
             {
                 ImGui::GetBackgroundDrawList()->AddText(
                     ImVec2(ActorScreen.X, ActorScreen.Y + 50),

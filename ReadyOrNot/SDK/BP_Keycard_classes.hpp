@@ -32,12 +32,13 @@ public:
 	void OnFocusGain(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void MeleeInteract(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void Interact(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
+	void Fire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void ExecuteUbergraph_BP_Keycard(int32 EntryPoint);
 	void EndInteract(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void EndFire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 	void DoubleTapInteract(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
-	void Fire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent);
 
+	class UInteractableComponent* GetInteractableComponent() const;
 	float DetermineInteractionDistance() const;
 	EInputEvent DetermineInputEvent() const;
 	float DetermineCurrentProgress() const;
@@ -45,7 +46,6 @@ public:
 	class FText DetermineActionText() const;
 	bool CanInteractThroughHitActors(const struct FHitResult& Hit) const;
 	bool CanInteract() const;
-	class UInteractableComponent* GetInteractableComponent() const;
 
 public:
 	static class UClass* StaticClass()

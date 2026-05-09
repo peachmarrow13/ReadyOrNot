@@ -29,8 +29,8 @@ public:
 
 public:
 	void StartActivity_Blueprint(class AAIController* Owner);
-	void ExecuteUbergraph_FleeGas_CombatMove(int32 EntryPoint);
 	void OnAIPerceptionSense(class ACyberneticController* InSenseController, const struct FAIStimulus& Stimulus, class AActor** OutOverrideSensedActor);
+	void ExecuteUbergraph_FleeGas_CombatMove(int32 EntryPoint);
 
 	class FName GetMoveStyleOverride() const;
 

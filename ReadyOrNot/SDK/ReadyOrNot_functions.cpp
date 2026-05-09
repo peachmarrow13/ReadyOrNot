@@ -35999,7 +35999,7 @@ void AReadyOrNotCharacter::Server_DropArrestedTarget(class AReadyOrNotCharacter*
 
 
 // Function ReadyOrNot.ReadyOrNotCharacter.Server_EndInteract
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
 // Parameters:
 // class UObject*                          Interactable                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UInteractableComponent*           InInteractableComponent                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -36072,7 +36072,7 @@ void AReadyOrNotCharacter::Server_Incapacitate()
 
 
 // Function ReadyOrNot.ReadyOrNotCharacter.Server_Interact
-// (Net, NetReliable, Native, Event, Public, NetServer, NetValidate)
+// (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
 // Parameters:
 // class UObject*                          Interactable                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UInteractableComponent*           InInteractableComponent                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

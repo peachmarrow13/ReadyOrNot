@@ -107,6 +107,20 @@ void UANIMBP_Player_TP_V3_C::AnimNotify_PlayFootstep()
 }
 
 
+// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimNotify_HideTPMesh
+// (BlueprintCallable, BlueprintEvent)
+
+void UANIMBP_Player_TP_V3_C::AnimNotify_HideTPMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_HideTPMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -125,20 +139,6 @@ void UANIMBP_Player_TP_V3_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
-}
-
-
-// Function ANIMBP_Player_TP_V3.ANIMBP_Player_TP_V3_C.AnimNotify_HideTPMesh
-// (BlueprintCallable, BlueprintEvent)
-
-void UANIMBP_Player_TP_V3_C::AnimNotify_HideTPMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Player_TP_V3_C", "AnimNotify_HideTPMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

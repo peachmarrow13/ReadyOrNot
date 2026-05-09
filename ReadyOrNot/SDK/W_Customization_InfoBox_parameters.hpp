@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "ReadyOrNot_structs.hpp"
-#include "E_CustomizationGroups_structs.hpp"
 #include "UMG_structs.hpp"
+#include "E_CustomizationGroups_structs.hpp"
 
 
 namespace SDK::Params

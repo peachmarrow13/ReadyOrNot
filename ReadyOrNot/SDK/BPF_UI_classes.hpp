@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "E_CustomizationGroups_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "Engine_classes.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "Slate_structs.hpp"
-#include "E_CustomizationGroups_structs.hpp"
 
 
 namespace SDK

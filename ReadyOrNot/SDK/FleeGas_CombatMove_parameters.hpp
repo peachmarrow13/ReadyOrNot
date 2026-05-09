@@ -25,6 +25,17 @@ public:
 };
 DUMPER7_ASSERTS_FleeGas_CombatMove_C_StartActivity_Blueprint;
 
+// Function FleeGas_CombatMove.FleeGas_CombatMove_C.OnAIPerceptionSense
+// 0x0068 (0x0068 - 0x0000)
+struct FleeGas_CombatMove_C_OnAIPerceptionSense final
+{
+public:
+	class ACyberneticController*                  InSenseController;                                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FAIStimulus                            Stimulus;                                          // 0x0008(0x0058)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	class AActor*                                 OutOverrideSensedActor;                            // 0x0060(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_FleeGas_CombatMove_C_OnAIPerceptionSense;
+
 // Function FleeGas_CombatMove.FleeGas_CombatMove_C.ExecuteUbergraph_FleeGas_CombatMove
 // 0x0018 (0x0018 - 0x0000)
 struct FleeGas_CombatMove_C_ExecuteUbergraph_FleeGas_CombatMove final
@@ -36,17 +47,6 @@ public:
 	class AAIController*                          K2Node_Event_Owner;                                // 0x0010(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FleeGas_CombatMove_C_ExecuteUbergraph_FleeGas_CombatMove;
-
-// Function FleeGas_CombatMove.FleeGas_CombatMove_C.OnAIPerceptionSense
-// 0x0068 (0x0068 - 0x0000)
-struct FleeGas_CombatMove_C_OnAIPerceptionSense final
-{
-public:
-	class ACyberneticController*                  InSenseController;                                 // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAIStimulus                            Stimulus;                                          // 0x0008(0x0058)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-	class AActor*                                 OutOverrideSensedActor;                            // 0x0060(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_FleeGas_CombatMove_C_OnAIPerceptionSense;
 
 // Function FleeGas_CombatMove.FleeGas_CombatMove_C.GetMoveStyleOverride
 // 0x0020 (0x0020 - 0x0000)

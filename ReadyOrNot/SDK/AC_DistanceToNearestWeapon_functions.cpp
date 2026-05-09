@@ -17,6 +17,33 @@
 namespace SDK
 {
 
+// Function AC_DistanceToNearestWeapon.AC_DistanceToNearestWeapon_C.Score
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+float UAC_DistanceToNearestWeapon_C::Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AC_DistanceToNearestWeapon_C", "Score");
+
+	Params::AC_DistanceToNearestWeapon_C_Score Parms{};
+
+	Parms.Context = std::move(Context);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bSuccess != nullptr)
+		*bSuccess = Parms.bSuccess;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AC_DistanceToNearestWeapon.AC_DistanceToNearestWeapon_C.FindWeaponsInRange
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
@@ -59,33 +86,6 @@ float UAC_DistanceToNearestWeapon_C::CalculateCurve(float X) const
 	Parms.X = X;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AC_DistanceToNearestWeapon.AC_DistanceToNearestWeapon_C.Score
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// const struct FAIActionDecisionContext&  Context                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-// bool*                                   bSuccess                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UAC_DistanceToNearestWeapon_C::Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AC_DistanceToNearestWeapon_C", "Score");
-
-	Params::AC_DistanceToNearestWeapon_C_Score Parms{};
-
-	Parms.Context = std::move(Context);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bSuccess != nullptr)
-		*bSuccess = Parms.bSuccess;
 
 	return Parms.ReturnValue;
 }

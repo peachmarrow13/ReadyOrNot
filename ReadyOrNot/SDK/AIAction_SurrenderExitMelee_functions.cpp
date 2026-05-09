@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.Tick_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_SurrenderExitMelee_C::Tick_Blueprint(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "Tick_Blueprint");
+
+	Params::AIAction_SurrenderExitMelee_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.ExecuteUbergraph_AIAction_SurrenderExitMelee
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,26 +68,6 @@ void UAIAction_SurrenderExitMelee_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_SurrenderExitMelee.AIAction_SurrenderExitMelee_C.Tick_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_SurrenderExitMelee_C::Tick_Blueprint(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SurrenderExitMelee_C", "Tick_Blueprint");
-
-	Params::AIAction_SurrenderExitMelee_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

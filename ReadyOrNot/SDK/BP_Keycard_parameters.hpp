@@ -58,6 +58,16 @@ public:
 };
 DUMPER7_ASSERTS_BP_Keycard_C_Interact;
 
+// Function BP_Keycard.BP_Keycard_C.Fire
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Keycard_C_Fire final
+{
+public:
+	class AReadyOrNotCharacter*                   InteractInstigator;                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UInteractableComponent*                 InInteractableComponent;                           // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Keycard_C_Fire;
+
 // Function BP_Keycard.BP_Keycard_C.ExecuteUbergraph_BP_Keycard
 // 0x0110 (0x0110 - 0x0000)
 struct BP_Keycard_C_ExecuteUbergraph_BP_Keycard final
@@ -118,15 +128,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_Keycard_C_DoubleTapInteract;
 
-// Function BP_Keycard.BP_Keycard_C.Fire
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Keycard_C_Fire final
+// Function BP_Keycard.BP_Keycard_C.GetInteractableComponent
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Keycard_C_GetInteractableComponent final
 {
 public:
-	class AReadyOrNotCharacter*                   InteractInstigator;                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UInteractableComponent*                 InInteractableComponent;                           // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UInteractableComponent*                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_Keycard_C_Fire;
+DUMPER7_ASSERTS_BP_Keycard_C_GetInteractableComponent;
 
 // Function BP_Keycard.BP_Keycard_C.DetermineInteractionDistance
 // 0x0004 (0x0004 - 0x0000)
@@ -191,15 +200,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Keycard_C_CanInteract;
-
-// Function BP_Keycard.BP_Keycard_C.GetInteractableComponent
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Keycard_C_GetInteractableComponent final
-{
-public:
-	class UInteractableComponent*                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Keycard_C_GetInteractableComponent;
 
 }
 

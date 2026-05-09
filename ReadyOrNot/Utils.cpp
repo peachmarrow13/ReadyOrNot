@@ -38,38 +38,30 @@ UWorld* Utils::GetWorldSafe()
 // can return nullptr
 APlayerController* Utils::GetPlayerController()
 {
-    int i = 0;
 	APlayerController* PlayerController = nullptr;
+    
+    UWorld* World = GetWorldSafe();
+    if (!World)
+        return nullptr;
 
-    while (i < 50) {
-        i++;
-        UWorld* World = GetWorldSafe();
-        if (!World) return nullptr; // Error already logged in GetWorldSafe
-        UGameInstance* GameInstance = World->OwningGameInstance;
-        if (!GameInstance) {
-            //printf("[Error] GameInstance not found!\n");
-            Sleep(50);
-            continue;
-        }
-        if (GameInstance->LocalPlayers.Num() <= 0) {
-            //printf("[Error] No LocalPlayers in GameInstance!\n");
-            Sleep(50);
-			continue;
-        }
-        ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers[0];
-        if (!LocalPlayer) {
-            //printf("[Error] LocalPlayer is null!\n");
-            Sleep(50);
-			continue;
-        }
-        PlayerController = LocalPlayer->PlayerController;
-        if (!PlayerController) {
-            //printf("[Error] PlayerController not found!\n");
-            Sleep(50);
-			continue;
-        }
-    }
-    if (!Utils::IsValidActor(PlayerController)) return nullptr;
+    UGameInstance* GameInstance = World->OwningGameInstance;
+    if (!GameInstance)
+        return nullptr;
+
+    if (GameInstance->LocalPlayers.Num() <= 0)
+        return nullptr;
+
+    ULocalPlayer* LocalPlayer = GameInstance->LocalPlayers[0];
+    if (!LocalPlayer)
+        return nullptr;
+
+    PlayerController = LocalPlayer->PlayerController;
+    if (!PlayerController)
+        return nullptr;
+
+    if (!Utils::IsValidActor(PlayerController))
+        return nullptr;
+    
     return PlayerController;
 }
 
@@ -363,4 +355,14 @@ ACharacter* Utils::GetNearestCharacter(ETeam Team)
         }
     }
 	return NearestCharacter;
+}
+
+bool Utils::SafeProjectWorldLocationToScreen(APlayerController* Controller, const FVector& WorldPosition, FVector2D* OutScreenPosition, const bool PlayerViewportRelative)
+{
+    if (Controller)
+    {
+        return Controller->ProjectWorldLocationToScreen(WorldPosition, OutScreenPosition, PlayerViewportRelative);
+    }
+
+    return false;
 }

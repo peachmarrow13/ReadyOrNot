@@ -18,6 +18,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_HesitateMove_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_HesitateMove_C_Tick_Blueprint;
+
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
 // 0x0001 (0x0001 - 0x0000)
 struct AIAction_HesitateMove_C_ShouldForcePerformAction final
@@ -142,14 +151,14 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_HesitateMove_C_ExecuteUbergraph_AIAction_HesitateMove;
 
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_HesitateMove_C_Tick_Blueprint final
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldPerformAction
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_HesitateMove_C_ShouldPerformAction final
 {
 public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_AIAction_HesitateMove_C_Tick_Blueprint;
+DUMPER7_ASSERTS_AIAction_HesitateMove_C_ShouldPerformAction;
 
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.GetMoveStyleOverride
 // 0x0020 (0x0020 - 0x0000)
@@ -163,15 +172,6 @@ public:
 	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_HesitateMove_C_GetMoveStyleOverride;
-
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldPerformAction
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_HesitateMove_C_ShouldPerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_HesitateMove_C_ShouldPerformAction;
 
 }
 

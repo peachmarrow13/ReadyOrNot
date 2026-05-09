@@ -33,14 +33,21 @@ void Cheats::ToggleGodMode() {
 		}
 		else
 			RONC->ToggleGodMode();
+		RONC->IncreaseHealth(100000.0f);
 	}
 }
 
 void Cheats::ToggleInfAmmo() {
-	if (!GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->GetEquippedWeapon()) return;
+	if (!GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->GetEquippedWeapon()) 
+		return;
 
 	ABaseMagazineWeapon* Gun = GVars.ReadyOrNotChar->GetEquippedWeapon();
 	Gun->bInfiniteAmmo = CVars.InfAmmo;
+	Gun->MagazineCountMax = 100000;
+	for (FMagazine& Magazine : Gun->Magazines)
+	{
+		Magazine.Ammo = 100000;
+	}
 }
 
 void Cheats::PenetrateWalls()
@@ -477,8 +484,6 @@ void Cheats::GetAllEvidence()
 	if (!ActorsCopy || ActorsCopy.Num() == 0)
 		return;
 
-	//TAllocatedArray<ABaseWeapon*> Weapons(40); // ??? Why is this an allocated array? Why is there an array at all???? Was I high?????????????
-
 	for (AActor* Actor : ActorsCopy)
 	{
 		if (!Actor || !Utils::IsValidActor(Actor)) 
@@ -488,21 +493,12 @@ void Cheats::GetAllEvidence()
 		{
 			ABaseWeapon* Weapon = reinterpret_cast<ABaseWeapon*>(Actor);
 
-			// Verify both weapon and component are valid
 			if (Weapon && Weapon->EvidenceComponent && Weapon->EvidenceComponent->CanBeCollected())
 			{
 				GVars.ReadyOrNotChar->PickupEvidence(Weapon);
-				//Weapons.Add(Weapon);
 			}
 		}
 	}
-
-	/*for (int i = 0; i < Weapons.Num(); i++)
-	{
-		if (!Weapons[i]) continue;
-		if (GVars.ReadyOrNotChar)
-			GVars.ReadyOrNotChar->PickupEvidence(Weapons[i]);
-	}*/
 }
 
 void Cheats::TriggerBot()
@@ -536,8 +532,13 @@ void Cheats::TriggerBot()
 			AActor* HitActor = HitResult.HitObjectHandle.Actor.Get();
 			if (HitActor && (HitActor->IsA(ASuspectCharacter::StaticClass()) || MiscSettings.TriggerBotTargetsCivilians && HitActor->IsA(ACivilianCharacter::StaticClass())))
 			{
-				if (reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsDeadOrUnconscious()
-					|| reinterpret_cast<AReadyOrNotCharacter*>(HitActor)->IsArrestedOrSurrendered())
+				AReadyOrNotCharacter* Target = reinterpret_cast<AReadyOrNotCharacter*>(HitActor);
+
+				if (Target->IsDeadOrUnconscious()
+					|| Target->IsArrestedOrSurrendered()
+					|| Target->IsDowned()
+					|| Target->IsIncapacitated()
+					|| Target->IsSurrendered())
 					return;
 
 				if (MiscSettings.TriggerBotUsesSilentAim)

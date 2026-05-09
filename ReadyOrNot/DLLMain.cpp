@@ -169,7 +169,7 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 		if (uMsg == WM_KEYUP) {
 			if (wParam == MiscSettings.MenuButton) {
 				ShowMenu = !ShowMenu;
-				//std::cout << "Menu: " << (ShowMenu ? "ON" : "OFF") << "\n";
+				std::cout << "Menu: " << (ShowMenu ? "ON" : "OFF") << "\n";
 				ImGui::GetIO().MouseDrawCursor = ShowMenu;
 				ShowCursor(ShowMenu);
 				return TRUE;
@@ -202,7 +202,6 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 	while (g_PresentCount.load() != 0)
 		Sleep(0); 
 
-
 	// Release ImGui render target
 	if (Engine::pRenderTargetView) {
 		Engine::pRenderTargetView->Release();
@@ -232,11 +231,13 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (Resizing.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
 
-	g_PresentCount.fetch_add(1);
+	struct PresentGuardStruct
+	{
+		PresentGuardStruct() { g_PresentCount.fetch_add(1); }
+		~PresentGuardStruct() { g_PresentCount.fetch_sub(1); }
+	} PresentGuard;
 
-	GVars.AutoSetVariables();
-
-	if (Frames % 30 == 0) // Every 30 frames, ensure cheats are correctly applied
+/*	if (Frames % 30 == 0) // Every 30 frames, ensure cheats are correctly applied
 	{
 		AReadyOrNotCharacter* RONCT = GVars.ReadyOrNotChar;
 		if (GVars.PlayerController && RONCT && Utils::IsValidActor(RONCT) && RONCT->GetEquippedWeapon())
@@ -244,7 +245,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			RONCT->bGodMode = CVars.GodMode;
 			RONCT->GetEquippedWeapon()->bInfiniteAmmo = CVars.InfAmmo;
 		}
-	}
+	}*/
 
 	if (Frames % 900 == 0 && MiscSettings.ShouldAutoSave) // Every 900 frames, save settings
 	{
@@ -334,7 +335,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			if (ImGui::BeginTabItem("Player"))
 			{
 				if (ImGui::Checkbox("GodMode", &CVars.GodMode))
-					Cheats::ToggleGodMode();
+					CVars.QueuedAction = EQueuedAction::ToggleGodMode;
 				HostOnlyTooltip();
 
 				ImGui::Checkbox("Aimbot", &CVars.Aimbot);
@@ -355,9 +356,20 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				}
 
 				if (ImGui::Button("Give all Achievements"))
-					Cheats::GiveAchievements();
+					CVars.QueuedAction = EQueuedAction::GiveAchievements;
 
 				ImGui::Checkbox("Instant MultiTool", &CVars.InstantMultiTool);
+
+/*				if (ImGui::Button("Give Infinite Inventory Slots"))
+				{
+					if (GVars.ReadyOrNotChar)
+					{
+						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.GrenadeSlotsCount = 999;
+						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.SecondaryAmmoSlotsCount = 999;
+						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.PrimaryAmmoSlotsCount = 999;
+						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.TacticalSlotsCount = 999;
+					}
+				}*/
 
 				ImGui::EndTabItem();
 			}
@@ -365,33 +377,33 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			if (ImGui::BeginTabItem("Weapon"))
 			{
 				if (ImGui::Checkbox("Infinite Ammo", &CVars.InfAmmo))
-					Cheats::ToggleInfAmmo();
+					CVars.QueuedAction = EQueuedAction::ToggleInfAmmo;
 				HostOnlyTooltip();
 
 				if (ImGui::Button("Remove Recoil"))
-					Cheats::RemoveRecoil();
+					CVars.QueuedAction = EQueuedAction::RemoveRecoil;
 
 				ImGui::Checkbox("Anti Sway", &CVars.AntiSway);
 
 				if (ImGui::Button("Remove Spread"))
-					Cheats::RemoveSpread();
+					CVars.QueuedAction = EQueuedAction::RemoveSpread;
 
 				if (ImGui::Button("Add Auto Fire"))
-					Cheats::AddAutoFire();
+					CVars.QueuedAction = EQueuedAction::AddAutoFire;
 
 				if (ImGui::Button("Add Penetration"))
-					Cheats::PenetrateWalls();
+					CVars.QueuedAction = EQueuedAction::AddPenetration;
 
 				if (ImGui::Button("Insta Kill"))
-					Cheats::InstaKill();
+					CVars.QueuedAction = EQueuedAction::InstaKill;
 
 				if (ImGui::Button("Increase Fire Rate"))
-					Cheats::SetFireRate(3000.0f);
+					CVars.QueuedAction = EQueuedAction::SetFireRate;
 				
 				ImGui::Checkbox("Shoot From Reticle", &CVars.ShootFromReticle);
 
 				if (ImGui::Button("Add Magazine"))
-					Cheats::AddMag();
+					CVars.QueuedAction = EQueuedAction::AddMagazine;
 
 				ImGui::Checkbox("TriggerBot", &CVars.TriggerBot);
 
@@ -401,7 +413,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			if (ImGui::BeginTabItem("World"))
 			{
 				if (ImGui::Button("Kill All Suspects"))
-					Cheats::KillAll(ETeam::TEAM_SUSPECT);
+					CVars.QueuedAction = EQueuedAction::KillAllSuspects;
 
 				ImGui::SameLine();
 
@@ -782,11 +794,6 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (CVars.ListPlayers)
 		Cheats::ListPlayers();
 
-	if (CVars.BulletTime)
-		GVars.World->K2_GetWorldSettings()->TimeDilation = CVars.BulletTimeSpeed; // Slow-mo
-	else
-		GVars.World->K2_GetWorldSettings()->TimeDilation = 1.0f; // Normal
-
 	if (CVars.ESP)
 		Cheats::RenderESP();
 
@@ -821,22 +828,11 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		}
 	}
 
-	if (CVars.AntiSway)
-		Cheats::AntiSway();
-
 	if (CVars.Reticle)
 		Cheats::DrawReticle();
 
 	if (CVars.Aimbot)
 		Cheats::Aimbot();
-
-	if (CVars.TriggerBot)
-		Cheats::TriggerBot();
-
-	if (CVars.SpeedEnabled)
-		Cheats::SetPlayerSpeed();
-
-	Cheats::ProcessArrestQueue();
 
 	if (Engine::pRenderTargetView) {
 		Engine::pContext->OMSetRenderTargets(1, &Engine::pRenderTargetView, nullptr);
@@ -865,8 +861,6 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		CVars.ESP = !CVars.ESP;
 	}
 
-	g_PresentCount.fetch_sub(1);
-
 	return Engine::oPresent ? Engine::oPresent(SwapChain, SyncInterval, Flags) : S_OK;
 }
 
@@ -882,7 +876,7 @@ static DWORD MainThread(HMODULE hModule)
 
 	int Attempts = 0;
 
-	while (!UEngine::GetEngine() && Attempts < 50)
+	while (!UEngine::GetEngine() && Attempts < 100)
 	{
 		Attempts++;
 		printf("Waiting for game to load...\n");
@@ -908,8 +902,6 @@ static DWORD MainThread(HMODULE hModule)
 	else
 		printf("Engine hooks initialized successfully.\n");
 
-	Sleep(1000); // Wait a second to ensure everything is loaded	
-
 	std::cout << "Cheat Injected\n";
 
 	LoadSettings();
@@ -918,7 +910,7 @@ static DWORD MainThread(HMODULE hModule)
 
 	while (!Cleaning.load())
 		Sleep(100);
-	
+
 	Cleanup(hModule);
 
 	return 0;
@@ -941,9 +933,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID lpReserved) {
 
 void SaveSettings()
 {
-	//if (!Settings.ShouldSave)
-		//return;
-
+	return;
 	// Save MiscSettings (binary)
 	std::ofstream MiscSettingsfile("MiscSettings.bin", std::ios::binary);
 	if (MiscSettingsfile.is_open())

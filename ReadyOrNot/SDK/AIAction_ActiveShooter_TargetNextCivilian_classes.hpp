@@ -34,12 +34,12 @@ public:
 public:
 	void TryScriptedFireAtCivilian();
 	void Tick_Blueprint(float DeltaTime);
+	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
+	void OnCreate_Blueprint(class ACyberneticController* Controller);
 	void FindNextCivilian();
 	void ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian(int32 EntryPoint);
 	void EndAction_Blueprint();
 	void BeginAction_Blueprint();
-	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
-	void OnCreate_Blueprint(class ACyberneticController* Controller);
 
 	bool ShouldPerformAction() const;
 	void GetNextClosestAliveCivilian(class ACyberneticCharacter** civilian, bool* Return_Value) const;

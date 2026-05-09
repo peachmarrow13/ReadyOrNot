@@ -37,26 +37,6 @@ void UFleeGas_CombatMove_C::StartActivity_Blueprint(class AAIController* Owner)
 }
 
 
-// Function FleeGas_CombatMove.FleeGas_CombatMove_C.ExecuteUbergraph_FleeGas_CombatMove
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UFleeGas_CombatMove_C::ExecuteUbergraph_FleeGas_CombatMove(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FleeGas_CombatMove_C", "ExecuteUbergraph_FleeGas_CombatMove");
-
-	Params::FleeGas_CombatMove_C_ExecuteUbergraph_FleeGas_CombatMove Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function FleeGas_CombatMove.FleeGas_CombatMove_C.OnAIPerceptionSense
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -80,6 +60,26 @@ void UFleeGas_CombatMove_C::OnAIPerceptionSense(class ACyberneticController* InS
 
 	if (OutOverrideSensedActor != nullptr)
 		*OutOverrideSensedActor = Parms.OutOverrideSensedActor;
+}
+
+
+// Function FleeGas_CombatMove.FleeGas_CombatMove_C.ExecuteUbergraph_FleeGas_CombatMove
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UFleeGas_CombatMove_C::ExecuteUbergraph_FleeGas_CombatMove(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FleeGas_CombatMove_C", "ExecuteUbergraph_FleeGas_CombatMove");
+
+	Params::FleeGas_CombatMove_C_ExecuteUbergraph_FleeGas_CombatMove Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

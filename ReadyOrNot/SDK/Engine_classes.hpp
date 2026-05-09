@@ -25619,7 +25619,7 @@ DUMPER7_ASSERTS_ILODSyncInterface;
 
 // Class Engine.SceneCapture2D
 // 0x0008 (0x02B8 - 0x02B0)
-class ASceneCapture2D : public ASceneCapture
+class ASceneCapture2D final : public ASceneCapture
 {
 public:
 	class USceneCaptureComponent2D*               CaptureComponent2D;                                // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)

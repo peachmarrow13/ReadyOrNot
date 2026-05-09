@@ -37,24 +37,6 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_ActiveShooter_TargetNextCivilian_C_Tick_Blueprint;
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian
-// 0x0030 (0x0030 - 0x0000)
-struct AIAction_ActiveShooter_TargetNextCivilian_C_ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaTime;                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ACyberneticCharacter*                   CallFunc_GetCharacter_ReturnValue;                 // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	int32                                         K2Node_Event_PathId;                               // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ERonNavigationQueryResult                     K2Node_Event_Result;                               // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GiveActivityTo_ReturnValue;               // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class ACyberneticController*                  K2Node_Event_Controller;                           // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UTargetNextCivilianActivity*            CallFunc_GetTargetNextCivilianActivity_ReturnValue; // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UTargetCivActivity_C*                   CallFunc_SpawnObject_ReturnValue;                  // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_ActiveShooter_TargetNextCivilian_C_ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian;
-
 // Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.OnPathFound_Blueprint
 // 0x0008 (0x0008 - 0x0000)
 struct AIAction_ActiveShooter_TargetNextCivilian_C_OnPathFound_Blueprint final
@@ -73,6 +55,24 @@ public:
 	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_ActiveShooter_TargetNextCivilian_C_OnCreate_Blueprint;
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian
+// 0x0030 (0x0030 - 0x0000)
+struct AIAction_ActiveShooter_TargetNextCivilian_C_ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaTime;                            // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACyberneticCharacter*                   CallFunc_GetCharacter_ReturnValue;                 // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_PathId;                               // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ERonNavigationQueryResult                     K2Node_Event_Result;                               // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GiveActivityTo_ReturnValue;               // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_16[0x2];                                       // 0x0016(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class ACyberneticController*                  K2Node_Event_Controller;                           // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UTargetNextCivilianActivity*            CallFunc_GetTargetNextCivilianActivity_ReturnValue; // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UTargetCivActivity_C*                   CallFunc_SpawnObject_ReturnValue;                  // 0x0028(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_ActiveShooter_TargetNextCivilian_C_ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian;
 
 // Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ShouldPerformAction
 // 0x0018 (0x0018 - 0x0000)

@@ -77,7 +77,7 @@ void Cheats::Aimbot()
 		if (GVars.ReadyOrNotChar->GetEquippedWeapon())
 		{
 			ProjectileSpeed = GVars.ReadyOrNotChar->GetEquippedWeapon()->ProjectileMovementSpeed;
-			printf("Projectile speed: %f\n", ProjectileSpeed);
+
 		}
 
 		float Distance = TargetPos.GetDistanceTo(GVars.ReadyOrNotChar->K2_GetActorLocation());

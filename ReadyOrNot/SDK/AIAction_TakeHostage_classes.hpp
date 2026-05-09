@@ -32,18 +32,18 @@ public:
 	double                                        LookatThreshold;                                   // 0x0088(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void TraceForNearbyCivilians(TArray<class ACyberneticCharacter*>* Return_Value);
 	void OnTakeHostageFinished(class UBaseActivity* Activity, class ACyberneticController* Controller);
 	void OnCreate_Blueprint(class ACyberneticController* Controller);
-	void TraceForNearbyCivilians(TArray<class ACyberneticCharacter*>* Return_Value);
 	void ExecuteUbergraph_AIAction_TakeHostage(int32 EntryPoint);
 	void EquipBestHostageTakingWeapon(bool* bFoundWeapon);
 	void EndAction_Blueprint();
 	void BeginAction_Blueprint();
 
-	void IsCivilianNotFacingTarget(class ACyberneticCharacter* civilian, class AReadyOrNotCharacter* Target, bool* Return_Value) const;
-	void IsCivilianFacingTarget(class ACyberneticCharacter* civilian, class AReadyOrNotCharacter* Target, bool* Return_Value) const;
 	bool ShouldSwitchWeapons() const;
 	bool ShouldPerformAction() const;
+	void IsCivilianNotFacingTarget(class ACyberneticCharacter* civilian, class AReadyOrNotCharacter* Target, bool* Return_Value) const;
+	void IsCivilianFacingTarget(class ACyberneticCharacter* civilian, class AReadyOrNotCharacter* Target, bool* Return_Value) const;
 	void FindClosestCivilian(TArray<class ACyberneticCharacter*>& Civilians, class ACyberneticCharacter** Return_Value) const;
 	void AnySWATNearCivilian(class ACyberneticCharacter* civilian, bool* Return_Value) const;
 

@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_ReturnToSpawn_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ReturnToSpawn_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.OnMoveComplete_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -70,6 +56,20 @@ void UAIAction_ReturnToSpawn_C::ExecuteUbergraph_AIAction_ReturnToSpawn(int32 En
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_ReturnToSpawn.AIAction_ReturnToSpawn_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_ReturnToSpawn_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ReturnToSpawn_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

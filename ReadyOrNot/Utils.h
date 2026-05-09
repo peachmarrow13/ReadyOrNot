@@ -99,6 +99,7 @@ struct Utils
 	static FVector2D ImVec2ToFVector2D(ImVec2 Vector);
 	static ACharacter* GetNearestCharacter(ETeam Team);
 	static void Error(std::string msg);
+	static bool SafeProjectWorldLocationToScreen(APlayerController* Controller, const FVector& WorldPosition, FVector2D* OutScreenPosition, const bool PlayerViewportRelative);
 };
 
 struct Variables // horrible naming scheme holy shit

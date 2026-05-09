@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_HesitateMove_C::Tick_Blueprint(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_HesitateMove_C", "Tick_Blueprint");
+
+	Params::AIAction_HesitateMove_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -151,26 +171,6 @@ void UAIAction_HesitateMove_C::EndAction_Blueprint()
 }
 
 
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_HesitateMove_C::Tick_Blueprint(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_HesitateMove_C", "Tick_Blueprint");
-
-	Params::AIAction_HesitateMove_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
 
@@ -182,26 +182,6 @@ void UAIAction_HesitateMove_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_HesitateMove_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.GetMoveStyleOverride
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-class FName UAIAction_HesitateMove_C::GetMoveStyleOverride() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_HesitateMove_C", "GetMoveStyleOverride");
-
-	Params::AIAction_HesitateMove_C_GetMoveStyleOverride Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -218,6 +198,26 @@ bool UAIAction_HesitateMove_C::ShouldPerformAction() const
 		Func = Class->GetFunction("AIAction_HesitateMove_C", "ShouldPerformAction");
 
 	Params::AIAction_HesitateMove_C_ShouldPerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.GetMoveStyleOverride
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class FName UAIAction_HesitateMove_C::GetMoveStyleOverride() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_HesitateMove_C", "GetMoveStyleOverride");
+
+	Params::AIAction_HesitateMove_C_GetMoveStyleOverride Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

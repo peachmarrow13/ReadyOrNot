@@ -6,14 +6,120 @@ void** vTable = nullptr;
 using tProcessEvent = void(*)(const UObject*, UFunction*, void*);
 tProcessEvent oProcessEvent = nullptr;
 
+inline tProcessEvent oPlayerProcessEvent = nullptr;
+bool PlayerHooked = false;
+
+void hkPlayerProcessEvent(const SDK::UObject* Object, SDK::UFunction* Function, void* Params)
+{
+	if (!Function)
+		return oPlayerProcessEvent(Object, Function, Params);
+
+	if (Function->Name.ToString().find("ReceiveTick") != std::string::npos)
+	{
+		GVars.AutoSetVariables();
+
+		switch (CVars.QueuedAction)
+		{
+			case EQueuedAction::GiveAchievements:
+			{
+				Cheats::GiveAchievements();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::ToggleGodMode:
+			{
+				Cheats::ToggleGodMode();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::ToggleInfAmmo:
+			{
+				Cheats::ToggleInfAmmo();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::RemoveRecoil:
+			{
+				Cheats::RemoveRecoil();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::RemoveSpread:
+			{
+				Cheats::RemoveSpread();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::AddAutoFire:
+			{
+				Cheats::AddAutoFire();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::AddPenetration:
+			{
+				Cheats::PenetrateWalls();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::AddMagazine:
+			{
+				Cheats::AddMag();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::SetFireRate:
+			{
+				Cheats::SetFireRate(3000.0f);
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::InstaKill:
+			{
+				Cheats::InstaKill();
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+			case EQueuedAction::KillAllSuspects:
+			{
+				Cheats::KillAll(ETeam::TEAM_SUSPECT);
+				CVars.QueuedAction = EQueuedAction::None;
+				break;
+			}
+		}
+
+		if (CVars.TriggerBot)
+			Cheats::TriggerBot();
+
+		if (CVars.SpeedEnabled)
+			Cheats::SetPlayerSpeed();
+
+		if (CVars.AntiSway)
+			Cheats::AntiSway();
+
+		Cheats::ProcessArrestQueue();
+
+		if (CVars.BulletTime && GVars.World)
+			GVars.World->K2_GetWorldSettings()->TimeDilation = CVars.BulletTimeSpeed; // Slow-mo
+		else if (GVars.World)
+			GVars.World->K2_GetWorldSettings()->TimeDilation = 1.0f; // Normal
+	}
+
+	oPlayerProcessEvent(Object, Function, Params);
+}
 
 void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 {
+	static int CallCount = 0;
+	CallCount++;
+
 	if (Function)
 	{
+		if ((Function->Name.ToString().find("ReceiveTick") != std::string::npos) && (CallCount % 100 == 0))
+			GVars.AutoSetVariables();
+
 		if (CVars.Debug)
 		{
-			printf("Function Index: %d", Function->Index);
 			const std::string FuncName = Function->GetName();
 			const std::string ObjName = Object->GetName();
 
@@ -47,16 +153,44 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 			}
 		}
 
-		if (Function->GetName() == "GetMultitoolUseTime") // credit to CrimsonSpark for this instant multitool use time
+		if (!PlayerHooked && Function->Name.ToString().find("ReceiveTick") != std::string::npos && Object->IsA(APlayerCharacter::StaticClass()))
 		{
-			oProcessEvent(Object, Function, Params);
+			void** VTable = *reinterpret_cast<void***>(const_cast<UObject*>(Object));
+			void* ProcessEventAddr = VTable[SDK::Offsets::ProcessEventIdx];
 
-			struct GetMultitoolUseTime_Params { float ReturnValue; };
-			reinterpret_cast<GetMultitoolUseTime_Params*>(Params)->ReturnValue = 0.1f;
-			return;
+			MH_STATUS status = MH_CreateHook(
+				ProcessEventAddr,
+				&hkPlayerProcessEvent,
+				reinterpret_cast<void**>(&oPlayerProcessEvent));
+
+			if (status != MH_OK)
+			{
+				printf("[ERROR] Failed to create ProcessEvent hook! %d\n", status);
+				throw std::runtime_error("Failed to create ProcessEvent hook");
+			}
+
+			status = MH_EnableHook(ProcessEventAddr);
+			if (status != MH_OK)
+			{
+				printf("[ERROR] Failed to enable ProcessEvent hook!\n");
+				throw std::runtime_error("Failed to enable ProcessEvent hook");
+			}
+
+			PlayerHooked = true;
+
+			return oProcessEvent(Object, Function, Params);
 		}
 
-		if (CVars.SilentAim || CVars.ShootFromReticle)
+		if (CVars.InstantMultiTool && Function->GetName() == "GetMultitoolUseTime") // credit to CrimsonSpark for this instant multitool use time
+		{
+			oProcessEvent(Object, Function, Params);
+			if (reinterpret_cast<Params::CanUseMultitoolOn_GetMultitoolUseTime*>(Params)->ReturnValue < 0.1f)
+				return;
+
+			reinterpret_cast<Params::CanUseMultitoolOn_GetMultitoolUseTime*>(Params)->ReturnValue = 0.01f;
+			return;
+		}
+		else if (CVars.SilentAim || CVars.ShootFromReticle)
 		{
 			if (strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)
 			{
@@ -84,12 +218,13 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 
 					if (CVars.SilentAim && OwnerIsLocalPlayer)
 						Cheats::SilentAim(FireParams);
+
+					for (int i = 0; i < CVars.MultiFire; i++)
+					{
+						GVars.ReadyOrNotChar->GetEquippedWeapon()->Server_OnFire(FireParams->Direction, FireParams->SpawnLoc, 0);
+					}
 				}
 			}
-		}
-		if (Function->Name.ToString().find("ReceiveTick") != std::string::npos && Object->IsA(APlayerController::StaticClass()))
-		{
-
 		}
 	}
 

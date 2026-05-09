@@ -20,6 +20,22 @@ struct BoneListStruct
 	std::string RightHandBone = "hand_RI";
 } inline BoneList;
 
+enum EQueuedAction
+{
+	None,
+	GiveAchievements,
+	ToggleGodMode,
+	ToggleInfAmmo,
+	RemoveRecoil,
+	RemoveSpread,
+	AddAutoFire,
+	AddPenetration,
+	AddMagazine,
+	SetFireRate,
+	InstaKill,
+	KillAllSuspects,
+};
+
 struct EspSettingsstruct {
 	bool ShowTeam = true;
 	bool ShowBox = false;
@@ -96,6 +112,8 @@ struct CVarsStruct
 	bool BulletTime = false;
 	bool AntiSway = false;
 	bool InstantMultiTool = false;
+	int MultiFire = 3;
+	EQueuedAction QueuedAction = EQueuedAction::None;
 } inline CVars;
 
 struct MiscSettingsStruct {

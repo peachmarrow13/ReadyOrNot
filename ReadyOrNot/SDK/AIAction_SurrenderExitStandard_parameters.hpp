@@ -17,6 +17,15 @@
 namespace SDK::Params
 {
 
+// Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_SurrenderExitStandard_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_Tick_Blueprint;
+
 // Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.ExecuteUbergraph_AIAction_SurrenderExitStandard
 // 0x0090 (0x0090 - 0x0000)
 struct AIAction_SurrenderExitStandard_C_ExecuteUbergraph_AIAction_SurrenderExitStandard final
@@ -42,15 +51,6 @@ public:
 	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_ExecuteUbergraph_AIAction_SurrenderExitStandard;
-
-// Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_SurrenderExitStandard_C_Tick_Blueprint final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_SurrenderExitStandard_C_Tick_Blueprint;
 
 // Function AIAction_SurrenderExitStandard.AIAction_SurrenderExitStandard_C.ShouldPerformAction
 // 0x0002 (0x0002 - 0x0000)

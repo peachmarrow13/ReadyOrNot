@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0058(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void BeginAction_Blueprint();
 	void OnMoveComplete_Blueprint(class AAIController* Controller, int32 RequestID);
 	void ExecuteUbergraph_AIAction_ReturnToSpawn(int32 EntryPoint);
+	void BeginAction_Blueprint();
 
 	bool ShouldPerformAction() const;
 

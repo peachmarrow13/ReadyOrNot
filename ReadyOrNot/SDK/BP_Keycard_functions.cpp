@@ -119,6 +119,28 @@ void ABP_Keycard_C::Interact(class AReadyOrNotCharacter* InteractInstigator, cla
 }
 
 
+// Function BP_Keycard.BP_Keycard_C.Fire
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AReadyOrNotCharacter*             InteractInstigator                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class UInteractableComponent*           InInteractableComponent                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Keycard_C::Fire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Keycard_C", "Fire");
+
+	Params::BP_Keycard_C_Fire Parms{};
+
+	Parms.InteractInstigator = InteractInstigator;
+	Parms.InInteractableComponent = InInteractableComponent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Keycard.BP_Keycard_C.ExecuteUbergraph_BP_Keycard
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -205,25 +227,23 @@ void ABP_Keycard_C::DoubleTapInteract(class AReadyOrNotCharacter* InteractInstig
 }
 
 
-// Function BP_Keycard.BP_Keycard_C.Fire
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Keycard.BP_Keycard_C.GetInteractableComponent
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
 // Parameters:
-// class AReadyOrNotCharacter*             InteractInstigator                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class UInteractableComponent*           InInteractableComponent                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// class UInteractableComponent*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Keycard_C::Fire(class AReadyOrNotCharacter* InteractInstigator, class UInteractableComponent* InInteractableComponent)
+class UInteractableComponent* ABP_Keycard_C::GetInteractableComponent() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Keycard_C", "Fire");
+		Func = Class->GetFunction("BP_Keycard_C", "GetInteractableComponent");
 
-	Params::BP_Keycard_C_Fire Parms{};
-
-	Parms.InteractInstigator = InteractInstigator;
-	Parms.InInteractableComponent = InInteractableComponent;
+	Params::BP_Keycard_C_GetInteractableComponent Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -363,26 +383,6 @@ bool ABP_Keycard_C::CanInteract() const
 		Func = Class->GetFunction("BP_Keycard_C", "CanInteract");
 
 	Params::BP_Keycard_C_CanInteract Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_Keycard.BP_Keycard_C.GetInteractableComponent
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class UInteractableComponent*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-class UInteractableComponent* ABP_Keycard_C::GetInteractableComponent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Keycard_C", "GetInteractableComponent");
-
-	Params::BP_Keycard_C_GetInteractableComponent Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

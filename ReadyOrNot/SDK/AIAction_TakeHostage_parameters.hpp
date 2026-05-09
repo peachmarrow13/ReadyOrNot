@@ -16,25 +16,6 @@
 namespace SDK::Params
 {
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.OnTakeHostageFinished
-// 0x0010 (0x0010 - 0x0000)
-struct AIAction_TakeHostage_C_OnTakeHostageFinished final
-{
-public:
-	class UBaseActivity*                          Activity;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class ACyberneticController*                  Controller;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_TakeHostage_C_OnTakeHostageFinished;
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.OnCreate_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_TakeHostage_C_OnCreate_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_TakeHostage_C_OnCreate_Blueprint;
-
 // Function AIAction_TakeHostage.AIAction_TakeHostage_C.TraceForNearbyCivilians
 // 0x0060 (0x0060 - 0x0000)
 struct AIAction_TakeHostage_C_TraceForNearbyCivilians final
@@ -59,6 +40,25 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0059(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_TakeHostage_C_TraceForNearbyCivilians;
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.OnTakeHostageFinished
+// 0x0010 (0x0010 - 0x0000)
+struct AIAction_TakeHostage_C_OnTakeHostageFinished final
+{
+public:
+	class UBaseActivity*                          Activity;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class ACyberneticController*                  Controller;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_TakeHostage_C_OnTakeHostageFinished;
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.OnCreate_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_TakeHostage_C_OnCreate_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_TakeHostage_C_OnCreate_Blueprint;
 
 // Function AIAction_TakeHostage.AIAction_TakeHostage_C.ExecuteUbergraph_AIAction_TakeHostage
 // 0x0098 (0x0098 - 0x0000)
@@ -115,6 +115,24 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_TakeHostage_C_EquipBestHostageTakingWeapon;
 
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ShouldSwitchWeapons
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_TakeHostage_C_ShouldSwitchWeapons final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_TakeHostage_C_ShouldSwitchWeapons;
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ShouldPerformAction
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_TakeHostage_C_ShouldPerformAction final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_TakeHostage_C_ShouldPerformAction;
+
 // Function AIAction_TakeHostage.AIAction_TakeHostage_C.IsCivilianNotFacingTarget
 // 0x00A0 (0x00A0 - 0x0000)
 struct AIAction_TakeHostage_C_IsCivilianNotFacingTarget final
@@ -154,24 +172,6 @@ public:
 	bool                                          CallFunc_Less_DoubleDouble_ReturnValue;            // 0x0098(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_TakeHostage_C_IsCivilianFacingTarget;
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ShouldSwitchWeapons
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_TakeHostage_C_ShouldSwitchWeapons final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_TakeHostage_C_ShouldSwitchWeapons;
-
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.ShouldPerformAction
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_TakeHostage_C_ShouldPerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_TakeHostage_C_ShouldPerformAction;
 
 // Function AIAction_TakeHostage.AIAction_TakeHostage_C.FindClosestCivilian
 // 0x0088 (0x0088 - 0x0000)

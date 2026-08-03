@@ -1,9 +1,12 @@
 #include "pch.h"
 #include "Engine.h"
+#include <kiero/kiero.h>
+#include <d3d12.h>
+#include "ImGui/backends/imgui_impl_dx12.h"
 
 #define MAJORVERSION 2
 #define MINORVERSION 5
-#define PATCHVERSION 0
+#define PATCHVERSION 2
 
 static const std::pair<const char*, int> KeyNames[] = {
 {"Lbutton", VK_LBUTTON},
@@ -200,24 +203,24 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 {
 	Resizing.store(true);
 	while (g_PresentCount.load() != 0)
-		Sleep(0); 
+		Sleep(0);
 
-	// Release ImGui render target
+	// Call original function
+	HRESULT hr = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+
+	
+	Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
 	if (Engine::pRenderTargetView) {
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
 	}
 
-	// Call original function
-	HRESULT hr = Engine::oResizeBuffers(Engine::pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
-
-	// Recreate render target view
 	ID3D11Texture2D* pBackBuffer = nullptr;
-	if (SUCCEEDED(Engine::pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
+	if (SUCCEEDED(pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
 		Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
 		pBackBuffer->Release();
 	}
-
+	
 	Resizing.store(false);
 
 	return hr;
@@ -237,17 +240,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		~PresentGuardStruct() { g_PresentCount.fetch_sub(1); }
 	} PresentGuard;
 
-/*	if (Frames % 30 == 0) // Every 30 frames, ensure cheats are correctly applied
-	{
-		AReadyOrNotCharacter* RONCT = GVars.ReadyOrNotChar;
-		if (GVars.PlayerController && RONCT && Utils::IsValidActor(RONCT) && RONCT->GetEquippedWeapon())
-		{
-			RONCT->bGodMode = CVars.GodMode;
-			RONCT->GetEquippedWeapon()->bInfiniteAmmo = CVars.InfAmmo;
-		}
-	}*/
-
-	if (Frames % 900 == 0 && MiscSettings.ShouldAutoSave) // Every 900 frames, save settings
+	if (MiscSettings.ShouldAutoSave && Frames % 900 == 0) // Every 900 frames, save settings
 	{
 		SaveSettings();
 	}
@@ -256,42 +249,42 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	{
 		if (SUCCEEDED(SwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&Engine::pDevice)))
 		{
-			std::cout << "[hkPresent] Device acquired successfully\n";
-			HWND hwnd = FindWindow(L"UnrealWindow", nullptr);
+			printf("[hkPresent] Device acquired successfully\n");
 			Engine::pDevice->GetImmediateContext(&Engine::pContext);
 
 			Engine::pSwapChain = SwapChain;
 			SwapChain->GetDesc(&Engine::sd);
 
-			if (!hwnd) hwnd = GetForegroundWindow();
-
-			Engine::HookResizeBuffers();
-
-			Engine::InitImGui();
-
-			// Hook WndProc for input handling
-			if (hwnd) {
-				oWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
+			HWND hwnd = Engine::GetGameWindow();
+			if (!hwnd)
+			{
+				printf("Failed to get GameWindow\n");
+				return Engine::oPresent(SwapChain, SyncInterval, Flags);
 			}
 
+			printf("[hkPresent] Initializing ImGui: %s\n", Engine::InitImGui() ? "Success" : "Failure");
+			
+			if (hwnd) 
+				oWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
+			
 			init = true;
 		}
 		else
-			printf("[INFO] Not DX11 (likely DX12)\n");
+			printf("[Warning] Failed to acquire device\n");
 
 		if (GVars.PlayerController && GVars.PlayerController->PlayerState)
 		{
 			APlayerState* PlayerState = GVars.PlayerController->PlayerState;
 			if (PlayerName.empty())
 				PlayerName = PlayerState->GetPlayerName().ToString();
-
-			if (PlayerName == "PeachMarrow12" || PlayerName == "DiaperBlastrPC")
-				CVars.SecretFeatures = true;
 		}
 	}
 
 	if (!Engine::oPresent)
+	{
+		printf("oPresent is dead.\n");
 		return 0;
+	}
 
 	if (!ImGui::GetCurrentContext())
 	{
@@ -321,7 +314,6 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (GVars.PlayerController)
 				{
-					APlayerState* PlayerState = GVars.PlayerController->PlayerState;
 					ImGui::Text("Thank you for using my cheat %s!", PlayerName.c_str());
 				}
 				else
@@ -360,17 +352,6 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				ImGui::Checkbox("Instant MultiTool", &CVars.InstantMultiTool);
 
-/*				if (ImGui::Button("Give Infinite Inventory Slots"))
-				{
-					if (GVars.ReadyOrNotChar)
-					{
-						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.GrenadeSlotsCount = 999;
-						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.SecondaryAmmoSlotsCount = 999;
-						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.PrimaryAmmoSlotsCount = 999;
-						reinterpret_cast<APlayerCharacter*>(GVars.ReadyOrNotChar)->LastPlayerState->ServerSavedLoadout.TacticalSlotsCount = 999;
-					}
-				}*/
-
 				ImGui::EndTabItem();
 			}
 
@@ -379,6 +360,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				if (ImGui::Checkbox("Infinite Ammo", &CVars.InfAmmo))
 					CVars.QueuedAction = EQueuedAction::ToggleInfAmmo;
 				HostOnlyTooltip();
+
+				ImGui::InputInt("Multi Fire", &CVars.MultiFire, 0, 50);
 
 				if (ImGui::Button("Remove Recoil"))
 					CVars.QueuedAction = EQueuedAction::RemoveRecoil;
@@ -870,7 +853,7 @@ static DWORD MainThread(HMODULE hModule)
 	FILE* Dummy;
 	freopen_s(&Dummy, "CONOUT$", "w", stdout);
 
-	std::cout << "Cheat Injecting...\n";
+	printf("Cheat Injecting...\n");
 
 	g_hModule.store(hModule);
 
@@ -893,7 +876,7 @@ static DWORD MainThread(HMODULE hModule)
 
 	Sleep(1000); // Wait a second to ensure everything is loaded	
 
-	if (!Engine::HookPresent())
+	if (Engine::HookPresent() != kiero::Status::Success)
 	{
 		printf("[ERROR] Failed to initialize engine hooks.\n");
 		Cleaning.store(true);
@@ -902,7 +885,7 @@ static DWORD MainThread(HMODULE hModule)
 	else
 		printf("Engine hooks initialized successfully.\n");
 
-	std::cout << "Cheat Injected\n";
+	printf("Cheat Injected\n");
 
 	LoadSettings();
 
@@ -1128,17 +1111,7 @@ void Cleanup(HMODULE hModule)
 	Cleaning.store(true);
 	std::cout << "Cleaning up...\n";
 
-	SaveSettings();
-
-	CVars.Aimbot = false;
-	CVars.ESP = false;
-	CVars.GodMode = false;
-	CVars.InfAmmo = false;
-	CVars.SpeedEnabled = false;
-	CVars.Speed = 1;
-	Cheats::ToggleGodMode();
-	Cheats::ToggleInfAmmo();
-	Cheats::SetPlayerSpeed();
+	GVars.Cleanup();
 
 	if (UEngine::GetEngine())
 	{
@@ -1147,11 +1120,15 @@ void Cleanup(HMODULE hModule)
 		MH_RemoveHook(objvTable[Offsets::ProcessEventIdx]);
 	}
 
-	MH_DisableHook(Engine::PresentAddr);
-	MH_RemoveHook(Engine::PresentAddr);
+	while (g_PresentCount.load() != 0)
+		_mm_pause();
 
-	while (g_PresentCount.load() > 0)
-		Sleep(1);  // wait until all Present calls finish
+	kiero::shutdown();
+
+	MH_DisableHook(MH_ALL_HOOKS);
+	MH_RemoveHook(Engine::oPresent); // BTW MH_ALL_HOOKS doesn't work on removing hooks.
+	MH_RemoveHook(Engine::oResizeBuffers);
+	MH_Uninitialize();
 
 	if (ImGui::GetCurrentContext())
 	{
@@ -1167,36 +1144,37 @@ void Cleanup(HMODULE hModule)
 		oWndProc = nullptr;
 	}
 
-	MH_Uninitialize();
-
 	if (Engine::pContext) {
 		Engine::pContext->ClearState();
 		Engine::pContext->Flush();
 	}
 
-	// Clean up DirectX resources
-	if (Engine::pRenderTargetView) {
-		printf("Releasing render target view...\n");
+	Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
+	Engine::pContext->ClearState();
+	Engine::pContext->Flush();
+
+	if (Engine::pRenderTargetView) 
+	{
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
 	}
-	if (Engine::pSwapChain) {
-		printf("Releasing swap chain...\n");
-		Engine::pSwapChain->Release();
-		Engine::pSwapChain = nullptr;
-	}
-	if (Engine::pContext) {
-		printf("Releasing device context...\n");
+
+	Engine::pSwapChain = nullptr;
+
+	if (Engine::pContext) 
+	{
 		Engine::pContext->Release();
 		Engine::pContext = nullptr;
 	}
-	if (Engine::pDevice) {
-		printf("Releasing device...\n");
+
+	if (Engine::pDevice) 
+	{
 		Engine::pDevice->Release();
 		Engine::pDevice = nullptr;
 	}
 
 	std::cout << "Cleanup complete. Unloading DLL...\n";
+	std::flush(std::cout);
 
 	// Clean up console
 	FreeConsole();

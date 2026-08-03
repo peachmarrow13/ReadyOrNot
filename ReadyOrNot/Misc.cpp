@@ -34,6 +34,10 @@ void Cheats::ToggleGodMode() {
 		else
 			RONC->ToggleGodMode();
 		RONC->IncreaseHealth(100000.0f);
+		RONC->CharacterHealth->bEnableIncapacitation = false;
+		RONC->CharacterHealth->bUnlimited = true;
+		RONC->CharacterHealth->SetUnlimitedResource(true);
+		RONC->CharacterHealth->EnableUnlimitedResource();
 	}
 }
 
@@ -43,11 +47,7 @@ void Cheats::ToggleInfAmmo() {
 
 	ABaseMagazineWeapon* Gun = GVars.ReadyOrNotChar->GetEquippedWeapon();
 	Gun->bInfiniteAmmo = CVars.InfAmmo;
-	Gun->MagazineCountMax = 100000;
-	for (FMagazine& Magazine : Gun->Magazines)
-	{
-		Magazine.Ammo = 100000;
-	}
+	Gun->ReplenishAmmo();
 }
 
 void Cheats::PenetrateWalls()

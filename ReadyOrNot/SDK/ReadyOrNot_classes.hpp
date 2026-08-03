@@ -2323,7 +2323,7 @@ DUMPER7_ASSERTS_AReadyOrNotGameState;
 
 // Class ReadyOrNot.ArrestAndRescueGS
 // 0x0008 (0x0960 - 0x0958)
-class AArrestAndRescueGS final : public AReadyOrNotGameState
+class AArrestAndRescueGS : public AReadyOrNotGameState
 {
 public:
 	int32                                         BlueRespawnWaves;                                  // 0x0958(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2900,7 +2900,7 @@ DUMPER7_ASSERTS_AReadyOrNotGameMode_PVP;
 
 // Class ReadyOrNot.ArrestAndRescueGM
 // 0x0030 (0x0A80 - 0x0A50)
-class AArrestAndRescueGM final : public AReadyOrNotGameMode_PVP
+class AArrestAndRescueGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	bool                                          bSuddenDeath;                                      // 0x0A48(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3563,7 +3563,7 @@ DUMPER7_ASSERTS_UReadyOrNotGameUserSettingsSubsystem;
 
 // Class ReadyOrNot.TowerDetonatorActivationProxy
 // 0x0038 (0x02D8 - 0x02A0)
-class ATowerDetonatorActivationProxy final : public AActor
+class ATowerDetonatorActivationProxy : public AActor
 {
 public:
 	uint8                                         Pad_2A0[0x8];                                      // 0x02A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -7391,7 +7391,7 @@ DUMPER7_ASSERTS_ASuspectArmour;
 
 // Class ReadyOrNot.ExplosiveVest
 // 0x00A0 (0x0EA0 - 0x0E00)
-class AExplosiveVest final : public ASuspectArmour
+class AExplosiveVest : public ASuspectArmour
 {
 public:
 	uint8                                         Pad_E00[0x20];                                     // 0x0E00(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
@@ -7583,7 +7583,7 @@ DUMPER7_ASSERTS_AFlashLightTrackingPoint;
 
 // Class ReadyOrNot.CaptureTheFlagGS
 // 0x0018 (0x0970 - 0x0958)
-class ACaptureTheFlagGS final : public AReadyOrNotGameState
+class ACaptureTheFlagGS : public AReadyOrNotGameState
 {
 public:
 	class ACTF_Flag*                              Flag;                                              // 0x0958(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -11100,7 +11100,7 @@ DUMPER7_ASSERTS_UAspectRatioConstraintBox;
 
 // Class ReadyOrNot.LobbyGS
 // 0x0028 (0x0980 - 0x0958)
-class ALobbyGS final : public AReadyOrNotGameState
+class ALobbyGS : public AReadyOrNotGameState
 {
 public:
 	TWeakObjectPtr<class UStatSubsystem>          StatSubsystem;                                     // 0x0958(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -11637,7 +11637,7 @@ DUMPER7_ASSERTS_ABaseMagPouch;
 
 // Class ReadyOrNot.GunGameGS
 // 0x0000 (0x0958 - 0x0958)
-class AGunGameGS final : public AReadyOrNotGameState
+class AGunGameGS : public AReadyOrNotGameState
 {
 public:
 	static class UClass* StaticClass()
@@ -14215,7 +14215,7 @@ DUMPER7_ASSERTS_ICanUseMultitoolOn;
 
 // Class ReadyOrNot.CaptureTheFlagGM
 // 0x0030 (0x0A80 - 0x0A50)
-class ACaptureTheFlagGM final : public AReadyOrNotGameMode_PVP
+class ACaptureTheFlagGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	TMulticastInlineDelegate<void(class APlayerCharacter* CapturedByCharacter, ETeamType CpaturedByTeam)> OnFlagCaptured; // 0x0A48(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -14472,7 +14472,7 @@ DUMPER7_ASSERTS_ACCTVWirePoint;
 
 // Class ReadyOrNot.KingOfTheHillGM
 // 0x0040 (0x0A90 - 0x0A50)
-class AKingOfTheHillGM final : public AReadyOrNotGameMode_PVP
+class AKingOfTheHillGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	TArray<class APlayerCharacter*>               ArrestedBlueCharacters;                            // 0x0A48(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
@@ -14754,7 +14754,7 @@ DUMPER7_ASSERTS_USpawnSkeletalMeshAnimNotifyState;
 
 // Class ReadyOrNot.VIPEscortGM
 // 0x0050 (0x0AA0 - 0x0A50)
-class AVIPEscortGM final : public AReadyOrNotGameMode_PVP
+class AVIPEscortGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	TMulticastInlineDelegate<void(class AReadyOrNotCharacter* InstigatorCharacter, class AReadyOrNotCharacter* KilledCharacter)> OnVIPKilled; // 0x0A48(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -15334,7 +15334,7 @@ DUMPER7_ASSERTS_ACollectedEvidenceActor;
 
 // Class ReadyOrNot.EndingGM
 // 0x0000 (0x09F0 - 0x09F0)
-class AEndingGM final : public AReadyOrNotGameMode
+class AEndingGM : public AReadyOrNotGameMode
 {
 public:
 	class UCommanderProfile*                      CommanderProfile;                                  // 0x09E8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -15585,7 +15585,7 @@ DUMPER7_ASSERTS_ACoopGM;
 
 // Class ReadyOrNot.CommanderGM
 // 0x0020 (0x0EF0 - 0x0ED0)
-class ACommanderGM final : public ACoopGM
+class ACommanderGM : public ACoopGM
 {
 public:
 	class UCommanderProfile*                      CommanderProfile;                                  // 0x0EC8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -16526,7 +16526,7 @@ DUMPER7_ASSERTS_UCommonTabListWidgetImplementation;
 
 // Class ReadyOrNot.TelescopicLadder
 // 0x0300 (0x0FD0 - 0x0CD0)
-class ATelescopicLadder final : public ABaseDeployableGear
+class ATelescopicLadder : public ABaseDeployableGear
 {
 public:
 	class USceneComponent*                        LadderVerticalIconPoint;                           // 0x0CC8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -17387,7 +17387,7 @@ DUMPER7_ASSERTS_UMessageDisplayBox;
 
 // Class ReadyOrNot.FirefightGM
 // 0x0050 (0x0AA0 - 0x0A50)
-class AFirefightGM final : public AReadyOrNotGameMode_PVP
+class AFirefightGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	bool                                          bSuddenDeath;                                      // 0x0A48(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -18810,7 +18810,7 @@ DUMPER7_ASSERTS_UFlankingCombatMove;
 
 // Class ReadyOrNot.CTF_Flag
 // 0x0028 (0x02C8 - 0x02A0)
-class ACTF_Flag final : public AActor
+class ACTF_Flag : public AActor
 {
 public:
 	class USceneComponent*                        SceneComponent;                                    // 0x02A0(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -19116,7 +19116,7 @@ DUMPER7_ASSERTS_UCursorWidget;
 
 // Class ReadyOrNot.TowerDetonator
 // 0x0040 (0x0D10 - 0x0CD0)
-class ATowerDetonator final : public ABaseItem
+class ATowerDetonator : public ABaseItem
 {
 public:
 	TSubclassOf<class ATowerDetonatorActivationProxy> ActivationProxyClass;                          // 0x0CC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -19841,7 +19841,7 @@ DUMPER7_ASSERTS_USuspectsAndCivilianManager;
 
 // Class ReadyOrNot.GunGameGM
 // 0x0300 (0x0D50 - 0x0A50)
-class AGunGameGM final : public AReadyOrNotGameMode_PVP
+class AGunGameGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	float                                         RespawnTime;                                       // 0x0A48(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -20494,7 +20494,7 @@ DUMPER7_ASSERTS_ADeployableDepot;
 
 // Class ReadyOrNot.TowerDetonatorDisarmProxy
 // 0x0048 (0x02E8 - 0x02A0)
-class ATowerDetonatorDisarmProxy final : public AActor
+class ATowerDetonatorDisarmProxy : public AActor
 {
 public:
 	uint8                                         Pad_2A0[0x10];                                     // 0x02A0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -21088,7 +21088,7 @@ DUMPER7_ASSERTS_UDestructibleVehicleGlassComponent;
 
 // Class ReadyOrNot.IncriminationGM
 // 0x0010 (0x0A60 - 0x0A50)
-class AIncriminationGM final : public AReadyOrNotGameMode_PVP
+class AIncriminationGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	uint8                                         MaxCluesToFind;                                    // 0x0A48(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -23742,7 +23742,7 @@ DUMPER7_ASSERTS_UFallInActivity;
 
 // Class ReadyOrNot.FirefightGS
 // 0x0018 (0x0970 - 0x0958)
-class AFirefightGS final : public AReadyOrNotGameState
+class AFirefightGS : public AReadyOrNotGameState
 {
 public:
 	class FText                                   FreeTextLocalized;                                 // 0x0958(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
@@ -23925,7 +23925,7 @@ DUMPER7_ASSERTS_UFootstepNativeAnimNotify;
 
 // Class ReadyOrNot.FreeMode
 // 0x0000 (0x09F0 - 0x09F0)
-class AFreeMode final : public AReadyOrNotGameMode
+class AFreeMode : public AReadyOrNotGameMode
 {
 public:
 	float                                         RespawnTime;                                       // 0x09E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -24764,7 +24764,7 @@ DUMPER7_ASSERTS_AIncriminationClueSpawnPoint;
 
 // Class ReadyOrNot.IncriminationGS
 // 0x00D8 (0x0A30 - 0x0958)
-class AIncriminationGS final : public AReadyOrNotGameState
+class AIncriminationGS : public AReadyOrNotGameState
 {
 public:
 	TMulticastInlineDelegate<void(class AEvidenceActor* EvidenceActor, EEvidenceActorState NewEvidenceState, bool bExtracted)> OnIntelStateChanged; // 0x0958(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -25498,7 +25498,7 @@ DUMPER7_ASSERTS_UKillHostageChanceAnimNotify;
 
 // Class ReadyOrNot.KingOfTheHillGS
 // 0x0008 (0x0960 - 0x0958)
-class AKingOfTheHillGS final : public AReadyOrNotGameState
+class AKingOfTheHillGS : public AReadyOrNotGameState
 {
 public:
 	class ATugOfWarMover*                         Mover;                                             // 0x0958(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -25576,7 +25576,7 @@ DUMPER7_ASSERTS_AKingOfTheHostageGS;
 
 // Class ReadyOrNot.LadderSnapZone
 // 0x0048 (0x02E8 - 0x02A0)
-class ALadderSnapZone final : public AActor
+class ALadderSnapZone : public AActor
 {
 public:
 	class UBoxComponent*                          SelectionZone;                                     // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -26428,7 +26428,7 @@ DUMPER7_ASSERTS_ALobbyFiringRangeArea;
 
 // Class ReadyOrNot.LobbyGM
 // 0x00D0 (0x0AC0 - 0x09F0)
-class ALobbyGM final : public AReadyOrNotGameMode
+class ALobbyGM : public AReadyOrNotGameMode
 {
 public:
 	uint8                                         Pad_9E8[0x8];                                      // 0x09E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -27781,7 +27781,7 @@ DUMPER7_ASSERTS_UMoveToPlayerSpawn;
 
 // Class ReadyOrNot.TeamDeathmatchGM
 // 0x0020 (0x0A70 - 0x0A50)
-class ATeamDeathmatchGM final : public AReadyOrNotGameMode_PVP
+class ATeamDeathmatchGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	bool                                          bSuddenDeath;                                      // 0x0A48(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28289,7 +28289,7 @@ DUMPER7_ASSERTS_ANeutralizeSuspectByTag;
 
 // Class ReadyOrNot.TugOfWarGS
 // 0x0008 (0x0960 - 0x0958)
-class ATugOfWarGS final : public AReadyOrNotGameState
+class ATugOfWarGS : public AReadyOrNotGameState
 {
 public:
 	class ATugOfWarMover*                         Mover;                                             // 0x0958(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -32640,7 +32640,7 @@ DUMPER7_ASSERTS_UReadyOrNotVoipSettings;
 
 // Class ReadyOrNot.TeamDeathmatchGS
 // 0x0000 (0x0958 - 0x0958)
-class ATeamDeathmatchGS final : public AReadyOrNotGameState
+class ATeamDeathmatchGS : public AReadyOrNotGameState
 {
 public:
 	static class UClass* StaticClass()
@@ -39939,7 +39939,7 @@ DUMPER7_ASSERTS_UTrackingSpotlightComponent;
 
 // Class ReadyOrNot.TrainingGM
 // 0x0070 (0x0A60 - 0x09F0)
-class ATrainingGM final : public AReadyOrNotGameMode
+class ATrainingGM : public AReadyOrNotGameMode
 {
 public:
 	TArray<class AReadyOrNotPlayerController*>    InitalizedPlayerControllers;                       // 0x09E8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
@@ -39980,7 +39980,7 @@ DUMPER7_ASSERTS_ATrainingGM;
 
 // Class ReadyOrNot.TrainingGS
 // 0x0008 (0x0960 - 0x0958)
-class ATrainingGS final : public AReadyOrNotGameState
+class ATrainingGS : public AReadyOrNotGameState
 {
 public:
 	uint8                                         Pad_958[0x8];                                      // 0x0958(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -40003,7 +40003,7 @@ DUMPER7_ASSERTS_ATrainingGS;
 
 // Class ReadyOrNot.TugOfWarGM
 // 0x0040 (0x0A90 - 0x0A50)
-class ATugOfWarGM final : public AReadyOrNotGameMode_PVP
+class ATugOfWarGM : public AReadyOrNotGameMode_PVP
 {
 public:
 	TArray<class APlayerCharacter*>               ArrestedBlueCharacters;                            // 0x0A48(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
@@ -40032,7 +40032,7 @@ DUMPER7_ASSERTS_ATugOfWarGM;
 
 // Class ReadyOrNot.VIPEscortGS
 // 0x0070 (0x09C8 - 0x0958)
-class AVIPEscortGS final : public AReadyOrNotGameState
+class AVIPEscortGS : public AReadyOrNotGameState
 {
 public:
 	float                                         HoldVIP_TimeRemaining;                             // 0x0958(0x0004)(BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ReadyOrNot_structs.hpp"
 #include "ST_Briefing_Entry_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
 
 
 namespace SDK::Params

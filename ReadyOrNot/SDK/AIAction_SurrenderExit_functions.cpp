@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_SurrenderExit.AIAction_SurrenderExit_C.Tick_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_SurrenderExit_C::Tick_Blueprint(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SurrenderExit_C", "Tick_Blueprint");
-
-	Params::AIAction_SurrenderExit_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIAction_SurrenderExit.AIAction_SurrenderExit_C.ExecuteUbergraph_AIAction_SurrenderExit
 // (Final, UbergraphFunction)
 // Parameters:
@@ -71,23 +51,23 @@ void UAIAction_SurrenderExit_C::BeginAction_Blueprint()
 }
 
 
-// Function AIAction_SurrenderExit.AIAction_SurrenderExit_C.ShouldPerformAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Function AIAction_SurrenderExit.AIAction_SurrenderExit_C.Tick_Blueprint
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-bool UAIAction_SurrenderExit_C::ShouldPerformAction() const
+void UAIAction_SurrenderExit_C::Tick_Blueprint(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_SurrenderExit_C", "ShouldPerformAction");
+		Func = Class->GetFunction("AIAction_SurrenderExit_C", "Tick_Blueprint");
 
-	Params::AIAction_SurrenderExit_C_ShouldPerformAction Parms{};
+	Params::AIAction_SurrenderExit_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -112,6 +92,26 @@ void UAIAction_SurrenderExit_C::IsFakeExit(ESurrenderExitType ExitType, bool* Re
 
 	if (Return_Value != nullptr)
 		*Return_Value = Parms.Return_Value;
+}
+
+
+// Function AIAction_SurrenderExit.AIAction_SurrenderExit_C.ShouldPerformAction
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UAIAction_SurrenderExit_C::ShouldPerformAction() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_SurrenderExit_C", "ShouldPerformAction");
+
+	Params::AIAction_SurrenderExit_C_ShouldPerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

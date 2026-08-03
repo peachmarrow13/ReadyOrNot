@@ -31,12 +31,12 @@ public:
 	struct FVector                                FocalPoint;                                        // 0x0068(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Tick_Blueprint(float DeltaTime);
 	void ExecuteUbergraph_AIAction_SurrenderExit(int32 EntryPoint);
 	void BeginAction_Blueprint();
+	void Tick_Blueprint(float DeltaTime);
 
-	bool ShouldPerformAction() const;
 	void IsFakeExit(ESurrenderExitType ExitType, bool* Return_Value) const;
+	bool ShouldPerformAction() const;
 
 public:
 	static class UClass* StaticClass()

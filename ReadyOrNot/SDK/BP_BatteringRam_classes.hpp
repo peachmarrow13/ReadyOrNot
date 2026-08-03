@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_BatteringRam.BP_BatteringRam_C
 // 0x0000 (0x0DF0 - 0x0DF0)
-class ABP_BatteringRam_C final : public ADoorRam
+class ABP_BatteringRam_C : public ADoorRam
 {
 public:
 	static class UClass* StaticClass()

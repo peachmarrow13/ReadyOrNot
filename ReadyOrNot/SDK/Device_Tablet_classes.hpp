@@ -28,7 +28,6 @@ public:
 	class UWidgetComponent*                       ScreenWidget;                                      // 0x0D58(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
 	void WakeScreen();
 	void SleepScreen();
 	void ReceiveBeginPlay();
@@ -36,6 +35,7 @@ public:
 	void PlaySoundEvent(class UFMODEvent* Event);
 	void PlayNotificationEvent();
 	void HolsterScreen();
+	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

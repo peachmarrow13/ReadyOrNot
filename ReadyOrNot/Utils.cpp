@@ -185,8 +185,14 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
     AActor* BestTarget = nullptr;
     float BestFOV = MaxFOV;
 
-    for (AActor* Actor : GVars.Level->Actors)
+	TArray<AActor*> Actors = GVars.Level->Actors;
+	if (!Actors || !Actors.IsValid() || Actors.Num() <= 0)
+		return nullptr;
+
+    for (AActor* Actor : Actors)
     {
+        if (!Actors)
+            break;
         if (!Actor || !Utils::IsValidActor(Actor))
             continue;
 

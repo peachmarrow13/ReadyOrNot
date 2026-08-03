@@ -112,7 +112,7 @@ struct CVarsStruct
 	bool BulletTime = false;
 	bool AntiSway = false;
 	bool InstantMultiTool = false;
-	int MultiFire = 3;
+	int MultiFire = 0;
 	EQueuedAction QueuedAction = EQueuedAction::None;
 } inline CVars;
 

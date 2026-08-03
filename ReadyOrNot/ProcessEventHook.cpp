@@ -112,6 +112,7 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 {
 	static int CallCount = 0;
 	CallCount++;
+	static bool JustFired = false;
 
 	if (Function)
 	{
@@ -190,7 +191,7 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 			reinterpret_cast<Params::CanUseMultitoolOn_GetMultitoolUseTime*>(Params)->ReturnValue = 0.01f;
 			return;
 		}
-		else if (CVars.SilentAim || CVars.ShootFromReticle)
+		else if ((CVars.SilentAim || CVars.ShootFromReticle))
 		{
 			if (strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)
 			{
@@ -218,10 +219,19 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 
 					if (CVars.SilentAim && OwnerIsLocalPlayer)
 						Cheats::SilentAim(FireParams);
-
-					for (int i = 0; i < CVars.MultiFire; i++)
+					
+					if (!JustFired)
 					{
-						GVars.ReadyOrNotChar->GetEquippedWeapon()->Server_OnFire(FireParams->Direction, FireParams->SpawnLoc, 0);
+						JustFired = true;
+						for (int i = 0; i < CVars.MultiFire; i++)
+						{
+							printf("MultiFire value: %d\n", CVars.MultiFire);
+							JustFired = true;
+							GVars.ReadyOrNotChar->GetEquippedWeapon()->Server_OnFire(FireParams->Direction, FireParams->SpawnLoc, 0);
+							printf("Fired multithing\n");
+							JustFired = true;
+						}
+						JustFired = false;
 					}
 				}
 			}

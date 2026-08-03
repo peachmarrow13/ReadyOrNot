@@ -23,7 +23,7 @@ void Cheats::Aimbot()
 		LastTarget = nullptr;
 		return;
 	}
-
+	
 	std::wstring WideString = UtfN::StringToWString(TextVars.AimbotBone);
 	FName BoneName = UKismetStringLibrary::Conv_StringToName(WideString.c_str());
 

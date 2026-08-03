@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "EJoystickTypes_structs.hpp"
 #include "UMG_classes.hpp"
+#include "EJoystickTypes_structs.hpp"
 
 
 namespace SDK

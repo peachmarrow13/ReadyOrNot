@@ -205,6 +205,18 @@ struct Variables // horrible naming scheme holy shit
 		if (ImGui::GetCurrentContext())
 			ScreenSize = ImGui::GetIO().DisplaySize;
 	}
+
+	void Cleanup() {
+		this->PlayerController = nullptr;
+		this->POV = nullptr;
+		this->Pawn = nullptr;
+		this->Character = nullptr;
+		this->ReadyOrNotChar = nullptr;
+		this->World = nullptr;
+		this->GameState = nullptr;
+		this->Players = TArray<APlayerCharacter*>();
+		this->Level = nullptr;
+	}
 } inline GVars;
 
 static inline float Dot3(const FVector& A, const FVector& B)

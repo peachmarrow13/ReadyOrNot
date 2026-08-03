@@ -10,6 +10,8 @@
 #include "SDK/Basic.hpp"
 //#pragma pack(pop)
 
+#include <d3d12.h>
+#include "kiero/kiero.h"
 #include <d3d11.h>
 #include <dxgi.h>
 #include <Windows.h>
@@ -37,7 +39,7 @@
 
 struct Engine
 {
-	static bool HookPresent();
+	static kiero::Status::Enum HookPresent();
 	static bool HookResizeBuffers();
 	static bool InitImGui();
 	typedef HRESULT(__stdcall* tPresent)(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
@@ -63,6 +65,7 @@ struct Engine
 
 	static HRESULT __stdcall hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags);
 	static HRESULT __stdcall hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags);
+	static HWND GetGameWindow();
 };
 
 struct Hooks

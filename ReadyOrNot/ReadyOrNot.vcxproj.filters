@@ -103,6 +103,9 @@
     <ClCompile Include="SDK\Basic.cpp">
       <Filter>SDK</Filter>
     </ClCompile>
+    <ClCompile Include="kiero\kiero.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SDK\Engine_classes.hpp">
@@ -120,6 +123,15 @@
     <ClInclude Include="pch.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="kiero\kiero.h" />
+    <ClInclude Include="minhook\include\MinHook.h" />
+    <ClInclude Include="minhook\src\buffer.h" />
+    <ClInclude Include="minhook\src\trampoline.h" />
+    <ClInclude Include="minhook\src\hde\hde32.h" />
+    <ClInclude Include="minhook\src\hde\pstdint.h" />
+    <ClInclude Include="minhook\src\hde\table32.h" />
+    <ClInclude Include="minhook\src\hde\table64.h" />
+    <ClInclude Include="minhook\src\hde\hde64.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ImGui\misc\debuggers\imgui.natstepfilter">

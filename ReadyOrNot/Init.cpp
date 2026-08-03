@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Engine.h"
+#include "kiero/kiero.h"
 
 DXGI_SWAP_CHAIN_DESC Engine::sd = {};
 Engine::tPresent Engine::oPresent = nullptr;
@@ -10,51 +11,59 @@ ID3D11DeviceContext* Engine::pContext = nullptr;
 ID3D11RenderTargetView* Engine::pRenderTargetView = nullptr;
 Engine::tResizeBuffers Engine::oResizeBuffers;
 
-bool HookPresentLocal();
+void SetStyle();
 
-bool Engine::HookPresent()
+kiero::Status::Enum Engine::HookPresent()
 {
-	if (!HookPresentLocal())
-		return false;
+	kiero::Status::Enum Status = kiero::init(kiero::RenderType::D3D11);
 
-	return true;
+	if (Status != kiero::Status::Success)
+	{
+		std::string errorMessage = "Failed to initialize kiero! Error code: " + std::to_string(Status);
+		MessageBoxA(nullptr, errorMessage.c_str(), "Error", MB_OK | MB_ICONERROR);
+		throw std::runtime_error(errorMessage);
+	}
+
+	Engine::oPresent = (Engine::tPresent)kiero::getMethodsTable()[8];
+	Status = kiero::bind(8, (void**)&Engine::oPresent, Engine::hkPresent);
+	if (Status != kiero::Status::Success)
+	{
+		kiero::shutdown();
+		MessageBoxA(nullptr, "Failed to bind Present!", "Error", MB_OK | MB_ICONERROR);
+		throw std::runtime_error(std::to_string(Status));
+	}
+	Engine::oResizeBuffers = (Engine::tResizeBuffers)kiero::getMethodsTable()[13];
+	Status = kiero::bind(13, (void**)&Engine::oResizeBuffers, Engine::hkResizeBuffers);
+
+	if (Status != kiero::Status::Success)
+	{
+		kiero::shutdown();
+		MessageBoxA(nullptr, "Failed to bind!", "Error", MB_OK | MB_ICONERROR);
+		throw std::runtime_error(std::to_string(Status));
+	}
+
+	return Status;
+}
+
+HWND Engine::GetGameWindow()
+{
+	HWND Window = FindWindow(L"UnrealWindow", nullptr);
+	return Window;
 }
 
 bool Engine::InitImGui()
 {
-	HWND hwnd = FindWindow(L"UnrealWindow", nullptr);
-	if (!Engine::pDevice || !Engine::pContext) {
-		std::cout << "[ERROR] Device or Context is null...\n";
-		Sleep(30);
+	HWND WindowHandle = GetGameWindow();
+	if (!WindowHandle)
 		return false;
-	}
 
-	if (!hwnd) {
-		std::cout << "[ERROR] HWND is null...\n";
-		Sleep(30);
-		return false;
-	}
+	ID3D11Device* device = nullptr;
+	Engine::pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&device);
+	ID3D11DeviceContext* context = nullptr;
+	device->GetImmediateContext(&context);
 
-	// Setup ImGui context
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-
-	if (!ImGui::GetCurrentContext()) 
-	{
-		std::cout << "[ERROR] ImGui::CreateContext failed\n";
-		return false;
-	}
-
-	// Setup Platform/Renderer backends
-	if (!ImGui_ImplWin32_Init(hwnd)) {
-		std::cout << "[ERROR] ImGui_ImplWin32_Init failed\n";
-		return false;
-	}
-	if (!ImGui_ImplDX11_Init(Engine::pDevice, Engine::pContext)) {
-		std::cout << "[ERROR] ImGui_ImplDX11_Init failed\n";
-		ImGui_ImplWin32_Shutdown();
-		return false;
-	}
 
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
@@ -62,7 +71,19 @@ bool Engine::InitImGui()
 	io.Fonts->AddFontDefault();
 	io.MouseDrawCursor = true;  // Let ImGui draw the cursor
 
-	ImGui::StyleColorsDark();
+	SetStyle();
+	if (!ImGui_ImplWin32_Init(WindowHandle))
+	{
+		printf("Failed to Init ImGuiWin32\n");
+		Sleep(10000);
+		throw std::runtime_error("Poo");
+	}
+	if (!ImGui_ImplDX11_Init(device, context))
+	{
+		printf("Failed to Init ImGuiDX11\n");
+		Sleep(10000);
+		throw std::runtime_error("Poo");
+	}
 
 	if (Engine::pSwapChain) { // Create render target if we have a valid swapchain
 		ID3D11Texture2D* pBackBuffer = nullptr;
@@ -82,152 +103,97 @@ bool Engine::InitImGui()
 		}
 	}
 
-	std::cout << "[InitImGui] ImGui initialized successfully\n";
+	device->Release();
+	context->Release();
+
 	return true;
 }
 
-// Attach Hook
-bool Engine::HookResizeBuffers()
+void SetStyle()
 {
-	//if (!Engine::pSwapChain) return false;
+	ImGuiStyle& style = ImGui::GetStyle();
 
-	void** vTable = *reinterpret_cast<void***>(Engine::pSwapChain);
-	Engine::oResizeBuffers = (Engine::tResizeBuffers)vTable[13]; // store original
+	style.Alpha = 1.0f;
+	style.DisabledAlpha = 0.6f;
+	style.WindowPadding = ImVec2(8.0f, 8.0f);
+	style.WindowRounding = 0.0f;
+	style.WindowBorderSize = 1.0f;
+	style.WindowMinSize = ImVec2(32.0f, 32.0f);
+	style.WindowTitleAlign = ImVec2(0.0f, 0.5f);
+	style.WindowMenuButtonPosition = ImGuiDir_Left;
+	style.ChildRounding = 0.0f;
+	style.ChildBorderSize = 1.0f;
+	style.PopupRounding = 0.0f;
+	style.PopupBorderSize = 1.0f;
+	style.FramePadding = ImVec2(4.0f, 3.0f);
+	style.FrameRounding = 0.0f;
+	style.FrameBorderSize = 0.0f;
+	style.ItemSpacing = ImVec2(8.0f, 4.0f);
+	style.ItemInnerSpacing = ImVec2(4.0f, 4.0f);
+	style.CellPadding = ImVec2(4.0f, 2.0f);
+	style.IndentSpacing = 21.0f;
+	style.ColumnsMinSpacing = 6.0f;
+	style.ScrollbarSize = 14.0f;
+	style.ScrollbarRounding = 9.0f;
+	style.GrabMinSize = 10.0f;
+	style.GrabRounding = 0.0f;
+	style.TabRounding = 4.0f;
+	style.TabBorderSize = 0.0f;
+	style.ColorButtonPosition = ImGuiDir_Right;
+	style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
+	style.SelectableTextAlign = ImVec2(0.0f, 0.0f);
 
-	DWORD oldProtect;
-	VirtualProtect(&vTable[13], sizeof(void*), PAGE_EXECUTE_READWRITE, &oldProtect);
-	vTable[13] = (void*)&Engine::hkResizeBuffers; // replace with my hook
-	VirtualProtect(&vTable[13], sizeof(void*), oldProtect, &oldProtect);
-	return true;
-}
-
-bool HookPresentLocal()
-{
-	WNDCLASSA wc = {};
-	wc.lpfnWndProc = DefWindowProcA;
-	wc.hInstance = GetModuleHandleA(nullptr);
-	wc.lpszClassName = "DummyWindowClass";
-	if (!RegisterClassA(&wc))
-	{
-		if (GetLastError() != ERROR_CLASS_ALREADY_EXISTS)
-			return false;
-	}
-
-	HWND hDummyWnd = CreateWindowA(
-		"DummyWindowClass", "Dummy",
-		WS_OVERLAPPEDWINDOW,
-		0, 0, 1, 1,
-		nullptr, nullptr,
-		GetModuleHandleA(nullptr),
-		nullptr
-	);
-
-	if (!hDummyWnd)
-		return false;
-
-	ZeroMemory(&Engine::sd, sizeof(DXGI_SWAP_CHAIN_DESC));
-	Engine::sd.BufferCount = 1;
-	Engine::sd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-	Engine::sd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-	Engine::sd.OutputWindow = hDummyWnd;
-	Engine::sd.SampleDesc.Count = 1;
-	Engine::sd.SampleDesc.Quality = 0;
-	Engine::sd.Windowed = TRUE;
-	Engine::sd.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-	Engine::sd.BufferDesc.Width = 1;
-	Engine::sd.BufferDesc.Height = 1;
-	Engine::sd.BufferDesc.RefreshRate.Numerator = 60;
-	Engine::sd.BufferDesc.RefreshRate.Denominator = 1;
-
-	if (!Engine::sd.OutputWindow)
-	{
-		printf("[ERROR] Failed to create dummy window...\n");
-		return false;
-	}
-
-	D3D_FEATURE_LEVEL FeatureLevel;
-	D3D_FEATURE_LEVEL FeatureLevelsRequested = D3D_FEATURE_LEVEL_11_0;
-
-	if (Engine::pSwapChain)
-	{
-		void** vTable = *reinterpret_cast<void***>(Engine::pSwapChain);
-
-		if (!vTable)
-		{
-			printf("[ERROR] Failed to get SwapChain vTable...\n");
-			return false;
-		}
-
-		Engine::PresentAddr = (LPVOID)vTable[8];
-		Engine::oPresent = (Engine::tPresent)vTable[8]; // store original
-
-		MH_CreateHook(Engine::PresentAddr, (LPVOID)&Engine::hkPresent, reinterpret_cast<LPVOID*>(&Engine::oPresent));
-		MH_EnableHook(Engine::PresentAddr);
-
-		Engine::pSwapChain->Release();
-		if (Engine::pContext) Engine::pContext->Release();
-		if (Engine::pDevice) Engine::pDevice->Release();
-
-		return true;
-	}
-	else
-	{
-		if (SUCCEEDED(D3D11CreateDeviceAndSwapChain(
-			nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0,
-			&FeatureLevelsRequested, 1, D3D11_SDK_VERSION,
-			&Engine::sd, &Engine::pSwapChain, &Engine::pDevice, &FeatureLevel, &Engine::pContext)))
-		{
-			// void** vTable = *reinterpret_cast<void***>(Engine::pSwapChain);
-			// Present = vTable[8]
-			// ResizeBuffers = vTable[13]
-
-			void** vTable;
-
-			if (Engine::pSwapChain)
-				vTable = *reinterpret_cast<void***>(Engine::pSwapChain);
-			else
-			{
-				printf("[ERROR] pSwapChain is null after creation...\n");
-				return false;
-			}
-
-			if (!vTable)
-			{
-				printf("[ERROR] Failed to get SwapChain vTable...\n");
-				return false;
-			}
-
-			Engine::PresentAddr = (LPVOID)vTable[8];
-			Engine::oPresent = (Engine::tPresent)vTable[8]; // store original
-
-			MH_CreateHook(Engine::PresentAddr, (LPVOID)&Engine::hkPresent, reinterpret_cast<LPVOID*>(&Engine::oPresent));
-			MH_EnableHook(Engine::PresentAddr);
-
-			//DWORD oldProtect;
-			//VirtualProtect(&vTable[8], sizeof(void*), PAGE_EXECUTE_READWRITE, &oldProtect);
-			//vTable[8] = (void*)&Engine::hkPresent; // replace with my hook
-			//VirtualProtect(&vTable[8], sizeof(void*), oldProtect, &oldProtect);
-
-			DestroyWindow(Engine::sd.OutputWindow);
-
-			Engine::pSwapChain->Release();
-			Engine::pContext->Release();
-			Engine::pDevice->Release();
-
-			return true;
-		}
-		else
-		{
-			printf("[ERROR] D3D11CreateDeviceAndSwapChain failed...\n");
-			if (Engine::sd.OutputWindow) DestroyWindow(Engine::sd.OutputWindow);
-
-			if (Engine::pSwapChain) Engine::pSwapChain->Release();
-			if (Engine::pContext) Engine::pContext->Release();
-			if (Engine::pDevice) Engine::pDevice->Release();
-
-			return false;
-		}
-	}
-
-	return false;
+	style.Colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
+	style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.49803922f, 0.49803922f, 0.49803922f, 1.0f);
+	style.Colors[ImGuiCol_WindowBg] = ImVec4(0.05882353f, 0.05882353f, 0.05882353f, 0.94f);
+	style.Colors[ImGuiCol_ChildBg] = ImVec4(1.0f, 1.0f, 1.0f, 0.0f);
+	style.Colors[ImGuiCol_PopupBg] = ImVec4(0.078431375f, 0.078431375f, 0.078431375f, 0.94f);
+	style.Colors[ImGuiCol_Border] = ImVec4(0.42745098f, 0.42745098f, 0.49803922f, 0.5f);
+	style.Colors[ImGuiCol_BorderShadow] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+	style.Colors[ImGuiCol_FrameBg] = ImVec4(0.2f, 0.20784314f, 0.21960784f, 0.54f);
+	style.Colors[ImGuiCol_FrameBgHovered] = ImVec4(0.4f, 0.4f, 0.4f, 0.4f);
+	style.Colors[ImGuiCol_FrameBgActive] = ImVec4(0.1764706f, 0.1764706f, 0.1764706f, 0.67f);
+	style.Colors[ImGuiCol_TitleBg] = ImVec4(0.039215688f, 0.039215688f, 0.039215688f, 1.0f);
+	style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.28627452f, 0.28627452f, 0.28627452f, 1.0f);
+	style.Colors[ImGuiCol_TitleBgCollapsed] = ImVec4(0.0f, 0.0f, 0.0f, 0.51f);
+	style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.13725491f, 0.13725491f, 0.13725491f, 1.0f);
+	style.Colors[ImGuiCol_ScrollbarBg] = ImVec4(0.019607844f, 0.019607844f, 0.019607844f, 0.53f);
+	style.Colors[ImGuiCol_ScrollbarGrab] = ImVec4(0.30980393f, 0.30980393f, 0.30980393f, 1.0f);
+	style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.40784314f, 0.40784314f, 0.40784314f, 1.0f);
+	style.Colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.50980395f, 0.50980395f, 0.50980395f, 1.0f);
+	style.Colors[ImGuiCol_CheckMark] = ImVec4(0.9372549f, 0.9372549f, 0.9372549f, 1.0f);
+	style.Colors[ImGuiCol_SliderGrab] = ImVec4(0.50980395f, 0.50980395f, 0.50980395f, 1.0f);
+	style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.85882354f, 0.85882354f, 0.85882354f, 1.0f);
+	style.Colors[ImGuiCol_Button] = ImVec4(0.4392157f, 0.4392157f, 0.4392157f, 0.4f);
+	style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.45882353f, 0.46666667f, 0.47843137f, 1.0f);
+	style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.41960785f, 0.41960785f, 0.41960785f, 1.0f);
+	style.Colors[ImGuiCol_Header] = ImVec4(0.69803923f, 0.69803923f, 0.69803923f, 0.31f);
+	style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.69803923f, 0.69803923f, 0.69803923f, 0.8f);
+	style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.47843137f, 0.49803922f, 0.5176471f, 1.0f);
+	style.Colors[ImGuiCol_Separator] = ImVec4(0.42745098f, 0.42745098f, 0.49803922f, 0.5f);
+	style.Colors[ImGuiCol_SeparatorHovered] = ImVec4(0.7176471f, 0.7176471f, 0.7176471f, 0.78f);
+	style.Colors[ImGuiCol_SeparatorActive] = ImVec4(0.50980395f, 0.50980395f, 0.50980395f, 1.0f);
+	style.Colors[ImGuiCol_ResizeGrip] = ImVec4(0.9098039f, 0.9098039f, 0.9098039f, 0.25f);
+	style.Colors[ImGuiCol_ResizeGripHovered] = ImVec4(0.80784315f, 0.80784315f, 0.80784315f, 0.67f);
+	style.Colors[ImGuiCol_ResizeGripActive] = ImVec4(0.45882353f, 0.45882353f, 0.45882353f, 0.95f);
+	style.Colors[ImGuiCol_Tab] = ImVec4(0.1764706f, 0.34901962f, 0.5764706f, 0.862f);
+	style.Colors[ImGuiCol_TabHovered] = ImVec4(0.25882354f, 0.5882353f, 0.9764706f, 0.8f);
+	style.Colors[ImGuiCol_TabActive] = ImVec4(0.19607843f, 0.40784314f, 0.6784314f, 1.0f);
+	style.Colors[ImGuiCol_TabUnfocused] = ImVec4(0.06666667f, 0.101960786f, 0.14509805f, 0.9724f);
+	style.Colors[ImGuiCol_TabUnfocusedActive] = ImVec4(0.13333334f, 0.25882354f, 0.42352942f, 1.0f);
+	style.Colors[ImGuiCol_PlotLines] = ImVec4(0.60784316f, 0.60784316f, 0.60784316f, 1.0f);
+	style.Colors[ImGuiCol_PlotLinesHovered] = ImVec4(1.0f, 0.42745098f, 0.34901962f, 1.0f);
+	style.Colors[ImGuiCol_PlotHistogram] = ImVec4(0.7294118f, 0.6f, 0.14901961f, 1.0f);
+	style.Colors[ImGuiCol_PlotHistogramHovered] = ImVec4(1.0f, 0.6f, 0.0f, 1.0f);
+	style.Colors[ImGuiCol_TableHeaderBg] = ImVec4(0.1882353f, 0.1882353f, 0.2f, 1.0f);
+	style.Colors[ImGuiCol_TableBorderStrong] = ImVec4(0.30980393f, 0.30980393f, 0.34901962f, 1.0f);
+	style.Colors[ImGuiCol_TableBorderLight] = ImVec4(0.22745098f, 0.22745098f, 0.24705882f, 1.0f);
+	style.Colors[ImGuiCol_TableRowBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
+	style.Colors[ImGuiCol_TableRowBgAlt] = ImVec4(1.0f, 1.0f, 1.0f, 0.06f);
+	style.Colors[ImGuiCol_TextSelectedBg] = ImVec4(0.8666667f, 0.8666667f, 0.8666667f, 0.35f);
+	style.Colors[ImGuiCol_DragDropTarget] = ImVec4(1.0f, 1.0f, 0.0f, 0.9f);
+	style.Colors[ImGuiCol_NavHighlight] = ImVec4(0.6f, 0.6f, 0.6f, 1.0f);
+	style.Colors[ImGuiCol_NavWindowingHighlight] = ImVec4(1.0f, 1.0f, 1.0f, 0.7f);
+	style.Colors[ImGuiCol_NavWindowingDimBg] = ImVec4(0.8f, 0.8f, 0.8f, 0.2f);
+	style.Colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.8f, 0.8f, 0.8f, 0.35f);
 }

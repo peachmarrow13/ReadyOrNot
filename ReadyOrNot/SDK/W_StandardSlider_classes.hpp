@@ -12,9 +12,9 @@
 
 #include "SlateCore_structs.hpp"
 #include "CommonInput_structs.hpp"
-#include "StandardSliderTypes_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
+#include "StandardSliderTypes_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 
 

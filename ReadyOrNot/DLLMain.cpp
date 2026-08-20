@@ -900,7 +900,13 @@ static DWORD MainThread(HMODULE hModule)
 
 	LoadSettings();
 
-	Hooks::HookProcessEvent();
+	if (!Hooks::HookProcessEvent())
+	{
+		printf("[ERROR] Failed to initialize ProcessEvent hook.\n");
+		Cleaning.store(true);
+		Cleanup(hModule);
+		return 1;
+	}
 
 	while (!Cleaning.load())
 		Sleep(100);

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Engine.h"
 
-void Cheats::SilentAim(Params::BaseMagazineWeapon_OnFire* FireParams)
+void Cheats::SilentAim(Params::BaseMagazineWeapon_Server_OnFire* FireParams)
 {
 	if (!CVars.SilentAim) return;
 

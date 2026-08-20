@@ -10,7 +10,6 @@
 #include "SDK/Basic.hpp"
 //#pragma pack(pop)
 
-#include <d3d12.h>
 #include "kiero/kiero.h"
 #include <d3d11.h>
 #include <dxgi.h>

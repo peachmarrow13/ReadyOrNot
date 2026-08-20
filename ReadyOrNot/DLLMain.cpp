@@ -1,8 +1,6 @@
 #include "pch.h"
 #include "Engine.h"
 #include <kiero/kiero.h>
-#include <d3d12.h>
-#include "ImGui/backends/imgui_impl_dx12.h"
 
 #define MAJORVERSION 2
 #define MINORVERSION 5

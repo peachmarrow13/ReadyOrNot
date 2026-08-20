@@ -115,8 +115,22 @@ static const std::pair<const char*, int> KeyNames[] = {
 {"OemClear", VK_OEM_CLEAR}
 };
 
+static int FindKeyIndex(int VirtualKey)
+{
+	for (int Index = 0; Index < IM_ARRAYSIZE(KeyNames); ++Index)
+	{
+		if (KeyNames[Index].second == VirtualKey)
+			return Index;
+	}
+
+	return 0;
+}
+
 bool KeyGetter(void* Data, int Index, const char** OutText)
 {
+	if (!Data || !OutText || Index < 0 || Index >= IM_ARRAYSIZE(KeyNames))
+		return false;
+
 	auto* Items = static_cast<std::pair<const char*, int>*>(Data);
 	*OutText = Items[Index].first;
 	return true;
@@ -636,14 +650,14 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::TreeNode("Misc Settings"))
 				{
-					static int MenuButtonCurrentIndex = KeyNames[MiscSettings.MenuButton].second;
+					static int MenuButtonCurrentIndex = FindKeyIndex(MiscSettings.MenuButton);
 
 					if (ImGui::Combo("Menu Toggle Key", &MenuButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
 					{
 						MiscSettings.MenuButton = KeyNames[MenuButtonCurrentIndex].second;
 					}
 
-					static int UninjectButtonCurrentIndex = KeyNames[MiscSettings.UninjectButton].second;
+					static int UninjectButtonCurrentIndex = FindKeyIndex(MiscSettings.UninjectButton);
 
 					if (ImGui::Combo("Uninject Key", &UninjectButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
 					{

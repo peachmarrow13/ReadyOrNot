@@ -262,7 +262,12 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 				return Engine::oPresent(SwapChain, SyncInterval, Flags);
 			}
 
-			printf("[hkPresent] Initializing ImGui: %s\n", Engine::InitImGui() ? "Success" : "Failure");
+			if (!Engine::InitImGui())
+			{
+				printf("[hkPresent] Failed to initialize ImGui\n");
+				return Engine::oPresent(SwapChain, SyncInterval, Flags);
+			}
+			printf("[hkPresent] ImGui initialized successfully\n");
 			
 			if (hwnd) 
 				oWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
@@ -1151,13 +1156,10 @@ void Cleanup(HMODULE hModule)
 	}
 
 	if (Engine::pContext) {
+		Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
 		Engine::pContext->ClearState();
 		Engine::pContext->Flush();
 	}
-
-	Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
-	Engine::pContext->ClearState();
-	Engine::pContext->Flush();
 
 	if (Engine::pRenderTargetView) 
 	{

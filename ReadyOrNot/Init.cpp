@@ -54,13 +54,11 @@ HWND Engine::GetGameWindow()
 bool Engine::InitImGui()
 {
 	HWND WindowHandle = GetGameWindow();
-	if (!WindowHandle)
+	if (!WindowHandle || !Engine::pSwapChain || !Engine::pDevice || !Engine::pContext)
 		return false;
 
-	ID3D11Device* device = nullptr;
-	Engine::pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&device);
-	ID3D11DeviceContext* context = nullptr;
-	device->GetImmediateContext(&context);
+	ID3D11Device* device = Engine::pDevice;
+	ID3D11DeviceContext* context = Engine::pContext;
 
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();

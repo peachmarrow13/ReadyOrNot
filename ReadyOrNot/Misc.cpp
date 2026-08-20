@@ -34,10 +34,13 @@ void Cheats::ToggleGodMode() {
 		else
 			RONC->ToggleGodMode();
 		RONC->IncreaseHealth(100000.0f);
-		RONC->CharacterHealth->bEnableIncapacitation = false;
-		RONC->CharacterHealth->bUnlimited = true;
-		RONC->CharacterHealth->SetUnlimitedResource(true);
-		RONC->CharacterHealth->EnableUnlimitedResource();
+		if (RONC->CharacterHealth)
+		{
+			RONC->CharacterHealth->bEnableIncapacitation = false;
+			RONC->CharacterHealth->bUnlimited = true;
+			RONC->CharacterHealth->SetUnlimitedResource(true);
+			RONC->CharacterHealth->EnableUnlimitedResource();
+		}
 	}
 }
 
@@ -797,14 +800,15 @@ void Cheats::AntiSway()
 
 void Cheats::GiveAchievements()
 {
-	if (!GVars.ReadyOrNotChar) return;
+	if (!GVars.ReadyOrNotChar || !GVars.ReadyOrNotChar->PlayerState) return;
+	if (!GVars.ReadyOrNotChar->PlayerState->IsA(AReadyOrNotPlayerState::StaticClass())) return;
 
 	AReadyOrNotPlayerState* PlayerState = reinterpret_cast<AReadyOrNotPlayerState*>(GVars.ReadyOrNotChar->PlayerState);
 
-	for (int i = 0; i < 68; i++)
+	for (int i = 0; i < static_cast<int>(EAchievement::EAchievement_MAX); i++)
 	{
 		PlayerState->Client_GrantAchievement(static_cast<EAchievement>(i));
-		if (i < 47)
+		if (i < static_cast<int>(EAchievementStats::EAchievementStats_MAX))
 			PlayerState->Client_IncreaseAchievementStat(static_cast<EAchievementStats>(i), 100000, GVars.ReadyOrNotChar, GVars.ReadyOrNotChar);
 	}
 	/*for (int i = 0; i < 47; i++)

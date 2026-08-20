@@ -361,7 +361,11 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					CVars.QueuedAction = EQueuedAction::ToggleInfAmmo;
 				HostOnlyTooltip();
 
-				ImGui::InputInt("Multi Fire", &CVars.MultiFire, 0, 50);
+				if (ImGui::InputInt("Multi Fire", &CVars.MultiFire, 0, 50))
+				{
+					if (CVars.MultiFire < 0) CVars.MultiFire = 0;
+					if (CVars.MultiFire > 20) CVars.MultiFire = 20;
+				}
 
 				if (ImGui::Button("Remove Recoil"))
 					CVars.QueuedAction = EQueuedAction::RemoveRecoil;

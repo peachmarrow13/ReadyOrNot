@@ -112,7 +112,7 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 {
 	static int CallCount = 0;
 	CallCount++;
-	static bool JustFired = false;
+	static thread_local bool JustFired = false;
 
 	if (Function)
 	{

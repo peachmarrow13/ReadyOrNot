@@ -858,8 +858,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	return Engine::oPresent ? Engine::oPresent(SwapChain, SyncInterval, Flags) : S_OK;
 }
 
-static DWORD MainThread(HMODULE hModule)
+static DWORD WINAPI MainThread(LPVOID Parameter)
 {
+	HMODULE hModule = static_cast<HMODULE>(Parameter);
 	AllocConsole();
 	FILE* Dummy;
 	freopen_s(&Dummy, "CONOUT$", "w", stdout);
@@ -921,7 +922,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID lpReserved) {
 	switch (reason) {
 	case DLL_PROCESS_ATTACH:
 		DisableThreadLibraryCalls(hModule);
-		CreateThread(nullptr, 0, (LPTHREAD_START_ROUTINE)MainThread, hModule, 0, nullptr);
+		if (HANDLE MainThreadHandle = CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr))
+			CloseHandle(MainThreadHandle);
 		break;
 	case DLL_PROCESS_DETACH:
 		Cleaning.store(true);

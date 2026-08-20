@@ -73,6 +73,7 @@ struct AimbotSettingsstruct {
 	bool Prediction = false;
 	float PredictionMultiplier = 1.0f;
 	bool TargetLock = true;
+	bool TargetSurrendered = false;
 } inline AimbotSettings;
 
 struct SilentAimSettingsstruct {

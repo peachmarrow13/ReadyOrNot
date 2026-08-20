@@ -484,6 +484,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 					ImGui::Checkbox("Target Arrested", &AimbotSettings.TargetArrested);
 
+					ImGui::Checkbox("Target Surrendered", &AimbotSettings.TargetSurrendered);
+
 					ImGui::Checkbox("Target All", &AimbotSettings.TargetAll);
 
 					ImGui::SliderFloat("Max Distance", &AimbotSettings.MaxDistance, 0.0f, 300.0f, "%.1f");

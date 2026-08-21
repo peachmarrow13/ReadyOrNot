@@ -290,7 +290,8 @@ void Cheats::RenderESP()
                     1.0f
                 );
 
-				AActor* HitActor = HitResult.Component ? HitResult.Component->GetOwner() : nullptr;
+				auto* HitComponent = HitResult.Component.Get();
+				AActor* HitActor = HitComponent ? HitComponent->GetOwner() : nullptr;
 
                 bool bHasLOS = !HitResult.bBlockingHit || HitActor == TargetActor;
                 if (!bHasLOS)

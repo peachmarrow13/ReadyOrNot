@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "SGraphicPreset_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "CommonUI_classes.hpp"
-#include "SGraphicPreset_structs.hpp"
 
 
 namespace SDK

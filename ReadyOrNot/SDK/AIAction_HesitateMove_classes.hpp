@@ -37,14 +37,14 @@ public:
 
 public:
 	void Tick_Blueprint(float DeltaTime);
-	bool ShouldForcePerformAction();
 	void PlayHesitationVO();
 	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
+	bool ShouldForcePerformAction();
 	void InitAction_Blueprint(class ACyberneticController* Controller);
+	void BeginAction_Blueprint();
 	void GetHesitationVoiceOver(bool bUseAlternate, class FString* NewParam);
 	void ExecuteUbergraph_AIAction_HesitateMove(int32 EntryPoint);
 	void EndAction_Blueprint();
-	void BeginAction_Blueprint();
 
 	bool ShouldPerformAction() const;
 	class FName GetMoveStyleOverride() const;

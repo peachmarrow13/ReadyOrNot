@@ -239,6 +239,20 @@ void UW_RoundupWidget_C::OnAnimationComplete()
 }
 
 
+// Function W_RoundupWidget.W_RoundupWidget_C.OnCMBActionsSet
+// (Event, Public, BlueprintEvent)
+
+void UW_RoundupWidget_C::OnCMBActionsSet()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_RoundupWidget_C", "OnCMBActionsSet");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_RoundupWidget.W_RoundupWidget_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:

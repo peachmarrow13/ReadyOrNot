@@ -30,6 +30,15 @@ enum class EClusterConnectionTypeEnum : uint8
 	Chaos_MAX                                = 7,
 };
 
+// ScriptStruct ChaosSolverEngine.CrumblingEventCallbackWrapper
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x10) FCrumblingEventCallbackWrapper final
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrumblingEventCallbackWrapper;
+
 // ScriptStruct ChaosSolverEngine.ChaosPhysicsCollisionInfo
 // 0x00C0 (0x00C0 - 0x0000)
 struct FChaosPhysicsCollisionInfo final
@@ -66,15 +75,6 @@ public:
 	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FRemovalEventCallbackWrapper;
-
-// ScriptStruct ChaosSolverEngine.CrumblingEventCallbackWrapper
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x10) FCrumblingEventCallbackWrapper final
-{
-public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrumblingEventCallbackWrapper;
 
 // ScriptStruct ChaosSolverEngine.ChaosHandlerSet
 // 0x0058 (0x0058 - 0x0000)

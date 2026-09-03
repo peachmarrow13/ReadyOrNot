@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "EIconAnimationStyles_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "FBasicIconSettings_structs.hpp"
 #include "ST_Commands_structs.hpp"
-#include "EIconAnimationStyles_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "UMG_classes.hpp"
 

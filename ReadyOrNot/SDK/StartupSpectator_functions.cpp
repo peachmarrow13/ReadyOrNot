@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function StartupSpectator.StartupSpectator_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AStartupSpectator_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StartupSpectator_C", "ReceiveTick");
-
-	Params::StartupSpectator_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function StartupSpectator.StartupSpectator_C.ReceivePossessed
 // (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
 // Parameters:
@@ -57,17 +37,23 @@ void AStartupSpectator_C::ReceivePossessed(class AController* NewController)
 }
 
 
-// Function StartupSpectator.StartupSpectator_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function StartupSpectator.StartupSpectator_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void AStartupSpectator_C::ReceiveBeginPlay()
+void AStartupSpectator_C::ReceiveTick(float DeltaSeconds)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("StartupSpectator_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("StartupSpectator_C", "ReceiveTick");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::StartupSpectator_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -88,6 +74,20 @@ void AStartupSpectator_C::ExecuteUbergraph_StartupSpectator(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function StartupSpectator.StartupSpectator_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AStartupSpectator_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StartupSpectator_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

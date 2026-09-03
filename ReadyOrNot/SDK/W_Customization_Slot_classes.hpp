@@ -14,8 +14,8 @@
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
-#include "CommonUI_classes.hpp"
 #include "E_BoxShape_structs.hpp"
+#include "CommonUI_classes.hpp"
 #include "UMG_structs.hpp"
 
 

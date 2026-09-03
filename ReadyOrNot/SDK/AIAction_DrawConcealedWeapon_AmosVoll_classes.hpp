@@ -18,12 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass AIAction_DrawConcealedWeapon_AmosVoll.AIAction_DrawConcealedWeapon_AmosVoll_C
-// 0x0010 (0x0068 - 0x0058)
+// 0x0020 (0x0078 - 0x0058)
 class UAIAction_DrawConcealedWeapon_AmosVoll_C final : public UAIAction
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0058(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UClass*                                 WeaponToSpawn;                                     // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	TArray<class FString>                         Fallback_Value;                                    // 0x0068(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void Tick_Blueprint(float DeltaTime);

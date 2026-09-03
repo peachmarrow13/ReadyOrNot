@@ -49,7 +49,7 @@ struct Engine
 	static ID3D11Device* pDevice;
 	static ID3D11DeviceContext* pContext;
 	static ID3D11RenderTargetView* pRenderTargetView;
-	static DXGI_SWAP_CHAIN_DESC sd;
+	static DXGI_SWAP_CHAIN_DESC SD;
 	// Function pointer type for IDXGISwapChain::ResizeBuffers
 	typedef HRESULT(__stdcall* tResizeBuffers)(
 		IDXGISwapChain* pSwapChain,

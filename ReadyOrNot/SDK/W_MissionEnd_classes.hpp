@@ -54,6 +54,7 @@ public:
 	void BP_OnActivated();
 	bool BP_OnHandleBackAction();
 	void ChangePage(class FName PageName);
+	void Construct();
 	void EnableDebrief();
 	void ExecuteUbergraph_W_MissionEnd(int32 EntryPoint);
 	void Hide(double Delay, bool Collapse);

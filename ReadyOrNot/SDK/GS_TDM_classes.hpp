@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_TDM.GS_TDM_C
-// 0x0008 (0x0960 - 0x0958)
+// 0x0008 (0x0970 - 0x0968)
 class AGS_TDM_C final : public ATeamDeathmatchGS
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0958(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0968(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GS_TDM(int32 EntryPoint);

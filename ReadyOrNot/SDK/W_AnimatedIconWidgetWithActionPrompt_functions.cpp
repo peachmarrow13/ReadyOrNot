@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function W_AnimatedIconWidgetWithActionPrompt.W_AnimatedIconWidgetWithActionPrompt_C.SetInteractState
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bValid                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_AnimatedIconWidgetWithActionPrompt_C::SetInteractState(bool bValid)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_AnimatedIconWidgetWithActionPrompt_C", "SetInteractState");
-
-	Params::W_AnimatedIconWidgetWithActionPrompt_C_SetInteractState Parms{};
-
-	Parms.bValid = bValid;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_AnimatedIconWidgetWithActionPrompt.W_AnimatedIconWidgetWithActionPrompt_C.ExecuteUbergraph_W_AnimatedIconWidgetWithActionPrompt
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -52,6 +32,26 @@ void UW_AnimatedIconWidgetWithActionPrompt_C::ExecuteUbergraph_W_AnimatedIconWid
 	Params::W_AnimatedIconWidgetWithActionPrompt_C_ExecuteUbergraph_W_AnimatedIconWidgetWithActionPrompt Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_AnimatedIconWidgetWithActionPrompt.W_AnimatedIconWidgetWithActionPrompt_C.SetInteractState
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bValid                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_AnimatedIconWidgetWithActionPrompt_C::SetInteractState(bool bValid)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_AnimatedIconWidgetWithActionPrompt_C", "SetInteractState");
+
+	Params::W_AnimatedIconWidgetWithActionPrompt_C_SetInteractState Parms{};
+
+	Parms.bValid = bValid;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

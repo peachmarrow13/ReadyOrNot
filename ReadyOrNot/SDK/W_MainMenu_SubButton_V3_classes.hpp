@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CommonInput_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 

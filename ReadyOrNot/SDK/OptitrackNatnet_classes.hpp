@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "OptitrackNatnet_structs.hpp"
 #include "Engine_classes.hpp"
+#include "OptitrackNatnet_structs.hpp"
 
 
 namespace SDK

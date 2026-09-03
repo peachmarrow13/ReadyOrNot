@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Engine.obj",
+            "outputs": [
+                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Engine.h.obj.dt.module.json",
+                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Engine.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

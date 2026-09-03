@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "LiveLinkInterface_structs.hpp"
-#include "LiveLinkInterface_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
-#include "LiveLink_structs.hpp"
+#include "LiveLinkInterface_structs.hpp"
+#include "LiveLinkInterface_classes.hpp"
 #include "TimeManagement_classes.hpp"
+#include "LiveLink_structs.hpp"
 
 
 namespace SDK
@@ -257,37 +257,6 @@ public:
 };
 DUMPER7_ASSERTS_ULiveLinkMessageBusSourceFactory;
 
-// Class LiveLink.LiveLinkTransformAxisSwitchPreProcessor
-// 0x0048 (0x0070 - 0x0028)
-class ULiveLinkTransformAxisSwitchPreProcessor : public ULiveLinkFramePreProcessor
-{
-public:
-	ELiveLinkAxis                                 FrontAxis;                                         // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELiveLinkAxis                                 RightAxis;                                         // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	ELiveLinkAxis                                 UpAxis;                                            // 0x002A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseOffsetPosition;                                // 0x002B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUseOffsetOrientation;                             // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                OffsetPosition;                                    // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FRotator                               OffsetOrientation;                                 // 0x0048(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_60[0x10];                                      // 0x0060(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LiveLinkTransformAxisSwitchPreProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LiveLinkTransformAxisSwitchPreProcessor")
-	}
-	static class ULiveLinkTransformAxisSwitchPreProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULiveLinkTransformAxisSwitchPreProcessor>();
-	}
-};
-DUMPER7_ASSERTS_ULiveLinkTransformAxisSwitchPreProcessor;
-
 // Class LiveLink.LiveLinkMessageBusSourceSettings
 // 0x0000 (0x00A8 - 0x00A8)
 class ULiveLinkMessageBusSourceSettings final : public ULiveLinkSourceSettings
@@ -476,6 +445,37 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULiveLinkVirtualSubjectSourceSettings;
+
+// Class LiveLink.LiveLinkTransformAxisSwitchPreProcessor
+// 0x0048 (0x0070 - 0x0028)
+class ULiveLinkTransformAxisSwitchPreProcessor : public ULiveLinkFramePreProcessor
+{
+public:
+	ELiveLinkAxis                                 FrontAxis;                                         // 0x0028(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELiveLinkAxis                                 RightAxis;                                         // 0x0029(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	ELiveLinkAxis                                 UpAxis;                                            // 0x002A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseOffsetPosition;                                // 0x002B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bUseOffsetOrientation;                             // 0x002C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                OffsetPosition;                                    // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FRotator                               OffsetOrientation;                                 // 0x0048(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_60[0x10];                                      // 0x0060(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LiveLinkTransformAxisSwitchPreProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LiveLinkTransformAxisSwitchPreProcessor")
+	}
+	static class ULiveLinkTransformAxisSwitchPreProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULiveLinkTransformAxisSwitchPreProcessor>();
+	}
+};
+DUMPER7_ASSERTS_ULiveLinkTransformAxisSwitchPreProcessor;
 
 // Class LiveLink.LiveLinkAnimationAxisSwitchPreProcessor
 // 0x0000 (0x0070 - 0x0070)

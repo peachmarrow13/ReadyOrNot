@@ -17,15 +17,6 @@
 namespace SDK::Params
 {
 
-// Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
-// 0x0008 (0x0008 - 0x0000)
-struct Device_Tablet_C_PlaySoundEvent final
-{
-public:
-	class UFMODEvent*                             Event;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_Device_Tablet_C_PlaySoundEvent;
-
 // Function Device_Tablet.Device_Tablet_C.ExecuteUbergraph_Device_Tablet
 // 0x0940 (0x0940 - 0x0000)
 struct Device_Tablet_C_ExecuteUbergraph_Device_Tablet final
@@ -51,6 +42,15 @@ public:
 	struct FLinearColor                           CallFunc_MakeColor_ReturnValue;                    // 0x0930(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_Device_Tablet_C_ExecuteUbergraph_Device_Tablet;
+
+// Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
+// 0x0008 (0x0008 - 0x0000)
+struct Device_Tablet_C_PlaySoundEvent final
+{
+public:
+	class UFMODEvent*                             Event;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_Device_Tablet_C_PlaySoundEvent;
 
 }
 

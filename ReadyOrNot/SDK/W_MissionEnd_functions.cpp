@@ -200,6 +200,20 @@ void UW_MissionEnd_C::ChangePage(class FName PageName)
 }
 
 
+// Function W_MissionEnd.W_MissionEnd_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_MissionEnd_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionEnd_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MissionEnd.W_MissionEnd_C.EnableDebrief
 // (BlueprintCallable, BlueprintEvent)
 

@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.obj",
+            "outputs": [
+                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.cpp.obj.dt.module.json",
+                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.cpp.obj.dt.d.json",
+                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Virus.pch"
+            ],
+            "requires": []
+        }
+    ]
+}

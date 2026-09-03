@@ -17,15 +17,6 @@
 namespace SDK::Params
 {
 
-// Function StartupSpectator.StartupSpectator_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct StartupSpectator_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_StartupSpectator_C_ReceiveTick;
-
 // Function StartupSpectator.StartupSpectator_C.ReceivePossessed
 // 0x0008 (0x0008 - 0x0000)
 struct StartupSpectator_C_ReceivePossessed final
@@ -34,6 +25,15 @@ public:
 	class AController*                            NewController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_StartupSpectator_C_ReceivePossessed;
+
+// Function StartupSpectator.StartupSpectator_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct StartupSpectator_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_StartupSpectator_C_ReceiveTick;
 
 // Function StartupSpectator.StartupSpectator_C.ExecuteUbergraph_StartupSpectator
 // 0x0180 (0x0180 - 0x0000)

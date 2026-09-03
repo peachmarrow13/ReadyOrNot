@@ -367,6 +367,27 @@ void UW_PageWrapper_C::GetCurrentNavSelection(class FName* SelectedNavOption_0)
 }
 
 
+// Function W_PageWrapper.W_PageWrapper_C.GetFooterEntriesNumber
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32*                                  AmountOfEntries                                        (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_PageWrapper_C::GetFooterEntriesNumber(int32* AmountOfEntries)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PageWrapper_C", "GetFooterEntriesNumber");
+
+	Params::W_PageWrapper_C_GetFooterEntriesNumber Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AmountOfEntries != nullptr)
+		*AmountOfEntries = Parms.AmountOfEntries;
+}
+
+
 // Function W_PageWrapper.W_PageWrapper_C.GetLineWidthByConstraint
 // (Private, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -612,6 +633,30 @@ bool UW_PageWrapper_C::IsAspectConstrained()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function W_PageWrapper.W_PageWrapper_C.IsFooterHiddenByID
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    ID                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool*                                   bIsHidden                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_PageWrapper_C::IsFooterHiddenByID(const class FString& ID, bool* bIsHidden)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_PageWrapper_C", "IsFooterHiddenByID");
+
+	Params::W_PageWrapper_C_IsFooterHiddenByID Parms{};
+
+	Parms.ID = std::move(ID);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bIsHidden != nullptr)
+		*bIsHidden = Parms.bIsHidden;
 }
 
 

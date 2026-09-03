@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_KingOfTheHill.GS_KingOfTheHill_C
-// 0x0008 (0x0968 - 0x0960)
+// 0x0008 (0x0978 - 0x0970)
 class AGS_KingOfTheHill_C final : public AKingOfTheHillGS
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0960(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0970(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

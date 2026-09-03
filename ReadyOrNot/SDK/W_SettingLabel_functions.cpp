@@ -146,5 +146,25 @@ void UW_SettingLabel_C::PreConstruct(bool IsDesignTime)
 	UObject::ProcessEvent(Func, &Parms);
 }
 
+
+// Function W_SettingLabel.W_SettingLabel_C.SetEditedTitle
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsVisible_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_SettingLabel_C::SetEditedTitle(bool IsVisible_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_SettingLabel_C", "SetEditedTitle");
+
+	Params::W_SettingLabel_C_SetEditedTitle Parms{};
+
+	Parms.IsVisible_0 = IsVisible_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

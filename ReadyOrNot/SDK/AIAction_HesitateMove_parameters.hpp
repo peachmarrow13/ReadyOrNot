@@ -27,15 +27,6 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_HesitateMove_C_Tick_Blueprint;
 
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_HesitateMove_C_ShouldForcePerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_HesitateMove_C_ShouldForcePerformAction;
-
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.OnPathFound_Blueprint
 // 0x0008 (0x0008 - 0x0000)
 struct AIAction_HesitateMove_C_OnPathFound_Blueprint final
@@ -45,6 +36,15 @@ public:
 	ERonNavigationQueryResult                     Result;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_HesitateMove_C_OnPathFound_Blueprint;
+
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_HesitateMove_C_ShouldForcePerformAction final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_HesitateMove_C_ShouldForcePerformAction;
 
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.InitAction_Blueprint
 // 0x0008 (0x0008 - 0x0000)

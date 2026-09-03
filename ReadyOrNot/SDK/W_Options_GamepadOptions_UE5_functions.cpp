@@ -675,6 +675,20 @@ void UW_Options_GamepadOptions_UE5_C::BP_OnDeactivated()
 }
 
 
+// Function W_Options_GamepadOptions_UE5.W_Options_GamepadOptions_UE5_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_Options_GamepadOptions_UE5_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_Options_GamepadOptions_UE5_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_Options_GamepadOptions_UE5.W_Options_GamepadOptions_UE5_C.ExecuteUbergraph_W_Options_GamepadOptions_UE5
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:

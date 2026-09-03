@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_VIPEscort.GS_VIPEscort_C
-// 0x0008 (0x09D0 - 0x09C8)
+// 0x0008 (0x09E0 - 0x09D8)
 class AGS_VIPEscort_C final : public AVIPEscortGS
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GS_VIPEscort(int32 EntryPoint);

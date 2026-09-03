@@ -12,13 +12,14 @@
 
 #include "Engine_structs.hpp"
 #include "CommonUI_classes.hpp"
+#include "ReadyOrNot_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_Options_GamepadOptions_UE5.W_Options_GamepadOptions_UE5_C
-// 0x0168 (0x0580 - 0x0418)
+// 0x0170 (0x0588 - 0x0418)
 class UW_Options_GamepadOptions_UE5_C final : public UCommonActivatableWidget
 {
 public:
@@ -54,12 +55,13 @@ public:
 	class UCommonActionWidget*                    InputMethodListener;                               // 0x0500(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_CommonCarousel_C*                    Options_AimAssistIntensity;                        // 0x0508(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_CommonCarousel_C*                    Options_GyroActiveMode;                            // 0x0510(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UScrollBox*                             Tab_Gamepad;                                       // 0x0518(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_OptionsContainer_UE5_C*              W_OptionsContainer_UE5;                            // 0x0520(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	bool                                          Initialized;                                       // 0x0528(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bShouldUpdateState;                                // 0x0529(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_52A[0x6];                                      // 0x052A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<double, class FString>                   ForceFeedbackIntensityMap_0;                       // 0x0530(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UCommonVisibilityWidgetBase*            PS5ControlsSwitcher;                               // 0x0518(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UScrollBox*                             Tab_Gamepad;                                       // 0x0520(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_OptionsContainer_UE5_C*              W_OptionsContainer_UE5;                            // 0x0528(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	bool                                          Initialized;                                       // 0x0530(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bShouldUpdateState;                                // 0x0531(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_532[0x6];                                      // 0x0532(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<double, class FString>                   ForceFeedbackIntensityMap_0;                       // 0x0538(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void BndEvt__W_Options_GamepadOptions_UE5_Controls_Gamepad_AimSensitivityHorizontal_K2Node_ComponentBoundEvent_13_OnFloatValueChanged__DelegateSignature(double NewFloatValue, double NewSliderValue);
@@ -94,6 +96,7 @@ public:
 	void BndEvt__W_SettingsMenuGamepad_W_CommonCarousel_K2Node_ComponentBoundEvent_61_OnPageIndexChanged__DelegateSignature(int32 Index_0, const class FString& Value);
 	void BP_OnActivated();
 	void BP_OnDeactivated();
+	void Construct();
 	void ExecuteUbergraph_W_Options_GamepadOptions_UE5(int32 EntryPoint);
 	void PopulateGamepadControls_0();
 	void ResetDefaultsGamepad();

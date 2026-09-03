@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ANIMBP_Head_Smudge_structs.hpp"
-#include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "Engine_structs.hpp"
+#include "ANIMBP_Head_Smudge_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 

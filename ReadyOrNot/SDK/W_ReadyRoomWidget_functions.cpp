@@ -51,6 +51,26 @@ void UW_ReadyRoomWidget_C::ExecuteUbergraph_W_ReadyRoomWidget(int32 EntryPoint)
 }
 
 
+// Function W_ReadyRoomWidget.W_ReadyRoomWidget_C.OnCMBHostFinishedModifying
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bFinishedModifying                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_ReadyRoomWidget_C::OnCMBHostFinishedModifying(bool bFinishedModifying)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_ReadyRoomWidget_C", "OnCMBHostFinishedModifying");
+
+	Params::W_ReadyRoomWidget_C_OnCMBHostFinishedModifying Parms{};
+
+	Parms.bFinishedModifying = bFinishedModifying;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_ReadyRoomWidget.W_ReadyRoomWidget_C.OnCountdownCancelled
 // (BlueprintCallable, BlueprintEvent)
 

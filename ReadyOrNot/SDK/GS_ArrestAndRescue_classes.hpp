@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_ArrestAndRescue.GS_ArrestAndRescue_C
-// 0x0000 (0x0960 - 0x0960)
+// 0x0000 (0x0970 - 0x0970)
 class AGS_ArrestAndRescue_C final : public AArrestAndRescueGS
 {
 public:

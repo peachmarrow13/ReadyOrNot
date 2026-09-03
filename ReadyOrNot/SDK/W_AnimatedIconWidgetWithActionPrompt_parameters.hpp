@@ -17,15 +17,6 @@
 namespace SDK::Params
 {
 
-// Function W_AnimatedIconWidgetWithActionPrompt.W_AnimatedIconWidgetWithActionPrompt_C.SetInteractState
-// 0x0001 (0x0001 - 0x0000)
-struct W_AnimatedIconWidgetWithActionPrompt_C_SetInteractState final
-{
-public:
-	bool                                          bValid;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_W_AnimatedIconWidgetWithActionPrompt_C_SetInteractState;
-
 // Function W_AnimatedIconWidgetWithActionPrompt.W_AnimatedIconWidgetWithActionPrompt_C.ExecuteUbergraph_W_AnimatedIconWidgetWithActionPrompt
 // 0x0068 (0x0068 - 0x0000)
 struct W_AnimatedIconWidgetWithActionPrompt_C_ExecuteUbergraph_W_AnimatedIconWidgetWithActionPrompt final
@@ -47,6 +38,15 @@ public:
 	float                                         CallFunc_SetRenderOpacity_InOpacity_ImplicitCast;  // 0x0064(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_AnimatedIconWidgetWithActionPrompt_C_ExecuteUbergraph_W_AnimatedIconWidgetWithActionPrompt;
+
+// Function W_AnimatedIconWidgetWithActionPrompt.W_AnimatedIconWidgetWithActionPrompt_C.SetInteractState
+// 0x0001 (0x0001 - 0x0000)
+struct W_AnimatedIconWidgetWithActionPrompt_C_SetInteractState final
+{
+public:
+	bool                                          bValid;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_AnimatedIconWidgetWithActionPrompt_C_SetInteractState;
 
 }
 

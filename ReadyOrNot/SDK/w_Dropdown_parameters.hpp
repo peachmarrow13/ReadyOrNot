@@ -12,7 +12,6 @@
 
 #include "CoreUObject_structs.hpp"
 #include "ST_DropdownOptions_structs.hpp"
-#include "Slate_structs.hpp"
 
 
 namespace SDK::Params
@@ -296,15 +295,11 @@ public:
 DUMPER7_ASSERTS_w_Dropdown_C_SetSelectionByIndex;
 
 // Function w_Dropdown.w_Dropdown_C.UpdateLabelText
-// 0x0058 (0x0058 - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 struct w_Dropdown_C_UpdateLabelText final
 {
 public:
-	struct FAnchors                               K2Node_MakeStruct_Anchors;                         // 0x0000(0x0020)(NoDestructor)
-	struct FAnchors                               K2Node_MakeStruct_Anchors_1;                       // 0x0020(0x0020)(NoDestructor)
-	class UCanvasPanelSlot*                       CallFunc_SlotAsCanvasSlot_ReturnValue;             // 0x0040(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UCanvasPanelSlot*                       CallFunc_SlotAsCanvasSlot_ReturnValue_1;           // 0x0048(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_TextIsEmpty_ReturnValue;                  // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_TextIsEmpty_ReturnValue;                  // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_w_Dropdown_C_UpdateLabelText;
 

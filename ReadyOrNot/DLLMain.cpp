@@ -117,9 +117,67 @@ static const std::pair<const char*, int> KeyNames[] = {
 
 bool KeyGetter(void* Data, int Index, const char** OutText)
 {
-	auto* Items = static_cast<std::pair<const char*, int>*>(Data);
-	*OutText = Items[Index].first;
+	auto* KeyItems = static_cast<std::pair<const char*, int>*>(Data);
+	*OutText = KeyItems[Index].first;
 	return true;
+}
+
+static int FindKeyIndex(int VirtualKey)
+{
+	for (int Index = 0; Index < IM_ARRAYSIZE(KeyNames); ++Index)
+	{
+		if (KeyNames[Index].second == VirtualKey)
+			return Index;
+	}
+
+	return 0;
+}
+
+static bool DrawVirtualKeyCombo(const char* Label, int& VirtualKey)
+{
+	int CurrentIndex = FindKeyIndex(VirtualKey);
+
+	if (!ImGui::Combo(Label, &CurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
+		return false;
+
+	VirtualKey = KeyNames[CurrentIndex].second;
+	return true;
+}
+
+static bool DrawImGuiKeyCombo(const char* Label, ImGuiKey& SelectedKey)
+{
+	const char* Preview = ImGui::GetKeyName(SelectedKey);
+	if (!Preview || !*Preview)
+		Preview = "None";
+
+	bool Changed = false;
+
+	if (ImGui::BeginCombo(Label, Preview))
+	{
+		for (int Key = ImGuiKey_NamedKey_BEGIN; Key < ImGuiKey_NamedKey_END; ++Key)
+		{
+			ImGuiKey CurrentKey = static_cast<ImGuiKey>(Key);
+			const char* KeyName = ImGui::GetKeyName(CurrentKey);
+
+			if (!KeyName || !*KeyName)
+				continue;
+
+			bool IsSelected = SelectedKey == CurrentKey;
+
+			if (ImGui::Selectable(KeyName, IsSelected))
+			{
+				SelectedKey = CurrentKey;
+				Changed = true;
+			}
+
+			if (IsSelected)
+				ImGui::SetItemDefaultFocus();
+		}
+
+		ImGui::EndCombo();
+	}
+
+	return Changed;
 }
 
 static const std::pair<const char*, std::string> BoneOptions[] = {
@@ -137,14 +195,14 @@ static const std::pair<const char*, std::string> BoneOptions[] = {
 };
 
 static bool ShowMenu = true;
-bool init = false;
+bool gInit = false;
 
 int Frames = 0;
 
 float FireRate = 1;
 
-std::atomic<HMODULE> g_hModule{ nullptr };
-std::atomic<int> g_PresentCount{ 0 };
+std::atomic<HMODULE> ghModule{ nullptr };
+std::atomic<int> gPresentCount{ 0 };
 std::atomic<bool> Cleaning{ false };
 std::atomic<bool> Resizing{ false };
 
@@ -202,13 +260,12 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
 {
 	Resizing.store(true);
-	while (g_PresentCount.load() != 0)
+	while (gPresentCount.load() != 0)
 		Sleep(0);
 
 	// Call original function
-	HRESULT hr = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+	HRESULT Result = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
 
-	
 	Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
 	if (Engine::pRenderTargetView) {
 		Engine::pRenderTargetView->Release();
@@ -220,24 +277,24 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 		Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
 		pBackBuffer->Release();
 	}
-	
+
 	Resizing.store(false);
 
-	return hr;
+	return Result;
 }
 
 HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
 {
 	if (Cleaning.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
-	
+
 	if (Resizing.load())
 		return Engine::oPresent(SwapChain, SyncInterval, Flags);
 
 	struct PresentGuardStruct
 	{
-		PresentGuardStruct() { g_PresentCount.fetch_add(1); }
-		~PresentGuardStruct() { g_PresentCount.fetch_sub(1); }
+		PresentGuardStruct() { gPresentCount.fetch_add(1); }
+		~PresentGuardStruct() { gPresentCount.fetch_sub(1); }
 	} PresentGuard;
 
 	if (MiscSettings.ShouldAutoSave && Frames % 900 == 0) // Every 900 frames, save settings
@@ -245,7 +302,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		SaveSettings();
 	}
 
-	if (!init)
+	if (!gInit)
 	{
 		if (SUCCEEDED(SwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&Engine::pDevice)))
 		{
@@ -253,21 +310,21 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			Engine::pDevice->GetImmediateContext(&Engine::pContext);
 
 			Engine::pSwapChain = SwapChain;
-			SwapChain->GetDesc(&Engine::sd);
+			SwapChain->GetDesc(&Engine::SD);
 
-			HWND hwnd = Engine::GetGameWindow();
-			if (!hwnd)
+			HWND WindowHandle = Engine::GetGameWindow();
+			if (!WindowHandle)
 			{
 				printf("Failed to get GameWindow\n");
 				return Engine::oPresent(SwapChain, SyncInterval, Flags);
 			}
 
 			printf("[hkPresent] Initializing ImGui: %s\n", Engine::InitImGui() ? "Success" : "Failure");
-			
-			if (hwnd) 
-				oWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
-			
-			init = true;
+
+			if (WindowHandle)
+				oWndProc = (WNDPROC)SetWindowLongPtr(WindowHandle, GWLP_WNDPROC, (LONG_PTR)WndProc);
+
+			gInit = true;
 		}
 		else
 			printf("[Warning] Failed to acquire device\n");
@@ -305,7 +362,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (ShowMenu) {
 		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
 
-		if  (ImGui::BeginTabBar("MainTabBar"))
+		if (ImGui::BeginTabBar("MainTabBar"))
 		{
 			if (ImGui::BeginTabItem("About"))
 			{
@@ -382,7 +439,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::Button("Increase Fire Rate"))
 					CVars.QueuedAction = EQueuedAction::SetFireRate;
-				
+
 				ImGui::Checkbox("Shoot From Reticle", &CVars.ShootFromReticle);
 
 				if (ImGui::Button("Add Magazine"))
@@ -503,41 +560,23 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					{
 						for (int i = 0; i < IM_ARRAYSIZE(BoneOptions); i++)
 						{
-							bool is_selected = (TextVars.AimbotBone == BoneOptions[i].second);
-							if (ImGui::Selectable(BoneOptions[i].first, is_selected))
+							bool IsSelected = (TextVars.AimbotBone == BoneOptions[i].second);
+							if (ImGui::Selectable(BoneOptions[i].first, IsSelected))
 							{
 								TextVars.AimbotBone = BoneOptions[i].second;
 							}
-							if (is_selected)
+							if (IsSelected)
 								ImGui::SetItemDefaultFocus(); // make the selected item visible
 						}
 						ImGui::EndCombo();
 					}
 
 					ImGui::Checkbox("Require HotKey", &AimbotSettings.RequireKeyHeld);
-					
+
 					const char* ABpreview = ImGui::GetKeyName(AimbotSettings.AimbotKey);
-					if (!ABpreview) ABpreview = "None";
+					DrawImGuiKeyCombo("Select Key for Aimbot", AimbotSettings.AimbotKey);
+					AddDefaultTooltip("Only activate the aimbot while this key is held");
 
-					if (ImGui::BeginCombo("Select Key for Aimbot", ABpreview))
-					{
-						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
-						{
-							ImGuiKey current = static_cast<ImGuiKey>(key);
-							const char* keyName = ImGui::GetKeyName(current);
-							if (!keyName || !*keyName) continue; // skip empty names
-
-							bool isSelected = (AimbotSettings.AimbotKey == current);
-							if (ImGui::Selectable(keyName, isSelected))
-								AimbotSettings.AimbotKey = current;
-
-							if (isSelected)
-								ImGui::SetItemDefaultFocus();
-						}
-						ImGui::EndCombo();
-						AddDefaultTooltip("Only activate the aimbot while this key is held");
-					}
-					
 					ImGui::TreePop();
 				}
 
@@ -578,7 +617,7 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					AddDefaultTooltip("The Objectives don't show the actual location");
 					ImGui::TreePop();
 				}
-		
+
 				if (ImGui::TreeNode("Silent Aim Settings"))
 				{
 					ImGui::Checkbox("Target Civilians", &SilentAimSettings.TargetCivilians);
@@ -609,12 +648,12 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 					{
 						for (int i = 0; i < IM_ARRAYSIZE(BoneOptions); i++)
 						{
-							bool is_selected = (TextVars.SilentAimBone == BoneOptions[i].second);
-							if (ImGui::Selectable(BoneOptions[i].first, is_selected))
+							bool IsSelected = (TextVars.SilentAimBone == BoneOptions[i].second);
+							if (ImGui::Selectable(BoneOptions[i].first, IsSelected))
 							{
 								TextVars.SilentAimBone = BoneOptions[i].second;
 							}
-							if (is_selected)
+							if (IsSelected)
 								ImGui::SetItemDefaultFocus(); // make the selected item visible
 						}
 						ImGui::EndCombo();
@@ -625,19 +664,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 				if (ImGui::TreeNode("Misc Settings"))
 				{
-					static int MenuButtonCurrentIndex = KeyNames[MiscSettings.MenuButton].second;
+					DrawVirtualKeyCombo("Menu Toggle Key", MiscSettings.MenuButton);
 
-					if (ImGui::Combo("Menu Toggle Key", &MenuButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
-					{
-						MiscSettings.MenuButton = KeyNames[MenuButtonCurrentIndex].second;
-					}
-
-					static int UninjectButtonCurrentIndex = KeyNames[MiscSettings.UninjectButton].second;
-
-					if (ImGui::Combo("Uninject Key", &UninjectButtonCurrentIndex, KeyGetter, (void*)KeyNames, IM_ARRAYSIZE(KeyNames)))
-					{
-						MiscSettings.UninjectButton = KeyNames[UninjectButtonCurrentIndex].second;
-					}
+					DrawVirtualKeyCombo("Uninject Key", MiscSettings.UninjectButton);
 
 					ImGui::InputFloat("Bullet Time Speed", &CVars.BulletTimeSpeed);
 
@@ -676,68 +705,14 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 					// Create a combo box
 					const char* TBpreview = ImGui::GetKeyName(TriggerBotKey);
-					if (!TBpreview) TBpreview = "None";
-
-					if (ImGui::BeginCombo("Select Key for TriggerBot", TBpreview))
-					{
-						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
-						{
-							ImGuiKey current = static_cast<ImGuiKey>(key);
-							const char* keyName = ImGui::GetKeyName(current);
-							if (!keyName || !*keyName) continue; // skip empty names
-
-							bool isSelected = (TriggerBotKey == current);
-							if (ImGui::Selectable(keyName, isSelected))
-								TriggerBotKey = current;
-
-							if (isSelected)
-								ImGui::SetItemDefaultFocus();
-						}
-						ImGui::EndCombo();
-					}
+					DrawImGuiKeyCombo("Select Key for TriggerBot", TriggerBotKey);
 
 					const char* ESPpreview = ImGui::GetKeyName(ESPKey);
-					if (!ESPpreview) ESPpreview = "None";
-
-					if (ImGui::BeginCombo("Select Key for ESP", ESPpreview))
-					{
-						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
-						{
-							ImGuiKey current = static_cast<ImGuiKey>(key);
-							const char* keyName = ImGui::GetKeyName(current);
-							if (!keyName || !*keyName) continue; // skip empty names
-
-							bool isSelected = (ESPKey == current);
-							if (ImGui::Selectable(keyName, isSelected))
-								ESPKey = current;
-
-							if (isSelected)
-								ImGui::SetItemDefaultFocus();
-						}
-						ImGui::EndCombo();
-					}
+					DrawImGuiKeyCombo("Select Key for ESP", ESPKey);
 
 					const char* AimPreview = ImGui::GetKeyName(AimButton);
-					if (!AimPreview) AimPreview = "None";
+					DrawImGuiKeyCombo("Select AimLock Button", AimButton);
 
-					if (ImGui::BeginCombo("Select AimLock Button", AimPreview))
-					{
-						for (int key = ImGuiKey_NamedKey_BEGIN; key < ImGuiKey_NamedKey_END; ++key)
-						{
-							ImGuiKey current = static_cast<ImGuiKey>(key);
-							const char* keyName = ImGui::GetKeyName(current);
-							if (!keyName || !*keyName) continue; // skip empty names
-
-							bool isSelected = (AimButton == current);
-							if (ImGui::Selectable(keyName, isSelected))
-								AimButton = current;
-
-							if (isSelected)
-								ImGui::SetItemDefaultFocus();
-						}
-						ImGui::EndCombo();
-					}
-					
 					ImGui::TreePop();
 				}
 
@@ -820,18 +795,18 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	if (Engine::pRenderTargetView) {
 		Engine::pContext->OMSetRenderTargets(1, &Engine::pRenderTargetView, nullptr);
 
-		D3D11_VIEWPORT vp = {};
-		vp.Width = (float)Engine::sd.BufferDesc.Width;
-		vp.Height = (float)Engine::sd.BufferDesc.Height;
-		vp.MinDepth = 0.0f;
-		vp.MaxDepth = 1.0f;
-		vp.TopLeftX = 0;
-		vp.TopLeftY = 0;
-		Engine::pContext->RSSetViewports(1, &vp);
+		D3D11_VIEWPORT Viewport = {};
+		Viewport.Width = (float)Engine::SD.BufferDesc.Width;
+		Viewport.Height = (float)Engine::SD.BufferDesc.Height;
+		Viewport.MinDepth = 0.0f;
+		Viewport.MaxDepth = 1.0f;
+		Viewport.TopLeftX = 0;
+		Viewport.TopLeftY = 0;
+		Engine::pContext->RSSetViewports(1, &Viewport);
 	}
 
 	ImGui::Render();
-	
+
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 
 	if (TriggerBotKey != ImGuiKey_None && ImGui::IsKeyPressed(TriggerBotKey, false))
@@ -855,7 +830,7 @@ static DWORD MainThread(HMODULE hModule)
 
 	printf("Cheat Injecting...\n");
 
-	g_hModule.store(hModule);
+	ghModule.store(hModule);
 
 	int Attempts = 0;
 
@@ -910,7 +885,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID lpReserved) {
 		Cleaning.store(true);
 		break;
 	}
-	
+
 	return TRUE;
 }
 
@@ -962,22 +937,22 @@ void SaveSettings()
 	if (TextVarsfile.is_open())
 	{
 		// Save AimbotBone
-		size_t len = TextVars.AimbotBone.size();
-		TextVarsfile.write(reinterpret_cast<char*>(&len), sizeof(len));
-		TextVarsfile.write(TextVars.AimbotBone.data(), len);
+		size_t Length = TextVars.AimbotBone.size();
+		TextVarsfile.write(reinterpret_cast<char*>(&Length), sizeof(Length));
+		TextVarsfile.write(TextVars.AimbotBone.data(), Length);
 
 		// Save SilentAimBone
-		len = TextVars.SilentAimBone.size();
-		TextVarsfile.write(reinterpret_cast<char*>(&len), sizeof(len));
-		TextVarsfile.write(TextVars.SilentAimBone.data(), len);
+		Length = TextVars.SilentAimBone.size();
+		TextVarsfile.write(reinterpret_cast<char*>(&Length), sizeof(Length));
+		TextVarsfile.write(TextVars.SilentAimBone.data(), Length);
 
-		len = TextVars.DebugFunctionNameMustInclude.size();
-		TextVarsfile.write(reinterpret_cast<char*>(&len), sizeof(len));
-		TextVarsfile.write(TextVars.DebugFunctionNameMustInclude.data(), len);
+		Length = TextVars.DebugFunctionNameMustInclude.size();
+		TextVarsfile.write(reinterpret_cast<char*>(&Length), sizeof(Length));
+		TextVarsfile.write(TextVars.DebugFunctionNameMustInclude.data(), Length);
 
-		len = TextVars.DebugFunctionObjectMustInclude.size();
-		TextVarsfile.write(reinterpret_cast<char*>(&len), sizeof(len));
-		TextVarsfile.write(TextVars.DebugFunctionObjectMustInclude.data(), len);
+		Length = TextVars.DebugFunctionObjectMustInclude.size();
+		TextVarsfile.write(reinterpret_cast<char*>(&Length), sizeof(Length));
+		TextVarsfile.write(TextVars.DebugFunctionObjectMustInclude.data(), Length);
 
 		TextVarsfile.close();
 	}
@@ -1008,21 +983,19 @@ void LoadSettings()
 
 	std::ifstream MiscSettingsinfile("MiscSettings.bin", std::ios::binary);
 
-	if (!MiscSettingsinfile.is_open()) 
+	if (!MiscSettingsinfile.is_open())
 	{
 		printf("[INFO] MiscSettings.bin not found, using defaults.\n");
 		return;
 	}
 
 	MiscSettingsinfile.seekg(0);
-
 	MiscSettingsinfile.read(reinterpret_cast<char*>(&MiscSettings), sizeof(MiscSettings));
-
 	MiscSettingsinfile.close();
 
 	std::ifstream AimbotSettingsinfile("AimbotSettings.bin", std::ios::binary);
 
-	if (!AimbotSettingsinfile.is_open()) 
+	if (!AimbotSettingsinfile.is_open())
 	{
 		printf("[INFO] AimbotSettings.bin not found, using defaults.\n");
 		return;
@@ -1036,7 +1009,7 @@ void LoadSettings()
 
 	std::ifstream ESPSettingsinfile("ESPSettings.bin", std::ios::binary);
 
-	if (!ESPSettingsinfile.is_open()) 
+	if (!ESPSettingsinfile.is_open())
 	{
 		printf("[INFO] ESPSettings.bin not found, using defaults.\n");
 		return;
@@ -1050,7 +1023,7 @@ void LoadSettings()
 
 	std::ifstream SilentAimSettingsinfile("SilentAimSettings.bin", std::ios::binary);
 
-	if (!SilentAimSettingsinfile.is_open()) 
+	if (!SilentAimSettingsinfile.is_open())
 	{
 		printf("[INFO] SilentAimSettings.bin not found, using defaults.\n");
 		return;
@@ -1064,35 +1037,35 @@ void LoadSettings()
 
 	std::ifstream TextVarsinfile("TextVars.bin", std::ios::binary);
 
-	if (!TextVarsinfile.is_open()) 
+	if (!TextVarsinfile.is_open())
 	{
 		printf("[INFO] TextVars.bin not found, using defaults.\n");
 		return;
 	}
 
-	size_t len = 0;
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.AimbotBone.resize(len);
-	TextVarsinfile.read(TextVars.AimbotBone.data(), len);
+	size_t Length = 0;
+	TextVarsinfile.read(reinterpret_cast<char*>(&Length), sizeof(Length));
+	TextVars.AimbotBone.resize(Length);
+	TextVarsinfile.read(TextVars.AimbotBone.data(), Length);
 
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.SilentAimBone.resize(len);
-	TextVarsinfile.read(TextVars.SilentAimBone.data(), len);
+	TextVarsinfile.read(reinterpret_cast<char*>(&Length), sizeof(Length));
+	TextVars.SilentAimBone.resize(Length);
+	TextVarsinfile.read(TextVars.SilentAimBone.data(), Length);
 
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.DebugFunctionNameMustInclude.resize(len);
-	TextVarsinfile.read(TextVars.DebugFunctionNameMustInclude.data(), len);
+	TextVarsinfile.read(reinterpret_cast<char*>(&Length), sizeof(Length));
+	TextVars.DebugFunctionNameMustInclude.resize(Length);
+	TextVarsinfile.read(TextVars.DebugFunctionNameMustInclude.data(), Length);
 
-	TextVarsinfile.read(reinterpret_cast<char*>(&len), sizeof(len));
-	TextVars.DebugFunctionObjectMustInclude.resize(len);
-	TextVarsinfile.read(TextVars.DebugFunctionObjectMustInclude.data(), len);
+	TextVarsinfile.read(reinterpret_cast<char*>(&Length), sizeof(Length));
+	TextVars.DebugFunctionObjectMustInclude.resize(Length);
+	TextVarsinfile.read(TextVars.DebugFunctionObjectMustInclude.data(), Length);
 
 	TextVarsinfile.close();
 
 	if (MiscSettings.ShouldSaveCVars)
 	{
 		std::ifstream CVarsinfile("CVars.bin", std::ios::binary);
-		if (!CVarsinfile.is_open()) 
+		if (!CVarsinfile.is_open())
 		{
 			printf("[INFO] CVars.bin not found, using defaults.\n");
 			return;
@@ -1115,18 +1088,18 @@ void Cleanup(HMODULE hModule)
 
 	if (UEngine::GetEngine())
 	{
-		void** objvTable = *reinterpret_cast<void***>(UEngine::GetEngine());
-		MH_DisableHook(objvTable[Offsets::ProcessEventIdx]);
-		MH_RemoveHook(objvTable[Offsets::ProcessEventIdx]);
+		void** ObjectVTable = *reinterpret_cast<void***>(UEngine::GetEngine());
+		MH_DisableHook(ObjectVTable[Offsets::ProcessEventIdx]);
+		MH_RemoveHook(ObjectVTable[Offsets::ProcessEventIdx]);
 	}
 
-	while (g_PresentCount.load() != 0)
+	while (gPresentCount.load() != 0)
 		_mm_pause();
 
 	kiero::shutdown();
 
 	MH_DisableHook(MH_ALL_HOOKS);
-	MH_RemoveHook(Engine::oPresent); // BTW MH_ALL_HOOKS doesn't work on removing hooks.
+	MH_RemoveHook(Engine::oPresent);
 	MH_RemoveHook(Engine::oResizeBuffers);
 	MH_Uninitialize();
 
@@ -1137,10 +1110,10 @@ void Cleanup(HMODULE hModule)
 		ImGui::DestroyContext();
 	}
 
-	HWND hwnd = FindWindow(L"UnrealWindow", nullptr);
-	if (hwnd && oWndProc)
+	HWND WindowHandle = FindWindow(L"UnrealWindow", nullptr);
+	if (WindowHandle && oWndProc)
 	{
-		SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)oWndProc);
+		SetWindowLongPtr(WindowHandle, GWLP_WNDPROC, (LONG_PTR)oWndProc);
 		oWndProc = nullptr;
 	}
 
@@ -1153,7 +1126,7 @@ void Cleanup(HMODULE hModule)
 	Engine::pContext->ClearState();
 	Engine::pContext->Flush();
 
-	if (Engine::pRenderTargetView) 
+	if (Engine::pRenderTargetView)
 	{
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
@@ -1161,13 +1134,13 @@ void Cleanup(HMODULE hModule)
 
 	Engine::pSwapChain = nullptr;
 
-	if (Engine::pContext) 
+	if (Engine::pContext)
 	{
 		Engine::pContext->Release();
 		Engine::pContext = nullptr;
 	}
 
-	if (Engine::pDevice) 
+	if (Engine::pDevice)
 	{
 		Engine::pDevice->Release();
 		Engine::pDevice = nullptr;

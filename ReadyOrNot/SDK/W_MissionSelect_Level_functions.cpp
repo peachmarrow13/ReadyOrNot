@@ -555,6 +555,20 @@ void UW_MissionSelect_Level_C::SequenceEvent__ENTRYPOINTW_MissionSelect_Level_0(
 }
 
 
+// Function W_MissionSelect_Level.W_MissionSelect_Level_C.SetFavourite
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UW_MissionSelect_Level_C::SetFavourite()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionSelect_Level_C", "SetFavourite");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MissionSelect_Level.W_MissionSelect_Level_C.SetInputMode
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

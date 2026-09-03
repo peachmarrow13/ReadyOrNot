@@ -53,11 +53,12 @@ public:
 DUMPER7_ASSERTS_W_Premission_Tablet_Overlay_C_ScreenChange;
 
 // Function W_Premission_Tablet_Overlay.W_Premission_Tablet_Overlay_C.SetChatFooterVisibility
-// 0x0001 (0x0001 - 0x0000)
+// 0x0002 (0x0002 - 0x0000)
 struct W_Premission_Tablet_Overlay_C_SetChatFooterVisibility final
 {
 public:
 	bool                                          bIsChatVisible;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_Premission_Tablet_Overlay_C_SetChatFooterVisibility;
 

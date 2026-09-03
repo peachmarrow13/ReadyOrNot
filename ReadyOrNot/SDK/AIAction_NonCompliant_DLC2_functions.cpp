@@ -17,60 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.Tick_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_NonCompliant_DLC2_C::Tick_Blueprint(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "Tick_Blueprint");
-
-	Params::AIAction_NonCompliant_DLC2_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldForcePerformAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UAIAction_NonCompliant_DLC2_C::ShouldForcePerformAction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "ShouldForcePerformAction");
-
-	Params::AIAction_NonCompliant_DLC2_C_ShouldForcePerformAction Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.PlayHesitationVO
-// (BlueprintCallable, BlueprintEvent)
-
-void UAIAction_NonCompliant_DLC2_C::PlayHesitationVO()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "PlayHesitationVO");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.OnPathFound_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -171,6 +117,60 @@ void UAIAction_NonCompliant_DLC2_C::EndAction_Blueprint()
 }
 
 
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.Tick_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_NonCompliant_DLC2_C::Tick_Blueprint(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "Tick_Blueprint");
+
+	Params::AIAction_NonCompliant_DLC2_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldForcePerformAction
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UAIAction_NonCompliant_DLC2_C::ShouldForcePerformAction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "ShouldForcePerformAction");
+
+	Params::AIAction_NonCompliant_DLC2_C_ShouldForcePerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.PlayHesitationVO
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIAction_NonCompliant_DLC2_C::PlayHesitationVO()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "PlayHesitationVO");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
 
@@ -182,26 +182,6 @@ void UAIAction_NonCompliant_DLC2_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldPerformAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UAIAction_NonCompliant_DLC2_C::ShouldPerformAction() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "ShouldPerformAction");
-
-	Params::AIAction_NonCompliant_DLC2_C_ShouldPerformAction Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -218,6 +198,26 @@ class FName UAIAction_NonCompliant_DLC2_C::GetMoveStyleOverride() const
 		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "GetMoveStyleOverride");
 
 	Params::AIAction_NonCompliant_DLC2_C_GetMoveStyleOverride Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIAction_NonCompliant_DLC2.AIAction_NonCompliant_DLC2_C.ShouldPerformAction
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UAIAction_NonCompliant_DLC2_C::ShouldPerformAction() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_NonCompliant_DLC2_C", "ShouldPerformAction");
+
+	Params::AIAction_NonCompliant_DLC2_C_ShouldPerformAction Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 

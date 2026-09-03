@@ -12,8 +12,8 @@
 
 #include "ReadyOrNot_structs.hpp"
 #include "CommonInput_structs.hpp"
-#include "Slate_structs.hpp"
 #include "FMODStudio_structs.hpp"
+#include "Slate_structs.hpp"
 
 
 namespace SDK::Params

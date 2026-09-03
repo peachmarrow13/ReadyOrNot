@@ -28,8 +28,8 @@ public:
 	class UImage*                                 InteractCircle;                                    // 0x0420(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void SetInteractState(bool bValid);
 	void ExecuteUbergraph_W_AnimatedIconWidgetWithActionPrompt(int32 EntryPoint);
+	void SetInteractState(bool bValid);
 
 public:
 	static class UClass* StaticClass()

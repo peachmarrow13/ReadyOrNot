@@ -95,6 +95,20 @@ void UAIAction_HesitateStationary_C::GetHesitationVoiceOver(bool bUseAlternate, 
 }
 
 
+// Function AIAction_HesitateStationary.AIAction_HesitateStationary_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_HesitateStationary_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_HesitateStationary_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_HesitateStationary.AIAction_HesitateStationary_C.ExecuteUbergraph_AIAction_HesitateStationary
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -124,20 +138,6 @@ void UAIAction_HesitateStationary_C::EndAction_Blueprint()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("AIAction_HesitateStationary_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_HesitateStationary.AIAction_HesitateStationary_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_HesitateStationary_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_HesitateStationary_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

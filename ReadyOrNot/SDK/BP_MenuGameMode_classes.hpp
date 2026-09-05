@@ -31,16 +31,16 @@ public:
 	class UBP_MessageDisplayBox_C*                CurrentDispalyBox;                                 // 0x0460(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
-	class AActor* ChoosePlayerStart(class AController* Player);
-	void CreateRestartWidget();
-	class APawn* SpawnDefaultPawnFor(class AController* NewPlayer, class AActor* StartSpot);
-	void ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveBeginPlay();
 	void OnMessageClicked();
+	void ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen);
+	class APawn* SpawnDefaultPawnFor(class AController* NewPlayer, class AActor* StartSpot);
 	void FindSpawnPoint(const class FString& Tag, struct FTransform* SpawnPoint);
 	void ExecuteUbergraph_BP_MenuGameMode(int32 EntryPoint);
+	void CreateRestartWidget();
+	class AActor* ChoosePlayerStart(class AController* Player);
 
 public:
 	static class UClass* StaticClass()

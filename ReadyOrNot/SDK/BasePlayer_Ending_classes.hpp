@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BasePlayer_Ending.BasePlayer_Ending_C
-// 0x0000 (0x3190 - 0x3190)
+// 0x0000 (0x3180 - 0x3180)
 class ABasePlayer_Ending_C final : public ABasePlayer_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BasePlayer_Ending_C;                // 0x3188(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BasePlayer_Ending_C;                // 0x3178(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BasePlayer_Ending(int32 EntryPoint);

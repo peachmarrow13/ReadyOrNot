@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "LoadoutScrollBehaviour_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
+#include "LoadoutScrollBehaviour_structs.hpp"
 
 
 namespace SDK

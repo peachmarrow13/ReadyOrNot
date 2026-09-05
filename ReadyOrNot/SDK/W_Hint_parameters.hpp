@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
-#include "ReadyOrNot_structs.hpp"
 #include "CommonInput_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
 
 
 namespace SDK::Params

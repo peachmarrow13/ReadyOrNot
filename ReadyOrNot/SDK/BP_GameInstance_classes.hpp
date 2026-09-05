@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "SGraphicPreset_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SGraphicPreset_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -21,15 +21,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_GameInstance.BP_GameInstance_C
-// 0x0088 (0x0F98 - 0x0F10)
+// 0x0088 (0x0FA0 - 0x0F18)
 class UBP_GameInstance_C final : public UReadyOrNotGameInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0F10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	TArray<class FString>                         StreamedLevels;                                    // 0x0F18(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FString                                 ModeURL;                                           // 0x0F28(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	struct FSGraphicPreset                        SteamDeckPreset;                                   // 0x0F38(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FSGraphicPreset>                GraphicsPresets;                                   // 0x0F88(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0F18(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	TArray<class FString>                         StreamedLevels;                                    // 0x0F20(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FString                                 ModeURL;                                           // 0x0F30(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSGraphicPreset                        SteamDeckPreset;                                   // 0x0F40(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSGraphicPreset>                GraphicsPresets;                                   // 0x0F90(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void AddPauseGameCondition(const class FString& PauseCondition);

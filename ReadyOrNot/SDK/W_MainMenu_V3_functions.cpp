@@ -221,6 +221,68 @@ void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_FriendsLobbyButton_K2Node_Component
 }
 
 
+// Function W_MainMenu_V3.W_MainMenu_V3_C.BndEvt__W_MainMenu_V3_MB_MultiplayerButton_K2Node_ComponentBoundEvent_26_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_MB_MultiplayerButton_K2Node_ComponentBoundEvent_26_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_V3_C", "BndEvt__W_MainMenu_V3_MB_MultiplayerButton_K2Node_ComponentBoundEvent_26_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_MainMenu_V3_C_BndEvt__W_MainMenu_V3_MB_MultiplayerButton_K2Node_ComponentBoundEvent_26_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_MainMenu_V3.W_MainMenu_V3_C.BndEvt__W_MainMenu_V3_MB_SingleplayerButton_K2Node_ComponentBoundEvent_25_CommonButtonBaseClicked__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_MB_SingleplayerButton_K2Node_ComponentBoundEvent_25_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_V3_C", "BndEvt__W_MainMenu_V3_MB_SingleplayerButton_K2Node_ComponentBoundEvent_25_CommonButtonBaseClicked__DelegateSignature");
+
+	Params::W_MainMenu_V3_C_BndEvt__W_MainMenu_V3_MB_SingleplayerButton_K2Node_ComponentBoundEvent_25_CommonButtonBaseClicked__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_MainMenu_V3.W_MainMenu_V3_C.BndEvt__W_MainMenu_V3_MissionBuilderButton_K2Node_ComponentBoundEvent_24_CommonSelectedStateChangedBase__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// bool                                    Selected                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_MissionBuilderButton_K2Node_ComponentBoundEvent_24_CommonSelectedStateChangedBase__DelegateSignature(class UCommonButtonBase* Button, bool Selected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_V3_C", "BndEvt__W_MainMenu_V3_MissionBuilderButton_K2Node_ComponentBoundEvent_24_CommonSelectedStateChangedBase__DelegateSignature");
+
+	Params::W_MainMenu_V3_C_BndEvt__W_MainMenu_V3_MissionBuilderButton_K2Node_ComponentBoundEvent_24_CommonSelectedStateChangedBase__DelegateSignature Parms{};
+
+	Parms.Button = Button;
+	Parms.Selected = Selected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function W_MainMenu_V3.W_MainMenu_V3_C.BndEvt__W_MainMenu_V3_ModsButton_K2Node_ComponentBoundEvent_13_CommonButtonBaseClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
@@ -442,6 +504,34 @@ void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_StatsButton_K2Node_ComponentBoundEv
 	Parms.Button = Button;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_MainMenu_V3.W_MainMenu_V3_C.BndEvt__W_MainMenu_V3_Sub_MissionBuilderAccordion_K2Node_ComponentBoundEvent_23_OnWidgetActivationChanged__DelegateSignature
+// (BlueprintEvent)
+
+void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_Sub_MissionBuilderAccordion_K2Node_ComponentBoundEvent_23_OnWidgetActivationChanged__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_V3_C", "BndEvt__W_MainMenu_V3_Sub_MissionBuilderAccordion_K2Node_ComponentBoundEvent_23_OnWidgetActivationChanged__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function W_MainMenu_V3.W_MainMenu_V3_C.BndEvt__W_MainMenu_V3_Sub_MissionBuilderAccordion_K2Node_ComponentBoundEvent_28_HandleBackPress__DelegateSignature
+// (BlueprintEvent)
+
+void UW_MainMenu_V3_C::BndEvt__W_MainMenu_V3_Sub_MissionBuilderAccordion_K2Node_ComponentBoundEvent_28_HandleBackPress__DelegateSignature()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MainMenu_V3_C", "BndEvt__W_MainMenu_V3_Sub_MissionBuilderAccordion_K2Node_ComponentBoundEvent_28_HandleBackPress__DelegateSignature");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

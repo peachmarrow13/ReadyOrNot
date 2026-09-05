@@ -701,7 +701,7 @@ void Uw_Dropdown_C::SetSelectionByIndex(int32 Index_0)
 
 
 // Function w_Dropdown.w_Dropdown_C.UpdateLabelText
-// (Private, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Private, BlueprintCallable, BlueprintEvent)
 
 void Uw_Dropdown_C::UpdateLabelText()
 {

@@ -19,8 +19,8 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_OnOffButton.W_OnOffButton_C
-// 0x00D0 (0x0398 - 0x02C8)
-class UW_OnOffButton_C final : public UUserWidget
+// 0x00E8 (0x03B0 - 0x02C8)
+class UW_OnOffButton_C : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -36,6 +36,7 @@ public:
 	class FText                                   EnabledText_PS5Variant;                            // 0x0358(0x0018)(Edit, BlueprintVisible)
 	TMulticastInlineDelegate<void()>              OnClicked;                                         // 0x0370(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	class FText                                   DisabledText_PS5Variant;                           // 0x0380(0x0018)(Edit, BlueprintVisible)
+	class FText                                   DescriptionText_XboxVariant;                       // 0x0398(0x0018)(Edit, BlueprintVisible)
 
 public:
 	void BndEvt__W_OnOffButton_btn_Toggle_K2Node_ComponentBoundEvent_3_Hovered__DelegateSignature(class UW_Button_C* Button);

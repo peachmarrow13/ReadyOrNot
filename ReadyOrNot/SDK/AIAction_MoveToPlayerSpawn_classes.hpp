@@ -27,9 +27,9 @@ public:
 
 public:
 	void OnCreate_Blueprint(class ACyberneticController* Controller);
+	void BeginAction_Blueprint();
 	void ExecuteUbergraph_AIAction_MoveToPlayerSpawn(int32 EntryPoint);
 	void EndAction_Blueprint();
-	void BeginAction_Blueprint();
 
 public:
 	static class UClass* StaticClass()

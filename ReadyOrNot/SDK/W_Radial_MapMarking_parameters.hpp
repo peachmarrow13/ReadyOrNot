@@ -15,8 +15,8 @@
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
-#include "Slate_structs.hpp"
 #include "st_PreMissionMarkers_structs.hpp"
+#include "Slate_structs.hpp"
 #include "st_PreMissionMarker_Categories_structs.hpp"
 
 

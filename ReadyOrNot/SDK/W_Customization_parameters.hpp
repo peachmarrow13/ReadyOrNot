@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "ReadyOrNot_structs.hpp"
-#include "Slate_structs.hpp"
 #include "E_BoxShape_structs.hpp"
 #include "E_CustomizationGroups_structs.hpp"
+#include "Slate_structs.hpp"
 #include "UMG_structs.hpp"
 #include "ST_EquippingUnit_structs.hpp"
 #include "CommonInput_structs.hpp"

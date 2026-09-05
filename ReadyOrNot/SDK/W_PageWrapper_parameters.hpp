@@ -181,6 +181,16 @@ public:
 };
 DUMPER7_ASSERTS_W_PageWrapper_C_GetCurrentNavSelection;
 
+// Function W_PageWrapper.W_PageWrapper_C.GetFooterEntriesNumber
+// 0x0008 (0x0008 - 0x0000)
+struct W_PageWrapper_C_GetFooterEntriesNumber final
+{
+public:
+	int32                                         AmountOfEntries;                                   // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Map_Length_ReturnValue;                   // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_PageWrapper_C_GetFooterEntriesNumber;
+
 // Function W_PageWrapper.W_PageWrapper_C.GetLineWidthByConstraint
 // 0x0098 (0x0098 - 0x0000)
 struct W_PageWrapper_C_GetLineWidthByConstraint final
@@ -313,6 +323,17 @@ public:
 	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_PageWrapper_C_IsAspectConstrained;
+
+// Function W_PageWrapper.W_PageWrapper_C.IsFooterHiddenByID
+// 0x0018 (0x0018 - 0x0000)
+struct W_PageWrapper_C_IsFooterHiddenByID final
+{
+public:
+	class FString                                 ID;                                                // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          bIsHidden;                                         // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsHiddenEntry_ReturnValue;                // 0x0011(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_PageWrapper_C_IsFooterHiddenByID;
 
 // Function W_PageWrapper.W_PageWrapper_C.IsPS5
 // 0x0003 (0x0003 - 0x0000)

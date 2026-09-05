@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "UMG_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
@@ -81,9 +81,9 @@ public:
 	class UW_Compass_Rotating_C*                  W_Compass_V3_1;                                    // 0x0730(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_Compass_Rotating_C*                  W_Compass_V3_Gamepad;                              // 0x0738(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UW_DamagePaperdoll_C*                   W_DamagePaperdoll;                                 // 0x0740(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_VariableZoom_C*                      W_VariableZoom;                                    // 0x0748(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UW_VotePopUp_gamepad_C*                 W_VotePopUp_gamepad;                               // 0x0750(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	uint8                                         Pad_758[0x8];                                      // 0x0758(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UW_MissionBuilder_Watermark_C*          W_MissionBuilder_Watermark;                        // 0x0748(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_VariableZoom_C*                      W_VariableZoom;                                    // 0x0750(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UW_VotePopUp_gamepad_C*                 W_VotePopUp_gamepad;                               // 0x0758(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	struct FSlateBrush                            DoorCommandBrush;                                  // 0x0760(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FSlateBrush                            HumanCommandBrush;                                 // 0x0830(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UW_TutorialOverviewText_C*              TutorialOverview;                                  // 0x0900(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)

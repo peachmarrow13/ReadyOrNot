@@ -36,7 +36,6 @@ public:
 	double                                        DynamicRadius;                                     // 0x00B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Tick_Blueprint(float DeltaTime);
 	bool ShouldForcePerformAction();
 	void PlayHesitationVO();
 	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
@@ -45,6 +44,7 @@ public:
 	void ExecuteUbergraph_AIAction_HesitateMove(int32 EntryPoint);
 	void EndAction_Blueprint();
 	void BeginAction_Blueprint();
+	void Tick_Blueprint(float DeltaTime);
 
 	bool ShouldPerformAction() const;
 	class FName GetMoveStyleOverride() const;

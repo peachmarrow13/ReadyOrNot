@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CommonInput_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 #include "UMG_structs.hpp"
@@ -112,6 +112,7 @@ public:
 	void EnableHeaderNavOption(class FName OptionNameID);
 	void ExecuteUbergraph_W_PageWrapper(int32 EntryPoint);
 	void GetCurrentNavSelection(class FName* SelectedNavOption_0);
+	void GetFooterEntriesNumber(int32* AmountOfEntries);
 	double GetLineWidthByConstraint();
 	void Hide(double Delay, bool Collapse);
 	void HideBackground(bool bHide);
@@ -126,6 +127,7 @@ public:
 	void InitializeNavigation();
 	void InputMethodChanged(ECommonInputType bNewInputType);
 	bool IsAspectConstrained();
+	void IsFooterHiddenByID(const class FString& ID, bool* bIsHidden);
 	void IsPS5(bool* IsPlaystation);
 	void OnFooterEntryPressed(class UW_ScreenFooterEntry_C* NewParam);
 	void OnInitialized();

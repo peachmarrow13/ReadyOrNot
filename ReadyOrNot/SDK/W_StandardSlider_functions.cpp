@@ -147,6 +147,48 @@ void UW_StandardSlider_C::ExecuteUbergraph_W_StandardSlider(int32 EntryPoint)
 }
 
 
+// Function W_StandardSlider.W_StandardSlider_C.GetFloatValue
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// double*                                 FloatValue_0                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_StandardSlider_C::GetFloatValue(double* FloatValue_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_StandardSlider_C", "GetFloatValue");
+
+	Params::W_StandardSlider_C_GetFloatValue Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (FloatValue_0 != nullptr)
+		*FloatValue_0 = Parms.FloatValue_0;
+}
+
+
+// Function W_StandardSlider.W_StandardSlider_C.GetIntegralValue
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32*                                  IntegerValue_0                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_StandardSlider_C::GetIntegralValue(int32* IntegerValue_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_StandardSlider_C", "GetIntegralValue");
+
+	Params::W_StandardSlider_C_GetIntegralValue Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (IntegerValue_0 != nullptr)
+		*IntegerValue_0 = Parms.IntegerValue_0;
+}
+
+
 // Function W_StandardSlider.W_StandardSlider_C.Navigate Left
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

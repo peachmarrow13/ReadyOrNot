@@ -100,27 +100,6 @@ void UAIAction_TakeHostage_C::ExecuteUbergraph_AIAction_TakeHostage(int32 EntryP
 }
 
 
-// Function AIAction_TakeHostage.AIAction_TakeHostage_C.EquipBestHostageTakingWeapon
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool*                                   bFoundWeapon                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_TakeHostage_C::EquipBestHostageTakingWeapon(bool* bFoundWeapon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_TakeHostage_C", "EquipBestHostageTakingWeapon");
-
-	Params::AIAction_TakeHostage_C_EquipBestHostageTakingWeapon Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (bFoundWeapon != nullptr)
-		*bFoundWeapon = Parms.bFoundWeapon;
-}
-
-
 // Function AIAction_TakeHostage.AIAction_TakeHostage_C.EndAction_Blueprint
 // (Event, Protected, BlueprintEvent)
 
@@ -146,6 +125,27 @@ void UAIAction_TakeHostage_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_TakeHostage_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_TakeHostage.AIAction_TakeHostage_C.EquipBestHostageTakingWeapon
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   bFoundWeapon                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_TakeHostage_C::EquipBestHostageTakingWeapon(bool* bFoundWeapon)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_TakeHostage_C", "EquipBestHostageTakingWeapon");
+
+	Params::AIAction_TakeHostage_C_EquipBestHostageTakingWeapon Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bFoundWeapon != nullptr)
+		*bFoundWeapon = Parms.bFoundWeapon;
 }
 
 

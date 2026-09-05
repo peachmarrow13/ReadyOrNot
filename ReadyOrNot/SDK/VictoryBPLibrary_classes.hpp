@@ -14,8 +14,8 @@
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "UMG_classes.hpp"
 #include "VictoryBPLibrary_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK

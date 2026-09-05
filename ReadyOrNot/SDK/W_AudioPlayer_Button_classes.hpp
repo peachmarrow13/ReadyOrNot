@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "ReadyOrNot_classes.hpp"
+#include "E_Briefing_Audio_PlayStates_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
-#include "E_Briefing_Audio_PlayStates_structs.hpp"
-#include "ReadyOrNot_classes.hpp"
 
 
 namespace SDK

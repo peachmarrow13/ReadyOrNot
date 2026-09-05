@@ -59,20 +59,6 @@ void ADevice_Tablet_C::ReceiveBeginPlay()
 }
 
 
-// Function Device_Tablet.Device_Tablet_C.PlayVibrationEvent
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ADevice_Tablet_C::PlayVibrationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Device_Tablet_C", "PlayVibrationEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -93,6 +79,20 @@ void ADevice_Tablet_C::PlaySoundEvent(class UFMODEvent* Event)
 }
 
 
+// Function Device_Tablet.Device_Tablet_C.PlayVibrationEvent
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ADevice_Tablet_C::PlayVibrationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Device_Tablet_C", "PlayVibrationEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function Device_Tablet.Device_Tablet_C.PlayNotificationEvent
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -102,20 +102,6 @@ void ADevice_Tablet_C::PlayNotificationEvent()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Device_Tablet_C", "PlayNotificationEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function Device_Tablet.Device_Tablet_C.HolsterScreen
-// (Event, Public, BlueprintEvent)
-
-void ADevice_Tablet_C::HolsterScreen()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Device_Tablet_C", "HolsterScreen");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -138,6 +124,20 @@ void ADevice_Tablet_C::ExecuteUbergraph_Device_Tablet(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function Device_Tablet.Device_Tablet_C.HolsterScreen
+// (Event, Public, BlueprintEvent)
+
+void ADevice_Tablet_C::HolsterScreen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Device_Tablet_C", "HolsterScreen");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

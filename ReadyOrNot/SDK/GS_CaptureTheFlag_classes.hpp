@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_CaptureTheFlag.GS_CaptureTheFlag_C
-// 0x0000 (0x0970 - 0x0970)
+// 0x0000 (0x0980 - 0x0980)
 class AGS_CaptureTheFlag_C final : public ACaptureTheFlagGS
 {
 public:

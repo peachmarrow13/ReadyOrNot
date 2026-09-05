@@ -31,11 +31,11 @@ public:
 	void WakeScreen();
 	void SleepScreen();
 	void ReceiveBeginPlay();
-	void PlayVibrationEvent();
 	void PlaySoundEvent(class UFMODEvent* Event);
+	void PlayVibrationEvent();
 	void PlayNotificationEvent();
-	void HolsterScreen();
 	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
+	void HolsterScreen();
 
 public:
 	static class UClass* StaticClass()

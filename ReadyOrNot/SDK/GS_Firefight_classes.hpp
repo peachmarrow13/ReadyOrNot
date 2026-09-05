@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_Firefight.GS_Firefight_C
-// 0x0008 (0x0978 - 0x0970)
+// 0x0008 (0x0988 - 0x0980)
 class AGS_Firefight_C final : public AFirefightGS
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0970(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0980(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GS_Firefight(int32 EntryPoint);

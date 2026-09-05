@@ -12,8 +12,8 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MeshModelingTools_structs.hpp"
 #include "InteractiveToolsFramework_classes.hpp"
+#include "MeshModelingTools_structs.hpp"
 #include "ModelingComponents_structs.hpp"
 #include "ModelingComponents_classes.hpp"
 #include "ModelingOperators_structs.hpp"
@@ -104,56 +104,6 @@ public:
 };
 DUMPER7_ASSERTS_UProceduralShapeToolProperties;
 
-// Class MeshModelingTools.EditMeshPolygonsToolActionPropertySet
-// 0x0008 (0x00B0 - 0x00A8)
-class UEditMeshPolygonsToolActionPropertySet : public UInteractiveToolPropertySet
-{
-public:
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EditMeshPolygonsToolActionPropertySet")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EditMeshPolygonsToolActionPropertySet")
-	}
-	static class UEditMeshPolygonsToolActionPropertySet* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEditMeshPolygonsToolActionPropertySet>();
-	}
-};
-DUMPER7_ASSERTS_UEditMeshPolygonsToolActionPropertySet;
-
-// Class MeshModelingTools.EditMeshPolygonsToolEdgeActions_Triangles
-// 0x0000 (0x00B0 - 0x00B0)
-class UEditMeshPolygonsToolEdgeActions_Triangles final : public UEditMeshPolygonsToolActionPropertySet
-{
-public:
-	void Collapse();
-	void FillHole();
-	void Flip();
-	void Split();
-	void Weld();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("EditMeshPolygonsToolEdgeActions_Triangles")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"EditMeshPolygonsToolEdgeActions_Triangles")
-	}
-	static class UEditMeshPolygonsToolEdgeActions_Triangles* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEditMeshPolygonsToolEdgeActions_Triangles>();
-	}
-};
-DUMPER7_ASSERTS_UEditMeshPolygonsToolEdgeActions_Triangles;
-
 // Class MeshModelingTools.ProceduralBoxToolProperties
 // 0x0018 (0x00D0 - 0x00B8)
 class UProceduralBoxToolProperties final : public UProceduralShapeToolProperties
@@ -241,57 +191,6 @@ public:
 };
 DUMPER7_ASSERTS_UProceduralDiscToolProperties;
 
-// Class MeshModelingTools.AddPrimitiveTool
-// 0x0098 (0x0140 - 0x00A8)
-class UAddPrimitiveTool : public USingleClickTool
-{
-public:
-	uint8                                         Pad_A8[0x18];                                      // 0x00A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCreateMeshObjectTypeProperties*        OutputTypeProperties;                              // 0x00C0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UProceduralShapeToolProperties*         ShapeSettings;                                     // 0x00C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UNewMeshMaterialProperties*             MaterialProperties;                                // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UPreviewMesh*                           PreviewMesh;                                       // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UCombinedTransformGizmo*                Gizmo;                                             // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UDragAlignmentMechanic*                 DragAlignmentMechanic;                             // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class FString                                 AssetName;                                         // 0x00F0(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_100[0x40];                                     // 0x0100(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AddPrimitiveTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AddPrimitiveTool")
-	}
-	static class UAddPrimitiveTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAddPrimitiveTool>();
-	}
-};
-DUMPER7_ASSERTS_UAddPrimitiveTool;
-
-// Class MeshModelingTools.AddStairsPrimitiveTool
-// 0x0000 (0x0140 - 0x0140)
-class UAddStairsPrimitiveTool final : public UAddPrimitiveTool
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AddStairsPrimitiveTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AddStairsPrimitiveTool")
-	}
-	static class UAddStairsPrimitiveTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAddStairsPrimitiveTool>();
-	}
-};
-DUMPER7_ASSERTS_UAddStairsPrimitiveTool;
-
 // Class MeshModelingTools.ProceduralTorusToolProperties
 // 0x0010 (0x00C8 - 0x00B8)
 class UProceduralTorusToolProperties final : public UProceduralShapeToolProperties
@@ -343,26 +242,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UProceduralCylinderToolProperties;
-
-// Class MeshModelingTools.AddConePrimitiveTool
-// 0x0000 (0x0140 - 0x0140)
-class UAddConePrimitiveTool final : public UAddPrimitiveTool
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AddConePrimitiveTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AddConePrimitiveTool")
-	}
-	static class UAddConePrimitiveTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAddConePrimitiveTool>();
-	}
-};
-DUMPER7_ASSERTS_UAddConePrimitiveTool;
 
 // Class MeshModelingTools.ProceduralConeToolProperties
 // 0x0010 (0x00C8 - 0x00B8)
@@ -476,49 +355,36 @@ public:
 };
 DUMPER7_ASSERTS_UProceduralStairsToolProperties;
 
-// Class MeshModelingTools.AddArrowPrimitiveTool
-// 0x0000 (0x0140 - 0x0140)
-class UAddArrowPrimitiveTool final : public UAddPrimitiveTool
+// Class MeshModelingTools.AddPrimitiveTool
+// 0x0098 (0x0140 - 0x00A8)
+class UAddPrimitiveTool : public USingleClickTool
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AddArrowPrimitiveTool")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AddArrowPrimitiveTool")
-	}
-	static class UAddArrowPrimitiveTool* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAddArrowPrimitiveTool>();
-	}
-};
-DUMPER7_ASSERTS_UAddArrowPrimitiveTool;
-
-// Class MeshModelingTools.EditMeshPolygonsToolAcceptCancelAction
-// 0x0000 (0x00B0 - 0x00B0)
-class UEditMeshPolygonsToolAcceptCancelAction final : public UEditMeshPolygonsToolActionPropertySet
-{
-public:
-	void Apply();
-	void Cancel();
+	uint8                                         Pad_A8[0x18];                                      // 0x00A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCreateMeshObjectTypeProperties*        OutputTypeProperties;                              // 0x00C0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UProceduralShapeToolProperties*         ShapeSettings;                                     // 0x00C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UNewMeshMaterialProperties*             MaterialProperties;                                // 0x00D0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UPreviewMesh*                           PreviewMesh;                                       // 0x00D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UCombinedTransformGizmo*                Gizmo;                                             // 0x00E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UDragAlignmentMechanic*                 DragAlignmentMechanic;                             // 0x00E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class FString                                 AssetName;                                         // 0x00F0(0x0010)(ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_100[0x40];                                     // 0x0100(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("EditMeshPolygonsToolAcceptCancelAction")
+		STATIC_CLASS_IMPL("AddPrimitiveTool")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"EditMeshPolygonsToolAcceptCancelAction")
+		STATIC_NAME_IMPL(L"AddPrimitiveTool")
 	}
-	static class UEditMeshPolygonsToolAcceptCancelAction* GetDefaultObj()
+	static class UAddPrimitiveTool* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UEditMeshPolygonsToolAcceptCancelAction>();
+		return GetDefaultObjImpl<UAddPrimitiveTool>();
 	}
 };
-DUMPER7_ASSERTS_UEditMeshPolygonsToolAcceptCancelAction;
+DUMPER7_ASSERTS_UAddPrimitiveTool;
 
 // Class MeshModelingTools.AddBoxPrimitiveTool
 // 0x0000 (0x0140 - 0x0140)
@@ -559,6 +425,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAddCylinderPrimitiveTool;
+
+// Class MeshModelingTools.AddConePrimitiveTool
+// 0x0000 (0x0140 - 0x0140)
+class UAddConePrimitiveTool final : public UAddPrimitiveTool
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AddConePrimitiveTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AddConePrimitiveTool")
+	}
+	static class UAddConePrimitiveTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAddConePrimitiveTool>();
+	}
+};
+DUMPER7_ASSERTS_UAddConePrimitiveTool;
 
 // Class MeshModelingTools.AddRectanglePrimitiveTool
 // 0x0000 (0x0140 - 0x0140)
@@ -620,6 +506,26 @@ public:
 };
 DUMPER7_ASSERTS_UAddTorusPrimitiveTool;
 
+// Class MeshModelingTools.AddArrowPrimitiveTool
+// 0x0000 (0x0140 - 0x0140)
+class UAddArrowPrimitiveTool final : public UAddPrimitiveTool
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AddArrowPrimitiveTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AddArrowPrimitiveTool")
+	}
+	static class UAddArrowPrimitiveTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAddArrowPrimitiveTool>();
+	}
+};
+DUMPER7_ASSERTS_UAddArrowPrimitiveTool;
+
 // Class MeshModelingTools.AddSpherePrimitiveTool
 // 0x0000 (0x0140 - 0x0140)
 class UAddSpherePrimitiveTool final : public UAddPrimitiveTool
@@ -639,6 +545,26 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAddSpherePrimitiveTool;
+
+// Class MeshModelingTools.AddStairsPrimitiveTool
+// 0x0000 (0x0140 - 0x0140)
+class UAddStairsPrimitiveTool final : public UAddPrimitiveTool
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AddStairsPrimitiveTool")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AddStairsPrimitiveTool")
+	}
+	static class UAddStairsPrimitiveTool* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAddStairsPrimitiveTool>();
+	}
+};
+DUMPER7_ASSERTS_UAddStairsPrimitiveTool;
 
 // Class MeshModelingTools.CombineMeshesToolBuilder
 // 0x0008 (0x0030 - 0x0028)
@@ -1449,6 +1375,29 @@ public:
 };
 DUMPER7_ASSERTS_UEditMeshPolygonsSelectionModeToolBuilder;
 
+// Class MeshModelingTools.EditMeshPolygonsToolActionPropertySet
+// 0x0008 (0x00B0 - 0x00A8)
+class UEditMeshPolygonsToolActionPropertySet : public UInteractiveToolPropertySet
+{
+public:
+	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EditMeshPolygonsToolActionPropertySet")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EditMeshPolygonsToolActionPropertySet")
+	}
+	static class UEditMeshPolygonsToolActionPropertySet* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEditMeshPolygonsToolActionPropertySet>();
+	}
+};
+DUMPER7_ASSERTS_UEditMeshPolygonsToolActionPropertySet;
+
 // Class MeshModelingTools.PolyEditTopologyProperties
 // 0x0010 (0x00C0 - 0x00B0)
 class UPolyEditTopologyProperties final : public UEditMeshPolygonsToolActionPropertySet
@@ -1602,6 +1551,33 @@ public:
 };
 DUMPER7_ASSERTS_UEditMeshPolygonsToolEdgeActions;
 
+// Class MeshModelingTools.EditMeshPolygonsToolEdgeActions_Triangles
+// 0x0000 (0x00B0 - 0x00B0)
+class UEditMeshPolygonsToolEdgeActions_Triangles final : public UEditMeshPolygonsToolActionPropertySet
+{
+public:
+	void Collapse();
+	void FillHole();
+	void Flip();
+	void Split();
+	void Weld();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EditMeshPolygonsToolEdgeActions_Triangles")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EditMeshPolygonsToolEdgeActions_Triangles")
+	}
+	static class UEditMeshPolygonsToolEdgeActions_Triangles* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEditMeshPolygonsToolEdgeActions_Triangles>();
+	}
+};
+DUMPER7_ASSERTS_UEditMeshPolygonsToolEdgeActions_Triangles;
+
 // Class MeshModelingTools.EditMeshPolygonsToolCancelAction
 // 0x0000 (0x00B0 - 0x00B0)
 class UEditMeshPolygonsToolCancelAction final : public UEditMeshPolygonsToolActionPropertySet
@@ -1624,6 +1600,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UEditMeshPolygonsToolCancelAction;
+
+// Class MeshModelingTools.EditMeshPolygonsToolAcceptCancelAction
+// 0x0000 (0x00B0 - 0x00B0)
+class UEditMeshPolygonsToolAcceptCancelAction final : public UEditMeshPolygonsToolActionPropertySet
+{
+public:
+	void Apply();
+	void Cancel();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("EditMeshPolygonsToolAcceptCancelAction")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"EditMeshPolygonsToolAcceptCancelAction")
+	}
+	static class UEditMeshPolygonsToolAcceptCancelAction* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEditMeshPolygonsToolAcceptCancelAction>();
+	}
+};
+DUMPER7_ASSERTS_UEditMeshPolygonsToolAcceptCancelAction;
 
 // Class MeshModelingTools.EditMeshPolygonsTool
 // 0x0758 (0x0880 - 0x0128)

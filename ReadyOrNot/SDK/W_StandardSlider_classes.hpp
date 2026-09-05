@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "StandardSliderTypes_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
 #include "UMG_classes.hpp"
-#include "StandardSliderTypes_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 
 
@@ -23,7 +23,7 @@ namespace SDK
 
 // WidgetBlueprintGeneratedClass W_StandardSlider.W_StandardSlider_C
 // 0x0178 (0x0440 - 0x02C8)
-class UW_StandardSlider_C final : public UUserWidget
+class UW_StandardSlider_C : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -76,6 +76,8 @@ public:
 	void BndEvt__TheSlider_K2Node_ComponentBoundEvent_2_OnMouseCaptureEndEvent__DelegateSignature();
 	void Construct();
 	void ExecuteUbergraph_W_StandardSlider(int32 EntryPoint);
+	void GetFloatValue(double* FloatValue_0);
+	void GetIntegralValue(int32* IntegerValue_0);
 	class UWidget* Navigate_Left(EUINavigation Navigation_0);
 	class UWidget* Navigate_Right(EUINavigation Navigation_0);
 	void OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);

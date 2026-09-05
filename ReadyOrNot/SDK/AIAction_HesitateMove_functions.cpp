@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_HesitateMove_C::Tick_Blueprint(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_HesitateMove_C", "Tick_Blueprint");
-
-	Params::AIAction_HesitateMove_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -182,6 +162,26 @@ void UAIAction_HesitateMove_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_HesitateMove_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_HesitateMove_C::Tick_Blueprint(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_HesitateMove_C", "Tick_Blueprint");
+
+	Params::AIAction_HesitateMove_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

@@ -27,9 +27,9 @@ public:
 
 public:
 	void ReceiveTick(float DeltaSeconds);
-	void ReceivePossessed(class AController* NewController);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_StartupSpectator(int32 EntryPoint);
+	void ReceivePossessed(class AController* NewController);
 
 public:
 	static class UClass* StaticClass()

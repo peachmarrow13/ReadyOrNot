@@ -26,15 +26,6 @@ public:
 };
 DUMPER7_ASSERTS_StartupSpectator_C_ReceiveTick;
 
-// Function StartupSpectator.StartupSpectator_C.ReceivePossessed
-// 0x0008 (0x0008 - 0x0000)
-struct StartupSpectator_C_ReceivePossessed final
-{
-public:
-	class AController*                            NewController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_StartupSpectator_C_ReceivePossessed;
-
 // Function StartupSpectator.StartupSpectator_C.ExecuteUbergraph_StartupSpectator
 // 0x0180 (0x0180 - 0x0000)
 struct StartupSpectator_C_ExecuteUbergraph_StartupSpectator final
@@ -62,6 +53,15 @@ public:
 	class AController*                            K2Node_Event_NewController;                        // 0x0178(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_StartupSpectator_C_ExecuteUbergraph_StartupSpectator;
+
+// Function StartupSpectator.StartupSpectator_C.ReceivePossessed
+// 0x0008 (0x0008 - 0x0000)
+struct StartupSpectator_C_ReceivePossessed final
+{
+public:
+	class AController*                            NewController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_StartupSpectator_C_ReceivePossessed;
 
 }
 

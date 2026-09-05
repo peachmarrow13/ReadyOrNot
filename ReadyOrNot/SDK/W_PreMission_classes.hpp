@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "UMG_structs.hpp"
-#include "PreMissionHotkeyGroups_structs.hpp"
 #include "st_HotkeySettings_structs.hpp"
+#include "PreMissionHotkeyGroups_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK

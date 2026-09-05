@@ -35,9 +35,9 @@ public:
 	void PlayHesitationVO();
 	void InitAction_Blueprint(class ACyberneticController* Controller);
 	void GetHesitationVoiceOver(bool bUseAlternate, class FString* NewParam);
+	void BeginAction_Blueprint();
 	void ExecuteUbergraph_AIAction_HesitateStationary(int32 EntryPoint);
 	void EndAction_Blueprint();
-	void BeginAction_Blueprint();
 
 	bool ShouldPerformAction() const;
 	class FName GetMoveStyleOverride() const;

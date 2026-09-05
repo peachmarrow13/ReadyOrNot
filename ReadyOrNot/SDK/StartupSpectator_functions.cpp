@@ -37,26 +37,6 @@ void AStartupSpectator_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function StartupSpectator.StartupSpectator_C.ReceivePossessed
-// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
-// Parameters:
-// class AController*                      NewController                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void AStartupSpectator_C::ReceivePossessed(class AController* NewController)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StartupSpectator_C", "ReceivePossessed");
-
-	Params::StartupSpectator_C_ReceivePossessed Parms{};
-
-	Parms.NewController = NewController;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function StartupSpectator.StartupSpectator_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -86,6 +66,26 @@ void AStartupSpectator_C::ExecuteUbergraph_StartupSpectator(int32 EntryPoint)
 	Params::StartupSpectator_C_ExecuteUbergraph_StartupSpectator Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function StartupSpectator.StartupSpectator_C.ReceivePossessed
+// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
+// Parameters:
+// class AController*                      NewController                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void AStartupSpectator_C::ReceivePossessed(class AController* NewController)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StartupSpectator_C", "ReceivePossessed");
+
+	Params::StartupSpectator_C_ReceivePossessed Parms{};
+
+	Parms.NewController = NewController;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

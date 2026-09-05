@@ -73,5 +73,14 @@ public:
 };
 DUMPER7_ASSERTS_W_SettingLabel_C_PreConstruct;
 
+// Function W_SettingLabel.W_SettingLabel_C.SetEditedTitle
+// 0x0001 (0x0001 - 0x0000)
+struct W_SettingLabel_C_SetEditedTitle final
+{
+public:
+	bool                                          IsVisible_0;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_SettingLabel_C_SetEditedTitle;
+
 }
 

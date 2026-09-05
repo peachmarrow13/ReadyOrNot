@@ -37,26 +37,6 @@ void UAIAction_AdvanceToZone_C::Tick_Blueprint(float DeltaTime)
 }
 
 
-// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.OnCreate_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_AdvanceToZone_C::OnCreate_Blueprint(class ACyberneticController* Controller)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "OnCreate_Blueprint");
-
-	Params::AIAction_AdvanceToZone_C_OnCreate_Blueprint Parms{};
-
-	Parms.Controller = Controller;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.ExecuteUbergraph_AIAction_AdvanceToZone
 // (Final, UbergraphFunction)
 // Parameters:
@@ -102,6 +82,26 @@ void UAIAction_AdvanceToZone_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.OnCreate_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ACyberneticController*            Controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_AdvanceToZone_C::OnCreate_Blueprint(class ACyberneticController* Controller)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "OnCreate_Blueprint");
+
+	Params::AIAction_AdvanceToZone_C_OnCreate_Blueprint Parms{};
+
+	Parms.Controller = Controller;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

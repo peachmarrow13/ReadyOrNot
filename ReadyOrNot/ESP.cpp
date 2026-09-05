@@ -127,7 +127,7 @@ auto RenderColor = IM_COL32(255, 255, 255, 255);
 void Cheats::RenderESP()
 {
 	if (!CVars.ESP) return;
-    if (!GVars.PlayerController || !GVars.Level) return;
+    if (!GVars.PlayerController || !GVars.Level || !GVars.POV) return;
 
     ULevel* Level = GVars.Level;
     if (!Level) return; 
@@ -137,7 +137,7 @@ void Cheats::RenderESP()
 
     for (AActor* Actor : ActorsCopy)
     {
-    	if (!Actor) continue;
+        if (!Actor || !Utils::IsValidActor(Actor)) continue;
 
         if (ESPSettings.ShowTraps)
         {
@@ -255,6 +255,7 @@ void Cheats::RenderESP()
             memcpy(SuspectSkeletonBones, SuspectSkeletonBones_1, sizeof(SuspectSkeletonBones_1));
 
         std::vector<FVector2D> BonePositions = {};
+		bool HasVisibleBone = !ESPSettings.LOS;
 
         for (auto& pair : IsSuspect ? SuspectSkeletonBones : CivilianSkeletonBones)
         {
@@ -263,7 +264,7 @@ void Cheats::RenderESP()
 
             FVector ParentPos = Mesh->GetBoneTransform(ParentName, ERelativeTransformSpace::RTS_World).Translation;
             FVector ChildPos = Mesh->GetBoneTransform(ChildName, ERelativeTransformSpace::RTS_World).Translation;
-            FVector2D ParentScreen, ChildScreen, ActorScreen;
+			FVector2D ParentScreen, ChildScreen;
 
             if (ESPSettings.LOS)
             {
@@ -289,55 +290,60 @@ void Cheats::RenderESP()
                     1.0f
                 );
 
-                AActor* HitActor = nullptr;
-                HitActor = HitResult.Component->GetOwner();
+				auto* HitComponent = HitResult.Component.Get();
+				AActor* HitActor = HitComponent ? HitComponent->GetOwner() : nullptr;
 
                 bool bHasLOS = !HitResult.bBlockingHit || HitActor == TargetActor;
                 if (!bHasLOS)
                     continue;
+
+				HasVisibleBone = true;
             }
 
-            if (ESPSettings.Bones)
+			if ((ESPSettings.Bones || ESPSettings.ShowBox) &&
+				Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ParentPos, &ParentScreen, true) &&
+				Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ChildPos, &ChildScreen, true))
             {
-                if (Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ParentPos, &ParentScreen, true) &&
-                    Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ChildPos, &ChildScreen, true))
+				if (ESPSettings.ShowBox)
                 {
-                    if (ESPSettings.ShowBox)
-                    {
-                        BonePositions.push_back(ParentScreen);
-                        BonePositions.push_back(ChildScreen);
-                    }
-
-                    GVars.PlayerController->GetViewportSize(&ViewportX, &ViewportY);
-                    if (ParentScreen.X == 0.f && ParentScreen.Y == 0.f or ParentScreen.X > ViewportX or ParentScreen.Y > ViewportY) continue;
-                    ImGui::GetBackgroundDrawList()->AddLine(
-                        ImVec2(ParentScreen.X, ParentScreen.Y),
-                        ImVec2(ChildScreen.X, ChildScreen.Y),
-                        RenderColor,
-                        1.5f
-                    );
+					BonePositions.push_back(ParentScreen);
+					BonePositions.push_back(ChildScreen);
                 }
-            }
 
-            if (ESPSettings.ShowEnemyDistance)
-            {
-                FVector ActorLocation = TargetActor->K2_GetActorLocation();
-				float Distance = GVars.POV->Location.GetDistanceToInMeters(ActorLocation);
-                if (Distance < 0.0f) continue;
-                FVector2D DistanceScreen;
-                if (Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ActorLocation, &DistanceScreen, true))
+				if (ESPSettings.Bones)
                 {
-                    char DistanceText[32];
-                    snprintf(DistanceText, sizeof(DistanceText), "%.1f m", Distance);
-                    ImGui::GetBackgroundDrawList()->AddText(
-                        ImVec2(DistanceScreen.X, DistanceScreen.Y + 35),
-                        RenderColor,
-                        DistanceText
-                    );
+					GVars.PlayerController->GetViewportSize(&ViewportX, &ViewportY);
+					if (ParentScreen.X == 0.f && ParentScreen.Y == 0.f or ParentScreen.X > ViewportX or ParentScreen.Y > ViewportY) continue;
+					ImGui::GetBackgroundDrawList()->AddLine(
+						ImVec2(ParentScreen.X, ParentScreen.Y),
+						ImVec2(ChildScreen.X, ChildScreen.Y),
+						RenderColor,
+						1.5f
+					);
                 }
 			}
-            if (ESPSettings.ShowTeam && IsPlayer && TargetActor && TargetActor->PlayerState && TargetActor->PlayerState->GetPlayerName() &&
-                Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, Actor->K2_GetActorLocation(), &ActorScreen, true))
+        }
+
+		if (HasVisibleBone && ESPSettings.ShowEnemyDistance)
+		{
+			FVector ActorLocation = TargetActor->K2_GetActorLocation();
+			float Distance = GVars.POV->Location.GetDistanceToInMeters(ActorLocation);
+			FVector2D DistanceScreen;
+			if (Distance >= 0.0f && Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, ActorLocation, &DistanceScreen, true))
+			{
+				char DistanceText[32];
+				snprintf(DistanceText, sizeof(DistanceText), "%.1f m", Distance);
+				ImGui::GetBackgroundDrawList()->AddText(
+					ImVec2(DistanceScreen.X, DistanceScreen.Y + 35),
+					RenderColor,
+					DistanceText
+				);
+			}
+		}
+
+		FVector2D ActorScreen;
+		if (HasVisibleBone && ESPSettings.ShowTeam && IsPlayer && TargetActor->PlayerState && TargetActor->PlayerState->GetPlayerName() &&
+			Utils::SafeProjectWorldLocationToScreen(GVars.PlayerController, Actor->K2_GetActorLocation(), &ActorScreen, true))
             {
                 ImGui::GetBackgroundDrawList()->AddText(
                     ImVec2(ActorScreen.X, ActorScreen.Y + 50),
@@ -345,8 +351,8 @@ void Cheats::RenderESP()
                     TargetActor->PlayerState->GetPlayerName().ToString().c_str()
                 );
             }
-        }
-        if (ESPSettings.ShowBox)
+
+        if (ESPSettings.ShowBox && !BonePositions.empty())
         {
 			FVector2D TopLeft, BottomRight;
 

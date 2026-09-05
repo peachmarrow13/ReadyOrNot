@@ -17,109 +17,6 @@
 namespace SDK
 {
 
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_MenuGameMode_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MenuGameMode_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.OnMessageClicked
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_MenuGameMode_C::OnMessageClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MenuGameMode_C", "OnMessageClicked");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.FindSpawnPoint
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// const class FString&                    Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FTransform*                      SpawnPoint                                             (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MenuGameMode_C::FindSpawnPoint(const class FString& Tag, struct FTransform* SpawnPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MenuGameMode_C", "FindSpawnPoint");
-
-	Params::BP_MenuGameMode_C_FindSpawnPoint Parms{};
-
-	Parms.Tag = std::move(Tag);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (SpawnPoint != nullptr)
-		*SpawnPoint = std::move(Parms.SpawnPoint);
-}
-
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.SpawnDefaultPawnFor
-// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AController*                      NewPlayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           StartSpot                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
-
-class APawn* ABP_MenuGameMode_C::SpawnDefaultPawnFor(class AController* NewPlayer, class AActor* StartSpot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MenuGameMode_C", "SpawnDefaultPawnFor");
-
-	Params::BP_MenuGameMode_C_SpawnDefaultPawnFor Parms{};
-
-	Parms.NewPlayer = NewPlayer;
-	Parms.StartSpot = StartSpot;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const class FString&                    MessageText                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    ButtonText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const bool                              QuitOnPress                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const bool                              bCloseExistingMsgBoxIfOpen                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MenuGameMode_C::ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MenuGameMode_C", "ShowMessageDisplayBox");
-
-	Params::BP_MenuGameMode_C_ShowMessageDisplayBox Parms{};
-
-	Parms.MessageText = std::move(MessageText);
-	Parms.ButtonText = std::move(ButtonText);
-	Parms.QuitOnPress = QuitOnPress;
-	Parms.bCloseExistingMsgBoxIfOpen = bCloseExistingMsgBoxIfOpen;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -157,6 +54,109 @@ void ABP_MenuGameMode_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_MenuGameMode_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuGameMode_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.OnMessageClicked
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_MenuGameMode_C::OnMessageClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuGameMode_C", "OnMessageClicked");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class FString&                    MessageText                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ButtonText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const bool                              QuitOnPress                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const bool                              bCloseExistingMsgBoxIfOpen                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MenuGameMode_C::ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuGameMode_C", "ShowMessageDisplayBox");
+
+	Params::BP_MenuGameMode_C_ShowMessageDisplayBox Parms{};
+
+	Parms.MessageText = std::move(MessageText);
+	Parms.ButtonText = std::move(ButtonText);
+	Parms.QuitOnPress = QuitOnPress;
+	Parms.bCloseExistingMsgBoxIfOpen = bCloseExistingMsgBoxIfOpen;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.SpawnDefaultPawnFor
+// (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AController*                      NewPlayer                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           StartSpot                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+class APawn* ABP_MenuGameMode_C::SpawnDefaultPawnFor(class AController* NewPlayer, class AActor* StartSpot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuGameMode_C", "SpawnDefaultPawnFor");
+
+	Params::BP_MenuGameMode_C_SpawnDefaultPawnFor Parms{};
+
+	Parms.NewPlayer = NewPlayer;
+	Parms.StartSpot = StartSpot;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.FindSpawnPoint
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const class FString&                    Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FTransform*                      SpawnPoint                                             (Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MenuGameMode_C::FindSpawnPoint(const class FString& Tag, struct FTransform* SpawnPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuGameMode_C", "FindSpawnPoint");
+
+	Params::BP_MenuGameMode_C_FindSpawnPoint Parms{};
+
+	Parms.Tag = std::move(Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (SpawnPoint != nullptr)
+		*SpawnPoint = std::move(Parms.SpawnPoint);
 }
 
 

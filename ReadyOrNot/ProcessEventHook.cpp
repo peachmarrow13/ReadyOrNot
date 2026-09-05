@@ -11,7 +11,7 @@ bool PlayerHooked = false;
 
 void hkPlayerProcessEvent(const SDK::UObject* Object, SDK::UFunction* Function, void* Params)
 {
-	if (!Function)
+	if (!Object || !Function)
 		return oPlayerProcessEvent(Object, Function, Params);
 
 	if (Function->Name.ToString().find("ReceiveTick") != std::string::npos)
@@ -112,7 +112,10 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 {
 	static int CallCount = 0;
 	CallCount++;
-	static bool JustFired = false;
+	static thread_local bool JustFired = false;
+
+	if (!Object || !Object->Class || !Function)
+		return oProcessEvent(Object, Function, Params);
 
 	if (Function)
 	{
@@ -182,7 +185,7 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 			return oProcessEvent(Object, Function, Params);
 		}
 
-		if (CVars.InstantMultiTool && Function->GetName() == "GetMultitoolUseTime") // credit to CrimsonSpark for this instant multitool use time
+		if (CVars.InstantMultiTool && Params && Function->GetName() == "GetMultitoolUseTime") // credit to CrimsonSpark for this instant multitool use time
 		{
 			oProcessEvent(Object, Function, Params);
 			if (reinterpret_cast<Params::CanUseMultitoolOn_GetMultitoolUseTime*>(Params)->ReturnValue < 0.1f)
@@ -193,14 +196,15 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 		}
 		else if ((CVars.SilentAim || CVars.ShootFromReticle))
 		{
-			if (strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)
+			if (Params && Object->IsA(ABaseMagazineWeapon::StaticClass()) && strcmp(Function->GetName().c_str(), "Server_OnFire") == 0)
 			{
-				bool OwnerIsLocalPlayer = reinterpret_cast<const ABaseMagazineWeapon*>(Object)->Owner == GVars.ReadyOrNotChar;
+				auto* Weapon = const_cast<ABaseMagazineWeapon*>(reinterpret_cast<const ABaseMagazineWeapon*>(Object));
+				bool OwnerIsLocalPlayer = GVars.ReadyOrNotChar && Weapon->Owner == GVars.ReadyOrNotChar;
 
 				if (OwnerIsLocalPlayer)
 				{
 					auto* FireParams =
-						reinterpret_cast<Params::BaseMagazineWeapon_OnFire*>(Params);
+						reinterpret_cast<Params::BaseMagazineWeapon_Server_OnFire*>(Params);
 
 					if (CVars.ShootFromReticle && OwnerIsLocalPlayer)
 					{
@@ -227,7 +231,7 @@ void hkProcessEvent(const UObject* Object, UFunction* Function, void* Params)
 						{
 							printf("MultiFire value: %d\n", CVars.MultiFire);
 							JustFired = true;
-							GVars.ReadyOrNotChar->GetEquippedWeapon()->Server_OnFire(FireParams->Direction, FireParams->SpawnLoc, 0);
+							Weapon->Server_OnFire(FireParams->Direction, FireParams->SpawnLoc, FireParams->Seed);
 							printf("Fired multithing\n");
 							JustFired = true;
 						}

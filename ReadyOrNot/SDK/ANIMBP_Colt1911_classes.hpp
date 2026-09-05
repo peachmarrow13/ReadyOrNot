@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "ANIMBP_Colt1911_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 

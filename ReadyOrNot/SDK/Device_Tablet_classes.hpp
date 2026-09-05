@@ -31,10 +31,10 @@ public:
 	void WakeScreen();
 	void SleepScreen();
 	void ReceiveBeginPlay();
-	void PlayVibrationEvent();
-	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
 	void PlaySoundEvent(class UFMODEvent* Event);
+	void PlayVibrationEvent();
 	void PlayNotificationEvent();
+	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
 	void HolsterScreen();
 
 public:

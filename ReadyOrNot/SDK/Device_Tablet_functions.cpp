@@ -59,6 +59,26 @@ void ADevice_Tablet_C::ReceiveBeginPlay()
 }
 
 
+// Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UFMODEvent*                       Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ADevice_Tablet_C::PlaySoundEvent(class UFMODEvent* Event)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Device_Tablet_C", "PlaySoundEvent");
+
+	Params::Device_Tablet_C_PlaySoundEvent Parms{};
+
+	Parms.Event = Event;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function Device_Tablet.Device_Tablet_C.PlayVibrationEvent
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -68,6 +88,20 @@ void ADevice_Tablet_C::PlayVibrationEvent()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Device_Tablet_C", "PlayVibrationEvent");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Device_Tablet.Device_Tablet_C.PlayNotificationEvent
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ADevice_Tablet_C::PlayNotificationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Device_Tablet_C", "PlayNotificationEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -90,40 +124,6 @@ void ADevice_Tablet_C::ExecuteUbergraph_Device_Tablet(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Device_Tablet.Device_Tablet_C.PlaySoundEvent
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UFMODEvent*                       Event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void ADevice_Tablet_C::PlaySoundEvent(class UFMODEvent* Event)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Device_Tablet_C", "PlaySoundEvent");
-
-	Params::Device_Tablet_C_PlaySoundEvent Parms{};
-
-	Parms.Event = Event;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Device_Tablet.Device_Tablet_C.PlayNotificationEvent
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ADevice_Tablet_C::PlayNotificationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Device_Tablet_C", "PlayNotificationEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

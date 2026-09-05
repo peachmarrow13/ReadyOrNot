@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
 #include "EInputKeyCategory_structs.hpp"
 #include "Engine_structs.hpp"
 #include "InputRemapping_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
-#include "InputCore_structs.hpp"
 #include "KeyModifiers_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 namespace SDK

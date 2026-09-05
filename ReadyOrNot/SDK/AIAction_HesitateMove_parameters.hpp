@@ -18,14 +18,14 @@
 namespace SDK::Params
 {
 
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
-// 0x0004 (0x0004 - 0x0000)
-struct AIAction_HesitateMove_C_Tick_Blueprint final
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
+// 0x0001 (0x0001 - 0x0000)
+struct AIAction_HesitateMove_C_ShouldForcePerformAction final
 {
 public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_AIAction_HesitateMove_C_Tick_Blueprint;
+DUMPER7_ASSERTS_AIAction_HesitateMove_C_ShouldForcePerformAction;
 
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.OnPathFound_Blueprint
 // 0x0008 (0x0008 - 0x0000)
@@ -36,15 +36,6 @@ public:
 	ERonNavigationQueryResult                     Result;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_HesitateMove_C_OnPathFound_Blueprint;
-
-// Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldForcePerformAction
-// 0x0001 (0x0001 - 0x0000)
-struct AIAction_HesitateMove_C_ShouldForcePerformAction final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_HesitateMove_C_ShouldForcePerformAction;
 
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.InitAction_Blueprint
 // 0x0008 (0x0008 - 0x0000)
@@ -150,6 +141,15 @@ public:
 	float                                         CallFunc_FindPositionAwayFromSwat_Radius_ImplicitCast; // 0x0230(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_HesitateMove_C_ExecuteUbergraph_AIAction_HesitateMove;
+
+// Function AIAction_HesitateMove.AIAction_HesitateMove_C.Tick_Blueprint
+// 0x0004 (0x0004 - 0x0000)
+struct AIAction_HesitateMove_C_Tick_Blueprint final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_HesitateMove_C_Tick_Blueprint;
 
 // Function AIAction_HesitateMove.AIAction_HesitateMove_C.ShouldPerformAction
 // 0x0001 (0x0001 - 0x0000)

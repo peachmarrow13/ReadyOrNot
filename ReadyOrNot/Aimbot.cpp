@@ -39,7 +39,7 @@ void Cheats::Aimbot()
 				GVars.PlayerController,
 				AimbotSettings.TargetCivilians,
 				AimbotSettings.TargetArrested,
-				AimbotSettings.TargetArrested,
+				AimbotSettings.TargetSurrendered,
 				AimbotSettings.TargetDead,
 				AimbotSettings.MaxFOV,
 				AimbotSettings.LOS,
@@ -57,7 +57,7 @@ void Cheats::Aimbot()
 			GVars.PlayerController,
 			AimbotSettings.TargetCivilians,
 			AimbotSettings.TargetArrested,
-			AimbotSettings.TargetArrested,
+			AimbotSettings.TargetSurrendered,
 			AimbotSettings.TargetDead,
 			AimbotSettings.MaxFOV,
 			AimbotSettings.LOS,
@@ -66,18 +66,22 @@ void Cheats::Aimbot()
 		);
 	}
 
-	if (!Target) return;
+	if (!Target || !Utils::IsValidActor(Target) || !Target->IsA(AReadyOrNotCharacter::StaticClass())) return;
+
+	auto* TargetCharacter = reinterpret_cast<AReadyOrNotCharacter*>(Target);
+	if (!TargetCharacter->Mesh) return;
 
 	FVector CameraPos = GVars.POV->Location;
-	FVector TargetPos = ((AReadyOrNotCharacter*)Target)->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
+	FVector TargetPos = TargetCharacter->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
 
 	if (AimbotSettings.Prediction)
 	{
 		float ProjectileSpeed = 37000.0f; // Random default I made.
 		if (GVars.ReadyOrNotChar->GetEquippedWeapon())
 		{
-			ProjectileSpeed = GVars.ReadyOrNotChar->GetEquippedWeapon()->ProjectileMovementSpeed;
-
+			float WeaponProjectileSpeed = GVars.ReadyOrNotChar->GetEquippedWeapon()->ProjectileMovementSpeed;
+			if (WeaponProjectileSpeed > 0.0f)
+				ProjectileSpeed = WeaponProjectileSpeed;
 		}
 
 		float Distance = TargetPos.GetDistanceTo(GVars.ReadyOrNotChar->K2_GetActorLocation());
@@ -145,7 +149,7 @@ void Cheats::Aimbot()
 	}
 	else
 	{
-		// No smoothing — snap directly
+		// No smoothing - snap directly
 		GVars.PlayerController->ControlRotation.Yaw = DesiredYaw;
 		GVars.PlayerController->ControlRotation.Pitch = DesiredPitch;
 	}

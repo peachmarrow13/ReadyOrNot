@@ -37,6 +37,20 @@ void UAIAction_MoveToPlayerSpawn_C::OnCreate_Blueprint(class ACyberneticControll
 }
 
 
+// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_MoveToPlayerSpawn_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.ExecuteUbergraph_AIAction_MoveToPlayerSpawn
 // (Final, UbergraphFunction)
 // Parameters:
@@ -66,20 +80,6 @@ void UAIAction_MoveToPlayerSpawn_C::EndAction_Blueprint()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_MoveToPlayerSpawn.AIAction_MoveToPlayerSpawn_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_MoveToPlayerSpawn_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_MoveToPlayerSpawn_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

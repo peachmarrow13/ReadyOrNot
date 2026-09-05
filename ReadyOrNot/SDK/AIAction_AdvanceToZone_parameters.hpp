@@ -23,15 +23,6 @@ public:
 };
 DUMPER7_ASSERTS_AIAction_AdvanceToZone_C_Tick_Blueprint;
 
-// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.OnCreate_Blueprint
-// 0x0008 (0x0008 - 0x0000)
-struct AIAction_AdvanceToZone_C_OnCreate_Blueprint final
-{
-public:
-	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_AIAction_AdvanceToZone_C_OnCreate_Blueprint;
-
 // Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.ExecuteUbergraph_AIAction_AdvanceToZone
 // 0x0078 (0x0078 - 0x0000)
 struct AIAction_AdvanceToZone_C_ExecuteUbergraph_AIAction_AdvanceToZone final
@@ -56,6 +47,15 @@ public:
 	int32                                         CallFunc_Array_AddUnique_ReturnValue;              // 0x0074(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_AIAction_AdvanceToZone_C_ExecuteUbergraph_AIAction_AdvanceToZone;
+
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.OnCreate_Blueprint
+// 0x0008 (0x0008 - 0x0000)
+struct AIAction_AdvanceToZone_C_OnCreate_Blueprint final
+{
+public:
+	class ACyberneticController*                  Controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_AIAction_AdvanceToZone_C_OnCreate_Blueprint;
 
 // Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.ShouldPerformAction
 // 0x0030 (0x0030 - 0x0000)

@@ -19,6 +19,51 @@
 namespace SDK::Params
 {
 
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_MenuGameMode_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MenuGameMode_C_ReceiveTick;
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_MenuGameMode_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MenuGameMode_C_ReceiveEndPlay;
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
+// 0x0028 (0x0028 - 0x0000)
+struct BP_MenuGameMode_C_ShowMessageDisplayBox final
+{
+public:
+	class FString                                 MessageText;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 ButtonText;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          QuitOnPress;                                       // 0x0020(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCloseExistingMsgBoxIfOpen;                        // 0x0021(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MenuGameMode_C_ShowMessageDisplayBox;
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.SpawnDefaultPawnFor
+// 0x0090 (0x0090 - 0x0000)
+struct BP_MenuGameMode_C_SpawnDefaultPawnFor final
+{
+public:
+	class AController*                            NewPlayer;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 StartSpot;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             CallFunc_FindSpawnPoint_SpawnPoint;                // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  CallFunc_FinishSpawningActor_ReturnValue;          // 0x0088(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MenuGameMode_C_SpawnDefaultPawnFor;
+
 // Function BP_MenuGameMode.BP_MenuGameMode_C.FindSpawnPoint
 // 0x0130 (0x0130 - 0x0000)
 struct BP_MenuGameMode_C_FindSpawnPoint final
@@ -46,51 +91,6 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MenuGameMode_C_FindSpawnPoint;
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.SpawnDefaultPawnFor
-// 0x0090 (0x0090 - 0x0000)
-struct BP_MenuGameMode_C_SpawnDefaultPawnFor final
-{
-public:
-	class AController*                            NewPlayer;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 StartSpot;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_FindSpawnPoint_SpawnPoint;                // 0x0020(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue; // 0x0080(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  CallFunc_FinishSpawningActor_ReturnValue;          // 0x0088(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MenuGameMode_C_SpawnDefaultPawnFor;
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
-// 0x0028 (0x0028 - 0x0000)
-struct BP_MenuGameMode_C_ShowMessageDisplayBox final
-{
-public:
-	class FString                                 MessageText;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 ButtonText;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          QuitOnPress;                                       // 0x0020(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCloseExistingMsgBoxIfOpen;                        // 0x0021(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MenuGameMode_C_ShowMessageDisplayBox;
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_MenuGameMode_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MenuGameMode_C_ReceiveTick;
-
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct BP_MenuGameMode_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MenuGameMode_C_ReceiveEndPlay;
 
 // Function BP_MenuGameMode.BP_MenuGameMode_C.ExecuteUbergraph_BP_MenuGameMode
 // 0x0200 (0x0200 - 0x0000)

@@ -36,9 +36,9 @@ public:
 	void OnTakeHostageFinished(class UBaseActivity* Activity, class ACyberneticController* Controller);
 	void OnCreate_Blueprint(class ACyberneticController* Controller);
 	void ExecuteUbergraph_AIAction_TakeHostage(int32 EntryPoint);
-	void EquipBestHostageTakingWeapon(bool* bFoundWeapon);
 	void EndAction_Blueprint();
 	void BeginAction_Blueprint();
+	void EquipBestHostageTakingWeapon(bool* bFoundWeapon);
 
 	bool ShouldSwitchWeapons() const;
 	bool ShouldPerformAction() const;

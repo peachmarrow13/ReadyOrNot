@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function StartupSpectator.StartupSpectator_C.ReceivePossessed
-// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
-// Parameters:
-// class AController*                      NewController                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-
-void AStartupSpectator_C::ReceivePossessed(class AController* NewController)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StartupSpectator_C", "ReceivePossessed");
-
-	Params::StartupSpectator_C_ReceivePossessed Parms{};
-
-	Parms.NewController = NewController;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function StartupSpectator.StartupSpectator_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -54,6 +34,20 @@ void AStartupSpectator_C::ReceiveTick(float DeltaSeconds)
 	Parms.DeltaSeconds = DeltaSeconds;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function StartupSpectator.StartupSpectator_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AStartupSpectator_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StartupSpectator_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -77,17 +71,23 @@ void AStartupSpectator_C::ExecuteUbergraph_StartupSpectator(int32 EntryPoint)
 }
 
 
-// Function StartupSpectator.StartupSpectator_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function StartupSpectator.StartupSpectator_C.ReceivePossessed
+// (BlueprintAuthorityOnly, Event, Public, BlueprintEvent)
+// Parameters:
+// class AController*                      NewController                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 
-void AStartupSpectator_C::ReceiveBeginPlay()
+void AStartupSpectator_C::ReceivePossessed(class AController* NewController)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("StartupSpectator_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("StartupSpectator_C", "ReceivePossessed");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::StartupSpectator_C_ReceivePossessed Parms{};
+
+	Parms.NewController = NewController;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

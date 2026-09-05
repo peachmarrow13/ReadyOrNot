@@ -137,6 +137,7 @@ This project is written in C++ and requires Visual Studio and Windows to build.
 - **DirectX 11 SDK**
 - **ImGui** (already included in the repository)
 - **MinHook** (already included in the repository)
+- **kiero** (already included in the repository)
 
 ### Building the Project
 
@@ -144,7 +145,7 @@ This project is written in C++ and requires Visual Studio and Windows to build.
 2. Open `ReadyOrNot.sln` in Visual Studio
 3. Select the `Release` configuration from the dropdown
 4. Build the solution
-5. The compiled DLL will be located in the `x64/Release` folder
+5. The compiled DLL will be located at `Build/ReadyOrNot.dll`
 
 ### Build Notes
 - Always build in `Release` mode

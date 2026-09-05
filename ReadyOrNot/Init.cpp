@@ -2,8 +2,9 @@
 #include "Engine.h"
 #include "kiero/kiero.h"
 
-DXGI_SWAP_CHAIN_DESC Engine::SD = {};
+DXGI_SWAP_CHAIN_DESC Engine::sd = {};
 Engine::tPresent Engine::oPresent = nullptr;
+LPVOID Engine::PresentAddr = nullptr;
 IDXGISwapChain* Engine::pSwapChain = nullptr;
 ID3D11Device* Engine::pDevice = nullptr;
 ID3D11DeviceContext* Engine::pContext = nullptr;
@@ -18,9 +19,9 @@ kiero::Status::Enum Engine::HookPresent()
 
 	if (Status != kiero::Status::Success)
 	{
-		std::string ErrorMessage = "Failed to initialize kiero! Error code: " + std::to_string(Status);
-		MessageBoxA(nullptr, ErrorMessage.c_str(), "Error", MB_OK | MB_ICONERROR);
-		throw std::runtime_error(ErrorMessage);
+		std::string errorMessage = "Failed to initialize kiero! Error code: " + std::to_string(Status);
+		MessageBoxA(nullptr, errorMessage.c_str(), "Error", MB_OK | MB_ICONERROR);
+		throw std::runtime_error(errorMessage);
 	}
 
 	Engine::oPresent = (Engine::tPresent)kiero::getMethodsTable()[8];
@@ -53,22 +54,20 @@ HWND Engine::GetGameWindow()
 bool Engine::InitImGui()
 {
 	HWND WindowHandle = GetGameWindow();
-	if (!WindowHandle)
+	if (!WindowHandle || !Engine::pSwapChain || !Engine::pDevice || !Engine::pContext)
 		return false;
 
-	ID3D11Device* Device = nullptr;
-	Engine::pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&Device);
-	ID3D11DeviceContext* Context = nullptr;
-	Device->GetImmediateContext(&Context);
+	ID3D11Device* device = Engine::pDevice;
+	ID3D11DeviceContext* context = Engine::pContext;
 
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 
-	ImGuiIO& IO = ImGui::GetIO(); (void)IO;
-	IO.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	IO.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Controller Controls
-	IO.Fonts->AddFontDefault();
-	IO.MouseDrawCursor = true;  // Let ImGui draw the cursor
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Controller Controls
+	io.Fonts->AddFontDefault();
+	io.MouseDrawCursor = true;  // Let ImGui draw the cursor
 
 	SetStyle();
 	if (!ImGui_ImplWin32_Init(WindowHandle))
@@ -77,7 +76,7 @@ bool Engine::InitImGui()
 		Sleep(10000);
 		throw std::runtime_error("Poo");
 	}
-	if (!ImGui_ImplDX11_Init(Device, Context))
+	if (!ImGui_ImplDX11_Init(device, context))
 	{
 		printf("Failed to Init ImGuiDX11\n");
 		Sleep(10000);
@@ -102,8 +101,8 @@ bool Engine::InitImGui()
 		}
 	}
 
-	Device->Release();
-	Context->Release();
+	device->Release();
+	context->Release();
 
 	return true;
 }

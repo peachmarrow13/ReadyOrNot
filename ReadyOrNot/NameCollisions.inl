@@ -9,14 +9,44 @@
 // FORWARD DECLARATIONS
 
 
-namespace ANIMBP_Zipcuffs_Placed { struct FAnimBlueprintGeneratedConstantData; }
+namespace ReadyOrNot { struct FLoadoutCategory; }
 
 namespace LoadoutCategory { struct FLoadoutCategory; }
 
-namespace ReadyOrNot { struct FLoadoutCategory; }
-
 namespace ANIMBP_Zipcuffs_Placed_FP { struct FAnimBlueprintGeneratedConstantData; }
 
+namespace ANIMBP_Zipcuffs_Placed { struct FAnimBlueprintGeneratedConstantData; }
+
+
+namespace ANIMBP_M4A1
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_QBZ
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_CSGas
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_AKS74U
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_Player_FP_Master
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
 
 namespace ANIMBP_M249
 {
@@ -36,43 +66,7 @@ namespace ABP_Pis_S2011
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_Player_TP_V4
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ANIMBP_Head_Smudge
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ANIMBP_CSGas
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
 namespace ANIMBP_SawnOff
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_MP510
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_FN509
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ANIMBP_M320
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -84,13 +78,7 @@ namespace ANIMBP_MK18
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_M4A1
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_QBZ
+namespace ANIMBP_Head_Shared_Master
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -100,6 +88,18 @@ namespace ANIMBP_RPD
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_WP_PIS_GRIZZLY
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_MP17
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ANIMBP_G3A3
@@ -120,25 +120,7 @@ namespace ANIMBP_FAL_OSW
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_TacPhone
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
 namespace ANIMBP_Fiveseven
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_G19G5
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_Player_FP_Master
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -150,19 +132,37 @@ namespace ANIMBP_FAL
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
+namespace ANIMBP_Preview_Char_Body
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
 namespace ANIMBP_MPL
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_F90
+namespace ANIMBP_M320
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_MP510
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_Zipcuffs
+namespace ANIMBP_FN509
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_F90
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -172,18 +172,6 @@ namespace ANIMBP_UMP45
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_WP_MK17
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_NVG
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ANIMBP_SuperShorty
@@ -198,12 +186,6 @@ namespace ANIMBP_Flaregun
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_AKS74U
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
 namespace ANIMBP_TelescopicLadder
 {
 	struct FAnimBlueprintGeneratedMutableData;
@@ -214,6 +196,18 @@ namespace ANIMBP_Calico
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_Player_TP_V4
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_G19G5
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
 }
 
 namespace ANIMBP_Taser
@@ -228,34 +222,34 @@ namespace ANIMBP_CSGAS_V2
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_MP17
+namespace ANIMBP_Multitool
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_WP_PIS_GRIZZLY
+namespace ANIMBP_NVG
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ABP_WP_MK17
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_PIS_G18C
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ANIMBP_M14
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_Player_TP_V3
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_G36C_V2
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ABP_WP_MP5SD
@@ -276,46 +270,16 @@ namespace ANIMBP_B1301
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_M590
+namespace ANIMBP_TAC700
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_AR18
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ANIMBP_Head_Shared_Master
+namespace ANIMBP_VKS
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_M37
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
-}
-
-namespace ANIMBP_C2_Clacker
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_P99
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_Multitool
-{
-	struct FAnimBlueprintGeneratedMutableData;
-	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ANIMBP_MP5A3
@@ -330,10 +294,28 @@ namespace ANIMBP_AK103
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_VKS
+namespace ANIMBP_M76
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_WP_G3A4
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_P99
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ABP_WP_GA51
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ANIMBP_W870LL
@@ -354,16 +336,28 @@ namespace ANIMBP_MP9
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_TAC700
+namespace ABP_RIF_RTWC
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_M590
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_AR18
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ABP_RIF_RTWC
+namespace ANIMBP_Head_Smudge
 {
-	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
 }
 
 namespace ANIMBP_Saiga12
@@ -378,10 +372,28 @@ namespace ABP_WP_M590M
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_M76
+namespace ANIMBP_M37
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_CAR
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_PFC9
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
+}
+
+namespace ANIMBP_AKM
+{
+	struct FAnimBlueprintGeneratedConstantData;
+	struct FAnimBlueprintGeneratedMutableData;
 }
 
 namespace ANIMBP_G19
@@ -390,13 +402,13 @@ namespace ANIMBP_G19
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_Chemlight
+namespace ANIMBP_M24
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
-namespace ANIMBP_Preview_Char_Body
+namespace ANIMBP_Chemlight
 {
 	struct FAnimBlueprintGeneratedMutableData;
 	struct FAnimBlueprintGeneratedConstantData;
@@ -414,19 +426,37 @@ namespace ANIMBP_Colt1911
 	struct FAnimBlueprintGeneratedConstantData;
 }
 
+namespace ANIMBP_C2_Clacker
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_Zipcuffs
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_TacPhone
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_G36C_V2
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
+namespace ANIMBP_Player_TP_V3
+{
+	struct FAnimBlueprintGeneratedMutableData;
+	struct FAnimBlueprintGeneratedConstantData;
+}
+
 namespace ANIMBP_M92FS
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_WP_G3A4
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_WP_GA51
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -450,31 +480,7 @@ namespace ANIMBP_P229
 	struct FAnimBlueprintGeneratedMutableData;
 }
 
-namespace ANIMBP_PFC9
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
 namespace ANIMBP_TCR
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_M24
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_AKM
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ANIMBP_CAR
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;
@@ -493,12 +499,6 @@ namespace ABP_Launcher_M32A1
 }
 
 namespace ABP_WP_PIS_TRP
-{
-	struct FAnimBlueprintGeneratedConstantData;
-	struct FAnimBlueprintGeneratedMutableData;
-}
-
-namespace ABP_PIS_G18C
 {
 	struct FAnimBlueprintGeneratedConstantData;
 	struct FAnimBlueprintGeneratedMutableData;

@@ -73,6 +73,7 @@ struct AimbotSettingsstruct {
 	bool Prediction = false;
 	float PredictionMultiplier = 1.0f;
 	bool TargetLock = true;
+	bool TargetSurrendered = false;
 } inline AimbotSettings;
 
 struct SilentAimSettingsstruct {
@@ -158,7 +159,7 @@ struct Cheats
 	static void InstaKill();
 	static void RenderESP();
 	static void SetPlayerSpeed();
-	static void SilentAim(Params::BaseMagazineWeapon_OnFire* FireParams);
+	static void SilentAim(Params::BaseMagazineWeapon_Server_OnFire* FireParams);
 	static void AddMag();
 	static void ArrestAll(ETeam Team); // Arrest all of a specific team
 	static void ProcessArrestQueue();

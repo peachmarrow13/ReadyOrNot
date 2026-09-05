@@ -195,6 +195,8 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
             break;
         if (!Actor || !Utils::IsValidActor(Actor))
             continue;
+		if (Actor == GVars.ReadyOrNotChar)
+			continue;
 
         AReadyOrNotCharacter* ReadyOrNotChar;
 
@@ -224,6 +226,8 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
             continue;
         if (!TargetSurrendered && ReadyOrNotChar->IsSurrendered())
             continue;
+		if (!ReadyOrNotChar->Mesh)
+			continue;
 
         // Get the target bone location
         FVector BoneLocation = ReadyOrNotChar->Mesh->GetBoneTransform(BoneName, ERelativeTransformSpace::RTS_World).Translation;
@@ -252,8 +256,8 @@ AActor* Utils::GetBestTarget(APlayerController* ViewPoint, bool TargetCivs, bool
                 1.0f
             );
 
-            AActor* HitActor = nullptr;
-            HitActor = HitResult.Component->GetOwner();
+			auto* HitComponent = HitResult.Component.Get();
+			AActor* HitActor = HitComponent ? HitComponent->GetOwner() : nullptr;
 
             bool bHasLOS = !HitResult.bBlockingHit || HitActor == ReadyOrNotChar;
             if (!bHasLOS)

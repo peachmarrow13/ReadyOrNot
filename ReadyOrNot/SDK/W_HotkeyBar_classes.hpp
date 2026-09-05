@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "st_HotkeySettings_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "Engine_structs.hpp"
-#include "st_HotkeySettings_structs.hpp"
 #include "W_SubMenu_classes.hpp"
 
 

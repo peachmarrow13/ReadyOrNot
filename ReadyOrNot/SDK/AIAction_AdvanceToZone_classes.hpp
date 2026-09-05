@@ -27,10 +27,10 @@ public:
 
 public:
 	void Tick_Blueprint(float DeltaTime);
-	void OnCreate_Blueprint(class ACyberneticController* Controller);
 	void ExecuteUbergraph_AIAction_AdvanceToZone(int32 EntryPoint);
 	void EndAction_Blueprint();
 	void BeginAction_Blueprint();
+	void OnCreate_Blueprint(class ACyberneticController* Controller);
 
 	bool ShouldPerformAction() const;
 	class FName GetMoveStyleOverride() const;

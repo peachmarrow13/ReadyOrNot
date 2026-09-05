@@ -26,10 +26,10 @@ public:
 	class UCameraComponent*                       Camera;                                            // 0x03B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceivePossessed(class AController* NewController);
 	void ReceiveTick(float DeltaSeconds);
-	void ExecuteUbergraph_StartupSpectator(int32 EntryPoint);
 	void ReceiveBeginPlay();
+	void ExecuteUbergraph_StartupSpectator(int32 EntryPoint);
+	void ReceivePossessed(class AController* NewController);
 
 public:
 	static class UClass* StaticClass()

@@ -111,20 +111,6 @@ void ADeadSpectator_C::ExecuteUbergraph_DeadSpectator(int32 EntryPoint)
 }
 
 
-// Function DeadSpectator.DeadSpectator_C.CreateHUD
-// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
-
-void ADeadSpectator_C::CreateHUD()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DeadSpectator_C", "CreateHUD");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function DeadSpectator.DeadSpectator_C.Client_SpecNextPlayer
 // (Net, NetClient, BlueprintCallable, BlueprintEvent)
 
@@ -148,6 +134,20 @@ void ADeadSpectator_C::Client_Remove_HUID()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("DeadSpectator_C", "Client Remove HUID");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function DeadSpectator.DeadSpectator_C.CreateHUD
+// (Net, NetReliable, NetClient, BlueprintCallable, BlueprintEvent)
+
+void ADeadSpectator_C::CreateHUD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DeadSpectator_C", "CreateHUD");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

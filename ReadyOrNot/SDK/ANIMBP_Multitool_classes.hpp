@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ANIMBP_Multitool_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "ANIMBP_Multitool_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 
 
@@ -43,8 +43,8 @@ public:
 
 public:
 	void ExecuteUbergraph_ANIMBP_Multitool(int32 EntryPoint);
-	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
 
 public:
 	static class UClass* StaticClass()

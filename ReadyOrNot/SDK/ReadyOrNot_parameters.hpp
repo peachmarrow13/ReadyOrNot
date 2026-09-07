@@ -873,7 +873,7 @@ DUMPER7_ASSERTS_ActivityData_OnChemlightThrown;
 struct ActivityData_OnDoorKicked final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AReadyOrNotCharacter*                   InstigatorCharacter;                               // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSuccess;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -6180,7 +6180,7 @@ DUMPER7_ASSERTS_BreachAndClearSquadsActivity_GetLeader;
 struct BreachAndClearSquadsActivity_GetTargetDoor final
 {
 public:
-	class ADoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BreachAndClearSquadsActivity_GetTargetDoor;
 
@@ -7009,7 +7009,7 @@ DUMPER7_ASSERTS_CyberneticController_GetTrackedTarget;
 struct CyberneticController_OnDoorExploded final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AReadyOrNotCharacter*                   InstigatorCharacter;                               // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CyberneticController_OnDoorExploded;
@@ -7375,7 +7375,7 @@ DUMPER7_ASSERTS_CyberneticController_DoesCharacterMatchTargetType;
 struct CyberneticController_DoesPathGoThroughDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -11219,7 +11219,7 @@ DUMPER7_ASSERTS_ReadyOrNotCharacter_IsWet;
 struct ReadyOrNotCharacter_KickDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ReadyOrNotCharacter_KickDoor;
 
@@ -11760,7 +11760,7 @@ DUMPER7_ASSERTS_ReadyOrNotCharacter_OnRagdollStart;
 struct ReadyOrNotCharacter_OpenDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bOpenDoor;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -20402,7 +20402,7 @@ DUMPER7_ASSERTS_CachedImagesDownloadProvider_OnRequestCompleted;
 struct ThreatAwarenessActor_GetAttachedDoor final
 {
 public:
-	class ADoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ThreatAwarenessActor_GetAttachedDoor;
 
@@ -20411,7 +20411,7 @@ DUMPER7_ASSERTS_ThreatAwarenessActor_GetAttachedDoor;
 struct ThreatAwarenessActor_GetRandomExitDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -20431,7 +20431,7 @@ DUMPER7_ASSERTS_ThreatAwarenessActor_GetThreatLevel;
 struct ThreatAwarenessActor_GetUniqueExtis final
 {
 public:
-	TArray<class ADoor*>                          OutDoors;                                          // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          OutDoors;                                          // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -20451,7 +20451,7 @@ DUMPER7_ASSERTS_ThreatAwarenessActor_HasExit;
 struct ThreatAwarenessActor_HasSpecificExitDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -24411,7 +24411,7 @@ DUMPER7_ASSERTS_PlayerCharacter_ApplyPlayerEffectFor;
 struct PlayerCharacter_C2Door final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlayerCharacter_C2Door;
 
@@ -24795,7 +24795,7 @@ DUMPER7_ASSERTS_PlayerCharacter_IsInLightSource;
 struct PlayerCharacter_JamDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_PlayerCharacter_JamDoor;
 
@@ -26499,122 +26499,122 @@ public:
 };
 DUMPER7_ASSERTS_DoorInteractionActivity_ShouldGetInPosition;
 
-// Function ReadyOrNot.PreMissionPlanning.GetPremissionPlanning
+// Function ReadyOrNot.PremissionPlanning.GetPremissionPlanning
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_GetPremissionPlanning final
+struct PremissionPlanning_GetPremissionPlanning final
 {
 public:
-	class UPreMissionPlanning*                    ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPremissionPlanning*                    ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetPremissionPlanning;
+DUMPER7_ASSERTS_PremissionPlanning_GetPremissionPlanning;
 
-// Function ReadyOrNot.PreMissionPlanning.AttachPrimaryToSocket
+// Function ReadyOrNot.PremissionPlanning.AttachPrimaryToSocket
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_AttachPrimaryToSocket final
-{
-public:
-	class FName                                   Socket;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_PreMissionPlanning_AttachPrimaryToSocket;
-
-// Function ReadyOrNot.PreMissionPlanning.AttachSecondaryToSocket
-// 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_AttachSecondaryToSocket final
+struct PremissionPlanning_AttachPrimaryToSocket final
 {
 public:
 	class FName                                   Socket;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_AttachSecondaryToSocket;
+DUMPER7_ASSERTS_PremissionPlanning_AttachPrimaryToSocket;
 
-// Function ReadyOrNot.PreMissionPlanning.ClearPreviewWeaponSkin
+// Function ReadyOrNot.PremissionPlanning.AttachSecondaryToSocket
+// 0x0008 (0x0008 - 0x0000)
+struct PremissionPlanning_AttachSecondaryToSocket final
+{
+public:
+	class FName                                   Socket;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_PremissionPlanning_AttachSecondaryToSocket;
+
+// Function ReadyOrNot.PremissionPlanning.ClearPreviewWeaponSkin
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_ClearPreviewWeaponSkin final
+struct PremissionPlanning_ClearPreviewWeaponSkin final
 {
 public:
 	bool                                          IsSecondary;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_ClearPreviewWeaponSkin;
+DUMPER7_ASSERTS_PremissionPlanning_ClearPreviewWeaponSkin;
 
-// Function ReadyOrNot.PreMissionPlanning.DoSaveLoadout
+// Function ReadyOrNot.PremissionPlanning.DoSaveLoadout
 // 0x02F0 (0x02F0 - 0x0000)
-struct PreMissionPlanning_DoSaveLoadout final
+struct PremissionPlanning_DoSaveLoadout final
 {
 public:
 	EEquippingSwat                                SwatMember;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSavedLoadout                          Loadout;                                           // 0x0008(0x02E8)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_DoSaveLoadout;
+DUMPER7_ASSERTS_PremissionPlanning_DoSaveLoadout;
 
-// Function ReadyOrNot.PreMissionPlanning.GetAvailablePlayerSkins
+// Function ReadyOrNot.PremissionPlanning.GetAvailablePlayerSkins
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_GetAvailablePlayerSkins final
+struct PremissionPlanning_GetAvailablePlayerSkins final
 {
 public:
 	TArray<TSubclassOf<class USkinComponent>>     ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetAvailablePlayerSkins;
+DUMPER7_ASSERTS_PremissionPlanning_GetAvailablePlayerSkins;
 
-// Function ReadyOrNot.PreMissionPlanning.GetDefaultPreviewCharacter
+// Function ReadyOrNot.PremissionPlanning.GetDefaultPreviewCharacter
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_GetDefaultPreviewCharacter final
+struct PremissionPlanning_GetDefaultPreviewCharacter final
 {
 public:
 	class AReadyOrNotCharacter*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetDefaultPreviewCharacter;
+DUMPER7_ASSERTS_PremissionPlanning_GetDefaultPreviewCharacter;
 
-// Function ReadyOrNot.PreMissionPlanning.GetEquippingSwatMember
+// Function ReadyOrNot.PremissionPlanning.GetEquippingSwatMember
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_GetEquippingSwatMember final
+struct PremissionPlanning_GetEquippingSwatMember final
 {
 public:
 	EEquippingSwat                                EquippingSwat;                                     // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetEquippingSwatMember;
+DUMPER7_ASSERTS_PremissionPlanning_GetEquippingSwatMember;
 
-// Function ReadyOrNot.PreMissionPlanning.GetInputLocked
+// Function ReadyOrNot.PremissionPlanning.GetInputLocked
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_GetInputLocked final
+struct PremissionPlanning_GetInputLocked final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetInputLocked;
+DUMPER7_ASSERTS_PremissionPlanning_GetInputLocked;
 
-// Function ReadyOrNot.PreMissionPlanning.GetItemAttachmentData
+// Function ReadyOrNot.PremissionPlanning.GetItemAttachmentData
 // 0x0060 (0x0060 - 0x0000)
-struct PreMissionPlanning_GetItemAttachmentData final
+struct PremissionPlanning_GetItemAttachmentData final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSavedWeaponAttachmentData             ReturnValue;                                       // 0x0008(0x0058)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetItemAttachmentData;
+DUMPER7_ASSERTS_PremissionPlanning_GetItemAttachmentData;
 
-// Function ReadyOrNot.PreMissionPlanning.GetLastItemInSlot
+// Function ReadyOrNot.PremissionPlanning.GetLastItemInSlot
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_GetLastItemInSlot final
+struct PremissionPlanning_GetLastItemInSlot final
 {
 public:
 	EItemType                                     ItemType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class ABaseItem>                  ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetLastItemInSlot;
+DUMPER7_ASSERTS_PremissionPlanning_GetLastItemInSlot;
 
-// Function ReadyOrNot.PreMissionPlanning.GetSubcategory
+// Function ReadyOrNot.PremissionPlanning.GetSubcategory
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_GetSubcategory final
+struct PremissionPlanning_GetSubcategory final
 {
 public:
 	EPreMissionSubCategory                        ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetSubcategory;
+DUMPER7_ASSERTS_PremissionPlanning_GetSubcategory;
 
-// Function ReadyOrNot.PreMissionPlanning.GetWeaponPresetData
+// Function ReadyOrNot.PremissionPlanning.GetWeaponPresetData
 // 0x0078 (0x0078 - 0x0000)
-struct PreMissionPlanning_GetWeaponPresetData final
+struct PremissionPlanning_GetWeaponPresetData final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -26622,39 +26622,39 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FWeaponPreset                          ReturnValue;                                       // 0x0010(0x0068)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetWeaponPresetData;
+DUMPER7_ASSERTS_PremissionPlanning_GetWeaponPresetData;
 
-// Function ReadyOrNot.PreMissionPlanning.GetWeaponPresetsData
+// Function ReadyOrNot.PremissionPlanning.GetWeaponPresetsData
 // 0x0018 (0x0018 - 0x0000)
-struct PreMissionPlanning_GetWeaponPresetsData final
+struct PremissionPlanning_GetWeaponPresetsData final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSavedWeaponPreset                     ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_GetWeaponPresetsData;
+DUMPER7_ASSERTS_PremissionPlanning_GetWeaponPresetsData;
 
-// Function ReadyOrNot.PreMissionPlanning.HidePrimary
+// Function ReadyOrNot.PremissionPlanning.HidePrimary
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_HidePrimary final
+struct PremissionPlanning_HidePrimary final
 {
 public:
 	bool                                          bIsHidden;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_HidePrimary;
+DUMPER7_ASSERTS_PremissionPlanning_HidePrimary;
 
-// Function ReadyOrNot.PreMissionPlanning.HideSecondary
+// Function ReadyOrNot.PremissionPlanning.HideSecondary
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_HideSecondary final
+struct PremissionPlanning_HideSecondary final
 {
 public:
 	bool                                          bIsHidden;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_HideSecondary;
+DUMPER7_ASSERTS_PremissionPlanning_HideSecondary;
 
-// Function ReadyOrNot.PreMissionPlanning.HideWeapons
+// Function ReadyOrNot.PremissionPlanning.HideWeapons
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_HideWeapons final
+struct PremissionPlanning_HideWeapons final
 {
 public:
 	bool                                          bHidePrimary;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -26662,78 +26662,78 @@ public:
 	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         Delay;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_HideWeapons;
+DUMPER7_ASSERTS_PremissionPlanning_HideWeapons;
 
-// Function ReadyOrNot.PreMissionPlanning.Init
+// Function ReadyOrNot.PremissionPlanning.Init
 // 0x02F0 (0x02F0 - 0x0000)
-struct PreMissionPlanning_Init final
+struct PremissionPlanning_Init final
 {
 public:
 	bool                                          bReadOnly;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSavedLoadout                          PreviewLoadout;                                    // 0x0008(0x02E8)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_Init;
+DUMPER7_ASSERTS_PremissionPlanning_Init;
 
-// Function ReadyOrNot.PreMissionPlanning.IsAnyWeaponVisible
+// Function ReadyOrNot.PremissionPlanning.IsAnyWeaponVisible
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_IsAnyWeaponVisible final
+struct PremissionPlanning_IsAnyWeaponVisible final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_IsAnyWeaponVisible;
+DUMPER7_ASSERTS_PremissionPlanning_IsAnyWeaponVisible;
 
-// Function ReadyOrNot.PreMissionPlanning.IsInLobby
+// Function ReadyOrNot.PremissionPlanning.IsInLobby
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_IsInLobby final
+struct PremissionPlanning_IsInLobby final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_IsInLobby;
+DUMPER7_ASSERTS_PremissionPlanning_IsInLobby;
 
-// Function ReadyOrNot.PreMissionPlanning.PlayAnimationOnPreviewCharacter
+// Function ReadyOrNot.PremissionPlanning.PlayAnimationOnPreviewCharacter
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_PlayAnimationOnPreviewCharacter final
+struct PremissionPlanning_PlayAnimationOnPreviewCharacter final
 {
 public:
 	class FString                                 Animation;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_PlayAnimationOnPreviewCharacter;
+DUMPER7_ASSERTS_PremissionPlanning_PlayAnimationOnPreviewCharacter;
 
-// Function ReadyOrNot.PreMissionPlanning.PlayAnimationOnPreviewCharacterByName
+// Function ReadyOrNot.PremissionPlanning.PlayAnimationOnPreviewCharacterByName
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_PlayAnimationOnPreviewCharacterByName final
+struct PremissionPlanning_PlayAnimationOnPreviewCharacterByName final
 {
 public:
 	class FName                                   Animation;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_PlayAnimationOnPreviewCharacterByName;
+DUMPER7_ASSERTS_PremissionPlanning_PlayAnimationOnPreviewCharacterByName;
 
-// Function ReadyOrNot.PreMissionPlanning.PlayAnimationOnQuartermaster
+// Function ReadyOrNot.PremissionPlanning.PlayAnimationOnQuartermaster
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_PlayAnimationOnQuartermaster final
+struct PremissionPlanning_PlayAnimationOnQuartermaster final
 {
 public:
 	class FName                                   Animation;                                         // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_PlayAnimationOnQuartermaster;
+DUMPER7_ASSERTS_PremissionPlanning_PlayAnimationOnQuartermaster;
 
-// Function ReadyOrNot.PreMissionPlanning.SaveItemClassAsSlot
+// Function ReadyOrNot.PremissionPlanning.SaveItemClassAsSlot
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_SaveItemClassAsSlot final
+struct PremissionPlanning_SaveItemClassAsSlot final
 {
 public:
 	EItemType                                     ItemType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class ABaseItem>                  Class_0;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SaveItemClassAsSlot;
+DUMPER7_ASSERTS_PremissionPlanning_SaveItemClassAsSlot;
 
-// Function ReadyOrNot.PreMissionPlanning.SetActiveCameraByTag
+// Function ReadyOrNot.PremissionPlanning.SetActiveCameraByTag
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_SetActiveCameraByTag final
+struct PremissionPlanning_SetActiveCameraByTag final
 {
 public:
 	class FName                                   Tag;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -26741,350 +26741,350 @@ public:
 	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetActiveCameraByTag;
+DUMPER7_ASSERTS_PremissionPlanning_SetActiveCameraByTag;
 
-// Function ReadyOrNot.PreMissionPlanning.SetBodyArmour
+// Function ReadyOrNot.PremissionPlanning.SetBodyArmour
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetBodyArmour final
+struct PremissionPlanning_SetBodyArmour final
 {
 public:
 	TSubclassOf<class ABaseItem>                  BodyArmour;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetBodyArmour;
+DUMPER7_ASSERTS_PremissionPlanning_SetBodyArmour;
 
-// Function ReadyOrNot.PreMissionPlanning.SetEquippingSwatMember
+// Function ReadyOrNot.PremissionPlanning.SetEquippingSwatMember
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_SetEquippingSwatMember final
+struct PremissionPlanning_SetEquippingSwatMember final
 {
 public:
 	EEquippingSwat                                NewEquippingSwat;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AReadyOrNotPlayerState*                 NewEquippingPlayerState;                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetEquippingSwatMember;
+DUMPER7_ASSERTS_PremissionPlanning_SetEquippingSwatMember;
 
-// Function ReadyOrNot.PreMissionPlanning.SetHeadwear
+// Function ReadyOrNot.PremissionPlanning.SetHeadwear
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetHeadwear final
+struct PremissionPlanning_SetHeadwear final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Headwear;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetHeadwear;
+DUMPER7_ASSERTS_PremissionPlanning_SetHeadwear;
 
-// Function ReadyOrNot.PreMissionPlanning.SetItem
+// Function ReadyOrNot.PremissionPlanning.SetItem
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_SetItem final
+struct PremissionPlanning_SetItem final
 {
 public:
 	EItemType                                     ItemType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class ABaseItem>                  ItemClass;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetItem;
+DUMPER7_ASSERTS_PremissionPlanning_SetItem;
 
-// Function ReadyOrNot.PreMissionPlanning.SetItem_V2
+// Function ReadyOrNot.PremissionPlanning.SetItem_V2
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_SetItem_V2 final
+struct PremissionPlanning_SetItem_V2 final
 {
 public:
 	EItemClass                                    ItemClass;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class ABaseItem>                  ItemObjectClass;                                   // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetItem_V2;
+DUMPER7_ASSERTS_PremissionPlanning_SetItem_V2;
 
-// Function ReadyOrNot.PreMissionPlanning.SetLightColorByTag
+// Function ReadyOrNot.PremissionPlanning.SetLightColorByTag
 // 0x0018 (0x0018 - 0x0000)
-struct PreMissionPlanning_SetLightColorByTag final
+struct PremissionPlanning_SetLightColorByTag final
 {
 public:
 	class FName                                   Tag;                                               // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FLinearColor                           Color;                                             // 0x0008(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetLightColorByTag;
+DUMPER7_ASSERTS_PremissionPlanning_SetLightColorByTag;
 
-// Function ReadyOrNot.PreMissionPlanning.SetLockInput
+// Function ReadyOrNot.PremissionPlanning.SetLockInput
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_SetLockInput final
+struct PremissionPlanning_SetLockInput final
 {
 public:
 	bool                                          bShouldLockInput;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetLockInput;
+DUMPER7_ASSERTS_PremissionPlanning_SetLockInput;
 
-// Function ReadyOrNot.PreMissionPlanning.SetLongTactical
+// Function ReadyOrNot.PremissionPlanning.SetLongTactical
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetLongTactical final
+struct PremissionPlanning_SetLongTactical final
 {
 public:
 	TSubclassOf<class ABaseItem>                  LongTactical;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetLongTactical;
+DUMPER7_ASSERTS_PremissionPlanning_SetLongTactical;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPlayerSkin
+// Function ReadyOrNot.PremissionPlanning.SetPlayerSkin
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPlayerSkin final
+struct PremissionPlanning_SetPlayerSkin final
 {
 public:
 	TSubclassOf<class USkinComponent>             SkinCompClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPlayerSkin;
+DUMPER7_ASSERTS_PremissionPlanning_SetPlayerSkin;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryAmmunitionAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryAmmunitionAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryAmmunitionAttachment final
+struct PremissionPlanning_SetPrimaryAmmunitionAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          AmmunitionAttachment;                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryAmmunitionAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryAmmunitionAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryGripAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryGripAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryGripAttachment final
+struct PremissionPlanning_SetPrimaryGripAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          GripAttachment;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryGripAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryGripAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryIlluminatorAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryIlluminatorAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryIlluminatorAttachment final
+struct PremissionPlanning_SetPrimaryIlluminatorAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          IlluminatorAttachment;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryIlluminatorAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryIlluminatorAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryMuzzleAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryMuzzleAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryMuzzleAttachment final
+struct PremissionPlanning_SetPrimaryMuzzleAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          MuzzleAttachment;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryMuzzleAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryMuzzleAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryOverbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryOverbarrelAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryOverbarrelAttachment final
+struct PremissionPlanning_SetPrimaryOverbarrelAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          OverbarrelAttachment;                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryOverbarrelAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryOverbarrelAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryScopeAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryScopeAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryScopeAttachment final
+struct PremissionPlanning_SetPrimaryScopeAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          ScopeAttachment;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryScopeAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryScopeAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimarySkinAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimarySkinAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimarySkinAttachment final
+struct PremissionPlanning_SetPrimarySkinAttachment final
 {
 public:
 	TSubclassOf<class USkinComponent>             SkinAttachment;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimarySkinAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimarySkinAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryStockAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryStockAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryStockAttachment final
+struct PremissionPlanning_SetPrimaryStockAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          StockAttachment;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryStockAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryStockAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryUnderbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryUnderbarrelAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetPrimaryUnderbarrelAttachment final
+struct PremissionPlanning_SetPrimaryUnderbarrelAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          UnderbarrelAttachment;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryUnderbarrelAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryUnderbarrelAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryWeapon
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryWeapon
 // 0x00B8 (0x00B8 - 0x0000)
-struct PreMissionPlanning_SetPrimaryWeapon final
+struct PremissionPlanning_SetPrimaryWeapon final
 {
 public:
 	struct FWeaponData                            WeaponData;                                        // 0x0000(0x00B8)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetPrimaryWeapon;
+DUMPER7_ASSERTS_PremissionPlanning_SetPrimaryWeapon;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryAmmunitionAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryAmmunitionAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryAmmunitionAttachment final
+struct PremissionPlanning_SetSecondaryAmmunitionAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          AmmunitionAttachment;                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryAmmunitionAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryAmmunitionAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryGripAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryGripAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryGripAttachment final
+struct PremissionPlanning_SetSecondaryGripAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          GripAttachment;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryGripAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryGripAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryIlluminatorAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryIlluminatorAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryIlluminatorAttachment final
+struct PremissionPlanning_SetSecondaryIlluminatorAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          IlluminatorAttachment;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryIlluminatorAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryIlluminatorAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryMuzzleAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryMuzzleAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryMuzzleAttachment final
+struct PremissionPlanning_SetSecondaryMuzzleAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          MuzzleAttachment;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryMuzzleAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryMuzzleAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryOverbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryOverbarrelAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryOverbarrelAttachment final
+struct PremissionPlanning_SetSecondaryOverbarrelAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          OverbarrelAttachment;                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryOverbarrelAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryOverbarrelAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryScopeAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryScopeAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryScopeAttachment final
+struct PremissionPlanning_SetSecondaryScopeAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          ScopeAttachment;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryScopeAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryScopeAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondarySkinAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondarySkinAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondarySkinAttachment final
+struct PremissionPlanning_SetSecondarySkinAttachment final
 {
 public:
 	TSubclassOf<class USkinComponent>             SkinAttachment;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondarySkinAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondarySkinAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryStockAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryStockAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryStockAttachment final
+struct PremissionPlanning_SetSecondaryStockAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          StockAttachment;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryStockAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryStockAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryUnderbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryUnderbarrelAttachment
 // 0x0008 (0x0008 - 0x0000)
-struct PreMissionPlanning_SetSecondaryUnderbarrelAttachment final
+struct PremissionPlanning_SetSecondaryUnderbarrelAttachment final
 {
 public:
 	TSubclassOf<class UWeaponAttachment>          UnderbarrelAttachment;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryUnderbarrelAttachment;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryUnderbarrelAttachment;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryWeapon
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryWeapon
 // 0x00B8 (0x00B8 - 0x0000)
-struct PreMissionPlanning_SetSecondaryWeapon final
+struct PremissionPlanning_SetSecondaryWeapon final
 {
 public:
 	struct FWeaponData                            WeaponData;                                        // 0x0000(0x00B8)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSecondaryWeapon;
+DUMPER7_ASSERTS_PremissionPlanning_SetSecondaryWeapon;
 
-// Function ReadyOrNot.PreMissionPlanning.SetSubcategory
+// Function ReadyOrNot.PremissionPlanning.SetSubcategory
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_SetSubcategory final
+struct PremissionPlanning_SetSubcategory final
 {
 public:
 	EPreMissionSubCategory                        NewSubCategory;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetSubcategory;
+DUMPER7_ASSERTS_PremissionPlanning_SetSubcategory;
 
-// Function ReadyOrNot.PreMissionPlanning.SetWorkbenchItemClass
+// Function ReadyOrNot.PremissionPlanning.SetWorkbenchItemClass
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_SetWorkbenchItemClass final
+struct PremissionPlanning_SetWorkbenchItemClass final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Item;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   Tag;                                               // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_SetWorkbenchItemClass;
+DUMPER7_ASSERTS_PremissionPlanning_SetWorkbenchItemClass;
 
-// Function ReadyOrNot.PreMissionPlanning.ShouldShowLoadout
+// Function ReadyOrNot.PremissionPlanning.ShouldShowLoadout
 // 0x0001 (0x0001 - 0x0000)
-struct PreMissionPlanning_ShouldShowLoadout final
+struct PremissionPlanning_ShouldShowLoadout final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_ShouldShowLoadout;
+DUMPER7_ASSERTS_PremissionPlanning_ShouldShowLoadout;
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacter
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacter
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_UpdatePreviewCharacter final
+struct PremissionPlanning_UpdatePreviewCharacter final
 {
 public:
 	class AReadyOrNotPlayerState*                 InPreviewPlayerState;                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   Tag;                                               // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_UpdatePreviewCharacter;
+DUMPER7_ASSERTS_PremissionPlanning_UpdatePreviewCharacter;
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewWeaponAttachments
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewWeaponAttachments
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_UpdatePreviewWeaponAttachments final
+struct PremissionPlanning_UpdatePreviewWeaponAttachments final
 {
 public:
 	bool                                          IsSecondary;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UWeaponAttachment>          Attachment;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_UpdatePreviewWeaponAttachments;
+DUMPER7_ASSERTS_PremissionPlanning_UpdatePreviewWeaponAttachments;
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewWeaponSkin
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewWeaponSkin
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_UpdatePreviewWeaponSkin final
+struct PremissionPlanning_UpdatePreviewWeaponSkin final
 {
 public:
 	bool                                          IsSecondary;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class USkinComponent>             SkinAttachment;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_UpdatePreviewWeaponSkin;
+DUMPER7_ASSERTS_PremissionPlanning_UpdatePreviewWeaponSkin;
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWeaponDefaultFireMode
+// Function ReadyOrNot.PremissionPlanning.UpdateWeaponDefaultFireMode
 // 0x0010 (0x0010 - 0x0000)
-struct PreMissionPlanning_UpdateWeaponDefaultFireMode final
+struct PremissionPlanning_UpdateWeaponDefaultFireMode final
 {
 public:
 	TSubclassOf<class ABaseWeapon>                Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EFireMode                                     NewDefaultFireMode;                                // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PreMissionPlanning_UpdateWeaponDefaultFireMode;
+DUMPER7_ASSERTS_PremissionPlanning_UpdateWeaponDefaultFireMode;
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWeaponPreset
+// Function ReadyOrNot.PremissionPlanning.UpdateWeaponPreset
 // 0x0078 (0x0078 - 0x0000)
-struct PreMissionPlanning_UpdateWeaponPreset final
+struct PremissionPlanning_UpdateWeaponPreset final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27092,27 +27092,27 @@ public:
 	int32                                         Index_0;                                           // 0x0070(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_PreMissionPlanning_UpdateWeaponPreset;
+DUMPER7_ASSERTS_PremissionPlanning_UpdateWeaponPreset;
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWeaponPresets
+// Function ReadyOrNot.PremissionPlanning.UpdateWeaponPresets
 // 0x0018 (0x0018 - 0x0000)
-struct PreMissionPlanning_UpdateWeaponPresets final
+struct PremissionPlanning_UpdateWeaponPresets final
 {
 public:
 	TSubclassOf<class ABaseItem>                  Weapon;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSavedWeaponPreset                     Presets;                                           // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_UpdateWeaponPresets;
+DUMPER7_ASSERTS_PremissionPlanning_UpdateWeaponPresets;
 
-// Function ReadyOrNot.PreMissionPlanning.ItemClassToItemType
+// Function ReadyOrNot.PremissionPlanning.ItemClassToItemType
 // 0x0002 (0x0002 - 0x0000)
-struct PreMissionPlanning_ItemClassToItemType final
+struct PremissionPlanning_ItemClassToItemType final
 {
 public:
 	EItemClass                                    InItemClass;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EItemType                                     ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_PreMissionPlanning_ItemClassToItemType;
+DUMPER7_ASSERTS_PremissionPlanning_ItemClassToItemType;
 
 // Function ReadyOrNot.DestructibleVehicle.Multicast_BreakBodyPart
 // 0x0008 (0x0008 - 0x0000)
@@ -27635,103 +27635,103 @@ public:
 };
 DUMPER7_ASSERTS_InterestOverrideZone_GetCurrentInterestInfo;
 
-// Function ReadyOrNot.Door.FlipStackUpArea
+// Function ReadyOrNot.door.FlipStackUpArea
 // 0x0003 (0x0003 - 0x0000)
-struct Door_FlipStackUpArea final
+struct door_FlipStackUpArea final
 {
 public:
 	EStackupGenArea                               OutStackUpArea;                                    // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bHorizontalFlip;                                   // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bVerticalFlip;                                     // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_FlipStackUpArea;
+DUMPER7_ASSERTS_door_FlipStackUpArea;
 
-// Function ReadyOrNot.Door.SetAllElectronicLocks
+// Function ReadyOrNot.door.SetAllElectronicLocks
 // 0x0010 (0x0010 - 0x0000)
-struct Door_SetAllElectronicLocks final
+struct door_SetAllElectronicLocks final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bLocked_0;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_SetAllElectronicLocks;
+DUMPER7_ASSERTS_door_SetAllElectronicLocks;
 
-// Function ReadyOrNot.Door.SetSWATHasAllKeycards
+// Function ReadyOrNot.door.SetSWATHasAllKeycards
 // 0x0008 (0x0008 - 0x0000)
-struct Door_SetSWATHasAllKeycards final
+struct door_SetSWATHasAllKeycards final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_SetSWATHasAllKeycards;
+DUMPER7_ASSERTS_door_SetSWATHasAllKeycards;
 
-// Function ReadyOrNot.Door.ApplyDoorDamage
+// Function ReadyOrNot.door.ApplyDoorDamage
 // 0x0010 (0x0010 - 0x0000)
-struct Door_ApplyDoorDamage final
+struct door_ApplyDoorDamage final
 {
 public:
 	EDoorDamageType                               InDoorDamage;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AReadyOrNotCharacter*                   Victim;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_ApplyDoorDamage;
+DUMPER7_ASSERTS_door_ApplyDoorDamage;
 
-// Function ReadyOrNot.Door.ApplyRandomDamageToChunks
+// Function ReadyOrNot.door.ApplyRandomDamageToChunks
 // 0x0008 (0x0008 - 0x0000)
-struct Door_ApplyRandomDamageToChunks final
+struct door_ApplyRandomDamageToChunks final
 {
 public:
 	float                                         MinDamage;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxDamage;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_ApplyRandomDamageToChunks;
+DUMPER7_ASSERTS_door_ApplyRandomDamageToChunks;
 
-// Function ReadyOrNot.Door.AttachTrap
+// Function ReadyOrNot.door.AttachTrap
 // 0x0010 (0x0010 - 0x0000)
-struct Door_AttachTrap final
+struct door_AttachTrap final
 {
 public:
 	class ATrapActorAttachedToDoor*               NewTrap;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAttachToDoor;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_AttachTrap;
+DUMPER7_ASSERTS_door_AttachTrap;
 
-// Function ReadyOrNot.Door.AttachWedge
+// Function ReadyOrNot.door.AttachWedge
 // 0x0008 (0x0008 - 0x0000)
-struct Door_AttachWedge final
+struct door_AttachWedge final
 {
 public:
 	class ADoorJam*                               NewWedge;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AttachWedge;
+DUMPER7_ASSERTS_door_AttachWedge;
 
-// Function ReadyOrNot.Door.BodyRamDoor
+// Function ReadyOrNot.door.BodyRamDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_BodyRamDoor final
+struct door_BodyRamDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorRamCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_BodyRamDoor;
+DUMPER7_ASSERTS_door_BodyRamDoor;
 
-// Function ReadyOrNot.Door.BreachDoor
+// Function ReadyOrNot.door.BreachDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_BreachDoor final
+struct door_BreachDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorBreacherCharacter;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InIncrementAngle;                                  // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_BreachDoor;
+DUMPER7_ASSERTS_door_BreachDoor;
 
-// Function ReadyOrNot.Door.BreachDoorFromPoint
+// Function ReadyOrNot.door.BreachDoorFromPoint
 // 0x0028 (0x0028 - 0x0000)
-struct Door_BreachDoorFromPoint final
+struct door_BreachDoorFromPoint final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorBreacherCharacter;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27739,11 +27739,11 @@ public:
 	float                                         InIncrementAngle;                                  // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_BreachDoorFromPoint;
+DUMPER7_ASSERTS_door_BreachDoorFromPoint;
 
-// Function ReadyOrNot.Door.BreakAndDetachDoor
+// Function ReadyOrNot.door.BreakAndDetachDoor
 // 0x0018 (0x0018 - 0x0000)
-struct Door_BreakAndDetachDoor final
+struct door_BreakAndDetachDoor final
 {
 public:
 	bool                                          bDestroyAllChunks;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27752,22 +27752,22 @@ public:
 	float                                         Impulse;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ForwardOffset;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_BreakAndDetachDoor;
+DUMPER7_ASSERTS_door_BreakAndDetachDoor;
 
-// Function ReadyOrNot.Door.BreakDoor
+// Function ReadyOrNot.door.BreakDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_BreakDoor final
+struct door_BreakDoor final
 {
 public:
 	bool                                          bDestroyAllChunks;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AReadyOrNotCharacter*                   DoorBreakerCharacter;                              // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_BreakDoor;
+DUMPER7_ASSERTS_door_BreakDoor;
 
-// Function ReadyOrNot.Door.CloseDoor
+// Function ReadyOrNot.door.CloseDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CloseDoor final
+struct door_CloseDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorCloserCharacter;                               // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27775,11 +27775,11 @@ public:
 	bool                                          bAnimateDoorHandle;                                // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CloseDoor;
+DUMPER7_ASSERTS_door_CloseDoor;
 
-// Function ReadyOrNot.Door.CloseSubDoor
+// Function ReadyOrNot.door.CloseSubDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CloseSubDoor final
+struct door_CloseSubDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorCloseCharacter;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27787,30 +27787,30 @@ public:
 	bool                                          bAnimateDoorHandle;                                // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CloseSubDoor;
+DUMPER7_ASSERTS_door_CloseSubDoor;
 
-// Function ReadyOrNot.Door.CollapseDoor
+// Function ReadyOrNot.door.CollapseDoor
 // 0x0020 (0x0020 - 0x0000)
-struct Door_CollapseDoor final
+struct door_CollapseDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorBreacherCharacter;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                BreachLocation;                                    // 0x0008(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_CollapseDoor;
+DUMPER7_ASSERTS_door_CollapseDoor;
 
-// Function ReadyOrNot.Door.DebugForceLockedState
+// Function ReadyOrNot.door.DebugForceLockedState
 // 0x0001 (0x0001 - 0x0000)
-struct Door_DebugForceLockedState final
+struct door_DebugForceLockedState final
 {
 public:
 	bool                                          bShouldLock;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_DebugForceLockedState;
+DUMPER7_ASSERTS_door_DebugForceLockedState;
 
-// Function ReadyOrNot.Door.DecreaseNumKicksToBreakDown
+// Function ReadyOrNot.door.DecreaseNumKicksToBreakDown
 // 0x0010 (0x0010 - 0x0000)
-struct Door_DecreaseNumKicksToBreakDown final
+struct door_DecreaseNumKicksToBreakDown final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorKickCharacter;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27819,11 +27819,11 @@ public:
 	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         KickChanceOffset;                                  // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_DecreaseNumKicksToBreakDown;
+DUMPER7_ASSERTS_door_DecreaseNumKicksToBreakDown;
 
-// Function ReadyOrNot.Door.DestroyAllChunks
+// Function ReadyOrNot.door.DestroyAllChunks
 // 0x0020 (0x0020 - 0x0000)
-struct Door_DestroyAllChunks final
+struct door_DestroyAllChunks final
 {
 public:
 	struct FVector                                Impulse;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27831,11 +27831,11 @@ public:
 	bool                                          bKeepHinges;                                       // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_DestroyAllChunks;
+DUMPER7_ASSERTS_door_DestroyAllChunks;
 
-// Function ReadyOrNot.Door.DestroyChunk
+// Function ReadyOrNot.door.DestroyChunk
 // 0x0028 (0x0028 - 0x0000)
-struct Door_DestroyChunk final
+struct door_DestroyChunk final
 {
 public:
 	class UDestructibleDoorChunkComponent*        InChunk;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27843,11 +27843,11 @@ public:
 	float                                         ImpulseStrength;                                   // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_DestroyChunk;
+DUMPER7_ASSERTS_door_DestroyChunk;
 
-// Function ReadyOrNot.Door.DestroyChunk_Index
+// Function ReadyOrNot.door.DestroyChunk_Index
 // 0x0028 (0x0028 - 0x0000)
-struct Door_DestroyChunk_Index final
+struct door_DestroyChunk_Index final
 {
 public:
 	int32                                         ChunkIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27856,11 +27856,11 @@ public:
 	float                                         ImpulseStrength;                                   // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_DestroyChunk_Index;
+DUMPER7_ASSERTS_door_DestroyChunk_Index;
 
-// Function ReadyOrNot.Door.ExplodeDoor
+// Function ReadyOrNot.door.ExplodeDoor
 // 0x0018 (0x0018 - 0x0000)
-struct Door_ExplodeDoor final
+struct door_ExplodeDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorBreacherCharacter;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27868,47 +27868,47 @@ public:
 	bool                                          bKeepHinges;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_ExplodeDoor;
+DUMPER7_ASSERTS_door_ExplodeDoor;
 
-// Function ReadyOrNot.Door.GetTypeOfDoorRow
+// Function ReadyOrNot.door.GetTypeOfDoorRow
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetTypeOfDoorRow final
+struct door_GetTypeOfDoorRow final
 {
 public:
 	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetTypeOfDoorRow;
+DUMPER7_ASSERTS_door_GetTypeOfDoorRow;
 
-// Function ReadyOrNot.Door.GetTypeOfDoorTrap
+// Function ReadyOrNot.door.GetTypeOfDoorTrap
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetTypeOfDoorTrap final
+struct door_GetTypeOfDoorTrap final
 {
 public:
 	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetTypeOfDoorTrap;
+DUMPER7_ASSERTS_door_GetTypeOfDoorTrap;
 
-// Function ReadyOrNot.Door.IsIgnoredForFlee
+// Function ReadyOrNot.door.IsIgnoredForFlee
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsIgnoredForFlee final
+struct door_IsIgnoredForFlee final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsIgnoredForFlee;
+DUMPER7_ASSERTS_door_IsIgnoredForFlee;
 
-// Function ReadyOrNot.Door.IsSubDoorOpen
+// Function ReadyOrNot.door.IsSubDoorOpen
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsSubDoorOpen final
+struct door_IsSubDoorOpen final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsSubDoorOpen;
+DUMPER7_ASSERTS_door_IsSubDoorOpen;
 
-// Function ReadyOrNot.Door.KickDoor
+// Function ReadyOrNot.door.KickDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_KickDoor final
+struct door_KickDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorKickCharacter;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27916,38 +27916,38 @@ public:
 	bool                                          bForce;                                            // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_KickDoor;
+DUMPER7_ASSERTS_door_KickDoor;
 
-// Function ReadyOrNot.Door.KickSubDoor
+// Function ReadyOrNot.door.KickSubDoor
 // 0x0008 (0x0008 - 0x0000)
-struct Door_KickSubDoor final
+struct door_KickSubDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorKickCharacter;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_KickSubDoor;
+DUMPER7_ASSERTS_door_KickSubDoor;
 
-// Function ReadyOrNot.Door.LockDoor
+// Function ReadyOrNot.door.LockDoor
 // 0x0001 (0x0001 - 0x0000)
-struct Door_LockDoor final
+struct door_LockDoor final
 {
 public:
 	bool                                          bLockSubDoor;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_LockDoor;
+DUMPER7_ASSERTS_door_LockDoor;
 
-// Function ReadyOrNot.Door.Multicast_DisableDoorInteraction
+// Function ReadyOrNot.door.Multicast_DisableDoorInteraction
 // 0x0001 (0x0001 - 0x0000)
-struct Door_Multicast_DisableDoorInteraction final
+struct door_Multicast_DisableDoorInteraction final
 {
 public:
 	bool                                          bSetClosed;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Multicast_DisableDoorInteraction;
+DUMPER7_ASSERTS_door_Multicast_DisableDoorInteraction;
 
-// Function ReadyOrNot.Door.Multicast_ExplodeDoor
+// Function ReadyOrNot.door.Multicast_ExplodeDoor
 // 0x0018 (0x0018 - 0x0000)
-struct Door_Multicast_ExplodeDoor final
+struct door_Multicast_ExplodeDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorBreacherCharacter;                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27955,32 +27955,32 @@ public:
 	bool                                          bKeepHinges;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_Multicast_ExplodeDoor;
+DUMPER7_ASSERTS_door_Multicast_ExplodeDoor;
 
-// Function ReadyOrNot.Door.Multicast_PlayDoorDamageSound
+// Function ReadyOrNot.door.Multicast_PlayDoorDamageSound
 // 0x0018 (0x0018 - 0x0000)
-struct Door_Multicast_PlayDoorDamageSound final
+struct door_Multicast_PlayDoorDamageSound final
 {
 public:
 	EDoorDamageType                               DoorDamage;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FMODParam>                      Params_0;                                          // 0x0008(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Multicast_PlayDoorDamageSound;
+DUMPER7_ASSERTS_door_Multicast_PlayDoorDamageSound;
 
-// Function ReadyOrNot.Door.Multicast_PlayDoorKickEffects
+// Function ReadyOrNot.door.Multicast_PlayDoorKickEffects
 // 0x0002 (0x0002 - 0x0000)
-struct Door_Multicast_PlayDoorKickEffects final
+struct door_Multicast_PlayDoorKickEffects final
 {
 public:
 	bool                                          bBreakLock;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInFront;                                          // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Multicast_PlayDoorKickEffects;
+DUMPER7_ASSERTS_door_Multicast_PlayDoorKickEffects;
 
-// Function ReadyOrNot.Door.Multicast_PlayDoorSound
+// Function ReadyOrNot.door.Multicast_PlayDoorSound
 // 0x0020 (0x0020 - 0x0000)
-struct Door_Multicast_PlayDoorSound final
+struct door_Multicast_PlayDoorSound final
 {
 public:
 	EDoorInteraction                              DoorDamage;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -27988,29 +27988,29 @@ public:
 	class AReadyOrNotCharacter*                   DoorInteractionInstigator;                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FMODParam>                      Params_0;                                          // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Multicast_PlayDoorSound;
+DUMPER7_ASSERTS_door_Multicast_PlayDoorSound;
 
-// Function ReadyOrNot.Door.Multicast_PlayElectronicDoorSound
+// Function ReadyOrNot.door.Multicast_PlayElectronicDoorSound
 // 0x0008 (0x0008 - 0x0000)
-struct Door_Multicast_PlayElectronicDoorSound final
+struct door_Multicast_PlayElectronicDoorSound final
 {
 public:
 	class UFMODEvent*                             Event;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Multicast_PlayElectronicDoorSound;
+DUMPER7_ASSERTS_door_Multicast_PlayElectronicDoorSound;
 
-// Function ReadyOrNot.Door.Multicast_SetLocked
+// Function ReadyOrNot.door.Multicast_SetLocked
 // 0x0001 (0x0001 - 0x0000)
-struct Door_Multicast_SetLocked final
+struct door_Multicast_SetLocked final
 {
 public:
 	bool                                          bShouldLocked;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Multicast_SetLocked;
+DUMPER7_ASSERTS_door_Multicast_SetLocked;
 
-// Function ReadyOrNot.Door.OpenDoor
+// Function ReadyOrNot.door.OpenDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_OpenDoor final
+struct door_OpenDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorOpenCharacter;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28020,11 +28020,11 @@ public:
 	uint8                                         Pad_B[0x1];                                        // 0x000B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_OpenDoor;
+DUMPER7_ASSERTS_door_OpenDoor;
 
-// Function ReadyOrNot.Door.OpenDoor_SpecificAngle
+// Function ReadyOrNot.door.OpenDoor_SpecificAngle
 // 0x0010 (0x0010 - 0x0000)
-struct Door_OpenDoor_SpecificAngle final
+struct door_OpenDoor_SpecificAngle final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorOpenCharacter;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28033,11 +28033,11 @@ public:
 	bool                                          bAnimateDoorHandle;                                // 0x000D(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_OpenDoor_SpecificAngle;
+DUMPER7_ASSERTS_door_OpenDoor_SpecificAngle;
 
-// Function ReadyOrNot.Door.OpenSubDoor
+// Function ReadyOrNot.door.OpenSubDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_OpenSubDoor final
+struct door_OpenSubDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorOpenCharacter;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28045,11 +28045,11 @@ public:
 	bool                                          bAnimateDoorHandle;                                // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_OpenSubDoor;
+DUMPER7_ASSERTS_door_OpenSubDoor;
 
-// Function ReadyOrNot.Door.PeekDoor
+// Function ReadyOrNot.door.PeekDoor
 // 0x0018 (0x0018 - 0x0000)
-struct Door_PeekDoor final
+struct door_PeekDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorPeekerCharacter;                               // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28059,33 +28059,33 @@ public:
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_PeekDoor;
+DUMPER7_ASSERTS_door_PeekDoor;
 
-// Function ReadyOrNot.Door.PlayDoorDamageSound
+// Function ReadyOrNot.door.PlayDoorDamageSound
 // 0x0018 (0x0018 - 0x0000)
-struct Door_PlayDoorDamageSound final
+struct door_PlayDoorDamageSound final
 {
 public:
 	EDoorDamageType                               DoorDamage;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FMODParam>                      Params_0;                                          // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_PlayDoorDamageSound;
+DUMPER7_ASSERTS_door_PlayDoorDamageSound;
 
-// Function ReadyOrNot.Door.PlayDoorKickSound
+// Function ReadyOrNot.door.PlayDoorKickSound
 // 0x0010 (0x0010 - 0x0000)
-struct Door_PlayDoorKickSound final
+struct door_PlayDoorKickSound final
 {
 public:
 	class AReadyOrNotCharacter*                   Kicker;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Result;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_PlayDoorKickSound;
+DUMPER7_ASSERTS_door_PlayDoorKickSound;
 
-// Function ReadyOrNot.Door.PlayDoorSound
+// Function ReadyOrNot.door.PlayDoorSound
 // 0x0020 (0x0020 - 0x0000)
-struct Door_PlayDoorSound final
+struct door_PlayDoorSound final
 {
 public:
 	EDoorInteraction                              DoorInteraction;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28093,11 +28093,11 @@ public:
 	class AReadyOrNotCharacter*                   DoorInteractionInstigator;                         // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<struct FMODParam>                      Params_0;                                          // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_PlayDoorSound;
+DUMPER7_ASSERTS_door_PlayDoorSound;
 
-// Function ReadyOrNot.Door.PushDoor
+// Function ReadyOrNot.door.PushDoor
 // 0x0018 (0x0018 - 0x0000)
-struct Door_PushDoor final
+struct door_PushDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorPusherCharacter;                               // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28108,11 +28108,11 @@ public:
 	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_PushDoor;
+DUMPER7_ASSERTS_door_PushDoor;
 
-// Function ReadyOrNot.Door.PushDoor_SpecificAngle
+// Function ReadyOrNot.door.PushDoor_SpecificAngle
 // 0x0010 (0x0010 - 0x0000)
-struct Door_PushDoor_SpecificAngle final
+struct door_PushDoor_SpecificAngle final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorPusherCharacter;                               // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28120,11 +28120,11 @@ public:
 	bool                                          bAnimateDoorHandle;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_PushDoor_SpecificAngle;
+DUMPER7_ASSERTS_door_PushDoor_SpecificAngle;
 
-// Function ReadyOrNot.Door.RamDoor
+// Function ReadyOrNot.door.RamDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_RamDoor final
+struct door_RamDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   DoorRamCharacter;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28132,376 +28132,376 @@ public:
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_RamDoor;
+DUMPER7_ASSERTS_door_RamDoor;
 
-// Function ReadyOrNot.Door.Server_SetLockKnowledgeState
+// Function ReadyOrNot.door.Server_SetLockKnowledgeState
 // 0x0002 (0x0002 - 0x0000)
-struct Door_Server_SetLockKnowledgeState final
+struct door_Server_SetLockKnowledgeState final
 {
 public:
 	bool                                          bSuspectTeam;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bNewKnowledgeState;                                // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Server_SetLockKnowledgeState;
+DUMPER7_ASSERTS_door_Server_SetLockKnowledgeState;
 
-// Function ReadyOrNot.Door.Server_SetTrapKnowledgeState
+// Function ReadyOrNot.door.Server_SetTrapKnowledgeState
 // 0x0002 (0x0002 - 0x0000)
-struct Door_Server_SetTrapKnowledgeState final
+struct door_Server_SetTrapKnowledgeState final
 {
 public:
 	bool                                          bSuspectTeam;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bNewKnowledgeState;                                // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_Server_SetTrapKnowledgeState;
+DUMPER7_ASSERTS_door_Server_SetTrapKnowledgeState;
 
-// Function ReadyOrNot.Door.SetDoorLockKnowledge
+// Function ReadyOrNot.door.SetDoorLockKnowledge
 // 0x0002 (0x0002 - 0x0000)
-struct Door_SetDoorLockKnowledge final
+struct door_SetDoorLockKnowledge final
 {
 public:
 	bool                                          bSuspectTeam;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bKnowledge;                                        // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_SetDoorLockKnowledge;
+DUMPER7_ASSERTS_door_SetDoorLockKnowledge;
 
-// Function ReadyOrNot.Door.SetDoorTrapKnowledge
+// Function ReadyOrNot.door.SetDoorTrapKnowledge
 // 0x0002 (0x0002 - 0x0000)
-struct Door_SetDoorTrapKnowledge final
+struct door_SetDoorTrapKnowledge final
 {
 public:
 	bool                                          bSuspectTeam;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bKnowledge;                                        // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_SetDoorTrapKnowledge;
+DUMPER7_ASSERTS_door_SetDoorTrapKnowledge;
 
-// Function ReadyOrNot.Door.SetLocked
+// Function ReadyOrNot.door.SetLocked
 // 0x0001 (0x0001 - 0x0000)
-struct Door_SetLocked final
+struct door_SetLocked final
 {
 public:
 	bool                                          bNewLocked;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_SetLocked;
+DUMPER7_ASSERTS_door_SetLocked;
 
-// Function ReadyOrNot.Door.UnlockDoor
+// Function ReadyOrNot.door.UnlockDoor
 // 0x0001 (0x0001 - 0x0000)
-struct Door_UnlockDoor final
+struct door_UnlockDoor final
 {
 public:
 	bool                                          bUnlockSubDoor;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_UnlockDoor;
+DUMPER7_ASSERTS_door_UnlockDoor;
 
-// Function ReadyOrNot.Door.AllBottomDoorChunksBroken
+// Function ReadyOrNot.door.AllBottomDoorChunksBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AllBottomDoorChunksBroken final
+struct door_AllBottomDoorChunksBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AllBottomDoorChunksBroken;
+DUMPER7_ASSERTS_door_AllBottomDoorChunksBroken;
 
-// Function ReadyOrNot.Door.AllMajorDoorChunksDestroyed
+// Function ReadyOrNot.door.AllMajorDoorChunksDestroyed
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AllMajorDoorChunksDestroyed final
+struct door_AllMajorDoorChunksDestroyed final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AllMajorDoorChunksDestroyed;
+DUMPER7_ASSERTS_door_AllMajorDoorChunksDestroyed;
 
-// Function ReadyOrNot.Door.AllMiddleDoorChunksBroken
+// Function ReadyOrNot.door.AllMiddleDoorChunksBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AllMiddleDoorChunksBroken final
+struct door_AllMiddleDoorChunksBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AllMiddleDoorChunksBroken;
+DUMPER7_ASSERTS_door_AllMiddleDoorChunksBroken;
 
-// Function ReadyOrNot.Door.AllTopDoorChunksBroken
+// Function ReadyOrNot.door.AllTopDoorChunksBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AllTopDoorChunksBroken final
+struct door_AllTopDoorChunksBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AllTopDoorChunksBroken;
+DUMPER7_ASSERTS_door_AllTopDoorChunksBroken;
 
-// Function ReadyOrNot.Door.AnyBottomDoorChunksBroken
+// Function ReadyOrNot.door.AnyBottomDoorChunksBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AnyBottomDoorChunksBroken final
+struct door_AnyBottomDoorChunksBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AnyBottomDoorChunksBroken;
+DUMPER7_ASSERTS_door_AnyBottomDoorChunksBroken;
 
-// Function ReadyOrNot.Door.AnyChunksDestroyed
+// Function ReadyOrNot.door.AnyChunksDestroyed
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AnyChunksDestroyed final
+struct door_AnyChunksDestroyed final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AnyChunksDestroyed;
+DUMPER7_ASSERTS_door_AnyChunksDestroyed;
 
-// Function ReadyOrNot.Door.AnyHingesLeft
+// Function ReadyOrNot.door.AnyHingesLeft
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AnyHingesLeft final
+struct door_AnyHingesLeft final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AnyHingesLeft;
+DUMPER7_ASSERTS_door_AnyHingesLeft;
 
-// Function ReadyOrNot.Door.AnyMiddleDoorChunksBroken
+// Function ReadyOrNot.door.AnyMiddleDoorChunksBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AnyMiddleDoorChunksBroken final
+struct door_AnyMiddleDoorChunksBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AnyMiddleDoorChunksBroken;
+DUMPER7_ASSERTS_door_AnyMiddleDoorChunksBroken;
 
-// Function ReadyOrNot.Door.AnyTopDoorChunksBroken
+// Function ReadyOrNot.door.AnyTopDoorChunksBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_AnyTopDoorChunksBroken final
+struct door_AnyTopDoorChunksBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_AnyTopDoorChunksBroken;
+DUMPER7_ASSERTS_door_AnyTopDoorChunksBroken;
 
-// Function ReadyOrNot.Door.CalculateClosestPoint
+// Function ReadyOrNot.door.CalculateClosestPoint
 // 0x0030 (0x0030 - 0x0000)
-struct Door_CalculateClosestPoint final
+struct door_CalculateClosestPoint final
 {
 public:
 	struct FVector                                Location;                                          // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0018(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_CalculateClosestPoint;
+DUMPER7_ASSERTS_door_CalculateClosestPoint;
 
-// Function ReadyOrNot.Door.CanCloseDoor
+// Function ReadyOrNot.door.CanCloseDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanCloseDoor final
+struct door_CanCloseDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanCloseDoor;
+DUMPER7_ASSERTS_door_CanCloseDoor;
 
-// Function ReadyOrNot.Door.CanCloseDoorIfOrdered
+// Function ReadyOrNot.door.CanCloseDoorIfOrdered
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanCloseDoorIfOrdered final
+struct door_CanCloseDoorIfOrdered final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanCloseDoorIfOrdered;
+DUMPER7_ASSERTS_door_CanCloseDoorIfOrdered;
 
-// Function ReadyOrNot.Door.CanDeployWedge
+// Function ReadyOrNot.door.CanDeployWedge
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanDeployWedge final
+struct door_CanDeployWedge final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanDeployWedge;
+DUMPER7_ASSERTS_door_CanDeployWedge;
 
-// Function ReadyOrNot.Door.CanEquipBatteringRam
+// Function ReadyOrNot.door.CanEquipBatteringRam
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanEquipBatteringRam final
+struct door_CanEquipBatteringRam final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanEquipBatteringRam;
+DUMPER7_ASSERTS_door_CanEquipBatteringRam;
 
-// Function ReadyOrNot.Door.CanEquipBreachingShotgun
+// Function ReadyOrNot.door.CanEquipBreachingShotgun
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanEquipBreachingShotgun final
+struct door_CanEquipBreachingShotgun final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanEquipBreachingShotgun;
+DUMPER7_ASSERTS_door_CanEquipBreachingShotgun;
 
-// Function ReadyOrNot.Door.CanEquipC2Explosive
+// Function ReadyOrNot.door.CanEquipC2Explosive
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanEquipC2Explosive final
+struct door_CanEquipC2Explosive final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanEquipC2Explosive;
+DUMPER7_ASSERTS_door_CanEquipC2Explosive;
 
-// Function ReadyOrNot.Door.CanEquipMultitool
+// Function ReadyOrNot.door.CanEquipMultitool
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanEquipMultitool final
+struct door_CanEquipMultitool final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanEquipMultitool;
+DUMPER7_ASSERTS_door_CanEquipMultitool;
 
-// Function ReadyOrNot.Door.CanEquipOptiwand
+// Function ReadyOrNot.door.CanEquipOptiwand
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanEquipOptiwand final
+struct door_CanEquipOptiwand final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanEquipOptiwand;
+DUMPER7_ASSERTS_door_CanEquipOptiwand;
 
-// Function ReadyOrNot.Door.CanEquipWedge
+// Function ReadyOrNot.door.CanEquipWedge
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanEquipWedge final
+struct door_CanEquipWedge final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanEquipWedge;
+DUMPER7_ASSERTS_door_CanEquipWedge;
 
-// Function ReadyOrNot.Door.CanKickDoor
+// Function ReadyOrNot.door.CanKickDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanKickDoor final
+struct door_CanKickDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanKickDoor;
+DUMPER7_ASSERTS_door_CanKickDoor;
 
-// Function ReadyOrNot.Door.CanLockpickDoor
+// Function ReadyOrNot.door.CanLockpickDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanLockpickDoor final
+struct door_CanLockpickDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanLockpickDoor;
+DUMPER7_ASSERTS_door_CanLockpickDoor;
 
-// Function ReadyOrNot.Door.CanMirrorUnderDoor
+// Function ReadyOrNot.door.CanMirrorUnderDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanMirrorUnderDoor final
+struct door_CanMirrorUnderDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanMirrorUnderDoor;
+DUMPER7_ASSERTS_door_CanMirrorUnderDoor;
 
-// Function ReadyOrNot.Door.CanOpenDoor
+// Function ReadyOrNot.door.CanOpenDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanOpenDoor final
+struct door_CanOpenDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanOpenDoor;
+DUMPER7_ASSERTS_door_CanOpenDoor;
 
-// Function ReadyOrNot.Door.CanPeekDoor
+// Function ReadyOrNot.door.CanPeekDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanPeekDoor final
+struct door_CanPeekDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanPeekDoor;
+DUMPER7_ASSERTS_door_CanPeekDoor;
 
-// Function ReadyOrNot.Door.CanPlaceC2Explosive
+// Function ReadyOrNot.door.CanPlaceC2Explosive
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanPlaceC2Explosive final
+struct door_CanPlaceC2Explosive final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanPlaceC2Explosive;
+DUMPER7_ASSERTS_door_CanPlaceC2Explosive;
 
-// Function ReadyOrNot.Door.CanPullDoor
+// Function ReadyOrNot.door.CanPullDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanPullDoor final
+struct door_CanPullDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanPullDoor;
+DUMPER7_ASSERTS_door_CanPullDoor;
 
-// Function ReadyOrNot.Door.CanPushDoor
+// Function ReadyOrNot.door.CanPushDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanPushDoor final
+struct door_CanPushDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanPushDoor;
+DUMPER7_ASSERTS_door_CanPushDoor;
 
-// Function ReadyOrNot.Door.CanPushDoorWhileBroken
+// Function ReadyOrNot.door.CanPushDoorWhileBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_CanPushDoorWhileBroken final
+struct door_CanPushDoorWhileBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_CanPushDoorWhileBroken;
+DUMPER7_ASSERTS_door_CanPushDoorWhileBroken;
 
-// Function ReadyOrNot.Door.CanRamDoor
+// Function ReadyOrNot.door.CanRamDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_CanRamDoor final
+struct door_CanRamDoor final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanRamDoor;
+DUMPER7_ASSERTS_door_CanRamDoor;
 
-// Function ReadyOrNot.Door.CanSpawnTrap
+// Function ReadyOrNot.door.CanSpawnTrap
 // 0x0001 (0x0001 - 0x0000)
-struct Door_CanSpawnTrap final
+struct door_CanSpawnTrap final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_CanSpawnTrap;
+DUMPER7_ASSERTS_door_CanSpawnTrap;
 
-// Function ReadyOrNot.Door.CanTakeDamage
+// Function ReadyOrNot.door.CanTakeDamage
 // 0x0030 (0x0030 - 0x0000)
-struct Door_CanTakeDamage final
+struct door_CanTakeDamage final
 {
 public:
 	float                                         Damage;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28512,77 +28512,77 @@ public:
 	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_CanTakeDamage;
+DUMPER7_ASSERTS_door_CanTakeDamage;
 
-// Function ReadyOrNot.Door.DoesSuspectKnowTrapState
+// Function ReadyOrNot.door.DoesSuspectKnowTrapState
 // 0x0001 (0x0001 - 0x0000)
-struct Door_DoesSuspectKnowTrapState final
+struct door_DoesSuspectKnowTrapState final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_DoesSuspectKnowTrapState;
+DUMPER7_ASSERTS_door_DoesSuspectKnowTrapState;
 
-// Function ReadyOrNot.Door.DoesSWATKnowTrapState
+// Function ReadyOrNot.door.DoesSWATKnowTrapState
 // 0x0001 (0x0001 - 0x0000)
-struct Door_DoesSWATKnowTrapState final
+struct door_DoesSWATKnowTrapState final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_DoesSWATKnowTrapState;
+DUMPER7_ASSERTS_door_DoesSWATKnowTrapState;
 
-// Function ReadyOrNot.Door.FindStackUpAreaFromLocation
+// Function ReadyOrNot.door.FindStackUpAreaFromLocation
 // 0x0020 (0x0020 - 0x0000)
-struct Door_FindStackUpAreaFromLocation final
+struct door_FindStackUpAreaFromLocation final
 {
 public:
 	struct FVector                                InInteractionLocation;                             // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EStackupGenArea                               ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_FindStackUpAreaFromLocation;
+DUMPER7_ASSERTS_door_FindStackUpAreaFromLocation;
 
-// Function ReadyOrNot.Door.GetAttachedTrap
+// Function ReadyOrNot.door.GetAttachedTrap
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetAttachedTrap final
+struct door_GetAttachedTrap final
 {
 public:
 	class ATrapActorAttachedToDoor*               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetAttachedTrap;
+DUMPER7_ASSERTS_door_GetAttachedTrap;
 
-// Function ReadyOrNot.Door.GetAttachedWedge
+// Function ReadyOrNot.door.GetAttachedWedge
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetAttachedWedge final
+struct door_GetAttachedWedge final
 {
 public:
 	class ADoorJam*                               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetAttachedWedge;
+DUMPER7_ASSERTS_door_GetAttachedWedge;
 
-// Function ReadyOrNot.Door.GetBackThreatOwningRoom
+// Function ReadyOrNot.door.GetBackThreatOwningRoom
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetBackThreatOwningRoom final
+struct door_GetBackThreatOwningRoom final
 {
 public:
 	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetBackThreatOwningRoom;
+DUMPER7_ASSERTS_door_GetBackThreatOwningRoom;
 
-// Function ReadyOrNot.Door.GetBestDoorInteraction
+// Function ReadyOrNot.door.GetBestDoorInteraction
 // 0x0030 (0x0030 - 0x0000)
-struct Door_GetBestDoorInteraction final
+struct door_GetBestDoorInteraction final
 {
 public:
 	struct FVector                                Location;                                          // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0018(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetBestDoorInteraction;
+DUMPER7_ASSERTS_door_GetBestDoorInteraction;
 
-// Function ReadyOrNot.Door.GetBestDoorInteraction_FromLocation
+// Function ReadyOrNot.door.GetBestDoorInteraction_FromLocation
 // 0x0038 (0x0038 - 0x0000)
-struct Door_GetBestDoorInteraction_FromLocation final
+struct door_GetBestDoorInteraction_FromLocation final
 {
 public:
 	struct FVector                                InInteractionLocation;                             // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28590,11 +28590,11 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ReturnValue;                                       // 0x0020(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetBestDoorInteraction_FromLocation;
+DUMPER7_ASSERTS_door_GetBestDoorInteraction_FromLocation;
 
-// Function ReadyOrNot.Door.GetBestDoorInteraction_FromStackUpArea
+// Function ReadyOrNot.door.GetBestDoorInteraction_FromStackUpArea
 // 0x0020 (0x0020 - 0x0000)
-struct Door_GetBestDoorInteraction_FromStackUpArea final
+struct door_GetBestDoorInteraction_FromStackUpArea final
 {
 public:
 	EStackupGenArea                               InStackUpArea;                                     // 0x0000(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28602,111 +28602,111 @@ public:
 	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetBestDoorInteraction_FromStackUpArea;
+DUMPER7_ASSERTS_door_GetBestDoorInteraction_FromStackUpArea;
 
-// Function ReadyOrNot.Door.GetBestOneWayDoorInteraction
+// Function ReadyOrNot.door.GetBestOneWayDoorInteraction
 // 0x0030 (0x0030 - 0x0000)
-struct Door_GetBestOneWayDoorInteraction final
+struct door_GetBestOneWayDoorInteraction final
 {
 public:
 	struct FVector                                Location;                                          // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                ReturnValue;                                       // 0x0018(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetBestOneWayDoorInteraction;
+DUMPER7_ASSERTS_door_GetBestOneWayDoorInteraction;
 
-// Function ReadyOrNot.Door.GetDoorKillDistance
+// Function ReadyOrNot.door.GetDoorKillDistance
 // 0x0050 (0x0050 - 0x0000)
-struct Door_GetDoorKillDistance final
+struct door_GetDoorKillDistance final
 {
 public:
 	TMap<EDoorDamageType, float>                  ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetDoorKillDistance;
+DUMPER7_ASSERTS_door_GetDoorKillDistance;
 
-// Function ReadyOrNot.Door.GetDoorMidLocation
+// Function ReadyOrNot.door.GetDoorMidLocation
 // 0x0018 (0x0018 - 0x0000)
-struct Door_GetDoorMidLocation final
+struct door_GetDoorMidLocation final
 {
 public:
 	struct FVector                                ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetDoorMidLocation;
+DUMPER7_ASSERTS_door_GetDoorMidLocation;
 
-// Function ReadyOrNot.Door.GetDoorStunDistance
+// Function ReadyOrNot.door.GetDoorStunDistance
 // 0x0050 (0x0050 - 0x0000)
-struct Door_GetDoorStunDistance final
+struct door_GetDoorStunDistance final
 {
 public:
 	TMap<EDoorDamageType, float>                  ReturnValue;                                       // 0x0000(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetDoorStunDistance;
+DUMPER7_ASSERTS_door_GetDoorStunDistance;
 
-// Function ReadyOrNot.Door.GetFrontThreatOwningRoom
+// Function ReadyOrNot.door.GetFrontThreatOwningRoom
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetFrontThreatOwningRoom final
+struct door_GetFrontThreatOwningRoom final
 {
 public:
 	class FName                                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetFrontThreatOwningRoom;
+DUMPER7_ASSERTS_door_GetFrontThreatOwningRoom;
 
-// Function ReadyOrNot.Door.GetIncrementAngle
+// Function ReadyOrNot.door.GetIncrementAngle
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetIncrementAngle final
+struct door_GetIncrementAngle final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetIncrementAngle;
+DUMPER7_ASSERTS_door_GetIncrementAngle;
 
-// Function ReadyOrNot.Door.GetLastDoorUser
+// Function ReadyOrNot.door.GetLastDoorUser
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetLastDoorUser final
+struct door_GetLastDoorUser final
 {
 public:
 	class AReadyOrNotCharacter*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetLastDoorUser;
+DUMPER7_ASSERTS_door_GetLastDoorUser;
 
-// Function ReadyOrNot.Door.GetMaxOpenAmount
+// Function ReadyOrNot.door.GetMaxOpenAmount
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetMaxOpenAmount final
+struct door_GetMaxOpenAmount final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetMaxOpenAmount;
+DUMPER7_ASSERTS_door_GetMaxOpenAmount;
 
-// Function ReadyOrNot.Door.GetOpenAmount
+// Function ReadyOrNot.door.GetOpenAmount
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetOpenAmount final
+struct door_GetOpenAmount final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetOpenAmount;
+DUMPER7_ASSERTS_door_GetOpenAmount;
 
-// Function ReadyOrNot.Door.GetOpenAmountAsPercentage
+// Function ReadyOrNot.door.GetOpenAmountAsPercentage
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetOpenAmountAsPercentage final
+struct door_GetOpenAmountAsPercentage final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetOpenAmountAsPercentage;
+DUMPER7_ASSERTS_door_GetOpenAmountAsPercentage;
 
-// Function ReadyOrNot.Door.GetOpenThreshold
+// Function ReadyOrNot.door.GetOpenThreshold
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetOpenThreshold final
+struct door_GetOpenThreshold final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetOpenThreshold;
+DUMPER7_ASSERTS_door_GetOpenThreshold;
 
-// Function ReadyOrNot.Door.GetOppositeThreatOwningRoom
+// Function ReadyOrNot.door.GetOppositeThreatOwningRoom
 // 0x0014 (0x0014 - 0x0000)
-struct Door_GetOppositeThreatOwningRoom final
+struct door_GetOppositeThreatOwningRoom final
 {
 public:
 	class FName                                   RoomName;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28714,38 +28714,38 @@ public:
 	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_GetOppositeThreatOwningRoom;
+DUMPER7_ASSERTS_door_GetOppositeThreatOwningRoom;
 
-// Function ReadyOrNot.Door.GetOverrideLockChance
+// Function ReadyOrNot.door.GetOverrideLockChance
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetOverrideLockChance final
+struct door_GetOverrideLockChance final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetOverrideLockChance;
+DUMPER7_ASSERTS_door_GetOverrideLockChance;
 
-// Function ReadyOrNot.Door.GetPlacedC2
+// Function ReadyOrNot.door.GetPlacedC2
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetPlacedC2 final
+struct door_GetPlacedC2 final
 {
 public:
 	class APlacedC2Explosive*                     ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetPlacedC2;
+DUMPER7_ASSERTS_door_GetPlacedC2;
 
-// Function ReadyOrNot.Door.GetPseudoVelocity
+// Function ReadyOrNot.door.GetPseudoVelocity
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetPseudoVelocity final
+struct door_GetPseudoVelocity final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetPseudoVelocity;
+DUMPER7_ASSERTS_door_GetPseudoVelocity;
 
-// Function ReadyOrNot.Door.GetStackUpLocation
+// Function ReadyOrNot.door.GetStackUpLocation
 // 0x0020 (0x0020 - 0x0000)
-struct Door_GetStackUpLocation final
+struct door_GetStackUpLocation final
 {
 public:
 	EStackupGenArea                               StackUpArea;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28753,709 +28753,709 @@ public:
 	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetStackUpLocation;
+DUMPER7_ASSERTS_door_GetStackUpLocation;
 
-// Function ReadyOrNot.Door.GetStackupsForArea
+// Function ReadyOrNot.door.GetStackupsForArea
 // 0x0018 (0x0018 - 0x0000)
-struct Door_GetStackupsForArea final
+struct door_GetStackupsForArea final
 {
 public:
 	EStackupGenArea                               StackUpArea;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AStackUpActor*>                  ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetStackupsForArea;
+DUMPER7_ASSERTS_door_GetStackupsForArea;
 
-// Function ReadyOrNot.Door.GetStartingOpenAngle
+// Function ReadyOrNot.door.GetStartingOpenAngle
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetStartingOpenAngle final
+struct door_GetStartingOpenAngle final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetStartingOpenAngle;
+DUMPER7_ASSERTS_door_GetStartingOpenAngle;
 
-// Function ReadyOrNot.Door.GetSubDoor
+// Function ReadyOrNot.door.GetSubDoor
 // 0x0008 (0x0008 - 0x0000)
-struct Door_GetSubDoor final
+struct door_GetSubDoor final
 {
 public:
-	class ADoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetSubDoor;
+DUMPER7_ASSERTS_door_GetSubDoor;
 
-// Function ReadyOrNot.Door.GetSuspectKnowsLockState
+// Function ReadyOrNot.door.GetSuspectKnowsLockState
 // 0x0001 (0x0001 - 0x0000)
-struct Door_GetSuspectKnowsLockState final
+struct door_GetSuspectKnowsLockState final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetSuspectKnowsLockState;
+DUMPER7_ASSERTS_door_GetSuspectKnowsLockState;
 
-// Function ReadyOrNot.Door.GetSWATKnowsLockState
+// Function ReadyOrNot.door.GetSWATKnowsLockState
 // 0x0001 (0x0001 - 0x0000)
-struct Door_GetSWATKnowsLockState final
+struct door_GetSWATKnowsLockState final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetSWATKnowsLockState;
+DUMPER7_ASSERTS_door_GetSWATKnowsLockState;
 
-// Function ReadyOrNot.Door.GetTargetAngle
+// Function ReadyOrNot.door.GetTargetAngle
 // 0x0004 (0x0004 - 0x0000)
-struct Door_GetTargetAngle final
+struct door_GetTargetAngle final
 {
 public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetTargetAngle;
+DUMPER7_ASSERTS_door_GetTargetAngle;
 
-// Function ReadyOrNot.Door.GetWedgeLocation
+// Function ReadyOrNot.door.GetWedgeLocation
 // 0x0018 (0x0018 - 0x0000)
-struct Door_GetWedgeLocation final
+struct door_GetWedgeLocation final
 {
 public:
 	struct FVector                                ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_GetWedgeLocation;
+DUMPER7_ASSERTS_door_GetWedgeLocation;
 
-// Function ReadyOrNot.Door.HasEverBeenOpened
+// Function ReadyOrNot.door.HasEverBeenOpened
 // 0x0001 (0x0001 - 0x0000)
-struct Door_HasEverBeenOpened final
+struct door_HasEverBeenOpened final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_HasEverBeenOpened;
+DUMPER7_ASSERTS_door_HasEverBeenOpened;
 
-// Function ReadyOrNot.Door.HasTrapAndSuspectKnowsTrap
+// Function ReadyOrNot.door.HasTrapAndSuspectKnowsTrap
 // 0x0001 (0x0001 - 0x0000)
-struct Door_HasTrapAndSuspectKnowsTrap final
+struct door_HasTrapAndSuspectKnowsTrap final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_HasTrapAndSuspectKnowsTrap;
+DUMPER7_ASSERTS_door_HasTrapAndSuspectKnowsTrap;
 
-// Function ReadyOrNot.Door.HasTrapAndSWATKnowsTrap
+// Function ReadyOrNot.door.HasTrapAndSWATKnowsTrap
 // 0x0001 (0x0001 - 0x0000)
-struct Door_HasTrapAndSWATKnowsTrap final
+struct door_HasTrapAndSWATKnowsTrap final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_HasTrapAndSWATKnowsTrap;
+DUMPER7_ASSERTS_door_HasTrapAndSWATKnowsTrap;
 
-// Function ReadyOrNot.Door.IsActorBehindDoor_Relative
+// Function ReadyOrNot.door.IsActorBehindDoor_Relative
 // 0x0010 (0x0010 - 0x0000)
-struct Door_IsActorBehindDoor_Relative final
+struct door_IsActorBehindDoor_Relative final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsActorBehindDoor_Relative;
+DUMPER7_ASSERTS_door_IsActorBehindDoor_Relative;
 
-// Function ReadyOrNot.Door.IsActorInFrontOfDoor
+// Function ReadyOrNot.door.IsActorInFrontOfDoor
 // 0x0010 (0x0010 - 0x0000)
-struct Door_IsActorInFrontOfDoor final
+struct door_IsActorInFrontOfDoor final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsActorInFrontOfDoor;
+DUMPER7_ASSERTS_door_IsActorInFrontOfDoor;
 
-// Function ReadyOrNot.Door.IsActorInFrontOfDoorway
+// Function ReadyOrNot.door.IsActorInFrontOfDoorway
 // 0x0010 (0x0010 - 0x0000)
-struct Door_IsActorInFrontOfDoorway final
+struct door_IsActorInFrontOfDoorway final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsActorInFrontOfDoorway;
+DUMPER7_ASSERTS_door_IsActorInFrontOfDoorway;
 
-// Function ReadyOrNot.Door.IsActorRightOfDoorway
+// Function ReadyOrNot.door.IsActorRightOfDoorway
 // 0x0010 (0x0010 - 0x0000)
-struct Door_IsActorRightOfDoorway final
+struct door_IsActorRightOfDoorway final
 {
 public:
 	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsActorRightOfDoorway;
+DUMPER7_ASSERTS_door_IsActorRightOfDoorway;
 
-// Function ReadyOrNot.Door.IsActorSameSideAsTrap
+// Function ReadyOrNot.door.IsActorSameSideAsTrap
 // 0x0010 (0x0010 - 0x0000)
-struct Door_IsActorSameSideAsTrap final
+struct door_IsActorSameSideAsTrap final
 {
 public:
 	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsActorSameSideAsTrap;
+DUMPER7_ASSERTS_door_IsActorSameSideAsTrap;
 
-// Function ReadyOrNot.Door.IsAlwaysLocked
+// Function ReadyOrNot.door.IsAlwaysLocked
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsAlwaysLocked final
+struct door_IsAlwaysLocked final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsAlwaysLocked;
+DUMPER7_ASSERTS_door_IsAlwaysLocked;
 
-// Function ReadyOrNot.Door.IsAnyAIClosing
+// Function ReadyOrNot.door.IsAnyAIClosing
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsAnyAIClosing final
+struct door_IsAnyAIClosing final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsAnyAIClosing;
+DUMPER7_ASSERTS_door_IsAnyAIClosing;
 
-// Function ReadyOrNot.Door.IsAnyAIOpening
+// Function ReadyOrNot.door.IsAnyAIOpening
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsAnyAIOpening final
+struct door_IsAnyAIOpening final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsAnyAIOpening;
+DUMPER7_ASSERTS_door_IsAnyAIOpening;
 
-// Function ReadyOrNot.Door.IsAnyInteractionPlaying
+// Function ReadyOrNot.door.IsAnyInteractionPlaying
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsAnyInteractionPlaying final
+struct door_IsAnyInteractionPlaying final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsAnyInteractionPlaying;
+DUMPER7_ASSERTS_door_IsAnyInteractionPlaying;
 
-// Function ReadyOrNot.Door.IsAttachedToRoot
+// Function ReadyOrNot.door.IsAttachedToRoot
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsAttachedToRoot final
+struct door_IsAttachedToRoot final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsAttachedToRoot;
+DUMPER7_ASSERTS_door_IsAttachedToRoot;
 
-// Function ReadyOrNot.Door.IsC2Placed
+// Function ReadyOrNot.door.IsC2Placed
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsC2Placed final
+struct door_IsC2Placed final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsC2Placed;
+DUMPER7_ASSERTS_door_IsC2Placed;
 
-// Function ReadyOrNot.Door.IsClosed
+// Function ReadyOrNot.door.IsClosed
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsClosed final
+struct door_IsClosed final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsClosed;
+DUMPER7_ASSERTS_door_IsClosed;
 
-// Function ReadyOrNot.Door.IsClosing
+// Function ReadyOrNot.door.IsClosing
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsClosing final
+struct door_IsClosing final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsClosing;
+DUMPER7_ASSERTS_door_IsClosing;
 
-// Function ReadyOrNot.Door.IsDestructible
+// Function ReadyOrNot.door.IsDestructible
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsDestructible final
+struct door_IsDestructible final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsDestructible;
+DUMPER7_ASSERTS_door_IsDestructible;
 
-// Function ReadyOrNot.Door.IsDoorBroken
+// Function ReadyOrNot.door.IsDoorBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsDoorBroken final
+struct door_IsDoorBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsDoorBroken;
+DUMPER7_ASSERTS_door_IsDoorBroken;
 
-// Function ReadyOrNot.Door.IsDoorChunkDestroyed
+// Function ReadyOrNot.door.IsDoorChunkDestroyed
 // 0x0010 (0x0010 - 0x0000)
-struct Door_IsDoorChunkDestroyed final
+struct door_IsDoorChunkDestroyed final
 {
 public:
 	class UDestructibleDoorChunkComponent*        InChunkComponent;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsDoorChunkDestroyed;
+DUMPER7_ASSERTS_door_IsDoorChunkDestroyed;
 
-// Function ReadyOrNot.Door.IsDoorInteractionPlaying
+// Function ReadyOrNot.door.IsDoorInteractionPlaying
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsDoorInteractionPlaying final
+struct door_IsDoorInteractionPlaying final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsDoorInteractionPlaying;
+DUMPER7_ASSERTS_door_IsDoorInteractionPlaying;
 
-// Function ReadyOrNot.Door.IsDoorwayOnly
+// Function ReadyOrNot.door.IsDoorwayOnly
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsDoorwayOnly final
+struct door_IsDoorwayOnly final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsDoorwayOnly;
+DUMPER7_ASSERTS_door_IsDoorwayOnly;
 
-// Function ReadyOrNot.Door.IsElectronicDoor
+// Function ReadyOrNot.door.IsElectronicDoor
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsElectronicDoor final
+struct door_IsElectronicDoor final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsElectronicDoor;
+DUMPER7_ASSERTS_door_IsElectronicDoor;
 
-// Function ReadyOrNot.Door.IsFullyOpen
+// Function ReadyOrNot.door.IsFullyOpen
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsFullyOpen final
+struct door_IsFullyOpen final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsFullyOpen;
+DUMPER7_ASSERTS_door_IsFullyOpen;
 
-// Function ReadyOrNot.Door.IsFullyOpen_Backward
+// Function ReadyOrNot.door.IsFullyOpen_Backward
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsFullyOpen_Backward final
+struct door_IsFullyOpen_Backward final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsFullyOpen_Backward;
+DUMPER7_ASSERTS_door_IsFullyOpen_Backward;
 
-// Function ReadyOrNot.Door.IsFullyOpen_Forward
+// Function ReadyOrNot.door.IsFullyOpen_Forward
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsFullyOpen_Forward final
+struct door_IsFullyOpen_Forward final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsFullyOpen_Forward;
+DUMPER7_ASSERTS_door_IsFullyOpen_Forward;
 
-// Function ReadyOrNot.Door.IsHalfwayOpen
+// Function ReadyOrNot.door.IsHalfwayOpen
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsHalfwayOpen final
+struct door_IsHalfwayOpen final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsHalfwayOpen;
+DUMPER7_ASSERTS_door_IsHalfwayOpen;
 
-// Function ReadyOrNot.Door.IsHandleBroken
+// Function ReadyOrNot.door.IsHandleBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsHandleBroken final
+struct door_IsHandleBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsHandleBroken;
+DUMPER7_ASSERTS_door_IsHandleBroken;
 
-// Function ReadyOrNot.Door.IsJammed
+// Function ReadyOrNot.door.IsJammed
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsJammed final
+struct door_IsJammed final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsJammed;
+DUMPER7_ASSERTS_door_IsJammed;
 
-// Function ReadyOrNot.Door.IsLocationSameSideAsTrap
+// Function ReadyOrNot.door.IsLocationSameSideAsTrap
 // 0x0020 (0x0020 - 0x0000)
-struct Door_IsLocationSameSideAsTrap final
+struct door_IsLocationSameSideAsTrap final
 {
 public:
 	struct FVector                                InLocation;                                        // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsLocationSameSideAsTrap;
+DUMPER7_ASSERTS_door_IsLocationSameSideAsTrap;
 
-// Function ReadyOrNot.Door.IsLockable
+// Function ReadyOrNot.door.IsLockable
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsLockable final
+struct door_IsLockable final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsLockable;
+DUMPER7_ASSERTS_door_IsLockable;
 
-// Function ReadyOrNot.Door.IsLockChanceOverridden
+// Function ReadyOrNot.door.IsLockChanceOverridden
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsLockChanceOverridden final
+struct door_IsLockChanceOverridden final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsLockChanceOverridden;
+DUMPER7_ASSERTS_door_IsLockChanceOverridden;
 
-// Function ReadyOrNot.Door.IsLocked
+// Function ReadyOrNot.door.IsLocked
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsLocked final
+struct door_IsLocked final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsLocked;
+DUMPER7_ASSERTS_door_IsLocked;
 
-// Function ReadyOrNot.Door.IsMainSubdoor
+// Function ReadyOrNot.door.IsMainSubdoor
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsMainSubdoor final
+struct door_IsMainSubdoor final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsMainSubdoor;
+DUMPER7_ASSERTS_door_IsMainSubdoor;
 
-// Function ReadyOrNot.Door.IsMiddleChunkBroken
+// Function ReadyOrNot.door.IsMiddleChunkBroken
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsMiddleChunkBroken final
+struct door_IsMiddleChunkBroken final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsMiddleChunkBroken;
+DUMPER7_ASSERTS_door_IsMiddleChunkBroken;
 
-// Function ReadyOrNot.Door.IsMirrorBlocked
+// Function ReadyOrNot.door.IsMirrorBlocked
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsMirrorBlocked final
+struct door_IsMirrorBlocked final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsMirrorBlocked;
+DUMPER7_ASSERTS_door_IsMirrorBlocked;
 
-// Function ReadyOrNot.Door.IsNonDoorInteractionPlaying
+// Function ReadyOrNot.door.IsNonDoorInteractionPlaying
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsNonDoorInteractionPlaying final
+struct door_IsNonDoorInteractionPlaying final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsNonDoorInteractionPlaying;
+DUMPER7_ASSERTS_door_IsNonDoorInteractionPlaying;
 
-// Function ReadyOrNot.Door.IsNonMainSubdoor
+// Function ReadyOrNot.door.IsNonMainSubdoor
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsNonMainSubdoor final
+struct door_IsNonMainSubdoor final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsNonMainSubdoor;
+DUMPER7_ASSERTS_door_IsNonMainSubdoor;
 
-// Function ReadyOrNot.Door.IsOneWayAndOpensTowardsPoint
+// Function ReadyOrNot.door.IsOneWayAndOpensTowardsPoint
 // 0x0020 (0x0020 - 0x0000)
-struct Door_IsOneWayAndOpensTowardsPoint final
+struct door_IsOneWayAndOpensTowardsPoint final
 {
 public:
 	struct FVector                                Vector;                                            // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOneWayAndOpensTowardsPoint;
+DUMPER7_ASSERTS_door_IsOneWayAndOpensTowardsPoint;
 
-// Function ReadyOrNot.Door.IsOpen
+// Function ReadyOrNot.door.IsOpen
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOpen final
+struct door_IsOpen final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOpen;
+DUMPER7_ASSERTS_door_IsOpen;
 
-// Function ReadyOrNot.Door.IsOpen_Backward
+// Function ReadyOrNot.door.IsOpen_Backward
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOpen_Backward final
+struct door_IsOpen_Backward final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOpen_Backward;
+DUMPER7_ASSERTS_door_IsOpen_Backward;
 
-// Function ReadyOrNot.Door.IsOpen_Forward
+// Function ReadyOrNot.door.IsOpen_Forward
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOpen_Forward final
+struct door_IsOpen_Forward final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOpen_Forward;
+DUMPER7_ASSERTS_door_IsOpen_Forward;
 
-// Function ReadyOrNot.Door.IsOpenAtOrBeyond
+// Function ReadyOrNot.door.IsOpenAtOrBeyond
 // 0x0008 (0x0008 - 0x0000)
-struct Door_IsOpenAtOrBeyond final
+struct door_IsOpenAtOrBeyond final
 {
 public:
 	float                                         Percentage;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOpenAtOrBeyond;
+DUMPER7_ASSERTS_door_IsOpenAtOrBeyond;
 
-// Function ReadyOrNot.Door.IsOpenAtOrBeyond_Angle
+// Function ReadyOrNot.door.IsOpenAtOrBeyond_Angle
 // 0x0008 (0x0008 - 0x0000)
-struct Door_IsOpenAtOrBeyond_Angle final
+struct door_IsOpenAtOrBeyond_Angle final
 {
 public:
 	float                                         Angle;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOpenAtOrBeyond_Angle;
+DUMPER7_ASSERTS_door_IsOpenAtOrBeyond_Angle;
 
-// Function ReadyOrNot.Door.IsOpenBeyond
+// Function ReadyOrNot.door.IsOpenBeyond
 // 0x0008 (0x0008 - 0x0000)
-struct Door_IsOpenBeyond final
+struct door_IsOpenBeyond final
 {
 public:
 	float                                         Percentage;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOpenBeyond;
+DUMPER7_ASSERTS_door_IsOpenBeyond;
 
-// Function ReadyOrNot.Door.IsOpenBeyond_Angle
+// Function ReadyOrNot.door.IsOpenBeyond_Angle
 // 0x0008 (0x0008 - 0x0000)
-struct Door_IsOpenBeyond_Angle final
+struct door_IsOpenBeyond_Angle final
 {
 public:
 	float                                         Angle;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOpenBeyond_Angle;
+DUMPER7_ASSERTS_door_IsOpenBeyond_Angle;
 
-// Function ReadyOrNot.Door.IsOpenBeyondCloseThreshold
+// Function ReadyOrNot.door.IsOpenBeyondCloseThreshold
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOpenBeyondCloseThreshold final
+struct door_IsOpenBeyondCloseThreshold final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOpenBeyondCloseThreshold;
+DUMPER7_ASSERTS_door_IsOpenBeyondCloseThreshold;
 
-// Function ReadyOrNot.Door.IsOpenBeyondIncrementThreshold
+// Function ReadyOrNot.door.IsOpenBeyondIncrementThreshold
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOpenBeyondIncrementThreshold final
+struct door_IsOpenBeyondIncrementThreshold final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOpenBeyondIncrementThreshold;
+DUMPER7_ASSERTS_door_IsOpenBeyondIncrementThreshold;
 
-// Function ReadyOrNot.Door.IsOpenBy
+// Function ReadyOrNot.door.IsOpenBy
 // 0x0008 (0x0008 - 0x0000)
-struct Door_IsOpenBy final
+struct door_IsOpenBy final
 {
 public:
 	float                                         Percentage;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOpenBy;
+DUMPER7_ASSERTS_door_IsOpenBy;
 
-// Function ReadyOrNot.Door.IsOpenBy_Angle
+// Function ReadyOrNot.door.IsOpenBy_Angle
 // 0x0008 (0x0008 - 0x0000)
-struct Door_IsOpenBy_Angle final
+struct door_IsOpenBy_Angle final
 {
 public:
 	float                                         Angle;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsOpenBy_Angle;
+DUMPER7_ASSERTS_door_IsOpenBy_Angle;
 
-// Function ReadyOrNot.Door.IsOpening
+// Function ReadyOrNot.door.IsOpening
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOpening final
+struct door_IsOpening final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOpening;
+DUMPER7_ASSERTS_door_IsOpening;
 
-// Function ReadyOrNot.Door.IsOutlineDisabled
+// Function ReadyOrNot.door.IsOutlineDisabled
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOutlineDisabled final
+struct door_IsOutlineDisabled final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOutlineDisabled;
+DUMPER7_ASSERTS_door_IsOutlineDisabled;
 
-// Function ReadyOrNot.Door.IsOutlineEnabled
+// Function ReadyOrNot.door.IsOutlineEnabled
 // 0x0002 (0x0002 - 0x0000)
-struct Door_IsOutlineEnabled final
+struct door_IsOutlineEnabled final
 {
 public:
 	EActorOutlineType                             OutlineType;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOutlineEnabled;
+DUMPER7_ASSERTS_door_IsOutlineEnabled;
 
-// Function ReadyOrNot.Door.IsOverridingLockChance
+// Function ReadyOrNot.door.IsOverridingLockChance
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsOverridingLockChance final
+struct door_IsOverridingLockChance final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsOverridingLockChance;
+DUMPER7_ASSERTS_door_IsOverridingLockChance;
 
-// Function ReadyOrNot.Door.IsPendingSubDoorKick
+// Function ReadyOrNot.door.IsPendingSubDoorKick
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsPendingSubDoorKick final
+struct door_IsPendingSubDoorKick final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsPendingSubDoorKick;
+DUMPER7_ASSERTS_door_IsPendingSubDoorKick;
 
-// Function ReadyOrNot.Door.IsPointInFrontOfDoor
+// Function ReadyOrNot.door.IsPointInFrontOfDoor
 // 0x0020 (0x0020 - 0x0000)
-struct Door_IsPointInFrontOfDoor final
+struct door_IsPointInFrontOfDoor final
 {
 public:
 	struct FVector                                Vector;                                            // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsPointInFrontOfDoor;
+DUMPER7_ASSERTS_door_IsPointInFrontOfDoor;
 
-// Function ReadyOrNot.Door.IsPointRightOfDoorway
+// Function ReadyOrNot.door.IsPointRightOfDoorway
 // 0x0020 (0x0020 - 0x0000)
-struct Door_IsPointRightOfDoorway final
+struct door_IsPointRightOfDoorway final
 {
 public:
 	struct FVector                                Vector;                                            // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsPointRightOfDoorway;
+DUMPER7_ASSERTS_door_IsPointRightOfDoorway;
 
-// Function ReadyOrNot.Door.IsStackUpDisabled
+// Function ReadyOrNot.door.IsStackUpDisabled
 // 0x0020 (0x0020 - 0x0000)
-struct Door_IsStackUpDisabled final
+struct door_IsStackUpDisabled final
 {
 public:
 	struct FVector                                CommandLocation;                                   // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsStackUpDisabled;
+DUMPER7_ASSERTS_door_IsStackUpDisabled;
 
-// Function ReadyOrNot.Door.IsTooFarForKick
+// Function ReadyOrNot.door.IsTooFarForKick
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsTooFarForKick final
+struct door_IsTooFarForKick final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsTooFarForKick;
+DUMPER7_ASSERTS_door_IsTooFarForKick;
 
-// Function ReadyOrNot.Door.IsTrapLive
+// Function ReadyOrNot.door.IsTrapLive
 // 0x0001 (0x0001 - 0x0000)
-struct Door_IsTrapLive final
+struct door_IsTrapLive final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_IsTrapLive;
+DUMPER7_ASSERTS_door_IsTrapLive;
 
-// Function ReadyOrNot.Door.IsValidThreatOwningRoom
+// Function ReadyOrNot.door.IsValidThreatOwningRoom
 // 0x000C (0x000C - 0x0000)
-struct Door_IsValidThreatOwningRoom final
+struct door_IsValidThreatOwningRoom final
 {
 public:
 	class FName                                   RoomName;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_IsValidThreatOwningRoom;
+DUMPER7_ASSERTS_door_IsValidThreatOwningRoom;
 
-// Function ReadyOrNot.Door.MainSubDoor_CanShowOpenDoorPrompt
+// Function ReadyOrNot.door.MainSubDoor_CanShowOpenDoorPrompt
 // 0x0001 (0x0001 - 0x0000)
-struct Door_MainSubDoor_CanShowOpenDoorPrompt final
+struct door_MainSubDoor_CanShowOpenDoorPrompt final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_MainSubDoor_CanShowOpenDoorPrompt;
+DUMPER7_ASSERTS_door_MainSubDoor_CanShowOpenDoorPrompt;
 
-// Function ReadyOrNot.Door.NonMainSubDoor_CanShowOpenDoorPrompt
+// Function ReadyOrNot.door.NonMainSubDoor_CanShowOpenDoorPrompt
 // 0x0001 (0x0001 - 0x0000)
-struct Door_NonMainSubDoor_CanShowOpenDoorPrompt final
+struct door_NonMainSubDoor_CanShowOpenDoorPrompt final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_NonMainSubDoor_CanShowOpenDoorPrompt;
+DUMPER7_ASSERTS_door_NonMainSubDoor_CanShowOpenDoorPrompt;
 
-// Function ReadyOrNot.Door.SubDoor_CanCloseDoors
+// Function ReadyOrNot.door.SubDoor_CanCloseDoors
 // 0x0010 (0x0010 - 0x0000)
-struct Door_SubDoor_CanCloseDoors final
+struct door_SubDoor_CanCloseDoors final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_SubDoor_CanCloseDoors;
+DUMPER7_ASSERTS_door_SubDoor_CanCloseDoors;
 
-// Function ReadyOrNot.Door.SubDoor_CanOpenDoors
+// Function ReadyOrNot.door.SubDoor_CanOpenDoors
 // 0x0010 (0x0010 - 0x0000)
-struct Door_SubDoor_CanOpenDoors final
+struct door_SubDoor_CanOpenDoors final
 {
 public:
 	class AReadyOrNotCharacter*                   PlayerCharacter;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_Door_SubDoor_CanOpenDoors;
+DUMPER7_ASSERTS_door_SubDoor_CanOpenDoors;
 
-// Function ReadyOrNot.Door.TeamKnowsDoorLockState
+// Function ReadyOrNot.door.TeamKnowsDoorLockState
 // 0x0002 (0x0002 - 0x0000)
-struct Door_TeamKnowsDoorLockState final
+struct door_TeamKnowsDoorLockState final
 {
 public:
 	bool                                          bSuspectTeam;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_TeamKnowsDoorLockState;
+DUMPER7_ASSERTS_door_TeamKnowsDoorLockState;
 
-// Function ReadyOrNot.Door.TeamKnowsDoorTrapState
+// Function ReadyOrNot.door.TeamKnowsDoorTrapState
 // 0x0002 (0x0002 - 0x0000)
-struct Door_TeamKnowsDoorTrapState final
+struct door_TeamKnowsDoorTrapState final
 {
 public:
 	bool                                          bSuspectTeam;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Door_TeamKnowsDoorTrapState;
+DUMPER7_ASSERTS_door_TeamKnowsDoorTrapState;
 
 // Function ReadyOrNot.HighgroundVolume.OnOverlapBegin
 // 0x0108 (0x0108 - 0x0000)
@@ -29619,7 +29619,7 @@ DUMPER7_ASSERTS_CustomDoorBreachActivity_TickBreachDoor;
 struct DoorJam_JamDoor final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DoorJam_JamDoor;
 
@@ -29628,7 +29628,7 @@ DUMPER7_ASSERTS_DoorJam_JamDoor;
 struct DoorJam_Server_FinishDoorjamPlacement final
 {
 public:
-	class ADoor*                                  PendingDoor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  PendingDoor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DoorJam_Server_FinishDoorjamPlacement;
 
@@ -29637,7 +29637,7 @@ DUMPER7_ASSERTS_DoorJam_Server_FinishDoorjamPlacement;
 struct DoorJam_Server_StartDoorjamPlacement final
 {
 public:
-	class ADoor*                                  PendingDoor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  PendingDoor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DoorJam_Server_StartDoorjamPlacement;
 
@@ -29646,7 +29646,7 @@ DUMPER7_ASSERTS_DoorJam_Server_StartDoorjamPlacement;
 struct DoorRam_Server_StrikeDoor final
 {
 public:
-	class ADoor*                                  TargetDoor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  TargetDoor;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_DoorRam_Server_StrikeDoor;
 
@@ -30233,8 +30233,8 @@ DUMPER7_ASSERTS_FirefightGM_GetNumberOfActivePlayersOnTeam;
 struct FleeingCombatMove_FilterDoorsForFlee final
 {
 public:
-	TArray<class ADoor*>                          Doors;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          FilteredDoors;                                     // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          Doors;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          FilteredDoors;                                     // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FleeingCombatMove_FilterDoorsForFlee;
 
@@ -30243,7 +30243,7 @@ DUMPER7_ASSERTS_FleeingCombatMove_FilterDoorsForFlee;
 struct FleeingCombatMove_IsDoorValidForFlee final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -31632,7 +31632,7 @@ DUMPER7_ASSERTS_ScopedWeaponAttachment_GetMinimumZoomLevel;
 struct InteractWithDoorObjective_OnDoorKicked final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class AReadyOrNotCharacter*                   InstigatorCharacter;                               // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSuccess;                                          // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -32355,7 +32355,7 @@ DUMPER7_ASSERTS_KickDoorAction_OnBreachFinished;
 struct KickDoorAction_GetCurrentTargetDoor final
 {
 public:
-	class ADoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KickDoorAction_GetCurrentTargetDoor;
 
@@ -32364,7 +32364,7 @@ DUMPER7_ASSERTS_KickDoorAction_GetCurrentTargetDoor;
 struct KickDoorAction_GetTargetDoor final
 {
 public:
-	class ADoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KickDoorAction_GetTargetDoor;
 
@@ -35576,32 +35576,32 @@ public:
 };
 DUMPER7_ASSERTS_OptionsButtonWithStatus_SetWidgetStatus;
 
-// Function ReadyOrNot.Optiwand.Server_NotifyMirroring
+// Function ReadyOrNot.optiwand.Server_NotifyMirroring
 // 0x0001 (0x0001 - 0x0000)
-struct Optiwand_Server_NotifyMirroring final
+struct optiwand_Server_NotifyMirroring final
 {
 public:
 	bool                                          bIsMirroring;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Optiwand_Server_NotifyMirroring;
+DUMPER7_ASSERTS_optiwand_Server_NotifyMirroring;
 
-// Function ReadyOrNot.Optiwand.GetViewMode
+// Function ReadyOrNot.optiwand.GetViewMode
 // 0x0001 (0x0001 - 0x0000)
-struct Optiwand_GetViewMode final
+struct optiwand_GetViewMode final
 {
 public:
 	EOptiwandViewMode                             ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Optiwand_GetViewMode;
+DUMPER7_ASSERTS_optiwand_GetViewMode;
 
-// Function ReadyOrNot.Optiwand.IsCameraBlocked
+// Function ReadyOrNot.optiwand.IsCameraBlocked
 // 0x0001 (0x0001 - 0x0000)
-struct Optiwand_IsCameraBlocked final
+struct optiwand_IsCameraBlocked final
 {
 public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_Optiwand_IsCameraBlocked;
+DUMPER7_ASSERTS_optiwand_IsCameraBlocked;
 
 // Function ReadyOrNot.Overview_V2.SavePresets
 // 0x02F0 (0x02F0 - 0x0000)
@@ -44266,7 +44266,7 @@ public:
 	struct FVector                                Location;                                          // 0x0000(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETeamType                                     FilterTeam;                                        // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  StackUpDoor;                                       // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  StackUpDoor;                                       // 0x0020(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAscendingOrder;                                   // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ASWATCharacter*>                 ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
@@ -44292,7 +44292,7 @@ DUMPER7_ASSERTS_SWATManager_GetSWATSortedByDistanceToLocationV2;
 struct SWATManager_GiveBreachAndClearCommand final
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EDoorBreachType                               DoorBreachType;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ETeamType                                     TeamType;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -44632,7 +44632,7 @@ struct SWATManager_OnSwatFinishedRoomSearch final
 {
 public:
 	class USearchAndSecureActivity*               SearchAndSecureActivity;                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  BreachedDoor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  BreachedDoor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SWATManager_OnSwatFinishedRoomSearch;
 

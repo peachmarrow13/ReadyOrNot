@@ -30,9 +30,9 @@ public:
 	void ReceivePossessed(class AController* NewController);
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_DeadSpectator(int32 EntryPoint);
-	void CreateHUD();
 	void Client_SpecNextPlayer();
 	void Client_Remove_HUID();
+	void CreateHUD();
 
 public:
 	static class UClass* StaticClass()

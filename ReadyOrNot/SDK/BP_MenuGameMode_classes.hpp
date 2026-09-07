@@ -35,9 +35,9 @@ public:
 	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ReceiveBeginPlay();
 	void OnMessageClicked();
-	void ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen);
 	class APawn* SpawnDefaultPawnFor(class AController* NewPlayer, class AActor* StartSpot);
 	void FindSpawnPoint(const class FString& Tag, struct FTransform* SpawnPoint);
+	void ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen);
 	void ExecuteUbergraph_BP_MenuGameMode(int32 EntryPoint);
 	void CreateRestartWidget();
 	class AActor* ChoosePlayerStart(class AController* Player);

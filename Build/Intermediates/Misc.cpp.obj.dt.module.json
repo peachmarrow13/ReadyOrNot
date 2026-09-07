@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Misc.obj",
+            "outputs": [
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Misc.cpp.obj.dt.module.json",
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Misc.cpp.obj.dt.d.json",
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ReadyOrNot.pch"
+            ],
+            "requires": []
+        }
+    ]
+}

@@ -553,7 +553,7 @@ public:
 	void OnCharacterKilled(class AReadyOrNotCharacter* Character, class AReadyOrNotCharacter* KilledBy);
 	void OnCharacterMovementUpdated(float DeltaSeconds, const struct FVector& OldLocation, const struct FVector& OldVelocity);
 	void OnChemlightThrown(class APlayerCharacter* DelegatePlayerCharacter);
-	void OnDoorKicked(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess);
+	void OnDoorKicked(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess);
 	void OnEvidenceCollected(class AActor* Evidence);
 	void OnExfiltrateMission();
 	void OnInteract(class UInteractableComponent* InteractableComponent);
@@ -2175,7 +2175,7 @@ public:
 	TArray<class AReadyOrNotCharacter*>           RedTeamPlayers;                                    // 0x05A8(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class AReadyOrNotCharacter*>           BlueTeamPlayers;                                   // 0x05B8(0x0010)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class AThrownItem*>                    AllThrownItems;                                    // 0x05C8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          AllDoors;                                          // 0x05D8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          AllDoors;                                          // 0x05D8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class AReadyOrNotCharacter*>           AllReadyOrNotCharacters;                           // 0x05E8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class APlayerCharacter*>               AllPlayerCharacters;                               // 0x05F8(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class ACyberneticCharacter*>           AllAICharacters;                                   // 0x0608(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPublic)
@@ -4018,7 +4018,7 @@ DUMPER7_ASSERTS_UBaseCombatMoveActivity;
 class URepositionCombatMove final : public UBaseCombatMoveActivity
 {
 public:
-	class ADoor*                                  TheDoor;                                           // 0x0258(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  TheDoor;                                           // 0x0258(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -4892,7 +4892,7 @@ DUMPER7_ASSERTS_ATrapActor;
 class ATrapActorAttachedToDoor : public ATrapActor
 {
 public:
-	class ADoor*                                  AttachedToDoor;                                    // 0x0378(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  AttachedToDoor;                                    // 0x0378(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, DisableEditOnTemplate, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         WireYPosition;                                     // 0x0380(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_384[0xC];                                      // 0x0384(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             CableTransform;                                    // 0x0390(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -5902,7 +5902,7 @@ public:
 	void EnterStackupStage();
 	void ExitStackupStage();
 	class ACyberneticCharacter* GetLeader();
-	class ADoor* GetTargetDoor();
+	class Adoor* GetTargetDoor();
 	class FName GetTargetRoomName();
 	void GetValidBreachItemMethods(TMap<EDoorBreachType, struct FCyberneticCharacterArrayContainer>* OutBreachTypes);
 	bool IsClearFinished();
@@ -6597,7 +6597,7 @@ public:
 	class UMoveToExitActivity*                    MoveToExitActivity;                                // 0x0A28(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UTargetNextCivilianActivity*            TargetNextCivilianActivity;                        // 0x0A30(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UDisarmBombActivity*                    DisarmBombActivity;                                // 0x0A38(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  LastHeardDoorKick;                                 // 0x0A40(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  LastHeardDoorKick;                                 // 0x0A40(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A48[0x8];                                      // 0x0A48(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bEnableDebugFocalPointUpdate;                      // 0x0A50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_A51[0x2F];                                     // 0x0A51(0x002F)(Fixing Size After Last Property [ Dumper-7 ])
@@ -6618,7 +6618,7 @@ public:
 	class FString GetActivityQueueAsString();
 	class AReadyOrNotCharacter* GetTrackedTarget();
 	void OnAIFinishSpawning();
-	void OnDoorExploded(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter);
+	void OnDoorExploded(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter);
 	void OnKilledOrIncapacitated(class AReadyOrNotCharacter* InstigatorCharacter, class AReadyOrNotCharacter* KilledCharacter);
 	void OnKnownEnemyIncapacitated(class AReadyOrNotCharacter* IncapacitatedCharacter, class AReadyOrNotCharacter* InstigatorCharacter);
 	void OnKnownEnemyIncapacitated_Blueprint(class AReadyOrNotCharacter* IncapacitatedCharacter);
@@ -6653,7 +6653,7 @@ public:
 	void UpdateCachedConfigValues();
 
 	bool DoesCharacterMatchTargetType(class AReadyOrNotCharacter* InCharacter, int32 TargetTypeMask) const;
-	bool DoesPathGoThroughDoor(class ADoor* Door) const;
+	bool DoesPathGoThroughDoor(class Adoor* door) const;
 	class UBaseActivity* GetActivity(TSubclassOf<class UBaseActivity> ActivityType) const;
 	int32 GetActivityQueueCount() const;
 	class UMoveToActivity* GetAvoidanceMoveToActivity() const;
@@ -7653,7 +7653,7 @@ class UTargetingComponent final : public UActorComponent
 {
 public:
 	struct FVector                                ThreatTrackingIgnoredDirection;                    // 0x00A8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          AllowedTrackingDoors;                              // 0x00C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          AllowedTrackingDoors;                              // 0x00C0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	class UAnimMontage*                           MontageFocalAnim;                                  // 0x00D0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                MontageFocalPoint;                                 // 0x00D8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CustomFocusLocation;                               // 0x00F0(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -7727,7 +7727,7 @@ public:
 	class AReadyOrNotCharacter*                   LastTrackedTarget;                                 // 0x03E8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AReadyOrNotCharacter*                   LastKnownEnemy;                                    // 0x03F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FVector                                LastMoveVectorFocalPoint;                          // 0x03F8(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class ADoor*                                  LastTrackedDoor;                                   // 0x0410(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  LastTrackedDoor;                                   // 0x0410(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         TimeSinceLastHeardNoiseStimulus;                   // 0x0418(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_41C[0x4];                                      // 0x041C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector                                LatestNoiseLocation;                               // 0x0420(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -9823,7 +9823,7 @@ public:
 	uint8                                         Pad_2DB[0x5];                                      // 0x02DB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         OverlappingActors;                                 // 0x02E0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<TSoftObjectPtr<class AActor>>          AttachedObjects;                                   // 0x02F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          Doors;                                             // 0x0300(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          Doors;                                             // 0x0300(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TSoftObjectPtr<class AActor>                  BreakableGlass_SoftPointer;                        // 0x0310(0x0028)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<TSoftObjectPtr<class AActor>>          BreakableGlass_SoftPointers;                       // 0x0338(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class ABreakableGlass*>                BreakableGlasses;                                  // 0x0348(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
@@ -10915,9 +10915,9 @@ public:
 	bool                                          bChemlightLocked;                                  // 0x18F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bGamepadTeamCameraLocked;                          // 0x18F9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_18FA[0x6];                                     // 0x18FA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  QueuedDoorToOpen;                                  // 0x1900(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  QueuedDoorToClose;                                 // 0x1908(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  LastKickedDoor;                                    // 0x1910(0x0008)(Net, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  QueuedDoorToOpen;                                  // 0x1900(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  QueuedDoorToClose;                                 // 0x1908(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  LastKickedDoor;                                    // 0x1910(0x0008)(Net, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UInteractionsData*                      DoorKickInteractionFront;                          // 0x1918(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UInteractionsData*                      DoorKickInteractionBack;                           // 0x1920(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UInteractionsData*                      DoorKickFailureInteractionFront;                   // 0x1928(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -11017,7 +11017,7 @@ public:
 	bool IsOutside();
 	bool IsPepperSprayedLocationValid(const struct FHitResult& Hit, class APepperspray* Pepperspray);
 	bool IsWet();
-	void KickDoor(class ADoor* Door);
+	void KickDoor(class Adoor* door);
 	void Kill();
 	void Lean(float Val);
 	void LeanRight(float Val);
@@ -11101,7 +11101,7 @@ public:
 	void OnRep_Surrendered();
 	void OnVoiceAudioStopped();
 	void OnYellExecute();
-	bool OpenDoor(class ADoor* Door, bool bOpenDoor);
+	bool OpenDoor(class Adoor* door, bool bOpenDoor);
 	void PickupEvidence(class AActor* InEvidence);
 	void Play1PMontage(class UAnimMontage* NewMontage, float PlayRate);
 	void Play1PMontageDeferred(class UAnimMontage* Montage, class FName AnimationName);
@@ -14228,12 +14228,12 @@ public:
 	EThreatLevel                                  ThreatLevel;                                       // 0x02A8(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_2A9[0x7];                                      // 0x02A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FExitData>                      Exits;                                             // 0x02B0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          UniqueExits;                                       // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          UniqueExits;                                       // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	bool                                          bOverrideOwningRoom;                               // 0x02D0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2D1[0x3];                                      // 0x02D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   OwningRoom;                                        // 0x02D4(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2DC[0x4];                                      // 0x02DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  DoorThreat;                                        // 0x02E0(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  DoorThreat;                                        // 0x02E0(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bFrontDoorThreat;                                  // 0x02E8(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsOutside;                                        // 0x02E9(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2EA[0x6];                                      // 0x02EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -14244,12 +14244,12 @@ public:
 	void GenerateLookAtPoints();
 	void RemoveAnyVisibleExits();
 
-	class ADoor* GetAttachedDoor() const;
-	bool GetRandomExitDoor(class ADoor** Door) const;
+	class Adoor* GetAttachedDoor() const;
+	bool GetRandomExitDoor(class Adoor** door) const;
 	EThreatLevel GetThreatLevel() const;
-	bool GetUniqueExtis(TArray<class ADoor*>* OutDoors) const;
+	bool GetUniqueExtis(TArray<class Adoor*>* OutDoors) const;
 	bool HasExit() const;
-	bool HasSpecificExitDoor(class ADoor* Door) const;
+	bool HasSpecificExitDoor(class Adoor* door) const;
 	bool IsDoorThreat() const;
 
 public:
@@ -16261,7 +16261,7 @@ public:
 	uint8                                         Pad_EC4[0x4];                                      // 0x0EC4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class USoundCue*                              NegFeedback;                                       // 0x0EC8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USoundCue*                              PosFeedBack;                                       // 0x0ED0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          KickedDoorsTriggeredMoraleChange;                  // 0x0ED8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          KickedDoorsTriggeredMoraleChange;                  // 0x0ED8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                         Pad_EE8[0x10];                                     // 0x0EE8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  MissionTags;                                       // 0x0EF8(0x0020)(Transient, Protected, NativeAccessSpecifierProtected)
 	bool                                          bForceDebugTags;                                   // 0x0F18(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -17313,7 +17313,7 @@ public:
 	uint8                                         Pad_234[0xC];                                      // 0x0234(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FCoverInstigatorStimulus               InstigatorStimulus;                                // 0x0240(0x0080)(NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2C0[0x118];                                    // 0x02C0(0x0118)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  Door;                                              // 0x03D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  door;                                              // 0x03D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UAnimMontage*                           LastExitMontagePlayed;                             // 0x03E0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UAnimMontage*                           EntryMontage;                                      // 0x03E8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_3F0[0xD0];                                     // 0x03F0(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -19242,9 +19242,9 @@ class ASwatAutomationManager final : public AInfo
 {
 public:
 	uint8                                         Pad_2A0[0x8];                                      // 0x02A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class ADoor*>                          Doors;                                             // 0x02A8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          BreachedDoors;                                     // 0x02B8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	class ADoor*                                  CurrentDoor;                                       // 0x02C8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          Doors;                                             // 0x02A8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          BreachedDoors;                                     // 0x02B8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	class Adoor*                                  CurrentDoor;                                       // 0x02C8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -20331,7 +20331,7 @@ public:
 	class UInteractableComponent*                 LastInteractableComponent;                         // 0x1DD0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ABuildingTrigger*                       LastBuildingEntered;                               // 0x1DD8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ABuildingTrigger*                       InsideCurrentBuilding;                             // 0x1DE0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  lastHighlightedDoor;                               // 0x1DE8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  lastHighlightedDoor;                               // 0x1DE8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class ABaseItem*                              lastHighlightedEvidence;                           // 0x1DF0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class APickupMagazineActor*                   lastHighlightedPickupMagazine;                     // 0x1DF8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bExitWithFireSelect;                               // 0x1E00(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -20654,7 +20654,7 @@ public:
 	void AdjustScopeOffsetVertical(float NewOffset);
 	void ApplyPlayerEffect(class UBasePlayerEffect* InPlayerEffect, bool bResettable);
 	void ApplyPlayerEffectFor(class UBasePlayerEffect* InPlayerEffect, float Seconds);
-	void C2Door(class ADoor* Door);
+	void C2Door(class Adoor* door);
 	bool CalculateStopLocation(struct FVector* OutStopLocation, const struct FVector& CurrentLocation, const struct FVector& Velocity, const struct FVector& Acceleration, float Friction, float BrakingDeceleration, float TimeStep, int32 MaxSimulationIterations);
 	bool CanQuickThrow();
 	void CaptureFPCamera(float DeltaTime);
@@ -20728,7 +20728,7 @@ public:
 	void IncrementalUse(float Val);
 	void InitializeHudWidgetTrainingState();
 	bool IsInLightSource(int32* VisibleLightSources, float MinimumLightLevel);
-	void JamDoor(class ADoor* Door);
+	void JamDoor(class Adoor* door);
 	void LocalArrestFeed(class APlayerCharacter* Arrester, class APlayerCharacter* Victim);
 	void LocalDeathFeed(class AReadyOrNotPlayerController* PlayerController);
 	void LocalFreeFeed(class APlayerCharacter* Freer, class APlayerCharacter* Victim);
@@ -21798,7 +21798,7 @@ DUMPER7_ASSERTS_UDeployGrenadeAtLocationActivity;
 class UDoorInteractionActivity : public UBaseActivity
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0218(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0218(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                CommandLocation;                                   // 0x0220(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                OriginalLocation;                                  // 0x0238(0x0018)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bReturnToPositionAfterInteraction : 1;             // 0x0250(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -21870,9 +21870,9 @@ public:
 };
 DUMPER7_ASSERTS_UDeployWedgeActivity;
 
-// Class ReadyOrNot.PreMissionPlanning
+// Class ReadyOrNot.PremissionPlanning
 // 0x0768 (0x0B80 - 0x0418)
-class UPreMissionPlanning : public UMenuWidget
+class UPremissionPlanning : public UMenuWidget
 {
 public:
 	bool                                          bIsWeaponCustomization;                            // 0x0418(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -21921,7 +21921,7 @@ public:
 	uint8                                         Pad_B7A[0x6];                                      // 0x0B7A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static class UPreMissionPlanning* GetPremissionPlanning();
+	static class UPremissionPlanning* GetPremissionPlanning();
 
 	void AttachPrimaryToSocket(class FName Socket);
 	void AttachSecondaryToSocket(class FName Socket);
@@ -22024,18 +22024,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("PreMissionPlanning")
+		STATIC_CLASS_IMPL("PremissionPlanning")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"PreMissionPlanning")
+		STATIC_NAME_IMPL(L"PremissionPlanning")
 	}
-	static class UPreMissionPlanning* GetDefaultObj()
+	static class UPremissionPlanning* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPreMissionPlanning>();
+		return GetDefaultObjImpl<UPremissionPlanning>();
 	}
 };
-DUMPER7_ASSERTS_UPreMissionPlanning;
+DUMPER7_ASSERTS_UPremissionPlanning;
 
 // Class ReadyOrNot.DestructibleDoorChunkComponent
 // 0x0020 (0x0650 - 0x0630)
@@ -23030,9 +23030,9 @@ public:
 };
 DUMPER7_ASSERTS_UTutorialTextPrompt_Widget;
 
-// Class ReadyOrNot.Door
+// Class ReadyOrNot.door
 // 0x1088 (0x1330 - 0x02A8)
-class ADoor final : public ADoorwayWithoutDoor
+class Adoor final : public ADoorwayWithoutDoor
 {
 public:
 	uint8                                         Pad_2A8[0x60];                                     // 0x02A8(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
@@ -23041,8 +23041,8 @@ public:
 	TMulticastInlineDelegate<void()>              OnDoorClosed;                                      // 0x0328(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnDoorBroken;                                      // 0x0338(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnDoorMovementBlocked;                             // 0x0348(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter)> OnDoorExploded; // 0x0358(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess)> OnDoorKicked; // 0x0368(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter)> OnDoorExploded; // 0x0358(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess)> OnDoorKicked; // 0x0368(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	struct FDataTableRowHandle                    TypeOfDoor;                                        // 0x0378(0x0010)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         StartingOpenAngle;                                 // 0x0388(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bOneWay : 1;                                       // 0x038C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -23156,7 +23156,7 @@ public:
 	float                                         IncrementAngle;                                    // 0x074C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PhysicalPushAmount;                                // 0x0750(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_754[0x4];                                      // 0x0754(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  DriveSubDoor;                                      // 0x0758(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  DriveSubDoor;                                      // 0x0758(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         bMainSubDoor : 1;                                  // 0x0760(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
 	uint8                                         bKickAlwaysFails : 1;                              // 0x0760(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_761[0x3];                                      // 0x0761(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
@@ -23376,7 +23376,7 @@ public:
 	struct FVector GetStackUpLocation(EStackupGenArea StackUpArea, ESquadPosition StackUpPosition) const;
 	TArray<class AStackUpActor*> GetStackupsForArea(EStackupGenArea StackUpArea) const;
 	float GetStartingOpenAngle() const;
-	class ADoor* GetSubDoor() const;
+	class Adoor* GetSubDoor() const;
 	bool GetSuspectKnowsLockState() const;
 	bool GetSWATKnowsLockState() const;
 	float GetTargetAngle() const;
@@ -23451,18 +23451,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("Door")
+		STATIC_CLASS_IMPL("door")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"Door")
+		STATIC_NAME_IMPL(L"door")
 	}
-	static class ADoor* GetDefaultObj()
+	static class Adoor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ADoor>();
+		return GetDefaultObjImpl<Adoor>();
 	}
 };
-DUMPER7_ASSERTS_ADoor;
+DUMPER7_ASSERTS_Adoor;
 
 // Class ReadyOrNot.HighgroundVolume
 // 0x0070 (0x0310 - 0x02A0)
@@ -23871,8 +23871,8 @@ public:
 	uint8                                         bSet : 1;                                          // 0x0CD0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         Pad_CD1[0x7];                                      // 0x0CD1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class AReadyOrNotCharacter*                   PlacedBy;                                          // 0x0CD8(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  PendingPlacement;                                  // 0x0CE0(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ADoor*                                  JammedDoor;                                        // 0x0CE8(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  PendingPlacement;                                  // 0x0CE0(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  JammedDoor;                                        // 0x0CE8(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   DoorJamSocket;                                     // 0x0CF0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class USkeletalMesh*                          PlacedMesh;                                        // 0x0CF8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         PlacementTimer;                                    // 0x0D00(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -23880,11 +23880,11 @@ public:
 	uint8                                         Pad_D08[0x8];                                      // 0x0D08(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void JamDoor(class ADoor* Door);
+	void JamDoor(class Adoor* door);
 	void Multicast_StartPlacement();
 	void OnRep_DoorjamSet();
-	void Server_FinishDoorjamPlacement(class ADoor* PendingDoor);
-	void Server_StartDoorjamPlacement(class ADoor* PendingDoor);
+	void Server_FinishDoorjamPlacement(class Adoor* PendingDoor);
+	void Server_StartDoorjamPlacement(class Adoor* PendingDoor);
 
 public:
 	static class UClass* StaticClass()
@@ -23943,7 +23943,7 @@ public:
 
 public:
 	void OnBatteringRamHit();
-	void Server_StrikeDoor(class ADoor* TargetDoor);
+	void Server_StrikeDoor(class Adoor* TargetDoor);
 	void Server_StrikeGlass(class ABreakableGlass* TargetGlass);
 	void Server_StrikePlayer(class APlayerCharacter* TargetPlayer);
 
@@ -25043,8 +25043,8 @@ public:
 	uint8                                         Pad_288[0x18];                                     // 0x0288(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static void FilterDoorsForFlee(const TArray<class ADoor*>& Doors, TArray<class ADoor*>* FilteredDoors);
-	static bool IsDoorValidForFlee(class ADoor* Door);
+	static void FilterDoorsForFlee(const TArray<class Adoor*>& Doors, TArray<class Adoor*>* FilteredDoors);
+	static bool IsDoorValidForFlee(class Adoor* door);
 
 	EFleeType GetFleeType();
 
@@ -26317,13 +26317,13 @@ DUMPER7_ASSERTS_UInteractiveScopedWeaponAttachment;
 class AInteractWithDoorObjective final : public AObjective
 {
 public:
-	TArray<class ADoor*>                          Doors;                                             // 0x0330(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
+	TArray<class Adoor*>                          Doors;                                             // 0x0330(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate)
 	class FName                                   DoorTag;                                           // 0x0340(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EObjectiveDoorInteractions                    DoorInteractionType;                               // 0x0348(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_349[0x7];                                      // 0x0349(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void OnDoorKicked(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess);
+	void OnDoorKicked(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess);
 
 public:
 	static class UClass* StaticClass()
@@ -26823,7 +26823,7 @@ class UKickDoorAction final : public UAIAction
 {
 public:
 	class UKickDoorActivity*                      KickDoorActivity;                                  // 0x0058(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class ADoor*                                  TargetDoor;                                        // 0x0060(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class Adoor*                                  TargetDoor;                                        // 0x0060(0x0008)(ZeroConstructor, Transient, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bBreachDoorInOneKick;                              // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -26831,8 +26831,8 @@ public:
 	void OnBreachFinished(class UBaseActivity* Activity, class ACyberneticController* Controller);
 	void OnBreachFinishedBP();
 
-	class ADoor* GetCurrentTargetDoor() const;
-	class ADoor* GetTargetDoor() const;
+	class Adoor* GetCurrentTargetDoor() const;
+	class Adoor* GetTargetDoor() const;
 
 public:
 	static class UClass* StaticClass()
@@ -27483,7 +27483,7 @@ DUMPER7_ASSERTS_ULoadoutUnitSelectWidget;
 
 // Class ReadyOrNot.LoadoutWidget
 // 0x01C0 (0x0D40 - 0x0B80)
-class ULoadoutWidget final : public UPreMissionPlanning
+class ULoadoutWidget final : public UPremissionPlanning
 {
 public:
 	TSubclassOf<class UUserWidget>                HUDWidgetClass;                                    // 0x0B80(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -28165,7 +28165,7 @@ public:
 	class AController*                            OccupiedBy;                                        // 0x02B0(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESquadPosition                                StackUpPosition;                                   // 0x02B8(0x0001)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_2B9[0x7];                                      // 0x02B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  LinkedDoor;                                        // 0x02C0(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  LinkedDoor;                                        // 0x02C0(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -30475,9 +30475,9 @@ public:
 };
 DUMPER7_ASSERTS_UOptionsButtonWithStatus;
 
-// Class ReadyOrNot.Optiwand
+// Class ReadyOrNot.optiwand
 // 0x0120 (0x0DF0 - 0x0CD0)
-class AOptiwand : public ABaseItem
+class Aoptiwand : public ABaseItem
 {
 public:
 	class UAnimMontage*                           Montage_StartOptiwandADS;                          // 0x0CC8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -30498,7 +30498,7 @@ public:
 	bool                                          bRepMirroring;                                     // 0x0D61(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         bInUse : 1;                                        // 0x0D62(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (BlueprintVisible, BlueprintReadOnly, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
 	uint8                                         Pad_D63[0x5];                                      // 0x0D63(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  LastUsedDoor;                                      // 0x0D68(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class Adoor*                                  LastUsedDoor;                                      // 0x0D68(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UFMODAudioComponent*                    FMODOptiwandMoveAudioComp;                         // 0x0D70(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UFMODAudioComponent*                    FMODOptiwandEnterViewComp;                         // 0x0D78(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class UFMODAudioComponent*                    FMODOptiwandExitViewComp;                          // 0x0D80(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -30513,18 +30513,18 @@ public:
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("Optiwand")
+		STATIC_CLASS_IMPL("optiwand")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"Optiwand")
+		STATIC_NAME_IMPL(L"optiwand")
 	}
-	static class AOptiwand* GetDefaultObj()
+	static class Aoptiwand* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AOptiwand>();
+		return GetDefaultObjImpl<Aoptiwand>();
 	}
 };
-DUMPER7_ASSERTS_AOptiwand;
+DUMPER7_ASSERTS_Aoptiwand;
 
 // Class ReadyOrNot.OutOfBoundsVolume
 // 0x0008 (0x02A8 - 0x02A0)
@@ -31356,7 +31356,7 @@ DUMPER7_ASSERTS_APlacedZipcuffs;
 class UPlaceTrapActivity final : public UWorldBuildingActivity
 {
 public:
-	class ADoor*                                  Door;                                              // 0x02C0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x02C0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2C8[0x8];                                      // 0x02C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -35507,11 +35507,11 @@ class UReadyOrNotPathFollowingComp final : public UPathFollowingComponent
 public:
 	float                                         HoleTraversalCooldown;                             // 0x02D0(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_2D4[0x24];                                     // 0x02D4(0x0024)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  LastUsedDoorLink;                                  // 0x02F8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  LastUsedDoorLink;                                  // 0x02F8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class AWallHoleTraversal*                     LastUsedWallHole;                                  // 0x0300(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UNavLinkCustomComponent*                LastUsedDoorLinkComp;                              // 0x0308(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_310[0x8];                                      // 0x0310(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  PendingDoor;                                       // 0x0318(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class Adoor*                                  PendingDoor;                                       // 0x0318(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	EPendingDoorReason                            PendingDoorReason;                                 // 0x0320(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_321[0x7];                                      // 0x0321(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -38484,7 +38484,7 @@ class ARoomVisualizer final : public AActor
 public:
 	class USceneComponent*                        DefaultScene;                                      // 0x02A0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   OwningRoom;                                        // 0x02A8(0x0008)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          Doors;                                             // 0x02B0(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          Doors;                                             // 0x02B0(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class AThreatAwarenessActor*>          Threats;                                           // 0x02C0(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	TArray<class ARoomVisualizer*>                ConnectingRooms;                                   // 0x02D0(0x0010)(Edit, EditFixedSize, ZeroConstructor, DisableEditOnTemplate, EditConst, UObjectWrapper, NativeAccessSpecifierPublic)
 	ERoomSize                                     Size;                                              // 0x02E0(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -38852,7 +38852,7 @@ class ARosterScenarioSpawner final : public AInfo
 {
 public:
 	TArray<struct FObjectiveSpawn>                Objectives;                                        // 0x02A0(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          UsedTrapDoors;                                     // 0x02B0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          UsedTrapDoors;                                     // 0x02B0(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2C0[0x10];                                     // 0x02C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -39077,7 +39077,7 @@ DUMPER7_ASSERTS_ISaveUpgradeInterface;
 class UScanDoorActivity final : public UBaseActivity
 {
 public:
-	class ADoor*                                  Door;                                              // 0x0218(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  door;                                              // 0x0218(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_220[0x30];                                     // 0x0220(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class ACyberneticCharacter*>           SpottedCharacters;                                 // 0x0250(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	class ATrapActorAttachedToDoor*               SpottedTrap;                                       // 0x0260(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -39480,9 +39480,9 @@ DUMPER7_ASSERTS_ASearchAndDestroyGS;
 class USearchAndSecureActivity final : public UBaseActivity
 {
 public:
-	TMulticastInlineDelegate<void(class USearchAndSecureActivity* Activity, class ADoor* BreachedDoor)> OnSearchComplete; // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USearchAndSecureActivity* Activity, class Adoor* BreachedDoor)> OnSearchComplete; // 0x0218(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_228[0x20];                                     // 0x0228(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
-	class ADoor*                                  BreachDoor;                                        // 0x0248(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class Adoor*                                  BreachDoor;                                        // 0x0248(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_250[0x30];                                     // 0x0250(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class AActor*>                         AllSecurables;                                     // 0x0280(0x0010)(ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected)
 	class AActor*                                 ClosestSecurable;                                  // 0x0290(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -40001,9 +40001,9 @@ public:
 	uint8                                         Pad_CBA[0x5E];                                     // 0x0CBA(0x005E)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	TArray<class ASWATCharacter*> GetSWATSortedByDistanceToLocation(const struct FVector& Location, ETeamType FilterTeam, class ADoor* StackUpDoor, bool bAscendingOrder);
+	TArray<class ASWATCharacter*> GetSWATSortedByDistanceToLocation(const struct FVector& Location, ETeamType FilterTeam, class Adoor* StackUpDoor, bool bAscendingOrder);
 	TArray<class ASWATCharacter*> GetSWATSortedByDistanceToLocationV2(const struct FVector& Location, const TArray<class ASWATCharacter*>& ExcludedSwat, ETeamType FilterTeam, bool bAscendingOrder);
-	void GiveBreachAndClearCommand(class ADoor* Door, EDoorBreachType DoorBreachType, ETeamType TeamType, const struct FVector& CommandLocation, TSubclassOf<class ABaseItem> DoorBreachItemClass, TSubclassOf<class ABaseItem> DoorUseItemClass, bool bWithLeader, bool bWithLeaderItem, bool bAutoClear, bool bLastAutoClear, EStackUpStyle CustomStackUpStyle, bool bIsSWATCommand);
+	void GiveBreachAndClearCommand(class Adoor* door, EDoorBreachType DoorBreachType, ETeamType TeamType, const struct FVector& CommandLocation, TSubclassOf<class ABaseItem> DoorBreachItemClass, TSubclassOf<class ABaseItem> DoorUseItemClass, bool bWithLeader, bool bWithLeaderItem, bool bAutoClear, bool bLastAutoClear, EStackUpStyle CustomStackUpStyle, bool bIsSWATCommand);
 	void GiveCheckForContactsCommand(class AActor* Target, ETeamType TeamType, const struct FVector& CommandLocation, const struct FVector& CommandNormal);
 	void GiveCheckForTrapsCommand(class AActor* Target, ETeamType TeamType, const struct FVector& CommandLocation, const struct FVector& CommandNormal);
 	void GiveCloseDoorCommand(class AActor* Target, ETeamType TeamType, const struct FVector& CommandLocation);
@@ -40031,7 +40031,7 @@ public:
 	void OnActivityStarted(class UBaseActivity* Activity, class ACyberneticController* OwningController);
 	void OnLeaderToggledNightvision(class AReadyOrNotCharacter* Character, bool bOn);
 	void OnSwatFinishedClearing(class UTeamBreachAndClearActivity* BreachAndClearActivity, bool bAuto);
-	void OnSwatFinishedRoomSearch(class USearchAndSecureActivity* SearchAndSecureActivity, class ADoor* BreachedDoor);
+	void OnSwatFinishedRoomSearch(class USearchAndSecureActivity* SearchAndSecureActivity, class Adoor* BreachedDoor);
 	void OnTrailerSearchComplete(class UBaseActivity* Activity, class ACyberneticController* Controller);
 	void PlaySwatCommandVoiceLine(const class FString& VoiceLine, const class FString& OverrideSpearkerName, bool bTeamPrefix);
 	void RemoveHoldCommand(ETeamType TeamType);
@@ -41110,7 +41110,7 @@ class AWorldDataGenerator final : public AInfo
 {
 public:
 	class USceneComponent*                        SceneComponent;                                    // 0x02A0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class ADoor*>                          VisitedDoors;                                      // 0x02A8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class Adoor*>                          VisitedDoors;                                      // 0x02A8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2B8[0x1];                                      // 0x02B8(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bHasWorldEverBeenGenerated;                        // 0x02B9(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnTemplate, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2BA[0x6];                                      // 0x02BA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])

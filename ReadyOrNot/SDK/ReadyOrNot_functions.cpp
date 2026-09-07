@@ -2524,11 +2524,11 @@ void UActivityData::OnChemlightThrown(class APlayerCharacter* DelegatePlayerChar
 // Function ReadyOrNot.ActivityData.OnDoorKicked
 // (Final, Native, Private)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             InstigatorCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UActivityData::OnDoorKicked(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess)
+void UActivityData::OnDoorKicked(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -2537,7 +2537,7 @@ void UActivityData::OnDoorKicked(class ADoor* Door, class AReadyOrNotCharacter* 
 
 	Params::ActivityData_OnDoorKicked Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 	Parms.InstigatorCharacter = InstigatorCharacter;
 	Parms.bSuccess = bSuccess;
 
@@ -19754,9 +19754,9 @@ class ACyberneticCharacter* UBreachAndClearSquadsActivity::GetLeader()
 // Function ReadyOrNot.BreachAndClearSquadsActivity.GetTargetDoor
 // (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// class ADoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ADoor* UBreachAndClearSquadsActivity::GetTargetDoor()
+class Adoor* UBreachAndClearSquadsActivity::GetTargetDoor()
 {
 	static class UFunction* Func = nullptr;
 
@@ -22620,10 +22620,10 @@ void ACyberneticController::OnAIFinishSpawning()
 // Function ReadyOrNot.CyberneticController.OnDoorExploded
 // (Final, Native, Protected)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             InstigatorCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ACyberneticController::OnDoorExploded(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter)
+void ACyberneticController::OnDoorExploded(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter)
 {
 	static class UFunction* Func = nullptr;
 
@@ -22632,7 +22632,7 @@ void ACyberneticController::OnDoorExploded(class ADoor* Door, class AReadyOrNotC
 
 	Params::CyberneticController_OnDoorExploded Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 	Parms.InstigatorCharacter = InstigatorCharacter;
 
 	auto Flgs = Func->FunctionFlags;
@@ -23524,10 +23524,10 @@ bool ACyberneticController::DoesCharacterMatchTargetType(class AReadyOrNotCharac
 // Function ReadyOrNot.CyberneticController.DoesPathGoThroughDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ACyberneticController::DoesPathGoThroughDoor(class ADoor* Door) const
+bool ACyberneticController::DoesPathGoThroughDoor(class Adoor* door) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -23536,7 +23536,7 @@ bool ACyberneticController::DoesPathGoThroughDoor(class ADoor* Door) const
 
 	Params::CyberneticController_DoesPathGoThroughDoor Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -35275,9 +35275,9 @@ bool AReadyOrNotCharacter::IsWet()
 // Function ReadyOrNot.ReadyOrNotCharacter.KickDoor
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AReadyOrNotCharacter::KickDoor(class ADoor* Door)
+void AReadyOrNotCharacter::KickDoor(class Adoor* door)
 {
 	static class UFunction* Func = nullptr;
 
@@ -35286,7 +35286,7 @@ void AReadyOrNotCharacter::KickDoor(class ADoor* Door)
 
 	Params::ReadyOrNotCharacter_KickDoor Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -37299,11 +37299,11 @@ void AReadyOrNotCharacter::OnYellExecute()
 // Function ReadyOrNot.ReadyOrNotCharacter.OpenDoor
 // (Native, Public, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bOpenDoor                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AReadyOrNotCharacter::OpenDoor(class ADoor* Door, bool bOpenDoor)
+bool AReadyOrNotCharacter::OpenDoor(class Adoor* door, bool bOpenDoor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -37312,7 +37312,7 @@ bool AReadyOrNotCharacter::OpenDoor(class ADoor* Door, bool bOpenDoor)
 
 	Params::ReadyOrNotCharacter_OpenDoor Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 	Parms.bOpenDoor = bOpenDoor;
 
 	auto Flgs = Func->FunctionFlags;
@@ -63042,9 +63042,9 @@ void AThreatAwarenessActor::RemoveAnyVisibleExits()
 // Function ReadyOrNot.ThreatAwarenessActor.GetAttachedDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ADoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ADoor* AThreatAwarenessActor::GetAttachedDoor() const
+class Adoor* AThreatAwarenessActor::GetAttachedDoor() const
 {
 	static class UFunction* Func = nullptr;
 
@@ -63067,10 +63067,10 @@ class ADoor* AThreatAwarenessActor::GetAttachedDoor() const
 // Function ReadyOrNot.ThreatAwarenessActor.GetRandomExitDoor
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ADoor**                           Door                                                   (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor**                           door                                                   (Parm, OutParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AThreatAwarenessActor::GetRandomExitDoor(class ADoor** Door) const
+bool AThreatAwarenessActor::GetRandomExitDoor(class Adoor** door) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -63086,8 +63086,8 @@ bool AThreatAwarenessActor::GetRandomExitDoor(class ADoor** Door) const
 
 	Func->FunctionFlags = Flgs;
 
-	if (Door != nullptr)
-		*Door = Parms.Door;
+	if (door != nullptr)
+		*door = Parms.door;
 
 	return Parms.ReturnValue;
 }
@@ -63121,10 +63121,10 @@ EThreatLevel AThreatAwarenessActor::GetThreatLevel() const
 // Function ReadyOrNot.ThreatAwarenessActor.GetUniqueExtis
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// TArray<class ADoor*>*                   OutDoors                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<class Adoor*>*                   OutDoors                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AThreatAwarenessActor::GetUniqueExtis(TArray<class ADoor*>* OutDoors) const
+bool AThreatAwarenessActor::GetUniqueExtis(TArray<class Adoor*>* OutDoors) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -63175,10 +63175,10 @@ bool AThreatAwarenessActor::HasExit() const
 // Function ReadyOrNot.ThreatAwarenessActor.HasSpecificExitDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AThreatAwarenessActor::HasSpecificExitDoor(class ADoor* Door) const
+bool AThreatAwarenessActor::HasSpecificExitDoor(class Adoor* door) const
 {
 	static class UFunction* Func = nullptr;
 
@@ -63187,7 +63187,7 @@ bool AThreatAwarenessActor::HasSpecificExitDoor(class ADoor* Door) const
 
 	Params::ThreatAwarenessActor_HasSpecificExitDoor Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77077,9 +77077,9 @@ void APlayerCharacter::ApplyPlayerEffectFor(class UBasePlayerEffect* InPlayerEff
 // Function ReadyOrNot.PlayerCharacter.C2Door
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void APlayerCharacter::C2Door(class ADoor* Door)
+void APlayerCharacter::C2Door(class Adoor* door)
 {
 	static class UFunction* Func = nullptr;
 
@@ -77088,7 +77088,7 @@ void APlayerCharacter::C2Door(class ADoor* Door)
 
 	Params::PlayerCharacter_C2Door Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -78805,9 +78805,9 @@ bool APlayerCharacter::IsInLightSource(int32* VisibleLightSources, float Minimum
 // Function ReadyOrNot.PlayerCharacter.JamDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void APlayerCharacter::JamDoor(class ADoor* Door)
+void APlayerCharacter::JamDoor(class Adoor* door)
 {
 	static class UFunction* Func = nullptr;
 
@@ -78816,7 +78816,7 @@ void APlayerCharacter::JamDoor(class ADoor* Door)
 
 	Params::PlayerCharacter_JamDoor Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85599,19 +85599,19 @@ bool UDoorInteractionActivity::ShouldGetInPosition() const
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetPremissionPlanning
+// Function ReadyOrNot.PremissionPlanning.GetPremissionPlanning
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// class UPreMissionPlanning*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPremissionPlanning*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UPreMissionPlanning* UPreMissionPlanning::GetPremissionPlanning()
+class UPremissionPlanning* UPremissionPlanning::GetPremissionPlanning()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("PreMissionPlanning", "GetPremissionPlanning");
+		Func = StaticClass()->GetFunction("PremissionPlanning", "GetPremissionPlanning");
 
-	Params::PreMissionPlanning_GetPremissionPlanning Parms{};
+	Params::PremissionPlanning_GetPremissionPlanning Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85624,19 +85624,19 @@ class UPreMissionPlanning* UPreMissionPlanning::GetPremissionPlanning()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.AttachPrimaryToSocket
+// Function ReadyOrNot.PremissionPlanning.AttachPrimaryToSocket
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::AttachPrimaryToSocket(class FName Socket)
+void UPremissionPlanning::AttachPrimaryToSocket(class FName Socket)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "AttachPrimaryToSocket");
+		Func = Class->GetFunction("PremissionPlanning", "AttachPrimaryToSocket");
 
-	Params::PreMissionPlanning_AttachPrimaryToSocket Parms{};
+	Params::PremissionPlanning_AttachPrimaryToSocket Parms{};
 
 	Parms.Socket = Socket;
 
@@ -85649,19 +85649,19 @@ void UPreMissionPlanning::AttachPrimaryToSocket(class FName Socket)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.AttachSecondaryToSocket
+// Function ReadyOrNot.PremissionPlanning.AttachSecondaryToSocket
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::AttachSecondaryToSocket(class FName Socket)
+void UPremissionPlanning::AttachSecondaryToSocket(class FName Socket)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "AttachSecondaryToSocket");
+		Func = Class->GetFunction("PremissionPlanning", "AttachSecondaryToSocket");
 
-	Params::PreMissionPlanning_AttachSecondaryToSocket Parms{};
+	Params::PremissionPlanning_AttachSecondaryToSocket Parms{};
 
 	Parms.Socket = Socket;
 
@@ -85674,15 +85674,15 @@ void UPreMissionPlanning::AttachSecondaryToSocket(class FName Socket)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.CleanPrimaryGun
+// Function ReadyOrNot.PremissionPlanning.CleanPrimaryGun
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::CleanPrimaryGun()
+void UPremissionPlanning::CleanPrimaryGun()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "CleanPrimaryGun");
+		Func = Class->GetFunction("PremissionPlanning", "CleanPrimaryGun");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85693,15 +85693,15 @@ void UPreMissionPlanning::CleanPrimaryGun()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.CleanSecondaryGun
+// Function ReadyOrNot.PremissionPlanning.CleanSecondaryGun
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::CleanSecondaryGun()
+void UPremissionPlanning::CleanSecondaryGun()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "CleanSecondaryGun");
+		Func = Class->GetFunction("PremissionPlanning", "CleanSecondaryGun");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85712,19 +85712,19 @@ void UPreMissionPlanning::CleanSecondaryGun()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.ClearPreviewWeaponSkin
+// Function ReadyOrNot.PremissionPlanning.ClearPreviewWeaponSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    IsSecondary                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::ClearPreviewWeaponSkin(bool IsSecondary)
+void UPremissionPlanning::ClearPreviewWeaponSkin(bool IsSecondary)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "ClearPreviewWeaponSkin");
+		Func = Class->GetFunction("PremissionPlanning", "ClearPreviewWeaponSkin");
 
-	Params::PreMissionPlanning_ClearPreviewWeaponSkin Parms{};
+	Params::PremissionPlanning_ClearPreviewWeaponSkin Parms{};
 
 	Parms.IsSecondary = IsSecondary;
 
@@ -85737,15 +85737,15 @@ void UPreMissionPlanning::ClearPreviewWeaponSkin(bool IsSecondary)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.ConfirmLoadout
+// Function ReadyOrNot.PremissionPlanning.ConfirmLoadout
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::ConfirmLoadout()
+void UPremissionPlanning::ConfirmLoadout()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "ConfirmLoadout");
+		Func = Class->GetFunction("PremissionPlanning", "ConfirmLoadout");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85756,15 +85756,15 @@ void UPreMissionPlanning::ConfirmLoadout()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.DoPrimaryWeaponPreviewBlend
+// Function ReadyOrNot.PremissionPlanning.DoPrimaryWeaponPreviewBlend
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::DoPrimaryWeaponPreviewBlend()
+void UPremissionPlanning::DoPrimaryWeaponPreviewBlend()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "DoPrimaryWeaponPreviewBlend");
+		Func = Class->GetFunction("PremissionPlanning", "DoPrimaryWeaponPreviewBlend");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85775,20 +85775,20 @@ void UPreMissionPlanning::DoPrimaryWeaponPreviewBlend()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.DoSaveLoadout
+// Function ReadyOrNot.PremissionPlanning.DoSaveLoadout
 // (Final, Native, Public)
 // Parameters:
 // EEquippingSwat                          SwatMember                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FSavedLoadout&             Loadout                                                (Parm, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::DoSaveLoadout(EEquippingSwat SwatMember, const struct FSavedLoadout& Loadout)
+void UPremissionPlanning::DoSaveLoadout(EEquippingSwat SwatMember, const struct FSavedLoadout& Loadout)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "DoSaveLoadout");
+		Func = Class->GetFunction("PremissionPlanning", "DoSaveLoadout");
 
-	Params::PreMissionPlanning_DoSaveLoadout Parms{};
+	Params::PremissionPlanning_DoSaveLoadout Parms{};
 
 	Parms.SwatMember = SwatMember;
 	Parms.Loadout = std::move(Loadout);
@@ -85802,15 +85802,15 @@ void UPreMissionPlanning::DoSaveLoadout(EEquippingSwat SwatMember, const struct 
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.EquipPrimary
+// Function ReadyOrNot.PremissionPlanning.EquipPrimary
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::EquipPrimary()
+void UPremissionPlanning::EquipPrimary()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "EquipPrimary");
+		Func = Class->GetFunction("PremissionPlanning", "EquipPrimary");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85821,15 +85821,15 @@ void UPreMissionPlanning::EquipPrimary()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.EquipSecondary
+// Function ReadyOrNot.PremissionPlanning.EquipSecondary
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::EquipSecondary()
+void UPremissionPlanning::EquipSecondary()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "EquipSecondary");
+		Func = Class->GetFunction("PremissionPlanning", "EquipSecondary");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85840,19 +85840,19 @@ void UPreMissionPlanning::EquipSecondary()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetAvailablePlayerSkins
+// Function ReadyOrNot.PremissionPlanning.GetAvailablePlayerSkins
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TArray<TSubclassOf<class USkinComponent>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
 
-TArray<TSubclassOf<class USkinComponent>> UPreMissionPlanning::GetAvailablePlayerSkins()
+TArray<TSubclassOf<class USkinComponent>> UPremissionPlanning::GetAvailablePlayerSkins()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetAvailablePlayerSkins");
+		Func = Class->GetFunction("PremissionPlanning", "GetAvailablePlayerSkins");
 
-	Params::PreMissionPlanning_GetAvailablePlayerSkins Parms{};
+	Params::PremissionPlanning_GetAvailablePlayerSkins Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85865,19 +85865,19 @@ TArray<TSubclassOf<class USkinComponent>> UPreMissionPlanning::GetAvailablePlaye
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetDefaultPreviewCharacter
+// Function ReadyOrNot.PremissionPlanning.GetDefaultPreviewCharacter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AReadyOrNotCharacter* UPreMissionPlanning::GetDefaultPreviewCharacter()
+class AReadyOrNotCharacter* UPremissionPlanning::GetDefaultPreviewCharacter()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetDefaultPreviewCharacter");
+		Func = Class->GetFunction("PremissionPlanning", "GetDefaultPreviewCharacter");
 
-	Params::PreMissionPlanning_GetDefaultPreviewCharacter Parms{};
+	Params::PremissionPlanning_GetDefaultPreviewCharacter Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85890,19 +85890,19 @@ class AReadyOrNotCharacter* UPreMissionPlanning::GetDefaultPreviewCharacter()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetEquippingSwatMember
+// Function ReadyOrNot.PremissionPlanning.GetEquippingSwatMember
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // EEquippingSwat*                         EquippingSwat                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::GetEquippingSwatMember(EEquippingSwat* EquippingSwat)
+void UPremissionPlanning::GetEquippingSwatMember(EEquippingSwat* EquippingSwat)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetEquippingSwatMember");
+		Func = Class->GetFunction("PremissionPlanning", "GetEquippingSwatMember");
 
-	Params::PreMissionPlanning_GetEquippingSwatMember Parms{};
+	Params::PremissionPlanning_GetEquippingSwatMember Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85916,19 +85916,19 @@ void UPreMissionPlanning::GetEquippingSwatMember(EEquippingSwat* EquippingSwat)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetInputLocked
+// Function ReadyOrNot.PremissionPlanning.GetInputLocked
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreMissionPlanning::GetInputLocked()
+bool UPremissionPlanning::GetInputLocked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetInputLocked");
+		Func = Class->GetFunction("PremissionPlanning", "GetInputLocked");
 
-	Params::PreMissionPlanning_GetInputLocked Parms{};
+	Params::PremissionPlanning_GetInputLocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -85941,20 +85941,20 @@ bool UPreMissionPlanning::GetInputLocked()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetItemAttachmentData
+// Function ReadyOrNot.PremissionPlanning.GetItemAttachmentData
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Weapon                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSavedWeaponAttachmentData       ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FSavedWeaponAttachmentData UPreMissionPlanning::GetItemAttachmentData(TSubclassOf<class ABaseItem> Weapon)
+struct FSavedWeaponAttachmentData UPremissionPlanning::GetItemAttachmentData(TSubclassOf<class ABaseItem> Weapon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetItemAttachmentData");
+		Func = Class->GetFunction("PremissionPlanning", "GetItemAttachmentData");
 
-	Params::PreMissionPlanning_GetItemAttachmentData Parms{};
+	Params::PremissionPlanning_GetItemAttachmentData Parms{};
 
 	Parms.Weapon = Weapon;
 
@@ -85969,20 +85969,20 @@ struct FSavedWeaponAttachmentData UPreMissionPlanning::GetItemAttachmentData(TSu
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetLastItemInSlot
+// Function ReadyOrNot.PremissionPlanning.GetLastItemInSlot
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EItemType                               ItemType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class ABaseItem>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-TSubclassOf<class ABaseItem> UPreMissionPlanning::GetLastItemInSlot(EItemType ItemType)
+TSubclassOf<class ABaseItem> UPremissionPlanning::GetLastItemInSlot(EItemType ItemType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetLastItemInSlot");
+		Func = Class->GetFunction("PremissionPlanning", "GetLastItemInSlot");
 
-	Params::PreMissionPlanning_GetLastItemInSlot Parms{};
+	Params::PremissionPlanning_GetLastItemInSlot Parms{};
 
 	Parms.ItemType = ItemType;
 
@@ -85997,19 +85997,19 @@ TSubclassOf<class ABaseItem> UPreMissionPlanning::GetLastItemInSlot(EItemType It
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetSubcategory
+// Function ReadyOrNot.PremissionPlanning.GetSubcategory
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // EPreMissionSubCategory                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EPreMissionSubCategory UPreMissionPlanning::GetSubcategory()
+EPreMissionSubCategory UPremissionPlanning::GetSubcategory()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetSubcategory");
+		Func = Class->GetFunction("PremissionPlanning", "GetSubcategory");
 
-	Params::PreMissionPlanning_GetSubcategory Parms{};
+	Params::PremissionPlanning_GetSubcategory Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86022,21 +86022,21 @@ EPreMissionSubCategory UPreMissionPlanning::GetSubcategory()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetWeaponPresetData
+// Function ReadyOrNot.PremissionPlanning.GetWeaponPresetData
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Weapon                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FWeaponPreset                    ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FWeaponPreset UPreMissionPlanning::GetWeaponPresetData(TSubclassOf<class ABaseItem> Weapon, int32 Index_0)
+struct FWeaponPreset UPremissionPlanning::GetWeaponPresetData(TSubclassOf<class ABaseItem> Weapon, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetWeaponPresetData");
+		Func = Class->GetFunction("PremissionPlanning", "GetWeaponPresetData");
 
-	Params::PreMissionPlanning_GetWeaponPresetData Parms{};
+	Params::PremissionPlanning_GetWeaponPresetData Parms{};
 
 	Parms.Weapon = Weapon;
 	Parms.Index_0 = Index_0;
@@ -86052,20 +86052,20 @@ struct FWeaponPreset UPreMissionPlanning::GetWeaponPresetData(TSubclassOf<class 
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.GetWeaponPresetsData
+// Function ReadyOrNot.PremissionPlanning.GetWeaponPresetsData
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Weapon                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FSavedWeaponPreset               ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-struct FSavedWeaponPreset UPreMissionPlanning::GetWeaponPresetsData(TSubclassOf<class ABaseItem> Weapon)
+struct FSavedWeaponPreset UPremissionPlanning::GetWeaponPresetsData(TSubclassOf<class ABaseItem> Weapon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "GetWeaponPresetsData");
+		Func = Class->GetFunction("PremissionPlanning", "GetWeaponPresetsData");
 
-	Params::PreMissionPlanning_GetWeaponPresetsData Parms{};
+	Params::PremissionPlanning_GetWeaponPresetsData Parms{};
 
 	Parms.Weapon = Weapon;
 
@@ -86080,19 +86080,19 @@ struct FSavedWeaponPreset UPreMissionPlanning::GetWeaponPresetsData(TSubclassOf<
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.HidePrimary
+// Function ReadyOrNot.PremissionPlanning.HidePrimary
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bIsHidden                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::HidePrimary(bool bIsHidden)
+void UPremissionPlanning::HidePrimary(bool bIsHidden)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "HidePrimary");
+		Func = Class->GetFunction("PremissionPlanning", "HidePrimary");
 
-	Params::PreMissionPlanning_HidePrimary Parms{};
+	Params::PremissionPlanning_HidePrimary Parms{};
 
 	Parms.bIsHidden = bIsHidden;
 
@@ -86105,19 +86105,19 @@ void UPreMissionPlanning::HidePrimary(bool bIsHidden)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.HideSecondary
+// Function ReadyOrNot.PremissionPlanning.HideSecondary
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bIsHidden                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::HideSecondary(bool bIsHidden)
+void UPremissionPlanning::HideSecondary(bool bIsHidden)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "HideSecondary");
+		Func = Class->GetFunction("PremissionPlanning", "HideSecondary");
 
-	Params::PreMissionPlanning_HideSecondary Parms{};
+	Params::PremissionPlanning_HideSecondary Parms{};
 
 	Parms.bIsHidden = bIsHidden;
 
@@ -86130,21 +86130,21 @@ void UPreMissionPlanning::HideSecondary(bool bIsHidden)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.HideWeapons
+// Function ReadyOrNot.PremissionPlanning.HideWeapons
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bHidePrimary                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bHideSecondary                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Delay                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::HideWeapons(bool bHidePrimary, bool bHideSecondary, float Delay)
+void UPremissionPlanning::HideWeapons(bool bHidePrimary, bool bHideSecondary, float Delay)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "HideWeapons");
+		Func = Class->GetFunction("PremissionPlanning", "HideWeapons");
 
-	Params::PreMissionPlanning_HideWeapons Parms{};
+	Params::PremissionPlanning_HideWeapons Parms{};
 
 	Parms.bHidePrimary = bHidePrimary;
 	Parms.bHideSecondary = bHideSecondary;
@@ -86159,20 +86159,20 @@ void UPreMissionPlanning::HideWeapons(bool bHidePrimary, bool bHideSecondary, fl
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.Init
+// Function ReadyOrNot.PremissionPlanning.Init
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bReadOnly                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FSavedLoadout&             PreviewLoadout                                         (Parm, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::Init(bool bReadOnly, const struct FSavedLoadout& PreviewLoadout)
+void UPremissionPlanning::Init(bool bReadOnly, const struct FSavedLoadout& PreviewLoadout)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "Init");
+		Func = Class->GetFunction("PremissionPlanning", "Init");
 
-	Params::PreMissionPlanning_Init Parms{};
+	Params::PremissionPlanning_Init Parms{};
 
 	Parms.bReadOnly = bReadOnly;
 	Parms.PreviewLoadout = std::move(PreviewLoadout);
@@ -86186,19 +86186,19 @@ void UPreMissionPlanning::Init(bool bReadOnly, const struct FSavedLoadout& Previ
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.IsAnyWeaponVisible
+// Function ReadyOrNot.PremissionPlanning.IsAnyWeaponVisible
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreMissionPlanning::IsAnyWeaponVisible()
+bool UPremissionPlanning::IsAnyWeaponVisible()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "IsAnyWeaponVisible");
+		Func = Class->GetFunction("PremissionPlanning", "IsAnyWeaponVisible");
 
-	Params::PreMissionPlanning_IsAnyWeaponVisible Parms{};
+	Params::PremissionPlanning_IsAnyWeaponVisible Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86211,19 +86211,19 @@ bool UPreMissionPlanning::IsAnyWeaponVisible()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.IsInLobby
+// Function ReadyOrNot.PremissionPlanning.IsInLobby
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreMissionPlanning::IsInLobby()
+bool UPremissionPlanning::IsInLobby()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "IsInLobby");
+		Func = Class->GetFunction("PremissionPlanning", "IsInLobby");
 
-	Params::PreMissionPlanning_IsInLobby Parms{};
+	Params::PremissionPlanning_IsInLobby Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86236,15 +86236,15 @@ bool UPreMissionPlanning::IsInLobby()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.LoadLoadoutPresets
+// Function ReadyOrNot.PremissionPlanning.LoadLoadoutPresets
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::LoadLoadoutPresets()
+void UPremissionPlanning::LoadLoadoutPresets()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "LoadLoadoutPresets");
+		Func = Class->GetFunction("PremissionPlanning", "LoadLoadoutPresets");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86255,15 +86255,15 @@ void UPreMissionPlanning::LoadLoadoutPresets()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.LoadWeaponAttachments
+// Function ReadyOrNot.PremissionPlanning.LoadWeaponAttachments
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::LoadWeaponAttachments()
+void UPremissionPlanning::LoadWeaponAttachments()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "LoadWeaponAttachments");
+		Func = Class->GetFunction("PremissionPlanning", "LoadWeaponAttachments");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86274,15 +86274,15 @@ void UPreMissionPlanning::LoadWeaponAttachments()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.LoadWeaponDefaultFireModes
+// Function ReadyOrNot.PremissionPlanning.LoadWeaponDefaultFireModes
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::LoadWeaponDefaultFireModes()
+void UPremissionPlanning::LoadWeaponDefaultFireModes()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "LoadWeaponDefaultFireModes");
+		Func = Class->GetFunction("PremissionPlanning", "LoadWeaponDefaultFireModes");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86293,15 +86293,15 @@ void UPreMissionPlanning::LoadWeaponDefaultFireModes()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.LoadWeaponPresets
+// Function ReadyOrNot.PremissionPlanning.LoadWeaponPresets
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::LoadWeaponPresets()
+void UPremissionPlanning::LoadWeaponPresets()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "LoadWeaponPresets");
+		Func = Class->GetFunction("PremissionPlanning", "LoadWeaponPresets");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86312,187 +86312,187 @@ void UPreMissionPlanning::LoadWeaponPresets()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutItemAttachmentsLoaded
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutItemAttachmentsLoaded
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutItemAttachmentsLoaded()
+void UPremissionPlanning::OnLoadoutItemAttachmentsLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutItemAttachmentsLoaded");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutItemAttachmentsLoaded");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutItemAttachmentsSaved
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutItemAttachmentsSaved
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutItemAttachmentsSaved()
+void UPremissionPlanning::OnLoadoutItemAttachmentsSaved()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutItemAttachmentsSaved");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutItemAttachmentsSaved");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutItemPresetsLoaded
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutItemPresetsLoaded
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutItemPresetsLoaded()
+void UPremissionPlanning::OnLoadoutItemPresetsLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutItemPresetsLoaded");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutItemPresetsLoaded");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutItemPresetsSaved
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutItemPresetsSaved
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutItemPresetsSaved()
+void UPremissionPlanning::OnLoadoutItemPresetsSaved()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutItemPresetsSaved");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutItemPresetsSaved");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutLoaded
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutLoaded
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutLoaded()
+void UPremissionPlanning::OnLoadoutLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutLoaded");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutLoaded");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutPresetsLoaded
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutPresetsLoaded
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutPresetsLoaded()
+void UPremissionPlanning::OnLoadoutPresetsLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutPresetsLoaded");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutPresetsLoaded");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutPresetsSaved
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutPresetsSaved
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutPresetsSaved()
+void UPremissionPlanning::OnLoadoutPresetsSaved()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutPresetsSaved");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutPresetsSaved");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnLoadoutSaved
+// Function ReadyOrNot.PremissionPlanning.OnLoadoutSaved
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnLoadoutSaved()
+void UPremissionPlanning::OnLoadoutSaved()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnLoadoutSaved");
+		Func = Class->GetFunction("PremissionPlanning", "OnLoadoutSaved");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnRequestCamera
+// Function ReadyOrNot.PremissionPlanning.OnRequestCamera
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnRequestCamera()
+void UPremissionPlanning::OnRequestCamera()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnRequestCamera");
+		Func = Class->GetFunction("PremissionPlanning", "OnRequestCamera");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnRequestLoadoutWidget
+// Function ReadyOrNot.PremissionPlanning.OnRequestLoadoutWidget
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnRequestLoadoutWidget()
+void UPremissionPlanning::OnRequestLoadoutWidget()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnRequestLoadoutWidget");
+		Func = Class->GetFunction("PremissionPlanning", "OnRequestLoadoutWidget");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnSwatCharacterChanged
+// Function ReadyOrNot.PremissionPlanning.OnSwatCharacterChanged
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnSwatCharacterChanged()
+void UPremissionPlanning::OnSwatCharacterChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnSwatCharacterChanged");
+		Func = Class->GetFunction("PremissionPlanning", "OnSwatCharacterChanged");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.OnWeaponDefaultFireModesLoaded
+// Function ReadyOrNot.PremissionPlanning.OnWeaponDefaultFireModesLoaded
 // (Event, Public, BlueprintEvent)
 
-void UPreMissionPlanning::OnWeaponDefaultFireModesLoaded()
+void UPremissionPlanning::OnWeaponDefaultFireModesLoaded()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "OnWeaponDefaultFireModesLoaded");
+		Func = Class->GetFunction("PremissionPlanning", "OnWeaponDefaultFireModesLoaded");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.PlayAnimationOnPreviewCharacter
+// Function ReadyOrNot.PremissionPlanning.PlayAnimationOnPreviewCharacter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // const class FString&                    Animation                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::PlayAnimationOnPreviewCharacter(const class FString& Animation)
+void UPremissionPlanning::PlayAnimationOnPreviewCharacter(const class FString& Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "PlayAnimationOnPreviewCharacter");
+		Func = Class->GetFunction("PremissionPlanning", "PlayAnimationOnPreviewCharacter");
 
-	Params::PreMissionPlanning_PlayAnimationOnPreviewCharacter Parms{};
+	Params::PremissionPlanning_PlayAnimationOnPreviewCharacter Parms{};
 
 	Parms.Animation = std::move(Animation);
 
@@ -86505,19 +86505,19 @@ void UPreMissionPlanning::PlayAnimationOnPreviewCharacter(const class FString& A
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.PlayAnimationOnPreviewCharacterByName
+// Function ReadyOrNot.PremissionPlanning.PlayAnimationOnPreviewCharacterByName
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Animation                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::PlayAnimationOnPreviewCharacterByName(class FName Animation)
+void UPremissionPlanning::PlayAnimationOnPreviewCharacterByName(class FName Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "PlayAnimationOnPreviewCharacterByName");
+		Func = Class->GetFunction("PremissionPlanning", "PlayAnimationOnPreviewCharacterByName");
 
-	Params::PreMissionPlanning_PlayAnimationOnPreviewCharacterByName Parms{};
+	Params::PremissionPlanning_PlayAnimationOnPreviewCharacterByName Parms{};
 
 	Parms.Animation = Animation;
 
@@ -86530,19 +86530,19 @@ void UPreMissionPlanning::PlayAnimationOnPreviewCharacterByName(class FName Anim
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.PlayAnimationOnQuartermaster
+// Function ReadyOrNot.PremissionPlanning.PlayAnimationOnQuartermaster
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class FName*                            Animation                                              (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::PlayAnimationOnQuartermaster(class FName* Animation)
+void UPremissionPlanning::PlayAnimationOnQuartermaster(class FName* Animation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "PlayAnimationOnQuartermaster");
+		Func = Class->GetFunction("PremissionPlanning", "PlayAnimationOnQuartermaster");
 
-	Params::PreMissionPlanning_PlayAnimationOnQuartermaster Parms{};
+	Params::PremissionPlanning_PlayAnimationOnQuartermaster Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86556,15 +86556,15 @@ void UPreMissionPlanning::PlayAnimationOnQuartermaster(class FName* Animation)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SaveActiveLoadout
+// Function ReadyOrNot.PremissionPlanning.SaveActiveLoadout
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::SaveActiveLoadout()
+void UPremissionPlanning::SaveActiveLoadout()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SaveActiveLoadout");
+		Func = Class->GetFunction("PremissionPlanning", "SaveActiveLoadout");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86575,20 +86575,20 @@ void UPreMissionPlanning::SaveActiveLoadout()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SaveItemClassAsSlot
+// Function ReadyOrNot.PremissionPlanning.SaveItemClassAsSlot
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EItemType                               ItemType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class ABaseItem>            Class_0                                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SaveItemClassAsSlot(EItemType ItemType, TSubclassOf<class ABaseItem> Class_0)
+void UPremissionPlanning::SaveItemClassAsSlot(EItemType ItemType, TSubclassOf<class ABaseItem> Class_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SaveItemClassAsSlot");
+		Func = Class->GetFunction("PremissionPlanning", "SaveItemClassAsSlot");
 
-	Params::PreMissionPlanning_SaveItemClassAsSlot Parms{};
+	Params::PremissionPlanning_SaveItemClassAsSlot Parms{};
 
 	Parms.ItemType = ItemType;
 	Parms.Class_0 = Class_0;
@@ -86602,15 +86602,15 @@ void UPreMissionPlanning::SaveItemClassAsSlot(EItemType ItemType, TSubclassOf<cl
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SaveLoadoutPresets
+// Function ReadyOrNot.PremissionPlanning.SaveLoadoutPresets
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::SaveLoadoutPresets()
+void UPremissionPlanning::SaveLoadoutPresets()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SaveLoadoutPresets");
+		Func = Class->GetFunction("PremissionPlanning", "SaveLoadoutPresets");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86621,15 +86621,15 @@ void UPreMissionPlanning::SaveLoadoutPresets()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SaveWeaponAttachments
+// Function ReadyOrNot.PremissionPlanning.SaveWeaponAttachments
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::SaveWeaponAttachments()
+void UPremissionPlanning::SaveWeaponAttachments()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SaveWeaponAttachments");
+		Func = Class->GetFunction("PremissionPlanning", "SaveWeaponAttachments");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86640,15 +86640,15 @@ void UPreMissionPlanning::SaveWeaponAttachments()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SaveWeaponDefaultFireMode
+// Function ReadyOrNot.PremissionPlanning.SaveWeaponDefaultFireMode
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::SaveWeaponDefaultFireMode()
+void UPremissionPlanning::SaveWeaponDefaultFireMode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SaveWeaponDefaultFireMode");
+		Func = Class->GetFunction("PremissionPlanning", "SaveWeaponDefaultFireMode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86659,15 +86659,15 @@ void UPreMissionPlanning::SaveWeaponDefaultFireMode()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SaveWeaponPresets
+// Function ReadyOrNot.PremissionPlanning.SaveWeaponPresets
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::SaveWeaponPresets()
+void UPremissionPlanning::SaveWeaponPresets()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SaveWeaponPresets");
+		Func = Class->GetFunction("PremissionPlanning", "SaveWeaponPresets");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -86678,21 +86678,21 @@ void UPreMissionPlanning::SaveWeaponPresets()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetActiveCameraByTag
+// Function ReadyOrNot.PremissionPlanning.SetActiveCameraByTag
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class FName                             Tag                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   BlendTime                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreMissionPlanning::SetActiveCameraByTag(class FName Tag, float BlendTime)
+bool UPremissionPlanning::SetActiveCameraByTag(class FName Tag, float BlendTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetActiveCameraByTag");
+		Func = Class->GetFunction("PremissionPlanning", "SetActiveCameraByTag");
 
-	Params::PreMissionPlanning_SetActiveCameraByTag Parms{};
+	Params::PremissionPlanning_SetActiveCameraByTag Parms{};
 
 	Parms.Tag = Tag;
 	Parms.BlendTime = BlendTime;
@@ -86708,19 +86708,19 @@ bool UPreMissionPlanning::SetActiveCameraByTag(class FName Tag, float BlendTime)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetBodyArmour
+// Function ReadyOrNot.PremissionPlanning.SetBodyArmour
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseItem>            BodyArmour                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetBodyArmour(TSubclassOf<class ABaseItem> BodyArmour)
+void UPremissionPlanning::SetBodyArmour(TSubclassOf<class ABaseItem> BodyArmour)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetBodyArmour");
+		Func = Class->GetFunction("PremissionPlanning", "SetBodyArmour");
 
-	Params::PreMissionPlanning_SetBodyArmour Parms{};
+	Params::PremissionPlanning_SetBodyArmour Parms{};
 
 	Parms.BodyArmour = BodyArmour;
 
@@ -86733,20 +86733,20 @@ void UPreMissionPlanning::SetBodyArmour(TSubclassOf<class ABaseItem> BodyArmour)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetEquippingSwatMember
+// Function ReadyOrNot.PremissionPlanning.SetEquippingSwatMember
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EEquippingSwat                          NewEquippingSwat                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotPlayerState*           NewEquippingPlayerState                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetEquippingSwatMember(EEquippingSwat NewEquippingSwat, class AReadyOrNotPlayerState* NewEquippingPlayerState)
+void UPremissionPlanning::SetEquippingSwatMember(EEquippingSwat NewEquippingSwat, class AReadyOrNotPlayerState* NewEquippingPlayerState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetEquippingSwatMember");
+		Func = Class->GetFunction("PremissionPlanning", "SetEquippingSwatMember");
 
-	Params::PreMissionPlanning_SetEquippingSwatMember Parms{};
+	Params::PremissionPlanning_SetEquippingSwatMember Parms{};
 
 	Parms.NewEquippingSwat = NewEquippingSwat;
 	Parms.NewEquippingPlayerState = NewEquippingPlayerState;
@@ -86760,19 +86760,19 @@ void UPreMissionPlanning::SetEquippingSwatMember(EEquippingSwat NewEquippingSwat
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetHeadwear
+// Function ReadyOrNot.PremissionPlanning.SetHeadwear
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Headwear                                               (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetHeadwear(TSubclassOf<class ABaseItem> Headwear)
+void UPremissionPlanning::SetHeadwear(TSubclassOf<class ABaseItem> Headwear)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetHeadwear");
+		Func = Class->GetFunction("PremissionPlanning", "SetHeadwear");
 
-	Params::PreMissionPlanning_SetHeadwear Parms{};
+	Params::PremissionPlanning_SetHeadwear Parms{};
 
 	Parms.Headwear = Headwear;
 
@@ -86785,20 +86785,20 @@ void UPreMissionPlanning::SetHeadwear(TSubclassOf<class ABaseItem> Headwear)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetItem
+// Function ReadyOrNot.PremissionPlanning.SetItem
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EItemType                               ItemType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class ABaseItem>            ItemClass                                              (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetItem(EItemType ItemType, TSubclassOf<class ABaseItem> ItemClass)
+void UPremissionPlanning::SetItem(EItemType ItemType, TSubclassOf<class ABaseItem> ItemClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetItem");
+		Func = Class->GetFunction("PremissionPlanning", "SetItem");
 
-	Params::PreMissionPlanning_SetItem Parms{};
+	Params::PremissionPlanning_SetItem Parms{};
 
 	Parms.ItemType = ItemType;
 	Parms.ItemClass = ItemClass;
@@ -86812,20 +86812,20 @@ void UPreMissionPlanning::SetItem(EItemType ItemType, TSubclassOf<class ABaseIte
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetItem_V2
+// Function ReadyOrNot.PremissionPlanning.SetItem_V2
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EItemClass                              ItemClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class ABaseItem>            ItemObjectClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetItem_V2(EItemClass ItemClass, TSubclassOf<class ABaseItem> ItemObjectClass)
+void UPremissionPlanning::SetItem_V2(EItemClass ItemClass, TSubclassOf<class ABaseItem> ItemObjectClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetItem_V2");
+		Func = Class->GetFunction("PremissionPlanning", "SetItem_V2");
 
-	Params::PreMissionPlanning_SetItem_V2 Parms{};
+	Params::PremissionPlanning_SetItem_V2 Parms{};
 
 	Parms.ItemClass = ItemClass;
 	Parms.ItemObjectClass = ItemObjectClass;
@@ -86839,20 +86839,20 @@ void UPreMissionPlanning::SetItem_V2(EItemClass ItemClass, TSubclassOf<class ABa
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetLightColorByTag
+// Function ReadyOrNot.PremissionPlanning.SetLightColorByTag
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class FName                             Tag                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FLinearColor&              Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetLightColorByTag(class FName Tag, const struct FLinearColor& Color)
+void UPremissionPlanning::SetLightColorByTag(class FName Tag, const struct FLinearColor& Color)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetLightColorByTag");
+		Func = Class->GetFunction("PremissionPlanning", "SetLightColorByTag");
 
-	Params::PreMissionPlanning_SetLightColorByTag Parms{};
+	Params::PremissionPlanning_SetLightColorByTag Parms{};
 
 	Parms.Tag = Tag;
 	Parms.Color = std::move(Color);
@@ -86866,19 +86866,19 @@ void UPreMissionPlanning::SetLightColorByTag(class FName Tag, const struct FLine
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetLockInput
+// Function ReadyOrNot.PremissionPlanning.SetLockInput
 // (Final, Native, Public)
 // Parameters:
 // bool                                    bShouldLockInput                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetLockInput(bool bShouldLockInput)
+void UPremissionPlanning::SetLockInput(bool bShouldLockInput)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetLockInput");
+		Func = Class->GetFunction("PremissionPlanning", "SetLockInput");
 
-	Params::PreMissionPlanning_SetLockInput Parms{};
+	Params::PremissionPlanning_SetLockInput Parms{};
 
 	Parms.bShouldLockInput = bShouldLockInput;
 
@@ -86891,19 +86891,19 @@ void UPreMissionPlanning::SetLockInput(bool bShouldLockInput)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetLongTactical
+// Function ReadyOrNot.PremissionPlanning.SetLongTactical
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseItem>            LongTactical                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetLongTactical(TSubclassOf<class ABaseItem> LongTactical)
+void UPremissionPlanning::SetLongTactical(TSubclassOf<class ABaseItem> LongTactical)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetLongTactical");
+		Func = Class->GetFunction("PremissionPlanning", "SetLongTactical");
 
-	Params::PreMissionPlanning_SetLongTactical Parms{};
+	Params::PremissionPlanning_SetLongTactical Parms{};
 
 	Parms.LongTactical = LongTactical;
 
@@ -86916,19 +86916,19 @@ void UPreMissionPlanning::SetLongTactical(TSubclassOf<class ABaseItem> LongTacti
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPlayerSkin
+// Function ReadyOrNot.PremissionPlanning.SetPlayerSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class USkinComponent>       SkinCompClass                                          (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPlayerSkin(TSubclassOf<class USkinComponent> SkinCompClass)
+void UPremissionPlanning::SetPlayerSkin(TSubclassOf<class USkinComponent> SkinCompClass)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPlayerSkin");
+		Func = Class->GetFunction("PremissionPlanning", "SetPlayerSkin");
 
-	Params::PreMissionPlanning_SetPlayerSkin Parms{};
+	Params::PremissionPlanning_SetPlayerSkin Parms{};
 
 	Parms.SkinCompClass = SkinCompClass;
 
@@ -86941,19 +86941,19 @@ void UPreMissionPlanning::SetPlayerSkin(TSubclassOf<class USkinComponent> SkinCo
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryAmmunitionAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryAmmunitionAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    AmmunitionAttachment                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryAmmunitionAttachment(TSubclassOf<class UWeaponAttachment> AmmunitionAttachment)
+void UPremissionPlanning::SetPrimaryAmmunitionAttachment(TSubclassOf<class UWeaponAttachment> AmmunitionAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryAmmunitionAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryAmmunitionAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryAmmunitionAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryAmmunitionAttachment Parms{};
 
 	Parms.AmmunitionAttachment = AmmunitionAttachment;
 
@@ -86966,19 +86966,19 @@ void UPreMissionPlanning::SetPrimaryAmmunitionAttachment(TSubclassOf<class UWeap
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryGripAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryGripAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    GripAttachment                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryGripAttachment(TSubclassOf<class UWeaponAttachment> GripAttachment)
+void UPremissionPlanning::SetPrimaryGripAttachment(TSubclassOf<class UWeaponAttachment> GripAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryGripAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryGripAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryGripAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryGripAttachment Parms{};
 
 	Parms.GripAttachment = GripAttachment;
 
@@ -86991,19 +86991,19 @@ void UPreMissionPlanning::SetPrimaryGripAttachment(TSubclassOf<class UWeaponAtta
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryIlluminatorAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryIlluminatorAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    IlluminatorAttachment                                  (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryIlluminatorAttachment(TSubclassOf<class UWeaponAttachment> IlluminatorAttachment)
+void UPremissionPlanning::SetPrimaryIlluminatorAttachment(TSubclassOf<class UWeaponAttachment> IlluminatorAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryIlluminatorAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryIlluminatorAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryIlluminatorAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryIlluminatorAttachment Parms{};
 
 	Parms.IlluminatorAttachment = IlluminatorAttachment;
 
@@ -87016,19 +87016,19 @@ void UPreMissionPlanning::SetPrimaryIlluminatorAttachment(TSubclassOf<class UWea
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryMuzzleAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryMuzzleAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    MuzzleAttachment                                       (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryMuzzleAttachment(TSubclassOf<class UWeaponAttachment> MuzzleAttachment)
+void UPremissionPlanning::SetPrimaryMuzzleAttachment(TSubclassOf<class UWeaponAttachment> MuzzleAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryMuzzleAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryMuzzleAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryMuzzleAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryMuzzleAttachment Parms{};
 
 	Parms.MuzzleAttachment = MuzzleAttachment;
 
@@ -87041,19 +87041,19 @@ void UPreMissionPlanning::SetPrimaryMuzzleAttachment(TSubclassOf<class UWeaponAt
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryOverbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryOverbarrelAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    OverbarrelAttachment                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryOverbarrelAttachment(TSubclassOf<class UWeaponAttachment> OverbarrelAttachment)
+void UPremissionPlanning::SetPrimaryOverbarrelAttachment(TSubclassOf<class UWeaponAttachment> OverbarrelAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryOverbarrelAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryOverbarrelAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryOverbarrelAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryOverbarrelAttachment Parms{};
 
 	Parms.OverbarrelAttachment = OverbarrelAttachment;
 
@@ -87066,19 +87066,19 @@ void UPreMissionPlanning::SetPrimaryOverbarrelAttachment(TSubclassOf<class UWeap
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryScopeAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryScopeAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    ScopeAttachment                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryScopeAttachment(TSubclassOf<class UWeaponAttachment> ScopeAttachment)
+void UPremissionPlanning::SetPrimaryScopeAttachment(TSubclassOf<class UWeaponAttachment> ScopeAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryScopeAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryScopeAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryScopeAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryScopeAttachment Parms{};
 
 	Parms.ScopeAttachment = ScopeAttachment;
 
@@ -87091,19 +87091,19 @@ void UPreMissionPlanning::SetPrimaryScopeAttachment(TSubclassOf<class UWeaponAtt
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimarySkinAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimarySkinAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class USkinComponent>       SkinAttachment                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimarySkinAttachment(TSubclassOf<class USkinComponent> SkinAttachment)
+void UPremissionPlanning::SetPrimarySkinAttachment(TSubclassOf<class USkinComponent> SkinAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimarySkinAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimarySkinAttachment");
 
-	Params::PreMissionPlanning_SetPrimarySkinAttachment Parms{};
+	Params::PremissionPlanning_SetPrimarySkinAttachment Parms{};
 
 	Parms.SkinAttachment = SkinAttachment;
 
@@ -87116,19 +87116,19 @@ void UPreMissionPlanning::SetPrimarySkinAttachment(TSubclassOf<class USkinCompon
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryStockAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryStockAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    StockAttachment                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryStockAttachment(TSubclassOf<class UWeaponAttachment> StockAttachment)
+void UPremissionPlanning::SetPrimaryStockAttachment(TSubclassOf<class UWeaponAttachment> StockAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryStockAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryStockAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryStockAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryStockAttachment Parms{};
 
 	Parms.StockAttachment = StockAttachment;
 
@@ -87141,19 +87141,19 @@ void UPreMissionPlanning::SetPrimaryStockAttachment(TSubclassOf<class UWeaponAtt
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryUnderbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryUnderbarrelAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    UnderbarrelAttachment                                  (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryUnderbarrelAttachment(TSubclassOf<class UWeaponAttachment> UnderbarrelAttachment)
+void UPremissionPlanning::SetPrimaryUnderbarrelAttachment(TSubclassOf<class UWeaponAttachment> UnderbarrelAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryUnderbarrelAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryUnderbarrelAttachment");
 
-	Params::PreMissionPlanning_SetPrimaryUnderbarrelAttachment Parms{};
+	Params::PremissionPlanning_SetPrimaryUnderbarrelAttachment Parms{};
 
 	Parms.UnderbarrelAttachment = UnderbarrelAttachment;
 
@@ -87166,19 +87166,19 @@ void UPreMissionPlanning::SetPrimaryUnderbarrelAttachment(TSubclassOf<class UWea
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetPrimaryWeapon
+// Function ReadyOrNot.PremissionPlanning.SetPrimaryWeapon
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // const struct FWeaponData&               WeaponData                                             (Parm, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetPrimaryWeapon(const struct FWeaponData& WeaponData)
+void UPremissionPlanning::SetPrimaryWeapon(const struct FWeaponData& WeaponData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetPrimaryWeapon");
+		Func = Class->GetFunction("PremissionPlanning", "SetPrimaryWeapon");
 
-	Params::PreMissionPlanning_SetPrimaryWeapon Parms{};
+	Params::PremissionPlanning_SetPrimaryWeapon Parms{};
 
 	Parms.WeaponData = std::move(WeaponData);
 
@@ -87191,19 +87191,19 @@ void UPreMissionPlanning::SetPrimaryWeapon(const struct FWeaponData& WeaponData)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryAmmunitionAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryAmmunitionAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    AmmunitionAttachment                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryAmmunitionAttachment(TSubclassOf<class UWeaponAttachment> AmmunitionAttachment)
+void UPremissionPlanning::SetSecondaryAmmunitionAttachment(TSubclassOf<class UWeaponAttachment> AmmunitionAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryAmmunitionAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryAmmunitionAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryAmmunitionAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryAmmunitionAttachment Parms{};
 
 	Parms.AmmunitionAttachment = AmmunitionAttachment;
 
@@ -87216,19 +87216,19 @@ void UPreMissionPlanning::SetSecondaryAmmunitionAttachment(TSubclassOf<class UWe
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryGripAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryGripAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    GripAttachment                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryGripAttachment(TSubclassOf<class UWeaponAttachment> GripAttachment)
+void UPremissionPlanning::SetSecondaryGripAttachment(TSubclassOf<class UWeaponAttachment> GripAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryGripAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryGripAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryGripAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryGripAttachment Parms{};
 
 	Parms.GripAttachment = GripAttachment;
 
@@ -87241,19 +87241,19 @@ void UPreMissionPlanning::SetSecondaryGripAttachment(TSubclassOf<class UWeaponAt
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryIlluminatorAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryIlluminatorAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    IlluminatorAttachment                                  (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryIlluminatorAttachment(TSubclassOf<class UWeaponAttachment> IlluminatorAttachment)
+void UPremissionPlanning::SetSecondaryIlluminatorAttachment(TSubclassOf<class UWeaponAttachment> IlluminatorAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryIlluminatorAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryIlluminatorAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryIlluminatorAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryIlluminatorAttachment Parms{};
 
 	Parms.IlluminatorAttachment = IlluminatorAttachment;
 
@@ -87266,19 +87266,19 @@ void UPreMissionPlanning::SetSecondaryIlluminatorAttachment(TSubclassOf<class UW
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryMuzzleAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryMuzzleAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    MuzzleAttachment                                       (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryMuzzleAttachment(TSubclassOf<class UWeaponAttachment> MuzzleAttachment)
+void UPremissionPlanning::SetSecondaryMuzzleAttachment(TSubclassOf<class UWeaponAttachment> MuzzleAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryMuzzleAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryMuzzleAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryMuzzleAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryMuzzleAttachment Parms{};
 
 	Parms.MuzzleAttachment = MuzzleAttachment;
 
@@ -87291,19 +87291,19 @@ void UPreMissionPlanning::SetSecondaryMuzzleAttachment(TSubclassOf<class UWeapon
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryOverbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryOverbarrelAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    OverbarrelAttachment                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryOverbarrelAttachment(TSubclassOf<class UWeaponAttachment> OverbarrelAttachment)
+void UPremissionPlanning::SetSecondaryOverbarrelAttachment(TSubclassOf<class UWeaponAttachment> OverbarrelAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryOverbarrelAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryOverbarrelAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryOverbarrelAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryOverbarrelAttachment Parms{};
 
 	Parms.OverbarrelAttachment = OverbarrelAttachment;
 
@@ -87316,19 +87316,19 @@ void UPreMissionPlanning::SetSecondaryOverbarrelAttachment(TSubclassOf<class UWe
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryScopeAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryScopeAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    ScopeAttachment                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryScopeAttachment(TSubclassOf<class UWeaponAttachment> ScopeAttachment)
+void UPremissionPlanning::SetSecondaryScopeAttachment(TSubclassOf<class UWeaponAttachment> ScopeAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryScopeAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryScopeAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryScopeAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryScopeAttachment Parms{};
 
 	Parms.ScopeAttachment = ScopeAttachment;
 
@@ -87341,19 +87341,19 @@ void UPreMissionPlanning::SetSecondaryScopeAttachment(TSubclassOf<class UWeaponA
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondarySkinAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondarySkinAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class USkinComponent>       SkinAttachment                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondarySkinAttachment(TSubclassOf<class USkinComponent> SkinAttachment)
+void UPremissionPlanning::SetSecondarySkinAttachment(TSubclassOf<class USkinComponent> SkinAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondarySkinAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondarySkinAttachment");
 
-	Params::PreMissionPlanning_SetSecondarySkinAttachment Parms{};
+	Params::PremissionPlanning_SetSecondarySkinAttachment Parms{};
 
 	Parms.SkinAttachment = SkinAttachment;
 
@@ -87366,19 +87366,19 @@ void UPreMissionPlanning::SetSecondarySkinAttachment(TSubclassOf<class USkinComp
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryStockAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryStockAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    StockAttachment                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryStockAttachment(TSubclassOf<class UWeaponAttachment> StockAttachment)
+void UPremissionPlanning::SetSecondaryStockAttachment(TSubclassOf<class UWeaponAttachment> StockAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryStockAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryStockAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryStockAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryStockAttachment Parms{};
 
 	Parms.StockAttachment = StockAttachment;
 
@@ -87391,19 +87391,19 @@ void UPreMissionPlanning::SetSecondaryStockAttachment(TSubclassOf<class UWeaponA
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryUnderbarrelAttachment
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryUnderbarrelAttachment
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class UWeaponAttachment>    UnderbarrelAttachment                                  (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryUnderbarrelAttachment(TSubclassOf<class UWeaponAttachment> UnderbarrelAttachment)
+void UPremissionPlanning::SetSecondaryUnderbarrelAttachment(TSubclassOf<class UWeaponAttachment> UnderbarrelAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryUnderbarrelAttachment");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryUnderbarrelAttachment");
 
-	Params::PreMissionPlanning_SetSecondaryUnderbarrelAttachment Parms{};
+	Params::PremissionPlanning_SetSecondaryUnderbarrelAttachment Parms{};
 
 	Parms.UnderbarrelAttachment = UnderbarrelAttachment;
 
@@ -87416,19 +87416,19 @@ void UPreMissionPlanning::SetSecondaryUnderbarrelAttachment(TSubclassOf<class UW
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSecondaryWeapon
+// Function ReadyOrNot.PremissionPlanning.SetSecondaryWeapon
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // const struct FWeaponData&               WeaponData                                             (Parm, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSecondaryWeapon(const struct FWeaponData& WeaponData)
+void UPremissionPlanning::SetSecondaryWeapon(const struct FWeaponData& WeaponData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSecondaryWeapon");
+		Func = Class->GetFunction("PremissionPlanning", "SetSecondaryWeapon");
 
-	Params::PreMissionPlanning_SetSecondaryWeapon Parms{};
+	Params::PremissionPlanning_SetSecondaryWeapon Parms{};
 
 	Parms.WeaponData = std::move(WeaponData);
 
@@ -87441,19 +87441,19 @@ void UPreMissionPlanning::SetSecondaryWeapon(const struct FWeaponData& WeaponDat
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetSubcategory
+// Function ReadyOrNot.PremissionPlanning.SetSubcategory
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EPreMissionSubCategory                  NewSubCategory                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetSubcategory(EPreMissionSubCategory NewSubCategory)
+void UPremissionPlanning::SetSubcategory(EPreMissionSubCategory NewSubCategory)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetSubcategory");
+		Func = Class->GetFunction("PremissionPlanning", "SetSubcategory");
 
-	Params::PreMissionPlanning_SetSubcategory Parms{};
+	Params::PremissionPlanning_SetSubcategory Parms{};
 
 	Parms.NewSubCategory = NewSubCategory;
 
@@ -87466,20 +87466,20 @@ void UPreMissionPlanning::SetSubcategory(EPreMissionSubCategory NewSubCategory)
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.SetWorkbenchItemClass
+// Function ReadyOrNot.PremissionPlanning.SetWorkbenchItemClass
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Item                                                   (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             Tag                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::SetWorkbenchItemClass(TSubclassOf<class ABaseItem> Item, class FName Tag)
+void UPremissionPlanning::SetWorkbenchItemClass(TSubclassOf<class ABaseItem> Item, class FName Tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "SetWorkbenchItemClass");
+		Func = Class->GetFunction("PremissionPlanning", "SetWorkbenchItemClass");
 
-	Params::PreMissionPlanning_SetWorkbenchItemClass Parms{};
+	Params::PremissionPlanning_SetWorkbenchItemClass Parms{};
 
 	Parms.Item = Item;
 	Parms.Tag = Tag;
@@ -87493,19 +87493,19 @@ void UPreMissionPlanning::SetWorkbenchItemClass(TSubclassOf<class ABaseItem> Ite
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.ShouldShowLoadout
+// Function ReadyOrNot.PremissionPlanning.ShouldShowLoadout
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UPreMissionPlanning::ShouldShowLoadout()
+bool UPremissionPlanning::ShouldShowLoadout()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "ShouldShowLoadout");
+		Func = Class->GetFunction("PremissionPlanning", "ShouldShowLoadout");
 
-	Params::PreMissionPlanning_ShouldShowLoadout Parms{};
+	Params::PremissionPlanning_ShouldShowLoadout Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87518,20 +87518,20 @@ bool UPreMissionPlanning::ShouldShowLoadout()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacter
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacter
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotPlayerState*           InPreviewPlayerState                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName                             Tag                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::UpdatePreviewCharacter(class AReadyOrNotPlayerState* InPreviewPlayerState, class FName Tag)
+void UPremissionPlanning::UpdatePreviewCharacter(class AReadyOrNotPlayerState* InPreviewPlayerState, class FName Tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewCharacter");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewCharacter");
 
-	Params::PreMissionPlanning_UpdatePreviewCharacter Parms{};
+	Params::PremissionPlanning_UpdatePreviewCharacter Parms{};
 
 	Parms.InPreviewPlayerState = InPreviewPlayerState;
 	Parms.Tag = Tag;
@@ -87545,15 +87545,15 @@ void UPreMissionPlanning::UpdatePreviewCharacter(class AReadyOrNotPlayerState* I
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacterArmour
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacterArmour
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::UpdatePreviewCharacterArmour()
+void UPremissionPlanning::UpdatePreviewCharacterArmour()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewCharacterArmour");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewCharacterArmour");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87564,15 +87564,15 @@ void UPreMissionPlanning::UpdatePreviewCharacterArmour()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacterHeadwear
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacterHeadwear
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::UpdatePreviewCharacterHeadwear()
+void UPremissionPlanning::UpdatePreviewCharacterHeadwear()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewCharacterHeadwear");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewCharacterHeadwear");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87583,15 +87583,15 @@ void UPreMissionPlanning::UpdatePreviewCharacterHeadwear()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacterLongTactical
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacterLongTactical
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::UpdatePreviewCharacterLongTactical()
+void UPremissionPlanning::UpdatePreviewCharacterLongTactical()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewCharacterLongTactical");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewCharacterLongTactical");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87602,15 +87602,15 @@ void UPreMissionPlanning::UpdatePreviewCharacterLongTactical()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacterPrimary
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacterPrimary
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::UpdatePreviewCharacterPrimary()
+void UPremissionPlanning::UpdatePreviewCharacterPrimary()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewCharacterPrimary");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewCharacterPrimary");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87621,15 +87621,15 @@ void UPreMissionPlanning::UpdatePreviewCharacterPrimary()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewCharacterSecondary
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewCharacterSecondary
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::UpdatePreviewCharacterSecondary()
+void UPremissionPlanning::UpdatePreviewCharacterSecondary()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewCharacterSecondary");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewCharacterSecondary");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87640,20 +87640,20 @@ void UPreMissionPlanning::UpdatePreviewCharacterSecondary()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewWeaponAttachments
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewWeaponAttachments
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    IsSecondary                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class UWeaponAttachment>    Attachment                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::UpdatePreviewWeaponAttachments(bool IsSecondary, TSubclassOf<class UWeaponAttachment> Attachment)
+void UPremissionPlanning::UpdatePreviewWeaponAttachments(bool IsSecondary, TSubclassOf<class UWeaponAttachment> Attachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewWeaponAttachments");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewWeaponAttachments");
 
-	Params::PreMissionPlanning_UpdatePreviewWeaponAttachments Parms{};
+	Params::PremissionPlanning_UpdatePreviewWeaponAttachments Parms{};
 
 	Parms.IsSecondary = IsSecondary;
 	Parms.Attachment = Attachment;
@@ -87667,20 +87667,20 @@ void UPreMissionPlanning::UpdatePreviewWeaponAttachments(bool IsSecondary, TSubc
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdatePreviewWeaponSkin
+// Function ReadyOrNot.PremissionPlanning.UpdatePreviewWeaponSkin
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    IsSecondary                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TSubclassOf<class USkinComponent>       SkinAttachment                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::UpdatePreviewWeaponSkin(bool IsSecondary, TSubclassOf<class USkinComponent> SkinAttachment)
+void UPremissionPlanning::UpdatePreviewWeaponSkin(bool IsSecondary, TSubclassOf<class USkinComponent> SkinAttachment)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdatePreviewWeaponSkin");
+		Func = Class->GetFunction("PremissionPlanning", "UpdatePreviewWeaponSkin");
 
-	Params::PreMissionPlanning_UpdatePreviewWeaponSkin Parms{};
+	Params::PremissionPlanning_UpdatePreviewWeaponSkin Parms{};
 
 	Parms.IsSecondary = IsSecondary;
 	Parms.SkinAttachment = SkinAttachment;
@@ -87694,20 +87694,20 @@ void UPreMissionPlanning::UpdatePreviewWeaponSkin(bool IsSecondary, TSubclassOf<
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWeaponDefaultFireMode
+// Function ReadyOrNot.PremissionPlanning.UpdateWeaponDefaultFireMode
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseWeapon>          Weapon                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EFireMode                               NewDefaultFireMode                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::UpdateWeaponDefaultFireMode(TSubclassOf<class ABaseWeapon> Weapon, EFireMode NewDefaultFireMode)
+void UPremissionPlanning::UpdateWeaponDefaultFireMode(TSubclassOf<class ABaseWeapon> Weapon, EFireMode NewDefaultFireMode)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdateWeaponDefaultFireMode");
+		Func = Class->GetFunction("PremissionPlanning", "UpdateWeaponDefaultFireMode");
 
-	Params::PreMissionPlanning_UpdateWeaponDefaultFireMode Parms{};
+	Params::PremissionPlanning_UpdateWeaponDefaultFireMode Parms{};
 
 	Parms.Weapon = Weapon;
 	Parms.NewDefaultFireMode = NewDefaultFireMode;
@@ -87721,21 +87721,21 @@ void UPreMissionPlanning::UpdateWeaponDefaultFireMode(TSubclassOf<class ABaseWea
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWeaponPreset
+// Function ReadyOrNot.PremissionPlanning.UpdateWeaponPreset
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Weapon                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FWeaponPreset&             PresetData                                             (Parm, NoDestructor, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::UpdateWeaponPreset(TSubclassOf<class ABaseItem> Weapon, const struct FWeaponPreset& PresetData, int32 Index_0)
+void UPremissionPlanning::UpdateWeaponPreset(TSubclassOf<class ABaseItem> Weapon, const struct FWeaponPreset& PresetData, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdateWeaponPreset");
+		Func = Class->GetFunction("PremissionPlanning", "UpdateWeaponPreset");
 
-	Params::PreMissionPlanning_UpdateWeaponPreset Parms{};
+	Params::PremissionPlanning_UpdateWeaponPreset Parms{};
 
 	Parms.Weapon = Weapon;
 	Parms.PresetData = std::move(PresetData);
@@ -87750,20 +87750,20 @@ void UPreMissionPlanning::UpdateWeaponPreset(TSubclassOf<class ABaseItem> Weapon
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWeaponPresets
+// Function ReadyOrNot.PremissionPlanning.UpdateWeaponPresets
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // TSubclassOf<class ABaseItem>            Weapon                                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FSavedWeaponPreset&        Presets                                                (Parm, NativeAccessSpecifierPublic)
 
-void UPreMissionPlanning::UpdateWeaponPresets(TSubclassOf<class ABaseItem> Weapon, const struct FSavedWeaponPreset& Presets)
+void UPremissionPlanning::UpdateWeaponPresets(TSubclassOf<class ABaseItem> Weapon, const struct FSavedWeaponPreset& Presets)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdateWeaponPresets");
+		Func = Class->GetFunction("PremissionPlanning", "UpdateWeaponPresets");
 
-	Params::PreMissionPlanning_UpdateWeaponPresets Parms{};
+	Params::PremissionPlanning_UpdateWeaponPresets Parms{};
 
 	Parms.Weapon = Weapon;
 	Parms.Presets = std::move(Presets);
@@ -87777,15 +87777,15 @@ void UPreMissionPlanning::UpdateWeaponPresets(TSubclassOf<class ABaseItem> Weapo
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.UpdateWorkbenchItemAttachments
+// Function ReadyOrNot.PremissionPlanning.UpdateWorkbenchItemAttachments
 // (Final, Native, Public, BlueprintCallable)
 
-void UPreMissionPlanning::UpdateWorkbenchItemAttachments()
+void UPremissionPlanning::UpdateWorkbenchItemAttachments()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "UpdateWorkbenchItemAttachments");
+		Func = Class->GetFunction("PremissionPlanning", "UpdateWorkbenchItemAttachments");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -87796,20 +87796,20 @@ void UPreMissionPlanning::UpdateWorkbenchItemAttachments()
 }
 
 
-// Function ReadyOrNot.PreMissionPlanning.ItemClassToItemType
+// Function ReadyOrNot.PremissionPlanning.ItemClassToItemType
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // EItemClass                              InItemClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EItemType                               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EItemType UPreMissionPlanning::ItemClassToItemType(EItemClass InItemClass) const
+EItemType UPremissionPlanning::ItemClassToItemType(EItemClass InItemClass) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PreMissionPlanning", "ItemClassToItemType");
+		Func = Class->GetFunction("PremissionPlanning", "ItemClassToItemType");
 
-	Params::PreMissionPlanning_ItemClassToItemType Parms{};
+	Params::PremissionPlanning_ItemClassToItemType Parms{};
 
 	Parms.InItemClass = InItemClass;
 
@@ -89781,21 +89781,21 @@ bool AInterestOverrideZone::GetCurrentInterestInfo(class ACyberneticCharacter* A
 }
 
 
-// Function ReadyOrNot.Door.FlipStackUpArea
+// Function ReadyOrNot.door.FlipStackUpArea
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
 // Parameters:
 // EStackupGenArea*                        OutStackUpArea                                         (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bHorizontalFlip                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bVerticalFlip                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::FlipStackUpArea(EStackupGenArea* OutStackUpArea, bool bHorizontalFlip, bool bVerticalFlip)
+void Adoor::FlipStackUpArea(EStackupGenArea* OutStackUpArea, bool bHorizontalFlip, bool bVerticalFlip)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("Door", "FlipStackUpArea");
+		Func = StaticClass()->GetFunction("door", "FlipStackUpArea");
 
-	Params::Door_FlipStackUpArea Parms{};
+	Params::door_FlipStackUpArea Parms{};
 
 	Parms.bHorizontalFlip = bHorizontalFlip;
 	Parms.bVerticalFlip = bVerticalFlip;
@@ -89812,20 +89812,20 @@ void ADoor::FlipStackUpArea(EStackupGenArea* OutStackUpArea, bool bHorizontalFli
 }
 
 
-// Function ReadyOrNot.Door.SetAllElectronicLocks
+// Function ReadyOrNot.door.SetAllElectronicLocks
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bLocked_0                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::SetAllElectronicLocks(class UObject* WorldContextObject, bool bLocked_0)
+void Adoor::SetAllElectronicLocks(class UObject* WorldContextObject, bool bLocked_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("Door", "SetAllElectronicLocks");
+		Func = StaticClass()->GetFunction("door", "SetAllElectronicLocks");
 
-	Params::Door_SetAllElectronicLocks Parms{};
+	Params::door_SetAllElectronicLocks Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
 	Parms.bLocked_0 = bLocked_0;
@@ -89839,19 +89839,19 @@ void ADoor::SetAllElectronicLocks(class UObject* WorldContextObject, bool bLocke
 }
 
 
-// Function ReadyOrNot.Door.SetSWATHasAllKeycards
+// Function ReadyOrNot.door.SetSWATHasAllKeycards
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::SetSWATHasAllKeycards(class UObject* WorldContextObject)
+void Adoor::SetSWATHasAllKeycards(class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("Door", "SetSWATHasAllKeycards");
+		Func = StaticClass()->GetFunction("door", "SetSWATHasAllKeycards");
 
-	Params::Door_SetSWATHasAllKeycards Parms{};
+	Params::door_SetSWATHasAllKeycards Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
 
@@ -89864,15 +89864,15 @@ void ADoor::SetSWATHasAllKeycards(class UObject* WorldContextObject)
 }
 
 
-// Function ReadyOrNot.Door.ActivateDoorBlockerForWorldGen
+// Function ReadyOrNot.door.ActivateDoorBlockerForWorldGen
 // (Final, Native, Public)
 
-void ADoor::ActivateDoorBlockerForWorldGen()
+void Adoor::ActivateDoorBlockerForWorldGen()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ActivateDoorBlockerForWorldGen");
+		Func = Class->GetFunction("door", "ActivateDoorBlockerForWorldGen");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -89883,15 +89883,15 @@ void ADoor::ActivateDoorBlockerForWorldGen()
 }
 
 
-// Function ReadyOrNot.Door.AIResponseToDoorDamage
+// Function ReadyOrNot.door.AIResponseToDoorDamage
 // (Final, Native, Protected)
 
-void ADoor::AIResponseToDoorDamage()
+void Adoor::AIResponseToDoorDamage()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AIResponseToDoorDamage");
+		Func = Class->GetFunction("door", "AIResponseToDoorDamage");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -89902,20 +89902,20 @@ void ADoor::AIResponseToDoorDamage()
 }
 
 
-// Function ReadyOrNot.Door.ApplyDoorDamage
+// Function ReadyOrNot.door.ApplyDoorDamage
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // EDoorDamageType                         InDoorDamage                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             Victim                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::ApplyDoorDamage(EDoorDamageType InDoorDamage, class AReadyOrNotCharacter* Victim)
+void Adoor::ApplyDoorDamage(EDoorDamageType InDoorDamage, class AReadyOrNotCharacter* Victim)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ApplyDoorDamage");
+		Func = Class->GetFunction("door", "ApplyDoorDamage");
 
-	Params::Door_ApplyDoorDamage Parms{};
+	Params::door_ApplyDoorDamage Parms{};
 
 	Parms.InDoorDamage = InDoorDamage;
 	Parms.Victim = Victim;
@@ -89929,20 +89929,20 @@ void ADoor::ApplyDoorDamage(EDoorDamageType InDoorDamage, class AReadyOrNotChara
 }
 
 
-// Function ReadyOrNot.Door.ApplyRandomDamageToChunks
+// Function ReadyOrNot.door.ApplyRandomDamageToChunks
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // float                                   MinDamage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   MaxDamage                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::ApplyRandomDamageToChunks(float MinDamage, float MaxDamage)
+void Adoor::ApplyRandomDamageToChunks(float MinDamage, float MaxDamage)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ApplyRandomDamageToChunks");
+		Func = Class->GetFunction("door", "ApplyRandomDamageToChunks");
 
-	Params::Door_ApplyRandomDamageToChunks Parms{};
+	Params::door_ApplyRandomDamageToChunks Parms{};
 
 	Parms.MinDamage = MinDamage;
 	Parms.MaxDamage = MaxDamage;
@@ -89956,20 +89956,20 @@ void ADoor::ApplyRandomDamageToChunks(float MinDamage, float MaxDamage)
 }
 
 
-// Function ReadyOrNot.Door.AttachTrap
+// Function ReadyOrNot.door.AttachTrap
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class ATrapActorAttachedToDoor*         NewTrap                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAttachToDoor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::AttachTrap(class ATrapActorAttachedToDoor* NewTrap, bool bAttachToDoor)
+void Adoor::AttachTrap(class ATrapActorAttachedToDoor* NewTrap, bool bAttachToDoor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AttachTrap");
+		Func = Class->GetFunction("door", "AttachTrap");
 
-	Params::Door_AttachTrap Parms{};
+	Params::door_AttachTrap Parms{};
 
 	Parms.NewTrap = NewTrap;
 	Parms.bAttachToDoor = bAttachToDoor;
@@ -89983,19 +89983,19 @@ void ADoor::AttachTrap(class ATrapActorAttachedToDoor* NewTrap, bool bAttachToDo
 }
 
 
-// Function ReadyOrNot.Door.AttachWedge
+// Function ReadyOrNot.door.AttachWedge
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class ADoorJam*                         NewWedge                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::AttachWedge(class ADoorJam* NewWedge)
+void Adoor::AttachWedge(class ADoorJam* NewWedge)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AttachWedge");
+		Func = Class->GetFunction("door", "AttachWedge");
 
-	Params::Door_AttachWedge Parms{};
+	Params::door_AttachWedge Parms{};
 
 	Parms.NewWedge = NewWedge;
 
@@ -90008,15 +90008,15 @@ void ADoor::AttachWedge(class ADoorJam* NewWedge)
 }
 
 
-// Function ReadyOrNot.Door.BlockAllDoorways
+// Function ReadyOrNot.door.BlockAllDoorways
 // (Final, Native, Public)
 
-void ADoor::BlockAllDoorways()
+void Adoor::BlockAllDoorways()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BlockAllDoorways");
+		Func = Class->GetFunction("door", "BlockAllDoorways");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90027,20 +90027,20 @@ void ADoor::BlockAllDoorways()
 }
 
 
-// Function ReadyOrNot.Door.BodyRamDoor
+// Function ReadyOrNot.door.BodyRamDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorRamCharacter                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::BodyRamDoor(class AReadyOrNotCharacter* DoorRamCharacter)
+float Adoor::BodyRamDoor(class AReadyOrNotCharacter* DoorRamCharacter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BodyRamDoor");
+		Func = Class->GetFunction("door", "BodyRamDoor");
 
-	Params::Door_BodyRamDoor Parms{};
+	Params::door_BodyRamDoor Parms{};
 
 	Parms.DoorRamCharacter = DoorRamCharacter;
 
@@ -90055,20 +90055,20 @@ float ADoor::BodyRamDoor(class AReadyOrNotCharacter* DoorRamCharacter)
 }
 
 
-// Function ReadyOrNot.Door.BreachDoor
+// Function ReadyOrNot.door.BreachDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorBreacherCharacter                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InIncrementAngle                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::BreachDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, float InIncrementAngle)
+void Adoor::BreachDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, float InIncrementAngle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BreachDoor");
+		Func = Class->GetFunction("door", "BreachDoor");
 
-	Params::Door_BreachDoor Parms{};
+	Params::door_BreachDoor Parms{};
 
 	Parms.DoorBreacherCharacter = DoorBreacherCharacter;
 	Parms.InIncrementAngle = InIncrementAngle;
@@ -90082,21 +90082,21 @@ void ADoor::BreachDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, float 
 }
 
 
-// Function ReadyOrNot.Door.BreachDoorFromPoint
+// Function ReadyOrNot.door.BreachDoorFromPoint
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorBreacherCharacter                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   BreachPoint                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InIncrementAngle                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::BreachDoorFromPoint(class AReadyOrNotCharacter* DoorBreacherCharacter, const struct FVector& BreachPoint, float InIncrementAngle)
+void Adoor::BreachDoorFromPoint(class AReadyOrNotCharacter* DoorBreacherCharacter, const struct FVector& BreachPoint, float InIncrementAngle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BreachDoorFromPoint");
+		Func = Class->GetFunction("door", "BreachDoorFromPoint");
 
-	Params::Door_BreachDoorFromPoint Parms{};
+	Params::door_BreachDoorFromPoint Parms{};
 
 	Parms.DoorBreacherCharacter = DoorBreacherCharacter;
 	Parms.BreachPoint = std::move(BreachPoint);
@@ -90111,7 +90111,7 @@ void ADoor::BreachDoorFromPoint(class AReadyOrNotCharacter* DoorBreacherCharacte
 }
 
 
-// Function ReadyOrNot.Door.BreakAndDetachDoor
+// Function ReadyOrNot.door.BreakAndDetachDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bDestroyAllChunks                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -90119,14 +90119,14 @@ void ADoor::BreachDoorFromPoint(class AReadyOrNotCharacter* DoorBreacherCharacte
 // float                                   Impulse                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ForwardOffset                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::BreakAndDetachDoor(bool bDestroyAllChunks, class AReadyOrNotCharacter* DoorBreakerCharacter, float Impulse, float ForwardOffset)
+void Adoor::BreakAndDetachDoor(bool bDestroyAllChunks, class AReadyOrNotCharacter* DoorBreakerCharacter, float Impulse, float ForwardOffset)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BreakAndDetachDoor");
+		Func = Class->GetFunction("door", "BreakAndDetachDoor");
 
-	Params::Door_BreakAndDetachDoor Parms{};
+	Params::door_BreakAndDetachDoor Parms{};
 
 	Parms.bDestroyAllChunks = bDestroyAllChunks;
 	Parms.DoorBreakerCharacter = DoorBreakerCharacter;
@@ -90142,20 +90142,20 @@ void ADoor::BreakAndDetachDoor(bool bDestroyAllChunks, class AReadyOrNotCharacte
 }
 
 
-// Function ReadyOrNot.Door.BreakDoor
+// Function ReadyOrNot.door.BreakDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bDestroyAllChunks                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             DoorBreakerCharacter                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::BreakDoor(bool bDestroyAllChunks, class AReadyOrNotCharacter* DoorBreakerCharacter)
+void Adoor::BreakDoor(bool bDestroyAllChunks, class AReadyOrNotCharacter* DoorBreakerCharacter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BreakDoor");
+		Func = Class->GetFunction("door", "BreakDoor");
 
-	Params::Door_BreakDoor Parms{};
+	Params::door_BreakDoor Parms{};
 
 	Parms.bDestroyAllChunks = bDestroyAllChunks;
 	Parms.DoorBreakerCharacter = DoorBreakerCharacter;
@@ -90169,15 +90169,15 @@ void ADoor::BreakDoor(bool bDestroyAllChunks, class AReadyOrNotCharacter* DoorBr
 }
 
 
-// Function ReadyOrNot.Door.BreakDoorHandles
+// Function ReadyOrNot.door.BreakDoorHandles
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::BreakDoorHandles()
+void Adoor::BreakDoorHandles()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "BreakDoorHandles");
+		Func = Class->GetFunction("door", "BreakDoorHandles");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90188,15 +90188,15 @@ void ADoor::BreakDoorHandles()
 }
 
 
-// Function ReadyOrNot.Door.CalculateRoomPositioning
+// Function ReadyOrNot.door.CalculateRoomPositioning
 // (Final, Native, Public)
 
-void ADoor::CalculateRoomPositioning()
+void Adoor::CalculateRoomPositioning()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CalculateRoomPositioning");
+		Func = Class->GetFunction("door", "CalculateRoomPositioning");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90207,21 +90207,21 @@ void ADoor::CalculateRoomPositioning()
 }
 
 
-// Function ReadyOrNot.Door.CloseDoor
+// Function ReadyOrNot.door.CloseDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorCloserCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bInstant                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAnimateDoorHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::CloseDoor(class AReadyOrNotCharacter* DoorCloserCharacter, bool bInstant, bool bAnimateDoorHandle)
+void Adoor::CloseDoor(class AReadyOrNotCharacter* DoorCloserCharacter, bool bInstant, bool bAnimateDoorHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CloseDoor");
+		Func = Class->GetFunction("door", "CloseDoor");
 
-	Params::Door_CloseDoor Parms{};
+	Params::door_CloseDoor Parms{};
 
 	Parms.DoorCloserCharacter = DoorCloserCharacter;
 	Parms.bInstant = bInstant;
@@ -90236,15 +90236,15 @@ void ADoor::CloseDoor(class AReadyOrNotCharacter* DoorCloserCharacter, bool bIns
 }
 
 
-// Function ReadyOrNot.Door.CloseDoor_Debug
+// Function ReadyOrNot.door.CloseDoor_Debug
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::CloseDoor_Debug()
+void Adoor::CloseDoor_Debug()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CloseDoor_Debug");
+		Func = Class->GetFunction("door", "CloseDoor_Debug");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90255,21 +90255,21 @@ void ADoor::CloseDoor_Debug()
 }
 
 
-// Function ReadyOrNot.Door.CloseSubDoor
+// Function ReadyOrNot.door.CloseSubDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorCloseCharacter                                     (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bInstant                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAnimateDoorHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::CloseSubDoor(class AReadyOrNotCharacter* DoorCloseCharacter, bool bInstant, bool bAnimateDoorHandle)
+void Adoor::CloseSubDoor(class AReadyOrNotCharacter* DoorCloseCharacter, bool bInstant, bool bAnimateDoorHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CloseSubDoor");
+		Func = Class->GetFunction("door", "CloseSubDoor");
 
-	Params::Door_CloseSubDoor Parms{};
+	Params::door_CloseSubDoor Parms{};
 
 	Parms.DoorCloseCharacter = DoorCloseCharacter;
 	Parms.bInstant = bInstant;
@@ -90284,20 +90284,20 @@ void ADoor::CloseSubDoor(class AReadyOrNotCharacter* DoorCloseCharacter, bool bI
 }
 
 
-// Function ReadyOrNot.Door.CollapseDoor
+// Function ReadyOrNot.door.CollapseDoor
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorBreacherCharacter                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   BreachLocation                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::CollapseDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, const struct FVector& BreachLocation)
+void Adoor::CollapseDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, const struct FVector& BreachLocation)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CollapseDoor");
+		Func = Class->GetFunction("door", "CollapseDoor");
 
-	Params::Door_CollapseDoor Parms{};
+	Params::door_CollapseDoor Parms{};
 
 	Parms.DoorBreacherCharacter = DoorBreacherCharacter;
 	Parms.BreachLocation = std::move(BreachLocation);
@@ -90311,15 +90311,15 @@ void ADoor::CollapseDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, cons
 }
 
 
-// Function ReadyOrNot.Door.DeactivateDoorBlocker
+// Function ReadyOrNot.door.DeactivateDoorBlocker
 // (Final, Native, Public)
 
-void ADoor::DeactivateDoorBlocker()
+void Adoor::DeactivateDoorBlocker()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DeactivateDoorBlocker");
+		Func = Class->GetFunction("door", "DeactivateDoorBlocker");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90330,19 +90330,19 @@ void ADoor::DeactivateDoorBlocker()
 }
 
 
-// Function ReadyOrNot.Door.DebugForceLockedState
+// Function ReadyOrNot.door.DebugForceLockedState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bShouldLock                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::DebugForceLockedState(bool bShouldLock)
+void Adoor::DebugForceLockedState(bool bShouldLock)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DebugForceLockedState");
+		Func = Class->GetFunction("door", "DebugForceLockedState");
 
-	Params::Door_DebugForceLockedState Parms{};
+	Params::door_DebugForceLockedState Parms{};
 
 	Parms.bShouldLock = bShouldLock;
 
@@ -90355,7 +90355,7 @@ void ADoor::DebugForceLockedState(bool bShouldLock)
 }
 
 
-// Function ReadyOrNot.Door.DecreaseNumKicksToBreakDown
+// Function ReadyOrNot.door.DecreaseNumKicksToBreakDown
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorKickCharacter                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -90363,14 +90363,14 @@ void ADoor::DebugForceLockedState(bool bShouldLock)
 // bool*                                   bCanBreakLock                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   KickChanceOffset                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::DecreaseNumKicksToBreakDown(class AReadyOrNotCharacter* DoorKickCharacter, bool* bShouldOpenDoor, bool* bCanBreakLock, float KickChanceOffset)
+void Adoor::DecreaseNumKicksToBreakDown(class AReadyOrNotCharacter* DoorKickCharacter, bool* bShouldOpenDoor, bool* bCanBreakLock, float KickChanceOffset)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DecreaseNumKicksToBreakDown");
+		Func = Class->GetFunction("door", "DecreaseNumKicksToBreakDown");
 
-	Params::Door_DecreaseNumKicksToBreakDown Parms{};
+	Params::door_DecreaseNumKicksToBreakDown Parms{};
 
 	Parms.DoorKickCharacter = DoorKickCharacter;
 	Parms.KickChanceOffset = KickChanceOffset;
@@ -90390,21 +90390,21 @@ void ADoor::DecreaseNumKicksToBreakDown(class AReadyOrNotCharacter* DoorKickChar
 }
 
 
-// Function ReadyOrNot.Door.DestroyAllChunks
+// Function ReadyOrNot.door.DestroyAllChunks
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ImpulseStrength                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bKeepHinges                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::DestroyAllChunks(const struct FVector& Impulse, float ImpulseStrength, bool bKeepHinges)
+void Adoor::DestroyAllChunks(const struct FVector& Impulse, float ImpulseStrength, bool bKeepHinges)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DestroyAllChunks");
+		Func = Class->GetFunction("door", "DestroyAllChunks");
 
-	Params::Door_DestroyAllChunks Parms{};
+	Params::door_DestroyAllChunks Parms{};
 
 	Parms.Impulse = std::move(Impulse);
 	Parms.ImpulseStrength = ImpulseStrength;
@@ -90419,21 +90419,21 @@ void ADoor::DestroyAllChunks(const struct FVector& Impulse, float ImpulseStrengt
 }
 
 
-// Function ReadyOrNot.Door.DestroyChunk
+// Function ReadyOrNot.door.DestroyChunk
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // class UDestructibleDoorChunkComponent*  InChunk                                                (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ImpulseStrength                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::DestroyChunk(class UDestructibleDoorChunkComponent* InChunk, const struct FVector& Impulse, float ImpulseStrength)
+void Adoor::DestroyChunk(class UDestructibleDoorChunkComponent* InChunk, const struct FVector& Impulse, float ImpulseStrength)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DestroyChunk");
+		Func = Class->GetFunction("door", "DestroyChunk");
 
-	Params::Door_DestroyChunk Parms{};
+	Params::door_DestroyChunk Parms{};
 
 	Parms.InChunk = InChunk;
 	Parms.Impulse = std::move(Impulse);
@@ -90448,21 +90448,21 @@ void ADoor::DestroyChunk(class UDestructibleDoorChunkComponent* InChunk, const s
 }
 
 
-// Function ReadyOrNot.Door.DestroyChunk_Index
+// Function ReadyOrNot.door.DestroyChunk_Index
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
 // int32                                   ChunkIndex                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   Impulse                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ImpulseStrength                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::DestroyChunk_Index(int32 ChunkIndex, const struct FVector& Impulse, float ImpulseStrength)
+void Adoor::DestroyChunk_Index(int32 ChunkIndex, const struct FVector& Impulse, float ImpulseStrength)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DestroyChunk_Index");
+		Func = Class->GetFunction("door", "DestroyChunk_Index");
 
-	Params::Door_DestroyChunk_Index Parms{};
+	Params::door_DestroyChunk_Index Parms{};
 
 	Parms.ChunkIndex = ChunkIndex;
 	Parms.Impulse = std::move(Impulse);
@@ -90477,15 +90477,15 @@ void ADoor::DestroyChunk_Index(int32 ChunkIndex, const struct FVector& Impulse, 
 }
 
 
-// Function ReadyOrNot.Door.DestroyNavLink
+// Function ReadyOrNot.door.DestroyNavLink
 // (Final, Native, Public)
 
-void ADoor::DestroyNavLink()
+void Adoor::DestroyNavLink()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DestroyNavLink");
+		Func = Class->GetFunction("door", "DestroyNavLink");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90496,15 +90496,15 @@ void ADoor::DestroyNavLink()
 }
 
 
-// Function ReadyOrNot.Door.DisableAllInteractables
+// Function ReadyOrNot.door.DisableAllInteractables
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::DisableAllInteractables()
+void Adoor::DisableAllInteractables()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DisableAllInteractables");
+		Func = Class->GetFunction("door", "DisableAllInteractables");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90515,15 +90515,15 @@ void ADoor::DisableAllInteractables()
 }
 
 
-// Function ReadyOrNot.Door.DisableNavLink
+// Function ReadyOrNot.door.DisableNavLink
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::DisableNavLink()
+void Adoor::DisableNavLink()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DisableNavLink");
+		Func = Class->GetFunction("door", "DisableNavLink");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90534,15 +90534,15 @@ void ADoor::DisableNavLink()
 }
 
 
-// Function ReadyOrNot.Door.EnableNavLink
+// Function ReadyOrNot.door.EnableNavLink
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::EnableNavLink()
+void Adoor::EnableNavLink()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "EnableNavLink");
+		Func = Class->GetFunction("door", "EnableNavLink");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90553,21 +90553,21 @@ void ADoor::EnableNavLink()
 }
 
 
-// Function ReadyOrNot.Door.ExplodeDoor
+// Function ReadyOrNot.door.ExplodeDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorBreacherCharacter                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ExplosionCauser                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bKeepHinges                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::ExplodeDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, class AActor* ExplosionCauser, bool bKeepHinges)
+void Adoor::ExplodeDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, class AActor* ExplosionCauser, bool bKeepHinges)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ExplodeDoor");
+		Func = Class->GetFunction("door", "ExplodeDoor");
 
-	Params::Door_ExplodeDoor Parms{};
+	Params::door_ExplodeDoor Parms{};
 
 	Parms.DoorBreacherCharacter = DoorBreacherCharacter;
 	Parms.ExplosionCauser = ExplosionCauser;
@@ -90582,15 +90582,15 @@ void ADoor::ExplodeDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, class
 }
 
 
-// Function ReadyOrNot.Door.Finished_DoorExplode
+// Function ReadyOrNot.door.Finished_DoorExplode
 // (Final, Native, Protected)
 
-void ADoor::Finished_DoorExplode()
+void Adoor::Finished_DoorExplode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Finished_DoorExplode");
+		Func = Class->GetFunction("door", "Finished_DoorExplode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90601,15 +90601,15 @@ void ADoor::Finished_DoorExplode()
 }
 
 
-// Function ReadyOrNot.Door.Finished_DoorKick_Success
+// Function ReadyOrNot.door.Finished_DoorKick_Success
 // (Final, Native, Protected)
 
-void ADoor::Finished_DoorKick_Success()
+void Adoor::Finished_DoorKick_Success()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Finished_DoorKick_Success");
+		Func = Class->GetFunction("door", "Finished_DoorKick_Success");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90620,15 +90620,15 @@ void ADoor::Finished_DoorKick_Success()
 }
 
 
-// Function ReadyOrNot.Door.Finished_DoorRam
+// Function ReadyOrNot.door.Finished_DoorRam
 // (Final, Native, Protected)
 
-void ADoor::Finished_DoorRam()
+void Adoor::Finished_DoorRam()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Finished_DoorRam");
+		Func = Class->GetFunction("door", "Finished_DoorRam");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90639,15 +90639,15 @@ void ADoor::Finished_DoorRam()
 }
 
 
-// Function ReadyOrNot.Door.ForceDoorReset
+// Function ReadyOrNot.door.ForceDoorReset
 // (Net, NetReliable, Native, Event, NetMulticast, Protected)
 
-void ADoor::ForceDoorReset()
+void Adoor::ForceDoorReset()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ForceDoorReset");
+		Func = Class->GetFunction("door", "ForceDoorReset");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90658,15 +90658,15 @@ void ADoor::ForceDoorReset()
 }
 
 
-// Function ReadyOrNot.Door.GenerateClearPoints
+// Function ReadyOrNot.door.GenerateClearPoints
 // (Final, Native, Public)
 
-void ADoor::GenerateClearPoints()
+void Adoor::GenerateClearPoints()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GenerateClearPoints");
+		Func = Class->GetFunction("door", "GenerateClearPoints");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90677,15 +90677,15 @@ void ADoor::GenerateClearPoints()
 }
 
 
-// Function ReadyOrNot.Door.GenerateStackUpPoints
+// Function ReadyOrNot.door.GenerateStackUpPoints
 // (Final, Native, Public)
 
-void ADoor::GenerateStackUpPoints()
+void Adoor::GenerateStackUpPoints()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GenerateStackUpPoints");
+		Func = Class->GetFunction("door", "GenerateStackUpPoints");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90696,19 +90696,19 @@ void ADoor::GenerateStackUpPoints()
 }
 
 
-// Function ReadyOrNot.Door.GetTypeOfDoorRow
+// Function ReadyOrNot.door.GetTypeOfDoorRow
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName ADoor::GetTypeOfDoorRow()
+class FName Adoor::GetTypeOfDoorRow()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetTypeOfDoorRow");
+		Func = Class->GetFunction("door", "GetTypeOfDoorRow");
 
-	Params::Door_GetTypeOfDoorRow Parms{};
+	Params::door_GetTypeOfDoorRow Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90721,19 +90721,19 @@ class FName ADoor::GetTypeOfDoorRow()
 }
 
 
-// Function ReadyOrNot.Door.GetTypeOfDoorTrap
+// Function ReadyOrNot.door.GetTypeOfDoorTrap
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName ADoor::GetTypeOfDoorTrap()
+class FName Adoor::GetTypeOfDoorTrap()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetTypeOfDoorTrap");
+		Func = Class->GetFunction("door", "GetTypeOfDoorTrap");
 
-	Params::Door_GetTypeOfDoorTrap Parms{};
+	Params::door_GetTypeOfDoorTrap Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90746,19 +90746,19 @@ class FName ADoor::GetTypeOfDoorTrap()
 }
 
 
-// Function ReadyOrNot.Door.IsIgnoredForFlee
+// Function ReadyOrNot.door.IsIgnoredForFlee
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsIgnoredForFlee()
+bool Adoor::IsIgnoredForFlee()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsIgnoredForFlee");
+		Func = Class->GetFunction("door", "IsIgnoredForFlee");
 
-	Params::Door_IsIgnoredForFlee Parms{};
+	Params::door_IsIgnoredForFlee Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90771,19 +90771,19 @@ bool ADoor::IsIgnoredForFlee()
 }
 
 
-// Function ReadyOrNot.Door.IsSubDoorOpen
+// Function ReadyOrNot.door.IsSubDoorOpen
 // (Final, Native, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsSubDoorOpen()
+bool Adoor::IsSubDoorOpen()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsSubDoorOpen");
+		Func = Class->GetFunction("door", "IsSubDoorOpen");
 
-	Params::Door_IsSubDoorOpen Parms{};
+	Params::door_IsSubDoorOpen Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90796,21 +90796,21 @@ bool ADoor::IsSubDoorOpen()
 }
 
 
-// Function ReadyOrNot.Door.KickDoor
+// Function ReadyOrNot.door.KickDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorKickCharacter                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bKickSubDoor                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bForce                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::KickDoor(class AReadyOrNotCharacter* DoorKickCharacter, bool bKickSubDoor, bool bForce)
+void Adoor::KickDoor(class AReadyOrNotCharacter* DoorKickCharacter, bool bKickSubDoor, bool bForce)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "KickDoor");
+		Func = Class->GetFunction("door", "KickDoor");
 
-	Params::Door_KickDoor Parms{};
+	Params::door_KickDoor Parms{};
 
 	Parms.DoorKickCharacter = DoorKickCharacter;
 	Parms.bKickSubDoor = bKickSubDoor;
@@ -90825,19 +90825,19 @@ void ADoor::KickDoor(class AReadyOrNotCharacter* DoorKickCharacter, bool bKickSu
 }
 
 
-// Function ReadyOrNot.Door.KickSubDoor
+// Function ReadyOrNot.door.KickSubDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorKickCharacter                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::KickSubDoor(class AReadyOrNotCharacter* DoorKickCharacter)
+void Adoor::KickSubDoor(class AReadyOrNotCharacter* DoorKickCharacter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "KickSubDoor");
+		Func = Class->GetFunction("door", "KickSubDoor");
 
-	Params::Door_KickSubDoor Parms{};
+	Params::door_KickSubDoor Parms{};
 
 	Parms.DoorKickCharacter = DoorKickCharacter;
 
@@ -90850,19 +90850,19 @@ void ADoor::KickSubDoor(class AReadyOrNotCharacter* DoorKickCharacter)
 }
 
 
-// Function ReadyOrNot.Door.LockDoor
+// Function ReadyOrNot.door.LockDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bLockSubDoor                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::LockDoor(bool bLockSubDoor)
+void Adoor::LockDoor(bool bLockSubDoor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "LockDoor");
+		Func = Class->GetFunction("door", "LockDoor");
 
-	Params::Door_LockDoor Parms{};
+	Params::door_LockDoor Parms{};
 
 	Parms.bLockSubDoor = bLockSubDoor;
 
@@ -90875,15 +90875,15 @@ void ADoor::LockDoor(bool bLockSubDoor)
 }
 
 
-// Function ReadyOrNot.Door.Multicast_CheckSupports
+// Function ReadyOrNot.door.Multicast_CheckSupports
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 
-void ADoor::Multicast_CheckSupports()
+void Adoor::Multicast_CheckSupports()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_CheckSupports");
+		Func = Class->GetFunction("door", "Multicast_CheckSupports");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -90894,19 +90894,19 @@ void ADoor::Multicast_CheckSupports()
 }
 
 
-// Function ReadyOrNot.Door.Multicast_DisableDoorInteraction
+// Function ReadyOrNot.door.Multicast_DisableDoorInteraction
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // bool                                    bSetClosed                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_DisableDoorInteraction(bool bSetClosed)
+void Adoor::Multicast_DisableDoorInteraction(bool bSetClosed)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_DisableDoorInteraction");
+		Func = Class->GetFunction("door", "Multicast_DisableDoorInteraction");
 
-	Params::Door_Multicast_DisableDoorInteraction Parms{};
+	Params::door_Multicast_DisableDoorInteraction Parms{};
 
 	Parms.bSetClosed = bSetClosed;
 
@@ -90919,21 +90919,21 @@ void ADoor::Multicast_DisableDoorInteraction(bool bSetClosed)
 }
 
 
-// Function ReadyOrNot.Door.Multicast_ExplodeDoor
+// Function ReadyOrNot.door.Multicast_ExplodeDoor
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorBreacherCharacter                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AActor*                           ExplosionCauser                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bKeepHinges                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_ExplodeDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, class AActor* ExplosionCauser, bool bKeepHinges)
+void Adoor::Multicast_ExplodeDoor(class AReadyOrNotCharacter* DoorBreacherCharacter, class AActor* ExplosionCauser, bool bKeepHinges)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_ExplodeDoor");
+		Func = Class->GetFunction("door", "Multicast_ExplodeDoor");
 
-	Params::Door_Multicast_ExplodeDoor Parms{};
+	Params::door_Multicast_ExplodeDoor Parms{};
 
 	Parms.DoorBreacherCharacter = DoorBreacherCharacter;
 	Parms.ExplosionCauser = ExplosionCauser;
@@ -90948,20 +90948,20 @@ void ADoor::Multicast_ExplodeDoor(class AReadyOrNotCharacter* DoorBreacherCharac
 }
 
 
-// Function ReadyOrNot.Door.Multicast_PlayDoorDamageSound
+// Function ReadyOrNot.door.Multicast_PlayDoorDamageSound
 // (Net, NetReliable, Native, Event, NetMulticast, Protected, BlueprintCallable)
 // Parameters:
 // EDoorDamageType                         DoorDamage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<struct FMODParam>&         Params_0                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_PlayDoorDamageSound(EDoorDamageType DoorDamage, const TArray<struct FMODParam>& Params_0)
+void Adoor::Multicast_PlayDoorDamageSound(EDoorDamageType DoorDamage, const TArray<struct FMODParam>& Params_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_PlayDoorDamageSound");
+		Func = Class->GetFunction("door", "Multicast_PlayDoorDamageSound");
 
-	Params::Door_Multicast_PlayDoorDamageSound Parms{};
+	Params::door_Multicast_PlayDoorDamageSound Parms{};
 
 	Parms.DoorDamage = DoorDamage;
 	Parms.Params_0 = std::move(Params_0);
@@ -90975,20 +90975,20 @@ void ADoor::Multicast_PlayDoorDamageSound(EDoorDamageType DoorDamage, const TArr
 }
 
 
-// Function ReadyOrNot.Door.Multicast_PlayDoorKickEffects
+// Function ReadyOrNot.door.Multicast_PlayDoorKickEffects
 // (Net, NetReliable, Native, Event, NetMulticast, Protected)
 // Parameters:
 // bool                                    bBreakLock                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bInFront                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_PlayDoorKickEffects(bool bBreakLock, bool bInFront)
+void Adoor::Multicast_PlayDoorKickEffects(bool bBreakLock, bool bInFront)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_PlayDoorKickEffects");
+		Func = Class->GetFunction("door", "Multicast_PlayDoorKickEffects");
 
-	Params::Door_Multicast_PlayDoorKickEffects Parms{};
+	Params::door_Multicast_PlayDoorKickEffects Parms{};
 
 	Parms.bBreakLock = bBreakLock;
 	Parms.bInFront = bInFront;
@@ -91002,21 +91002,21 @@ void ADoor::Multicast_PlayDoorKickEffects(bool bBreakLock, bool bInFront)
 }
 
 
-// Function ReadyOrNot.Door.Multicast_PlayDoorSound
+// Function ReadyOrNot.door.Multicast_PlayDoorSound
 // (Net, NetReliable, Native, Event, NetMulticast, Protected, BlueprintCallable)
 // Parameters:
 // EDoorInteraction                        DoorDamage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             DoorInteractionInstigator                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<struct FMODParam>&         Params_0                                               (ConstParm, Parm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_PlayDoorSound(EDoorInteraction DoorDamage, class AReadyOrNotCharacter* DoorInteractionInstigator, const TArray<struct FMODParam>& Params_0)
+void Adoor::Multicast_PlayDoorSound(EDoorInteraction DoorDamage, class AReadyOrNotCharacter* DoorInteractionInstigator, const TArray<struct FMODParam>& Params_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_PlayDoorSound");
+		Func = Class->GetFunction("door", "Multicast_PlayDoorSound");
 
-	Params::Door_Multicast_PlayDoorSound Parms{};
+	Params::door_Multicast_PlayDoorSound Parms{};
 
 	Parms.DoorDamage = DoorDamage;
 	Parms.DoorInteractionInstigator = DoorInteractionInstigator;
@@ -91031,19 +91031,19 @@ void ADoor::Multicast_PlayDoorSound(EDoorInteraction DoorDamage, class AReadyOrN
 }
 
 
-// Function ReadyOrNot.Door.Multicast_PlayElectronicDoorSound
+// Function ReadyOrNot.door.Multicast_PlayElectronicDoorSound
 // (Net, NetReliable, Native, Event, NetMulticast, Protected)
 // Parameters:
 // class UFMODEvent*                       Event                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_PlayElectronicDoorSound(class UFMODEvent* Event)
+void Adoor::Multicast_PlayElectronicDoorSound(class UFMODEvent* Event)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_PlayElectronicDoorSound");
+		Func = Class->GetFunction("door", "Multicast_PlayElectronicDoorSound");
 
-	Params::Door_Multicast_PlayElectronicDoorSound Parms{};
+	Params::door_Multicast_PlayElectronicDoorSound Parms{};
 
 	Parms.Event = Event;
 
@@ -91056,19 +91056,19 @@ void ADoor::Multicast_PlayElectronicDoorSound(class UFMODEvent* Event)
 }
 
 
-// Function ReadyOrNot.Door.Multicast_SetLocked
+// Function ReadyOrNot.door.Multicast_SetLocked
 // (Net, NetReliable, Native, Event, NetMulticast, Public)
 // Parameters:
 // bool                                    bShouldLocked                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Multicast_SetLocked(bool bShouldLocked)
+void Adoor::Multicast_SetLocked(bool bShouldLocked)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Multicast_SetLocked");
+		Func = Class->GetFunction("door", "Multicast_SetLocked");
 
-	Params::Door_Multicast_SetLocked Parms{};
+	Params::door_Multicast_SetLocked Parms{};
 
 	Parms.bShouldLocked = bShouldLocked;
 
@@ -91081,15 +91081,15 @@ void ADoor::Multicast_SetLocked(bool bShouldLocked)
 }
 
 
-// Function ReadyOrNot.Door.OnRep_ClientResetDoor
+// Function ReadyOrNot.door.OnRep_ClientResetDoor
 // (Final, Native, Protected)
 
-void ADoor::OnRep_ClientResetDoor()
+void Adoor::OnRep_ClientResetDoor()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OnRep_ClientResetDoor");
+		Func = Class->GetFunction("door", "OnRep_ClientResetDoor");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91100,15 +91100,15 @@ void ADoor::OnRep_ClientResetDoor()
 }
 
 
-// Function ReadyOrNot.Door.OnRep_DestroyedChunkIdxChanged
+// Function ReadyOrNot.door.OnRep_DestroyedChunkIdxChanged
 // (Final, Native, Protected)
 
-void ADoor::OnRep_DestroyedChunkIdxChanged()
+void Adoor::OnRep_DestroyedChunkIdxChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OnRep_DestroyedChunkIdxChanged");
+		Func = Class->GetFunction("door", "OnRep_DestroyedChunkIdxChanged");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91119,15 +91119,15 @@ void ADoor::OnRep_DestroyedChunkIdxChanged()
 }
 
 
-// Function ReadyOrNot.Door.OnRep_DoorDataUpdated
+// Function ReadyOrNot.door.OnRep_DoorDataUpdated
 // (Final, Native, Private)
 
-void ADoor::OnRep_DoorDataUpdated()
+void Adoor::OnRep_DoorDataUpdated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OnRep_DoorDataUpdated");
+		Func = Class->GetFunction("door", "OnRep_DoorDataUpdated");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91138,15 +91138,15 @@ void ADoor::OnRep_DoorDataUpdated()
 }
 
 
-// Function ReadyOrNot.Door.OnRep_DoorHandlesBroken
+// Function ReadyOrNot.door.OnRep_DoorHandlesBroken
 // (Final, Native, Protected)
 
-void ADoor::OnRep_DoorHandlesBroken()
+void Adoor::OnRep_DoorHandlesBroken()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OnRep_DoorHandlesBroken");
+		Func = Class->GetFunction("door", "OnRep_DoorHandlesBroken");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91157,15 +91157,15 @@ void ADoor::OnRep_DoorHandlesBroken()
 }
 
 
-// Function ReadyOrNot.Door.OnRep_TrapDataUpdated
+// Function ReadyOrNot.door.OnRep_TrapDataUpdated
 // (Final, Native, Private)
 
-void ADoor::OnRep_TrapDataUpdated()
+void Adoor::OnRep_TrapDataUpdated()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OnRep_TrapDataUpdated");
+		Func = Class->GetFunction("door", "OnRep_TrapDataUpdated");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91176,7 +91176,7 @@ void ADoor::OnRep_TrapDataUpdated()
 }
 
 
-// Function ReadyOrNot.Door.OpenDoor
+// Function ReadyOrNot.door.OpenDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorOpenCharacter                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -91185,14 +91185,14 @@ void ADoor::OnRep_TrapDataUpdated()
 // const bool                              bNoCloseThreshold                                      (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::OpenDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bInstant, bool bAnimateDoorHandle, const bool bNoCloseThreshold)
+float Adoor::OpenDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bInstant, bool bAnimateDoorHandle, const bool bNoCloseThreshold)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OpenDoor");
+		Func = Class->GetFunction("door", "OpenDoor");
 
-	Params::Door_OpenDoor Parms{};
+	Params::door_OpenDoor Parms{};
 
 	Parms.DoorOpenCharacter = DoorOpenCharacter;
 	Parms.bInstant = bInstant;
@@ -91210,15 +91210,15 @@ float ADoor::OpenDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bInsta
 }
 
 
-// Function ReadyOrNot.Door.OpenDoor_Debug
+// Function ReadyOrNot.door.OpenDoor_Debug
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::OpenDoor_Debug()
+void Adoor::OpenDoor_Debug()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OpenDoor_Debug");
+		Func = Class->GetFunction("door", "OpenDoor_Debug");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91229,7 +91229,7 @@ void ADoor::OpenDoor_Debug()
 }
 
 
-// Function ReadyOrNot.Door.OpenDoor_SpecificAngle
+// Function ReadyOrNot.door.OpenDoor_SpecificAngle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorOpenCharacter                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -91237,14 +91237,14 @@ void ADoor::OpenDoor_Debug()
 // bool                                    bInstant                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAnimateDoorHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::OpenDoor_SpecificAngle(class AReadyOrNotCharacter* DoorOpenCharacter, float CustomTargetAngle, bool bInstant, bool bAnimateDoorHandle)
+void Adoor::OpenDoor_SpecificAngle(class AReadyOrNotCharacter* DoorOpenCharacter, float CustomTargetAngle, bool bInstant, bool bAnimateDoorHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OpenDoor_SpecificAngle");
+		Func = Class->GetFunction("door", "OpenDoor_SpecificAngle");
 
-	Params::Door_OpenDoor_SpecificAngle Parms{};
+	Params::door_OpenDoor_SpecificAngle Parms{};
 
 	Parms.DoorOpenCharacter = DoorOpenCharacter;
 	Parms.CustomTargetAngle = CustomTargetAngle;
@@ -91260,21 +91260,21 @@ void ADoor::OpenDoor_SpecificAngle(class AReadyOrNotCharacter* DoorOpenCharacter
 }
 
 
-// Function ReadyOrNot.Door.OpenSubDoor
+// Function ReadyOrNot.door.OpenSubDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorOpenCharacter                                      (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bInstant                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAnimateDoorHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::OpenSubDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bInstant, bool bAnimateDoorHandle)
+void Adoor::OpenSubDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bInstant, bool bAnimateDoorHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "OpenSubDoor");
+		Func = Class->GetFunction("door", "OpenSubDoor");
 
-	Params::Door_OpenSubDoor Parms{};
+	Params::door_OpenSubDoor Parms{};
 
 	Parms.DoorOpenCharacter = DoorOpenCharacter;
 	Parms.bInstant = bInstant;
@@ -91289,7 +91289,7 @@ void ADoor::OpenSubDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bIns
 }
 
 
-// Function ReadyOrNot.Door.PeekDoor
+// Function ReadyOrNot.door.PeekDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorPeekerCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -91297,14 +91297,14 @@ void ADoor::OpenSubDoor(class AReadyOrNotCharacter* DoorOpenCharacter, bool bIns
 // bool                                    bAnimateDoorHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::PeekDoor(class AReadyOrNotCharacter* DoorPeekerCharacter, float InIncrementAngle, bool bAnimateDoorHandle)
+float Adoor::PeekDoor(class AReadyOrNotCharacter* DoorPeekerCharacter, float InIncrementAngle, bool bAnimateDoorHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "PeekDoor");
+		Func = Class->GetFunction("door", "PeekDoor");
 
-	Params::Door_PeekDoor Parms{};
+	Params::door_PeekDoor Parms{};
 
 	Parms.DoorPeekerCharacter = DoorPeekerCharacter;
 	Parms.InIncrementAngle = InIncrementAngle;
@@ -91321,20 +91321,20 @@ float ADoor::PeekDoor(class AReadyOrNotCharacter* DoorPeekerCharacter, float InI
 }
 
 
-// Function ReadyOrNot.Door.PlayDoorDamageSound
+// Function ReadyOrNot.door.PlayDoorDamageSound
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
 // EDoorDamageType                         DoorDamage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<struct FMODParam>&         Params_0                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ADoor::PlayDoorDamageSound(EDoorDamageType DoorDamage, const TArray<struct FMODParam>& Params_0)
+void Adoor::PlayDoorDamageSound(EDoorDamageType DoorDamage, const TArray<struct FMODParam>& Params_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "PlayDoorDamageSound");
+		Func = Class->GetFunction("door", "PlayDoorDamageSound");
 
-	Params::Door_PlayDoorDamageSound Parms{};
+	Params::door_PlayDoorDamageSound Parms{};
 
 	Parms.DoorDamage = DoorDamage;
 	Parms.Params_0 = std::move(Params_0);
@@ -91348,20 +91348,20 @@ void ADoor::PlayDoorDamageSound(EDoorDamageType DoorDamage, const TArray<struct 
 }
 
 
-// Function ReadyOrNot.Door.PlayDoorKickSound
+// Function ReadyOrNot.door.PlayDoorKickSound
 // (Final, Native, Protected, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             Kicker                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::PlayDoorKickSound(class AReadyOrNotCharacter* Kicker, float Result)
+void Adoor::PlayDoorKickSound(class AReadyOrNotCharacter* Kicker, float Result)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "PlayDoorKickSound");
+		Func = Class->GetFunction("door", "PlayDoorKickSound");
 
-	Params::Door_PlayDoorKickSound Parms{};
+	Params::door_PlayDoorKickSound Parms{};
 
 	Parms.Kicker = Kicker;
 	Parms.Result = Result;
@@ -91375,21 +91375,21 @@ void ADoor::PlayDoorKickSound(class AReadyOrNotCharacter* Kicker, float Result)
 }
 
 
-// Function ReadyOrNot.Door.PlayDoorSound
+// Function ReadyOrNot.door.PlayDoorSound
 // (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
 // EDoorInteraction                        DoorInteraction                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             DoorInteractionInstigator                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TArray<struct FMODParam>&         Params_0                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void ADoor::PlayDoorSound(EDoorInteraction DoorInteraction, class AReadyOrNotCharacter* DoorInteractionInstigator, const TArray<struct FMODParam>& Params_0)
+void Adoor::PlayDoorSound(EDoorInteraction DoorInteraction, class AReadyOrNotCharacter* DoorInteractionInstigator, const TArray<struct FMODParam>& Params_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "PlayDoorSound");
+		Func = Class->GetFunction("door", "PlayDoorSound");
 
-	Params::Door_PlayDoorSound Parms{};
+	Params::door_PlayDoorSound Parms{};
 
 	Parms.DoorInteraction = DoorInteraction;
 	Parms.DoorInteractionInstigator = DoorInteractionInstigator;
@@ -91404,7 +91404,7 @@ void ADoor::PlayDoorSound(EDoorInteraction DoorInteraction, class AReadyOrNotCha
 }
 
 
-// Function ReadyOrNot.Door.PushDoor
+// Function ReadyOrNot.door.PushDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorPusherCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -91413,14 +91413,14 @@ void ADoor::PlayDoorSound(EDoorInteraction DoorInteraction, class AReadyOrNotCha
 // bool                                    bPlaySound                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::PushDoor(class AReadyOrNotCharacter* DoorPusherCharacter, float InIncrementAngle, bool bAnimateDoorHandle, bool bPlaySound)
+float Adoor::PushDoor(class AReadyOrNotCharacter* DoorPusherCharacter, float InIncrementAngle, bool bAnimateDoorHandle, bool bPlaySound)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "PushDoor");
+		Func = Class->GetFunction("door", "PushDoor");
 
-	Params::Door_PushDoor Parms{};
+	Params::door_PushDoor Parms{};
 
 	Parms.DoorPusherCharacter = DoorPusherCharacter;
 	Parms.InIncrementAngle = InIncrementAngle;
@@ -91438,21 +91438,21 @@ float ADoor::PushDoor(class AReadyOrNotCharacter* DoorPusherCharacter, float InI
 }
 
 
-// Function ReadyOrNot.Door.PushDoor_SpecificAngle
+// Function ReadyOrNot.door.PushDoor_SpecificAngle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorPusherCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   CustomTargetAngle                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAnimateDoorHandle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::PushDoor_SpecificAngle(class AReadyOrNotCharacter* DoorPusherCharacter, float CustomTargetAngle, bool bAnimateDoorHandle)
+void Adoor::PushDoor_SpecificAngle(class AReadyOrNotCharacter* DoorPusherCharacter, float CustomTargetAngle, bool bAnimateDoorHandle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "PushDoor_SpecificAngle");
+		Func = Class->GetFunction("door", "PushDoor_SpecificAngle");
 
-	Params::Door_PushDoor_SpecificAngle Parms{};
+	Params::door_PushDoor_SpecificAngle Parms{};
 
 	Parms.DoorPusherCharacter = DoorPusherCharacter;
 	Parms.CustomTargetAngle = CustomTargetAngle;
@@ -91467,21 +91467,21 @@ void ADoor::PushDoor_SpecificAngle(class AReadyOrNotCharacter* DoorPusherCharact
 }
 
 
-// Function ReadyOrNot.Door.RamDoor
+// Function ReadyOrNot.door.RamDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AReadyOrNotCharacter*             DoorRamCharacter                                       (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bPlayRamSound                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::RamDoor(class AReadyOrNotCharacter* DoorRamCharacter, bool bPlayRamSound)
+float Adoor::RamDoor(class AReadyOrNotCharacter* DoorRamCharacter, bool bPlayRamSound)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "RamDoor");
+		Func = Class->GetFunction("door", "RamDoor");
 
-	Params::Door_RamDoor Parms{};
+	Params::door_RamDoor Parms{};
 
 	Parms.DoorRamCharacter = DoorRamCharacter;
 	Parms.bPlayRamSound = bPlayRamSound;
@@ -91497,15 +91497,15 @@ float ADoor::RamDoor(class AReadyOrNotCharacter* DoorRamCharacter, bool bPlayRam
 }
 
 
-// Function ReadyOrNot.Door.RemoveWedges
+// Function ReadyOrNot.door.RemoveWedges
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::RemoveWedges()
+void Adoor::RemoveWedges()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "RemoveWedges");
+		Func = Class->GetFunction("door", "RemoveWedges");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91516,15 +91516,15 @@ void ADoor::RemoveWedges()
 }
 
 
-// Function ReadyOrNot.Door.ResetDoorLockKnowledge
+// Function ReadyOrNot.door.ResetDoorLockKnowledge
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::ResetDoorLockKnowledge()
+void Adoor::ResetDoorLockKnowledge()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ResetDoorLockKnowledge");
+		Func = Class->GetFunction("door", "ResetDoorLockKnowledge");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91535,15 +91535,15 @@ void ADoor::ResetDoorLockKnowledge()
 }
 
 
-// Function ReadyOrNot.Door.ResetDoorTrapKnowledge
+// Function ReadyOrNot.door.ResetDoorTrapKnowledge
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::ResetDoorTrapKnowledge()
+void Adoor::ResetDoorTrapKnowledge()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ResetDoorTrapKnowledge");
+		Func = Class->GetFunction("door", "ResetDoorTrapKnowledge");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91554,15 +91554,15 @@ void ADoor::ResetDoorTrapKnowledge()
 }
 
 
-// Function ReadyOrNot.Door.Restore
+// Function ReadyOrNot.door.Restore
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::Restore()
+void Adoor::Restore()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Restore");
+		Func = Class->GetFunction("door", "Restore");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91573,20 +91573,20 @@ void ADoor::Restore()
 }
 
 
-// Function ReadyOrNot.Door.Server_SetLockKnowledgeState
+// Function ReadyOrNot.door.Server_SetLockKnowledgeState
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
 // bool                                    bSuspectTeam                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bNewKnowledgeState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Server_SetLockKnowledgeState(bool bSuspectTeam, bool bNewKnowledgeState)
+void Adoor::Server_SetLockKnowledgeState(bool bSuspectTeam, bool bNewKnowledgeState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Server_SetLockKnowledgeState");
+		Func = Class->GetFunction("door", "Server_SetLockKnowledgeState");
 
-	Params::Door_Server_SetLockKnowledgeState Parms{};
+	Params::door_Server_SetLockKnowledgeState Parms{};
 
 	Parms.bSuspectTeam = bSuspectTeam;
 	Parms.bNewKnowledgeState = bNewKnowledgeState;
@@ -91600,20 +91600,20 @@ void ADoor::Server_SetLockKnowledgeState(bool bSuspectTeam, bool bNewKnowledgeSt
 }
 
 
-// Function ReadyOrNot.Door.Server_SetTrapKnowledgeState
+// Function ReadyOrNot.door.Server_SetTrapKnowledgeState
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
 // bool                                    bSuspectTeam                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bNewKnowledgeState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::Server_SetTrapKnowledgeState(bool bSuspectTeam, bool bNewKnowledgeState)
+void Adoor::Server_SetTrapKnowledgeState(bool bSuspectTeam, bool bNewKnowledgeState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Server_SetTrapKnowledgeState");
+		Func = Class->GetFunction("door", "Server_SetTrapKnowledgeState");
 
-	Params::Door_Server_SetTrapKnowledgeState Parms{};
+	Params::door_Server_SetTrapKnowledgeState Parms{};
 
 	Parms.bSuspectTeam = bSuspectTeam;
 	Parms.bNewKnowledgeState = bNewKnowledgeState;
@@ -91627,20 +91627,20 @@ void ADoor::Server_SetTrapKnowledgeState(bool bSuspectTeam, bool bNewKnowledgeSt
 }
 
 
-// Function ReadyOrNot.Door.SetDoorLockKnowledge
+// Function ReadyOrNot.door.SetDoorLockKnowledge
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bSuspectTeam                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bKnowledge                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::SetDoorLockKnowledge(bool bSuspectTeam, bool bKnowledge)
+void Adoor::SetDoorLockKnowledge(bool bSuspectTeam, bool bKnowledge)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "SetDoorLockKnowledge");
+		Func = Class->GetFunction("door", "SetDoorLockKnowledge");
 
-	Params::Door_SetDoorLockKnowledge Parms{};
+	Params::door_SetDoorLockKnowledge Parms{};
 
 	Parms.bSuspectTeam = bSuspectTeam;
 	Parms.bKnowledge = bKnowledge;
@@ -91654,20 +91654,20 @@ void ADoor::SetDoorLockKnowledge(bool bSuspectTeam, bool bKnowledge)
 }
 
 
-// Function ReadyOrNot.Door.SetDoorTrapKnowledge
+// Function ReadyOrNot.door.SetDoorTrapKnowledge
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bSuspectTeam                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bKnowledge                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::SetDoorTrapKnowledge(bool bSuspectTeam, bool bKnowledge)
+void Adoor::SetDoorTrapKnowledge(bool bSuspectTeam, bool bKnowledge)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "SetDoorTrapKnowledge");
+		Func = Class->GetFunction("door", "SetDoorTrapKnowledge");
 
-	Params::Door_SetDoorTrapKnowledge Parms{};
+	Params::door_SetDoorTrapKnowledge Parms{};
 
 	Parms.bSuspectTeam = bSuspectTeam;
 	Parms.bKnowledge = bKnowledge;
@@ -91681,19 +91681,19 @@ void ADoor::SetDoorTrapKnowledge(bool bSuspectTeam, bool bKnowledge)
 }
 
 
-// Function ReadyOrNot.Door.SetLocked
+// Function ReadyOrNot.door.SetLocked
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bNewLocked                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::SetLocked(bool bNewLocked)
+void Adoor::SetLocked(bool bNewLocked)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "SetLocked");
+		Func = Class->GetFunction("door", "SetLocked");
 
-	Params::Door_SetLocked Parms{};
+	Params::door_SetLocked Parms{};
 
 	Parms.bNewLocked = bNewLocked;
 
@@ -91706,15 +91706,15 @@ void ADoor::SetLocked(bool bNewLocked)
 }
 
 
-// Function ReadyOrNot.Door.Setup
+// Function ReadyOrNot.door.Setup
 // (Final, Native, Public, BlueprintCallable)
 
-void ADoor::Setup()
+void Adoor::Setup()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Setup");
+		Func = Class->GetFunction("door", "Setup");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91725,15 +91725,15 @@ void ADoor::Setup()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorBreach
+// Function ReadyOrNot.door.Tick_DoorBreach
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorBreach()
+void Adoor::Tick_DoorBreach()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorBreach");
+		Func = Class->GetFunction("door", "Tick_DoorBreach");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91744,15 +91744,15 @@ void ADoor::Tick_DoorBreach()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorExplode
+// Function ReadyOrNot.door.Tick_DoorExplode
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorExplode()
+void Adoor::Tick_DoorExplode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorExplode");
+		Func = Class->GetFunction("door", "Tick_DoorExplode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91763,15 +91763,15 @@ void ADoor::Tick_DoorExplode()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorHandle_Open
+// Function ReadyOrNot.door.Tick_DoorHandle_Open
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorHandle_Open()
+void Adoor::Tick_DoorHandle_Open()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorHandle_Open");
+		Func = Class->GetFunction("door", "Tick_DoorHandle_Open");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91782,15 +91782,15 @@ void ADoor::Tick_DoorHandle_Open()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorHandle_Push
+// Function ReadyOrNot.door.Tick_DoorHandle_Push
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorHandle_Push()
+void Adoor::Tick_DoorHandle_Push()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorHandle_Push");
+		Func = Class->GetFunction("door", "Tick_DoorHandle_Push");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91801,15 +91801,15 @@ void ADoor::Tick_DoorHandle_Push()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorHandleLocked
+// Function ReadyOrNot.door.Tick_DoorHandleLocked
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorHandleLocked()
+void Adoor::Tick_DoorHandleLocked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorHandleLocked");
+		Func = Class->GetFunction("door", "Tick_DoorHandleLocked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91820,15 +91820,15 @@ void ADoor::Tick_DoorHandleLocked()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorKick_Fail
+// Function ReadyOrNot.door.Tick_DoorKick_Fail
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorKick_Fail()
+void Adoor::Tick_DoorKick_Fail()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorKick_Fail");
+		Func = Class->GetFunction("door", "Tick_DoorKick_Fail");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91839,15 +91839,15 @@ void ADoor::Tick_DoorKick_Fail()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorKick_Success
+// Function ReadyOrNot.door.Tick_DoorKick_Success
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorKick_Success()
+void Adoor::Tick_DoorKick_Success()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorKick_Success");
+		Func = Class->GetFunction("door", "Tick_DoorKick_Success");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91858,15 +91858,15 @@ void ADoor::Tick_DoorKick_Success()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorLocked
+// Function ReadyOrNot.door.Tick_DoorLocked
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorLocked()
+void Adoor::Tick_DoorLocked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorLocked");
+		Func = Class->GetFunction("door", "Tick_DoorLocked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91877,15 +91877,15 @@ void ADoor::Tick_DoorLocked()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorOpenClose
+// Function ReadyOrNot.door.Tick_DoorOpenClose
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorOpenClose()
+void Adoor::Tick_DoorOpenClose()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorOpenClose");
+		Func = Class->GetFunction("door", "Tick_DoorOpenClose");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91896,15 +91896,15 @@ void ADoor::Tick_DoorOpenClose()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorPush
+// Function ReadyOrNot.door.Tick_DoorPush
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorPush()
+void Adoor::Tick_DoorPush()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorPush");
+		Func = Class->GetFunction("door", "Tick_DoorPush");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91915,15 +91915,15 @@ void ADoor::Tick_DoorPush()
 }
 
 
-// Function ReadyOrNot.Door.Tick_DoorRam
+// Function ReadyOrNot.door.Tick_DoorRam
 // (Final, Native, Protected)
 
-void ADoor::Tick_DoorRam()
+void Adoor::Tick_DoorRam()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "Tick_DoorRam");
+		Func = Class->GetFunction("door", "Tick_DoorRam");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91934,15 +91934,15 @@ void ADoor::Tick_DoorRam()
 }
 
 
-// Function ReadyOrNot.Door.ToggleLightBlocker
+// Function ReadyOrNot.door.ToggleLightBlocker
 // (Final, Native, Public)
 
-void ADoor::ToggleLightBlocker()
+void Adoor::ToggleLightBlocker()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "ToggleLightBlocker");
+		Func = Class->GetFunction("door", "ToggleLightBlocker");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91953,15 +91953,15 @@ void ADoor::ToggleLightBlocker()
 }
 
 
-// Function ReadyOrNot.Door.UnblockAllDoorways
+// Function ReadyOrNot.door.UnblockAllDoorways
 // (Final, Native, Public)
 
-void ADoor::UnblockAllDoorways()
+void Adoor::UnblockAllDoorways()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "UnblockAllDoorways");
+		Func = Class->GetFunction("door", "UnblockAllDoorways");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -91972,19 +91972,19 @@ void ADoor::UnblockAllDoorways()
 }
 
 
-// Function ReadyOrNot.Door.UnlockDoor
+// Function ReadyOrNot.door.UnlockDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bUnlockSubDoor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoor::UnlockDoor(bool bUnlockSubDoor)
+void Adoor::UnlockDoor(bool bUnlockSubDoor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "UnlockDoor");
+		Func = Class->GetFunction("door", "UnlockDoor");
 
-	Params::Door_UnlockDoor Parms{};
+	Params::door_UnlockDoor Parms{};
 
 	Parms.bUnlockSubDoor = bUnlockSubDoor;
 
@@ -91997,19 +91997,19 @@ void ADoor::UnlockDoor(bool bUnlockSubDoor)
 }
 
 
-// Function ReadyOrNot.Door.AllBottomDoorChunksBroken
+// Function ReadyOrNot.door.AllBottomDoorChunksBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AllBottomDoorChunksBroken() const
+bool Adoor::AllBottomDoorChunksBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AllBottomDoorChunksBroken");
+		Func = Class->GetFunction("door", "AllBottomDoorChunksBroken");
 
-	Params::Door_AllBottomDoorChunksBroken Parms{};
+	Params::door_AllBottomDoorChunksBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92022,19 +92022,19 @@ bool ADoor::AllBottomDoorChunksBroken() const
 }
 
 
-// Function ReadyOrNot.Door.AllMajorDoorChunksDestroyed
+// Function ReadyOrNot.door.AllMajorDoorChunksDestroyed
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AllMajorDoorChunksDestroyed() const
+bool Adoor::AllMajorDoorChunksDestroyed() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AllMajorDoorChunksDestroyed");
+		Func = Class->GetFunction("door", "AllMajorDoorChunksDestroyed");
 
-	Params::Door_AllMajorDoorChunksDestroyed Parms{};
+	Params::door_AllMajorDoorChunksDestroyed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92047,19 +92047,19 @@ bool ADoor::AllMajorDoorChunksDestroyed() const
 }
 
 
-// Function ReadyOrNot.Door.AllMiddleDoorChunksBroken
+// Function ReadyOrNot.door.AllMiddleDoorChunksBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AllMiddleDoorChunksBroken() const
+bool Adoor::AllMiddleDoorChunksBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AllMiddleDoorChunksBroken");
+		Func = Class->GetFunction("door", "AllMiddleDoorChunksBroken");
 
-	Params::Door_AllMiddleDoorChunksBroken Parms{};
+	Params::door_AllMiddleDoorChunksBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92072,19 +92072,19 @@ bool ADoor::AllMiddleDoorChunksBroken() const
 }
 
 
-// Function ReadyOrNot.Door.AllTopDoorChunksBroken
+// Function ReadyOrNot.door.AllTopDoorChunksBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AllTopDoorChunksBroken() const
+bool Adoor::AllTopDoorChunksBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AllTopDoorChunksBroken");
+		Func = Class->GetFunction("door", "AllTopDoorChunksBroken");
 
-	Params::Door_AllTopDoorChunksBroken Parms{};
+	Params::door_AllTopDoorChunksBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92097,19 +92097,19 @@ bool ADoor::AllTopDoorChunksBroken() const
 }
 
 
-// Function ReadyOrNot.Door.AnyBottomDoorChunksBroken
+// Function ReadyOrNot.door.AnyBottomDoorChunksBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AnyBottomDoorChunksBroken() const
+bool Adoor::AnyBottomDoorChunksBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AnyBottomDoorChunksBroken");
+		Func = Class->GetFunction("door", "AnyBottomDoorChunksBroken");
 
-	Params::Door_AnyBottomDoorChunksBroken Parms{};
+	Params::door_AnyBottomDoorChunksBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92122,19 +92122,19 @@ bool ADoor::AnyBottomDoorChunksBroken() const
 }
 
 
-// Function ReadyOrNot.Door.AnyChunksDestroyed
+// Function ReadyOrNot.door.AnyChunksDestroyed
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AnyChunksDestroyed() const
+bool Adoor::AnyChunksDestroyed() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AnyChunksDestroyed");
+		Func = Class->GetFunction("door", "AnyChunksDestroyed");
 
-	Params::Door_AnyChunksDestroyed Parms{};
+	Params::door_AnyChunksDestroyed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92147,19 +92147,19 @@ bool ADoor::AnyChunksDestroyed() const
 }
 
 
-// Function ReadyOrNot.Door.AnyHingesLeft
+// Function ReadyOrNot.door.AnyHingesLeft
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AnyHingesLeft() const
+bool Adoor::AnyHingesLeft() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AnyHingesLeft");
+		Func = Class->GetFunction("door", "AnyHingesLeft");
 
-	Params::Door_AnyHingesLeft Parms{};
+	Params::door_AnyHingesLeft Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92172,19 +92172,19 @@ bool ADoor::AnyHingesLeft() const
 }
 
 
-// Function ReadyOrNot.Door.AnyMiddleDoorChunksBroken
+// Function ReadyOrNot.door.AnyMiddleDoorChunksBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AnyMiddleDoorChunksBroken() const
+bool Adoor::AnyMiddleDoorChunksBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AnyMiddleDoorChunksBroken");
+		Func = Class->GetFunction("door", "AnyMiddleDoorChunksBroken");
 
-	Params::Door_AnyMiddleDoorChunksBroken Parms{};
+	Params::door_AnyMiddleDoorChunksBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92197,19 +92197,19 @@ bool ADoor::AnyMiddleDoorChunksBroken() const
 }
 
 
-// Function ReadyOrNot.Door.AnyTopDoorChunksBroken
+// Function ReadyOrNot.door.AnyTopDoorChunksBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::AnyTopDoorChunksBroken() const
+bool Adoor::AnyTopDoorChunksBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "AnyTopDoorChunksBroken");
+		Func = Class->GetFunction("door", "AnyTopDoorChunksBroken");
 
-	Params::Door_AnyTopDoorChunksBroken Parms{};
+	Params::door_AnyTopDoorChunksBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92222,20 +92222,20 @@ bool ADoor::AnyTopDoorChunksBroken() const
 }
 
 
-// Function ReadyOrNot.Door.CalculateClosestPoint
+// Function ReadyOrNot.door.CalculateClosestPoint
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::CalculateClosestPoint(const struct FVector& Location) const
+struct FVector Adoor::CalculateClosestPoint(const struct FVector& Location) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CalculateClosestPoint");
+		Func = Class->GetFunction("door", "CalculateClosestPoint");
 
-	Params::Door_CalculateClosestPoint Parms{};
+	Params::door_CalculateClosestPoint Parms{};
 
 	Parms.Location = std::move(Location);
 
@@ -92250,20 +92250,20 @@ struct FVector ADoor::CalculateClosestPoint(const struct FVector& Location) cons
 }
 
 
-// Function ReadyOrNot.Door.CanCloseDoor
+// Function ReadyOrNot.door.CanCloseDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanCloseDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanCloseDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanCloseDoor");
+		Func = Class->GetFunction("door", "CanCloseDoor");
 
-	Params::Door_CanCloseDoor Parms{};
+	Params::door_CanCloseDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92278,20 +92278,20 @@ bool ADoor::CanCloseDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanCloseDoorIfOrdered
+// Function ReadyOrNot.door.CanCloseDoorIfOrdered
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanCloseDoorIfOrdered(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanCloseDoorIfOrdered(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanCloseDoorIfOrdered");
+		Func = Class->GetFunction("door", "CanCloseDoorIfOrdered");
 
-	Params::Door_CanCloseDoorIfOrdered Parms{};
+	Params::door_CanCloseDoorIfOrdered Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92306,20 +92306,20 @@ bool ADoor::CanCloseDoorIfOrdered(class AReadyOrNotCharacter* PlayerCharacter) c
 }
 
 
-// Function ReadyOrNot.Door.CanDeployWedge
+// Function ReadyOrNot.door.CanDeployWedge
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanDeployWedge(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanDeployWedge(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanDeployWedge");
+		Func = Class->GetFunction("door", "CanDeployWedge");
 
-	Params::Door_CanDeployWedge Parms{};
+	Params::door_CanDeployWedge Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92334,20 +92334,20 @@ bool ADoor::CanDeployWedge(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanEquipBatteringRam
+// Function ReadyOrNot.door.CanEquipBatteringRam
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanEquipBatteringRam(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanEquipBatteringRam(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanEquipBatteringRam");
+		Func = Class->GetFunction("door", "CanEquipBatteringRam");
 
-	Params::Door_CanEquipBatteringRam Parms{};
+	Params::door_CanEquipBatteringRam Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92362,20 +92362,20 @@ bool ADoor::CanEquipBatteringRam(class AReadyOrNotCharacter* PlayerCharacter) co
 }
 
 
-// Function ReadyOrNot.Door.CanEquipBreachingShotgun
+// Function ReadyOrNot.door.CanEquipBreachingShotgun
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanEquipBreachingShotgun(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanEquipBreachingShotgun(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanEquipBreachingShotgun");
+		Func = Class->GetFunction("door", "CanEquipBreachingShotgun");
 
-	Params::Door_CanEquipBreachingShotgun Parms{};
+	Params::door_CanEquipBreachingShotgun Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92390,20 +92390,20 @@ bool ADoor::CanEquipBreachingShotgun(class AReadyOrNotCharacter* PlayerCharacter
 }
 
 
-// Function ReadyOrNot.Door.CanEquipC2Explosive
+// Function ReadyOrNot.door.CanEquipC2Explosive
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanEquipC2Explosive(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanEquipC2Explosive(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanEquipC2Explosive");
+		Func = Class->GetFunction("door", "CanEquipC2Explosive");
 
-	Params::Door_CanEquipC2Explosive Parms{};
+	Params::door_CanEquipC2Explosive Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92418,20 +92418,20 @@ bool ADoor::CanEquipC2Explosive(class AReadyOrNotCharacter* PlayerCharacter) con
 }
 
 
-// Function ReadyOrNot.Door.CanEquipMultitool
+// Function ReadyOrNot.door.CanEquipMultitool
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanEquipMultitool(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanEquipMultitool(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanEquipMultitool");
+		Func = Class->GetFunction("door", "CanEquipMultitool");
 
-	Params::Door_CanEquipMultitool Parms{};
+	Params::door_CanEquipMultitool Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92446,20 +92446,20 @@ bool ADoor::CanEquipMultitool(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanEquipOptiwand
+// Function ReadyOrNot.door.CanEquipOptiwand
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanEquipOptiwand(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanEquipOptiwand(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanEquipOptiwand");
+		Func = Class->GetFunction("door", "CanEquipOptiwand");
 
-	Params::Door_CanEquipOptiwand Parms{};
+	Params::door_CanEquipOptiwand Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92474,20 +92474,20 @@ bool ADoor::CanEquipOptiwand(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanEquipWedge
+// Function ReadyOrNot.door.CanEquipWedge
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanEquipWedge(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanEquipWedge(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanEquipWedge");
+		Func = Class->GetFunction("door", "CanEquipWedge");
 
-	Params::Door_CanEquipWedge Parms{};
+	Params::door_CanEquipWedge Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92502,20 +92502,20 @@ bool ADoor::CanEquipWedge(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanKickDoor
+// Function ReadyOrNot.door.CanKickDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanKickDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanKickDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanKickDoor");
+		Func = Class->GetFunction("door", "CanKickDoor");
 
-	Params::Door_CanKickDoor Parms{};
+	Params::door_CanKickDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92530,20 +92530,20 @@ bool ADoor::CanKickDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanLockpickDoor
+// Function ReadyOrNot.door.CanLockpickDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanLockpickDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanLockpickDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanLockpickDoor");
+		Func = Class->GetFunction("door", "CanLockpickDoor");
 
-	Params::Door_CanLockpickDoor Parms{};
+	Params::door_CanLockpickDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92558,20 +92558,20 @@ bool ADoor::CanLockpickDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanMirrorUnderDoor
+// Function ReadyOrNot.door.CanMirrorUnderDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanMirrorUnderDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanMirrorUnderDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanMirrorUnderDoor");
+		Func = Class->GetFunction("door", "CanMirrorUnderDoor");
 
-	Params::Door_CanMirrorUnderDoor Parms{};
+	Params::door_CanMirrorUnderDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92586,20 +92586,20 @@ bool ADoor::CanMirrorUnderDoor(class AReadyOrNotCharacter* PlayerCharacter) cons
 }
 
 
-// Function ReadyOrNot.Door.CanOpenDoor
+// Function ReadyOrNot.door.CanOpenDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanOpenDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanOpenDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanOpenDoor");
+		Func = Class->GetFunction("door", "CanOpenDoor");
 
-	Params::Door_CanOpenDoor Parms{};
+	Params::door_CanOpenDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92614,20 +92614,20 @@ bool ADoor::CanOpenDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanPeekDoor
+// Function ReadyOrNot.door.CanPeekDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanPeekDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanPeekDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanPeekDoor");
+		Func = Class->GetFunction("door", "CanPeekDoor");
 
-	Params::Door_CanPeekDoor Parms{};
+	Params::door_CanPeekDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92642,20 +92642,20 @@ bool ADoor::CanPeekDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanPlaceC2Explosive
+// Function ReadyOrNot.door.CanPlaceC2Explosive
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanPlaceC2Explosive(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanPlaceC2Explosive(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanPlaceC2Explosive");
+		Func = Class->GetFunction("door", "CanPlaceC2Explosive");
 
-	Params::Door_CanPlaceC2Explosive Parms{};
+	Params::door_CanPlaceC2Explosive Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92670,20 +92670,20 @@ bool ADoor::CanPlaceC2Explosive(class AReadyOrNotCharacter* PlayerCharacter) con
 }
 
 
-// Function ReadyOrNot.Door.CanPullDoor
+// Function ReadyOrNot.door.CanPullDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanPullDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanPullDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanPullDoor");
+		Func = Class->GetFunction("door", "CanPullDoor");
 
-	Params::Door_CanPullDoor Parms{};
+	Params::door_CanPullDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92698,20 +92698,20 @@ bool ADoor::CanPullDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanPushDoor
+// Function ReadyOrNot.door.CanPushDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanPushDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanPushDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanPushDoor");
+		Func = Class->GetFunction("door", "CanPushDoor");
 
-	Params::Door_CanPushDoor Parms{};
+	Params::door_CanPushDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92726,19 +92726,19 @@ bool ADoor::CanPushDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanPushDoorWhileBroken
+// Function ReadyOrNot.door.CanPushDoorWhileBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanPushDoorWhileBroken() const
+bool Adoor::CanPushDoorWhileBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanPushDoorWhileBroken");
+		Func = Class->GetFunction("door", "CanPushDoorWhileBroken");
 
-	Params::Door_CanPushDoorWhileBroken Parms{};
+	Params::door_CanPushDoorWhileBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92751,20 +92751,20 @@ bool ADoor::CanPushDoorWhileBroken() const
 }
 
 
-// Function ReadyOrNot.Door.CanRamDoor
+// Function ReadyOrNot.door.CanRamDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanRamDoor(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::CanRamDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanRamDoor");
+		Func = Class->GetFunction("door", "CanRamDoor");
 
-	Params::Door_CanRamDoor Parms{};
+	Params::door_CanRamDoor Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -92779,19 +92779,19 @@ bool ADoor::CanRamDoor(class AReadyOrNotCharacter* PlayerCharacter) const
 }
 
 
-// Function ReadyOrNot.Door.CanSpawnTrap
+// Function ReadyOrNot.door.CanSpawnTrap
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanSpawnTrap() const
+bool Adoor::CanSpawnTrap() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanSpawnTrap");
+		Func = Class->GetFunction("door", "CanSpawnTrap");
 
-	Params::Door_CanSpawnTrap Parms{};
+	Params::door_CanSpawnTrap Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92804,7 +92804,7 @@ bool ADoor::CanSpawnTrap() const
 }
 
 
-// Function ReadyOrNot.Door.CanTakeDamage
+// Function ReadyOrNot.door.CanTakeDamage
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Damage                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -92813,14 +92813,14 @@ bool ADoor::CanSpawnTrap() const
 // class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::CanTakeDamage(float Damage, const struct FDamageEvent& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) const
+bool Adoor::CanTakeDamage(float Damage, const struct FDamageEvent& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "CanTakeDamage");
+		Func = Class->GetFunction("door", "CanTakeDamage");
 
-	Params::Door_CanTakeDamage Parms{};
+	Params::door_CanTakeDamage Parms{};
 
 	Parms.Damage = Damage;
 	Parms.DamageEvent = std::move(DamageEvent);
@@ -92838,19 +92838,19 @@ bool ADoor::CanTakeDamage(float Damage, const struct FDamageEvent& DamageEvent, 
 }
 
 
-// Function ReadyOrNot.Door.DoesSuspectKnowTrapState
+// Function ReadyOrNot.door.DoesSuspectKnowTrapState
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::DoesSuspectKnowTrapState() const
+bool Adoor::DoesSuspectKnowTrapState() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DoesSuspectKnowTrapState");
+		Func = Class->GetFunction("door", "DoesSuspectKnowTrapState");
 
-	Params::Door_DoesSuspectKnowTrapState Parms{};
+	Params::door_DoesSuspectKnowTrapState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92863,19 +92863,19 @@ bool ADoor::DoesSuspectKnowTrapState() const
 }
 
 
-// Function ReadyOrNot.Door.DoesSWATKnowTrapState
+// Function ReadyOrNot.door.DoesSWATKnowTrapState
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::DoesSWATKnowTrapState() const
+bool Adoor::DoesSWATKnowTrapState() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "DoesSWATKnowTrapState");
+		Func = Class->GetFunction("door", "DoesSWATKnowTrapState");
 
-	Params::Door_DoesSWATKnowTrapState Parms{};
+	Params::door_DoesSWATKnowTrapState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92888,20 +92888,20 @@ bool ADoor::DoesSWATKnowTrapState() const
 }
 
 
-// Function ReadyOrNot.Door.FindStackUpAreaFromLocation
+// Function ReadyOrNot.door.FindStackUpAreaFromLocation
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   InInteractionLocation                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EStackupGenArea                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EStackupGenArea ADoor::FindStackUpAreaFromLocation(const struct FVector& InInteractionLocation) const
+EStackupGenArea Adoor::FindStackUpAreaFromLocation(const struct FVector& InInteractionLocation) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "FindStackUpAreaFromLocation");
+		Func = Class->GetFunction("door", "FindStackUpAreaFromLocation");
 
-	Params::Door_FindStackUpAreaFromLocation Parms{};
+	Params::door_FindStackUpAreaFromLocation Parms{};
 
 	Parms.InInteractionLocation = std::move(InInteractionLocation);
 
@@ -92916,19 +92916,19 @@ EStackupGenArea ADoor::FindStackUpAreaFromLocation(const struct FVector& InInter
 }
 
 
-// Function ReadyOrNot.Door.GetAttachedTrap
+// Function ReadyOrNot.door.GetAttachedTrap
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class ATrapActorAttachedToDoor*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ATrapActorAttachedToDoor* ADoor::GetAttachedTrap() const
+class ATrapActorAttachedToDoor* Adoor::GetAttachedTrap() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetAttachedTrap");
+		Func = Class->GetFunction("door", "GetAttachedTrap");
 
-	Params::Door_GetAttachedTrap Parms{};
+	Params::door_GetAttachedTrap Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92941,19 +92941,19 @@ class ATrapActorAttachedToDoor* ADoor::GetAttachedTrap() const
 }
 
 
-// Function ReadyOrNot.Door.GetAttachedWedge
+// Function ReadyOrNot.door.GetAttachedWedge
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class ADoorJam*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ADoorJam* ADoor::GetAttachedWedge() const
+class ADoorJam* Adoor::GetAttachedWedge() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetAttachedWedge");
+		Func = Class->GetFunction("door", "GetAttachedWedge");
 
-	Params::Door_GetAttachedWedge Parms{};
+	Params::door_GetAttachedWedge Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92966,19 +92966,19 @@ class ADoorJam* ADoor::GetAttachedWedge() const
 }
 
 
-// Function ReadyOrNot.Door.GetBackThreatOwningRoom
+// Function ReadyOrNot.door.GetBackThreatOwningRoom
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName ADoor::GetBackThreatOwningRoom() const
+class FName Adoor::GetBackThreatOwningRoom() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetBackThreatOwningRoom");
+		Func = Class->GetFunction("door", "GetBackThreatOwningRoom");
 
-	Params::Door_GetBackThreatOwningRoom Parms{};
+	Params::door_GetBackThreatOwningRoom Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -92991,20 +92991,20 @@ class FName ADoor::GetBackThreatOwningRoom() const
 }
 
 
-// Function ReadyOrNot.Door.GetBestDoorInteraction
+// Function ReadyOrNot.door.GetBestDoorInteraction
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetBestDoorInteraction(const struct FVector& Location) const
+struct FVector Adoor::GetBestDoorInteraction(const struct FVector& Location) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetBestDoorInteraction");
+		Func = Class->GetFunction("door", "GetBestDoorInteraction");
 
-	Params::Door_GetBestDoorInteraction Parms{};
+	Params::door_GetBestDoorInteraction Parms{};
 
 	Parms.Location = std::move(Location);
 
@@ -93019,21 +93019,21 @@ struct FVector ADoor::GetBestDoorInteraction(const struct FVector& Location) con
 }
 
 
-// Function ReadyOrNot.Door.GetBestDoorInteraction_FromLocation
+// Function ReadyOrNot.door.GetBestDoorInteraction_FromLocation
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   InInteractionLocation                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDoorwayBased                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetBestDoorInteraction_FromLocation(const struct FVector& InInteractionLocation, bool bDoorwayBased) const
+struct FVector Adoor::GetBestDoorInteraction_FromLocation(const struct FVector& InInteractionLocation, bool bDoorwayBased) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetBestDoorInteraction_FromLocation");
+		Func = Class->GetFunction("door", "GetBestDoorInteraction_FromLocation");
 
-	Params::Door_GetBestDoorInteraction_FromLocation Parms{};
+	Params::door_GetBestDoorInteraction_FromLocation Parms{};
 
 	Parms.InInteractionLocation = std::move(InInteractionLocation);
 	Parms.bDoorwayBased = bDoorwayBased;
@@ -93049,21 +93049,21 @@ struct FVector ADoor::GetBestDoorInteraction_FromLocation(const struct FVector& 
 }
 
 
-// Function ReadyOrNot.Door.GetBestDoorInteraction_FromStackUpArea
+// Function ReadyOrNot.door.GetBestDoorInteraction_FromStackUpArea
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const EStackupGenArea&                  InStackUpArea                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bDoorwayBased                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetBestDoorInteraction_FromStackUpArea(const EStackupGenArea& InStackUpArea, bool bDoorwayBased) const
+struct FVector Adoor::GetBestDoorInteraction_FromStackUpArea(const EStackupGenArea& InStackUpArea, bool bDoorwayBased) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetBestDoorInteraction_FromStackUpArea");
+		Func = Class->GetFunction("door", "GetBestDoorInteraction_FromStackUpArea");
 
-	Params::Door_GetBestDoorInteraction_FromStackUpArea Parms{};
+	Params::door_GetBestDoorInteraction_FromStackUpArea Parms{};
 
 	Parms.InStackUpArea = InStackUpArea;
 	Parms.bDoorwayBased = bDoorwayBased;
@@ -93079,20 +93079,20 @@ struct FVector ADoor::GetBestDoorInteraction_FromStackUpArea(const EStackupGenAr
 }
 
 
-// Function ReadyOrNot.Door.GetBestOneWayDoorInteraction
+// Function ReadyOrNot.door.GetBestOneWayDoorInteraction
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetBestOneWayDoorInteraction(const struct FVector& Location) const
+struct FVector Adoor::GetBestOneWayDoorInteraction(const struct FVector& Location) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetBestOneWayDoorInteraction");
+		Func = Class->GetFunction("door", "GetBestOneWayDoorInteraction");
 
-	Params::Door_GetBestOneWayDoorInteraction Parms{};
+	Params::door_GetBestOneWayDoorInteraction Parms{};
 
 	Parms.Location = std::move(Location);
 
@@ -93107,19 +93107,19 @@ struct FVector ADoor::GetBestOneWayDoorInteraction(const struct FVector& Locatio
 }
 
 
-// Function ReadyOrNot.Door.GetDoorKillDistance
+// Function ReadyOrNot.door.GetDoorKillDistance
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TMap<EDoorDamageType, float>            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-TMap<EDoorDamageType, float> ADoor::GetDoorKillDistance() const
+TMap<EDoorDamageType, float> Adoor::GetDoorKillDistance() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetDoorKillDistance");
+		Func = Class->GetFunction("door", "GetDoorKillDistance");
 
-	Params::Door_GetDoorKillDistance Parms{};
+	Params::door_GetDoorKillDistance Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93132,19 +93132,19 @@ TMap<EDoorDamageType, float> ADoor::GetDoorKillDistance() const
 }
 
 
-// Function ReadyOrNot.Door.GetDoorMidLocation
+// Function ReadyOrNot.door.GetDoorMidLocation
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetDoorMidLocation() const
+struct FVector Adoor::GetDoorMidLocation() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetDoorMidLocation");
+		Func = Class->GetFunction("door", "GetDoorMidLocation");
 
-	Params::Door_GetDoorMidLocation Parms{};
+	Params::door_GetDoorMidLocation Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93157,19 +93157,19 @@ struct FVector ADoor::GetDoorMidLocation() const
 }
 
 
-// Function ReadyOrNot.Door.GetDoorStunDistance
+// Function ReadyOrNot.door.GetDoorStunDistance
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // TMap<EDoorDamageType, float>            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-TMap<EDoorDamageType, float> ADoor::GetDoorStunDistance() const
+TMap<EDoorDamageType, float> Adoor::GetDoorStunDistance() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetDoorStunDistance");
+		Func = Class->GetFunction("door", "GetDoorStunDistance");
 
-	Params::Door_GetDoorStunDistance Parms{};
+	Params::door_GetDoorStunDistance Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93182,19 +93182,19 @@ TMap<EDoorDamageType, float> ADoor::GetDoorStunDistance() const
 }
 
 
-// Function ReadyOrNot.Door.GetFrontThreatOwningRoom
+// Function ReadyOrNot.door.GetFrontThreatOwningRoom
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FName ADoor::GetFrontThreatOwningRoom() const
+class FName Adoor::GetFrontThreatOwningRoom() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetFrontThreatOwningRoom");
+		Func = Class->GetFunction("door", "GetFrontThreatOwningRoom");
 
-	Params::Door_GetFrontThreatOwningRoom Parms{};
+	Params::door_GetFrontThreatOwningRoom Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93207,19 +93207,19 @@ class FName ADoor::GetFrontThreatOwningRoom() const
 }
 
 
-// Function ReadyOrNot.Door.GetIncrementAngle
+// Function ReadyOrNot.door.GetIncrementAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetIncrementAngle() const
+float Adoor::GetIncrementAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetIncrementAngle");
+		Func = Class->GetFunction("door", "GetIncrementAngle");
 
-	Params::Door_GetIncrementAngle Parms{};
+	Params::door_GetIncrementAngle Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93232,19 +93232,19 @@ float ADoor::GetIncrementAngle() const
 }
 
 
-// Function ReadyOrNot.Door.GetLastDoorUser
+// Function ReadyOrNot.door.GetLastDoorUser
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AReadyOrNotCharacter* ADoor::GetLastDoorUser() const
+class AReadyOrNotCharacter* Adoor::GetLastDoorUser() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetLastDoorUser");
+		Func = Class->GetFunction("door", "GetLastDoorUser");
 
-	Params::Door_GetLastDoorUser Parms{};
+	Params::door_GetLastDoorUser Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93257,19 +93257,19 @@ class AReadyOrNotCharacter* ADoor::GetLastDoorUser() const
 }
 
 
-// Function ReadyOrNot.Door.GetMaxOpenAmount
+// Function ReadyOrNot.door.GetMaxOpenAmount
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetMaxOpenAmount() const
+float Adoor::GetMaxOpenAmount() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetMaxOpenAmount");
+		Func = Class->GetFunction("door", "GetMaxOpenAmount");
 
-	Params::Door_GetMaxOpenAmount Parms{};
+	Params::door_GetMaxOpenAmount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93282,19 +93282,19 @@ float ADoor::GetMaxOpenAmount() const
 }
 
 
-// Function ReadyOrNot.Door.GetOpenAmount
+// Function ReadyOrNot.door.GetOpenAmount
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetOpenAmount() const
+float Adoor::GetOpenAmount() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetOpenAmount");
+		Func = Class->GetFunction("door", "GetOpenAmount");
 
-	Params::Door_GetOpenAmount Parms{};
+	Params::door_GetOpenAmount Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93307,19 +93307,19 @@ float ADoor::GetOpenAmount() const
 }
 
 
-// Function ReadyOrNot.Door.GetOpenAmountAsPercentage
+// Function ReadyOrNot.door.GetOpenAmountAsPercentage
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetOpenAmountAsPercentage() const
+float Adoor::GetOpenAmountAsPercentage() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetOpenAmountAsPercentage");
+		Func = Class->GetFunction("door", "GetOpenAmountAsPercentage");
 
-	Params::Door_GetOpenAmountAsPercentage Parms{};
+	Params::door_GetOpenAmountAsPercentage Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93332,19 +93332,19 @@ float ADoor::GetOpenAmountAsPercentage() const
 }
 
 
-// Function ReadyOrNot.Door.GetOpenThreshold
+// Function ReadyOrNot.door.GetOpenThreshold
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetOpenThreshold() const
+float Adoor::GetOpenThreshold() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetOpenThreshold");
+		Func = Class->GetFunction("door", "GetOpenThreshold");
 
-	Params::Door_GetOpenThreshold Parms{};
+	Params::door_GetOpenThreshold Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93357,21 +93357,21 @@ float ADoor::GetOpenThreshold() const
 }
 
 
-// Function ReadyOrNot.Door.GetOppositeThreatOwningRoom
+// Function ReadyOrNot.door.GetOppositeThreatOwningRoom
 // (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FName                             RoomName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class FName*                            OtherRoomName                                          (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::GetOppositeThreatOwningRoom(class FName RoomName, class FName* OtherRoomName) const
+bool Adoor::GetOppositeThreatOwningRoom(class FName RoomName, class FName* OtherRoomName) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetOppositeThreatOwningRoom");
+		Func = Class->GetFunction("door", "GetOppositeThreatOwningRoom");
 
-	Params::Door_GetOppositeThreatOwningRoom Parms{};
+	Params::door_GetOppositeThreatOwningRoom Parms{};
 
 	Parms.RoomName = RoomName;
 
@@ -93389,19 +93389,19 @@ bool ADoor::GetOppositeThreatOwningRoom(class FName RoomName, class FName* Other
 }
 
 
-// Function ReadyOrNot.Door.GetOverrideLockChance
+// Function ReadyOrNot.door.GetOverrideLockChance
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetOverrideLockChance() const
+float Adoor::GetOverrideLockChance() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetOverrideLockChance");
+		Func = Class->GetFunction("door", "GetOverrideLockChance");
 
-	Params::Door_GetOverrideLockChance Parms{};
+	Params::door_GetOverrideLockChance Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93414,19 +93414,19 @@ float ADoor::GetOverrideLockChance() const
 }
 
 
-// Function ReadyOrNot.Door.GetPlacedC2
+// Function ReadyOrNot.door.GetPlacedC2
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class APlacedC2Explosive*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class APlacedC2Explosive* ADoor::GetPlacedC2() const
+class APlacedC2Explosive* Adoor::GetPlacedC2() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetPlacedC2");
+		Func = Class->GetFunction("door", "GetPlacedC2");
 
-	Params::Door_GetPlacedC2 Parms{};
+	Params::door_GetPlacedC2 Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93439,19 +93439,19 @@ class APlacedC2Explosive* ADoor::GetPlacedC2() const
 }
 
 
-// Function ReadyOrNot.Door.GetPseudoVelocity
+// Function ReadyOrNot.door.GetPseudoVelocity
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetPseudoVelocity() const
+float Adoor::GetPseudoVelocity() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetPseudoVelocity");
+		Func = Class->GetFunction("door", "GetPseudoVelocity");
 
-	Params::Door_GetPseudoVelocity Parms{};
+	Params::door_GetPseudoVelocity Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93464,21 +93464,21 @@ float ADoor::GetPseudoVelocity() const
 }
 
 
-// Function ReadyOrNot.Door.GetStackUpLocation
+// Function ReadyOrNot.door.GetStackUpLocation
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // EStackupGenArea                         StackUpArea                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ESquadPosition                          StackUpPosition                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetStackUpLocation(EStackupGenArea StackUpArea, ESquadPosition StackUpPosition) const
+struct FVector Adoor::GetStackUpLocation(EStackupGenArea StackUpArea, ESquadPosition StackUpPosition) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetStackUpLocation");
+		Func = Class->GetFunction("door", "GetStackUpLocation");
 
-	Params::Door_GetStackUpLocation Parms{};
+	Params::door_GetStackUpLocation Parms{};
 
 	Parms.StackUpArea = StackUpArea;
 	Parms.StackUpPosition = StackUpPosition;
@@ -93494,20 +93494,20 @@ struct FVector ADoor::GetStackUpLocation(EStackupGenArea StackUpArea, ESquadPosi
 }
 
 
-// Function ReadyOrNot.Door.GetStackupsForArea
+// Function ReadyOrNot.door.GetStackupsForArea
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // EStackupGenArea                         StackUpArea                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class AStackUpActor*>            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class AStackUpActor*> ADoor::GetStackupsForArea(EStackupGenArea StackUpArea) const
+TArray<class AStackUpActor*> Adoor::GetStackupsForArea(EStackupGenArea StackUpArea) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetStackupsForArea");
+		Func = Class->GetFunction("door", "GetStackupsForArea");
 
-	Params::Door_GetStackupsForArea Parms{};
+	Params::door_GetStackupsForArea Parms{};
 
 	Parms.StackUpArea = StackUpArea;
 
@@ -93522,19 +93522,19 @@ TArray<class AStackUpActor*> ADoor::GetStackupsForArea(EStackupGenArea StackUpAr
 }
 
 
-// Function ReadyOrNot.Door.GetStartingOpenAngle
+// Function ReadyOrNot.door.GetStartingOpenAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetStartingOpenAngle() const
+float Adoor::GetStartingOpenAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetStartingOpenAngle");
+		Func = Class->GetFunction("door", "GetStartingOpenAngle");
 
-	Params::Door_GetStartingOpenAngle Parms{};
+	Params::door_GetStartingOpenAngle Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93547,19 +93547,19 @@ float ADoor::GetStartingOpenAngle() const
 }
 
 
-// Function ReadyOrNot.Door.GetSubDoor
+// Function ReadyOrNot.door.GetSubDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ADoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ADoor* ADoor::GetSubDoor() const
+class Adoor* Adoor::GetSubDoor() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetSubDoor");
+		Func = Class->GetFunction("door", "GetSubDoor");
 
-	Params::Door_GetSubDoor Parms{};
+	Params::door_GetSubDoor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93572,44 +93572,19 @@ class ADoor* ADoor::GetSubDoor() const
 }
 
 
-// Function ReadyOrNot.Door.GetSuspectKnowsLockState
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ADoor::GetSuspectKnowsLockState() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetSuspectKnowsLockState");
-
-	Params::Door_GetSuspectKnowsLockState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function ReadyOrNot.Door.GetSWATKnowsLockState
+// Function ReadyOrNot.door.GetSuspectKnowsLockState
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::GetSWATKnowsLockState() const
+bool Adoor::GetSuspectKnowsLockState() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetSWATKnowsLockState");
+		Func = Class->GetFunction("door", "GetSuspectKnowsLockState");
 
-	Params::Door_GetSWATKnowsLockState Parms{};
+	Params::door_GetSuspectKnowsLockState Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93622,19 +93597,44 @@ bool ADoor::GetSWATKnowsLockState() const
 }
 
 
-// Function ReadyOrNot.Door.GetTargetAngle
+// Function ReadyOrNot.door.GetSWATKnowsLockState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool Adoor::GetSWATKnowsLockState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("door", "GetSWATKnowsLockState");
+
+	Params::door_GetSWATKnowsLockState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function ReadyOrNot.door.GetTargetAngle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float ADoor::GetTargetAngle() const
+float Adoor::GetTargetAngle() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetTargetAngle");
+		Func = Class->GetFunction("door", "GetTargetAngle");
 
-	Params::Door_GetTargetAngle Parms{};
+	Params::door_GetTargetAngle Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93647,19 +93647,19 @@ float ADoor::GetTargetAngle() const
 }
 
 
-// Function ReadyOrNot.Door.GetWedgeLocation
+// Function ReadyOrNot.door.GetWedgeLocation
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADoor::GetWedgeLocation() const
+struct FVector Adoor::GetWedgeLocation() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "GetWedgeLocation");
+		Func = Class->GetFunction("door", "GetWedgeLocation");
 
-	Params::Door_GetWedgeLocation Parms{};
+	Params::door_GetWedgeLocation Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93672,19 +93672,19 @@ struct FVector ADoor::GetWedgeLocation() const
 }
 
 
-// Function ReadyOrNot.Door.HasEverBeenOpened
+// Function ReadyOrNot.door.HasEverBeenOpened
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::HasEverBeenOpened() const
+bool Adoor::HasEverBeenOpened() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "HasEverBeenOpened");
+		Func = Class->GetFunction("door", "HasEverBeenOpened");
 
-	Params::Door_HasEverBeenOpened Parms{};
+	Params::door_HasEverBeenOpened Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93697,19 +93697,19 @@ bool ADoor::HasEverBeenOpened() const
 }
 
 
-// Function ReadyOrNot.Door.HasTrapAndSuspectKnowsTrap
+// Function ReadyOrNot.door.HasTrapAndSuspectKnowsTrap
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::HasTrapAndSuspectKnowsTrap() const
+bool Adoor::HasTrapAndSuspectKnowsTrap() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "HasTrapAndSuspectKnowsTrap");
+		Func = Class->GetFunction("door", "HasTrapAndSuspectKnowsTrap");
 
-	Params::Door_HasTrapAndSuspectKnowsTrap Parms{};
+	Params::door_HasTrapAndSuspectKnowsTrap Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93722,19 +93722,19 @@ bool ADoor::HasTrapAndSuspectKnowsTrap() const
 }
 
 
-// Function ReadyOrNot.Door.HasTrapAndSWATKnowsTrap
+// Function ReadyOrNot.door.HasTrapAndSWATKnowsTrap
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::HasTrapAndSWATKnowsTrap() const
+bool Adoor::HasTrapAndSWATKnowsTrap() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "HasTrapAndSWATKnowsTrap");
+		Func = Class->GetFunction("door", "HasTrapAndSWATKnowsTrap");
 
-	Params::Door_HasTrapAndSWATKnowsTrap Parms{};
+	Params::door_HasTrapAndSWATKnowsTrap Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93747,20 +93747,20 @@ bool ADoor::HasTrapAndSWATKnowsTrap() const
 }
 
 
-// Function ReadyOrNot.Door.IsActorBehindDoor_Relative
+// Function ReadyOrNot.door.IsActorBehindDoor_Relative
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsActorBehindDoor_Relative(class AActor* Actor) const
+bool Adoor::IsActorBehindDoor_Relative(class AActor* Actor) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsActorBehindDoor_Relative");
+		Func = Class->GetFunction("door", "IsActorBehindDoor_Relative");
 
-	Params::Door_IsActorBehindDoor_Relative Parms{};
+	Params::door_IsActorBehindDoor_Relative Parms{};
 
 	Parms.Actor = Actor;
 
@@ -93775,20 +93775,20 @@ bool ADoor::IsActorBehindDoor_Relative(class AActor* Actor) const
 }
 
 
-// Function ReadyOrNot.Door.IsActorInFrontOfDoor
+// Function ReadyOrNot.door.IsActorInFrontOfDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsActorInFrontOfDoor(class AActor* Actor) const
+bool Adoor::IsActorInFrontOfDoor(class AActor* Actor) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsActorInFrontOfDoor");
+		Func = Class->GetFunction("door", "IsActorInFrontOfDoor");
 
-	Params::Door_IsActorInFrontOfDoor Parms{};
+	Params::door_IsActorInFrontOfDoor Parms{};
 
 	Parms.Actor = Actor;
 
@@ -93803,20 +93803,20 @@ bool ADoor::IsActorInFrontOfDoor(class AActor* Actor) const
 }
 
 
-// Function ReadyOrNot.Door.IsActorInFrontOfDoorway
+// Function ReadyOrNot.door.IsActorInFrontOfDoorway
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsActorInFrontOfDoorway(class AActor* Actor) const
+bool Adoor::IsActorInFrontOfDoorway(class AActor* Actor) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsActorInFrontOfDoorway");
+		Func = Class->GetFunction("door", "IsActorInFrontOfDoorway");
 
-	Params::Door_IsActorInFrontOfDoorway Parms{};
+	Params::door_IsActorInFrontOfDoorway Parms{};
 
 	Parms.Actor = Actor;
 
@@ -93831,20 +93831,20 @@ bool ADoor::IsActorInFrontOfDoorway(class AActor* Actor) const
 }
 
 
-// Function ReadyOrNot.Door.IsActorRightOfDoorway
+// Function ReadyOrNot.door.IsActorRightOfDoorway
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsActorRightOfDoorway(class AActor* Actor) const
+bool Adoor::IsActorRightOfDoorway(class AActor* Actor) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsActorRightOfDoorway");
+		Func = Class->GetFunction("door", "IsActorRightOfDoorway");
 
-	Params::Door_IsActorRightOfDoorway Parms{};
+	Params::door_IsActorRightOfDoorway Parms{};
 
 	Parms.Actor = Actor;
 
@@ -93859,20 +93859,20 @@ bool ADoor::IsActorRightOfDoorway(class AActor* Actor) const
 }
 
 
-// Function ReadyOrNot.Door.IsActorSameSideAsTrap
+// Function ReadyOrNot.door.IsActorSameSideAsTrap
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AActor*                           InActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsActorSameSideAsTrap(class AActor* InActor) const
+bool Adoor::IsActorSameSideAsTrap(class AActor* InActor) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsActorSameSideAsTrap");
+		Func = Class->GetFunction("door", "IsActorSameSideAsTrap");
 
-	Params::Door_IsActorSameSideAsTrap Parms{};
+	Params::door_IsActorSameSideAsTrap Parms{};
 
 	Parms.InActor = InActor;
 
@@ -93887,19 +93887,19 @@ bool ADoor::IsActorSameSideAsTrap(class AActor* InActor) const
 }
 
 
-// Function ReadyOrNot.Door.IsAlwaysLocked
+// Function ReadyOrNot.door.IsAlwaysLocked
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsAlwaysLocked() const
+bool Adoor::IsAlwaysLocked() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsAlwaysLocked");
+		Func = Class->GetFunction("door", "IsAlwaysLocked");
 
-	Params::Door_IsAlwaysLocked Parms{};
+	Params::door_IsAlwaysLocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93912,19 +93912,19 @@ bool ADoor::IsAlwaysLocked() const
 }
 
 
-// Function ReadyOrNot.Door.IsAnyAIClosing
+// Function ReadyOrNot.door.IsAnyAIClosing
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsAnyAIClosing() const
+bool Adoor::IsAnyAIClosing() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsAnyAIClosing");
+		Func = Class->GetFunction("door", "IsAnyAIClosing");
 
-	Params::Door_IsAnyAIClosing Parms{};
+	Params::door_IsAnyAIClosing Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93937,19 +93937,19 @@ bool ADoor::IsAnyAIClosing() const
 }
 
 
-// Function ReadyOrNot.Door.IsAnyAIOpening
+// Function ReadyOrNot.door.IsAnyAIOpening
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsAnyAIOpening() const
+bool Adoor::IsAnyAIOpening() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsAnyAIOpening");
+		Func = Class->GetFunction("door", "IsAnyAIOpening");
 
-	Params::Door_IsAnyAIOpening Parms{};
+	Params::door_IsAnyAIOpening Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93962,19 +93962,19 @@ bool ADoor::IsAnyAIOpening() const
 }
 
 
-// Function ReadyOrNot.Door.IsAnyInteractionPlaying
+// Function ReadyOrNot.door.IsAnyInteractionPlaying
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsAnyInteractionPlaying() const
+bool Adoor::IsAnyInteractionPlaying() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsAnyInteractionPlaying");
+		Func = Class->GetFunction("door", "IsAnyInteractionPlaying");
 
-	Params::Door_IsAnyInteractionPlaying Parms{};
+	Params::door_IsAnyInteractionPlaying Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93987,19 +93987,19 @@ bool ADoor::IsAnyInteractionPlaying() const
 }
 
 
-// Function ReadyOrNot.Door.IsAttachedToRoot
+// Function ReadyOrNot.door.IsAttachedToRoot
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsAttachedToRoot() const
+bool Adoor::IsAttachedToRoot() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsAttachedToRoot");
+		Func = Class->GetFunction("door", "IsAttachedToRoot");
 
-	Params::Door_IsAttachedToRoot Parms{};
+	Params::door_IsAttachedToRoot Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94012,19 +94012,19 @@ bool ADoor::IsAttachedToRoot() const
 }
 
 
-// Function ReadyOrNot.Door.IsC2Placed
+// Function ReadyOrNot.door.IsC2Placed
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsC2Placed() const
+bool Adoor::IsC2Placed() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsC2Placed");
+		Func = Class->GetFunction("door", "IsC2Placed");
 
-	Params::Door_IsC2Placed Parms{};
+	Params::door_IsC2Placed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94037,19 +94037,19 @@ bool ADoor::IsC2Placed() const
 }
 
 
-// Function ReadyOrNot.Door.IsClosed
+// Function ReadyOrNot.door.IsClosed
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsClosed() const
+bool Adoor::IsClosed() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsClosed");
+		Func = Class->GetFunction("door", "IsClosed");
 
-	Params::Door_IsClosed Parms{};
+	Params::door_IsClosed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94062,19 +94062,19 @@ bool ADoor::IsClosed() const
 }
 
 
-// Function ReadyOrNot.Door.IsClosing
+// Function ReadyOrNot.door.IsClosing
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsClosing() const
+bool Adoor::IsClosing() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsClosing");
+		Func = Class->GetFunction("door", "IsClosing");
 
-	Params::Door_IsClosing Parms{};
+	Params::door_IsClosing Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94087,19 +94087,19 @@ bool ADoor::IsClosing() const
 }
 
 
-// Function ReadyOrNot.Door.IsDestructible
+// Function ReadyOrNot.door.IsDestructible
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsDestructible() const
+bool Adoor::IsDestructible() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsDestructible");
+		Func = Class->GetFunction("door", "IsDestructible");
 
-	Params::Door_IsDestructible Parms{};
+	Params::door_IsDestructible Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94112,19 +94112,19 @@ bool ADoor::IsDestructible() const
 }
 
 
-// Function ReadyOrNot.Door.IsDoorBroken
+// Function ReadyOrNot.door.IsDoorBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsDoorBroken() const
+bool Adoor::IsDoorBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsDoorBroken");
+		Func = Class->GetFunction("door", "IsDoorBroken");
 
-	Params::Door_IsDoorBroken Parms{};
+	Params::door_IsDoorBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94137,20 +94137,20 @@ bool ADoor::IsDoorBroken() const
 }
 
 
-// Function ReadyOrNot.Door.IsDoorChunkDestroyed
+// Function ReadyOrNot.door.IsDoorChunkDestroyed
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class UDestructibleDoorChunkComponent*  InChunkComponent                                       (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsDoorChunkDestroyed(class UDestructibleDoorChunkComponent* InChunkComponent) const
+bool Adoor::IsDoorChunkDestroyed(class UDestructibleDoorChunkComponent* InChunkComponent) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsDoorChunkDestroyed");
+		Func = Class->GetFunction("door", "IsDoorChunkDestroyed");
 
-	Params::Door_IsDoorChunkDestroyed Parms{};
+	Params::door_IsDoorChunkDestroyed Parms{};
 
 	Parms.InChunkComponent = InChunkComponent;
 
@@ -94165,19 +94165,19 @@ bool ADoor::IsDoorChunkDestroyed(class UDestructibleDoorChunkComponent* InChunkC
 }
 
 
-// Function ReadyOrNot.Door.IsDoorInteractionPlaying
+// Function ReadyOrNot.door.IsDoorInteractionPlaying
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsDoorInteractionPlaying() const
+bool Adoor::IsDoorInteractionPlaying() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsDoorInteractionPlaying");
+		Func = Class->GetFunction("door", "IsDoorInteractionPlaying");
 
-	Params::Door_IsDoorInteractionPlaying Parms{};
+	Params::door_IsDoorInteractionPlaying Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94190,19 +94190,19 @@ bool ADoor::IsDoorInteractionPlaying() const
 }
 
 
-// Function ReadyOrNot.Door.IsDoorwayOnly
+// Function ReadyOrNot.door.IsDoorwayOnly
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsDoorwayOnly() const
+bool Adoor::IsDoorwayOnly() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsDoorwayOnly");
+		Func = Class->GetFunction("door", "IsDoorwayOnly");
 
-	Params::Door_IsDoorwayOnly Parms{};
+	Params::door_IsDoorwayOnly Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94215,19 +94215,19 @@ bool ADoor::IsDoorwayOnly() const
 }
 
 
-// Function ReadyOrNot.Door.IsElectronicDoor
+// Function ReadyOrNot.door.IsElectronicDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsElectronicDoor() const
+bool Adoor::IsElectronicDoor() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsElectronicDoor");
+		Func = Class->GetFunction("door", "IsElectronicDoor");
 
-	Params::Door_IsElectronicDoor Parms{};
+	Params::door_IsElectronicDoor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94240,19 +94240,19 @@ bool ADoor::IsElectronicDoor() const
 }
 
 
-// Function ReadyOrNot.Door.IsFullyOpen
+// Function ReadyOrNot.door.IsFullyOpen
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsFullyOpen() const
+bool Adoor::IsFullyOpen() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsFullyOpen");
+		Func = Class->GetFunction("door", "IsFullyOpen");
 
-	Params::Door_IsFullyOpen Parms{};
+	Params::door_IsFullyOpen Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94265,19 +94265,19 @@ bool ADoor::IsFullyOpen() const
 }
 
 
-// Function ReadyOrNot.Door.IsFullyOpen_Backward
+// Function ReadyOrNot.door.IsFullyOpen_Backward
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsFullyOpen_Backward() const
+bool Adoor::IsFullyOpen_Backward() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsFullyOpen_Backward");
+		Func = Class->GetFunction("door", "IsFullyOpen_Backward");
 
-	Params::Door_IsFullyOpen_Backward Parms{};
+	Params::door_IsFullyOpen_Backward Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94290,19 +94290,19 @@ bool ADoor::IsFullyOpen_Backward() const
 }
 
 
-// Function ReadyOrNot.Door.IsFullyOpen_Forward
+// Function ReadyOrNot.door.IsFullyOpen_Forward
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsFullyOpen_Forward() const
+bool Adoor::IsFullyOpen_Forward() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsFullyOpen_Forward");
+		Func = Class->GetFunction("door", "IsFullyOpen_Forward");
 
-	Params::Door_IsFullyOpen_Forward Parms{};
+	Params::door_IsFullyOpen_Forward Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94315,19 +94315,19 @@ bool ADoor::IsFullyOpen_Forward() const
 }
 
 
-// Function ReadyOrNot.Door.IsHalfwayOpen
+// Function ReadyOrNot.door.IsHalfwayOpen
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsHalfwayOpen() const
+bool Adoor::IsHalfwayOpen() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsHalfwayOpen");
+		Func = Class->GetFunction("door", "IsHalfwayOpen");
 
-	Params::Door_IsHalfwayOpen Parms{};
+	Params::door_IsHalfwayOpen Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94340,19 +94340,19 @@ bool ADoor::IsHalfwayOpen() const
 }
 
 
-// Function ReadyOrNot.Door.IsHandleBroken
+// Function ReadyOrNot.door.IsHandleBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsHandleBroken() const
+bool Adoor::IsHandleBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsHandleBroken");
+		Func = Class->GetFunction("door", "IsHandleBroken");
 
-	Params::Door_IsHandleBroken Parms{};
+	Params::door_IsHandleBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94365,19 +94365,19 @@ bool ADoor::IsHandleBroken() const
 }
 
 
-// Function ReadyOrNot.Door.IsJammed
+// Function ReadyOrNot.door.IsJammed
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsJammed() const
+bool Adoor::IsJammed() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsJammed");
+		Func = Class->GetFunction("door", "IsJammed");
 
-	Params::Door_IsJammed Parms{};
+	Params::door_IsJammed Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94390,20 +94390,20 @@ bool ADoor::IsJammed() const
 }
 
 
-// Function ReadyOrNot.Door.IsLocationSameSideAsTrap
+// Function ReadyOrNot.door.IsLocationSameSideAsTrap
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsLocationSameSideAsTrap(const struct FVector& InLocation) const
+bool Adoor::IsLocationSameSideAsTrap(const struct FVector& InLocation) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsLocationSameSideAsTrap");
+		Func = Class->GetFunction("door", "IsLocationSameSideAsTrap");
 
-	Params::Door_IsLocationSameSideAsTrap Parms{};
+	Params::door_IsLocationSameSideAsTrap Parms{};
 
 	Parms.InLocation = std::move(InLocation);
 
@@ -94418,19 +94418,19 @@ bool ADoor::IsLocationSameSideAsTrap(const struct FVector& InLocation) const
 }
 
 
-// Function ReadyOrNot.Door.IsLockable
+// Function ReadyOrNot.door.IsLockable
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsLockable() const
+bool Adoor::IsLockable() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsLockable");
+		Func = Class->GetFunction("door", "IsLockable");
 
-	Params::Door_IsLockable Parms{};
+	Params::door_IsLockable Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94443,19 +94443,19 @@ bool ADoor::IsLockable() const
 }
 
 
-// Function ReadyOrNot.Door.IsLockChanceOverridden
+// Function ReadyOrNot.door.IsLockChanceOverridden
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsLockChanceOverridden() const
+bool Adoor::IsLockChanceOverridden() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsLockChanceOverridden");
+		Func = Class->GetFunction("door", "IsLockChanceOverridden");
 
-	Params::Door_IsLockChanceOverridden Parms{};
+	Params::door_IsLockChanceOverridden Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94468,19 +94468,19 @@ bool ADoor::IsLockChanceOverridden() const
 }
 
 
-// Function ReadyOrNot.Door.IsLocked
+// Function ReadyOrNot.door.IsLocked
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsLocked() const
+bool Adoor::IsLocked() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsLocked");
+		Func = Class->GetFunction("door", "IsLocked");
 
-	Params::Door_IsLocked Parms{};
+	Params::door_IsLocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94493,19 +94493,19 @@ bool ADoor::IsLocked() const
 }
 
 
-// Function ReadyOrNot.Door.IsMainSubdoor
+// Function ReadyOrNot.door.IsMainSubdoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsMainSubdoor() const
+bool Adoor::IsMainSubdoor() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsMainSubdoor");
+		Func = Class->GetFunction("door", "IsMainSubdoor");
 
-	Params::Door_IsMainSubdoor Parms{};
+	Params::door_IsMainSubdoor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94518,19 +94518,19 @@ bool ADoor::IsMainSubdoor() const
 }
 
 
-// Function ReadyOrNot.Door.IsMiddleChunkBroken
+// Function ReadyOrNot.door.IsMiddleChunkBroken
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsMiddleChunkBroken() const
+bool Adoor::IsMiddleChunkBroken() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsMiddleChunkBroken");
+		Func = Class->GetFunction("door", "IsMiddleChunkBroken");
 
-	Params::Door_IsMiddleChunkBroken Parms{};
+	Params::door_IsMiddleChunkBroken Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94543,19 +94543,19 @@ bool ADoor::IsMiddleChunkBroken() const
 }
 
 
-// Function ReadyOrNot.Door.IsMirrorBlocked
+// Function ReadyOrNot.door.IsMirrorBlocked
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsMirrorBlocked() const
+bool Adoor::IsMirrorBlocked() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsMirrorBlocked");
+		Func = Class->GetFunction("door", "IsMirrorBlocked");
 
-	Params::Door_IsMirrorBlocked Parms{};
+	Params::door_IsMirrorBlocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94568,19 +94568,19 @@ bool ADoor::IsMirrorBlocked() const
 }
 
 
-// Function ReadyOrNot.Door.IsNonDoorInteractionPlaying
+// Function ReadyOrNot.door.IsNonDoorInteractionPlaying
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsNonDoorInteractionPlaying() const
+bool Adoor::IsNonDoorInteractionPlaying() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsNonDoorInteractionPlaying");
+		Func = Class->GetFunction("door", "IsNonDoorInteractionPlaying");
 
-	Params::Door_IsNonDoorInteractionPlaying Parms{};
+	Params::door_IsNonDoorInteractionPlaying Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94593,19 +94593,19 @@ bool ADoor::IsNonDoorInteractionPlaying() const
 }
 
 
-// Function ReadyOrNot.Door.IsNonMainSubdoor
+// Function ReadyOrNot.door.IsNonMainSubdoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsNonMainSubdoor() const
+bool Adoor::IsNonMainSubdoor() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsNonMainSubdoor");
+		Func = Class->GetFunction("door", "IsNonMainSubdoor");
 
-	Params::Door_IsNonMainSubdoor Parms{};
+	Params::door_IsNonMainSubdoor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94618,20 +94618,20 @@ bool ADoor::IsNonMainSubdoor() const
 }
 
 
-// Function ReadyOrNot.Door.IsOneWayAndOpensTowardsPoint
+// Function ReadyOrNot.door.IsOneWayAndOpensTowardsPoint
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOneWayAndOpensTowardsPoint(const struct FVector& Vector) const
+bool Adoor::IsOneWayAndOpensTowardsPoint(const struct FVector& Vector) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOneWayAndOpensTowardsPoint");
+		Func = Class->GetFunction("door", "IsOneWayAndOpensTowardsPoint");
 
-	Params::Door_IsOneWayAndOpensTowardsPoint Parms{};
+	Params::door_IsOneWayAndOpensTowardsPoint Parms{};
 
 	Parms.Vector = std::move(Vector);
 
@@ -94646,19 +94646,19 @@ bool ADoor::IsOneWayAndOpensTowardsPoint(const struct FVector& Vector) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpen
+// Function ReadyOrNot.door.IsOpen
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpen() const
+bool Adoor::IsOpen() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpen");
+		Func = Class->GetFunction("door", "IsOpen");
 
-	Params::Door_IsOpen Parms{};
+	Params::door_IsOpen Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94671,19 +94671,19 @@ bool ADoor::IsOpen() const
 }
 
 
-// Function ReadyOrNot.Door.IsOpen_Backward
+// Function ReadyOrNot.door.IsOpen_Backward
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpen_Backward() const
+bool Adoor::IsOpen_Backward() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpen_Backward");
+		Func = Class->GetFunction("door", "IsOpen_Backward");
 
-	Params::Door_IsOpen_Backward Parms{};
+	Params::door_IsOpen_Backward Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94696,19 +94696,19 @@ bool ADoor::IsOpen_Backward() const
 }
 
 
-// Function ReadyOrNot.Door.IsOpen_Forward
+// Function ReadyOrNot.door.IsOpen_Forward
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpen_Forward() const
+bool Adoor::IsOpen_Forward() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpen_Forward");
+		Func = Class->GetFunction("door", "IsOpen_Forward");
 
-	Params::Door_IsOpen_Forward Parms{};
+	Params::door_IsOpen_Forward Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94721,20 +94721,20 @@ bool ADoor::IsOpen_Forward() const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenAtOrBeyond
+// Function ReadyOrNot.door.IsOpenAtOrBeyond
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Percentage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenAtOrBeyond(float Percentage) const
+bool Adoor::IsOpenAtOrBeyond(float Percentage) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenAtOrBeyond");
+		Func = Class->GetFunction("door", "IsOpenAtOrBeyond");
 
-	Params::Door_IsOpenAtOrBeyond Parms{};
+	Params::door_IsOpenAtOrBeyond Parms{};
 
 	Parms.Percentage = Percentage;
 
@@ -94749,20 +94749,20 @@ bool ADoor::IsOpenAtOrBeyond(float Percentage) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenAtOrBeyond_Angle
+// Function ReadyOrNot.door.IsOpenAtOrBeyond_Angle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Angle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenAtOrBeyond_Angle(float Angle) const
+bool Adoor::IsOpenAtOrBeyond_Angle(float Angle) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenAtOrBeyond_Angle");
+		Func = Class->GetFunction("door", "IsOpenAtOrBeyond_Angle");
 
-	Params::Door_IsOpenAtOrBeyond_Angle Parms{};
+	Params::door_IsOpenAtOrBeyond_Angle Parms{};
 
 	Parms.Angle = Angle;
 
@@ -94777,20 +94777,20 @@ bool ADoor::IsOpenAtOrBeyond_Angle(float Angle) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenBeyond
+// Function ReadyOrNot.door.IsOpenBeyond
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Percentage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenBeyond(float Percentage) const
+bool Adoor::IsOpenBeyond(float Percentage) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenBeyond");
+		Func = Class->GetFunction("door", "IsOpenBeyond");
 
-	Params::Door_IsOpenBeyond Parms{};
+	Params::door_IsOpenBeyond Parms{};
 
 	Parms.Percentage = Percentage;
 
@@ -94805,20 +94805,20 @@ bool ADoor::IsOpenBeyond(float Percentage) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenBeyond_Angle
+// Function ReadyOrNot.door.IsOpenBeyond_Angle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Angle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenBeyond_Angle(float Angle) const
+bool Adoor::IsOpenBeyond_Angle(float Angle) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenBeyond_Angle");
+		Func = Class->GetFunction("door", "IsOpenBeyond_Angle");
 
-	Params::Door_IsOpenBeyond_Angle Parms{};
+	Params::door_IsOpenBeyond_Angle Parms{};
 
 	Parms.Angle = Angle;
 
@@ -94833,19 +94833,19 @@ bool ADoor::IsOpenBeyond_Angle(float Angle) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenBeyondCloseThreshold
+// Function ReadyOrNot.door.IsOpenBeyondCloseThreshold
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenBeyondCloseThreshold() const
+bool Adoor::IsOpenBeyondCloseThreshold() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenBeyondCloseThreshold");
+		Func = Class->GetFunction("door", "IsOpenBeyondCloseThreshold");
 
-	Params::Door_IsOpenBeyondCloseThreshold Parms{};
+	Params::door_IsOpenBeyondCloseThreshold Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94858,19 +94858,19 @@ bool ADoor::IsOpenBeyondCloseThreshold() const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenBeyondIncrementThreshold
+// Function ReadyOrNot.door.IsOpenBeyondIncrementThreshold
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenBeyondIncrementThreshold() const
+bool Adoor::IsOpenBeyondIncrementThreshold() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenBeyondIncrementThreshold");
+		Func = Class->GetFunction("door", "IsOpenBeyondIncrementThreshold");
 
-	Params::Door_IsOpenBeyondIncrementThreshold Parms{};
+	Params::door_IsOpenBeyondIncrementThreshold Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94883,20 +94883,20 @@ bool ADoor::IsOpenBeyondIncrementThreshold() const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenBy
+// Function ReadyOrNot.door.IsOpenBy
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Percentage                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenBy(float Percentage) const
+bool Adoor::IsOpenBy(float Percentage) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenBy");
+		Func = Class->GetFunction("door", "IsOpenBy");
 
-	Params::Door_IsOpenBy Parms{};
+	Params::door_IsOpenBy Parms{};
 
 	Parms.Percentage = Percentage;
 
@@ -94911,20 +94911,20 @@ bool ADoor::IsOpenBy(float Percentage) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpenBy_Angle
+// Function ReadyOrNot.door.IsOpenBy_Angle
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // float                                   Angle                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpenBy_Angle(float Angle) const
+bool Adoor::IsOpenBy_Angle(float Angle) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpenBy_Angle");
+		Func = Class->GetFunction("door", "IsOpenBy_Angle");
 
-	Params::Door_IsOpenBy_Angle Parms{};
+	Params::door_IsOpenBy_Angle Parms{};
 
 	Parms.Angle = Angle;
 
@@ -94939,19 +94939,19 @@ bool ADoor::IsOpenBy_Angle(float Angle) const
 }
 
 
-// Function ReadyOrNot.Door.IsOpening
+// Function ReadyOrNot.door.IsOpening
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOpening() const
+bool Adoor::IsOpening() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOpening");
+		Func = Class->GetFunction("door", "IsOpening");
 
-	Params::Door_IsOpening Parms{};
+	Params::door_IsOpening Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94964,19 +94964,19 @@ bool ADoor::IsOpening() const
 }
 
 
-// Function ReadyOrNot.Door.IsOutlineDisabled
+// Function ReadyOrNot.door.IsOutlineDisabled
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOutlineDisabled() const
+bool Adoor::IsOutlineDisabled() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOutlineDisabled");
+		Func = Class->GetFunction("door", "IsOutlineDisabled");
 
-	Params::Door_IsOutlineDisabled Parms{};
+	Params::door_IsOutlineDisabled Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94989,20 +94989,20 @@ bool ADoor::IsOutlineDisabled() const
 }
 
 
-// Function ReadyOrNot.Door.IsOutlineEnabled
+// Function ReadyOrNot.door.IsOutlineEnabled
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // EActorOutlineType                       OutlineType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOutlineEnabled(EActorOutlineType OutlineType) const
+bool Adoor::IsOutlineEnabled(EActorOutlineType OutlineType) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOutlineEnabled");
+		Func = Class->GetFunction("door", "IsOutlineEnabled");
 
-	Params::Door_IsOutlineEnabled Parms{};
+	Params::door_IsOutlineEnabled Parms{};
 
 	Parms.OutlineType = OutlineType;
 
@@ -95017,19 +95017,19 @@ bool ADoor::IsOutlineEnabled(EActorOutlineType OutlineType) const
 }
 
 
-// Function ReadyOrNot.Door.IsOverridingLockChance
+// Function ReadyOrNot.door.IsOverridingLockChance
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsOverridingLockChance() const
+bool Adoor::IsOverridingLockChance() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsOverridingLockChance");
+		Func = Class->GetFunction("door", "IsOverridingLockChance");
 
-	Params::Door_IsOverridingLockChance Parms{};
+	Params::door_IsOverridingLockChance Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95042,19 +95042,19 @@ bool ADoor::IsOverridingLockChance() const
 }
 
 
-// Function ReadyOrNot.Door.IsPendingSubDoorKick
+// Function ReadyOrNot.door.IsPendingSubDoorKick
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsPendingSubDoorKick() const
+bool Adoor::IsPendingSubDoorKick() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsPendingSubDoorKick");
+		Func = Class->GetFunction("door", "IsPendingSubDoorKick");
 
-	Params::Door_IsPendingSubDoorKick Parms{};
+	Params::door_IsPendingSubDoorKick Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95067,20 +95067,20 @@ bool ADoor::IsPendingSubDoorKick() const
 }
 
 
-// Function ReadyOrNot.Door.IsPointInFrontOfDoor
+// Function ReadyOrNot.door.IsPointInFrontOfDoor
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsPointInFrontOfDoor(const struct FVector& Vector) const
+bool Adoor::IsPointInFrontOfDoor(const struct FVector& Vector) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsPointInFrontOfDoor");
+		Func = Class->GetFunction("door", "IsPointInFrontOfDoor");
 
-	Params::Door_IsPointInFrontOfDoor Parms{};
+	Params::door_IsPointInFrontOfDoor Parms{};
 
 	Parms.Vector = std::move(Vector);
 
@@ -95095,20 +95095,20 @@ bool ADoor::IsPointInFrontOfDoor(const struct FVector& Vector) const
 }
 
 
-// Function ReadyOrNot.Door.IsPointRightOfDoorway
+// Function ReadyOrNot.door.IsPointRightOfDoorway
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   Vector                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsPointRightOfDoorway(const struct FVector& Vector) const
+bool Adoor::IsPointRightOfDoorway(const struct FVector& Vector) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsPointRightOfDoorway");
+		Func = Class->GetFunction("door", "IsPointRightOfDoorway");
 
-	Params::Door_IsPointRightOfDoorway Parms{};
+	Params::door_IsPointRightOfDoorway Parms{};
 
 	Parms.Vector = std::move(Vector);
 
@@ -95123,20 +95123,20 @@ bool ADoor::IsPointRightOfDoorway(const struct FVector& Vector) const
 }
 
 
-// Function ReadyOrNot.Door.IsStackUpDisabled
+// Function ReadyOrNot.door.IsStackUpDisabled
 // (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // const struct FVector&                   CommandLocation                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsStackUpDisabled(const struct FVector& CommandLocation) const
+bool Adoor::IsStackUpDisabled(const struct FVector& CommandLocation) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsStackUpDisabled");
+		Func = Class->GetFunction("door", "IsStackUpDisabled");
 
-	Params::Door_IsStackUpDisabled Parms{};
+	Params::door_IsStackUpDisabled Parms{};
 
 	Parms.CommandLocation = std::move(CommandLocation);
 
@@ -95151,19 +95151,19 @@ bool ADoor::IsStackUpDisabled(const struct FVector& CommandLocation) const
 }
 
 
-// Function ReadyOrNot.Door.IsTooFarForKick
+// Function ReadyOrNot.door.IsTooFarForKick
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsTooFarForKick() const
+bool Adoor::IsTooFarForKick() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsTooFarForKick");
+		Func = Class->GetFunction("door", "IsTooFarForKick");
 
-	Params::Door_IsTooFarForKick Parms{};
+	Params::door_IsTooFarForKick Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95176,19 +95176,19 @@ bool ADoor::IsTooFarForKick() const
 }
 
 
-// Function ReadyOrNot.Door.IsTrapLive
+// Function ReadyOrNot.door.IsTrapLive
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsTrapLive() const
+bool Adoor::IsTrapLive() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsTrapLive");
+		Func = Class->GetFunction("door", "IsTrapLive");
 
-	Params::Door_IsTrapLive Parms{};
+	Params::door_IsTrapLive Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95201,20 +95201,20 @@ bool ADoor::IsTrapLive() const
 }
 
 
-// Function ReadyOrNot.Door.IsValidThreatOwningRoom
+// Function ReadyOrNot.door.IsValidThreatOwningRoom
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FName                             RoomName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::IsValidThreatOwningRoom(class FName RoomName) const
+bool Adoor::IsValidThreatOwningRoom(class FName RoomName) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "IsValidThreatOwningRoom");
+		Func = Class->GetFunction("door", "IsValidThreatOwningRoom");
 
-	Params::Door_IsValidThreatOwningRoom Parms{};
+	Params::door_IsValidThreatOwningRoom Parms{};
 
 	Parms.RoomName = RoomName;
 
@@ -95229,19 +95229,19 @@ bool ADoor::IsValidThreatOwningRoom(class FName RoomName) const
 }
 
 
-// Function ReadyOrNot.Door.MainSubDoor_CanShowOpenDoorPrompt
+// Function ReadyOrNot.door.MainSubDoor_CanShowOpenDoorPrompt
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::MainSubDoor_CanShowOpenDoorPrompt() const
+bool Adoor::MainSubDoor_CanShowOpenDoorPrompt() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "MainSubDoor_CanShowOpenDoorPrompt");
+		Func = Class->GetFunction("door", "MainSubDoor_CanShowOpenDoorPrompt");
 
-	Params::Door_MainSubDoor_CanShowOpenDoorPrompt Parms{};
+	Params::door_MainSubDoor_CanShowOpenDoorPrompt Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95254,19 +95254,19 @@ bool ADoor::MainSubDoor_CanShowOpenDoorPrompt() const
 }
 
 
-// Function ReadyOrNot.Door.NonMainSubDoor_CanShowOpenDoorPrompt
+// Function ReadyOrNot.door.NonMainSubDoor_CanShowOpenDoorPrompt
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::NonMainSubDoor_CanShowOpenDoorPrompt() const
+bool Adoor::NonMainSubDoor_CanShowOpenDoorPrompt() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "NonMainSubDoor_CanShowOpenDoorPrompt");
+		Func = Class->GetFunction("door", "NonMainSubDoor_CanShowOpenDoorPrompt");
 
-	Params::Door_NonMainSubDoor_CanShowOpenDoorPrompt Parms{};
+	Params::door_NonMainSubDoor_CanShowOpenDoorPrompt Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95279,20 +95279,20 @@ bool ADoor::NonMainSubDoor_CanShowOpenDoorPrompt() const
 }
 
 
-// Function ReadyOrNot.Door.SubDoor_CanCloseDoors
+// Function ReadyOrNot.door.SubDoor_CanCloseDoors
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::SubDoor_CanCloseDoors(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::SubDoor_CanCloseDoors(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "SubDoor_CanCloseDoors");
+		Func = Class->GetFunction("door", "SubDoor_CanCloseDoors");
 
-	Params::Door_SubDoor_CanCloseDoors Parms{};
+	Params::door_SubDoor_CanCloseDoors Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -95307,20 +95307,20 @@ bool ADoor::SubDoor_CanCloseDoors(class AReadyOrNotCharacter* PlayerCharacter) c
 }
 
 
-// Function ReadyOrNot.Door.SubDoor_CanOpenDoors
+// Function ReadyOrNot.door.SubDoor_CanOpenDoors
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class AReadyOrNotCharacter*             PlayerCharacter                                        (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::SubDoor_CanOpenDoors(class AReadyOrNotCharacter* PlayerCharacter) const
+bool Adoor::SubDoor_CanOpenDoors(class AReadyOrNotCharacter* PlayerCharacter) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "SubDoor_CanOpenDoors");
+		Func = Class->GetFunction("door", "SubDoor_CanOpenDoors");
 
-	Params::Door_SubDoor_CanOpenDoors Parms{};
+	Params::door_SubDoor_CanOpenDoors Parms{};
 
 	Parms.PlayerCharacter = PlayerCharacter;
 
@@ -95335,20 +95335,20 @@ bool ADoor::SubDoor_CanOpenDoors(class AReadyOrNotCharacter* PlayerCharacter) co
 }
 
 
-// Function ReadyOrNot.Door.TeamKnowsDoorLockState
+// Function ReadyOrNot.door.TeamKnowsDoorLockState
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    bSuspectTeam                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::TeamKnowsDoorLockState(bool bSuspectTeam) const
+bool Adoor::TeamKnowsDoorLockState(bool bSuspectTeam) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "TeamKnowsDoorLockState");
+		Func = Class->GetFunction("door", "TeamKnowsDoorLockState");
 
-	Params::Door_TeamKnowsDoorLockState Parms{};
+	Params::door_TeamKnowsDoorLockState Parms{};
 
 	Parms.bSuspectTeam = bSuspectTeam;
 
@@ -95363,20 +95363,20 @@ bool ADoor::TeamKnowsDoorLockState(bool bSuspectTeam) const
 }
 
 
-// Function ReadyOrNot.Door.TeamKnowsDoorTrapState
+// Function ReadyOrNot.door.TeamKnowsDoorTrapState
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    bSuspectTeam                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool ADoor::TeamKnowsDoorTrapState(bool bSuspectTeam) const
+bool Adoor::TeamKnowsDoorTrapState(bool bSuspectTeam) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Door", "TeamKnowsDoorTrapState");
+		Func = Class->GetFunction("door", "TeamKnowsDoorTrapState");
 
-	Params::Door_TeamKnowsDoorTrapState Parms{};
+	Params::door_TeamKnowsDoorTrapState Parms{};
 
 	Parms.bSuspectTeam = bSuspectTeam;
 
@@ -96049,9 +96049,9 @@ void UCustomDoorBreachActivity::TickBreachDoor(float DeltaTime)
 // Function ReadyOrNot.DoorJam.JamDoor
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoorJam::JamDoor(class ADoor* Door)
+void ADoorJam::JamDoor(class Adoor* door)
 {
 	static class UFunction* Func = nullptr;
 
@@ -96060,7 +96060,7 @@ void ADoorJam::JamDoor(class ADoor* Door)
 
 	Params::DoorJam_JamDoor Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -96112,9 +96112,9 @@ void ADoorJam::OnRep_DoorjamSet()
 // Function ReadyOrNot.DoorJam.Server_FinishDoorjamPlacement
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
-// class ADoor*                            PendingDoor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            PendingDoor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoorJam::Server_FinishDoorjamPlacement(class ADoor* PendingDoor)
+void ADoorJam::Server_FinishDoorjamPlacement(class Adoor* PendingDoor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -96137,9 +96137,9 @@ void ADoorJam::Server_FinishDoorjamPlacement(class ADoor* PendingDoor)
 // Function ReadyOrNot.DoorJam.Server_StartDoorjamPlacement
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
-// class ADoor*                            PendingDoor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            PendingDoor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoorJam::Server_StartDoorjamPlacement(class ADoor* PendingDoor)
+void ADoorJam::Server_StartDoorjamPlacement(class Adoor* PendingDoor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -96181,9 +96181,9 @@ void ADoorRam::OnBatteringRamHit()
 // Function ReadyOrNot.DoorRam.Server_StrikeDoor
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable, NetValidate)
 // Parameters:
-// class ADoor*                            TargetDoor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            TargetDoor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ADoorRam::Server_StrikeDoor(class ADoor* TargetDoor)
+void ADoorRam::Server_StrikeDoor(class Adoor* TargetDoor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -98249,10 +98249,10 @@ void AFirefightGM::RegenerateRandomLoadouts()
 // Function ReadyOrNot.FleeingCombatMove.FilterDoorsForFlee
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const TArray<class ADoor*>&             Doors                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// TArray<class ADoor*>*                   FilteredDoors                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// const TArray<class Adoor*>&             Doors                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// TArray<class Adoor*>*                   FilteredDoors                                          (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-void UFleeingCombatMove::FilterDoorsForFlee(const TArray<class ADoor*>& Doors, TArray<class ADoor*>* FilteredDoors)
+void UFleeingCombatMove::FilterDoorsForFlee(const TArray<class Adoor*>& Doors, TArray<class Adoor*>* FilteredDoors)
 {
 	static class UFunction* Func = nullptr;
 
@@ -98278,10 +98278,10 @@ void UFleeingCombatMove::FilterDoorsForFlee(const TArray<class ADoor*>& Doors, T
 // Function ReadyOrNot.FleeingCombatMove.IsDoorValidForFlee
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UFleeingCombatMove::IsDoorValidForFlee(class ADoor* Door)
+bool UFleeingCombatMove::IsDoorValidForFlee(class Adoor* door)
 {
 	static class UFunction* Func = nullptr;
 
@@ -98290,7 +98290,7 @@ bool UFleeingCombatMove::IsDoorValidForFlee(class ADoor* Door)
 
 	Params::FleeingCombatMove_IsDoorValidForFlee Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -102476,11 +102476,11 @@ struct FScopeVariableZoomLevel UScopedWeaponAttachment::GetMinimumZoomLevel() co
 // Function ReadyOrNot.InteractWithDoorObjective.OnDoorKicked
 // (Final, Native, Private)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class AReadyOrNotCharacter*             InstigatorCharacter                                    (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bSuccess                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AInteractWithDoorObjective::OnDoorKicked(class ADoor* Door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess)
+void AInteractWithDoorObjective::OnDoorKicked(class Adoor* door, class AReadyOrNotCharacter* InstigatorCharacter, bool bSuccess)
 {
 	static class UFunction* Func = nullptr;
 
@@ -102489,7 +102489,7 @@ void AInteractWithDoorObjective::OnDoorKicked(class ADoor* Door, class AReadyOrN
 
 	Params::InteractWithDoorObjective_OnDoorKicked Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 	Parms.InstigatorCharacter = InstigatorCharacter;
 	Parms.bSuccess = bSuccess;
 
@@ -104697,9 +104697,9 @@ void UKickDoorAction::OnBreachFinishedBP()
 // Function ReadyOrNot.KickDoorAction.GetCurrentTargetDoor
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class ADoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ADoor* UKickDoorAction::GetCurrentTargetDoor() const
+class Adoor* UKickDoorAction::GetCurrentTargetDoor() const
 {
 	static class UFunction* Func = nullptr;
 
@@ -104722,9 +104722,9 @@ class ADoor* UKickDoorAction::GetCurrentTargetDoor() const
 // Function ReadyOrNot.KickDoorAction.GetTargetDoor
 // (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
-// class ADoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class ADoor* UKickDoorAction::GetTargetDoor() const
+class Adoor* UKickDoorAction::GetTargetDoor() const
 {
 	static class UFunction* Func = nullptr;
 
@@ -115619,19 +115619,19 @@ void UOptionsButtonWithStatus::SetWidgetStatus(const class FText& NewStatus)
 }
 
 
-// Function ReadyOrNot.Optiwand.Server_NotifyMirroring
+// Function ReadyOrNot.optiwand.Server_NotifyMirroring
 // (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
 // Parameters:
 // bool                                    bIsMirroring                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AOptiwand::Server_NotifyMirroring(bool bIsMirroring)
+void Aoptiwand::Server_NotifyMirroring(bool bIsMirroring)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Optiwand", "Server_NotifyMirroring");
+		Func = Class->GetFunction("optiwand", "Server_NotifyMirroring");
 
-	Params::Optiwand_Server_NotifyMirroring Parms{};
+	Params::optiwand_Server_NotifyMirroring Parms{};
 
 	Parms.bIsMirroring = bIsMirroring;
 
@@ -115644,19 +115644,19 @@ void AOptiwand::Server_NotifyMirroring(bool bIsMirroring)
 }
 
 
-// Function ReadyOrNot.Optiwand.GetViewMode
+// Function ReadyOrNot.optiwand.GetViewMode
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // EOptiwandViewMode                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-EOptiwandViewMode AOptiwand::GetViewMode() const
+EOptiwandViewMode Aoptiwand::GetViewMode() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Optiwand", "GetViewMode");
+		Func = Class->GetFunction("optiwand", "GetViewMode");
 
-	Params::Optiwand_GetViewMode Parms{};
+	Params::optiwand_GetViewMode Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -115669,19 +115669,19 @@ EOptiwandViewMode AOptiwand::GetViewMode() const
 }
 
 
-// Function ReadyOrNot.Optiwand.IsCameraBlocked
+// Function ReadyOrNot.optiwand.IsCameraBlocked
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AOptiwand::IsCameraBlocked() const
+bool Aoptiwand::IsCameraBlocked() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Optiwand", "IsCameraBlocked");
+		Func = Class->GetFunction("optiwand", "IsCameraBlocked");
 
-	Params::Optiwand_IsCameraBlocked Parms{};
+	Params::optiwand_IsCameraBlocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -146460,11 +146460,11 @@ class UTrailerSearchAndSecureActivity* ASWATController::GetTrailerSearchAndSecur
 // Parameters:
 // const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETeamType                               FilterTeam                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ADoor*                            StackUpDoor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            StackUpDoor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bAscendingOrder                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TArray<class ASWATCharacter*>           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 
-TArray<class ASWATCharacter*> USWATManager::GetSWATSortedByDistanceToLocation(const struct FVector& Location, ETeamType FilterTeam, class ADoor* StackUpDoor, bool bAscendingOrder)
+TArray<class ASWATCharacter*> USWATManager::GetSWATSortedByDistanceToLocation(const struct FVector& Location, ETeamType FilterTeam, class Adoor* StackUpDoor, bool bAscendingOrder)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146526,7 +146526,7 @@ TArray<class ASWATCharacter*> USWATManager::GetSWATSortedByDistanceToLocationV2(
 // Function ReadyOrNot.SWATManager.GiveBreachAndClearCommand
 // (Final, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// class ADoor*                            Door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            door                                                   (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // EDoorBreachType                         DoorBreachType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // ETeamType                               TeamType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const struct FVector&                   CommandLocation                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -146539,7 +146539,7 @@ TArray<class ASWATCharacter*> USWATManager::GetSWATSortedByDistanceToLocationV2(
 // EStackUpStyle                           CustomStackUpStyle                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bIsSWATCommand                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USWATManager::GiveBreachAndClearCommand(class ADoor* Door, EDoorBreachType DoorBreachType, ETeamType TeamType, const struct FVector& CommandLocation, TSubclassOf<class ABaseItem> DoorBreachItemClass, TSubclassOf<class ABaseItem> DoorUseItemClass, bool bWithLeader, bool bWithLeaderItem, bool bAutoClear, bool bLastAutoClear, EStackUpStyle CustomStackUpStyle, bool bIsSWATCommand)
+void USWATManager::GiveBreachAndClearCommand(class Adoor* door, EDoorBreachType DoorBreachType, ETeamType TeamType, const struct FVector& CommandLocation, TSubclassOf<class ABaseItem> DoorBreachItemClass, TSubclassOf<class ABaseItem> DoorUseItemClass, bool bWithLeader, bool bWithLeaderItem, bool bAutoClear, bool bLastAutoClear, EStackUpStyle CustomStackUpStyle, bool bIsSWATCommand)
 {
 	static class UFunction* Func = nullptr;
 
@@ -146548,7 +146548,7 @@ void USWATManager::GiveBreachAndClearCommand(class ADoor* Door, EDoorBreachType 
 
 	Params::SWATManager_GiveBreachAndClearCommand Parms{};
 
-	Parms.Door = Door;
+	Parms.door = door;
 	Parms.DoorBreachType = DoorBreachType;
 	Parms.TeamType = TeamType;
 	Parms.CommandLocation = std::move(CommandLocation);
@@ -147345,9 +147345,9 @@ void USWATManager::OnSwatFinishedClearing(class UTeamBreachAndClearActivity* Bre
 // (Final, Native, Public)
 // Parameters:
 // class USearchAndSecureActivity*         SearchAndSecureActivity                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ADoor*                            BreachedDoor                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class Adoor*                            BreachedDoor                                           (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USWATManager::OnSwatFinishedRoomSearch(class USearchAndSecureActivity* SearchAndSecureActivity, class ADoor* BreachedDoor)
+void USWATManager::OnSwatFinishedRoomSearch(class USearchAndSecureActivity* SearchAndSecureActivity, class Adoor* BreachedDoor)
 {
 	static class UFunction* Func = nullptr;
 

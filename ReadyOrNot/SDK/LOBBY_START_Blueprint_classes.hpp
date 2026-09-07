@@ -25,9 +25,9 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_LOBBY_START_Blueprint_C;            // 0x0300(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_LOBBY_START_Blueprint(int32 EntryPoint);
 	void CustomEvent_0();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

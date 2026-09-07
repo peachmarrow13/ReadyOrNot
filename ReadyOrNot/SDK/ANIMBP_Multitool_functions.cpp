@@ -37,26 +37,6 @@ void UANIMBP_Multitool_C::ExecuteUbergraph_ANIMBP_Multitool(int32 EntryPoint)
 }
 
 
-// Function ANIMBP_Multitool.ANIMBP_Multitool_C.BlueprintUpdateAnimation
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UANIMBP_Multitool_C::BlueprintUpdateAnimation(float DeltaTimeX)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Multitool_C", "BlueprintUpdateAnimation");
-
-	Params::ANIMBP_Multitool_C_BlueprintUpdateAnimation Parms{};
-
-	Parms.DeltaTimeX = DeltaTimeX;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function ANIMBP_Multitool.ANIMBP_Multitool_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -75,6 +55,26 @@ void UANIMBP_Multitool_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
+// Function ANIMBP_Multitool.ANIMBP_Multitool_C.BlueprintUpdateAnimation
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UANIMBP_Multitool_C::BlueprintUpdateAnimation(float DeltaTimeX)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Multitool_C", "BlueprintUpdateAnimation");
+
+	Params::ANIMBP_Multitool_C_BlueprintUpdateAnimation Parms{};
+
+	Parms.DeltaTimeX = DeltaTimeX;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

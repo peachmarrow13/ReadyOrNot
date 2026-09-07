@@ -13,9 +13,9 @@
 #include "CommonInput_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "FBasicIconSettings_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "InputCore_structs.hpp"
-#include "FBasicIconSettings_structs.hpp"
 #include "UMG_classes.hpp"
 
 

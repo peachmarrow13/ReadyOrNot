@@ -37,18 +37,6 @@ public:
 };
 DUMPER7_ASSERTS_BP_MenuGameMode_C_ReceiveEndPlay;
 
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
-// 0x0028 (0x0028 - 0x0000)
-struct BP_MenuGameMode_C_ShowMessageDisplayBox final
-{
-public:
-	class FString                                 MessageText;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 ButtonText;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          QuitOnPress;                                       // 0x0020(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCloseExistingMsgBoxIfOpen;                        // 0x0021(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_MenuGameMode_C_ShowMessageDisplayBox;
-
 // Function BP_MenuGameMode.BP_MenuGameMode_C.SpawnDefaultPawnFor
 // 0x0090 (0x0090 - 0x0000)
 struct BP_MenuGameMode_C_SpawnDefaultPawnFor final
@@ -91,6 +79,18 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_MenuGameMode_C_FindSpawnPoint;
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
+// 0x0028 (0x0028 - 0x0000)
+struct BP_MenuGameMode_C_ShowMessageDisplayBox final
+{
+public:
+	class FString                                 MessageText;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 ButtonText;                                        // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          QuitOnPress;                                       // 0x0020(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCloseExistingMsgBoxIfOpen;                        // 0x0021(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_MenuGameMode_C_ShowMessageDisplayBox;
 
 // Function BP_MenuGameMode.BP_MenuGameMode_C.ExecuteUbergraph_BP_MenuGameMode
 // 0x0200 (0x0200 - 0x0000)

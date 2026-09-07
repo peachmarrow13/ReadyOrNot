@@ -85,32 +85,6 @@ void ABP_MenuGameMode_C::OnMessageClicked()
 }
 
 
-// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// const class FString&                    MessageText                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    ButtonText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const bool                              QuitOnPress                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const bool                              bCloseExistingMsgBoxIfOpen                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_MenuGameMode_C::ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MenuGameMode_C", "ShowMessageDisplayBox");
-
-	Params::BP_MenuGameMode_C_ShowMessageDisplayBox Parms{};
-
-	Parms.MessageText = std::move(MessageText);
-	Parms.ButtonText = std::move(ButtonText);
-	Parms.QuitOnPress = QuitOnPress;
-	Parms.bCloseExistingMsgBoxIfOpen = bCloseExistingMsgBoxIfOpen;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_MenuGameMode.BP_MenuGameMode_C.SpawnDefaultPawnFor
 // (Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -157,6 +131,32 @@ void ABP_MenuGameMode_C::FindSpawnPoint(const class FString& Tag, struct FTransf
 
 	if (SpawnPoint != nullptr)
 		*SpawnPoint = std::move(Parms.SpawnPoint);
+}
+
+
+// Function BP_MenuGameMode.BP_MenuGameMode_C.ShowMessageDisplayBox
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// const class FString&                    MessageText                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    ButtonText                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const bool                              QuitOnPress                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const bool                              bCloseExistingMsgBoxIfOpen                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MenuGameMode_C::ShowMessageDisplayBox(const class FString& MessageText, const class FString& ButtonText, const bool QuitOnPress, const bool bCloseExistingMsgBoxIfOpen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MenuGameMode_C", "ShowMessageDisplayBox");
+
+	Params::BP_MenuGameMode_C_ShowMessageDisplayBox Parms{};
+
+	Parms.MessageText = std::move(MessageText);
+	Parms.ButtonText = std::move(ButtonText);
+	Parms.QuitOnPress = QuitOnPress;
+	Parms.bCloseExistingMsgBoxIfOpen = bCloseExistingMsgBoxIfOpen;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

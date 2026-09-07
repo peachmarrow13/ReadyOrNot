@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "E_Style_Buttons_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "ST_Style_Buttons_Fonts_structs.hpp"
-#include "E_Style_Buttons_structs.hpp"
 
 
 namespace SDK

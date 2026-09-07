@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass Mirrorgun.Mirrorgun_C
 // 0x0000 (0x0DF0 - 0x0DF0)
-class AMirrorgun_C final : public AOptiwand
+class AMirrorgun_C final : public Aoptiwand
 {
 public:
 	static class UClass* StaticClass()

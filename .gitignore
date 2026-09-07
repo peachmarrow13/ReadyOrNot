@@ -361,3 +361,20 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Build/Intermediates/ReadyOrNot.tlog/Cl.items.tlog
+/Build/Intermediates/ReadyOrNot.tlog/CL.command.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/CL.read.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/CL.write.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/link.command.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/link.read.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/link.secondary.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/link.write.1.tlog
+/Build/Intermediates/ReadyOrNot.tlog/ReadyOrNot.lastbuildstate
+/Build/Intermediates/DLLMain.cpp.obj.dt.d.json
+/Build/Intermediates/DLLMain.cpp.obj.dt.module.json
+/Build/Intermediates/DLLMain.cpp.obj.dt.module.json.command
+/Build/Intermediates/Engine.h.obj.dt.d.json
+/Build/Intermediates/Engine.h.obj.dt.module.json
+/Build/Intermediates/Engine.h.obj.dt.module.json.command
+/Build/Intermediates/ReadyOrNot.dll.recipe
+/Build/ReadyOrNot.dll

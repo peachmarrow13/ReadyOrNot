@@ -36,18 +36,18 @@ public:
 	double                                        DynamicRadius;                                     // 0x00B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void Tick_Blueprint(float DeltaTime);
+	void InitAction_Blueprint(class ACyberneticController* Controller);
 	bool ShouldForcePerformAction();
 	void PlayHesitationVO();
-	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
-	void InitAction_Blueprint(class ACyberneticController* Controller);
 	void GetHesitationVoiceOver(bool bUseAlternate, class FString* NewParam);
 	void ExecuteUbergraph_AIAction_HesitateMove(int32 EntryPoint);
+	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
 	void EndAction_Blueprint();
 	void BeginAction_Blueprint();
-	void Tick_Blueprint(float DeltaTime);
 
-	bool ShouldPerformAction() const;
 	class FName GetMoveStyleOverride() const;
+	bool ShouldPerformAction() const;
 
 public:
 	static class UClass* StaticClass()

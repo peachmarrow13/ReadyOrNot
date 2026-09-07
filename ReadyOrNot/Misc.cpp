@@ -666,7 +666,7 @@ void Cheats::UnlockDoors()
 
 	if (!GameState) return;
 
-	for (ADoor* Door : GameState->AllDoors)
+	for (SDK::Adoor* Door : GameState->AllDoors)
 	{
 		if (!Door) continue;
 

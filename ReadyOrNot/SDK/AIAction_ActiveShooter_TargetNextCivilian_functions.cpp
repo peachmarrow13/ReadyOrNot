@@ -17,6 +17,54 @@
 namespace SDK
 {
 
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.FindNextCivilian
+// (BlueprintCallable, BlueprintEvent)
+
+void UAIAction_ActiveShooter_TargetNextCivilian_C::FindNextCivilian()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "FindNextCivilian");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_ActiveShooter_TargetNextCivilian_C::ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian");
+
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_ActiveShooter_TargetNextCivilian_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "EndAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.TryScriptedFireAtCivilian
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -93,54 +141,6 @@ void UAIAction_ActiveShooter_TargetNextCivilian_C::OnCreate_Blueprint(class ACyb
 }
 
 
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.FindNextCivilian
-// (BlueprintCallable, BlueprintEvent)
-
-void UAIAction_ActiveShooter_TargetNextCivilian_C::FindNextCivilian()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "FindNextCivilian");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_ActiveShooter_TargetNextCivilian_C::ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian");
-
-	Params::AIAction_ActiveShooter_TargetNextCivilian_C_ExecuteUbergraph_AIAction_ActiveShooter_TargetNextCivilian Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_ActiveShooter_TargetNextCivilian_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.BeginAction_Blueprint
 // (Event, Protected, BlueprintEvent)
 
@@ -152,26 +152,6 @@ void UAIAction_ActiveShooter_TargetNextCivilian_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ShouldPerformAction
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool UAIAction_ActiveShooter_TargetNextCivilian_C::ShouldPerformAction() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "ShouldPerformAction");
-
-	Params::AIAction_ActiveShooter_TargetNextCivilian_C_ShouldPerformAction Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -241,6 +221,26 @@ void UAIAction_ActiveShooter_TargetNextCivilian_C::CanTargetCivilian(class ACybe
 
 	if (Return_Value != nullptr)
 		*Return_Value = Parms.Return_Value;
+}
+
+
+// Function AIAction_ActiveShooter_TargetNextCivilian.AIAction_ActiveShooter_TargetNextCivilian_C.ShouldPerformAction
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool UAIAction_ActiveShooter_TargetNextCivilian_C::ShouldPerformAction() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_ActiveShooter_TargetNextCivilian_C", "ShouldPerformAction");
+
+	Params::AIAction_ActiveShooter_TargetNextCivilian_C_ShouldPerformAction Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

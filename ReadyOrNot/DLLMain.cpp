@@ -320,6 +320,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	ImGui::NewFrame();
 
 	if (ShowMenu) {
+		ImGui::SetNextWindowSize(ImVec2(600, 400), ImGuiCond_Once);
+		ImGui::SetNextWindowPos(ImVec2(100, 100), ImGuiCond_Once);
+
 		ImGui::Begin("Free Ready or Not Cheat by PeachMarrow12", nullptr, ImGuiWindowFlags_NoCollapse);
 
 		if  (ImGui::BeginTabBar("MainTabBar"))

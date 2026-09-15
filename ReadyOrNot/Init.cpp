@@ -47,14 +47,33 @@ kiero::Status::Enum Engine::HookPresent()
 
 HWND Engine::GetGameWindow()
 {
-	HWND Window = FindWindow(L"UnrealWindow", nullptr);
+	DXGI_SWAP_CHAIN_DESC Desc{};
+
+	HWND Window{};
+
+	if (SUCCEEDED(Engine::pSwapChain->GetDesc(&Desc)))
+	{
+		Window = Desc.OutputWindow;
+
+		printf("[hkPresent] SwapChain HWND: %p\n", Window);
+	}
+
 	return Window;
 }
 
 bool Engine::InitImGui()
 {
-	HWND WindowHandle = GetGameWindow();
-	if (!WindowHandle || !Engine::pSwapChain || !Engine::pDevice || !Engine::pContext)
+	DXGI_SWAP_CHAIN_DESC Desc{};
+
+	HWND Window{};
+
+	if (SUCCEEDED(Engine::pSwapChain->GetDesc(&Desc)))
+	{
+		Window = Desc.OutputWindow;
+
+		printf("[hkPresent] SwapChain HWND: %p\n", Window);
+	}
+	if (!Window || !Engine::pSwapChain || !Engine::pDevice || !Engine::pContext)
 		return false;
 
 	ID3D11Device* device = Engine::pDevice;
@@ -70,17 +89,17 @@ bool Engine::InitImGui()
 	io.MouseDrawCursor = true;  // Let ImGui draw the cursor
 
 	SetStyle();
-	if (!ImGui_ImplWin32_Init(WindowHandle))
+	if (!ImGui_ImplWin32_Init(Window))
 	{
 		printf("Failed to Init ImGuiWin32\n");
 		Sleep(10000);
-		throw std::runtime_error("Poo");
+		throw std::runtime_error("FUCK");
 	}
 	if (!ImGui_ImplDX11_Init(device, context))
 	{
 		printf("Failed to Init ImGuiDX11\n");
 		Sleep(10000);
-		throw std::runtime_error("Poo");
+		throw std::runtime_error("FUCK");
 	}
 
 	if (Engine::pSwapChain) { // Create render target if we have a valid swapchain

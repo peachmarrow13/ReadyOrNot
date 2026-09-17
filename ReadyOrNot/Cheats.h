@@ -130,6 +130,7 @@ struct MiscSettingsStruct {
 	bool ShouldSaveCVars = true;
 	int UninjectButton = VK_END;
 	int MenuButton = VK_INSERT;
+	bool StreamProof = true;
 } inline MiscSettings;
 
 struct Settingsstruct

@@ -148,6 +148,40 @@ static const std::pair<const char*, std::string> BoneOptions[] = {
 	{"Right Hand", BoneList.RightHandBone}
 };
 
+inline ID3D11RenderTargetView* OldRenderTarget = nullptr;
+inline ID3D11RenderTargetView* BackBufferRenderTarget = nullptr;
+
+void SetNewRenderTarget(IDXGISwapChain* pSwapChain, ID3D11Device* pDevice, ID3D11DeviceContext* pContext)
+{
+	pContext->OMGetRenderTargets(1, &OldRenderTarget, nullptr);
+
+	ID3D11Texture2D* BackBuffer = nullptr;
+
+	if (SUCCEEDED(pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(&BackBuffer))))
+	{
+		if (SUCCEEDED(pDevice->CreateRenderTargetView(BackBuffer, nullptr, &BackBufferRenderTarget)))
+			pContext->OMSetRenderTargets(1, &BackBufferRenderTarget, nullptr);
+
+		BackBuffer->Release();
+	}
+}
+
+void SetOldRenderTarget(ID3D11DeviceContext* pContext)
+{
+	if (OldRenderTarget)
+	{
+		pContext->OMSetRenderTargets(1, &OldRenderTarget, nullptr);
+		OldRenderTarget->Release();
+		OldRenderTarget = nullptr;
+	}
+
+	if (BackBufferRenderTarget)
+	{
+		BackBufferRenderTarget->Release();
+		BackBufferRenderTarget = nullptr;
+	}
+}
+
 static bool ShowMenu = true;
 bool init = false;
 
@@ -313,6 +347,9 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	{
 		GVars.ScreenSize = ImGui::GetIO().DisplaySize;
 	}
+
+	if (MiscSettings.StreamProof)
+		SetNewRenderTarget(SwapChain, Engine::pDevice, Engine::pContext);
 
 	// Start the ImGui frame
 	ImGui_ImplDX11_NewFrame();
@@ -694,6 +731,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 
 					ImGui::Checkbox("List Players", &CVars.ListPlayers);
 
+					ImGui::Checkbox("Stream Proof", &MiscSettings.StreamProof);
+
 					ImGui::Checkbox("Should Auto Save Settings", &MiscSettings.ShouldAutoSave);
 					ImGui::SameLine();
 					ImGui::Checkbox("Should Save Enabled Cheats", &MiscSettings.ShouldSaveCVars);
@@ -869,7 +908,10 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 	{
 		CVars.ESP = !CVars.ESP;
 	}
+	if (MiscSettings.StreamProof)
+		SetOldRenderTarget(Engine::pContext);
 
+	Frames++;
 	return Engine::oPresent ? Engine::oPresent(SwapChain, SyncInterval, Flags) : S_OK;
 }
 

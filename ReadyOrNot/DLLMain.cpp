@@ -321,14 +321,17 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			init = true;
 		}
 		else
-			printf("[Warning] Failed to acquire device\n");
-
-		if (GVars.PlayerController && GVars.PlayerController->PlayerState)
 		{
-			APlayerState* PlayerState = GVars.PlayerController->PlayerState;
-			if (PlayerName.empty())
-				PlayerName = PlayerState->GetPlayerName().ToString();
+			printf("[Warning] Failed to acquire device\n");
+			return Engine::oPresent(SwapChain, SyncInterval, Flags);;
 		}
+	}
+
+	if (PlayerName.empty() && GVars.PlayerController && GVars.PlayerController->PlayerState)
+	{
+		APlayerState* PlayerState = GVars.PlayerController->PlayerState;
+		if (PlayerName.empty())
+			PlayerName = PlayerState->GetPlayerName().ToString();
 	}
 
 	if (!Engine::oPresent)

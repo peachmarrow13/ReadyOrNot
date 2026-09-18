@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Utils.obj",
+            "outputs": [
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Utils.h.obj.dt.module.json",
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Utils.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}

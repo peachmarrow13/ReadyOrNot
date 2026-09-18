@@ -3,11 +3,11 @@
     "revision": 0,
     "rules": [
         {
-            "primary-output": "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.obj",
+            "primary-output": "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.obj",
             "outputs": [
-                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.cpp.obj.dt.module.json",
-                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.cpp.obj.dt.d.json",
-                "C:\\Users\\Kayle\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\Virus.pch"
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.cpp.obj.dt.module.json",
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ProcessEventHook.cpp.obj.dt.d.json",
+                "C:\\Users\\Administrator\\source\\repos\\ReadyOrNot\\Build\\Intermediates\\ReadyOrNot.pch"
             ],
             "requires": []
         }

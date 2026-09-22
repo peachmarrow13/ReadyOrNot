@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Engine.h"
 #include <kiero/kiero.h>
+#include <mutex>
 
 #define MAJORVERSION 2
 #define MINORVERSION 5
@@ -192,7 +193,8 @@ float FireRate = 1;
 std::atomic<HMODULE> g_hModule{ nullptr };
 std::atomic<int> g_PresentCount{ 0 };
 std::atomic<bool> Cleaning{ false };
-std::atomic<bool> Resizing{ false };
+std::recursive_mutex RenderMutex;
+std::atomic<int> ResizeCallCount{ 0 };
 
 static void Cleanup(HMODULE hModule);
 void SaveSettings();
@@ -245,46 +247,78 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
-HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
+static void ReleaseDeviceReferences()
 {
-	Resizing.store(true);
-	while (g_PresentCount.load() != 0)
-		Sleep(0);
+	if (Engine::pContext)
+	{
+		Engine::pContext->Release();
+		Engine::pContext = nullptr;
+	}
+	if (Engine::pDevice)
+	{
+		Engine::pDevice->Release();
+		Engine::pDevice = nullptr;
+	}
+	Engine::pSwapChain = nullptr;
+}
 
-	// Call original function
-	HRESULT hr = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+static bool CreateRenderTarget(IDXGISwapChain* SwapChain)
+{
+	if (!Engine::pDevice)
+		return false;
+	ID3D11Texture2D* BackBuffer = nullptr;
+	HRESULT Result = SwapChain->GetBuffer(0, IID_PPV_ARGS(&BackBuffer));
+	if (FAILED(Result))
+		return false;
+	Result = Engine::pDevice->CreateRenderTargetView(BackBuffer, nullptr, &Engine::pRenderTargetView);
+	BackBuffer->Release();
+	return SUCCEEDED(Result);
+}
 
-	
+HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* SwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags)
+{
+	struct ResizeGuard
+	{
+		ResizeGuard() { ResizeCallCount.fetch_add(1); }
+		~ResizeGuard() { ResizeCallCount.fetch_sub(1); }
+	} Guard;
+	std::lock_guard<std::recursive_mutex> Lock(RenderMutex);
+	if (Cleaning.load() || SwapChain != Engine::pSwapChain || !Engine::pContext)
+		return Engine::oResizeBuffers(SwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+
 	Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
-	if (Engine::pRenderTargetView) {
+	if (Engine::pRenderTargetView)
+	{
 		Engine::pRenderTargetView->Release();
 		Engine::pRenderTargetView = nullptr;
 	}
 
-	ID3D11Texture2D* pBackBuffer = nullptr;
-	if (SUCCEEDED(pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer))) {
-		Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
-		pBackBuffer->Release();
-	}
-	
-	Resizing.store(false);
-
-	return hr;
+	const HRESULT Result = Engine::oResizeBuffers(SwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
+	// A failed resize can leave the old buffers usable. Present retries if acquisition fails.
+	SwapChain->GetDesc(&Engine::sd);
+	if (!CreateRenderTarget(SwapChain))
+		printf("[DX11] Backbuffer unavailable after resize; skipping overlay until recovery.\n");
+	return Result;
 }
 
 HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval, UINT Flags)
 {
-	if (Cleaning.load())
-		return Engine::oPresent(SwapChain, SyncInterval, Flags);
-	
-	if (Resizing.load())
-		return Engine::oPresent(SwapChain, SyncInterval, Flags);
-
 	struct PresentGuardStruct
 	{
 		PresentGuardStruct() { g_PresentCount.fetch_add(1); }
 		~PresentGuardStruct() { g_PresentCount.fetch_sub(1); }
 	} PresentGuard;
+	std::unique_lock<std::recursive_mutex> Lock(RenderMutex, std::try_to_lock);
+	auto ForwardPresent = [&]() -> HRESULT
+	{
+		if (Lock.owns_lock())
+			Lock.unlock();
+		return Engine::oPresent(SwapChain, SyncInterval, Flags);
+	};
+	if (!Lock.owns_lock() || Cleaning.load() || (Flags & DXGI_PRESENT_TEST))
+		return ForwardPresent();
+	if (init && SwapChain != Engine::pSwapChain)
+		return ForwardPresent();
 
 	if (MiscSettings.ShouldAutoSave && Frames % 900 == 0) // Every 900 frames, save settings
 	{
@@ -305,19 +339,29 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 			if (!hwnd)
 			{
 				printf("Failed to get GameWindow\n");
-				return Engine::oPresent(SwapChain, SyncInterval, Flags);
+				ReleaseDeviceReferences();
+				return ForwardPresent();
 			}
 
 			if (!Engine::InitImGui())
 			{
 				printf("[hkPresent] Failed to initialize ImGui\n");
-				return Engine::oPresent(SwapChain, SyncInterval, Flags);
+				ReleaseDeviceReferences();
+				return ForwardPresent();
 			}
 			printf("[hkPresent] ImGui initialized successfully\n");
 			
-			if (hwnd) 
-				oWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)WndProc);
-			
+			oWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(hwnd, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(WndProc)));
+			if (!oWndProc)
+			{
+				ImGui_ImplDX11_Shutdown();
+				ImGui_ImplWin32_Shutdown();
+				ImGui::DestroyContext();
+				Engine::pRenderTargetView->Release();
+				Engine::pRenderTargetView = nullptr;
+				ReleaseDeviceReferences();
+				return ForwardPresent();
+			}
 			init = true;
 		}
 		else
@@ -337,11 +381,14 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		return 0;
 	}
 
-	if (!ImGui::GetCurrentContext())
+	if (!init || !Engine::pDevice || !Engine::pContext || !ImGui::GetCurrentContext())
 	{
 		printf("[ERROR] ImGui context not found!\n");
-		return Engine::oPresent(SwapChain, SyncInterval, Flags);
+		return ForwardPresent();
 	}
+
+	if (!Engine::pRenderTargetView && !CreateRenderTarget(SwapChain))
+		return ForwardPresent();
 
 	if (GVars.ScreenSize.x != ImGui::GetIO().DisplaySize.x || GVars.ScreenSize.y != ImGui::GetIO().DisplaySize.y)
 	{
@@ -912,7 +959,8 @@ HRESULT __stdcall Engine::hkPresent(IDXGISwapChain* SwapChain, UINT SyncInterval
 		SetOldRenderTarget(Engine::pContext);
 
 	Frames++;
-	return Engine::oPresent ? Engine::oPresent(SwapChain, SyncInterval, Flags) : S_OK;
+	Lock.unlock();
+	return Engine::oPresent ? ForwardPresent() : S_OK;
 }
 
 static DWORD WINAPI MainThread(LPVOID Parameter)
@@ -1187,6 +1235,10 @@ void Cleanup(HMODULE hModule)
 	Cleaning.store(true);
 	std::cout << "Cleaning up...\n";
 
+	MH_DisableHook(MH_ALL_HOOKS);
+	while (g_PresentCount.load() != 0 || ResizeCallCount.load() != 0)
+		Sleep(1);
+
 	GVars.Cleanup();
 
 	if (UEngine::GetEngine())
@@ -1196,8 +1248,9 @@ void Cleanup(HMODULE hModule)
 		MH_RemoveHook(objvTable[Offsets::ProcessEventIdx]);
 	}
 
-	while (g_PresentCount.load() != 0)
-		_mm_pause();
+	MH_DisableHook(MH_ALL_HOOKS);
+	while (g_PresentCount.load() != 0 || ResizeCallCount.load() != 0)
+		Sleep(1);
 
 	kiero::shutdown();
 
@@ -1213,7 +1266,7 @@ void Cleanup(HMODULE hModule)
 		ImGui::DestroyContext();
 	}
 
-	HWND hwnd = FindWindow(L"UnrealWindow", nullptr);
+	HWND hwnd = Engine::sd.OutputWindow;
 	if (hwnd && oWndProc)
 	{
 		SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)oWndProc);

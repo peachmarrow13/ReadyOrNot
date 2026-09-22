@@ -21,25 +21,23 @@ kiero::Status::Enum Engine::HookPresent()
 	{
 		std::string errorMessage = "Failed to initialize kiero! Error code: " + std::to_string(Status);
 		MessageBoxA(nullptr, errorMessage.c_str(), "Error", MB_OK | MB_ICONERROR);
-		throw std::runtime_error(errorMessage);
+		return Status;
 	}
 
 	Engine::oPresent = (Engine::tPresent)kiero::getMethodsTable()[8];
 	Status = kiero::bind(8, (void**)&Engine::oPresent, Engine::hkPresent);
 	if (Status != kiero::Status::Success)
 	{
-		kiero::shutdown();
 		MessageBoxA(nullptr, "Failed to bind Present!", "Error", MB_OK | MB_ICONERROR);
-		throw std::runtime_error(std::to_string(Status));
+		return Status;
 	}
 	Engine::oResizeBuffers = (Engine::tResizeBuffers)kiero::getMethodsTable()[13];
 	Status = kiero::bind(13, (void**)&Engine::oResizeBuffers, Engine::hkResizeBuffers);
 
 	if (Status != kiero::Status::Success)
 	{
-		kiero::shutdown();
 		MessageBoxA(nullptr, "Failed to bind!", "Error", MB_OK | MB_ICONERROR);
-		throw std::runtime_error(std::to_string(Status));
+		return Status;
 	}
 
 	return Status;
@@ -63,66 +61,42 @@ HWND Engine::GetGameWindow()
 
 bool Engine::InitImGui()
 {
-	DXGI_SWAP_CHAIN_DESC Desc{};
-
-	HWND Window{};
-
-	if (SUCCEEDED(Engine::pSwapChain->GetDesc(&Desc)))
-	{
-		Window = Desc.OutputWindow;
-
-		printf("[hkPresent] SwapChain HWND: %p\n", Window);
-	}
-	if (!Window || !Engine::pSwapChain || !Engine::pDevice || !Engine::pContext)
+	if (!pSwapChain || !pDevice || !pContext)
 		return false;
 
-	ID3D11Device* device = Engine::pDevice;
-	ID3D11DeviceContext* context = Engine::pContext;
+	DXGI_SWAP_CHAIN_DESC Desc{};
+	if (FAILED(pSwapChain->GetDesc(&Desc)) || !Desc.OutputWindow)
+		return false;
+
+	ID3D11Texture2D* BackBuffer = nullptr;
+	HRESULT Result = pSwapChain->GetBuffer(0, IID_PPV_ARGS(&BackBuffer));
+	if (FAILED(Result))
+		return false;
+	Result = pDevice->CreateRenderTargetView(BackBuffer, nullptr, &pRenderTargetView);
+	BackBuffer->Release();
+	if (FAILED(Result))
+		return false;
 
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
-
-	ImGuiIO& io = ImGui::GetIO(); (void)io;
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
-	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Controller Controls
-	io.Fonts->AddFontDefault();
-	io.MouseDrawCursor = true;  // Let ImGui draw the cursor
-
+	ImGuiIO& IO = ImGui::GetIO();
+	IO.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard | ImGuiConfigFlags_NavEnableGamepad;
+	IO.Fonts->AddFontDefault();
+	IO.MouseDrawCursor = true;
 	SetStyle();
-	if (!ImGui_ImplWin32_Init(Window))
+
+	const bool Win32Ready = ImGui_ImplWin32_Init(Desc.OutputWindow);
+	if (!Win32Ready || !ImGui_ImplDX11_Init(pDevice, pContext))
 	{
-		printf("Failed to Init ImGuiWin32\n");
-		Sleep(10000);
-		throw std::runtime_error("FUCK");
-	}
-	if (!ImGui_ImplDX11_Init(device, context))
-	{
-		printf("Failed to Init ImGuiDX11\n");
-		Sleep(10000);
-		throw std::runtime_error("FUCK");
+		if (Win32Ready)
+			ImGui_ImplWin32_Shutdown();
+		ImGui::DestroyContext();
+		pRenderTargetView->Release();
+		pRenderTargetView = nullptr;
+		return false;
 	}
 
-	if (Engine::pSwapChain) { // Create render target if we have a valid swapchain
-		ID3D11Texture2D* pBackBuffer = nullptr;
-		HRESULT hr = Engine::pSwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&pBackBuffer);
-		if (SUCCEEDED(hr)) {
-			hr = Engine::pDevice->CreateRenderTargetView(pBackBuffer, nullptr, &Engine::pRenderTargetView);
-			if (SUCCEEDED(hr)) {
-				std::cout << "[InitImGui] Render target view created successfully\n";
-			}
-			else {
-				std::cout << "[ERROR] Failed to create render target view: " << std::hex << hr << std::endl;
-			}
-			pBackBuffer->Release();
-		}
-		else {
-			std::cout << "[ERROR] Failed to get back buffer: " << std::hex << hr << std::endl;
-		}
-	}
-
-	device->Release();
-	context->Release();
-
+	// Engine retains the references acquired by GetDevice/GetImmediateContext.
 	return true;
 }
 

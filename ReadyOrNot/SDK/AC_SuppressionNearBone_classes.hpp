@@ -25,8 +25,8 @@ public:
 	double                                        SuppressionDistanceThreshold;                      // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
 
 public:
-	void IsBoneSuppressed(class AReadyOrNotCharacter* Character, bool* Return_Value, double* Suppression_Amount) const;
 	float Score(const struct FAIActionDecisionContext& Context, bool* bSuccess) const;
+	void IsBoneSuppressed(class AReadyOrNotCharacter* Character, bool* Return_Value, double* Suppression_Amount) const;
 
 public:
 	static class UClass* StaticClass()

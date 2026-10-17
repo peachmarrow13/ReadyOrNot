@@ -17,6 +17,34 @@
 namespace SDK
 {
 
+// Function AIAction_Roam.AIAction_Roam_C.EndAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_Roam_C::EndAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Roam_C", "EndAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_Roam.AIAction_Roam_C.BeginAction_Blueprint
+// (Event, Protected, BlueprintEvent)
+
+void UAIAction_Roam_C::BeginAction_Blueprint()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_Roam_C", "BeginAction_Blueprint");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function AIAction_Roam.AIAction_Roam_C.Tick_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -132,34 +160,6 @@ void UAIAction_Roam_C::ExecuteUbergraph_AIAction_Roam(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIAction_Roam.AIAction_Roam_C.EndAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_Roam_C::EndAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "EndAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIAction_Roam.AIAction_Roam_C.BeginAction_Blueprint
-// (Event, Protected, BlueprintEvent)
-
-void UAIAction_Roam_C::BeginAction_Blueprint()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_Roam_C", "BeginAction_Blueprint");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

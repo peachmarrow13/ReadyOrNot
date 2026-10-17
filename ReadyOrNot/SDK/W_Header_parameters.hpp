@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Slate_structs.hpp"
 #include "UMG_structs.hpp"
+#include "Slate_structs.hpp"
 
 
 namespace SDK::Params

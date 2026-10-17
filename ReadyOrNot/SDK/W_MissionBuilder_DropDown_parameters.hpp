@@ -18,7 +18,7 @@ namespace SDK::Params
 {
 
 // Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.ExecuteUbergraph_W_MissionBuilder_DropDown
-// 0x0098 (0x0098 - 0x0000)
+// 0x0088 (0x0088 - 0x0000)
 struct W_MissionBuilder_DropDown_C_ExecuteUbergraph_W_MissionBuilder_DropDown final
 {
 public:
@@ -28,25 +28,49 @@ public:
 	bool                                          K2Node_Event_IsDesignTime;                         // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 K2Node_CustomEvent_OptionID;                       // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 K2Node_Event_OptionID;                             // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	TDelegate<void(EUINavigation Navigation)>     K2Node_CreateDelegate_OutputDelegate_1;            // 0x0048(0x0010)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_GetChildrenCount_ReturnValue;             // 0x005C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class FString>                         CallFunc_Map_Keys_Keys;                            // 0x0060(0x0010)(ReferenceParm)
-	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0070(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_Array_Get_Item;                           // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0089(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8A[0x2];                                       // 0x008A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x008C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0091(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 K2Node_Event_OptionID;                             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         Temp_int_Loop_Counter_Variable;                    // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetChildrenCount_ReturnValue;             // 0x004C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class FString>                         CallFunc_Map_Keys_Keys;                            // 0x0050(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0060(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CallFunc_Array_Get_Item;                           // 0x0068(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0078(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_StrStr_ReturnValue;            // 0x0079(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7A[0x2];                                       // 0x007A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x007C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0080(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0081(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_ExecuteUbergraph_W_MissionBuilder_DropDown;
+
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.On_DropdownMenuAnchor_GetUserMenuContent_0
+// 0x0020 (0x0020 - 0x0000)
+struct W_MissionBuilder_DropDown_C_On_DropdownMenuAnchor_GetUserMenuContent_0 final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UUserWidget*                            CallFunc_On_DropdownMenuAnchor_GetUserMenuContent_0_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class Uw_DropdownMenu_C*                      K2Node_DynamicCast_AsW_Dropdown_Menu;              // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_On_DropdownMenuAnchor_GetUserMenuContent_0;
+
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OnDropdown Menu Desired Focus Set
+// 0x0020 (0x0020 - 0x0000)
+struct W_MissionBuilder_DropDown_C_OnDropdown_Menu_Desired_Focus_Set final
+{
+public:
+	class UW_Button_C*                            DesiredFocus;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWidget*                                CallFunc_GetChildAt_ReturnValue;                   // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_OnDropdown_Menu_Desired_Focus_Set;
 
 // Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OnDropdownMenuDown
 // 0x0010 (0x0010 - 0x0000)
@@ -81,40 +105,6 @@ public:
 };
 DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_OnMouseWheel;
 
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.SetUndefined
-// 0x0001 (0x0001 - 0x0000)
-struct W_MissionBuilder_DropDown_C_SetUndefined final
-{
-public:
-	bool                                          IsUndefined;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_SetUndefined;
-
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.On_DropdownMenuAnchor_GetUserMenuContent_0
-// 0x0020 (0x0020 - 0x0000)
-struct W_MissionBuilder_DropDown_C_On_DropdownMenuAnchor_GetUserMenuContent_0 final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UUserWidget*                            CallFunc_On_DropdownMenuAnchor_GetUserMenuContent_0_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class Uw_DropdownMenu_C*                      K2Node_DynamicCast_AsW_Dropdown_Menu;              // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_On_DropdownMenuAnchor_GetUserMenuContent_0;
-
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OnDropdown Menu Desired Focus Set
-// 0x0020 (0x0020 - 0x0000)
-struct W_MissionBuilder_DropDown_C_OnDropdown_Menu_Desired_Focus_Set final
-{
-public:
-	class UW_Button_C*                            DesiredFocus;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                CallFunc_GetChildAt_ReturnValue;                   // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue_1;                    // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_OnDropdown_Menu_Desired_Focus_Set;
-
 // Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OptionHovered
 // 0x0010 (0x0010 - 0x0000)
 struct W_MissionBuilder_DropDown_C_OptionHovered final
@@ -132,6 +122,15 @@ public:
 	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_PreConstruct;
+
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.SetUndefined
+// 0x0001 (0x0001 - 0x0000)
+struct W_MissionBuilder_DropDown_C_SetUndefined final
+{
+public:
+	bool                                          IsUndefined;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_W_MissionBuilder_DropDown_C_SetUndefined;
 
 }
 

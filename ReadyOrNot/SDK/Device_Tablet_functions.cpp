@@ -45,20 +45,6 @@ void ADevice_Tablet_C::SleepScreen()
 }
 
 
-// Function Device_Tablet.Device_Tablet_C.PlayVibrationEvent
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ADevice_Tablet_C::PlayVibrationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Device_Tablet_C", "PlayVibrationEvent");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function Device_Tablet.Device_Tablet_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
 
@@ -68,6 +54,20 @@ void ADevice_Tablet_C::ReceiveBeginPlay()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("Device_Tablet_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Device_Tablet.Device_Tablet_C.PlayVibrationEvent
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ADevice_Tablet_C::PlayVibrationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Device_Tablet_C", "PlayVibrationEvent");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -88,26 +88,6 @@ void ADevice_Tablet_C::PlaySoundEvent(class UFMODEvent* Event)
 	Params::Device_Tablet_C_PlaySoundEvent Parms{};
 
 	Parms.Event = Event;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function Device_Tablet.Device_Tablet_C.ExecuteUbergraph_Device_Tablet
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ADevice_Tablet_C::ExecuteUbergraph_Device_Tablet(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Device_Tablet_C", "ExecuteUbergraph_Device_Tablet");
-
-	Params::Device_Tablet_C_ExecuteUbergraph_Device_Tablet Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -138,6 +118,26 @@ void ADevice_Tablet_C::HolsterScreen()
 		Func = Class->GetFunction("Device_Tablet_C", "HolsterScreen");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Device_Tablet.Device_Tablet_C.ExecuteUbergraph_Device_Tablet
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ADevice_Tablet_C::ExecuteUbergraph_Device_Tablet(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Device_Tablet_C", "ExecuteUbergraph_Device_Tablet");
+
+	Params::Device_Tablet_C_ExecuteUbergraph_Device_Tablet Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

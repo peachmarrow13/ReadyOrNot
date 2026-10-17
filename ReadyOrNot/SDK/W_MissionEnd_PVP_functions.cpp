@@ -38,21 +38,21 @@ void UW_MissionEnd_PVP_C::BackPage(bool* Handled)
 }
 
 
-// Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.BndEvt__W_MissionEnd_PVP_ReadyBtn_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature
+// Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.BndEvt__W_MissionEnd_PVP_W_PageWrapper_K2Node_ComponentBoundEvent_0_OnFooterButtonClicked__DelegateSignature
 // (BlueprintEvent)
 // Parameters:
-// class UCommonButtonBase*                Button                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    ButtonId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void UW_MissionEnd_PVP_C::BndEvt__W_MissionEnd_PVP_ReadyBtn_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
+void UW_MissionEnd_PVP_C::BndEvt__W_MissionEnd_PVP_W_PageWrapper_K2Node_ComponentBoundEvent_0_OnFooterButtonClicked__DelegateSignature(const class FString& ButtonId)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionEnd_PVP_C", "BndEvt__W_MissionEnd_PVP_ReadyBtn_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature");
+		Func = Class->GetFunction("W_MissionEnd_PVP_C", "BndEvt__W_MissionEnd_PVP_W_PageWrapper_K2Node_ComponentBoundEvent_0_OnFooterButtonClicked__DelegateSignature");
 
-	Params::W_MissionEnd_PVP_C_BndEvt__W_MissionEnd_PVP_ReadyBtn_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature Parms{};
+	Params::W_MissionEnd_PVP_C_BndEvt__W_MissionEnd_PVP_W_PageWrapper_K2Node_ComponentBoundEvent_0_OnFooterButtonClicked__DelegateSignature Parms{};
 
-	Parms.Button = Button;
+	Parms.ButtonId = std::move(ButtonId);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -146,20 +146,6 @@ void UW_MissionEnd_PVP_C::ExecuteUbergraph_W_MissionEnd_PVP(int32 EntryPoint)
 }
 
 
-// Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.FocusOnDefaultWidget
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UW_MissionEnd_PVP_C::FocusOnDefaultWidget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionEnd_PVP_C", "FocusOnDefaultWidget");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.Hide
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -182,26 +168,6 @@ void UW_MissionEnd_PVP_C::Hide(double Delay, bool Collapse)
 }
 
 
-// Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.OnAddedToFocusPath
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// const struct FFocusEvent&               InFocusEvent                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-
-void UW_MissionEnd_PVP_C::OnAddedToFocusPath(const struct FFocusEvent& InFocusEvent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionEnd_PVP_C", "OnAddedToFocusPath");
-
-	Params::W_MissionEnd_PVP_C_OnAddedToFocusPath Parms{};
-
-	Parms.InFocusEvent = std::move(InFocusEvent);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.OnInitialized
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -213,26 +179,6 @@ void UW_MissionEnd_PVP_C::OnInitialized()
 		Func = Class->GetFunction("W_MissionEnd_PVP_C", "OnInitialized");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_MissionEnd_PVP.W_MissionEnd_PVP_C.OnInputMethodChanged
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECommonInputType                        bNewInputType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_MissionEnd_PVP_C::OnInputMethodChanged(ECommonInputType bNewInputType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionEnd_PVP_C", "OnInputMethodChanged");
-
-	Params::W_MissionEnd_PVP_C_OnInputMethodChanged Parms{};
-
-	Parms.bNewInputType = bNewInputType;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

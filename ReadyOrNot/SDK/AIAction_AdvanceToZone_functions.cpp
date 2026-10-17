@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.Tick_Blueprint
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UAIAction_AdvanceToZone_C::Tick_Blueprint(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "Tick_Blueprint");
-
-	Params::AIAction_AdvanceToZone_C_Tick_Blueprint Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.OnCreate_Blueprint
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -102,6 +82,26 @@ void UAIAction_AdvanceToZone_C::BeginAction_Blueprint()
 		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "BeginAction_Blueprint");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIAction_AdvanceToZone.AIAction_AdvanceToZone_C.Tick_Blueprint
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UAIAction_AdvanceToZone_C::Tick_Blueprint(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIAction_AdvanceToZone_C", "Tick_Blueprint");
+
+	Params::AIAction_AdvanceToZone_C_Tick_Blueprint Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

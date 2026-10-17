@@ -223,8 +223,7 @@ LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 				ShowCursor(ShowMenu);
 				return TRUE;
 			}
-
-			if (wParam == MiscSettings.UninjectButton) {
+			else if (wParam == MiscSettings.UninjectButton) {
 				Cleaning.store(true);
 				return TRUE;
 			}
@@ -254,7 +253,6 @@ HRESULT __stdcall Engine::hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT Buffe
 	// Call original function
 	HRESULT hr = Engine::oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
 
-	
 	Engine::pContext->OMSetRenderTargets(0, nullptr, nullptr);
 	if (Engine::pRenderTargetView) {
 		Engine::pRenderTargetView->Release();

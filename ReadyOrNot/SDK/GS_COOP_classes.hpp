@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GS_COOP.GS_COOP_C
-// 0x0018 (0x0AA8 - 0x0A90)
+// 0x0018 (0x0AB0 - 0x0A98)
 class AGS_COOP_C : public ACoopGS
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A90(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0A98(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 NewVar_0;                                          // 0x0AA0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A98(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0AA0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 NewVar_0;                                          // 0x0AA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GS_COOP(int32 EntryPoint);

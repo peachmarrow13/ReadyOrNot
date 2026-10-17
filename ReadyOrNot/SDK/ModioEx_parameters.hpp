@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Modio_structs.hpp"
 #include "ModioEx_structs.hpp"
+#include "Modio_structs.hpp"
 
 
 namespace SDK::Params

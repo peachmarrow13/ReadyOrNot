@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
-#include "E_Style_Buttons_structs.hpp"
 #include "Engine_structs.hpp"
+#include "E_Style_Buttons_structs.hpp"
 #include "ST_DropdownOptions_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK

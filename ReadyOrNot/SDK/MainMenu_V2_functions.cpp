@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function MainMenu_V2.MainMenu_V2_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void AMainMenu_V2_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MainMenu_V2_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function MainMenu_V2.MainMenu_V2_C.ExecuteUbergraph_MainMenu_V2
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void AMainMenu_V2_C::ExecuteUbergraph_MainMenu_V2(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MainMenu_V2.MainMenu_V2_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void AMainMenu_V2_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainMenu_V2_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

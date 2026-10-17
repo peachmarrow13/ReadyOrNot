@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CommonInput_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "SlateCore_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
+#include "CommonInput_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass W_MissionBuilder_MissionSelectionListItem.W_MissionBuilder_MissionSelectionListItem_C
-// 0x0B18 (0x0DE0 - 0x02C8)
+// 0x0B28 (0x0DF0 - 0x02C8)
 class UW_MissionBuilder_MissionSelectionListItem_C final : public UUserWidget
 {
 public:
@@ -38,31 +38,33 @@ public:
 	class UVerticalBox*                           SlotVertical;                                      // 0x0310(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UCommonTextBlock*                       txt_Date;                                          // 0x0318(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UCommonTextBlock*                       txt_EmptySlotItem;                                 // 0x0320(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCommonTextBlock*                       versionnametitle;                                  // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	int32                                         Index_0;                                           // 0x0330(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_334[0x4];                                      // 0x0334(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 MissionMapName;                                    // 0x0338(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FDateTime                              Date;                                              // 0x0348(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	EMissionBuilderDifficultyPropertyValues       Difficulty;                                        // 0x0350(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_351[0x7];                                      // 0x0351(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTexture2D*                             MapImage;                                          // 0x0358(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FString                                 MissionDescription;                                // 0x0360(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FSlateBrush                            DefaultButtonBrush;                                // 0x0370(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                            HoverButtonBrush;                                  // 0x0440(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateBrush                            SelectedButtonBrush;                               // 0x0510(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          IsSelected;                                        // 0x05E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bFavourite;                                        // 0x05E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
-	bool                                          bFavouriteEnabled;                                 // 0x05E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5E3[0x1];                                      // 0x05E3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SelectedDifficulty;                                // 0x05E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5E8[0x8];                                      // 0x05E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FButtonStyle                           FavoriteButtonFull;                                // 0x05F0(0x03F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FButtonStyle                           FavoriteButtonEmpty;                               // 0x09E0(0x03F0)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          IsEmptySlot;                                       // 0x0DD0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bRenaming;                                         // 0x0DD1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_DD2[0x2];                                      // 0x0DD2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PresetNameMaxLength;                               // 0x0DD4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bUsingGamepad;                                     // 0x0DD8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCommonTextBlock*                       ValueText;                                         // 0x0328(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonTextBlock*                       versionnametitle;                                  // 0x0330(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0338(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_33C[0x4];                                      // 0x033C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MissionMapName;                                    // 0x0340(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FDateTime                              Date;                                              // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	EMissionBuilderDifficultyPropertyValues       Difficulty;                                        // 0x0358(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_359[0x7];                                      // 0x0359(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTexture2D*                             MapImage;                                          // 0x0360(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FString                                 MissionDescription;                                // 0x0368(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	uint8                                         Pad_378[0x8];                                      // 0x0378(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            DefaultButtonBrush;                                // 0x0380(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            HoverButtonBrush;                                  // 0x0450(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            SelectedButtonBrush;                               // 0x0520(0x00D0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          IsSelected;                                        // 0x05F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bFavourite;                                        // 0x05F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, ExposeOnSpawn, HasGetValueTypeHash)
+	bool                                          bFavouriteEnabled;                                 // 0x05F2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5F3[0x1];                                      // 0x05F3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SelectedDifficulty;                                // 0x05F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5F8[0x8];                                      // 0x05F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FButtonStyle                           FavoriteButtonFull;                                // 0x0600(0x03F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FButtonStyle                           FavoriteButtonEmpty;                               // 0x09F0(0x03F0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          IsEmptySlot;                                       // 0x0DE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bRenaming;                                         // 0x0DE1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DE2[0x2];                                      // 0x0DE2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PresetNameMaxLength;                               // 0x0DE4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bUsingGamepad;                                     // 0x0DE8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__W_MissionBuilder_MissionSelectionListItem_FavouriteButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature();

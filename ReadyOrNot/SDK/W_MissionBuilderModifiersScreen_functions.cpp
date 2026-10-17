@@ -369,26 +369,6 @@ void UW_MissionBuilderModifiersScreen_C::ShowHashScreen(bool IsVisible_0)
 }
 
 
-// Function W_MissionBuilderModifiersScreen.W_MissionBuilderModifiersScreen_C.ShowPVPUnlockedVisual
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bShouldBeVisible                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_MissionBuilderModifiersScreen_C::ShowPVPUnlockedVisual(bool bShouldBeVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionBuilderModifiersScreen_C", "ShowPVPUnlockedVisual");
-
-	Params::W_MissionBuilderModifiersScreen_C_ShowPVPUnlockedVisual Parms{};
-
-	Parms.bShouldBeVisible = bShouldBeVisible;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_MissionBuilderModifiersScreen.W_MissionBuilderModifiersScreen_C.TryToCancel
 // (BlueprintCallable, BlueprintEvent)
 

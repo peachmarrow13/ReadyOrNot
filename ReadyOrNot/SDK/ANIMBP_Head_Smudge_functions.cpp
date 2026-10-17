@@ -17,6 +17,27 @@
 namespace SDK
 {
 
+// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimGraph
+// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
+
+void UANIMBP_Head_Smudge_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ANIMBP_Head_Smudge_C", "AnimGraph");
+
+	Params::ANIMBP_Head_Smudge_C_AnimGraph Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimGraph_0 != nullptr)
+		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
 // Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.ExecuteUbergraph_ANIMBP_Head_Smudge
 // (Final, UbergraphFunction)
 // Parameters:
@@ -54,27 +75,6 @@ void UANIMBP_Head_Smudge_C::BlueprintUpdateAnimation(float DeltaTimeX)
 	Parms.DeltaTimeX = DeltaTimeX;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ANIMBP_Head_Smudge.ANIMBP_Head_Smudge_C.AnimGraph
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
-
-void UANIMBP_Head_Smudge_C::AnimGraph(struct FPoseLink* AnimGraph_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ANIMBP_Head_Smudge_C", "AnimGraph");
-
-	Params::ANIMBP_Head_Smudge_C_AnimGraph Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (AnimGraph_0 != nullptr)
-		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
 }
 
 }

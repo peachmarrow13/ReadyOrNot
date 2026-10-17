@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ReadyOrNot_structs.hpp"
-#include "ST_EquippingUnit_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ST_EquippingUnit_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
 #include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 

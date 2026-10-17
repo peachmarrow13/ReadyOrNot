@@ -10,7 +10,7 @@
 
 #include "Basic.hpp"
 
-#include "Chaos_structs.hpp"
+#include "AudioPlatformConfiguration_structs.hpp"
 #include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
@@ -21,13 +21,13 @@
 #include "FieldNotification_structs.hpp"
 #include "DeveloperSettings_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
-#include "AudioPlatformConfiguration_structs.hpp"
+#include "PacketHandler_classes.hpp"
+#include "Chaos_structs.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "AudioExtensions_classes.hpp"
 #include "IrisCore_classes.hpp"
 #include "NetCore_structs.hpp"
 #include "NetCore_classes.hpp"
-#include "PacketHandler_classes.hpp"
 #include "MeshDescription_classes.hpp"
 
 
@@ -25619,7 +25619,7 @@ DUMPER7_ASSERTS_ILODSyncInterface;
 
 // Class Engine.SceneCapture2D
 // 0x0008 (0x02B8 - 0x02B0)
-class ASceneCapture2D : public ASceneCapture
+class ASceneCapture2D final : public ASceneCapture
 {
 public:
 	class USceneCaptureComponent2D*               CaptureComponent2D;                                // 0x02B0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)

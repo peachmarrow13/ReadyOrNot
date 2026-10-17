@@ -37,14 +37,14 @@ public:
 	class AThreatAwarenessActor*                  ChosenThreatFocus;                                 // 0x0098(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void EndAction_Blueprint();
+	void BeginAction_Blueprint();
 	void Tick_Blueprint(float DeltaTime);
 	void ResetData();
 	void OnPathFound_Blueprint(int32 PathId, ERonNavigationQueryResult Result);
 	void OnMoveComplete_Blueprint(class AAIController* Controller, int32 RequestID);
 	void InitAction_Blueprint(class ACyberneticController* Controller);
 	void ExecuteUbergraph_AIAction_Roam(int32 EntryPoint);
-	void EndAction_Blueprint();
-	void BeginAction_Blueprint();
 
 	bool ShouldPerformAction() const;
 

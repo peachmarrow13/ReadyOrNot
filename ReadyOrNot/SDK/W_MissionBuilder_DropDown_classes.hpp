@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SlateCore_structs.hpp"
-#include "Engine_structs.hpp"
 #include "w_Dropdown_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -32,16 +32,16 @@ public:
 	class FString                                 CurrentHoveredOptions;                             // 0x0508(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
+	void Construct();
 	void ExecuteUbergraph_W_MissionBuilder_DropDown(int32 EntryPoint);
+	class UUserWidget* On_DropdownMenuAnchor_GetUserMenuContent_0();
+	void OnDropdown_Menu_Desired_Focus_Set(class UW_Button_C* DesiredFocus);
 	class UWidget* OnDropdownMenuDown(EUINavigation Navigation_0);
 	void OnDropdownOptionSelected(const class FString& OptionID);
 	struct FEventReply OnMouseWheel(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
-	void SetUndefined(bool IsUndefined);
-	void Construct();
-	class UUserWidget* On_DropdownMenuAnchor_GetUserMenuContent_0();
-	void OnDropdown_Menu_Desired_Focus_Set(class UW_Button_C* DesiredFocus);
 	void OptionHovered(const class FString& OptionID);
 	void PreConstruct(bool IsDesignTime);
+	void SetUndefined(bool IsUndefined);
 
 public:
 	static class UClass* StaticClass()

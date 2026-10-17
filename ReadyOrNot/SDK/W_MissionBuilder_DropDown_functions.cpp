@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UW_MissionBuilder_DropDown_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.ExecuteUbergraph_W_MissionBuilder_DropDown
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -32,6 +46,46 @@ void UW_MissionBuilder_DropDown_C::ExecuteUbergraph_W_MissionBuilder_DropDown(in
 	Params::W_MissionBuilder_DropDown_C_ExecuteUbergraph_W_MissionBuilder_DropDown Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.On_DropdownMenuAnchor_GetUserMenuContent_0
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UUserWidget*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+class UUserWidget* UW_MissionBuilder_DropDown_C::On_DropdownMenuAnchor_GetUserMenuContent_0()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "On_DropdownMenuAnchor_GetUserMenuContent_0");
+
+	Params::W_MissionBuilder_DropDown_C_On_DropdownMenuAnchor_GetUserMenuContent_0 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OnDropdown Menu Desired Focus Set
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UW_Button_C*                      DesiredFocus                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UW_MissionBuilder_DropDown_C::OnDropdown_Menu_Desired_Focus_Set(class UW_Button_C* DesiredFocus)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "OnDropdown Menu Desired Focus Set");
+
+	Params::W_MissionBuilder_DropDown_C_OnDropdown_Menu_Desired_Focus_Set Parms{};
+
+	Parms.DesiredFocus = DesiredFocus;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -105,80 +159,6 @@ struct FEventReply UW_MissionBuilder_DropDown_C::OnMouseWheel(const struct FGeom
 }
 
 
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.SetUndefined
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsUndefined                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_MissionBuilder_DropDown_C::SetUndefined(bool IsUndefined)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "SetUndefined");
-
-	Params::W_MissionBuilder_DropDown_C_SetUndefined Parms{};
-
-	Parms.IsUndefined = IsUndefined;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UW_MissionBuilder_DropDown_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.On_DropdownMenuAnchor_GetUserMenuContent_0
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UUserWidget*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-class UUserWidget* UW_MissionBuilder_DropDown_C::On_DropdownMenuAnchor_GetUserMenuContent_0()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "On_DropdownMenuAnchor_GetUserMenuContent_0");
-
-	Params::W_MissionBuilder_DropDown_C_On_DropdownMenuAnchor_GetUserMenuContent_0 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OnDropdown Menu Desired Focus Set
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UW_Button_C*                      DesiredFocus                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-
-void UW_MissionBuilder_DropDown_C::OnDropdown_Menu_Desired_Focus_Set(class UW_Button_C* DesiredFocus)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "OnDropdown Menu Desired Focus Set");
-
-	Params::W_MissionBuilder_DropDown_C_OnDropdown_Menu_Desired_Focus_Set Parms{};
-
-	Parms.DesiredFocus = DesiredFocus;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.OptionHovered
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -214,6 +194,26 @@ void UW_MissionBuilder_DropDown_C::PreConstruct(bool IsDesignTime)
 	Params::W_MissionBuilder_DropDown_C_PreConstruct Parms{};
 
 	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function W_MissionBuilder_DropDown.W_MissionBuilder_DropDown_C.SetUndefined
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsUndefined                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UW_MissionBuilder_DropDown_C::SetUndefined(bool IsUndefined)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("W_MissionBuilder_DropDown_C", "SetUndefined");
+
+	Params::W_MissionBuilder_DropDown_C_SetUndefined Parms{};
+
+	Parms.IsUndefined = IsUndefined;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

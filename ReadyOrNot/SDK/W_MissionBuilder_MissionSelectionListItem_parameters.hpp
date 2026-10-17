@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "ReadyOrNot_structs.hpp"
 #include "CommonInput_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ReadyOrNot_structs.hpp"
 
 
 namespace SDK::Params
@@ -177,7 +177,7 @@ public:
 DUMPER7_ASSERTS_W_MissionBuilder_MissionSelectionListItem_C_Select;
 
 // Function W_MissionBuilder_MissionSelectionListItem.W_MissionBuilder_MissionSelectionListItem_C.SetData
-// 0x0930 (0x0930 - 0x0000)
+// 0x0938 (0x0938 - 0x0000)
 struct W_MissionBuilder_MissionSelectionListItem_C_SetData final
 {
 public:
@@ -192,6 +192,7 @@ public:
 	struct FDateTime                              CallFunc_FromUnixTimestamp_ReturnValue;            // 0x0040(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FLevelDataLookupTable                  CallFunc_GetMapDetailsFromName_ReturnValue;        // 0x0048(0x08D0)()
 	class FText                                   CallFunc_AsDateTime_DateTime_ReturnValue;          // 0x0918(0x0018)()
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0930(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_W_MissionBuilder_MissionSelectionListItem_C_SetData;
 

@@ -20,8 +20,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BasePlayer.BasePlayer_C
 // 0x00F0 (0x3180 - 0x3090)
-#pragma pack(push, 0x1)
-class alignas(0x10) ABasePlayer_C : public APlayerCharacter
+class ABasePlayer_C final : public APlayerCharacter
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x3090(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -101,7 +100,6 @@ public:
 		return GetDefaultObjImpl<ABasePlayer_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ABasePlayer_C;
 
 }

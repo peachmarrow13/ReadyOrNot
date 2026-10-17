@@ -433,7 +433,7 @@ DUMPER7_ASSERTS_UEnhancedInputWorldSubsystem;
 
 // Class EnhancedInput.EnhancedPlayerInput
 // 0x0358 (0x07F0 - 0x0498)
-class UEnhancedPlayerInput final : public UPlayerInput
+class UEnhancedPlayerInput : public UPlayerInput
 {
 public:
 	TMap<class UInputAction*, struct FKeyConsumptionOptions> KeyConsumptionData;                     // 0x0498(0x0050)(Protected, NativeAccessSpecifierProtected)

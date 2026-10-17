@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ANIMBP_G36C_V2_structs.hpp"
 #include "Engine_structs.hpp"
 #include "AnimGraphRuntime_structs.hpp"
+#include "ANIMBP_G36C_V2_structs.hpp"
 #include "ReadyOrNot_classes.hpp"
 
 
@@ -53,13 +53,13 @@ public:
 	float                                         Sight_Front_Alpha;                                 // 0x0CF8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_ANIMBP_G36C_V2(int32 EntryPoint);
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G36C_V2_AnimGraphNode_ModifyBone_8A57EB234881555B82A504AAEFB0CFE3();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ANIMBP_G36C_V2_AnimGraphNode_BlendListByBool_62E8109E4C91B45DB1E8809CEBCEBE2A();
 	void BlueprintUpdateAnimation(float DeltaTimeX);
 	void AnimNotify_ShowMag();
 	void AnimNotify_DropSpeedReloadMagazine();
 	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void ExecuteUbergraph_ANIMBP_G36C_V2(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

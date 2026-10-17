@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "SStandardModalDetails_structs.hpp"
+#include "InputRemapping_structs.hpp"
 #include "ReadyOrNot_structs.hpp"
 #include "InputCore_structs.hpp"
-#include "InputRemapping_structs.hpp"
 #include "Engine_structs.hpp"
 
 

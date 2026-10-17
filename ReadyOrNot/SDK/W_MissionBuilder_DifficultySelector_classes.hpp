@@ -51,7 +51,6 @@ public:
 	void Navigate_Left(EUINavigation Navigation_0);
 	void Navigate_Right(EUINavigation Navigation_0);
 	struct FEventReply OnPreviewMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
-	void PreConstruct(bool IsDesignTime);
 	void UpdateSelection(class UW_CMBCheckSlider_CheckArea_C* SelectedCheckArea);
 
 public:

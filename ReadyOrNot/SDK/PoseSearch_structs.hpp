@@ -138,6 +138,19 @@ public:
 };
 DUMPER7_ASSERTS_FPoseSearchCost;
 
+// ScriptStruct PoseSearch.MotionMatchingState
+// 0x0088 (0x0088 - 0x0000)
+struct alignas(0x08) FMotionMatchingState final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ElapsedPoseSearchTime;                             // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WantedPlayRate;                                    // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bJumpedToPose;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x67];                                      // 0x0021(0x0067)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMotionMatchingState;
+
 // ScriptStruct PoseSearch.PoseSearchExcludeFromDatabaseParameters
 // 0x0008 (0x0008 - 0x0000)
 struct FPoseSearchExcludeFromDatabaseParameters final
@@ -361,19 +374,6 @@ public:
 	struct FComponentSpacePoseLink                Source;                                            // 0x00A8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAnimNode_PoseSearchComponentSpaceHistoryCollector;
-
-// ScriptStruct PoseSearch.MotionMatchingState
-// 0x0088 (0x0088 - 0x0000)
-struct alignas(0x08) FMotionMatchingState final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ElapsedPoseSearchTime;                             // 0x0018(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WantedPlayRate;                                    // 0x001C(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bJumpedToPose;                                     // 0x0020(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x67];                                      // 0x0021(0x0067)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMotionMatchingState;
 
 }
 

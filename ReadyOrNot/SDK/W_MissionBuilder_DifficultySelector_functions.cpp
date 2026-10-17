@@ -156,26 +156,6 @@ struct FEventReply UW_MissionBuilder_DifficultySelector_C::OnPreviewMouseButtonD
 }
 
 
-// Function W_MissionBuilder_DifficultySelector.W_MissionBuilder_DifficultySelector_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UW_MissionBuilder_DifficultySelector_C::PreConstruct(bool IsDesignTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_MissionBuilder_DifficultySelector_C", "PreConstruct");
-
-	Params::W_MissionBuilder_DifficultySelector_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function W_MissionBuilder_DifficultySelector.W_MissionBuilder_DifficultySelector_C.UpdateSelection
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:

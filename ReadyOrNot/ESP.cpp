@@ -127,7 +127,8 @@ auto RenderColor = IM_COL32(255, 255, 255, 255);
 void Cheats::RenderESP()
 {
 	if (!CVars.ESP) return;
-    if (!GVars.PlayerController || !GVars.Level || !GVars.POV) return;
+    if (!GVars.PlayerController || !GVars.Level || !GVars.POV)
+        return;
 
     ULevel* Level = GVars.Level;
     if (!Level) return; 

@@ -30,12 +30,12 @@ public:
 public:
 	void WakeScreen();
 	void SleepScreen();
-	void PlayVibrationEvent();
 	void ReceiveBeginPlay();
+	void PlayVibrationEvent();
 	void PlaySoundEvent(class UFMODEvent* Event);
-	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
 	void PlayNotificationEvent();
 	void HolsterScreen();
+	void ExecuteUbergraph_Device_Tablet(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

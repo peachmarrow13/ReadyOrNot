@@ -471,26 +471,15 @@ public:
 };
 DUMPER7_ASSERTS_FModioGameID;
 
-// ScriptStruct Modio.ModioGamePlatform
-// 0x0003 (0x0003 - 0x0000)
-struct FModioGamePlatform final
-{
-public:
-	EModioModfilePlatform                         Platform;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Locked;                                            // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Moderated;                                         // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioGamePlatform;
-
-// ScriptStruct Modio.ModioHeaderImage
+// ScriptStruct Modio.ModioOtherUrl
 // 0x0020 (0x0020 - 0x0000)
-struct FModioHeaderImage final
+struct FModioOtherUrl final
 {
 public:
-	class FString                                 Filename;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Original;                                          // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Label;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 URL;                                               // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FModioHeaderImage;
+DUMPER7_ASSERTS_FModioOtherUrl;
 
 // ScriptStruct Modio.ModioIcon
 // 0x0050 (0x0050 - 0x0000)
@@ -517,6 +506,27 @@ public:
 	class FString                                 Thumb1280x720;                                     // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FModioLogo;
+
+// ScriptStruct Modio.ModioGamePlatform
+// 0x0003 (0x0003 - 0x0000)
+struct FModioGamePlatform final
+{
+public:
+	EModioModfilePlatform                         Platform;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Locked;                                            // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Moderated;                                         // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModioGamePlatform;
+
+// ScriptStruct Modio.ModioHeaderImage
+// 0x0020 (0x0020 - 0x0000)
+struct FModioHeaderImage final
+{
+public:
+	class FString                                 Filename;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Original;                                          // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModioHeaderImage;
 
 // ScriptStruct Modio.ModioTheme
 // 0x0060 (0x0060 - 0x0000)
@@ -546,16 +556,6 @@ public:
 	int64                                         DateExpires;                                       // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FModioGameStats;
-
-// ScriptStruct Modio.ModioOtherUrl
-// 0x0020 (0x0020 - 0x0000)
-struct FModioOtherUrl final
-{
-public:
-	class FString                                 Label;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 URL;                                               // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioOtherUrl;
 
 // ScriptStruct Modio.ModioModTagLocalizationData
 // 0x0060 (0x0060 - 0x0000)
@@ -638,26 +638,14 @@ public:
 };
 DUMPER7_ASSERTS_FModioGameInfoList;
 
-// ScriptStruct Modio.ModioOptionalGuid
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FModioOptionalGuid final
+// ScriptStruct Modio.ModioOptionalEntitlementWalletBalance
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FModioOptionalEntitlementWalletBalance final
 {
 public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioOptionalGuid;
-
-// ScriptStruct Modio.ModioCreateModParams
-// 0x00C8 (0x00C8 - 0x0000)
-struct FModioCreateModParams final
-{
-public:
-	class FString                                 PathToLogoFile;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Summary;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_30[0x98];                                      // 0x0030(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioCreateModParams;
+DUMPER7_ASSERTS_FModioOptionalEntitlementWalletBalance;
 
 // ScriptStruct Modio.ModioGuid
 // 0x0010 (0x0010 - 0x0000)
@@ -667,28 +655,6 @@ public:
 	class FString                                 InternalGuid;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FModioGuid;
-
-// ScriptStruct Modio.ModioAuthenticationParams
-// 0x0078 (0x0078 - 0x0000)
-struct FModioAuthenticationParams final
-{
-public:
-	class FString                                 AuthToken;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 UserEmail;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUserHasAcceptedTerms;                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class FString>            ExtendedParameters;                                // 0x0028(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioAuthenticationParams;
-
-// ScriptStruct Modio.ModioEntitlementParams
-// 0x0050 (0x0050 - 0x0000)
-struct FModioEntitlementParams final
-{
-public:
-	TMap<class FString, class FString>            ExtendedParameters;                                // 0x0000(0x0050)(Edit, NativeAccessSpecifierPrivate)
-};
-DUMPER7_ASSERTS_FModioEntitlementParams;
 
 // ScriptStruct Modio.ModioModStats
 // 0x0058 (0x0058 - 0x0000)
@@ -864,42 +830,54 @@ public:
 };
 DUMPER7_ASSERTS_FModioModInfoList;
 
-// ScriptStruct Modio.ModioEditModParams
-// 0x00D0 (0x00D0 - 0x0000)
-struct alignas(0x08) FModioEditModParams final
-{
-public:
-	uint8                                         Pad_0[0xD0];                                       // 0x0000(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioEditModParams;
-
-// ScriptStruct Modio.ModioEntitlementConsumptionVirtualCurrencyDetails
-// 0x0004 (0x0004 - 0x0000)
-struct FModioEntitlementConsumptionVirtualCurrencyDetails final
-{
-public:
-	int32                                         TokensAllocated;                                   // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioEntitlementConsumptionVirtualCurrencyDetails;
-
-// ScriptStruct Modio.ModioModProgressInfo
-// 0x0050 (0x0050 - 0x0000)
-struct FModioModProgressInfo final
-{
-public:
-	struct FModioModID                            ID;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x48];                                       // 0x0008(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioModProgressInfo;
-
-// ScriptStruct Modio.ModioApiKey
+// ScriptStruct Modio.ModioOptionalModID
 // 0x0010 (0x0010 - 0x0000)
-struct FModioApiKey final
+struct alignas(0x08) FModioOptionalModID final
 {
 public:
-	class FString                                 ApiKey;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioApiKey;
+DUMPER7_ASSERTS_FModioOptionalModID;
+
+// ScriptStruct Modio.ModioOptionalGuid
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FModioOptionalGuid final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioOptionalGuid;
+
+// ScriptStruct Modio.ModioAuthenticationParams
+// 0x0078 (0x0078 - 0x0000)
+struct FModioAuthenticationParams final
+{
+public:
+	class FString                                 AuthToken;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 UserEmail;                                         // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUserHasAcceptedTerms;                             // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class FString>            ExtendedParameters;                                // 0x0028(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModioAuthenticationParams;
+
+// ScriptStruct Modio.ModioEntitlementParams
+// 0x0050 (0x0050 - 0x0000)
+struct FModioEntitlementParams final
+{
+public:
+	TMap<class FString, class FString>            ExtendedParameters;                                // 0x0000(0x0050)(Edit, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FModioEntitlementParams;
+
+// ScriptStruct Modio.ModioTokenPackID
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FModioTokenPackID final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioTokenPackID;
 
 // ScriptStruct Modio.ModioModTagOptions
 // 0x0028 (0x0028 - 0x0000)
@@ -911,25 +889,6 @@ public:
 	TArray<struct FModioModTagInfo>               InternalList;                                      // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FModioModTagOptions;
-
-// ScriptStruct Modio.ModioModDependency
-// 0x00F8 (0x00F8 - 0x0000)
-struct FModioModDependency final
-{
-public:
-	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ModName;                                           // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              DateAdded;                                         // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDateTime                              DateUpdated;                                       // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         DependencyDepth;                                   // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FModioLogo                             Logo;                                              // 0x0030(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	struct FModioFileMetadata                     FileInfo;                                          // 0x0080(0x0070)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	EModioModServerSideStatus                     Status;                                            // 0x00F0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EModioObjectVisibilityFlags                   Visibility;                                        // 0x00F1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioModDependency;
 
 // ScriptStruct Modio.ModioTokenPack
 // 0x0118 (0x0118 - 0x0000)
@@ -951,16 +910,6 @@ public:
 };
 DUMPER7_ASSERTS_FModioTokenPackList;
 
-// ScriptStruct Modio.ModioMetricsSessionParams
-// 0x0028 (0x0028 - 0x0000)
-struct FModioMetricsSessionParams final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FModioModID>                    ModIds;                                            // 0x0018(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioMetricsSessionParams;
-
 // ScriptStruct Modio.ModioErrorCode
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FModioErrorCode final
@@ -969,26 +918,6 @@ public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FModioErrorCode;
-
-// ScriptStruct Modio.ModioUserList
-// 0x0028 (0x0028 - 0x0000)
-struct FModioUserList final
-{
-public:
-	struct FModioPagedResult                      PagedResult;                                       // 0x0000(0x0014)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FModioUser>                     InternalList;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioUserList;
-
-// ScriptStruct Modio.ModioOptionalTransactionRecord
-// 0x0020 (0x0020 - 0x0000)
-struct alignas(0x08) FModioOptionalTransactionRecord final
-{
-public:
-	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioOptionalTransactionRecord;
 
 // ScriptStruct Modio.ModioOptionalGameInfo
 // 0x0238 (0x0238 - 0x0000)
@@ -999,33 +928,6 @@ public:
 };
 DUMPER7_ASSERTS_FModioOptionalGameInfo;
 
-// ScriptStruct Modio.ModioOptionalImage
-// 0x0018 (0x0018 - 0x0000)
-struct alignas(0x08) FModioOptionalImage final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioOptionalImage;
-
-// ScriptStruct Modio.ModioOptionalModDependencyList
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FModioOptionalModDependencyList final
-{
-public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioOptionalModDependencyList;
-
-// ScriptStruct Modio.ModioEntitlementWalletBalance
-// 0x0008 (0x0008 - 0x0000)
-struct FModioEntitlementWalletBalance final
-{
-public:
-	struct FModioUnsigned64                       Balance;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FModioEntitlementWalletBalance;
-
 // ScriptStruct Modio.ModioOptionalModInfoList
 // 0x0030 (0x0030 - 0x0000)
 struct alignas(0x08) FModioOptionalModInfoList final
@@ -1035,14 +937,14 @@ public:
 };
 DUMPER7_ASSERTS_FModioOptionalModInfoList;
 
-// ScriptStruct Modio.ModioOptionalModInfo
-// 0x01F0 (0x01F0 - 0x0000)
-struct alignas(0x08) FModioOptionalModInfo final
+// ScriptStruct Modio.ModioOptionalImage
+// 0x0018 (0x0018 - 0x0000)
+struct alignas(0x08) FModioOptionalImage final
 {
 public:
-	uint8                                         Pad_0[0x1F0];                                      // 0x0000(0x01F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioOptionalModInfo;
+DUMPER7_ASSERTS_FModioOptionalImage;
 
 // ScriptStruct Modio.ModioModManagementEvent
 // 0x0018 (0x0018 - 0x0000)
@@ -1056,6 +958,43 @@ public:
 };
 DUMPER7_ASSERTS_FModioModManagementEvent;
 
+// ScriptStruct Modio.ModioOptionalModDependencyList
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FModioOptionalModDependencyList final
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioOptionalModDependencyList;
+
+// ScriptStruct Modio.ModioCreateModFileParams
+// 0x0078 (0x0078 - 0x0000)
+struct FModioCreateModFileParams final
+{
+public:
+	class FString                                 PathToModRootDirectory;                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10[0x68];                                      // 0x0010(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioCreateModFileParams;
+
+// ScriptStruct Modio.ModioOptionalModInfo
+// 0x01F0 (0x01F0 - 0x0000)
+struct alignas(0x08) FModioOptionalModInfo final
+{
+public:
+	uint8                                         Pad_0[0x1F0];                                      // 0x0000(0x01F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioOptionalModInfo;
+
+// ScriptStruct Modio.ModioOptionalUser
+// 0x0048 (0x0048 - 0x0000)
+struct alignas(0x08) FModioOptionalUser final
+{
+public:
+	uint8                                         Pad_0[0x48];                                       // 0x0000(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioOptionalUser;
+
 // ScriptStruct Modio.ModioOptionalModTagOptions
 // 0x0030 (0x0030 - 0x0000)
 struct alignas(0x08) FModioOptionalModTagOptions final
@@ -1065,15 +1004,6 @@ public:
 };
 DUMPER7_ASSERTS_FModioOptionalModTagOptions;
 
-// ScriptStruct Modio.ModioOptionalModChangeMap
-// 0x0058 (0x0058 - 0x0000)
-struct alignas(0x08) FModioOptionalModChangeMap final
-{
-public:
-	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioOptionalModChangeMap;
-
 // ScriptStruct Modio.ModioOptionalTerms
 // 0x00D8 (0x00D8 - 0x0000)
 struct alignas(0x08) FModioOptionalTerms final
@@ -1082,6 +1012,15 @@ public:
 	uint8                                         Pad_0[0xD8];                                       // 0x0000(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FModioOptionalTerms;
+
+// ScriptStruct Modio.ModioFilterParams
+// 0x00B8 (0x00B8 - 0x0000)
+struct alignas(0x08) FModioFilterParams final
+{
+public:
+	uint8                                         Pad_0[0xB8];                                       // 0x0000(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioFilterParams;
 
 // ScriptStruct Modio.ModioOptionalUInt64
 // 0x0010 (0x0010 - 0x0000)
@@ -1101,14 +1040,14 @@ public:
 };
 DUMPER7_ASSERTS_FModioOptionalGameInfoList;
 
-// ScriptStruct Modio.ModioEmailAuthCode
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FModioEmailAuthCode final
+// ScriptStruct Modio.ModioEditModParams
+// 0x00D0 (0x00D0 - 0x0000)
+struct alignas(0x08) FModioEditModParams final
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0xD0];                                       // 0x0000(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioEmailAuthCode;
+DUMPER7_ASSERTS_FModioEditModParams;
 
 // ScriptStruct Modio.ModioOptionalUserList
 // 0x0030 (0x0030 - 0x0000)
@@ -1119,60 +1058,23 @@ public:
 };
 DUMPER7_ASSERTS_FModioOptionalUserList;
 
-// ScriptStruct Modio.ModioOptionalEntitlementConsumptionStatusList
-// 0x0040 (0x0040 - 0x0000)
-struct alignas(0x08) FModioOptionalEntitlementConsumptionStatusList final
+// ScriptStruct Modio.ModioEntitlementConsumptionVirtualCurrencyDetails
+// 0x0004 (0x0004 - 0x0000)
+struct FModioEntitlementConsumptionVirtualCurrencyDetails final
 {
 public:
-	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         TokensAllocated;                                   // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FModioOptionalEntitlementConsumptionStatusList;
+DUMPER7_ASSERTS_FModioEntitlementConsumptionVirtualCurrencyDetails;
 
-// ScriptStruct Modio.ModioOptionalModID
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FModioOptionalModID final
+// ScriptStruct Modio.ModioOptionalModChangeMap
+// 0x0058 (0x0058 - 0x0000)
+struct alignas(0x08) FModioOptionalModChangeMap final
 {
 public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x58];                                       // 0x0000(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioOptionalModID;
-
-// ScriptStruct Modio.ModioEmailAddress
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FModioEmailAddress final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioEmailAddress;
-
-// ScriptStruct Modio.ModioTokenPackID
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FModioTokenPackID final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioTokenPackID;
-
-// ScriptStruct Modio.ModioCreateModFileParams
-// 0x0078 (0x0078 - 0x0000)
-struct FModioCreateModFileParams final
-{
-public:
-	class FString                                 PathToModRootDirectory;                            // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10[0x68];                                      // 0x0010(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioCreateModFileParams;
-
-// ScriptStruct Modio.ModioOptionalEntitlementWalletBalance
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FModioOptionalEntitlementWalletBalance final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FModioOptionalEntitlementWalletBalance;
+DUMPER7_ASSERTS_FModioOptionalModChangeMap;
 
 // ScriptStruct Modio.EntitlementConsumptionStatus
 // 0x0030 (0x0030 - 0x0000)
@@ -1202,14 +1104,81 @@ public:
 };
 DUMPER7_ASSERTS_FModioEntitlementConsumptionStatusList;
 
-// ScriptStruct Modio.ModioFilterParams
-// 0x00B8 (0x00B8 - 0x0000)
-struct alignas(0x08) FModioFilterParams final
+// ScriptStruct Modio.ModioOptionalTransactionRecord
+// 0x0020 (0x0020 - 0x0000)
+struct alignas(0x08) FModioOptionalTransactionRecord final
 {
 public:
-	uint8                                         Pad_0[0xB8];                                       // 0x0000(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FModioFilterParams;
+DUMPER7_ASSERTS_FModioOptionalTransactionRecord;
+
+// ScriptStruct Modio.ModioOptionalEntitlementConsumptionStatusList
+// 0x0040 (0x0040 - 0x0000)
+struct alignas(0x08) FModioOptionalEntitlementConsumptionStatusList final
+{
+public:
+	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioOptionalEntitlementConsumptionStatusList;
+
+// ScriptStruct Modio.ModioApiKey
+// 0x0010 (0x0010 - 0x0000)
+struct FModioApiKey final
+{
+public:
+	class FString                                 ApiKey;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+};
+DUMPER7_ASSERTS_FModioApiKey;
+
+// ScriptStruct Modio.ModioEmailAddress
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FModioEmailAddress final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioEmailAddress;
+
+// ScriptStruct Modio.ModioEmailAuthCode
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FModioEmailAuthCode final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioEmailAuthCode;
+
+// ScriptStruct Modio.ModioMetricsSessionParams
+// 0x0028 (0x0028 - 0x0000)
+struct FModioMetricsSessionParams final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FModioModID>                    ModIds;                                            // 0x0018(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModioMetricsSessionParams;
+
+// ScriptStruct Modio.ModioCreateModParams
+// 0x00C8 (0x00C8 - 0x0000)
+struct FModioCreateModParams final
+{
+public:
+	class FString                                 PathToLogoFile;                                    // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Name;                                              // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Summary;                                           // 0x0020(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x98];                                      // 0x0030(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioCreateModParams;
+
+// ScriptStruct Modio.ModioEntitlementWalletBalance
+// 0x0008 (0x0008 - 0x0000)
+struct FModioEntitlementWalletBalance final
+{
+public:
+	struct FModioUnsigned64                       Balance;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FModioEntitlementWalletBalance;
 
 // ScriptStruct Modio.ModioPresetFilterParams
 // 0x0048 (0x0048 - 0x0000)
@@ -1278,6 +1247,25 @@ public:
 };
 DUMPER7_ASSERTS_FModioModCreationHandle;
 
+// ScriptStruct Modio.ModioModDependency
+// 0x00F8 (0x00F8 - 0x0000)
+struct FModioModDependency final
+{
+public:
+	struct FModioModID                            ModId;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ModName;                                           // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              DateAdded;                                         // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDateTime                              DateUpdated;                                       // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         DependencyDepth;                                   // 0x0028(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FModioLogo                             Logo;                                              // 0x0030(0x0050)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	struct FModioFileMetadata                     FileInfo;                                          // 0x0080(0x0070)(BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	EModioModServerSideStatus                     Status;                                            // 0x00F0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EModioObjectVisibilityFlags                   Visibility;                                        // 0x00F1(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioModDependency;
+
 // ScriptStruct Modio.ModioModDependencyList
 // 0x0038 (0x0038 - 0x0000)
 struct FModioModDependencyList final
@@ -1290,6 +1278,16 @@ public:
 	int64                                         TotalFilesizeUncompressed;                         // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FModioModDependencyList;
+
+// ScriptStruct Modio.ModioModProgressInfo
+// 0x0050 (0x0050 - 0x0000)
+struct FModioModProgressInfo final
+{
+public:
+	struct FModioModID                            ID;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x48];                                       // 0x0008(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FModioModProgressInfo;
 
 // ScriptStruct Modio.ModioOptionalModProgressInfo
 // 0x0058 (0x0058 - 0x0000)
@@ -1365,14 +1363,16 @@ public:
 };
 DUMPER7_ASSERTS_FModioTransactionRecord;
 
-// ScriptStruct Modio.ModioOptionalUser
-// 0x0048 (0x0048 - 0x0000)
-struct alignas(0x08) FModioOptionalUser final
+// ScriptStruct Modio.ModioUserList
+// 0x0028 (0x0028 - 0x0000)
+struct FModioUserList final
 {
 public:
-	uint8                                         Pad_0[0x48];                                       // 0x0000(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FModioPagedResult                      PagedResult;                                       // 0x0000(0x0014)(BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FModioUser>                     InternalList;                                      // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FModioOptionalUser;
+DUMPER7_ASSERTS_FModioUserList;
 
 // ScriptStruct Modio.ModioValidationError
 // 0x0020 (0x0020 - 0x0000)
